@@ -1,0 +1,9 @@
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.exe.config
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.exe
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.pdb
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.LogInFrm.resources
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Properties.Resources.resources
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.csproj.GenerateResource.cache
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.csproj.CoreCompileInputs.cache
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.exe
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.pdb

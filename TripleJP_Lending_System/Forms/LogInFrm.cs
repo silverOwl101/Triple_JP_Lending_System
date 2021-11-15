@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TripleJP_Lending_System
 {
-    public partial class Form1 : Form
+    public partial class LogInFrm : Form
     {
-        public Form1()
+        public LogInFrm()
         {
             InitializeComponent();
         }
