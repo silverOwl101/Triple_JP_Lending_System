@@ -52,16 +52,18 @@ DROP TABLE IF EXISTS `collection`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `collection` (
   `uid` binary(255) NOT NULL,
-  `customeruid` binary(255) NOT NULL,
-  `loan_transaction_uid` binary(255) NOT NULL,
+  `id` varchar(100) DEFAULT NULL,
+  `customer_uid` binary(255) NOT NULL,
+  `loan_information_uid` binary(255) NOT NULL,
   `return` decimal(10,0) NOT NULL,
   `interest` decimal(10,0) NOT NULL,
   `date` date NOT NULL,
-  KEY `idx_collection` (`uid`,`customeruid`),
-  KEY `fk_coltocustomeracc_tbl_idx` (`customeruid`),
-  KEY `fk_coltoloan_tbl_idx` (`loan_transaction_uid`),
-  CONSTRAINT `fk_coltocustomeracc_tbl` FOREIGN KEY (`customeruid`) REFERENCES `customer_account` (`uid`),
-  CONSTRAINT `fk_coltoloan_tbl` FOREIGN KEY (`loan_transaction_uid`) REFERENCES `loan_information` (`uid`)
+  PRIMARY KEY (`uid`),
+  KEY `idx_collection` (`uid`,`customer_uid`),
+  KEY `fk_coltocustomeracc_tbl_idx` (`customer_uid`),
+  KEY `fk_coltoloan_tbl_idx` (`loan_information_uid`),
+  CONSTRAINT `fk_coltocustomeracc_tbl` FOREIGN KEY (`customer_uid`) REFERENCES `customer_account` (`uid`),
+  CONSTRAINT `fk_coltoloan_tbl` FOREIGN KEY (`loan_information_uid`) REFERENCES `loan_information` (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -87,7 +89,6 @@ CREATE TABLE `customer_account` (
   `name` varchar(100) NOT NULL,
   `address` varchar(200) NOT NULL,
   `contact_number` int NOT NULL,
-  `customer_accountcol` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`uid`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `idx_customer` (`id`)
@@ -112,7 +113,8 @@ DROP TABLE IF EXISTS `customer_business_info`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `customer_business_info` (
   `uid` binary(255) NOT NULL,
-  `customeruid` binary(255) NOT NULL,
+  `id` varchar(100) DEFAULT NULL,
+  `customer_uid` binary(255) NOT NULL,
   `name` varchar(50) NOT NULL,
   `nature` varchar(50) DEFAULT NULL,
   `address` varchar(100) NOT NULL,
@@ -141,12 +143,13 @@ DROP TABLE IF EXISTS `loan_information`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `loan_information` (
   `uid` binary(255) NOT NULL,
-  `customeruid` binary(255) NOT NULL,
+  `id` varchar(100) DEFAULT NULL,
+  `customer_uid` binary(255) NOT NULL,
   `payment_term` int NOT NULL,
   `duration` int NOT NULL,
   `effective_date` date NOT NULL,
   `interest` decimal(10,0) NOT NULL,
-  `principal loan` decimal(10,0) NOT NULL,
+  `principal_loan` decimal(10,0) NOT NULL,
   `penalty` decimal(10,0) NOT NULL,
   `status` varchar(50) NOT NULL,
   PRIMARY KEY (`uid`)
@@ -171,15 +174,16 @@ DROP TABLE IF EXISTS `penalty`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `penalty` (
   `uid` binary(255) NOT NULL,
-  `customeruid` binary(255) NOT NULL,
-  `loan_transaction_uid` binary(255) NOT NULL,
+  `id` varchar(100) DEFAULT NULL,
+  `customer_uid` binary(255) NOT NULL,
+  `loan_information_uid` binary(255) NOT NULL,
   `amount` decimal(10,5) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`uid`),
-  KEY `fk_penaltytocustomeracc_tbl_idx` (`customeruid`),
-  KEY `fk_penaltytoloan_idx` (`loan_transaction_uid`),
-  CONSTRAINT `fk_penaltytocustomeracc_tbl` FOREIGN KEY (`customeruid`) REFERENCES `customer_account` (`uid`),
-  CONSTRAINT `fk_penaltytoloan` FOREIGN KEY (`loan_transaction_uid`) REFERENCES `loan_information` (`uid`)
+  KEY `fk_penaltytocustomeracc_tbl_idx` (`customer_uid`),
+  KEY `fk_penaltytoloan_idx` (`loan_information_uid`),
+  CONSTRAINT `fk_penaltytocustomeracc_tbl` FOREIGN KEY (`customer_uid`) REFERENCES `customer_account` (`uid`),
+  CONSTRAINT `fk_penaltytoloan` FOREIGN KEY (`loan_information_uid`) REFERENCES `loan_information` (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -191,14 +195,6 @@ LOCK TABLES `penalty` WRITE;
 /*!40000 ALTER TABLE `penalty` DISABLE KEYS */;
 /*!40000 ALTER TABLE `penalty` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'tjpdb'
---
-
---
--- Dumping routines for database 'tjpdb'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -209,4 +205,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-15 22:01:15
+-- Dump completed on 2021-11-16 23:58:53
