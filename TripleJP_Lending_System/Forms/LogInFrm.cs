@@ -48,10 +48,11 @@ namespace TripleJP_Lending_System
         #region Load MainApplicationFrm if user is registered
         private void LoginConfirmation()
         {
-            LogInFrmPresenter login = new LogInFrmPresenter(this); // Creating instance of the presenter                                                            
+            // and instance name e same pd sa ngalan sa class
+            LogInFrmPresenter logInFrmPresenter = new LogInFrmPresenter(this); // Creating instance of the presenter                                                            
                                                                    // method for User log in confirmation   
 
-            bool.TryParse(login.LogInData(), out bool result); // Try to convert the string to boolean
+            bool.TryParse(logInFrmPresenter.LogInData(), out bool result); // Try to convert the string to boolean
             if (result == true)
             {
                 th = new Thread(MainApplicationFrmLoad);
@@ -62,13 +63,16 @@ namespace TripleJP_Lending_System
             else
             {
                 // If the result is false print the error message
-                MessageBox.Show(login.LogInData());
+                MessageBox.Show(logInFrmPresenter.LogInData());
             }
         }
         private void MainApplicationFrmLoad() // Used this delegate to load the MainApplicationFrm
         {
             Application.Run(new MainApplicationFrm());
         }
+
+        // Kini it should be PascalCase pero consider nalang nato ni if function sa toolbox since naka default naman sa IDE
+        // Nalibog sad ko kay mo warning man siya gd maskin sila ga default ani nga dili PascalCase HAHA
         #endregion
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {

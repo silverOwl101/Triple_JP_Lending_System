@@ -9,6 +9,7 @@ namespace TripleJP_Lending_System.Service.Repository
 {
     static class SqlConnectionRepo
     {
-        internal const string connectionString = @"Server=localhost;Database=tjpdb;Uid=root;Pwd=Kuru_hunt1;";        
+        // internal constant mani siya so bahalag internal still walay underscore but PascalCase kay tungod constant siya
+        internal const string ConnectionString = @"Server=localhost;Database=tjpdb;Uid=root;Pwd=Kuru_hunt1;";        
     }
 }

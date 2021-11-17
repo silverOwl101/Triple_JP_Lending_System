@@ -11,15 +11,16 @@ namespace TripleJP_Lending_System.Service
     class AdministratorService
     {
         
-        internal string IsRegistered(string _username, string _password)
+        internal string IsRegistered(string username, string password) // remove underscore kay parameters mani sa method
         {
+            // local variables mani silang tanan so wala ray underscore
             LogInRepo checkLogIn = new LogInRepo();
             Administrator administrator = new Administrator();
-            administrator._UserName = _username;
-            administrator._PassWord = _password;
+            administrator.UserName = username;
+            administrator.PassWord = password;
             try
             {
-                return checkLogIn.CheckRecord(administrator._UserName,administrator._PassWord);
+                return checkLogIn.CheckRecord(administrator.UserName,administrator.PassWord);
             }
             catch (Exception ex)
             {

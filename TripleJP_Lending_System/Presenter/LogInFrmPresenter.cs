@@ -11,15 +11,17 @@ namespace TripleJP_Lending_System.Presenter
 {
     class LogInFrmPresenter
     {
-        ILogIn _logIn;
+        // dili mani private or internal so camelCase lang nga walay underscore
+        ILogIn logIn;
         public LogInFrmPresenter(ILogIn logIn)
         {
-            _logIn = logIn;
+            // butanga ug this para wala kay warnings
+            this.logIn = logIn;
         }
         internal string LogInData()
         {
             AdministratorService administratorService = new AdministratorService();
-            return administratorService.IsRegistered(_logIn.UserName,_logIn.PassWord);
+            return administratorService.IsRegistered(logIn.UserName,logIn.PassWord);
         }
     }
 }
