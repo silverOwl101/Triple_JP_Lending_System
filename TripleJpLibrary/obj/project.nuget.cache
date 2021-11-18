@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g2Ehh+GZS+snbZkQvhor348BxLIBmOytJzHVUPvqsiQ8rGjWzKrAQk13rF4Yc6mvOTC2yYiYr4pVIoSQ3L5RCw==",
+  "dgSpecHash": "RZDe44Zv/tk0GdEY2YL5cYMzk7dEzTyJBG/W5FgqHyVFWaDwjz/pNeeb7mwvXWj6PozbM7Ss1UClg4H7rEZZgQ==",
   "success": true,
-  "projectFilePath": "D:\\my-projects\\fork-repo\\Triple_JP_Lending_System\\TripleJpLibrary\\TripleJpLibrary.csproj",
+  "projectFilePath": "D:\\Projects\\C#\\TripleJP_Lending_System\\TripleJpLibrary\\TripleJpLibrary.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

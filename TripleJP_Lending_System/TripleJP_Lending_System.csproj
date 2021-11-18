@@ -50,6 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddCustomerFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCustomerFrm.Designer.cs">
+      <DependentUpon>AddCustomerFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerAccountFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerAccountFrm.Designer.cs">
+      <DependentUpon>CustomerAccountFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LogInFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,8 +82,17 @@
     <Compile Include="Service\Repository\LogInRepo.cs" />
     <Compile Include="Service\Repository\SqlConnectionRepo.cs" />
     <Compile Include="View\ILogIn.cs" />
+    <EmbeddedResource Include="Forms\AddCustomerFrm.resx">
+      <DependentUpon>AddCustomerFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerAccountFrm.resx">
+      <DependentUpon>CustomerAccountFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogInFrm.resx">
       <DependentUpon>LogInFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainApplicationFrm.resx">
+      <DependentUpon>MainApplicationFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

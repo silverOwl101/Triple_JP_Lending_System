@@ -22,3 +22,6 @@ D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\K4os.Ha
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\System.Numerics.Vectors.dll
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\MySql.Data.xml
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.csproj.CopyComplete
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Forms.MainApplicationFrm.resources
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Forms.AddCustomerFrm.resources
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Forms.CustomerAccountFrm.resources

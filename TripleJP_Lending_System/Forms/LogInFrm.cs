@@ -51,7 +51,6 @@ namespace TripleJP_Lending_System
             // and instance name e same pd sa ngalan sa class
             LogInFrmPresenter logInFrmPresenter = new LogInFrmPresenter(this); // Creating instance of the presenter                                                            
                                                                    // method for User log in confirmation   
-
             bool.TryParse(logInFrmPresenter.LogInData(), out bool result); // Try to convert the string to boolean
             if (result == true)
             {
@@ -63,16 +62,22 @@ namespace TripleJP_Lending_System
             else
             {
                 // If the result is false print the error message
-                MessageBox.Show(logInFrmPresenter.LogInData());
+                if (result != true)
+                {
+                    const string MessageContent = "Username and password are incorrect";
+                    const string MessageCaption = "Check your login credentials";
+                    MessageBox.Show(MessageContent, MessageCaption,
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                    MessageBox.Show(logInFrmPresenter.LogInData() +
+                                    "\nPlease contact your I.T personnel for more information");
             }
         }
         private void MainApplicationFrmLoad() // Used this delegate to load the MainApplicationFrm
         {
             Application.Run(new MainApplicationFrm());
-        }
-
-        // Kini it should be PascalCase pero consider nalang nato ni if function sa toolbox since naka default naman sa IDE
-        // Nalibog sad ko kay mo warning man siya gd maskin sila ga default ani nga dili PascalCase HAHA
+        }        
         #endregion
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
