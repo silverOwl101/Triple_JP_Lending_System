@@ -24,7 +24,7 @@ namespace TripleJP_Lending_System.Service
             }
             catch (Exception ex)
             {
-                return ex.ToString();
+                throw ex;
             }
         }
     }

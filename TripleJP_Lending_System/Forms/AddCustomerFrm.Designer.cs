@@ -30,20 +30,20 @@ namespace TripleJP_Lending_System.Forms
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Amounttxt = new System.Windows.Forms.TextBox();
+            this.AverageDailyGrossSalestxt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.AverageDGrosstxt = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.GrossBusinessCapitaltxt = new System.Windows.Forms.TextBox();
-            this.BusinessNametxt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.BusinessAddresstxt = new System.Windows.Forms.TextBox();
+            this.CustomerNametxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Addresstxt = new System.Windows.Forms.TextBox();
+            this.ContactNumbertxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.NatureOfBusinesstxt = new System.Windows.Forms.TextBox();
+            this.CustomerAddresstxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.NameOfOwnertxt = new System.Windows.Forms.TextBox();
+            this.BusinessNametxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.ContactNotxt = new System.Windows.Forms.TextBox();
+            this.BusinessNaturetxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.Submitbutton = new System.Windows.Forms.Button();
@@ -52,20 +52,20 @@ namespace TripleJP_Lending_System.Forms
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Amounttxt);
+            this.groupBox1.Controls.Add(this.AverageDailyGrossSalestxt);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.AverageDGrosstxt);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.GrossBusinessCapitaltxt);
-            this.groupBox1.Controls.Add(this.BusinessNametxt);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.BusinessAddresstxt);
+            this.groupBox1.Controls.Add(this.CustomerNametxt);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.Addresstxt);
+            this.groupBox1.Controls.Add(this.ContactNumbertxt);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.NatureOfBusinesstxt);
+            this.groupBox1.Controls.Add(this.CustomerAddresstxt);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.NameOfOwnertxt);
+            this.groupBox1.Controls.Add(this.BusinessNametxt);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.ContactNotxt);
+            this.groupBox1.Controls.Add(this.BusinessNaturetxt);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -76,13 +76,13 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal Information ";
             // 
-            // Amounttxt
+            // AverageDailyGrossSalestxt
             // 
-            this.Amounttxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Amounttxt.Location = new System.Drawing.Point(210, 270);
-            this.Amounttxt.Name = "Amounttxt";
-            this.Amounttxt.Size = new System.Drawing.Size(433, 30);
-            this.Amounttxt.TabIndex = 8;
+            this.AverageDailyGrossSalestxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AverageDailyGrossSalestxt.Location = new System.Drawing.Point(210, 270);
+            this.AverageDailyGrossSalestxt.Name = "AverageDailyGrossSalestxt";
+            this.AverageDailyGrossSalestxt.Size = new System.Drawing.Size(433, 30);
+            this.AverageDailyGrossSalestxt.TabIndex = 8;
             // 
             // label7
             // 
@@ -94,13 +94,13 @@ namespace TripleJP_Lending_System.Forms
             this.label7.TabIndex = 13;
             this.label7.Text = "Gross Business Capital:";
             // 
-            // AverageDGrosstxt
+            // GrossBusinessCapitaltxt
             // 
-            this.AverageDGrosstxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AverageDGrosstxt.Location = new System.Drawing.Point(210, 237);
-            this.AverageDGrosstxt.Name = "AverageDGrosstxt";
-            this.AverageDGrosstxt.Size = new System.Drawing.Size(433, 30);
-            this.AverageDGrosstxt.TabIndex = 7;
+            this.GrossBusinessCapitaltxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GrossBusinessCapitaltxt.Location = new System.Drawing.Point(210, 237);
+            this.GrossBusinessCapitaltxt.Name = "GrossBusinessCapitaltxt";
+            this.GrossBusinessCapitaltxt.Size = new System.Drawing.Size(433, 30);
+            this.GrossBusinessCapitaltxt.TabIndex = 7;
             // 
             // label6
             // 
@@ -112,21 +112,21 @@ namespace TripleJP_Lending_System.Forms
             this.label6.TabIndex = 11;
             this.label6.Text = "Business Address:";
             // 
-            // GrossBusinessCapitaltxt
+            // BusinessAddresstxt
             // 
-            this.GrossBusinessCapitaltxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GrossBusinessCapitaltxt.Location = new System.Drawing.Point(210, 202);
-            this.GrossBusinessCapitaltxt.Name = "GrossBusinessCapitaltxt";
-            this.GrossBusinessCapitaltxt.Size = new System.Drawing.Size(433, 30);
-            this.GrossBusinessCapitaltxt.TabIndex = 6;
+            this.BusinessAddresstxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BusinessAddresstxt.Location = new System.Drawing.Point(210, 202);
+            this.BusinessAddresstxt.Name = "BusinessAddresstxt";
+            this.BusinessAddresstxt.Size = new System.Drawing.Size(433, 30);
+            this.BusinessAddresstxt.TabIndex = 6;
             // 
-            // BusinessNametxt
+            // CustomerNametxt
             // 
-            this.BusinessNametxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BusinessNametxt.Location = new System.Drawing.Point(210, 27);
-            this.BusinessNametxt.Name = "BusinessNametxt";
-            this.BusinessNametxt.Size = new System.Drawing.Size(433, 30);
-            this.BusinessNametxt.TabIndex = 1;
+            this.CustomerNametxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomerNametxt.Location = new System.Drawing.Point(210, 27);
+            this.CustomerNametxt.Name = "CustomerNametxt";
+            this.CustomerNametxt.Size = new System.Drawing.Size(433, 30);
+            this.CustomerNametxt.TabIndex = 1;
             // 
             // label5
             // 
@@ -138,13 +138,13 @@ namespace TripleJP_Lending_System.Forms
             this.label5.TabIndex = 9;
             this.label5.Text = "Business Nature:";
             // 
-            // Addresstxt
+            // ContactNumbertxt
             // 
-            this.Addresstxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Addresstxt.Location = new System.Drawing.Point(210, 97);
-            this.Addresstxt.Name = "Addresstxt";
-            this.Addresstxt.Size = new System.Drawing.Size(433, 30);
-            this.Addresstxt.TabIndex = 3;
+            this.ContactNumbertxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContactNumbertxt.Location = new System.Drawing.Point(210, 97);
+            this.ContactNumbertxt.Name = "ContactNumbertxt";
+            this.ContactNumbertxt.Size = new System.Drawing.Size(433, 30);
+            this.ContactNumbertxt.TabIndex = 3;
             // 
             // label4
             // 
@@ -156,13 +156,13 @@ namespace TripleJP_Lending_System.Forms
             this.label4.TabIndex = 8;
             this.label4.Text = "Business Name:";
             // 
-            // NatureOfBusinesstxt
+            // CustomerAddresstxt
             // 
-            this.NatureOfBusinesstxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NatureOfBusinesstxt.Location = new System.Drawing.Point(210, 62);
-            this.NatureOfBusinesstxt.Name = "NatureOfBusinesstxt";
-            this.NatureOfBusinesstxt.Size = new System.Drawing.Size(433, 30);
-            this.NatureOfBusinesstxt.TabIndex = 2;
+            this.CustomerAddresstxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomerAddresstxt.Location = new System.Drawing.Point(210, 62);
+            this.CustomerAddresstxt.Name = "CustomerAddresstxt";
+            this.CustomerAddresstxt.Size = new System.Drawing.Size(433, 30);
+            this.CustomerAddresstxt.TabIndex = 2;
             // 
             // label3
             // 
@@ -174,13 +174,13 @@ namespace TripleJP_Lending_System.Forms
             this.label3.TabIndex = 7;
             this.label3.Text = "Contact Number:";
             // 
-            // NameOfOwnertxt
+            // BusinessNametxt
             // 
-            this.NameOfOwnertxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameOfOwnertxt.Location = new System.Drawing.Point(210, 132);
-            this.NameOfOwnertxt.Name = "NameOfOwnertxt";
-            this.NameOfOwnertxt.Size = new System.Drawing.Size(433, 30);
-            this.NameOfOwnertxt.TabIndex = 4;
+            this.BusinessNametxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BusinessNametxt.Location = new System.Drawing.Point(210, 132);
+            this.BusinessNametxt.Name = "BusinessNametxt";
+            this.BusinessNametxt.Size = new System.Drawing.Size(433, 30);
+            this.BusinessNametxt.TabIndex = 4;
             // 
             // label2
             // 
@@ -192,13 +192,13 @@ namespace TripleJP_Lending_System.Forms
             this.label2.TabIndex = 6;
             this.label2.Text = "Customer Address:";
             // 
-            // ContactNotxt
+            // BusinessNaturetxt
             // 
-            this.ContactNotxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContactNotxt.Location = new System.Drawing.Point(210, 167);
-            this.ContactNotxt.Name = "ContactNotxt";
-            this.ContactNotxt.Size = new System.Drawing.Size(433, 30);
-            this.ContactNotxt.TabIndex = 5;
+            this.BusinessNaturetxt.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BusinessNaturetxt.Location = new System.Drawing.Point(210, 167);
+            this.BusinessNaturetxt.Name = "BusinessNaturetxt";
+            this.BusinessNaturetxt.Size = new System.Drawing.Size(433, 30);
+            this.BusinessNaturetxt.TabIndex = 5;
             // 
             // label1
             // 
@@ -229,6 +229,7 @@ namespace TripleJP_Lending_System.Forms
             this.Submitbutton.TabIndex = 9;
             this.Submitbutton.Text = "Submit";
             this.Submitbutton.UseVisualStyleBackColor = true;
+            this.Submitbutton.Click += new System.EventHandler(this.Submitbutton_Click);
             // 
             // AddCustomerFrm
             // 
@@ -250,20 +251,20 @@ namespace TripleJP_Lending_System.Forms
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox Amounttxt;
+        private System.Windows.Forms.TextBox AverageDailyGrossSalestxt;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox AverageDGrosstxt;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox GrossBusinessCapitaltxt;
-        private System.Windows.Forms.TextBox BusinessNametxt;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox BusinessAddresstxt;
+        private System.Windows.Forms.TextBox CustomerNametxt;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox Addresstxt;
+        private System.Windows.Forms.TextBox ContactNumbertxt;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox NatureOfBusinesstxt;
+        private System.Windows.Forms.TextBox CustomerAddresstxt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox NameOfOwnertxt;
+        private System.Windows.Forms.TextBox BusinessNametxt;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox ContactNotxt;
+        private System.Windows.Forms.TextBox BusinessNaturetxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button Submitbutton;
