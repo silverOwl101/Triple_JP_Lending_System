@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TripleJp.Repository\TripleJp.Repository.csproj" />
+    <ProjectReference Include="..\TripleJP_Lending_System\TripleJP_Lending_System.csproj" />
+  </ItemGroup>
+
+</Project>

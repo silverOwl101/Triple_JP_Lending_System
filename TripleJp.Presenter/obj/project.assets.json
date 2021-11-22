@@ -1,0 +1,139 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "TripleJp.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/TripleJp.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TripleJp.Model.dll": {}
+        }
+      },
+      "TripleJp.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "TripleJp.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TripleJp.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TripleJp.Repository.dll": {}
+        }
+      },
+      "TripleJP.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "TripleJp.Model": "1.0.0",
+          "TripleJp.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TripleJP.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TripleJP.Service.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TripleJp.Model/1.0.0": {
+      "type": "project",
+      "path": "../TripleJp.Model/TripleJp.Model.csproj",
+      "msbuildProject": "../TripleJp.Model/TripleJp.Model.csproj"
+    },
+    "TripleJp.Repository/1.0.0": {
+      "type": "project",
+      "path": "../TripleJp.Repository/TripleJp.Repository.csproj",
+      "msbuildProject": "../TripleJp.Repository/TripleJp.Repository.csproj"
+    },
+    "TripleJP.Service/1.0.0": {
+      "type": "project",
+      "path": "../TripleJP.Service/TripleJP.Service.csproj",
+      "msbuildProject": "../TripleJP.Service/TripleJP.Service.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "TripleJP.Service >= 1.0.0",
+      "TripleJp.Model >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\infoj\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Projects\\C#\\TripleJP_Lending_System\\TripleJp.Presenter\\TripleJp.Presenter.csproj",
+      "projectName": "TripleJp.Presenter",
+      "projectPath": "D:\\Projects\\C#\\TripleJP_Lending_System\\TripleJp.Presenter\\TripleJp.Presenter.csproj",
+      "packagesPath": "C:\\Users\\infoj\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\C#\\TripleJP_Lending_System\\TripleJp.Presenter\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\infoj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "D:\\Projects\\C#\\TripleJP_Lending_System\\TripleJp.Model\\TripleJp.Model.csproj": {
+              "projectPath": "D:\\Projects\\C#\\TripleJP_Lending_System\\TripleJp.Model\\TripleJp.Model.csproj"
+            },
+            "D:\\Projects\\C#\\TripleJP_Lending_System\\TripleJP.Service\\TripleJP.Service.csproj": {
+              "projectPath": "D:\\Projects\\C#\\TripleJP_Lending_System\\TripleJP.Service\\TripleJP.Service.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.206\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
