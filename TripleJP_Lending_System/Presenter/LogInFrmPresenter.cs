@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TripleJP_Lending_System.View;
-using TripleJP_Lending_System.Service;
 using System.Windows.Forms;
+using TripleJP.Service;
 using TripleJP_Lending_System.Forms;
 using System.Threading;
 
@@ -61,7 +61,7 @@ namespace TripleJP_Lending_System.Presenter
                 Form logInFrm = Application.OpenForms["LogInFrm"]; // assign LogInFrm to variable logInFrm
                 if (logInFrm != null) // Check if LogInFrm is open
                 {
-                    logInFrm.Close(); // Close LogInFrm
+                    logInFrm.Close(); // Close LogInFrm                    
                 }
             }
             else 

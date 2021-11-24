@@ -1,0 +1,5 @@
+D:\Projects\C#\TripleJP_Lending_System\test.model\bin\Debug\test.model.dll
+D:\Projects\C#\TripleJP_Lending_System\test.model\bin\Debug\test.model.pdb
+D:\Projects\C#\TripleJP_Lending_System\test.model\obj\Debug\TripleJp.Model.csproj.CoreCompileInputs.cache
+D:\Projects\C#\TripleJP_Lending_System\test.model\obj\Debug\test.model.dll
+D:\Projects\C#\TripleJP_Lending_System\test.model\obj\Debug\test.model.pdb

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using TripleJP_Lending_System.Model;
+using TripleJP.Model;
 
 namespace TripleJP_Lending_System.Service.Repository
 {

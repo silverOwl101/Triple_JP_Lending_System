@@ -74,17 +74,10 @@
     <Compile Include="Forms\MainApplicationFrm.Designer.cs">
       <DependentUpon>MainApplicationFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Administrator.cs" />
-    <Compile Include="Model\Customer.cs" />
     <Compile Include="Presenter\AddCustomerPresenter.cs" />
     <Compile Include="Presenter\LogInFrmPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\AdministratorService.cs" />
-    <Compile Include="Service\CustomerService.cs" />
-    <Compile Include="Service\Repository\CustomerRepo.cs" />
-    <Compile Include="Service\Repository\LogInRepo.cs" />
-    <Compile Include="Service\Repository\SqlConnectionRepo.cs" />
     <Compile Include="View\IAddCustomer.cs" />
     <Compile Include="View\ILogIn.cs" />
     <EmbeddedResource Include="Forms\AddCustomerFrm.resx">
@@ -121,6 +114,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\test.model\TripleJp.Model.csproj">
+      <Project>{c90bcd30-3e7d-422b-8ca9-1d5ea155cdef}</Project>
+      <Name>TripleJp.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\test.services\TripleJP.Service.csproj">
+      <Project>{9287116b-3aef-4e9b-bd57-382a44f7713e}</Project>
+      <Name>TripleJP.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TripleJP_Lending_System.Model;
+using TripleJP.Model;
 using TripleJP_Lending_System.Service.Repository;
 
-namespace TripleJP_Lending_System.Service
+namespace TripleJP.Service
 {
-    class AdministratorService
+    public class AdministratorService
     {
         
-        internal string IsRegistered(string username, string password) // remove underscore kay parameters mani sa method
+        public string IsRegistered(string username, string password) // remove underscore kay parameters mani sa method
         {
             // local variables mani silang tanan so wala ray underscore
             LogInRepo checkLogIn = new LogInRepo();

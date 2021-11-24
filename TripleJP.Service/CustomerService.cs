@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TripleJP_Lending_System.Service.Repository;
-using TripleJP_Lending_System.Model;
+using TripleJP.Model;
 
-namespace TripleJP_Lending_System.Service
+namespace TripleJP.Service
 {
     class CustomerService
     {        

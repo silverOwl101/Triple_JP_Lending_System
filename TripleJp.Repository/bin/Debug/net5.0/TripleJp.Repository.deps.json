@@ -8,16 +8,16 @@
     ".NETCoreApp,Version=v5.0": {
       "TripleJp.Repository/1.0.0": {
         "dependencies": {
-          "TripleJP_Lending_System": "1.0.0",
+          "TripleJp.Model": "1.0.0",
           "MySql.Data": "8.0.25.0"
         },
         "runtime": {
           "TripleJp.Repository.dll": {}
         }
       },
-      "TripleJP_Lending_System/1.0.0": {
+      "TripleJp.Model/1.0.0": {
         "runtime": {
-          "TripleJP_Lending_System.exe": {}
+          "TripleJp.Model.dll": {}
         }
       },
       "MySql.Data/8.0.25.0": {
@@ -92,7 +92,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "TripleJP_Lending_System/1.0.0": {
+    "TripleJp.Model/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

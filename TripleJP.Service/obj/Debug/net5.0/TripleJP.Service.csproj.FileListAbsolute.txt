@@ -3,7 +3,6 @@ D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\TripleJ
 D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\ref\TripleJP.Service.dll
 D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\TripleJP.Service.pdb
 D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\TripleJp.Repository.dll
-D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\TripleJP_Lending_System.exe
 D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\MySql.Data.dll
 D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\Google.Protobuf.dll
 D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\Zstandard.Net.dll
@@ -13,8 +12,6 @@ D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\Ubiety.
 D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\K4os.Compression.LZ4.dll
 D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\K4os.Hash.xxHash.dll
 D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\TripleJp.Repository.pdb
-D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\TripleJP_Lending_System.pdb
-D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\TripleJP_Lending_System.exe.config
 D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\MySql.Data.xml
 D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\obj\Debug\net5.0\TripleJP.Service.csprojAssemblyReference.cache
 D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\obj\Debug\net5.0\TripleJP.Service.GeneratedMSBuildEditorConfig.editorconfig
@@ -25,3 +22,5 @@ D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\obj\Debug\net5.0\TripleJ
 D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\obj\Debug\net5.0\TripleJP.Service.dll
 D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\obj\Debug\net5.0\ref\TripleJP.Service.dll
 D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\obj\Debug\net5.0\TripleJP.Service.pdb
+D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\TripleJp.Model.dll
+D:\Projects\C#\TripleJP_Lending_System\TripleJP.Service\bin\Debug\net5.0\TripleJp.Model.pdb

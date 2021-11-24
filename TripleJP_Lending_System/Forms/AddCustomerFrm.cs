@@ -17,6 +17,19 @@ namespace TripleJP_Lending_System.Forms
         public AddCustomerFrm()
         {
             InitializeComponent();
+            ClearTextbox();
+        }
+
+        internal void ClearTextbox()
+        {
+            CustomerNametxt.Clear();
+            CustomerAddresstxt.Clear();
+            ContactNumbertxt.Clear();
+            BusinessNametxt.Clear();
+            BusinessNaturetxt.Clear();
+            BusinessAddresstxt.Clear();
+            GrossBusinessCapitaltxt.Clear();
+            AverageDailyGrossSalestxt.Clear();
         }
 
         #region User Inputs
@@ -64,8 +77,12 @@ namespace TripleJP_Lending_System.Forms
 
         private void Submitbutton_Click(object sender, EventArgs e)
         {
-            AddCustomerPresenter addcustomer = new AddCustomerPresenter(this);
-            addcustomer.CustomerDataPreparation();
+            AddCustomerPresenter addcustomer = new AddCustomerPresenter(this);            
+            bool rslt = addcustomer.CustomerDataPreparation();
+            if (rslt)
+            {
+                ClearTextbox();
+            }
         }
     }
 }

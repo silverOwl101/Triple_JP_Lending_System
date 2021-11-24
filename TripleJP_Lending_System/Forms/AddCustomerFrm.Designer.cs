@@ -256,7 +256,6 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.TextBox GrossBusinessCapitaltxt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox BusinessAddresstxt;
-        private System.Windows.Forms.TextBox CustomerNametxt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox ContactNumbertxt;
         private System.Windows.Forms.Label label4;
@@ -268,5 +267,6 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button Submitbutton;
+        private System.Windows.Forms.TextBox CustomerNametxt;
     }
 }
