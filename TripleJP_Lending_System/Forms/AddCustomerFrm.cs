@@ -19,8 +19,8 @@ namespace TripleJP_Lending_System.Forms
             InitializeComponent();
             ClearTextbox();
         }
-
-        internal void ClearTextbox()
+        #region Other methods
+        private void ClearTextbox()
         {
             CustomerNametxt.Clear();
             CustomerAddresstxt.Clear();
@@ -31,7 +31,41 @@ namespace TripleJP_Lending_System.Forms
             GrossBusinessCapitaltxt.Clear();
             AverageDailyGrossSalestxt.Clear();
         }
-
+        private void InputNumbersOnly(KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '\b') // enable backspace
+            {
+                e.Handled = false;
+            }
+            if (e.KeyChar == '\u0001') // enable ctrl + a
+            {
+                e.Handled = false;
+            }
+        }
+        private void InputNumbersWithDecimalPlacesOnly(KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '\b') // enable backspace
+            {
+                e.Handled = false;
+            }
+            if (e.KeyChar == '\u0001') // enable ctrl + a
+            {
+                e.Handled = false;
+            }
+            if (e.KeyChar == '.') // enable dot for decimal places
+            {
+                e.Handled = false;
+            }
+        }
+        #endregion
         #region User Inputs
         public string CustomerName 
         {
@@ -43,10 +77,10 @@ namespace TripleJP_Lending_System.Forms
             get { return CustomerAddresstxt.Text; }
             set { CustomerAddresstxt.Text = value; }
         }
-        public uint ContactNumber
+        public string ContactNumber
         {
-            get { return Convert.ToUInt32(ContactNumbertxt.Text); }
-            set { ContactNumbertxt.Text = value.ToString(); }
+            get { return ContactNumbertxt.Text; }
+            set { ContactNumbertxt.Text = value; }
         }
         public string BusinessName
         {
@@ -83,6 +117,21 @@ namespace TripleJP_Lending_System.Forms
             {
                 ClearTextbox();
             }
+        }
+
+        private void ContactNumbertxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            InputNumbersOnly(e);
+        }
+        
+        private void GrossBusinessCapitaltxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            InputNumbersWithDecimalPlacesOnly(e);
+        }
+
+        private void AverageDailyGrossSalestxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            InputNumbersWithDecimalPlacesOnly(e);
         }
     }
 }

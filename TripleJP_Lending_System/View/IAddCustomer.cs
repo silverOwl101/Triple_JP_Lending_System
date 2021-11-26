@@ -10,7 +10,7 @@ namespace TripleJP_Lending_System.View
     {
         string CustomerName { get; set; }
         string CustomerAddress { get; set; }
-        uint ContactNumber { get; set; }
+        string ContactNumber { get; set; }
         string BusinessName { get; set; }
         string BusinessNature { get; set; }
         string BusinessAddress { get; set; }

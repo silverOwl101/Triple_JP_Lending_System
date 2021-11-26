@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TripleJP.Model;
-using TripleJP_Lending_System.Service.Repository;
+using TripleJP.Service.Repository;
 
 namespace TripleJP.Service
 {

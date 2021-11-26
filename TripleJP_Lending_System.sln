@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripleJP_Lending_System", "TripleJP_Lending_System\TripleJP_Lending_System.csproj", "{939E84DE-359F-496F-B252-3F33CD2FA83A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripleJp.Model", "test.model\TripleJp.Model.csproj", "{C90BCD30-3E7D-422B-8CA9-1D5EA155CDEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripleJp.Model", "TripleJp.Model\TripleJp.Model.csproj", "{C90BCD30-3E7D-422B-8CA9-1D5EA155CDEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripleJP.Service", "test.services\TripleJP.Service.csproj", "{9287116B-3AEF-4E9B-BD57-382A44F7713E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripleJp.Repository", "TripleJp.Repository\TripleJp.Repository.csproj", "{7FBE77E6-DF46-41F4-BBAF-0EDDD0C71F4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripleJp.Repository", "test.repository\TripleJp.Repository.csproj", "{7FBE77E6-DF46-41F4-BBAF-0EDDD0C71F4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripleJP.Service", "TripleJP.Service\TripleJP.Service.csproj", "{9287116B-3AEF-4E9B-BD57-382A44F7713E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{C90BCD30-3E7D-422B-8CA9-1D5EA155CDEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C90BCD30-3E7D-422B-8CA9-1D5EA155CDEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C90BCD30-3E7D-422B-8CA9-1D5EA155CDEF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9287116B-3AEF-4E9B-BD57-382A44F7713E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9287116B-3AEF-4E9B-BD57-382A44F7713E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9287116B-3AEF-4E9B-BD57-382A44F7713E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9287116B-3AEF-4E9B-BD57-382A44F7713E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7FBE77E6-DF46-41F4-BBAF-0EDDD0C71F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7FBE77E6-DF46-41F4-BBAF-0EDDD0C71F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FBE77E6-DF46-41F4-BBAF-0EDDD0C71F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FBE77E6-DF46-41F4-BBAF-0EDDD0C71F4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9287116B-3AEF-4E9B-BD57-382A44F7713E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9287116B-3AEF-4E9B-BD57-382A44F7713E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9287116B-3AEF-4E9B-BD57-382A44F7713E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9287116B-3AEF-4E9B-BD57-382A44F7713E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -83,6 +83,7 @@ namespace TripleJP_Lending_System.Forms
             this.AverageDailyGrossSalestxt.Name = "AverageDailyGrossSalestxt";
             this.AverageDailyGrossSalestxt.Size = new System.Drawing.Size(433, 30);
             this.AverageDailyGrossSalestxt.TabIndex = 8;
+            this.AverageDailyGrossSalestxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AverageDailyGrossSalestxt_KeyPress);
             // 
             // label7
             // 
@@ -101,6 +102,7 @@ namespace TripleJP_Lending_System.Forms
             this.GrossBusinessCapitaltxt.Name = "GrossBusinessCapitaltxt";
             this.GrossBusinessCapitaltxt.Size = new System.Drawing.Size(433, 30);
             this.GrossBusinessCapitaltxt.TabIndex = 7;
+            this.GrossBusinessCapitaltxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GrossBusinessCapitaltxt_KeyPress);
             // 
             // label6
             // 
@@ -145,6 +147,7 @@ namespace TripleJP_Lending_System.Forms
             this.ContactNumbertxt.Name = "ContactNumbertxt";
             this.ContactNumbertxt.Size = new System.Drawing.Size(433, 30);
             this.ContactNumbertxt.TabIndex = 3;
+            this.ContactNumbertxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContactNumbertxt_KeyPress);
             // 
             // label4
             // 

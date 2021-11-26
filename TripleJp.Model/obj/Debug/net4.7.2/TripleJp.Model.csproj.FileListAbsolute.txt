@@ -1,7 +1,0 @@
-D:\Projects\C#\TripleJP_Lending_System\TripleJp.Model\bin\Debug\net4.7.2\TripleJp.Model.dll
-D:\Projects\C#\TripleJP_Lending_System\TripleJp.Model\bin\Debug\net4.7.2\TripleJp.Model.pdb
-D:\Projects\C#\TripleJP_Lending_System\TripleJp.Model\obj\Debug\net4.7.2\TripleJp.Model.AssemblyInfoInputs.cache
-D:\Projects\C#\TripleJP_Lending_System\TripleJp.Model\obj\Debug\net4.7.2\TripleJp.Model.AssemblyInfo.cs
-D:\Projects\C#\TripleJP_Lending_System\TripleJp.Model\obj\Debug\net4.7.2\TripleJp.Model.csproj.CoreCompileInputs.cache
-D:\Projects\C#\TripleJP_Lending_System\TripleJp.Model\obj\Debug\net4.7.2\TripleJp.Model.dll
-D:\Projects\C#\TripleJP_Lending_System\TripleJp.Model\obj\Debug\net4.7.2\TripleJp.Model.pdb

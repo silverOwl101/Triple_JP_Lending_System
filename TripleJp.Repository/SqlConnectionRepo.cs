@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace TripleJP_Lending_System.Service.Repository
+namespace TripleJP.Service.Repository
 {
     static class SqlConnectionRepo
     {       

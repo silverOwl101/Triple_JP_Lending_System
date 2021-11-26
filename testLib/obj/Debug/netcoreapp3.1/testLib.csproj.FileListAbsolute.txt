@@ -1,9 +1,0 @@
-D:\Projects\C#\TripleJP_Lending_System\testLib\bin\Debug\netcoreapp3.1\testLib.deps.json
-D:\Projects\C#\TripleJP_Lending_System\testLib\bin\Debug\netcoreapp3.1\testLib.dll
-D:\Projects\C#\TripleJP_Lending_System\testLib\bin\Debug\netcoreapp3.1\testLib.pdb
-D:\Projects\C#\TripleJP_Lending_System\testLib\obj\Debug\netcoreapp3.1\testLib.csprojAssemblyReference.cache
-D:\Projects\C#\TripleJP_Lending_System\testLib\obj\Debug\netcoreapp3.1\testLib.AssemblyInfoInputs.cache
-D:\Projects\C#\TripleJP_Lending_System\testLib\obj\Debug\netcoreapp3.1\testLib.AssemblyInfo.cs
-D:\Projects\C#\TripleJP_Lending_System\testLib\obj\Debug\netcoreapp3.1\testLib.csproj.CoreCompileInputs.cache
-D:\Projects\C#\TripleJP_Lending_System\testLib\obj\Debug\netcoreapp3.1\testLib.dll
-D:\Projects\C#\TripleJP_Lending_System\testLib\obj\Debug\netcoreapp3.1\testLib.pdb

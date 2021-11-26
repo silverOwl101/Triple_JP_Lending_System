@@ -115,11 +115,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\test.model\TripleJp.Model.csproj">
+    <ProjectReference Include="..\TripleJp.Model\TripleJp.Model.csproj">
       <Project>{c90bcd30-3e7d-422b-8ca9-1d5ea155cdef}</Project>
       <Name>TripleJp.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\test.services\TripleJP.Service.csproj">
+    <ProjectReference Include="..\TripleJP.Service\TripleJP.Service.csproj">
       <Project>{9287116b-3aef-4e9b-bd57-382a44f7713e}</Project>
       <Name>TripleJP.Service</Name>
     </ProjectReference>
