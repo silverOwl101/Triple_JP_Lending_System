@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TripleJP.Model;
-using TripleJP.Service.Repository;
+using TripleJp.Model;
+using TripleJp.Service.Repository;
 
-namespace TripleJP.Service
+namespace TripleJp.Service
 {
     public class AdministratorService
     {

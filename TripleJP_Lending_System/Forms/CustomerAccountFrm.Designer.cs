@@ -42,7 +42,7 @@ namespace TripleJP_Lending_System.Forms
             this.label20 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SearchBoxtxt = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -212,13 +212,14 @@ namespace TripleJP_Lending_System.Forms
             this.label21.TabIndex = 16;
             this.label21.Text = "Search:";
             // 
-            // textBox1
+            // SearchBoxtxt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(960, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(330, 27);
-            this.textBox1.TabIndex = 15;
+            this.SearchBoxtxt.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchBoxtxt.Location = new System.Drawing.Point(960, 49);
+            this.SearchBoxtxt.Name = "SearchBoxtxt";
+            this.SearchBoxtxt.Size = new System.Drawing.Size(330, 27);
+            this.SearchBoxtxt.TabIndex = 15;
+            this.SearchBoxtxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchBoxtxt_KeyPress);
             // 
             // dataGridView1
             // 
@@ -393,7 +394,7 @@ namespace TripleJP_Lending_System.Forms
             this.Controls.Add(this.groupBox13);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SearchBoxtxt);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
@@ -442,7 +443,7 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox SearchBoxtxt;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.Label label12;

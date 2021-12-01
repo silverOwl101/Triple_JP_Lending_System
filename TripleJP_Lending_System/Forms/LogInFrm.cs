@@ -15,12 +15,12 @@ using TripleJP_Lending_System.View;
 namespace TripleJP_Lending_System
 {
     public partial class LogInFrm : Form, ILogIn
-    {        
+    {
         public LogInFrm()
-        {            
+        {
             InitializeComponent();
-        }   
-        
+        }
+
         //Press Enter keyboard function
         private void IsEnterPressed(KeyPressEventArgs e)
         {
@@ -41,6 +41,13 @@ namespace TripleJP_Lending_System
             get { return textBox2.Text; }
             set { textBox1.Text = value; }
         }
+
+        public Form Form
+        {
+            get { return this; }
+        }
+
+        
         #endregion
 
         #region Load MainApplicationFrm if user is registered

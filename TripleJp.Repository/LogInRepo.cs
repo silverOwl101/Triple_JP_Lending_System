@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace TripleJP.Service.Repository
+namespace TripleJp.Service.Repository
 {
     public class LogInRepo
     {

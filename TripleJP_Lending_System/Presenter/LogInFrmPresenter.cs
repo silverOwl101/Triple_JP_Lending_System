@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using TripleJP_Lending_System.View;
 using System.Windows.Forms;
-using TripleJP.Service;
+using TripleJp.Service;
 using TripleJP_Lending_System.Forms;
 using System.Threading;
 
 namespace TripleJP_Lending_System.Presenter
 {
     class LogInFrmPresenter
-    {        
+    {
         ILogIn logIn;
         Thread th;
         public LogInFrmPresenter(ILogIn logIn)

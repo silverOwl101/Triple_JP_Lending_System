@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using TripleJP.Model;
+using TripleJp.Model;
 
-namespace TripleJP.Service.Repository
+namespace TripleJp.Service.Repository
 {
     public class CustomerRepo
     {
@@ -20,12 +20,9 @@ namespace TripleJP.Service.Repository
                 {
                     const string customerInfoQuery = "sp_insertCustomer";
                     MySqlCommand cmd_1 = new MySqlCommand(customerInfoQuery, con);
-                    //const string customerBusinessInfoQuery = "sp_insertCustomerBusinessInfo";
-                    //MySqlCommand cmd_2 = new MySqlCommand(customerBusinessInfoQuery, con);
 
                     con.Open();
                     cmd_1.CommandType = System.Data.CommandType.StoredProcedure;
-                    //cmd_2.CommandType = System.Data.CommandType.StoredProcedure;
                     #region Customer information parameters
                     cmd_1.Parameters.AddWithValue("@customerUid", customer.uid);
                     cmd_1.Parameters["@customerUid"].Direction = ParameterDirection.Input;
@@ -42,7 +39,7 @@ namespace TripleJP.Service.Repository
                     cmd_1.Parameters.AddWithValue("@businessUid", customerBusinessInfo.uid);
                     cmd_1.Parameters["@businessUid"].Direction = ParameterDirection.Input;
                     cmd_1.Parameters.AddWithValue("@businessId", customerBusinessInfo.id);
-                    cmd_1.Parameters["@businessId"].Direction = ParameterDirection.Input;                    
+                    cmd_1.Parameters["@businessId"].Direction = ParameterDirection.Input;
                     cmd_1.Parameters.AddWithValue("@businessName", customerBusinessInfo.businessName);
                     cmd_1.Parameters["@businessName"].Direction = ParameterDirection.Input;
                     cmd_1.Parameters.AddWithValue("@businessNature", customerBusinessInfo.businessNature);
@@ -54,23 +51,23 @@ namespace TripleJP.Service.Repository
                     cmd_1.Parameters.AddWithValue("@averageDailyGrossSales", customerBusinessInfo.averageDailyGrossSales);
                     cmd_1.Parameters["@averageDailyGrossSales"].Direction = ParameterDirection.Input;
                     #endregion
-                    cmd_1.ExecuteNonQuery();                    
+                    cmd_1.ExecuteNonQuery();
                 }
             }
             catch (Exception)
             {
                 throw;
             }
-            
+
         }
         public bool IsDuplicateUid(Guid uid)
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnectionRepo.ConnectionString))
             {
-                con.Open();                                
+                con.Open();
                 const string SqlQuery = "select uid from customer_account where uid = @uId";
                 var sqlCommand = new MySqlCommand(SqlQuery, con);
-                sqlCommand.Parameters.AddWithValue("@uId", uid);                
+                sqlCommand.Parameters.AddWithValue("@uId", uid);
                 sqlCommand.ExecuteNonQuery();
                 using (var reader = sqlCommand.ExecuteReader())
                 {
@@ -83,13 +80,13 @@ namespace TripleJP.Service.Repository
                         return false;
                     }
                 }
-            }            
+            }
         }
         public bool IsDuplicateId(string id)
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnectionRepo.ConnectionString))
             {
-                con.Open();                
+                con.Open();
                 const string SqlQuery = "select id from customer_account where id = @Id";
                 var sqlCommand = new MySqlCommand(SqlQuery, con);
                 sqlCommand.Parameters.AddWithValue("@Id", id);
@@ -111,7 +108,7 @@ namespace TripleJP.Service.Repository
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnectionRepo.ConnectionString))
             {
-                con.Open();                
+                con.Open();
                 const string SqlQuery = "select name from customer_account where name = @Name";
                 var sqlCommand = new MySqlCommand(SqlQuery, con);
                 sqlCommand.Parameters.AddWithValue("@Name", name);
@@ -172,6 +169,56 @@ namespace TripleJP.Service.Repository
                     }
                 }
             }
+        }
+
+        public List<GetCustomerList> GetList(Customer customer)
+        {
+            GetCustomerList getCustomerList;
+            List<GetCustomerList> customerList = new List<GetCustomerList>();
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(SqlConnectionRepo.ConnectionString))
+                {
+                    const string Query = "sp_getCustomer";
+                    MySqlCommand cmd = new MySqlCommand(Query, con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@customerId", customer.id);
+                    cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@customerName", customer.name);
+                    cmd.Parameters["@customerName"].Direction = ParameterDirection.Input;
+                    cmd.ExecuteNonQuery();
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            getCustomerList = new GetCustomerList();
+                            getCustomerList.id = reader["id"].ToString();
+                            getCustomerList.name = reader["name"].ToString();
+                            getCustomerList.address = 
+                                reader["address"].ToString();
+                            getCustomerList.contactNumber = 
+                                reader["contactnumber"].ToString();
+                            getCustomerList.businessName = 
+                                reader["BusinessName"].ToString();
+                            getCustomerList.businessNature = 
+                                reader["BusinessNature"].ToString();
+                            getCustomerList.businessAddress = 
+                                reader["BusinessAddress"].ToString();
+                            getCustomerList.grossBusinessCapital = 
+                                Convert.ToDecimal(reader["grossBusinessCapital"]);
+                            getCustomerList.averageDailyGrossSales = 
+                                Convert.ToDecimal(reader["averageDailyGrossSales"]);
+                            customerList.Add(getCustomerList);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return customerList;
         }
     }
 }

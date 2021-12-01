@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TripleJP.Service.Repository;
-using TripleJP.Model;
+using TripleJp.Service.Repository;
+using TripleJp.Model;
 using MySql.Data.MySqlClient;
 
-namespace TripleJP.Service
+namespace TripleJp.Service
 {
     public class CustomerService
     {
@@ -63,6 +63,18 @@ namespace TripleJP.Service
             {
                 throw;
             }                        
-        }        
+        }
+        public List<GetCustomerList> GetCustomerData(Customer customer)
+        {
+            try
+            {
+                return customerRepo.GetList(customer);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }            
+        }
     }
 }
