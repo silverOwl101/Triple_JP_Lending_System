@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TripleJP_Lending_System.Presenter;
-using TripleJP_Lending_System.View;
+using TripleJPMVPLibrary.Presenter;
+using TripleJPMVPLibrary.View;
+using TripleJP_Lending_System.Helper.Presenter;
 
 
 namespace TripleJP_Lending_System
@@ -52,10 +53,12 @@ namespace TripleJP_Lending_System
 
         #region Load MainApplicationFrm if user is registered
         private void LoginConfirmation()
-        {            
+        {
             LogInFrmPresenter logInFrmPresenter = new LogInFrmPresenter(this); // Creating instance of the presenter                                                            
                                                                                // method for User log in confirmation   
-            logInFrmPresenter.LogInVerification();            
+            LogInFrmHelper logInFrmHelper = new LogInFrmHelper(); // call helper
+            bool result= logInFrmPresenter.LogInVerification(); // LogInVerification returns bool and assign it to variable
+            logInFrmHelper.Conformation(result); // call helper class to trigger its log in conformation logic
         }
                 
         #endregion
