@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TripleJP_Lending_System.View;
-using TripleJP_Lending_System.Presenter;
+using TripleJPMVPLibrary.View;
+using TripleJPMVPLibrary.Presenter;
 
 namespace TripleJP_Lending_System.Forms
 {
