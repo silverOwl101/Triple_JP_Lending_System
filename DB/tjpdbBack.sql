@@ -116,8 +116,8 @@ CREATE TABLE `customer_business_info` (
   `name` varchar(50) NOT NULL,
   `nature` varchar(50) DEFAULT NULL,
   `address` varchar(100) NOT NULL,
-  `gross_business_capital` decimal(10,5) DEFAULT NULL,
-  `average_daily_gross_sales` decimal(10,5) DEFAULT NULL,
+  `gross_business_capital` decimal(10,2) DEFAULT NULL,
+  `average_daily_gross_sales` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`uid`),
   UNIQUE KEY `customer_uid` (`customer_uid`),
   KEY `bus_indx` (`customer_uid`),
@@ -131,7 +131,7 @@ CREATE TABLE `customer_business_info` (
 
 LOCK TABLES `customer_business_info` WRITE;
 /*!40000 ALTER TABLE `customer_business_info` DISABLE KEYS */;
-INSERT INTO `customer_business_info` VALUES ('b0f48705-28b9-434c-8e63-ec78c13bef8c','111920785-2021','0a2e3418-cd79-4e09-9196-fb15e5efb7be','asdkjh','akjh','asdkjh',123.00000,123.00000);
+INSERT INTO `customer_business_info` VALUES ('b0f48705-28b9-434c-8e63-ec78c13bef8c','111920785-2021','0a2e3418-cd79-4e09-9196-fb15e5efb7be','asdkjh','akjh','asdkjh',123.00,123.00);
 /*!40000 ALTER TABLE `customer_business_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -195,12 +195,65 @@ LOCK TABLES `penalty` WRITE;
 UNLOCK TABLES;
 
 --
+-- Temporary view structure for view `v_customerinformation`
+--
+
+DROP TABLE IF EXISTS `v_customerinformation`;
+/*!50001 DROP VIEW IF EXISTS `v_customerinformation`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `v_customerinformation` AS SELECT 
+ 1 AS `id`,
+ 1 AS `name`,
+ 1 AS `address`,
+ 1 AS `contact_number`,
+ 1 AS `BusinessName`,
+ 1 AS `BusinessNature`,
+ 1 AS `BusinessAddress`,
+ 1 AS `gross_business_capital`,
+ 1 AS `average_daily_gross_sales`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Dumping events for database 'tjpdb'
 --
 
 --
 -- Dumping routines for database 'tjpdb'
 --
+/*!50003 DROP PROCEDURE IF EXISTS `sp_getCustomer` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getCustomer`(
+	IN customerId varchar(100),
+    IN customerName varchar(100)
+)
+BEGIN
+select v_customerinformation.id as id,
+v_customerinformation.name as name,
+v_customerinformation.address as address,
+v_customerinformation.contact_number as contactnumber,
+v_customerinformation.BusinessName as BusinessName,
+v_customerinformation.BusinessNature as BusinessNature,
+v_customerinformation.BusinessAddress as BusinessAddress,
+v_customerinformation.gross_business_capital as grossbusinesscapital,
+v_customerinformation.average_daily_gross_sales as averagedailygrosssales
+from v_customerinformation where
+v_customerinformation.id like concat('%',customerId,'%') or
+v_customerinformation.name like concat('%',customerName,'%');
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `sp_insertCustomer` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -304,6 +357,24 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Final view structure for view `v_customerinformation`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_customerinformation`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_customerinformation` AS select `customeraccount`.`id` AS `id`,`customeraccount`.`name` AS `name`,`customeraccount`.`address` AS `address`,`customeraccount`.`contact_number` AS `contact_number`,`businessinfo`.`name` AS `BusinessName`,`businessinfo`.`nature` AS `BusinessNature`,`businessinfo`.`address` AS `BusinessAddress`,`businessinfo`.`gross_business_capital` AS `gross_business_capital`,`businessinfo`.`average_daily_gross_sales` AS `average_daily_gross_sales` from (`customer_account` `customeraccount` join `customer_business_info` `businessinfo` on((`customeraccount`.`uid` = `businessinfo`.`customer_uid`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -314,4 +385,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-26 23:16:49
+-- Dump completed on 2021-12-03 22:07:37
