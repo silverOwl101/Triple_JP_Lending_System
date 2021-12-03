@@ -233,6 +233,7 @@ namespace TripleJP_Lending_System.Forms
             this.dataGridView1.RowHeadersWidth = 50;
             this.dataGridView1.Size = new System.Drawing.Size(377, 493);
             this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // groupBox6
             // 

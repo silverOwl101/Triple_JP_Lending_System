@@ -58,7 +58,7 @@ namespace TripleJP_Lending_System
                                                                                // method for User log in confirmation   
             LogInFrmHelper logInFrmHelper = new LogInFrmHelper(); // call helper
             bool result= logInFrmPresenter.LogInVerification(); // LogInVerification returns bool and assign it to variable
-            logInFrmHelper.Conformation(result); // call helper class to trigger its log in conformation logic
+            logInFrmHelper.Confirmation(result); // call helper class to trigger its log in conformation logic
         }
                 
         #endregion

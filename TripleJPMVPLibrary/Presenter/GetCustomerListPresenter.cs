@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace TripleJPMVPLibrary.Presenter
 {
-    public class GetListCustomerAccountPresenter
+    public class GetCustomerListPresenter
     {
-        ISearch search;
+        ISearch search;        
         CustomerService customerService = new CustomerService();
-        Customer customer = new Customer();
-        List<GetCustomerList> getcustomer = new List<GetCustomerList>();
-        public GetListCustomerAccountPresenter(ISearch search)
+        Customer customer = new Customer();        
+        List<GetCustomerInfo> getcustomer = new List<GetCustomerInfo>();
+        public GetCustomerListPresenter(ISearch search)
         {
-            this.search = search;
+            this.search = search;            
         }
         public void CallSearch()
         {            
@@ -41,7 +41,7 @@ namespace TripleJPMVPLibrary.Presenter
                 {
                     customer.name = search.userSearch;
                 }
-                    getcustomer = customerService.GetCustomerData(customer);
+                    getcustomer = customerService.GetCustomerListData(customer);
                     if (getcustomer.Count == 0)
                     {
                         const string MessageContent = "Double check the entry or contact your I.T personnel for futher details";
@@ -51,10 +51,9 @@ namespace TripleJPMVPLibrary.Presenter
                     }
             }            
         }
-        public List<GetCustomerList> GetList()
+        public List<GetCustomerInfo> GetList()
         {
             return getcustomer;
-        }
-
+        }      
     }
 }

@@ -64,7 +64,7 @@ namespace TripleJPMVPLibrary.Service
                 throw;
             }                        
         }
-        public List<GetCustomerList> GetCustomerData(Customer customer)
+        public List<GetCustomerInfo> GetCustomerListData(Customer customer)
         {
             try
             {
@@ -75,6 +75,6 @@ namespace TripleJPMVPLibrary.Service
 
                 throw;
             }            
-        }
+        }       
     }
 }

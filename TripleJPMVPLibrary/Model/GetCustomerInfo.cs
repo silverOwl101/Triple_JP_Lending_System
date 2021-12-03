@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TripleJPMVPLibrary.Model
 {
-    public class GetCustomerList
+    public class GetCustomerInfo
     {        
         public string id { get; set; }
         public string name { get; set; }

@@ -171,15 +171,16 @@ namespace TripleJPMVPLibrary.Repository
             }
         }
 
-        public List<GetCustomerList> GetList(Customer customer)
+        public List<GetCustomerInfo> GetList(Customer customer)
         {
-            GetCustomerList getCustomerList;
-            List<GetCustomerList> customerList = new List<GetCustomerList>();
+            GetCustomerInfo getCustomerList;
+            List<GetCustomerInfo> customerList = new List<GetCustomerInfo>();
             try
             {
-                using (MySqlConnection con = new MySqlConnection(SqlConnectionRepo.ConnectionString))
+                using (MySqlConnection con =
+                    new MySqlConnection(SqlConnectionRepo.ConnectionString))
                 {
-                    const string Query = "sp_getCustomer";
+                    const string Query = "sp_getCustomerList";
                     MySqlCommand cmd = new MySqlCommand(Query, con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
@@ -192,7 +193,7 @@ namespace TripleJPMVPLibrary.Repository
                     {
                         while (reader.Read())
                         {
-                            getCustomerList = new GetCustomerList();
+                            getCustomerList = new GetCustomerInfo();
                             getCustomerList.id = reader["id"].ToString();
                             getCustomerList.name = reader["name"].ToString();
                             getCustomerList.address = 
@@ -219,6 +220,53 @@ namespace TripleJPMVPLibrary.Repository
                 throw;
             }
             return customerList;
+        }
+
+        public GetCustomerInfo GetCustomer(Customer customer)
+        {
+            GetCustomerInfo getCustomer = null;            
+            try
+            {
+                using (MySqlConnection con = 
+                    new MySqlConnection(SqlConnectionRepo.ConnectionString))
+                {
+                    const string Query = "sp_getCustomer";
+                    MySqlCommand cmd = new MySqlCommand(Query, con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@customerId", customer.id);
+                    cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;                    
+                    cmd.ExecuteNonQuery();
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            getCustomer = new GetCustomerInfo();
+                            getCustomer.id = reader["id"].ToString();
+                            getCustomer.name = reader["name"].ToString();
+                            getCustomer.address =
+                                reader["address"].ToString();
+                            getCustomer.contactNumber =
+                                reader["contactnumber"].ToString();
+                            getCustomer.businessName =
+                                reader["BusinessName"].ToString();
+                            getCustomer.businessNature =
+                                reader["BusinessNature"].ToString();
+                            getCustomer.businessAddress =
+                                reader["BusinessAddress"].ToString();
+                            getCustomer.grossBusinessCapital =
+                                Convert.ToDecimal(reader["grossBusinessCapital"]);
+                            getCustomer.averageDailyGrossSales =
+                                Convert.ToDecimal(reader["averageDailyGrossSales"]);                            
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return getCustomer;
         }
     }
 }

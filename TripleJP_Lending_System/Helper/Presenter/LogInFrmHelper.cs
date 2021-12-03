@@ -13,7 +13,7 @@ namespace TripleJP_Lending_System.Helper.Presenter
     class LogInFrmHelper
     {
         Thread th;
-        internal void Conformation(bool result)
+        internal void Confirmation(bool result)
         {
             if (result == true)
             {
