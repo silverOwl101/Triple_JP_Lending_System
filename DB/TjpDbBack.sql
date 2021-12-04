@@ -98,7 +98,7 @@ CREATE TABLE `customer_account` (
 
 LOCK TABLES `customer_account` WRITE;
 /*!40000 ALTER TABLE `customer_account` DISABLE KEYS */;
-INSERT INTO `customer_account` VALUES ('0a2e3418-cd79-4e09-9196-fb15e5efb7be','111920785-2021','john keneth','adkjahdkq','123989');
+INSERT INTO `customer_account` VALUES ('0a2e3418-cd79-4e09-9196-fb15e5efb7be','111920785-2021','john save','adkjahdkq','123989');
 /*!40000 ALTER TABLE `customer_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -357,9 +357,9 @@ DELIMITER ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_updateCustomer`(
 IN customerId varchar(100),
-IN name varchar(100),
+IN customerName varchar(100),
 IN address varchar(200),
-IN contact_number int,
+IN contactNumber char(14),
 IN businessName varchar(50),
 IN businessNature varchar(50),
 IN businessAddress varchar(100),
@@ -369,9 +369,9 @@ IN averageDailyGrossSales decimal(10,5)
 BEGIN
 	UPDATE `tjpdb`.`customer_account`
 	SET		
-	`name` = name,
+	`name` = customerName,
 	`address` = address,
-	`contact_number` = contact_number
+	`contact_number` = contactNumber
 	WHERE `id` = customerId;
 	
     UPDATE `tjpdb`.`customer_business_info`
@@ -416,4 +416,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-04  0:29:37
+-- Dump completed on 2021-12-05  1:33:18

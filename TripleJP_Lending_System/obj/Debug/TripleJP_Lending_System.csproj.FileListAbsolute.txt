@@ -27,6 +27,7 @@ D:\my-projects\fork-repo\Triple_JP_Lending_System\TripleJP_Lending_System\obj\De
 D:\my-projects\fork-repo\Triple_JP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.csproj.CopyComplete
 D:\my-projects\fork-repo\Triple_JP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.exe
 D:\my-projects\fork-repo\Triple_JP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.pdb
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.csprojAssemblyReference.cache
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.exe.config
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.exe
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.pdb
@@ -45,7 +46,6 @@ D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\K4os.Ha
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\System.Numerics.Vectors.dll
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJPMVPLibrary.pdb
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\MySql.Data.xml
-D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.csprojAssemblyReference.cache
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Forms.AddCustomerFrm.resources
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Forms.CustomerAccountFrm.resources
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.LogInFrm.resources
@@ -56,3 +56,4 @@ D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJ
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.csproj.CopyComplete
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.exe
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.pdb
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Forms.EditCustomerFrm.resources

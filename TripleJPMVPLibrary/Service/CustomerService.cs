@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using TripleJPMVPLibrary.Repository;
 using TripleJPMVPLibrary.Model;
-using MySql.Data.MySqlClient;
 
 namespace TripleJPMVPLibrary.Service
 {
@@ -75,6 +74,22 @@ namespace TripleJPMVPLibrary.Service
 
                 throw;
             }            
-        }       
+        }
+        internal string UpdateService(Customer customer,
+            CustomerBusinessInformation businessInformation)
+        {
+            string confirmationMessage = "Data updated";
+            try
+            {
+                CustomerRepo customerRepo = new CustomerRepo();
+                customerRepo.UpdateData(customer, businessInformation);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return confirmationMessage;
+        }
     }
 }

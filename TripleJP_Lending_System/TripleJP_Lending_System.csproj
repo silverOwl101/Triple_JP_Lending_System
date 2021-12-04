@@ -62,6 +62,12 @@
     <Compile Include="Forms\CustomerAccountFrm.Designer.cs">
       <DependentUpon>CustomerAccountFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditCustomerFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditCustomerFrm.Designer.cs">
+      <DependentUpon>EditCustomerFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LogInFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerAccountFrm.resx">
       <DependentUpon>CustomerAccountFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditCustomerFrm.resx">
+      <DependentUpon>EditCustomerFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogInFrm.resx">
       <DependentUpon>LogInFrm.cs</DependentUpon>
