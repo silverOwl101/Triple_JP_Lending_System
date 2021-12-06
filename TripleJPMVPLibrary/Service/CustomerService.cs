@@ -5,22 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using TripleJPMVPLibrary.Repository;
 using TripleJPMVPLibrary.Model;
+using TripleJPLibraryCore;
 
 namespace TripleJPMVPLibrary.Service
 {
     public class CustomerService
     {
-        CustomerRepo customerRepo = new CustomerRepo();
-        private string NewId()
-        {
-            Random rd = new Random();
-            uint id;
-            string getYear;
-            id = (uint)rd.Next(100000000, 200000000);
-            getYear = DateTime.Now.Year.ToString();
-            StringBuilder sb = new StringBuilder(id.ToString() +"-"+getYear,14);
-            return sb.ToString();
-        }
+        CustomerRepo customerRepo = new CustomerRepo();        
         public bool CheckDuplicateName(string name)
         {
             if (customerRepo.IsDuplicateName(name))
@@ -30,11 +21,12 @@ namespace TripleJPMVPLibrary.Service
         }
         public string PrepareData(Customer customer,
                                   CustomerBusinessInformation customerBusinessInformation)
-        {            
+        {
+            TripleJPUtility gennerateID = new TripleJPUtility();
             customer.uid = Guid.NewGuid();
-            customer.id = NewId();
+            customer.id = gennerateID.NewId();
             customerBusinessInformation.uid = Guid.NewGuid();
-            customerBusinessInformation.id = NewId();
+            customerBusinessInformation.id = gennerateID.NewId();
             #region Check id if valid
             while (customerRepo.IsDuplicateUid(customer.uid))
             {
@@ -42,11 +34,11 @@ namespace TripleJPMVPLibrary.Service
             }
             while (customerRepo.IsDuplicateId(customer.id))
             {
-                customer.id = NewId();
+                customer.id = gennerateID.NewId();
             }
             while (customerRepo.IsDuplicateBusinessId(customerBusinessInformation.id))
             {
-                customerBusinessInformation.id = NewId();
+                customerBusinessInformation.id = gennerateID.NewId();
             }
             while (customerRepo.IsDuplicateBusinessGuid(customerBusinessInformation.uid))
             {

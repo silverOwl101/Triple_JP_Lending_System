@@ -26,7 +26,53 @@ namespace TripleJP_Lending_System.Forms
             get { return customerID; }
             set { customerID = value; }
         }
-
+        #region Other Methods
+        private void InputNumbersOnly(KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '\b') // enable backspace
+            {
+                e.Handled = false;
+            }
+            if (e.KeyChar == '\u0001') // enable ctrl + a
+            {
+                e.Handled = false;
+            }
+        }
+        private void InputNumbersWithDecimalPlacesOnly(KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '\b') // enable backspace
+            {
+                e.Handled = false;
+            }
+            if (e.KeyChar == '\u0001') // enable ctrl + a
+            {
+                e.Handled = false;
+            }
+            if (e.KeyChar == '.') // enable dot for decimal places
+            {
+                e.Handled = false;
+            }
+        }
+        private void LoadCustomerInformation()
+        {
+            CustomerNametxt.Text = CustomerAccountFrm.customerInformation[1].ToString();
+            CustomerAddresstxt.Text = CustomerAccountFrm.customerInformation[2].ToString();
+            ContactNumbertxt.Text = CustomerAccountFrm.customerInformation[3].ToString();
+            BusinessNametxt.Text = CustomerAccountFrm.customerInformation[4].ToString();
+            BusinessNaturetxt.Text = CustomerAccountFrm.customerInformation[5].ToString();
+            BusinessAddresstxt.Text = CustomerAccountFrm.customerInformation[6].ToString();
+            GrossBusinessCapitaltxt.Text = CustomerAccountFrm.customerInformation[7].ToString();
+            AverageDailyGrossSalestxt.Text = CustomerAccountFrm.customerInformation[8].ToString();
+        }
+        #endregion
         #region User Inputs        
         public string CustomerName
         {
@@ -67,21 +113,8 @@ namespace TripleJP_Lending_System.Forms
         {
             get { return Convert.ToDecimal(AverageDailyGrossSalestxt.Text); }
             set { AverageDailyGrossSalestxt.Text = value.ToString(); }
-        }        
-        #endregion
-
-        private void LoadCustomerInformation()
-        {           
-            CustomerNametxt.Text =  CustomerAccountFrm.customerInformation[1].ToString();
-            CustomerAddresstxt.Text = CustomerAccountFrm.customerInformation[2].ToString();
-            ContactNumbertxt.Text = CustomerAccountFrm.customerInformation[3].ToString();
-            BusinessNametxt.Text = CustomerAccountFrm.customerInformation[4].ToString();
-            BusinessNaturetxt.Text = CustomerAccountFrm.customerInformation[5].ToString();
-            BusinessAddresstxt.Text = CustomerAccountFrm.customerInformation[6].ToString();
-            GrossBusinessCapitaltxt.Text = CustomerAccountFrm.customerInformation[7].ToString();
-            AverageDailyGrossSalestxt.Text = CustomerAccountFrm.customerInformation[8].ToString();            
         }
-
+        #endregion        
         private void button1_Click(object sender, EventArgs e)
         {            
             this.Close();
@@ -91,7 +124,21 @@ namespace TripleJP_Lending_System.Forms
         {
             CustomerEditPresenter editPresenter = new CustomerEditPresenter(this);
             editPresenter.PrepareUpdate();
+        }
 
+        private void ContactNumbertxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            InputNumbersOnly(e);
+        }
+
+        private void GrossBusinessCapitaltxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            InputNumbersWithDecimalPlacesOnly(e);
+        }
+
+        private void AverageDailyGrossSalestxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            InputNumbersWithDecimalPlacesOnly(e);
         }
     }
 }

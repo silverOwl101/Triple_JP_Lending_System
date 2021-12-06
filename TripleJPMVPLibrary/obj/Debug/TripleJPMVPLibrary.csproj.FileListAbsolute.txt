@@ -37,3 +37,5 @@ D:\Projects\C#\TripleJP_Lending_System\TripleJPMVPLibrary\obj\Debug\TripleJPMVPL
 D:\Projects\C#\TripleJP_Lending_System\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.dll
 D:\Projects\C#\TripleJP_Lending_System\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.pdb
 D:\Projects\C#\TripleJP_Lending_System\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.csprojAssemblyReference.cache
+D:\Projects\C#\TripleJP_Lending_System\TripleJPMVPLibrary\bin\Debug\TripleJPLibraryCore.dll
+D:\Projects\C#\TripleJP_Lending_System\TripleJPMVPLibrary\bin\Debug\TripleJPLibraryCore.pdb

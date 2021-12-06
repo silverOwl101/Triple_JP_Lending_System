@@ -57,3 +57,5 @@ D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJ
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.exe
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.pdb
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Forms.EditCustomerFrm.resources
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJPLibraryCore.dll
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJPLibraryCore.pdb

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using TripleJPLibraryCore;
 
 namespace TripleJPMVPLibrary.Repository
 {
@@ -11,7 +12,7 @@ namespace TripleJPMVPLibrary.Repository
     {
         public bool CheckRecord(string username, string password) // camelCase nako kay parameters ni sila then walay underscore
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnectionRepo.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {               
                 con.Open();
                 // kini kay constant mani siya so PascalCase gamiton instead nga camelCase
