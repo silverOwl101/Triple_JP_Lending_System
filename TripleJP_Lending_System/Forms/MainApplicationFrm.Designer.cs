@@ -71,6 +71,7 @@ namespace TripleJP_Lending_System.Forms
             this.loanInformationToolStripMenuItem.Name = "loanInformationToolStripMenuItem";
             this.loanInformationToolStripMenuItem.Size = new System.Drawing.Size(153, 30);
             this.loanInformationToolStripMenuItem.Text = "Loan Information";
+            this.loanInformationToolStripMenuItem.Click += new System.EventHandler(this.loanInformationToolStripMenuItem_Click);
             // 
             // postingToolStripMenuItem
             // 

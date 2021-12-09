@@ -43,11 +43,23 @@ namespace TripleJP_Lending_System.Forms
         {
             OpenCustomerAccountFrm();
         }
+        private void loanInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenLoanInformationFrm();
+        }
 
+        #region Methods for opening forms
         private void OpenCustomerAccountFrm()
         {
             CustomerAccountFrm customerAccount = new CustomerAccountFrm();
             customerAccount.ShowDialog();
         }
+        private void OpenLoanInformationFrm()
+        {
+            LoanInformationFrm loanInformation = new LoanInformationFrm();
+            loanInformation.ShowDialog();
+        }
+        #endregion
+
     }
 }
