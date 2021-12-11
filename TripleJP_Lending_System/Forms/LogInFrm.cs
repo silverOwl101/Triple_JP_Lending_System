@@ -27,7 +27,7 @@ namespace TripleJP_Lending_System
         {
             if (e.KeyChar == Convert.ToChar(Keys.Return))
             {
-                LoginConfirmation(); //Call LoginConfirmation() method if Enter key is pressed
+                LoginConfirmation(); //onLoadLoanInformationData LoginConfirmation() method if Enter key is pressed
             }
         }
 
