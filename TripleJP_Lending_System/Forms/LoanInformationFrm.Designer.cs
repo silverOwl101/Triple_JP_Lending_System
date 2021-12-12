@@ -258,7 +258,7 @@ namespace TripleJP_Lending_System.Forms
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label3);
+            this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(435, 30);
             this.groupBox4.Name = "groupBox4";
@@ -278,7 +278,7 @@ namespace TripleJP_Lending_System.Forms
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(14, 93);
             this.groupBox3.Name = "groupBox3";
@@ -500,6 +500,7 @@ namespace TripleJP_Lending_System.Forms
             this.dataGridView1.RowHeadersWidth = 50;
             this.dataGridView1.Size = new System.Drawing.Size(377, 425);
             this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // groupBox15
             // 

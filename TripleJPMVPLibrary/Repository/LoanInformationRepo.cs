@@ -46,7 +46,7 @@ namespace TripleJPMVPLibrary.Repository
                             getLoanInformation.effectiveDate = reader["EffectiveDate"].ToString();
                             getLoanInformation.interest = 
                                 Convert.ToDecimal(reader["Interest"].ToString());
-                            getLoanInformation.principalLoan = 
+                            getLoanInformation.principalLoan =
                                 Convert.ToDecimal(reader["PrincipalLoan"].ToString());
                             getLoanInformation.penalty = 
                                 Convert.ToDecimal(reader["Penalty"].ToString());
