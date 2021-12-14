@@ -82,7 +82,6 @@ namespace TripleJP_Lending_System.Forms
             AddCustomerFrm addCustomer = new AddCustomerFrm();
             addCustomer.ShowDialog();
         }
-
         private void SearchBoxtxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Return))

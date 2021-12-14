@@ -11,7 +11,7 @@ namespace TripleJPMVPLibrary.Model
         public string id { get; set; }
         public string customerID { get; set; }
         public string name { get; set; }
-        public int paymentTerm { get; set; }
+        public string paymentTerm { get; set; }
         public int duration { get; set; }
         public string effectiveDate { get; set; }
         public decimal interest { get; set; }

@@ -56,11 +56,23 @@
     <Compile Include="Forms\AddCustomerFrm.Designer.cs">
       <DependentUpon>AddCustomerFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddLoanFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddLoanFrm.Designer.cs">
+      <DependentUpon>AddLoanFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CustomerAccountFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\CustomerAccountFrm.Designer.cs">
       <DependentUpon>CustomerAccountFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerListLoanFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerListLoanFrm.Designer.cs">
+      <DependentUpon>CustomerListLoanFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EditCustomerFrm.cs">
       <SubType>Form</SubType>
@@ -92,8 +104,14 @@
     <EmbeddedResource Include="Forms\AddCustomerFrm.resx">
       <DependentUpon>AddCustomerFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddLoanFrm.resx">
+      <DependentUpon>AddLoanFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerAccountFrm.resx">
       <DependentUpon>CustomerAccountFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerListLoanFrm.resx">
+      <DependentUpon>CustomerListLoanFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditCustomerFrm.resx">
       <DependentUpon>EditCustomerFrm.cs</DependentUpon>

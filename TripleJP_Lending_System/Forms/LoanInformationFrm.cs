@@ -68,5 +68,10 @@ namespace TripleJP_Lending_System.Forms
         {
             DisplayTextInForm();
         }
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomerListLoanFrm customerListLoan = new CustomerListLoanFrm();
+            customerListLoan.ShowDialog();
+        }
     }
 }
