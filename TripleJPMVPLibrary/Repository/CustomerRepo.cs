@@ -10,9 +10,9 @@ using TripleJPLibraryCore;
 
 namespace TripleJPMVPLibrary.Repository
 {
-    public class CustomerRepo
+    internal class CustomerRepo
     {
-        public void InsertData(Customer customer,
+        internal void InsertData(Customer customer,
                                CustomerBusinessInformation customerBusinessInfo)
         {
             try
@@ -61,7 +61,7 @@ namespace TripleJPMVPLibrary.Repository
             }
 
         }
-        public bool IsDuplicateUid(Guid uid)
+        internal bool IsDuplicateUid(Guid uid)
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
@@ -83,7 +83,7 @@ namespace TripleJPMVPLibrary.Repository
                 }
             }
         }
-        public bool IsDuplicateId(string id)
+        internal bool IsDuplicateId(string id)
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
@@ -105,7 +105,7 @@ namespace TripleJPMVPLibrary.Repository
                 }
             }
         }
-        public bool IsDuplicateName(string name)
+        internal bool IsDuplicateName(string name)
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
@@ -127,7 +127,7 @@ namespace TripleJPMVPLibrary.Repository
                 }
             }
         }
-        public bool IsDuplicateBusinessId(string id)
+        internal bool IsDuplicateBusinessId(string id)
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
@@ -149,7 +149,7 @@ namespace TripleJPMVPLibrary.Repository
                 }
             }
         }
-        public bool IsDuplicateBusinessGuid(Guid uid)
+        internal bool IsDuplicateBusinessGuid(Guid uid)
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
@@ -172,7 +172,7 @@ namespace TripleJPMVPLibrary.Repository
             }
         }
 
-        public List<GetCustomerInfo> GetList(Customer customer)
+        internal List<GetCustomerInfo> GetList(Customer customer)
         {
             GetCustomerInfo getCustomerList;
             List<GetCustomerInfo> customerList = new List<GetCustomerInfo>();
@@ -223,7 +223,7 @@ namespace TripleJPMVPLibrary.Repository
             return customerList;
         }
 
-        public GetCustomerInfo GetCustomer(Customer customer)
+        internal GetCustomerInfo GetCustomer(Customer customer)
         {
             GetCustomerInfo getCustomer = null;            
             try
@@ -270,7 +270,7 @@ namespace TripleJPMVPLibrary.Repository
             return getCustomer;
         }
 
-        public void UpdateData(Customer customer,
+        internal void UpdateData(Customer customer,
                               CustomerBusinessInformation customerBusinessInfo)
         {
             try
@@ -312,6 +312,36 @@ namespace TripleJPMVPLibrary.Repository
                 throw;
             }
 
+        }
+        internal string GetGuid(Customer customer)
+        {
+            string guid = null;
+            try
+            {
+                using (MySqlConnection con =
+                    new MySqlConnection(SqlConnection.ConnectionString))
+                {
+                    const string Query = "sp_getCustomerGuid";
+                    MySqlCommand cmd = new MySqlCommand(Query, con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@customerId", customer.id);
+                    cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;
+                    cmd.ExecuteNonQuery();
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            guid = reader["uid"].ToString();                            
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return guid;
         }
     }
 }

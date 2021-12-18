@@ -48,7 +48,9 @@
     <Compile Include="Model\CustomerBusinessInformation.cs" />
     <Compile Include="Model\GetCustomerInfo.cs" />
     <Compile Include="Model\GetCustomerLoanInformation.cs" />
+    <Compile Include="Model\Loan.cs" />
     <Compile Include="Presenter\AddCustomerPresenter.cs" />
+    <Compile Include="Presenter\AddLoanPresenter.cs" />
     <Compile Include="Presenter\CustomerEditPresenter.cs" />
     <Compile Include="Presenter\GetCustomerListPresenter.cs" />
     <Compile Include="Presenter\LoanInformationPresenter.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="Service\CustomerService.cs" />
     <Compile Include="Service\LoanService.cs" />
     <Compile Include="View\IAddCustomer.cs" />
+    <Compile Include="View\IAddLoan.cs" />
     <Compile Include="View\IDataGridClick.cs" />
     <Compile Include="View\IEditCustomer.cs" />
     <Compile Include="View\ILogIn.cs" />

@@ -26,10 +26,9 @@ namespace TripleJP_Lending_System.Forms
         }
         private void onSearch()
         {
-            LoanInformationPresenter loanInformationPresenter
-                = new LoanInformationPresenter(this);
-            dataGridView1.DataSource = loanInformationPresenter.GetLoanInformationList();
-            //ClearText();
+            GetCustomerListPresenter customerList = new GetCustomerListPresenter(this);
+            customerList.CallSearch();
+            dataGridView1.DataSource = customerList.GetList();            
         }
 
         private void SearchBoxtxt_KeyPress(object sender, KeyPressEventArgs e)
@@ -49,8 +48,8 @@ namespace TripleJP_Lending_System.Forms
 
         private void onDoubleClickData()
         {
-            customerLoanInformation[0] = dataGridView1.Rows[0].Cells[1].Value.ToString();
-            customerLoanInformation[1] = dataGridView1.Rows[0].Cells[2].Value.ToString();
+            customerLoanInformation[0] = dataGridView1.Rows[0].Cells[0].Value.ToString();
+            customerLoanInformation[1] = dataGridView1.Rows[0].Cells[1].Value.ToString();
         }
     }
 }

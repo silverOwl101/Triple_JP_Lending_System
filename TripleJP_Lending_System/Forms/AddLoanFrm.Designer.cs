@@ -109,6 +109,8 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.comboBox6.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "0"});
             this.comboBox6.Location = new System.Drawing.Point(98, 21);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(223, 30);
@@ -129,6 +131,8 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.comboBox5.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "1000"});
             this.comboBox5.Location = new System.Drawing.Point(80, 21);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(223, 30);
@@ -149,6 +153,8 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.comboBox4.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "20"});
             this.comboBox4.Location = new System.Drawing.Point(98, 21);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(223, 30);
@@ -188,6 +194,9 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.comboBox2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "30",
+            "60"});
             this.comboBox2.Location = new System.Drawing.Point(98, 21);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(223, 30);
@@ -208,6 +217,8 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.comboBox1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Daily"});
             this.comboBox1.Location = new System.Drawing.Point(80, 26);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(223, 30);
@@ -279,6 +290,7 @@ namespace TripleJP_Lending_System.Forms
             this.button2.TabIndex = 23;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 

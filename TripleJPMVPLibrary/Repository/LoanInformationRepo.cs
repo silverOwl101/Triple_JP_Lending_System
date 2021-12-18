@@ -61,5 +61,49 @@ namespace TripleJPMVPLibrary.Repository
             }
             return loanList;
         }
+
+        public void InsertData(Loan loan)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+                {
+                    const string customerInfoQuery = "sp_insertLoan";
+                    MySqlCommand cmd = new MySqlCommand(customerInfoQuery, con);
+
+                    con.Open();
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    #region Customer information parameters
+                    cmd.Parameters.AddWithValue("@loaninformationUid", loan.uid);
+                    cmd.Parameters["@loaninformationUid"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@loaninformationId", loan.id);
+                    cmd.Parameters["@loaninformationId"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@customerUid", loan.customeUid);
+                    cmd.Parameters["@customerUid"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@paymentTerm", loan.paymentTerm);
+                    cmd.Parameters["@paymentTerm"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@duration", loan.duration);
+                    cmd.Parameters["@duration"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@effectiveDate", loan.effectiveDate);
+                    cmd.Parameters["@effectiveDate"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@interest", loan.interest);
+                    cmd.Parameters["@interest"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@principalLoan", loan.principalLoan);
+                    cmd.Parameters["@principalLoan"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@penalty", loan.penalty);
+                    cmd.Parameters["@penalty"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@loanstatus", loan.loanStatus);
+                    cmd.Parameters["@loanstatus"].Direction = ParameterDirection.Input;
+
+                    #endregion
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
     }
 }
