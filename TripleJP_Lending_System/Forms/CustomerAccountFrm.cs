@@ -100,15 +100,15 @@ namespace TripleJP_Lending_System.Forms
         }
         private void DisplayTextInForm()
         {
-            label1.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
-            label2.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
-            label3.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
-            label4.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
-            label5.Text = dataGridView1.Rows[0].Cells[4].Value.ToString();
-            label6.Text = dataGridView1.Rows[0].Cells[5].Value.ToString();
-            label7.Text = dataGridView1.Rows[0].Cells[6].Value.ToString();
-            label8.Text = dataGridView1.Rows[0].Cells[7].Value.ToString();
-            label9.Text = dataGridView1.Rows[0].Cells[8].Value.ToString();
+            label1.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+            label2.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
+            label3.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
+            label4.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
+            label5.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
+            label6.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
+            label7.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value.ToString();
+            label8.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value.ToString();
+            label9.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
             button2.Enabled = true;
             //label12.Text = dataGridView1.Rows[0].Cells[9].Value.ToString(); 
         }

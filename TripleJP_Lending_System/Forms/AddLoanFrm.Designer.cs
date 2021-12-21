@@ -33,7 +33,7 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -118,7 +118,7 @@ namespace TripleJP_Lending_System.Forms
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.comboBox5);
+            this.groupBox9.Controls.Add(this.textBox1);
             this.groupBox9.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.Location = new System.Drawing.Point(14, 241);
             this.groupBox9.Name = "groupBox9";
@@ -127,16 +127,13 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Principal Loan";
             // 
-            // comboBox5
+            // textBox1
             // 
-            this.comboBox5.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "1000"});
-            this.comboBox5.Location = new System.Drawing.Point(80, 21);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(223, 30);
-            this.comboBox5.TabIndex = 16;
+            this.textBox1.Location = new System.Drawing.Point(80, 26);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(223, 27);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // groupBox8
             // 
@@ -301,6 +298,7 @@ namespace TripleJP_Lending_System.Forms
             this.button1.TabIndex = 22;
             this.button1.Text = "Calculate";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox13
             // 
@@ -416,6 +414,7 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox1.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
@@ -445,7 +444,6 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.GroupBox groupBox7;
@@ -471,5 +469,6 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.GroupBox groupBox22;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

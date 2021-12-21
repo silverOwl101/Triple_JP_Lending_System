@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleJPMVPLibrary.View;
 using TripleJPMVPLibrary.Presenter;
+using TripleJPLibraryCore;
 
 namespace TripleJP_Lending_System.Forms
 {
@@ -18,6 +19,45 @@ namespace TripleJP_Lending_System.Forms
         {
             InitializeComponent();
             onLoadData();
+        }
+        private void maturityInterestDisplay()
+        {
+            decimal loan = Convert.ToDecimal(textBox1.Text);
+            Computation comp = new Computation();
+            label20.Text = String.Format("{0:N}", comp.MaturityInterest(loan));
+        }
+        private void maturityValueDisplay()
+        {
+            decimal loan = Convert.ToDecimal(textBox1.Text);
+            Computation comp = new Computation();
+            decimal interest = Convert.ToDecimal(label20.Text);
+            label18.Text = String.Format("{0:N}", comp.MaturityValue(interest, loan));
+        }
+        private void perRemittanceDisplay()
+        {
+            Computation comp = new Computation();
+            decimal _value = Convert.ToDecimal(label18.Text);
+            int duration = Convert.ToInt32(comboBox2.Text);
+            label17.Text = comp.PerRemittance(_value, duration).ToString();
+        }
+        private void InputNumbersWithDecimalPlacesOnly(KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '\b') // enable backspace
+            {
+                e.Handled = false;
+            }
+            if (e.KeyChar == '\u0001') // enable ctrl + a
+            {
+                e.Handled = false;
+            }
+            if (e.KeyChar == '.') // enable dot for decimal places
+            {
+                e.Handled = false;
+            }
         }
         #region User input                                
         public string customerID
@@ -47,8 +87,8 @@ namespace TripleJP_Lending_System.Forms
         }
         public decimal principalLoan
         {
-            get { return Convert.ToDecimal(comboBox5.Text); }
-            set { comboBox5.Text = value.ToString(); }
+            get { return Convert.ToDecimal(textBox1.Text); }
+            set { textBox1.Text = value.ToString(); }
         }
         public decimal penalty
         {
@@ -61,11 +101,21 @@ namespace TripleJP_Lending_System.Forms
             label2.Text = CustomerListLoanFrm.customerLoanInformation[0];
             label3.Text = CustomerListLoanFrm.customerLoanInformation[1];
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             AddLoanPresenter addLoanPresenter = new AddLoanPresenter(this);
             addLoanPresenter.onLoadData();
+        }
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            InputNumbersWithDecimalPlacesOnly(e);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            maturityInterestDisplay();
+            maturityValueDisplay();
+            perRemittanceDisplay();
         }
     }
 }
