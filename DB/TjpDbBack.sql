@@ -146,15 +146,16 @@ CREATE TABLE `loan_information` (
   `uid` char(36) NOT NULL,
   `id` varchar(100) DEFAULT NULL,
   `customer_uid` char(36) NOT NULL,
-  `payment_term` int NOT NULL,
+  `payment_term` varchar(50) NOT NULL,
   `duration` int NOT NULL,
   `effective_date` date NOT NULL,
-  `interest` decimal(10,0) NOT NULL,
-  `principal_loan` decimal(10,0) NOT NULL,
-  `penalty` decimal(10,0) NOT NULL,
-  `status` varchar(50) NOT NULL,
+  `interest` decimal(10,2) unsigned NOT NULL,
+  `principal_loan` decimal(10,2) unsigned NOT NULL,
+  `penalty` decimal(10,2) unsigned DEFAULT NULL,
+  `status` varchar(50) DEFAULT 'Unpaid',
   PRIMARY KEY (`uid`),
-  KEY `fk_loantocustomer_acc_idx` (`customer_uid`)
+  KEY `fk_loantocustomer_acc_idx` (`customer_uid`),
+  CONSTRAINT `fk_loancustomerid_customerid` FOREIGN KEY (`customer_uid`) REFERENCES `customer_account` (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -164,6 +165,7 @@ CREATE TABLE `loan_information` (
 
 LOCK TABLES `loan_information` WRITE;
 /*!40000 ALTER TABLE `loan_information` DISABLE KEYS */;
+INSERT INTO `loan_information` VALUES ('51f44357-5cef-11ec-bf7a-74d02be5638f','111920785-2020','0a2e3418-cd79-4e09-9196-fb15e5efb7be','daily',30,'2021-12-14',0.20,1200.00,0.00,'none'),('9677ed4a-43f1-433c-938e-80f0b39cd6df','198037871-2021','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',30,'2021-12-19',20.00,1000.00,0.00,NULL);
 /*!40000 ALTER TABLE `loan_information` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -215,6 +217,27 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Temporary view structure for view `v_loaninformation`
+--
+
+DROP TABLE IF EXISTS `v_loaninformation`;
+/*!50001 DROP VIEW IF EXISTS `v_loaninformation`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `v_loaninformation` AS SELECT 
+ 1 AS `LoanID`,
+ 1 AS `CustomerID`,
+ 1 AS `CustomerName`,
+ 1 AS `PaymentTerm`,
+ 1 AS `Duration`,
+ 1 AS `EffectiveDate`,
+ 1 AS `Interest`,
+ 1 AS `PrincipalLoan`,
+ 1 AS `Penalty`,
+ 1 AS `Status`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Dumping events for database 'tjpdb'
 --
 
@@ -246,6 +269,28 @@ v_customerinformation.gross_business_capital as grossbusinesscapital,
 v_customerinformation.average_daily_gross_sales as averagedailygrosssales
 from v_customerinformation where
 v_customerinformation.id = customerId;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_getCustomerGuid` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getCustomerGuid`(
+	IN customerId varchar(100)
+)
+BEGIN
+	select uid from customer_account
+    where id = customerId;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -285,6 +330,41 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_getLoanInformation` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getLoanInformation`(
+	IN customerId varchar(100),
+    IN customerName varchar(100)
+)
+BEGIN
+	select
+	v_loaninformation.LoanID,
+	v_loaninformation.CustomerID,
+	v_loaninformation.CustomerName,
+	v_loaninformation.PaymentTerm,
+	v_loaninformation.Duration,
+	v_loaninformation.EffectiveDate,
+	v_loaninformation.Interest,
+	v_loaninformation.PrincipalLoan,
+	v_loaninformation.Penalty,
+	v_loaninformation.Status
+	from v_loaninformation where
+	v_loaninformation.CustomerID like concat(customerId,'%') or
+	v_loaninformation.CustomerName like concat(customerName,'%');    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `sp_insertCustomer` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -296,18 +376,18 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertCustomer`(
-IN customerUid char(36),
-IN customerId varchar(100),
-IN customerName varchar(100),
-IN address varchar(200),
-IN contactNumber int,
-IN businessUid char(36), 
-IN businessId varchar(100),
-IN businessName varchar(50),
-IN businessNature varchar(50),
-IN businessAddress varchar(100),
-IN grossBusinessCapital decimal(10,5),
-IN averageDailyGrossSales decimal(10,5)
+	IN customerUid char(36),
+	IN customerId varchar(100),
+	IN customerName varchar(100),
+	IN address varchar(200),
+	IN contactNumber int,
+	IN businessUid char(36), 
+	IN businessId varchar(100),
+	IN businessName varchar(50),
+	IN businessNature varchar(50),
+	IN businessAddress varchar(100),
+	IN grossBusinessCapital decimal(10,5),
+	IN averageDailyGrossSales decimal(10,5)
 )
 BEGIN
 	INSERT INTO `tjpdb`.`customer_account`
@@ -338,6 +418,59 @@ BEGIN
     businessAddress,
     grossBusinessCapital,
     averageDailyGrossSales
+    );
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_insertLoan` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertLoan`(
+	IN loaninformationUid char(36),
+    IN loaninformationId varchar(100),
+    IN customerUid char(36),
+    IN paymentTerm varchar(50),
+    IN duration int,
+    IN effectiveDate date,
+    IN interest decimal(10,2),
+    IN principalLoan decimal(10,2),
+    IN penalty decimal(10,2),    
+    IN loanstatus varchar(50)	
+)
+BEGIN
+	INSERT INTO `tjpdb`.`loan_information`
+	(`uid`,
+	`id`,
+	`customer_uid`,
+	`payment_term`,
+	`duration`,
+	`effective_date`,
+	`interest`,
+	`principal_loan`,
+	`penalty`,
+	`status`)
+	VALUES
+	(
+		loaninformationUid,
+		loaninformationId,
+		customerUid,
+		paymentTerm,
+		duration,
+		effectiveDate,
+		interest,
+		principalLoan,
+		penalty,
+		loanstatus
     );
 END ;;
 DELIMITER ;
@@ -406,6 +539,24 @@ DELIMITER ;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `v_loaninformation`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_loaninformation`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_loaninformation` AS select `loaninformation`.`id` AS `LoanID`,`customeraccount`.`id` AS `CustomerID`,`customeraccount`.`name` AS `CustomerName`,`loaninformation`.`payment_term` AS `PaymentTerm`,`loaninformation`.`duration` AS `Duration`,`loaninformation`.`effective_date` AS `EffectiveDate`,`loaninformation`.`interest` AS `Interest`,`loaninformation`.`principal_loan` AS `PrincipalLoan`,`loaninformation`.`penalty` AS `Penalty`,`loaninformation`.`status` AS `Status` from (`customer_account` `customeraccount` left join `loan_information` `loaninformation` on((`customeraccount`.`uid` = `loaninformation`.`customer_uid`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -416,4 +567,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-05  1:33:18
+-- Dump completed on 2021-12-22  0:27:37
