@@ -40,6 +40,13 @@ namespace TripleJP_Lending_System.Forms
             int duration = Convert.ToInt32(comboBox2.Text);
             label17.Text = comp.PerRemittance(_value, duration).ToString();
         }
+        private void maturityDate()
+        {
+            Computation comp = new Computation();
+            DateTime effectiveDate = dateTimePicker1.Value;
+            int duration = Convert.ToInt32(comboBox2.Text);
+            label19.Text = comp.MaturityDate(effectiveDate, duration).ToString("MM-dd-yyyy");
+        }
         private void InputNumbersWithDecimalPlacesOnly(KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar))
@@ -116,6 +123,7 @@ namespace TripleJP_Lending_System.Forms
             maturityInterestDisplay();
             maturityValueDisplay();
             perRemittanceDisplay();
+            maturityDate();
         }
     }
 }

@@ -39,17 +39,17 @@ namespace TripleJP_Lending_System.Forms
             }
         }
 
-        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            onDoubleClickData();
-            AddLoanFrm addLoan = new AddLoanFrm();
-            addLoan.ShowDialog();
-        }
-
         private void onDoubleClickData()
         {
             customerLoanInformation[0] = dataGridView1.Rows[0].Cells[0].Value.ToString();
             customerLoanInformation[1] = dataGridView1.Rows[0].Cells[1].Value.ToString();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            onDoubleClickData();
+            AddLoanFrm addLoan = new AddLoanFrm();
+            addLoan.ShowDialog();
         }
     }
 }

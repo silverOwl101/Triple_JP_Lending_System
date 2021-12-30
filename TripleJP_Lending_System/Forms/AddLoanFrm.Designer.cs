@@ -113,7 +113,7 @@ namespace TripleJP_Lending_System.Forms
             "0"});
             this.comboBox6.Location = new System.Drawing.Point(98, 21);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(223, 30);
+            this.comboBox6.Size = new System.Drawing.Size(250, 30);
             this.comboBox6.TabIndex = 16;
             // 
             // groupBox9
@@ -131,7 +131,7 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.textBox1.Location = new System.Drawing.Point(80, 26);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 27);
+            this.textBox1.Size = new System.Drawing.Size(250, 27);
             this.textBox1.TabIndex = 0;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
@@ -154,7 +154,7 @@ namespace TripleJP_Lending_System.Forms
             "20"});
             this.comboBox4.Location = new System.Drawing.Point(98, 21);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(223, 30);
+            this.comboBox4.Size = new System.Drawing.Size(250, 30);
             this.comboBox4.TabIndex = 16;
             // 
             // groupBox7
@@ -170,10 +170,11 @@ namespace TripleJP_Lending_System.Forms
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(80, 26);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(223, 25);
+            this.dateTimePicker1.Size = new System.Drawing.Size(250, 25);
             this.dateTimePicker1.TabIndex = 15;
             // 
             // groupBox6
@@ -196,7 +197,7 @@ namespace TripleJP_Lending_System.Forms
             "60"});
             this.comboBox2.Location = new System.Drawing.Point(98, 21);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(223, 30);
+            this.comboBox2.Size = new System.Drawing.Size(250, 30);
             this.comboBox2.TabIndex = 16;
             // 
             // groupBox5
@@ -218,7 +219,7 @@ namespace TripleJP_Lending_System.Forms
             "Daily"});
             this.comboBox1.Location = new System.Drawing.Point(80, 26);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(223, 30);
+            this.comboBox1.Size = new System.Drawing.Size(250, 30);
             this.comboBox1.TabIndex = 15;
             // 
             // groupBox4

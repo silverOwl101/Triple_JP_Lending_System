@@ -42,7 +42,8 @@ namespace TripleJPMVPLibrary.Repository
                             getLoanInformation.paymentTerm = reader["PaymentTerm"].ToString();
                             getLoanInformation.duration = 
                                 Convert.ToInt32(reader["Duration"].ToString());
-                            getLoanInformation.effectiveDate = Convert.ToDateTime(reader["EffectiveDate"]).ToString("MM-dd-yyyy");
+                            getLoanInformation.effectiveDate = 
+                                Convert.ToDateTime(reader["EffectiveDate"]).ToString("MM-dd-yyyy");
                             getLoanInformation.interest = 
                                 Convert.ToDecimal(reader["Interest"].ToString());
                             getLoanInformation.principalLoan =

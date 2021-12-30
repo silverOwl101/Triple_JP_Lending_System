@@ -42,5 +42,9 @@ namespace TripleJPLibraryCore
             int perRemittance = (int)_value / duration;
             return perRemittance;
         }
+        public DateTime MaturityDate(DateTime effectivedate, double _duration)
+        {            
+            return effectivedate.AddDays(_duration);            
+        }
     }
 }
