@@ -1,0 +1,10 @@
+C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJPLibraryCore\bin\Debug\TripleJPUtilityLibrary.dll
+C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJPLibraryCore\bin\Debug\TripleJPUtilityLibrary.pdb
+C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJPLibraryCore\obj\Debug\TripleJPUtilityLibrary.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJPLibraryCore\obj\Debug\TripleJPUtilityLibrary.dll
+C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJPLibraryCore\obj\Debug\TripleJPUtilityLibrary.pdb
+C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJPUtilityLibrary\bin\Debug\TripleJPUtilityLibrary.dll
+C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJPUtilityLibrary\bin\Debug\TripleJPUtilityLibrary.pdb
+C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.dll
+C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.pdb

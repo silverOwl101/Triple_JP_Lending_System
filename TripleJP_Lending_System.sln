@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripleJP_Lending_System", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripleJPMVPLibrary", "TripleJPMVPLibrary\TripleJPMVPLibrary.csproj", "{6459C154-96CC-4C1F-A539-B29BF6C64757}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripleJPLibraryCore", "TripleJPLibraryCore\TripleJPLibraryCore.csproj", "{8EE065EC-C2F8-4B0C-94E8-90401C493353}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripleJPUtilityLibrary", "TripleJPUtilityLibrary\TripleJPUtilityLibrary.csproj", "{8EE065EC-C2F8-4B0C-94E8-90401C493353}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

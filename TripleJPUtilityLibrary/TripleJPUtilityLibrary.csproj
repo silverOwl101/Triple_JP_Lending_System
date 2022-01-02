@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6459C154-96CC-4C1F-A539-B29BF6C64757}</ProjectGuid>
+    <ProjectGuid>{8EE065EC-C2F8-4B0C-94E8-90401C493353}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TripleJPMVPLibrary</RootNamespace>
-    <AssemblyName>TripleJPMVPLibrary</AssemblyName>
+    <RootNamespace>TripleJPUtilityLibrary</RootNamespace>
+    <AssemblyName>TripleJPUtilityLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,10 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,37 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Administrator.cs" />
-    <Compile Include="Model\Customer.cs" />
-    <Compile Include="Model\CustomerBusinessInformation.cs" />
-    <Compile Include="Model\GetCustomerInfo.cs" />
-    <Compile Include="Model\GetCustomerLoanInformation.cs" />
-    <Compile Include="Model\Loan.cs" />
-    <Compile Include="Presenter\AddCustomerPresenter.cs" />
-    <Compile Include="Presenter\AddLoanPresenter.cs" />
-    <Compile Include="Presenter\CustomerEditPresenter.cs" />
-    <Compile Include="Presenter\GetCustomerListPresenter.cs" />
-    <Compile Include="Presenter\LoanInformationPresenter.cs" />
-    <Compile Include="Presenter\LogInFrmPresenter.cs" />
+    <Compile Include="Accounting\Computation.cs" />
+    <Compile Include="Generator\IdGeneratorClass.cs" />
+    <Compile Include="TripleJPUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\CustomerRepo.cs" />
-    <Compile Include="Repository\LoanInformationRepo.cs" />
-    <Compile Include="Repository\LogInRepo.cs" />
-    <Compile Include="Service\AdministratorService.cs" />
-    <Compile Include="Service\CustomerService.cs" />
-    <Compile Include="Service\LoanService.cs" />
-    <Compile Include="View\IAddCustomer.cs" />
-    <Compile Include="View\IAddLoan.cs" />
-    <Compile Include="View\IDataGridClick.cs" />
-    <Compile Include="View\IEditCustomer.cs" />
-    <Compile Include="View\ILogIn.cs" />
-    <Compile Include="View\ISearch.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TripleJPUtilityLibrary\TripleJPUtilityLibrary.csproj">
-      <Project>{8ee065ec-c2f8-4b0c-94e8-90401c493353}</Project>
-      <Name>TripleJPUtilityLibrary</Name>
-    </ProjectReference>
+    <Compile Include="DataSource\SqlConnection.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
