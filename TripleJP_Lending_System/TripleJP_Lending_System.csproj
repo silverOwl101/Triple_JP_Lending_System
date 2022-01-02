@@ -148,13 +148,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TripleJPLibraryCore\TripleJPLibraryCore.csproj">
-      <Project>{8ee065ec-c2f8-4b0c-94e8-90401c493353}</Project>
-      <Name>TripleJPLibraryCore</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TripleJPMVPLibrary\TripleJPMVPLibrary.csproj">
       <Project>{6459c154-96cc-4c1f-a539-b29bf6c64757}</Project>
       <Name>TripleJPMVPLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TripleJPUtilityLibrary\TripleJPUtilityLibrary.csproj">
+      <Project>{8ee065ec-c2f8-4b0c-94e8-90401c493353}</Project>
+      <Name>TripleJPUtilityLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

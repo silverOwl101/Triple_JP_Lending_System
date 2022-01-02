@@ -70,9 +70,9 @@
     <Compile Include="View\ISearch.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TripleJPLibraryCore\TripleJPLibraryCore.csproj">
+    <ProjectReference Include="..\TripleJPUtilityLibrary\TripleJPUtilityLibrary.csproj">
       <Project>{8ee065ec-c2f8-4b0c-94e8-90401c493353}</Project>
-      <Name>TripleJPLibraryCore</Name>
+      <Name>TripleJPUtilityLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
