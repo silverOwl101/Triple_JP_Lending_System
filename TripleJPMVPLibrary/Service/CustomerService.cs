@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TripleJPMVPLibrary.Repository;
 using TripleJPMVPLibrary.Model;
-using TripleJPUtilityLibrary.Generator;
+using TripleJPLibraryCore;
 
 namespace TripleJPMVPLibrary.Service
 {
@@ -22,11 +22,11 @@ namespace TripleJPMVPLibrary.Service
         public string PrepareData(Customer customer,
                                   CustomerBusinessInformation customerBusinessInformation)
         {
-            IDGeneratorClass idGeneratorClass = new IDGeneratorClass();
+            TripleJPUtility gennerateID = new TripleJPUtility();
             customer.uid = Guid.NewGuid();
-            customer.id = idGeneratorClass.NewId();
+            customer.id = gennerateID.NewId();
             customerBusinessInformation.uid = Guid.NewGuid();
-            customerBusinessInformation.id = idGeneratorClass.NewId();
+            customerBusinessInformation.id = gennerateID.NewId();
             #region Check id if valid
             while (customerRepo.IsDuplicateUid(customer.uid))
             {
@@ -34,11 +34,11 @@ namespace TripleJPMVPLibrary.Service
             }
             while (customerRepo.IsDuplicateId(customer.id))
             {
-                customer.id = idGeneratorClass.NewId();
+                customer.id = gennerateID.NewId();
             }
             while (customerRepo.IsDuplicateBusinessId(customerBusinessInformation.id))
             {
-                customerBusinessInformation.id = idGeneratorClass.NewId();
+                customerBusinessInformation.id = gennerateID.NewId();
             }
             while (customerRepo.IsDuplicateBusinessGuid(customerBusinessInformation.uid))
             {

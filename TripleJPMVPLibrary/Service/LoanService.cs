@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TripleJPMVPLibrary.Repository;
 using TripleJPMVPLibrary.Model;
-using TripleJPUtilityLibrary.Generator;
+using TripleJPLibraryCore;
 
 namespace TripleJPMVPLibrary.Service
 {
@@ -25,12 +25,12 @@ namespace TripleJPMVPLibrary.Service
         }
         internal string onCallInsertLoan(Loan loan,Customer customer)
         {
-            IDGeneratorClass idGeneratorClass = new IDGeneratorClass();
+            TripleJPUtility util = new TripleJPUtility();
             try
             {
                 CustomerRepo customerRepo = new CustomerRepo();
                 loan.uid = Guid.NewGuid(); // load Guid
-                loan.id = idGeneratorClass.NewId(); // load new id
+                loan.id = util.NewId(); // load new id
                 loan.customeUid = customerRepo.GetGuid(customer);
                 LoanInformationRepo loanRepo = new LoanInformationRepo();
                 loanRepo.InsertData(loan);

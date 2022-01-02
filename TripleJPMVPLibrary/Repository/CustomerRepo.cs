@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using TripleJPMVPLibrary.Model;
-using TripleJPUtilityLibrary;
+using TripleJPLibraryCore;
 
 namespace TripleJPMVPLibrary.Repository
 {
