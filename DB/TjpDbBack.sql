@@ -56,7 +56,7 @@ CREATE TABLE `collection` (
   `id` varchar(100) NOT NULL,
   `customer_uid` char(36) NOT NULL,
   `loan_information_uid` char(36) NOT NULL,
-  `return` decimal(10,0) NOT NULL,
+  `returned` decimal(10,0) NOT NULL,
   `interest` decimal(10,0) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`uid`),
@@ -70,6 +70,7 @@ CREATE TABLE `collection` (
 
 LOCK TABLES `collection` WRITE;
 /*!40000 ALTER TABLE `collection` DISABLE KEYS */;
+INSERT INTO `collection` VALUES ('91fd39a2-7876-11ec-90ae-74d02be5638f','1231135-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','9677ed4a-43f1-433c-938e-80f0b39cd6df',10,1,'2022-01-18'),('9359e267-7876-11ec-90ae-74d02be5638f','1231135-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','9677ed4a-43f1-433c-938e-80f0b39cd6df',10,1,'2022-01-18'),('93e91239-7876-11ec-90ae-74d02be5638f','1231135-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','9677ed4a-43f1-433c-938e-80f0b39cd6df',10,1,'2022-01-18'),('95a53607-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,1,'2022-01-16'),('ad6d8d08-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,1,'2022-01-16'),('ae1b5a97-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,1,'2022-01-16'),('af1faddb-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,1,'2022-01-16'),('afc163ef-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,1,'2022-01-16'),('b02c864d-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,1,'2022-01-16');
 /*!40000 ALTER TABLE `collection` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -234,7 +235,8 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `Interest`,
  1 AS `PrincipalLoan`,
  1 AS `Penalty`,
- 1 AS `Status`*/;
+ 1 AS `Status`,
+ 1 AS `Returned`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -355,10 +357,34 @@ BEGIN
 	v_loaninformation.Interest,
 	v_loaninformation.PrincipalLoan,
 	v_loaninformation.Penalty,
-	v_loaninformation.Status
+	v_loaninformation.Status,
+    v_loaninformation.Returned
 	from v_loaninformation where
 	v_loaninformation.CustomerID like concat(customerId,'%') or
 	v_loaninformation.CustomerName like concat(customerName,'%');    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_getTotalCollection` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getTotalCollection`(
+	IN customerUid char(36)
+)
+BEGIN
+	select c.id,c.name,sum(cl.returned) as totalCollection from collection as cl
+	inner join customer_account as c on cl.customer_uid = c.uid
+    where cl.customer_uid = customerUid;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -553,7 +579,7 @@ DELIMITER ;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `v_loaninformation` AS select `loaninformation`.`id` AS `LoanID`,`customeraccount`.`id` AS `CustomerID`,`customeraccount`.`name` AS `CustomerName`,`loaninformation`.`payment_term` AS `PaymentTerm`,`loaninformation`.`duration` AS `Duration`,`loaninformation`.`effective_date` AS `EffectiveDate`,`loaninformation`.`interest` AS `Interest`,`loaninformation`.`principal_loan` AS `PrincipalLoan`,`loaninformation`.`penalty` AS `Penalty`,`loaninformation`.`status` AS `Status` from (`customer_account` `customeraccount` left join `loan_information` `loaninformation` on((`customeraccount`.`uid` = `loaninformation`.`customer_uid`))) */;
+/*!50001 VIEW `v_loaninformation` AS select `loan`.`id` AS `LoanID`,`customer`.`id` AS `CustomerID`,`customer`.`name` AS `CustomerName`,`loan`.`payment_term` AS `PaymentTerm`,`loan`.`duration` AS `Duration`,`loan`.`effective_date` AS `EffectiveDate`,`loan`.`interest` AS `Interest`,`loan`.`principal_loan` AS `PrincipalLoan`,`loan`.`penalty` AS `Penalty`,`loan`.`status` AS `Status`,sum(`collect`.`returned`) AS `Returned` from ((`loan_information` `loan` left join `collection` `collect` on((`loan`.`uid` = `collect`.`loan_information_uid`))) left join `customer_account` `customer` on((`loan`.`customer_uid` = `customer`.`uid`))) group by `collect`.`id` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -567,4 +593,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-22  0:27:37
+-- Dump completed on 2022-01-19  0:23:58

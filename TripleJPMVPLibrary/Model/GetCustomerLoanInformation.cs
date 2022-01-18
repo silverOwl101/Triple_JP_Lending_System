@@ -18,5 +18,6 @@ namespace TripleJPMVPLibrary.Model
         public decimal principalLoan { get; set; }
         public decimal penalty { get; set; }
         public string status { get; set; }
+        public string returned { get; set; }
     }
 }

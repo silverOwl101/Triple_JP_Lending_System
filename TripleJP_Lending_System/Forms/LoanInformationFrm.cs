@@ -61,6 +61,8 @@ namespace TripleJP_Lending_System.Forms
                 dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
             label10.Text = 
                 dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[9].Value.ToString();
+            label12.Text =
+                dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value.ToString();
         }
         private void ClearText()
         {
@@ -88,6 +90,7 @@ namespace TripleJP_Lending_System.Forms
             maturityValueDisplay();
             perRemittanceDisplay();
             maturityDate();
+            totalAmountRemittance();
         }
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -120,6 +123,11 @@ namespace TripleJP_Lending_System.Forms
             DateTime effectiveDate = Convert.ToDateTime(label6.Text);
             int duration = Convert.ToInt32(label5.Text);
             label19.Text = comp.MaturityDate(effectiveDate,duration).ToString("MM-dd-yyyy");
+        }
+        private void totalAmountRemittance()
+        {
+            decimal result = Convert.ToDecimal(label18.Text) - Convert.ToDecimal(label12.Text);
+            label11.Text = result.ToString();
         }
     }
 }
