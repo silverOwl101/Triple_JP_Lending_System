@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleJPMVPLibrary.View;
 using TripleJPMVPLibrary.Presenter;
-using TripleJPLibraryCore;
+using TripleJPUtilityLibrary.Accounting;
 
 namespace TripleJP_Lending_System.Forms
 {
