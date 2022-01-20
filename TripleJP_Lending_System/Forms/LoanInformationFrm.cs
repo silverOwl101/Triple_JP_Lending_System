@@ -25,7 +25,7 @@ namespace TripleJP_Lending_System.Forms
             get { return SearchBoxtxt.Text; }
             set { SearchBoxtxt.Text = value; }
         }
-        private void onSearch()
+        private void OnSearch()
         {
             LoanInformationPresenter loanInformationPresenter
                 = new LoanInformationPresenter(this);
@@ -36,7 +36,7 @@ namespace TripleJP_Lending_System.Forms
         {
             if (e.KeyChar == Convert.ToChar(Keys.Return))
             {
-                onSearch();                
+                OnSearch();                
             }
         }
         private void DisplayTextInForm()
@@ -55,8 +55,8 @@ namespace TripleJP_Lending_System.Forms
                 dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
             label7.Text = 
                 dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value.ToString();
-            label8.Text = 
-                dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value.ToString();
+            label8.Text = String.Format("{0:N}",
+                dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value);
             label9.Text = 
                 dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
             label10.Text = 
@@ -126,8 +126,21 @@ namespace TripleJP_Lending_System.Forms
         }
         private void totalAmountRemittance()
         {
-            decimal result = Convert.ToDecimal(label18.Text) - Convert.ToDecimal(label12.Text);
-            label11.Text = result.ToString();
+            decimal result;                       
+            if (string.IsNullOrEmpty(label12.Text))
+            {
+                label12.Text = "0";
+            }
+            if (string.IsNullOrEmpty(label11.Text))
+            {
+                label11.Text = "0";
+            }
+            else
+            {
+                result = Convert.ToDecimal(label18.Text) - Convert.ToDecimal(label12.Text);                
+                label11.Text = String.Format("{0:N}", result);
+            }
+            
         }
     }
 }
