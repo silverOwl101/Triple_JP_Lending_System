@@ -8,12 +8,12 @@ namespace TripleJPMVPLibrary.Model
 {
     public class CustomerBusinessInformation
     {
-        public Guid uid { get; set; }
-        public string id { get; set; }
-        public string businessName { get; set; }
-        public string businessNature { get; set; }
-        public string businessAddress { get; set; }
-        public decimal grossBusinessCapital { get; set; }
-        public decimal averageDailyGrossSales { get; set; }
+        public Guid Uid { get; set; }
+        public string Id { get; set; }
+        public string BusinessName { get; set; }
+        public string BusinessNature { get; set; }
+        public string BusinessAddress { get; set; }
+        public decimal GrossBusinessCapital { get; set; }
+        public decimal AverageDailyGrossSales { get; set; }
     }
 }

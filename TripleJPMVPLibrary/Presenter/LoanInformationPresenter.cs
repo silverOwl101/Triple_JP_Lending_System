@@ -21,11 +21,11 @@ namespace TripleJPMVPLibrary.Presenter
         public LoanInformationPresenter(ISearch search)
         {
             this.search = search;
-            onLoadLoanInformationData();
+            OnLoadLoanInformationData();
         }
-        private void onLoadLoanInformationData()
+        private void OnLoadLoanInformationData()
         {
-            if (String.IsNullOrEmpty(search.userSearch))
+            if (String.IsNullOrEmpty(search.UserSearch))
             {
                 const string MessageContent = "Enter your credentials";
                 const string MessageCaption = "Record not found";
@@ -34,16 +34,16 @@ namespace TripleJPMVPLibrary.Presenter
             }
             else
             {
-                Regex rgx = new Regex(@"^\d{9}-\d{4}$"); // match the format of customer id
-                if (rgx.IsMatch(search.userSearch))
+                Regex rgx = new Regex(@"^\d{9}-\d{4}$"); // match the format of customer Id
+                if (rgx.IsMatch(search.UserSearch))
                 {
-                    customer.id = search.userSearch;
+                    customer.Id = search.UserSearch;
                 }
                 else
                 {
-                    customer.name = search.userSearch;
+                    customer.Name = search.UserSearch;
                 }
-                getLoanInformation = loanService.onCallGetLoanInformation(customer);
+                getLoanInformation = loanService.OnCallGetLoanInformation(customer);
                 if (getLoanInformation.Count == 0)
                 {
                     const string MessageContent = "Double check the entry or contact your I.T personnel for futher details";

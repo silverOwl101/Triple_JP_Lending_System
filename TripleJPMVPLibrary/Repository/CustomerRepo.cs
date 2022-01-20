@@ -25,32 +25,32 @@ namespace TripleJPMVPLibrary.Repository
                     con.Open();
                     cmd_1.CommandType = System.Data.CommandType.StoredProcedure;
                     #region Customer information parameters
-                    cmd_1.Parameters.AddWithValue("@customerUid", customer.uid);
+                    cmd_1.Parameters.AddWithValue("@customerUid", customer.Uid);
                     cmd_1.Parameters["@customerUid"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@customerId", customer.id);
+                    cmd_1.Parameters.AddWithValue("@customerId", customer.Id);
                     cmd_1.Parameters["@customerId"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@customerName", customer.name);
+                    cmd_1.Parameters.AddWithValue("@customerName", customer.Name);
                     cmd_1.Parameters["@customerName"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@address", customer.address);
-                    cmd_1.Parameters["@address"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@contactNumber", customer.contactNumber);
-                    cmd_1.Parameters["@contactNumber"].Direction = ParameterDirection.Input;
+                    cmd_1.Parameters.AddWithValue("@Address", customer.Address);
+                    cmd_1.Parameters["@Address"].Direction = ParameterDirection.Input;
+                    cmd_1.Parameters.AddWithValue("@ContactNumber", customer.ContactNumber);
+                    cmd_1.Parameters["@ContactNumber"].Direction = ParameterDirection.Input;
                     #endregion
                     #region Customer business information parameters
-                    cmd_1.Parameters.AddWithValue("@businessUid", customerBusinessInfo.uid);
+                    cmd_1.Parameters.AddWithValue("@businessUid", customerBusinessInfo.Uid);
                     cmd_1.Parameters["@businessUid"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@businessId", customerBusinessInfo.id);
+                    cmd_1.Parameters.AddWithValue("@businessId", customerBusinessInfo.Id);
                     cmd_1.Parameters["@businessId"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@businessName", customerBusinessInfo.businessName);
-                    cmd_1.Parameters["@businessName"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@businessNature", customerBusinessInfo.businessNature);
-                    cmd_1.Parameters["@businessNature"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@businessAddress", customerBusinessInfo.businessAddress);
-                    cmd_1.Parameters["@businessAddress"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@grossBusinessCapital", customerBusinessInfo.grossBusinessCapital);
-                    cmd_1.Parameters["@grossBusinessCapital"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@averageDailyGrossSales", customerBusinessInfo.averageDailyGrossSales);
-                    cmd_1.Parameters["@averageDailyGrossSales"].Direction = ParameterDirection.Input;
+                    cmd_1.Parameters.AddWithValue("@BusinessName", customerBusinessInfo.BusinessName);
+                    cmd_1.Parameters["@BusinessName"].Direction = ParameterDirection.Input;
+                    cmd_1.Parameters.AddWithValue("@BusinessNature", customerBusinessInfo.BusinessNature);
+                    cmd_1.Parameters["@BusinessNature"].Direction = ParameterDirection.Input;
+                    cmd_1.Parameters.AddWithValue("@BusinessAddress", customerBusinessInfo.BusinessAddress);
+                    cmd_1.Parameters["@BusinessAddress"].Direction = ParameterDirection.Input;
+                    cmd_1.Parameters.AddWithValue("@GrossBusinessCapital", customerBusinessInfo.GrossBusinessCapital);
+                    cmd_1.Parameters["@GrossBusinessCapital"].Direction = ParameterDirection.Input;
+                    cmd_1.Parameters.AddWithValue("@AverageDailyGrossSales", customerBusinessInfo.AverageDailyGrossSales);
+                    cmd_1.Parameters["@AverageDailyGrossSales"].Direction = ParameterDirection.Input;
                     #endregion
                     cmd_1.ExecuteNonQuery();
                 }
@@ -66,7 +66,7 @@ namespace TripleJPMVPLibrary.Repository
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 con.Open();
-                const string SqlQuery = "select uid from customer_account where uid = @uId";
+                const string SqlQuery = "select Uid from customer_account where Uid = @uId";
                 var sqlCommand = new MySqlCommand(SqlQuery, con);
                 sqlCommand.Parameters.AddWithValue("@uId", uid);
                 sqlCommand.ExecuteNonQuery();
@@ -88,7 +88,7 @@ namespace TripleJPMVPLibrary.Repository
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 con.Open();
-                const string SqlQuery = "select id from customer_account where id = @Id";
+                const string SqlQuery = "select Id from customer_account where Id = @Id";
                 var sqlCommand = new MySqlCommand(SqlQuery, con);
                 sqlCommand.Parameters.AddWithValue("@Id", id);
                 sqlCommand.ExecuteNonQuery();
@@ -110,7 +110,7 @@ namespace TripleJPMVPLibrary.Repository
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 con.Open();
-                const string SqlQuery = "select name from customer_account where name = @Name";
+                const string SqlQuery = "select Name from customer_account where Name = @Name";
                 var sqlCommand = new MySqlCommand(SqlQuery, con);
                 sqlCommand.Parameters.AddWithValue("@Name", name);
                 sqlCommand.ExecuteNonQuery();
@@ -132,9 +132,9 @@ namespace TripleJPMVPLibrary.Repository
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 con.Open();
-                const string SqlQuery = "select id from customer_business_info where id = @id";
+                const string SqlQuery = "select Id from customer_business_info where Id = @Id";
                 var sqlCommand = new MySqlCommand(SqlQuery, con);
-                sqlCommand.Parameters.AddWithValue("@id", id);
+                sqlCommand.Parameters.AddWithValue("@Id", id);
                 sqlCommand.ExecuteNonQuery();
                 using (var reader = sqlCommand.ExecuteReader())
                 {
@@ -154,9 +154,9 @@ namespace TripleJPMVPLibrary.Repository
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 con.Open();
-                const string SqlQuery = "select uid from customer_business_info where uid = @uid";
+                const string SqlQuery = "select Uid from customer_business_info where Uid = @Uid";
                 var sqlCommand = new MySqlCommand(SqlQuery, con);
-                sqlCommand.Parameters.AddWithValue("@uid", uid);
+                sqlCommand.Parameters.AddWithValue("@Uid", uid);
                 sqlCommand.ExecuteNonQuery();
                 using (var reader = sqlCommand.ExecuteReader())
                 {
@@ -171,7 +171,6 @@ namespace TripleJPMVPLibrary.Repository
                 }
             }
         }
-
         internal List<GetCustomerInfo> GetList(Customer customer)
         {
             GetCustomerInfo getCustomerList;
@@ -185,9 +184,9 @@ namespace TripleJPMVPLibrary.Repository
                     MySqlCommand cmd = new MySqlCommand(Query, con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@customerId", customer.id);
+                    cmd.Parameters.AddWithValue("@customerId", customer.Id);
                     cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;
-                    cmd.Parameters.AddWithValue("@customerName", customer.name);
+                    cmd.Parameters.AddWithValue("@customerName", customer.Name);
                     cmd.Parameters["@customerName"].Direction = ParameterDirection.Input;
                     cmd.ExecuteNonQuery();
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -195,22 +194,22 @@ namespace TripleJPMVPLibrary.Repository
                         while (reader.Read())
                         {
                             getCustomerList = new GetCustomerInfo();
-                            getCustomerList.id = reader["id"].ToString();
-                            getCustomerList.name = reader["name"].ToString();
-                            getCustomerList.address = 
-                                reader["address"].ToString();
-                            getCustomerList.contactNumber = 
+                            getCustomerList.Id = reader["Id"].ToString();
+                            getCustomerList.Name = reader["Name"].ToString();
+                            getCustomerList.Address = 
+                                reader["Address"].ToString();
+                            getCustomerList.ContactNumber = 
                                 reader["contactnumber"].ToString();
-                            getCustomerList.businessName = 
+                            getCustomerList.BusinessName = 
                                 reader["BusinessName"].ToString();
-                            getCustomerList.businessNature = 
+                            getCustomerList.BusinessNature = 
                                 reader["BusinessNature"].ToString();
-                            getCustomerList.businessAddress = 
+                            getCustomerList.BusinessAddress = 
                                 reader["BusinessAddress"].ToString();
-                            getCustomerList.grossBusinessCapital = 
-                                Convert.ToDecimal(reader["grossBusinessCapital"]);
-                            getCustomerList.averageDailyGrossSales = 
-                                Convert.ToDecimal(reader["averageDailyGrossSales"]);
+                            getCustomerList.GrossBusinessCapital = 
+                                Convert.ToDecimal(reader["GrossBusinessCapital"]);
+                            getCustomerList.AverageDailyGrossSales = 
+                                Convert.ToDecimal(reader["AverageDailyGrossSales"]);
                             customerList.Add(getCustomerList);
                         }
                     }
@@ -222,7 +221,6 @@ namespace TripleJPMVPLibrary.Repository
             }
             return customerList;
         }
-
         internal GetCustomerInfo GetCustomer(Customer customer)
         {
             GetCustomerInfo getCustomer = null;            
@@ -235,7 +233,7 @@ namespace TripleJPMVPLibrary.Repository
                     MySqlCommand cmd = new MySqlCommand(Query, con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@customerId", customer.id);
+                    cmd.Parameters.AddWithValue("@customerId", customer.Id);
                     cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;                    
                     cmd.ExecuteNonQuery();
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -243,22 +241,22 @@ namespace TripleJPMVPLibrary.Repository
                         while (reader.Read())
                         {
                             getCustomer = new GetCustomerInfo();
-                            getCustomer.id = reader["id"].ToString();
-                            getCustomer.name = reader["name"].ToString();
-                            getCustomer.address =
-                                reader["address"].ToString();
-                            getCustomer.contactNumber =
+                            getCustomer.Id = reader["Id"].ToString();
+                            getCustomer.Name = reader["Name"].ToString();
+                            getCustomer.Address =
+                                reader["Address"].ToString();
+                            getCustomer.ContactNumber =
                                 reader["contactnumber"].ToString();
-                            getCustomer.businessName =
+                            getCustomer.BusinessName =
                                 reader["BusinessName"].ToString();
-                            getCustomer.businessNature =
+                            getCustomer.BusinessNature =
                                 reader["BusinessNature"].ToString();
-                            getCustomer.businessAddress =
+                            getCustomer.BusinessAddress =
                                 reader["BusinessAddress"].ToString();
-                            getCustomer.grossBusinessCapital =
-                                Convert.ToDecimal(reader["grossBusinessCapital"]);
-                            getCustomer.averageDailyGrossSales =
-                                Convert.ToDecimal(reader["averageDailyGrossSales"]);                            
+                            getCustomer.GrossBusinessCapital =
+                                Convert.ToDecimal(reader["GrossBusinessCapital"]);
+                            getCustomer.AverageDailyGrossSales =
+                                Convert.ToDecimal(reader["AverageDailyGrossSales"]);                            
                         }
                     }
                 }
@@ -269,7 +267,6 @@ namespace TripleJPMVPLibrary.Repository
             }
             return getCustomer;
         }
-
         internal void UpdateData(Customer customer,
                               CustomerBusinessInformation customerBusinessInfo)
         {
@@ -283,26 +280,26 @@ namespace TripleJPMVPLibrary.Repository
                     con.Open();
                     cmd_1.CommandType = System.Data.CommandType.StoredProcedure;
                     #region Customer information parameters                    
-                    cmd_1.Parameters.AddWithValue("@customerId", customer.id);
+                    cmd_1.Parameters.AddWithValue("@customerId", customer.Id);
                     cmd_1.Parameters["@customerId"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@customerName", customer.name);
+                    cmd_1.Parameters.AddWithValue("@customerName", customer.Name);
                     cmd_1.Parameters["@customerName"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@address", customer.address);
-                    cmd_1.Parameters["@address"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@contactNumber", customer.contactNumber);
-                    cmd_1.Parameters["@contactNumber"].Direction = ParameterDirection.Input;
+                    cmd_1.Parameters.AddWithValue("@Address", customer.Address);
+                    cmd_1.Parameters["@Address"].Direction = ParameterDirection.Input;
+                    cmd_1.Parameters.AddWithValue("@ContactNumber", customer.ContactNumber);
+                    cmd_1.Parameters["@ContactNumber"].Direction = ParameterDirection.Input;
                     #endregion
                     #region Customer business information parameters                                        
-                    cmd_1.Parameters.AddWithValue("@businessName", customerBusinessInfo.businessName);
-                    cmd_1.Parameters["@businessName"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@businessNature", customerBusinessInfo.businessNature);
-                    cmd_1.Parameters["@businessNature"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@businessAddress", customerBusinessInfo.businessAddress);
-                    cmd_1.Parameters["@businessAddress"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@grossBusinessCapital", customerBusinessInfo.grossBusinessCapital);
-                    cmd_1.Parameters["@grossBusinessCapital"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@averageDailyGrossSales", customerBusinessInfo.averageDailyGrossSales);
-                    cmd_1.Parameters["@averageDailyGrossSales"].Direction = ParameterDirection.Input;
+                    cmd_1.Parameters.AddWithValue("@BusinessName", customerBusinessInfo.BusinessName);
+                    cmd_1.Parameters["@BusinessName"].Direction = ParameterDirection.Input;
+                    cmd_1.Parameters.AddWithValue("@BusinessNature", customerBusinessInfo.BusinessNature);
+                    cmd_1.Parameters["@BusinessNature"].Direction = ParameterDirection.Input;
+                    cmd_1.Parameters.AddWithValue("@BusinessAddress", customerBusinessInfo.BusinessAddress);
+                    cmd_1.Parameters["@BusinessAddress"].Direction = ParameterDirection.Input;
+                    cmd_1.Parameters.AddWithValue("@GrossBusinessCapital", customerBusinessInfo.GrossBusinessCapital);
+                    cmd_1.Parameters["@GrossBusinessCapital"].Direction = ParameterDirection.Input;
+                    cmd_1.Parameters.AddWithValue("@AverageDailyGrossSales", customerBusinessInfo.AverageDailyGrossSales);
+                    cmd_1.Parameters["@AverageDailyGrossSales"].Direction = ParameterDirection.Input;
                     #endregion
                     cmd_1.ExecuteNonQuery();
                 }
@@ -325,14 +322,14 @@ namespace TripleJPMVPLibrary.Repository
                     MySqlCommand cmd = new MySqlCommand(Query, con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@customerId", customer.id);
+                    cmd.Parameters.AddWithValue("@customerId", customer.Id);
                     cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;
                     cmd.ExecuteNonQuery();
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            guid = reader["uid"].ToString();                            
+                            guid = reader["Uid"].ToString();                            
                         }
                     }
                 }

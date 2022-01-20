@@ -11,7 +11,7 @@ namespace TripleJP_Lending_System
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param Name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -55,7 +55,7 @@ namespace TripleJP_Lending_System
             this.groupBox1.Size = new System.Drawing.Size(328, 63);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "User name";
+            this.groupBox1.Text = "User Name";
             // 
             // textBox2
             // 

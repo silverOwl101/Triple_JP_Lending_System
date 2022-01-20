@@ -8,12 +8,12 @@ namespace TripleJPMVPLibrary.View
 {
     public interface IAddLoan
     {
-        string customerID { get; set; }
-        string paymentTerm { get; set; }
-        int duration { get; set; }
-        DateTime effectiveDate { get; set; }
-        decimal interest { get; set; }
-        decimal principalLoan { get; set; }
-        decimal penalty { get; set; }         
+        string CustomerID { get; set; }
+        string PaymentTerm { get; set; }
+        int Duration { get; set; }
+        DateTime EffectiveDate { get; set; }
+        decimal Interest { get; set; }
+        decimal PrincipalLoan { get; set; }
+        decimal Penalty { get; set; }         
     }
 }

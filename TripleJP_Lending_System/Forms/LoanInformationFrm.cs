@@ -20,7 +20,7 @@ namespace TripleJP_Lending_System.Forms
             InitializeComponent();
             ClearText();            
         }
-        public string userSearch 
+        public string UserSearch 
         {
             get { return SearchBoxtxt.Text; }
             set { SearchBoxtxt.Text = value; }

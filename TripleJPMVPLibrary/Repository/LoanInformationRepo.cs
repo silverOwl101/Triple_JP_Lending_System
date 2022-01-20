@@ -26,9 +26,9 @@ namespace TripleJPMVPLibrary.Repository
                     MySqlCommand cmd = new MySqlCommand(Query, con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@customerId", customer.id);
+                    cmd.Parameters.AddWithValue("@customerId", customer.Id);
                     cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;
-                    cmd.Parameters.AddWithValue("@customerName", customer.name);
+                    cmd.Parameters.AddWithValue("@customerName", customer.Name);
                     cmd.Parameters["@customerName"].Direction = ParameterDirection.Input;
                     cmd.ExecuteNonQuery();
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -36,22 +36,22 @@ namespace TripleJPMVPLibrary.Repository
                         while (reader.Read())
                         {
                             getLoanInformation = new GetCustomerLoanInformation();                            
-                            getLoanInformation.id = reader["LoanID"].ToString();
-                            getLoanInformation.customerID = reader["CustomerID"].ToString();
-                            getLoanInformation.name = reader["CustomerName"].ToString();
-                            getLoanInformation.paymentTerm = reader["PaymentTerm"].ToString();
-                            getLoanInformation.duration = 
+                            getLoanInformation.Id = reader["LoanID"].ToString();
+                            getLoanInformation.CustomerID = reader["CustomerID"].ToString();
+                            getLoanInformation.Name = reader["CustomerName"].ToString();
+                            getLoanInformation.PaymentTerm = reader["PaymentTerm"].ToString();
+                            getLoanInformation.Duration = 
                                 Convert.ToInt32(reader["Duration"].ToString());
-                            getLoanInformation.effectiveDate = 
+                            getLoanInformation.EffectiveDate = 
                                 Convert.ToDateTime(reader["EffectiveDate"]).ToString("MM-dd-yyyy");
-                            getLoanInformation.interest = 
+                            getLoanInformation.Interest = 
                                 Convert.ToDecimal(reader["Interest"].ToString());
-                            getLoanInformation.principalLoan =
+                            getLoanInformation.PrincipalLoan =
                                 Convert.ToDecimal(reader["PrincipalLoan"].ToString());
-                            getLoanInformation.penalty = 
+                            getLoanInformation.Penalty = 
                                 Convert.ToDecimal(reader["Penalty"].ToString());
-                            getLoanInformation.status = reader["Status"].ToString();
-                            getLoanInformation.returned = reader["Returned"].ToString();
+                            getLoanInformation.Status = reader["Status"].ToString();
+                            getLoanInformation.Returned = reader["Returned"].ToString();
                             loanList.Add(getLoanInformation);
                         }
                     }
@@ -63,7 +63,6 @@ namespace TripleJPMVPLibrary.Repository
             }
             return loanList;
         }
-
         public void InsertData(Loan loan)
         {
             try
@@ -76,25 +75,25 @@ namespace TripleJPMVPLibrary.Repository
                     con.Open();
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     #region Customer information parameters
-                    cmd.Parameters.AddWithValue("@loaninformationUid", loan.uid);
+                    cmd.Parameters.AddWithValue("@loaninformationUid", loan.Uid);
                     cmd.Parameters["@loaninformationUid"].Direction = ParameterDirection.Input;
-                    cmd.Parameters.AddWithValue("@loaninformationId", loan.id);
+                    cmd.Parameters.AddWithValue("@loaninformationId", loan.Id);
                     cmd.Parameters["@loaninformationId"].Direction = ParameterDirection.Input;
-                    cmd.Parameters.AddWithValue("@customerUid", loan.customeUid);
+                    cmd.Parameters.AddWithValue("@customerUid", loan.CustomerUid);
                     cmd.Parameters["@customerUid"].Direction = ParameterDirection.Input;
-                    cmd.Parameters.AddWithValue("@paymentTerm", loan.paymentTerm);
-                    cmd.Parameters["@paymentTerm"].Direction = ParameterDirection.Input;
-                    cmd.Parameters.AddWithValue("@duration", loan.duration);
-                    cmd.Parameters["@duration"].Direction = ParameterDirection.Input;
-                    cmd.Parameters.AddWithValue("@effectiveDate", loan.effectiveDate);
-                    cmd.Parameters["@effectiveDate"].Direction = ParameterDirection.Input;
-                    cmd.Parameters.AddWithValue("@interest", loan.interest);
-                    cmd.Parameters["@interest"].Direction = ParameterDirection.Input;
-                    cmd.Parameters.AddWithValue("@principalLoan", loan.principalLoan);
-                    cmd.Parameters["@principalLoan"].Direction = ParameterDirection.Input;
-                    cmd.Parameters.AddWithValue("@penalty", loan.penalty);
-                    cmd.Parameters["@penalty"].Direction = ParameterDirection.Input;
-                    cmd.Parameters.AddWithValue("@loanstatus", loan.loanStatus);
+                    cmd.Parameters.AddWithValue("@PaymentTerm", loan.PaymentTerm);
+                    cmd.Parameters["@PaymentTerm"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@Duration", loan.Duration);
+                    cmd.Parameters["@Duration"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@EffectiveDate", loan.EffectiveDate);
+                    cmd.Parameters["@EffectiveDate"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@Interest", loan.Interest);
+                    cmd.Parameters["@Interest"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@PrincipalLoan", loan.PrincipalLoan);
+                    cmd.Parameters["@PrincipalLoan"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@Penalty", loan.Penalty);
+                    cmd.Parameters["@Penalty"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@loanstatus", loan.LoanStatus);
                     cmd.Parameters["@loanstatus"].Direction = ParameterDirection.Input;
 
                     #endregion

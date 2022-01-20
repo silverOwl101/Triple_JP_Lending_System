@@ -8,10 +8,10 @@ namespace TripleJPMVPLibrary.Model
 {
     public class Customer
     {
-        public Guid uid { get; set; }        
-        public string id { get; set; }
-        public string name { get; set; }
-        public string address { get; set; }
-        public string contactNumber { get; set; }        
+        public Guid Uid { get; set; }        
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string ContactNumber { get; set; }        
     }
 }

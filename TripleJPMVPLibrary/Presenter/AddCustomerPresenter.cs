@@ -25,15 +25,15 @@ namespace TripleJPMVPLibrary.Presenter
         {            
             try
             {                
-                customer.name = addCustomer.CustomerName;
-                customer.address = addCustomer.CustomerAddress;
-                customer.contactNumber = addCustomer.ContactNumber;
-                customerBusinessInformation.businessName = addCustomer.BusinessName;
-                customerBusinessInformation.businessNature = addCustomer.BusinessNature;
-                customerBusinessInformation.businessAddress = addCustomer.BusinessAddress;
-                customerBusinessInformation.grossBusinessCapital = addCustomer.GrossBusinessCapital;
-                customerBusinessInformation.averageDailyGrossSales = addCustomer.AveDailyGrossSales;
-                if (!customerService.CheckDuplicateName(customer.name))
+                customer.Name = addCustomer.CustomerName;
+                customer.Address = addCustomer.CustomerAddress;
+                customer.ContactNumber = addCustomer.ContactNumber;
+                customerBusinessInformation.BusinessName = addCustomer.BusinessName;
+                customerBusinessInformation.BusinessNature = addCustomer.BusinessNature;
+                customerBusinessInformation.BusinessAddress = addCustomer.BusinessAddress;
+                customerBusinessInformation.GrossBusinessCapital = addCustomer.GrossBusinessCapital;
+                customerBusinessInformation.AverageDailyGrossSales = addCustomer.AveDailyGrossSales;
+                if (!customerService.CheckDuplicateName(customer.Name))
                 {
                     ToRecordEntry();                    
                 }
@@ -60,7 +60,7 @@ namespace TripleJPMVPLibrary.Presenter
         }
         private void DoubleCheckEntry()
         {
-            string MessageContent = "The name " + customer.name + " is recorded in the system already. Would you like to continue your entry?";
+            string MessageContent = "The Name " + customer.Name + " is recorded in the system already. Would you like to continue your entry?";
             const string MessageCaption = "Duplicate Name";
             var messageRslt = MessageBox.Show(MessageContent, MessageCaption,
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

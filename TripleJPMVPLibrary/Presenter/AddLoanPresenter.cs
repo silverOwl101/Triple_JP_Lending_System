@@ -18,23 +18,23 @@ namespace TripleJPMVPLibrary.Presenter
             Iloan = loan;
         }
 
-        public void onLoadData()
+        public void OnLoadData()
         {
             Loan loan = new Loan();
             Customer customer = new Customer();
-            customer.id = Iloan.customerID;
+            customer.Id = Iloan.CustomerID;
             LoanService loanService = new LoanService();            
-            string message = loanService.onCallInsertLoan(loadData(loan),customer);
+            string message = loanService.OnCallInsertLoan(LoadData(loan),customer);
             MessageBox.Show(message);
         }
-        private Loan loadData(Loan loan)
+        private Loan LoadData(Loan loan)
         {
-            loan.paymentTerm = Iloan.paymentTerm;
-            loan.duration = Iloan.duration;
-            loan.effectiveDate = Iloan.effectiveDate;
-            loan.interest = Iloan.interest;
-            loan.principalLoan = Iloan.principalLoan;
-            loan.penalty = Iloan.penalty;
+            loan.PaymentTerm = Iloan.PaymentTerm;
+            loan.Duration = Iloan.Duration;
+            loan.EffectiveDate = Iloan.EffectiveDate;
+            loan.Interest = Iloan.Interest;
+            loan.PrincipalLoan = Iloan.PrincipalLoan;
+            loan.Penalty = Iloan.Penalty;
             return loan;
         }
     }

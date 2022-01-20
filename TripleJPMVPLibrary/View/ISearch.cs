@@ -8,6 +8,6 @@ namespace TripleJPMVPLibrary.View
 {
     public interface ISearch
     {
-        string userSearch { get; set; }
+        string UserSearch { get; set; }
     }
 }

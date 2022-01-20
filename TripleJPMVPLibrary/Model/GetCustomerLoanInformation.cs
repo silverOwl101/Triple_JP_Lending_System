@@ -8,16 +8,16 @@ namespace TripleJPMVPLibrary.Model
 {
     public class GetCustomerLoanInformation
     {        
-        public string id { get; set; }
-        public string customerID { get; set; }
-        public string name { get; set; }
-        public string paymentTerm { get; set; }
-        public int duration { get; set; }
-        public string effectiveDate { get; set; }
-        public decimal interest { get; set; }
-        public decimal principalLoan { get; set; }
-        public decimal penalty { get; set; }
-        public string status { get; set; }
-        public string returned { get; set; }
+        public string Id { get; set; }
+        public string CustomerID { get; set; }
+        public string Name { get; set; }
+        public string PaymentTerm { get; set; }
+        public int Duration { get; set; }
+        public string EffectiveDate { get; set; }
+        public decimal Interest { get; set; }
+        public decimal PrincipalLoan { get; set; }
+        public decimal Penalty { get; set; }
+        public string Status { get; set; }
+        public string Returned { get; set; }
     }
 }

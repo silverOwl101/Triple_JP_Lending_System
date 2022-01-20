@@ -67,37 +67,37 @@ namespace TripleJP_Lending_System.Forms
             }
         }
         #region User input                                
-        public string customerID
+        public string CustomerID
         {
             get { return label2.Text; }
             set { label2.Text = value; }
         }
-        public string paymentTerm
+        public string PaymentTerm
         {
             get { return comboBox1.Text; }
             set { comboBox1.Text = value; }
         }
-        public int duration
+        public int Duration
         {
             get { return Convert.ToInt32(comboBox2.Text); }
             set { comboBox2.Text = value.ToString(); }
         }
-        public DateTime effectiveDate
+        public DateTime EffectiveDate
         {
             get { return dateTimePicker1.Value.Date; }
             set { dateTimePicker1.Text = value.ToString(); }
         }
-        public decimal interest
+        public decimal Interest
         {
             get { return Convert.ToDecimal(comboBox4.Text); }
             set { comboBox4.Text = value.ToString(); }
         }
-        public decimal principalLoan
+        public decimal PrincipalLoan
         {
             get { return Convert.ToDecimal(textBox1.Text); }
             set { textBox1.Text = value.ToString(); }
         }
-        public decimal penalty
+        public decimal Penalty
         {
             get { return Convert.ToDecimal(comboBox6.Text); }
             set { comboBox6.Text = value.ToString(); }
@@ -111,7 +111,7 @@ namespace TripleJP_Lending_System.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             AddLoanPresenter addLoanPresenter = new AddLoanPresenter(this);
-            addLoanPresenter.onLoadData();
+            addLoanPresenter.OnLoadData();
         }
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {

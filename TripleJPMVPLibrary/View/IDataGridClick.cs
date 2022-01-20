@@ -8,6 +8,6 @@ namespace TripleJPMVPLibrary.View
 {
     public interface IDataGridClick
     {
-        string userClick { get; set; }
+        string UserClick { get; set; }
     }
 }

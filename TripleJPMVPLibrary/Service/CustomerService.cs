@@ -23,26 +23,26 @@ namespace TripleJPMVPLibrary.Service
                                   CustomerBusinessInformation customerBusinessInformation)
         {
             IdGeneratorClass idGeneratorClass = new IdGeneratorClass();
-            customer.uid = Guid.NewGuid();
-            customer.id = idGeneratorClass.NewId();
-            customerBusinessInformation.uid = Guid.NewGuid();
-            customerBusinessInformation.id = idGeneratorClass.NewId();
+            customer.Uid = Guid.NewGuid();
+            customer.Id = idGeneratorClass.NewId();
+            customerBusinessInformation.Uid = Guid.NewGuid();
+            customerBusinessInformation.Id = idGeneratorClass.NewId();
             #region Check id if valid
-            while (customerRepo.IsDuplicateUid(customer.uid))
+            while (customerRepo.IsDuplicateUid(customer.Uid))
             {
-                customer.uid = Guid.NewGuid();
+                customer.Uid = Guid.NewGuid();
             }
-            while (customerRepo.IsDuplicateId(customer.id))
+            while (customerRepo.IsDuplicateId(customer.Id))
             {
-                customer.id = idGeneratorClass.NewId();
+                customer.Id = idGeneratorClass.NewId();
             }
-            while (customerRepo.IsDuplicateBusinessId(customerBusinessInformation.id))
+            while (customerRepo.IsDuplicateBusinessId(customerBusinessInformation.Id))
             {
-                customerBusinessInformation.id = idGeneratorClass.NewId();
+                customerBusinessInformation.Id = idGeneratorClass.NewId();
             }
-            while (customerRepo.IsDuplicateBusinessGuid(customerBusinessInformation.uid))
+            while (customerRepo.IsDuplicateBusinessGuid(customerBusinessInformation.Uid))
             {
-                customerBusinessInformation.uid = Guid.NewGuid();
+                customerBusinessInformation.Uid = Guid.NewGuid();
             }
             #endregion
             try

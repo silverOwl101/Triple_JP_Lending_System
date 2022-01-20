@@ -8,14 +8,14 @@ namespace TripleJPMVPLibrary.Model
 {
     public class GetCustomerInfo
     {        
-        public string id { get; set; }
-        public string name { get; set; }
-        public string address { get; set; }
-        public string contactNumber { get; set; }
-        public string businessName { get; set; }
-        public string businessNature { get; set; }
-        public string businessAddress { get; set; }
-        public decimal grossBusinessCapital { get; set; }
-        public decimal averageDailyGrossSales { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string ContactNumber { get; set; }
+        public string BusinessName { get; set; }
+        public string BusinessNature { get; set; }
+        public string BusinessAddress { get; set; }
+        public decimal GrossBusinessCapital { get; set; }
+        public decimal AverageDailyGrossSales { get; set; }
     }
 }
