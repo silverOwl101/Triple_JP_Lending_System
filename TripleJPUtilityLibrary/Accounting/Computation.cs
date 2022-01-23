@@ -8,30 +8,37 @@ namespace TripleJPUtilityLibrary.Accounting
 {
     public class Computation
     {
-        public decimal MaturityInterest(decimal loan)
+        private const decimal Interest = 0.20M;
+        private decimal _principalLoan;
+        private decimal _maturityInterest;
+        private decimal _maturityValue;
+        private decimal _interest;
+        private int _duration;
+        private int _perRemittance;
+
+        public decimal MaturityInterest(decimal principalLoan)
         {
-            decimal principalLoan = loan;
-            const decimal interest = 0.20M;
-            decimal MaturityInterest = principalLoan * interest;
-            return MaturityInterest;
+            _principalLoan = principalLoan;
+            _maturityInterest = _principalLoan * Interest;
+            return _maturityInterest;
         }
-        public decimal MaturityValue(decimal maturityInterest, decimal loan)
+        public decimal MaturityValue(decimal maturityInterest, decimal principalLoan)
         {
-            decimal interest = maturityInterest;
-            decimal principalLoan = loan;
-            decimal maturityValue = principalLoan + interest;
-            return maturityValue;
+            _interest = maturityInterest;
+            _principalLoan = principalLoan;
+            _maturityValue = _principalLoan + _interest;
+            return _maturityValue;
         }
-        public int PerRemittance(decimal maturityValue, int _duration)
+        public int PerRemittance(decimal maturityValue, int duration)
         {
-            decimal _value = maturityValue;
-            int duration = _duration;
-            int perRemittance = (int)_value / duration;
-            return perRemittance;
+            _maturityValue = maturityValue;
+            _duration = duration;
+            _perRemittance = (int)_maturityValue / _duration;
+            return _perRemittance;
         }
-        public DateTime MaturityDate(DateTime effectivedate, double _duration)
+        public DateTime MaturityDate(DateTime effectiveDate, double duration)
         {
-            return effectivedate.AddDays(_duration);
+            return effectiveDate.AddDays(duration);
         }
     }
 }

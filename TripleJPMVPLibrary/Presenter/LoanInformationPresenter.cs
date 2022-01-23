@@ -13,19 +13,18 @@ namespace TripleJPMVPLibrary.Presenter
 {    
     public class LoanInformationPresenter
     {
-        ISearch search;
-        Customer customer = new Customer();
-        LoanService loanService = new LoanService();
-        List<GetCustomerLoanInformation> getLoanInformation = 
-            new List<GetCustomerLoanInformation>();
+        private ISearch _search;
+        private Customer _customer = new Customer();
+        private LoanService _loanService = new LoanService();
+        private List<GetCustomerLoanInformation> _getLoanInformation = new List<GetCustomerLoanInformation>();
         public LoanInformationPresenter(ISearch search)
         {
-            this.search = search;
+            _search = search;
             OnLoadLoanInformationData();
         }
         private void OnLoadLoanInformationData()
         {
-            if (String.IsNullOrEmpty(search.UserSearch))
+            if (String.IsNullOrEmpty(_search.UserSearch))
             {
                 const string MessageContent = "Enter your credentials";
                 const string MessageCaption = "Record not found";
@@ -35,16 +34,16 @@ namespace TripleJPMVPLibrary.Presenter
             else
             {
                 Regex rgx = new Regex(@"^\d{9}-\d{4}$"); // match the format of customer Id
-                if (rgx.IsMatch(search.UserSearch))
+                if (rgx.IsMatch(_search.UserSearch))
                 {
-                    customer.Id = search.UserSearch;
+                    _customer.Id = _search.UserSearch;
                 }
                 else
                 {
-                    customer.Name = search.UserSearch;
+                    _customer.Name = _search.UserSearch;
                 }
-                getLoanInformation = loanService.OnCallGetLoanInformation(customer);
-                if (getLoanInformation.Count == 0)
+                _getLoanInformation = _loanService.OnCallGetLoanInformation(_customer);
+                if (_getLoanInformation.Count == 0)
                 {
                     const string MessageContent = "Double check the entry or contact your I.T personnel for futher details";
                     string MessageCaption = "Record not found";
@@ -55,7 +54,7 @@ namespace TripleJPMVPLibrary.Presenter
         }
         public List<GetCustomerLoanInformation> GetLoanInformationList()
         {
-            return getLoanInformation;
+            return _getLoanInformation;
         }
     }
 }

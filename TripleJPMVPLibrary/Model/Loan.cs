@@ -9,7 +9,6 @@ namespace TripleJPMVPLibrary.Model
     internal class Loan
     {
         public Guid Uid { get; set; }
-
         public string Id { get; set; }
         public string CustomerUid { get; set; }
         public string PaymentTerm { get; set; }

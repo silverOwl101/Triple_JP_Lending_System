@@ -12,29 +12,29 @@ namespace TripleJPMVPLibrary.Presenter
 {
     public class AddLoanPresenter
     {
-        IAddLoan Iloan;
-        public AddLoanPresenter(IAddLoan loan)
+        private IAddLoan _addLoan;
+        private Loan _loan = new Loan();
+        private Customer _customer = new Customer();
+        public AddLoanPresenter(IAddLoan addloan)
         {
-            Iloan = loan;
+            _addLoan = addloan;
         }
 
         public void OnLoadData()
         {
-            Loan loan = new Loan();
-            Customer customer = new Customer();
-            customer.Id = Iloan.CustomerID;
+            _customer.Id = _addLoan.CustomerID;
             LoanService loanService = new LoanService();            
-            string message = loanService.OnCallInsertLoan(LoadData(loan),customer);
+            string message = loanService.OnCallInsertLoan(LoadData(_loan), _customer);
             MessageBox.Show(message);
         }
         private Loan LoadData(Loan loan)
         {
-            loan.PaymentTerm = Iloan.PaymentTerm;
-            loan.Duration = Iloan.Duration;
-            loan.EffectiveDate = Iloan.EffectiveDate;
-            loan.Interest = Iloan.Interest;
-            loan.PrincipalLoan = Iloan.PrincipalLoan;
-            loan.Penalty = Iloan.Penalty;
+            loan.PaymentTerm = _addLoan.PaymentTerm;
+            loan.Duration = _addLoan.Duration;
+            loan.EffectiveDate = _addLoan.EffectiveDate;
+            loan.Interest = _addLoan.Interest;
+            loan.PrincipalLoan = _addLoan.PrincipalLoan;
+            loan.Penalty = _addLoan.Penalty;
             return loan;
         }
     }
