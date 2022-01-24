@@ -99,6 +99,7 @@
       <DependentUpon>MainApplicationFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\Presenter\LogInFrmHelper.cs" />
+    <Compile Include="Helper\View\FrmInputRequirements.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AddCustomerFrm.resx">
