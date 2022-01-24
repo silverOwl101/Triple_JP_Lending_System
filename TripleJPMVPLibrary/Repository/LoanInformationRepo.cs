@@ -35,23 +35,21 @@ namespace TripleJPMVPLibrary.Repository
                     {
                         while (reader.Read())
                         {
-                            getLoanInformation = new GetCustomerLoanInformation();                            
-                            getLoanInformation.Id = reader["LoanID"].ToString();
-                            getLoanInformation.CustomerID = reader["CustomerID"].ToString();
-                            getLoanInformation.Name = reader["CustomerName"].ToString();
-                            getLoanInformation.PaymentTerm = reader["PaymentTerm"].ToString();
-                            getLoanInformation.Duration = 
-                                Convert.ToInt32(reader["Duration"].ToString());
-                            getLoanInformation.EffectiveDate = 
-                                Convert.ToDateTime(reader["EffectiveDate"]).ToString("MM-dd-yyyy");
-                            getLoanInformation.Interest = 
-                                Convert.ToDecimal(reader["Interest"].ToString());
-                            getLoanInformation.PrincipalLoan =
-                                Convert.ToDecimal(reader["PrincipalLoan"].ToString());
-                            getLoanInformation.Penalty = 
-                                Convert.ToDecimal(reader["Penalty"].ToString());
-                            getLoanInformation.Status = reader["Status"].ToString();
-                            getLoanInformation.Returned = reader["Returned"].ToString();
+                            getLoanInformation = new GetCustomerLoanInformation
+                            {
+                                Id = reader["LoanID"].ToString(),
+                                CustomerID = reader["CustomerID"].ToString(),
+                                Name = reader["CustomerName"].ToString(),
+                                PaymentTerm = reader["PaymentTerm"].ToString(),
+                                Duration = Convert.ToInt32(reader["Duration"].ToString()),
+                                EffectiveDate = Convert.ToDateTime(reader["EffectiveDate"]).ToString("MM-dd-yyyy"),
+                                Interest = Convert.ToDecimal(reader["Interest"].ToString()),
+                                PrincipalLoan = Convert.ToDecimal(reader["PrincipalLoan"].ToString()),
+                                Penalty = Convert.ToDecimal(reader["Penalty"].ToString()),
+                                Status = reader["Status"].ToString(),
+                                Returned = reader["Returned"].ToString()
+                            };                         
+
                             loanList.Add(getLoanInformation);
                         }
                     }

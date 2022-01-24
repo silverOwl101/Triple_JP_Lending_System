@@ -22,15 +22,23 @@ namespace TripleJPMVPLibrary.Presenter
         }
         private void LoadData()
         {
-            _customer.Id = _editCustomer.ID;
-            _customer.Name = _editCustomer.CustomerName;
-            _customer.Address = _editCustomer.CustomerAddress;
-            _customer.ContactNumber = _editCustomer.ContactNumber;
-            _businessInformation.BusinessName = _editCustomer.BusinessName;
-            _businessInformation.BusinessNature = _editCustomer.BusinessNature;
-            _businessInformation.BusinessAddress = _editCustomer.BusinessAddress;
-            _businessInformation.GrossBusinessCapital = _editCustomer.GrossBusinessCapital;
-            _businessInformation.AverageDailyGrossSales = _editCustomer.AveDailyGrossSales;
+            _customer = new Customer
+            {
+                Id = _editCustomer.ID,
+                Name = _editCustomer.CustomerName,
+                Address = _editCustomer.CustomerAddress,
+                ContactNumber = _editCustomer.ContactNumber
+            };
+
+            _businessInformation = new CustomerBusinessInformation
+            {
+                BusinessName = _editCustomer.BusinessName,
+                BusinessNature = _editCustomer.BusinessNature,
+                BusinessAddress = _editCustomer.BusinessAddress,
+                GrossBusinessCapital = _editCustomer.GrossBusinessCapital,
+                AverageDailyGrossSales = _editCustomer.AveDailyGrossSales
+            };
+
         }
         public void PrepareUpdate()
         {

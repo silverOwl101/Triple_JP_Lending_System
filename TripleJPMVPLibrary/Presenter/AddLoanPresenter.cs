@@ -15,6 +15,7 @@ namespace TripleJPMVPLibrary.Presenter
         private IAddLoan _addLoan;
         private Loan _loan = new Loan();
         private Customer _customer = new Customer();
+        private LoanService _loanService = new LoanService();
         public AddLoanPresenter(IAddLoan addloan)
         {
             _addLoan = addloan;
@@ -22,9 +23,8 @@ namespace TripleJPMVPLibrary.Presenter
 
         public void OnLoadData()
         {
-            _customer.Id = _addLoan.CustomerID;
-            LoanService loanService = new LoanService();            
-            string message = loanService.OnCallInsertLoan(LoadData(_loan), _customer);
+            _customer.Id = _addLoan.CustomerID;          
+            string message = _loanService.OnCallInsertLoan(LoadData(_loan), _customer);
             MessageBox.Show(message);
         }
         private Loan LoadData(Loan loan)

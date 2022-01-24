@@ -14,13 +14,17 @@ namespace TripleJPMVPLibrary.Service
         public bool IsRegistered(string username, string password) // remove underscore kay parameters mani sa method
         {
             // local variables mani silang tanan so wala ray underscore
-            LogInRepo checkLogIn = new LogInRepo();
-            Administrator administrator = new Administrator();
-            administrator.UserName = username;
-            administrator.PassWord = password;
+            LogInRepo logInRepo = new LogInRepo();
+
+            Administrator administrator = new Administrator
+            {
+                UserName = username,
+                PassWord = password
+            };
+
             try
             {
-                return checkLogIn.CheckRecord(administrator.UserName,administrator.PassWord);
+                return logInRepo.CheckRecord(administrator.UserName,administrator.PassWord);
             }
             catch (Exception)
             {

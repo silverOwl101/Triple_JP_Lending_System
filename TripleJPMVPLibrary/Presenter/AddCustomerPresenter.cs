@@ -23,15 +23,23 @@ namespace TripleJPMVPLibrary.Presenter
         public bool CustomerDataPreparation()
         {            
             try
-            {                
-                _customer.Name = _addCustomer.CustomerName;
-                _customer.Address = _addCustomer.CustomerAddress;
-                _customer.ContactNumber = _addCustomer.ContactNumber;
-                _customerBusinessInformation.BusinessName = _addCustomer.BusinessName;
-                _customerBusinessInformation.BusinessNature = _addCustomer.BusinessNature;
-                _customerBusinessInformation.BusinessAddress = _addCustomer.BusinessAddress;
-                _customerBusinessInformation.GrossBusinessCapital = _addCustomer.GrossBusinessCapital;
-                _customerBusinessInformation.AverageDailyGrossSales = _addCustomer.AveDailyGrossSales;
+            {
+                _customer = new Customer
+                {
+                    Name = _addCustomer.CustomerName,
+                    Address = _addCustomer.CustomerAddress,
+                    ContactNumber = _addCustomer.ContactNumber
+                };
+
+                _customerBusinessInformation = new CustomerBusinessInformation
+                {
+                    BusinessName = _addCustomer.BusinessName,
+                    BusinessNature = _addCustomer.BusinessNature,
+                    BusinessAddress = _addCustomer.BusinessAddress,
+                    GrossBusinessCapital = _addCustomer.GrossBusinessCapital,
+                    AverageDailyGrossSales = _addCustomer.AveDailyGrossSales
+                };
+
                 if (!_customerService.CheckDuplicateName(_customer.Name))
                 {
                     ToRecordEntry();                    
