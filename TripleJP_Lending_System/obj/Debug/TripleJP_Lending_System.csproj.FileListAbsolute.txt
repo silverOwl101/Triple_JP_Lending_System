@@ -60,6 +60,8 @@ D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJ
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.csproj.CopyComplete
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.exe
 D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.pdb
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJPUtilityLibrary.dll
+D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJPUtilityLibrary.pdb
 C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.exe.config
 C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.exe
 C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.pdb
@@ -95,5 +97,3 @@ C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJP_Lending_System
 C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.csproj.CopyComplete
 C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.exe
 C:\Users\ASUS\Desktop\fork-repo\Triple_JP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.pdb
-D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJPUtilityLibrary.dll
-D:\Projects\C#\TripleJP_Lending_System\TripleJP_Lending_System\bin\Debug\TripleJPUtilityLibrary.pdb

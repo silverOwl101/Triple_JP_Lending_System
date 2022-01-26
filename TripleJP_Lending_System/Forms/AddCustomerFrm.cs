@@ -9,17 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleJPMVPLibrary.View;
 using TripleJPMVPLibrary.Presenter;
+using TripleJP_Lending_System.Helper.View;
 
 namespace TripleJP_Lending_System.Forms
 {
     public partial class AddCustomerFrm : Form, IAddCustomer
     {
+        private FrmInputRequirements _frmInputRequirements = new FrmInputRequirements();
         public AddCustomerFrm()
         {
             InitializeComponent();
             ClearTextbox();
         }
-        #region Other methods
         private void ClearTextbox()
         {
             CustomerNametxt.Clear();
@@ -31,41 +32,6 @@ namespace TripleJP_Lending_System.Forms
             GrossBusinessCapitaltxt.Clear();
             AverageDailyGrossSalestxt.Clear();
         }
-        private void InputNumbersOnly(KeyPressEventArgs e)
-        {
-            if (!char.IsNumber(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            if (e.KeyChar == '\b') // enable backspace
-            {
-                e.Handled = false;
-            }
-            if (e.KeyChar == '\u0001') // enable ctrl + a
-            {
-                e.Handled = false;
-            }
-        }
-        private void InputNumbersWithDecimalPlacesOnly(KeyPressEventArgs e)
-        {
-            if (!char.IsNumber(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            if (e.KeyChar == '\b') // enable backspace
-            {
-                e.Handled = false;
-            }
-            if (e.KeyChar == '\u0001') // enable ctrl + a
-            {
-                e.Handled = false;
-            }
-            if (e.KeyChar == '.') // enable dot for decimal places
-            {
-                e.Handled = false;
-            }
-        }
-        #endregion
         #region User Inputs
         public string CustomerName 
         {
@@ -121,17 +87,17 @@ namespace TripleJP_Lending_System.Forms
 
         private void ContactNumbertxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            InputNumbersOnly(e);
+            _frmInputRequirements.InputNumbersOnly(e);
         }
         
         private void GrossBusinessCapitaltxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            InputNumbersWithDecimalPlacesOnly(e);
+            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e);
         }
 
         private void AverageDailyGrossSalestxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            InputNumbersWithDecimalPlacesOnly(e);
+            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e);
         }
     }
 }

@@ -11,13 +11,12 @@ namespace TripleJPMVPLibrary.Service
 {
     public class CustomerService
     {
-        CustomerRepo customerRepo = new CustomerRepo();        
+        private CustomerRepo _customerRepo = new CustomerRepo();        
         public bool CheckDuplicateName(string name)
         {
-            if (customerRepo.IsDuplicateName(name))
+            if (_customerRepo.IsDuplicateName(name))
                 return true;
-            else
-                return false;
+            return false;
         }
         public string PrepareData(Customer customer,
                                   CustomerBusinessInformation customerBusinessInformation)
@@ -28,26 +27,26 @@ namespace TripleJPMVPLibrary.Service
             customerBusinessInformation.Uid = Guid.NewGuid();
             customerBusinessInformation.Id = idGeneratorClass.NewId();
             #region Check id if valid
-            while (customerRepo.IsDuplicateUid(customer.Uid))
+            while (_customerRepo.IsDuplicateUid(customer.Uid))
             {
                 customer.Uid = Guid.NewGuid();
             }
-            while (customerRepo.IsDuplicateId(customer.Id))
+            while (_customerRepo.IsDuplicateId(customer.Id))
             {
                 customer.Id = idGeneratorClass.NewId();
             }
-            while (customerRepo.IsDuplicateBusinessId(customerBusinessInformation.Id))
+            while (_customerRepo.IsDuplicateBusinessId(customerBusinessInformation.Id))
             {
                 customerBusinessInformation.Id = idGeneratorClass.NewId();
             }
-            while (customerRepo.IsDuplicateBusinessGuid(customerBusinessInformation.Uid))
+            while (_customerRepo.IsDuplicateBusinessGuid(customerBusinessInformation.Uid))
             {
                 customerBusinessInformation.Uid = Guid.NewGuid();
             }
             #endregion
             try
             {
-                customerRepo.InsertData(customer,customerBusinessInformation);
+                _customerRepo.InsertData(customer,customerBusinessInformation);
                 return "Entry recorded successfully";
             }
             catch (Exception)
@@ -59,7 +58,7 @@ namespace TripleJPMVPLibrary.Service
         {
             try
             {
-                return customerRepo.GetList(customer);
+                return _customerRepo.GetList(customer);
             }
             catch (Exception)
             {

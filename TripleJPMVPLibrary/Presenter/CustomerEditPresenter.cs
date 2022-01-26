@@ -12,33 +12,40 @@ namespace TripleJPMVPLibrary.Presenter
 {
     public class CustomerEditPresenter
     {        
-        IEditCustomer editCustomer;
-        Customer customer = new Customer();
-        CustomerBusinessInformation businessInformation = new CustomerBusinessInformation();
+        private IEditCustomer _editCustomer;
+        private Customer _customer = new Customer();
+        private CustomerBusinessInformation _businessInformation = new CustomerBusinessInformation();
+        private CustomerService _customerService = new CustomerService();
         public CustomerEditPresenter(IEditCustomer editCustomer)
         {
-            this.editCustomer = editCustomer;
+            _editCustomer = editCustomer;
         }
         private void LoadData()
-        {            
-            customer.Id = editCustomer.ID;
-            customer.Name = editCustomer.CustomerName;
-            customer.Address = editCustomer.CustomerAddress;
-            customer.ContactNumber = editCustomer.ContactNumber;
-            businessInformation.BusinessName = editCustomer.BusinessName;
-            businessInformation.BusinessNature = editCustomer.BusinessNature;
-            businessInformation.BusinessAddress = editCustomer.BusinessAddress;
-            businessInformation.GrossBusinessCapital = editCustomer.GrossBusinessCapital;
-            businessInformation.AverageDailyGrossSales = editCustomer.AveDailyGrossSales;
+        {
+            _customer = new Customer
+            {
+                Id = _editCustomer.ID,
+                Name = _editCustomer.CustomerName,
+                Address = _editCustomer.CustomerAddress,
+                ContactNumber = _editCustomer.ContactNumber
+            };
+
+            _businessInformation = new CustomerBusinessInformation
+            {
+                BusinessName = _editCustomer.BusinessName,
+                BusinessNature = _editCustomer.BusinessNature,
+                BusinessAddress = _editCustomer.BusinessAddress,
+                GrossBusinessCapital = _editCustomer.GrossBusinessCapital,
+                AverageDailyGrossSales = _editCustomer.AveDailyGrossSales
+            };
+
         }
         public void PrepareUpdate()
         {
             try
             {
                 LoadData();
-                CustomerService customerService = new CustomerService();
-                string confirmationMessage = 
-                    customerService.UpdateService(customer, businessInformation);
+                string confirmationMessage = _customerService.UpdateService(_customer, _businessInformation);
                 ConfirmationMessage(confirmationMessage);
             }
             catch (Exception ex)

@@ -13,17 +13,17 @@ namespace TripleJPMVPLibrary.Presenter
 {
     public class GetCustomerListPresenter
     {
-        ISearch search;        
-        CustomerService customerService = new CustomerService();
-        Customer customer = new Customer();        
-        List<GetCustomerInfo> getcustomer = new List<GetCustomerInfo>();
+        private ISearch _search;        
+        private CustomerService _customerService = new CustomerService();
+        private Customer _customer = new Customer();        
+        private List<GetCustomerInfo> _getCustomer = new List<GetCustomerInfo>();
         public GetCustomerListPresenter(ISearch search)
         {
-            this.search = search;            
+            _search = search;            
         }
         public void CallSearch()
         {            
-            if (String.IsNullOrEmpty(search.UserSearch))
+            if (String.IsNullOrEmpty(_search.UserSearch))
             {
                 const string MessageContent = "Enter your credentials";
                 const string MessageCaption = "Record not found";
@@ -33,27 +33,26 @@ namespace TripleJPMVPLibrary.Presenter
             else
             {
                 Regex rgx = new Regex(@"^\d{9}-\d{4}$"); // match the format of customer Id
-                if (rgx.IsMatch(search.UserSearch))
+                if (rgx.IsMatch(_search.UserSearch))
                 {
-                    customer.Id = search.UserSearch;
+                    _customer.Id = _search.UserSearch;
                 }
                 else
                 {
-                    customer.Name = search.UserSearch;
+                    _customer.Name = _search.UserSearch;
                 }
-                    getcustomer = customerService.GetCustomerListData(customer);
-                    if (getcustomer.Count == 0)
-                    {
-                        const string MessageContent = "Double check the entry or contact your I.T personnel for futher details";
-                        string MessageCaption = "Record not found";
-                        MessageBox.Show(MessageContent, MessageCaption,
-                            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
+                _getCustomer = _customerService.GetCustomerListData(_customer);
+                if (_getCustomer.Count == 0)
+                {
+                    const string MessageContent = "Double check the entry or contact your I.T personnel for futher details";
+                    string MessageCaption = "Record not found";
+                    MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }            
         }
         public List<GetCustomerInfo> GetList()
         {
-            return getcustomer;
+            return _getCustomer;
         }      
     }
 }

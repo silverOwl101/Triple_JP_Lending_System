@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleJPMVPLibrary.Presenter;
 using TripleJPMVPLibrary.View;
+using TripleJP_Lending_System.Helper.View;
 
 namespace TripleJP_Lending_System.Forms
 {
     public partial class EditCustomerFrm : Form, IEditCustomer
     {
+        private FrmInputRequirements _frmInputRequirements = new FrmInputRequirements();
         string customerID = CustomerAccountFrm.customerInformation[0].ToString();
         public EditCustomerFrm()
         {
@@ -26,41 +28,6 @@ namespace TripleJP_Lending_System.Forms
             get { return customerID; }
             set { customerID = value; }
         }
-        #region Other Methods
-        private void InputNumbersOnly(KeyPressEventArgs e)
-        {
-            if (!char.IsNumber(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            if (e.KeyChar == '\b') // enable backspace
-            {
-                e.Handled = false;
-            }
-            if (e.KeyChar == '\u0001') // enable ctrl + a
-            {
-                e.Handled = false;
-            }
-        }
-        private void InputNumbersWithDecimalPlacesOnly(KeyPressEventArgs e)
-        {
-            if (!char.IsNumber(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            if (e.KeyChar == '\b') // enable backspace
-            {
-                e.Handled = false;
-            }
-            if (e.KeyChar == '\u0001') // enable ctrl + a
-            {
-                e.Handled = false;
-            }
-            if (e.KeyChar == '.') // enable dot for decimal places
-            {
-                e.Handled = false;
-            }
-        }
         private void LoadCustomerInformation()
         {
             CustomerNametxt.Text = CustomerAccountFrm.customerInformation[1].ToString();
@@ -72,7 +39,6 @@ namespace TripleJP_Lending_System.Forms
             GrossBusinessCapitaltxt.Text = CustomerAccountFrm.customerInformation[7].ToString();
             AverageDailyGrossSalestxt.Text = CustomerAccountFrm.customerInformation[8].ToString();
         }
-        #endregion
         #region User Inputs        
         public string CustomerName
         {
@@ -128,17 +94,17 @@ namespace TripleJP_Lending_System.Forms
 
         private void ContactNumbertxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            InputNumbersOnly(e);
+            _frmInputRequirements.InputNumbersOnly(e);
         }
 
         private void GrossBusinessCapitaltxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            InputNumbersWithDecimalPlacesOnly(e);
+            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e);
         }
 
         private void AverageDailyGrossSalestxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            InputNumbersWithDecimalPlacesOnly(e);
+            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e);
         }
     }
 }

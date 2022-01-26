@@ -10,16 +10,16 @@ using TripleJP_Lending_System.Forms;
 namespace TripleJP_Lending_System.Helper.Presenter
 {
     // this is the helper class for presenter LoginFrmPresenter
-    class LogInFrmHelper
+    internal class LogInFrmHelper
     {
-        Thread th;
+        private Thread _th;
         internal void Confirmation(bool result)
         {
             if (result == true)
             {
-                th = new Thread(MainApplicationFrmLoad);
-                th.SetApartmentState(ApartmentState.STA);
-                th.Start();
+                _th = new Thread(MainApplicationFrmLoad);
+                _th.SetApartmentState(ApartmentState.STA);
+                _th.Start();
                 Form logInFrm = Application.OpenForms["LogInFrm"]; // assign LogInFrm to variable logInFrm
                 if (logInFrm != null) // Check if LogInFrm is open
                 {
