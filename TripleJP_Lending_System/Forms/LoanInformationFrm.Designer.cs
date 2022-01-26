@@ -74,7 +74,7 @@ namespace TripleJP_Lending_System.Forms
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ledgerButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
@@ -572,22 +572,23 @@ namespace TripleJP_Lending_System.Forms
             this.checkBox1.Text = "Unpaid";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // ledgerButton
             // 
-            this.button2.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(905, 575);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(377, 64);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "Show Ledger";
-            this.button2.UseVisualStyleBackColor = true;
+            this.ledgerButton.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ledgerButton.Location = new System.Drawing.Point(905, 575);
+            this.ledgerButton.Name = "ledgerButton";
+            this.ledgerButton.Size = new System.Drawing.Size(377, 64);
+            this.ledgerButton.TabIndex = 37;
+            this.ledgerButton.Text = "Show Ledger";
+            this.ledgerButton.UseVisualStyleBackColor = true;
+            this.ledgerButton.Click += new System.EventHandler(this.ledgerButton_Click);
             // 
             // LoanInformationFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1301, 653);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.ledgerButton);
             this.Controls.Add(this.groupBox15);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.SearchBoxtxt);
@@ -689,6 +690,6 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ledgerButton;
     }
 }

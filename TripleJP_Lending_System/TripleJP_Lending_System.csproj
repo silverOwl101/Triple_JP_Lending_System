@@ -80,6 +80,12 @@
     <Compile Include="Forms\EditCustomerFrm.Designer.cs">
       <DependentUpon>EditCustomerFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LedgerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LedgerForm.Designer.cs">
+      <DependentUpon>LedgerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoanInformationFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditCustomerFrm.resx">
       <DependentUpon>EditCustomerFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LedgerForm.resx">
+      <DependentUpon>LedgerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoanInformationFrm.resx">
       <DependentUpon>LoanInformationFrm.cs</DependentUpon>

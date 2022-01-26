@@ -82,6 +82,7 @@ namespace TripleJP_Lending_System.Forms
             label18.Text = "";
             label19.Text = "";
             label20.Text = "";
+            ledgerButton.Enabled = false;
         }
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -91,6 +92,7 @@ namespace TripleJP_Lending_System.Forms
             perRemittanceDisplay();
             maturityDate();
             totalAmountRemittance();
+            ledgerButton.Enabled = true;
         }
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -141,6 +143,11 @@ namespace TripleJP_Lending_System.Forms
                 label11.Text = String.Format("{0:N}", result);
             }
             
+        }
+        private void ledgerButton_Click(object sender, EventArgs e)
+        {
+            LedgerForm ledgerForm = new LedgerForm();
+            ledgerForm.ShowDialog();
         }
     }
 }
