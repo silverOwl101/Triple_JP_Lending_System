@@ -15,6 +15,7 @@ namespace TripleJP_Lending_System.Forms
 {
     public partial class LoanInformationFrm : Form,ISearch
     {
+        public static decimal principalLoan;
         public LoanInformationFrm()
         {
             InitializeComponent();
@@ -62,7 +63,7 @@ namespace TripleJP_Lending_System.Forms
             label10.Text = 
                 dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[9].Value.ToString();
             label12.Text =
-                dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value.ToString();
+                dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value.ToString();            
         }
         private void ClearText()
         {
@@ -91,8 +92,8 @@ namespace TripleJP_Lending_System.Forms
             maturityValueDisplay();
             perRemittanceDisplay();
             maturityDate();
-            totalAmountRemittance();
-            ledgerButton.Enabled = true;
+            totalAmountRemittance();            
+            ledgerButton.Enabled = true;            
         }
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -146,8 +147,14 @@ namespace TripleJP_Lending_System.Forms
         }
         private void ledgerButton_Click(object sender, EventArgs e)
         {
+            AssignPrincipalLoan();
             LedgerForm ledgerForm = new LedgerForm();
             ledgerForm.ShowDialog();
+            
+        }        
+        private void AssignPrincipalLoan()
+        {            
+            principalLoan = Convert.ToDecimal(label8.Text);            
         }
     }
 }
