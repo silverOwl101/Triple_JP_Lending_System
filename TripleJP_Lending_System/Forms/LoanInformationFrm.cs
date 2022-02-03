@@ -31,7 +31,17 @@ namespace TripleJP_Lending_System.Forms
             LoanInformationPresenter loanInformationPresenter
                 = new LoanInformationPresenter(this);
             dataGridView1.DataSource = loanInformationPresenter.GetLoanInformationList();
+            ColumnHeaderNames();
             ClearText();
+        }
+        private void ColumnHeaderNames()
+        {
+            dataGridView1.Columns[0].HeaderText = "Loan ID";
+            dataGridView1.Columns[1].HeaderText = "Customer ID";
+            dataGridView1.Columns[2].HeaderText = "Customer Name";
+            dataGridView1.Columns[3].HeaderText = "Payment Term";            
+            dataGridView1.Columns[5].HeaderText = "Effective Date";            
+            dataGridView1.Columns[7].HeaderText = "Principal Loan";            
         }
         private void SearchBoxtxt_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -40,7 +50,7 @@ namespace TripleJP_Lending_System.Forms
                 OnSearch();                
             }
         }
-        private void DisplayTextInForm()
+        private void DisplayDataInForm()
         {
             label1.Text = 
                 dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
@@ -54,8 +64,8 @@ namespace TripleJP_Lending_System.Forms
                 dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
             label6.Text = 
                 dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
-            label7.Text = 
-                dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value.ToString();
+            label7.Text = String.Format("{0:P}",
+                dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value);
             label8.Text = String.Format("{0:N}",
                 dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value);
             label9.Text = 
@@ -87,7 +97,7 @@ namespace TripleJP_Lending_System.Forms
         }
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DisplayTextInForm();
+            DisplayDataInForm();
             maturityInterestDisplay();
             maturityValueDisplay();
             perRemittanceDisplay();

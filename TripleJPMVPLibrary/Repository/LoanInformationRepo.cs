@@ -47,7 +47,7 @@ namespace TripleJPMVPLibrary.Repository
                                 PrincipalLoan = Convert.ToDecimal(reader["PrincipalLoan"].ToString()),
                                 Penalty = Convert.ToDecimal(reader["Penalty"].ToString()),
                                 Status = reader["Status"].ToString(),
-                                Returned = reader["Returned"].ToString()
+                                Amount = reader["Amount"].ToString()
                             };                         
 
                             loanList.Add(getLoanInformation);

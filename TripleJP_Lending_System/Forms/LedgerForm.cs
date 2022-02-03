@@ -19,7 +19,8 @@ namespace TripleJP_Lending_System.Forms
         }
         private void LedgerForm_Load(object sender, EventArgs e)
         {
-            LoadInformation();
+            //LoadInformation();
+            //LoadExample();
         }
         private void LoadInformation()
         {
@@ -39,6 +40,19 @@ namespace TripleJP_Lending_System.Forms
                 dataGridView1.Rows.Add(item);
             }
             //End
+        }
+        private void LoadExample()
+        {
+            dataGridView1.Columns.Add("Date", "Date");
+            dataGridView1.Columns.Add("Balance", "Balance");
+            dataGridView1.Columns.Add("Collection", "Collection");
+            dataGridView1.Columns.Add("Penalty", "Penalty");
+            dataGridView1.Rows.Add(1,1);
+            int i = Convert.ToInt32(dataGridView1.Rows[0].Cells[0].Value);
+            int j = Convert.ToInt32(dataGridView1.Rows[0].Cells[1].Value);
+            int result = i - j;
+            dataGridView1.Rows.Add(result, null);
+
         }
     }
 }
