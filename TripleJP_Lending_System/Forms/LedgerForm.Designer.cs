@@ -51,6 +51,8 @@ namespace TripleJP_Lending_System.Forms
             this.ClientSize = new System.Drawing.Size(801, 607);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LedgerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LedgerForm";

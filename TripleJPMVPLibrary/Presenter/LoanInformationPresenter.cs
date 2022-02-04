@@ -13,13 +13,13 @@ namespace TripleJPMVPLibrary.Presenter
 {    
     public class LoanInformationPresenter
     {
-        private ISearch _search;
+        private ISearch _search;        
         private Customer _customer = new Customer();
         private LoanService _loanService = new LoanService();
         private List<GetCustomerLoanInformation> _getLoanInformation = new List<GetCustomerLoanInformation>();
         public LoanInformationPresenter(ISearch search)
         {
-            _search = search;
+            _search = search;            
             OnLoadLoanInformationData();
         }
         private void OnLoadLoanInformationData()
@@ -56,5 +56,6 @@ namespace TripleJPMVPLibrary.Presenter
         {
             return _getLoanInformation;
         }
+        
     }
 }

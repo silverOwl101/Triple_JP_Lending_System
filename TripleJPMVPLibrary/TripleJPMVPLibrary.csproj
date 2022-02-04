@@ -46,6 +46,7 @@
     <Compile Include="Model\Administrator.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\CustomerBusinessInformation.cs" />
+    <Compile Include="Model\GetCollectionAndPenalty.cs" />
     <Compile Include="Model\GetCustomerInfo.cs" />
     <Compile Include="Model\GetCustomerLoanInformation.cs" />
     <Compile Include="Model\Loan.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Presenter\AddLoanPresenter.cs" />
     <Compile Include="Presenter\CustomerEditPresenter.cs" />
     <Compile Include="Presenter\GetCustomerListPresenter.cs" />
+    <Compile Include="Presenter\LedgerPresenter.cs" />
     <Compile Include="Presenter\LoanInformationPresenter.cs" />
     <Compile Include="Presenter\LogInFrmPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +68,7 @@
     <Compile Include="View\IAddLoan.cs" />
     <Compile Include="View\IDataGridClick.cs" />
     <Compile Include="View\IEditCustomer.cs" />
+    <Compile Include="View\IGetCollectionAndPenalty.cs" />
     <Compile Include="View\ILogIn.cs" />
     <Compile Include="View\ISearch.cs" />
   </ItemGroup>

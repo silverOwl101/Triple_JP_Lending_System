@@ -15,7 +15,7 @@ namespace TripleJP_Lending_System.Forms
 {
     public partial class LoanInformationFrm : Form,ISearch
     {
-        public static decimal principalLoan;
+        public static string getLoanID;
         public LoanInformationFrm()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace TripleJP_Lending_System.Forms
         {
             get { return SearchBoxtxt.Text; }
             set { SearchBoxtxt.Text = value; }
-        }
+        }        
         private void OnSearch()
         {
             LoanInformationPresenter loanInformationPresenter
@@ -157,14 +157,13 @@ namespace TripleJP_Lending_System.Forms
         }
         private void ledgerButton_Click(object sender, EventArgs e)
         {
-            AssignPrincipalLoan();
+            GetLoanID();
             LedgerForm ledgerForm = new LedgerForm();
-            ledgerForm.ShowDialog();
-            
-        }        
-        private void AssignPrincipalLoan()
-        {            
-            principalLoan = Convert.ToDecimal(label8.Text);            
+            ledgerForm.ShowDialog();            
+        }
+        private void GetLoanID()
+        {
+            getLoanID = label1.Text;
         }
     }
 }

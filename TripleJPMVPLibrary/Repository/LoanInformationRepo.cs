@@ -104,5 +104,37 @@ namespace TripleJPMVPLibrary.Repository
             }
 
         }
+        public List<GetCollectionAndPenalty> GetCollectionAndPenalty(string LoanID)
+        {
+            string _getCollectionAndPenalty = LoanID;
+            GetCollectionAndPenalty getCollectionAndPenalty;
+            List<GetCollectionAndPenalty> collectionAndPenaltyList
+                                           = new List<GetCollectionAndPenalty>();            
+                using (MySqlConnection con =
+                    new MySqlConnection(SqlConnection.ConnectionString))
+                {
+                    const string Query = "sp_getCollectionAndPenalty";
+                    MySqlCommand cmd = new MySqlCommand(Query, con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@loanId", _getCollectionAndPenalty);
+                    cmd.Parameters["@loanId"].Direction = ParameterDirection.Input;                    
+                    cmd.ExecuteNonQuery();
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {                        
+                        while (reader.Read())
+                        {
+                            getCollectionAndPenalty = new GetCollectionAndPenalty
+                            {
+                                Date = Convert.ToDateTime(reader["Date"].ToString()),
+                                Collection = reader["Collection"].ToString(),
+                                Penalty = reader["Penalty"].ToString()
+                            };
+                            collectionAndPenaltyList.Add(getCollectionAndPenalty);
+                        }
+                    }
+                }            
+            return collectionAndPenaltyList;
+        }
     }
 }

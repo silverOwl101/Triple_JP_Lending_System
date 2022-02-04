@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TripleJPMVPLibrary.Repository;
 using TripleJPMVPLibrary.Model;
 using TripleJPUtilityLibrary.Generator;
+using System.Windows.Forms;
 
 namespace TripleJPMVPLibrary.Service
 {
@@ -40,6 +41,21 @@ namespace TripleJPMVPLibrary.Service
             }
 
             return "Success";
+        }
+        internal List<GetCollectionAndPenalty> OnCallGetCollectionAndPenalty(string LoanID)
+        {
+            try
+            {
+                return _loanRepo.GetCollectionAndPenalty(LoanID);
+            }
+            catch (Exception)
+            {
+                const string MessageContent = "No records of collection yet";
+                const string MessageCaption = "Collection not found";
+                MessageBox.Show(MessageContent, MessageCaption,
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return null;
+            }
         }
     }
 }
