@@ -56,8 +56,7 @@ CREATE TABLE `collection` (
   `id` varchar(100) NOT NULL,
   `customer_uid` char(36) NOT NULL,
   `loan_information_uid` char(36) NOT NULL,
-  `returned` decimal(10,0) NOT NULL,
-  `interest` decimal(10,0) NOT NULL,
+  `amount` decimal(10,0) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`uid`),
   KEY `colIndex` (`uid`),
@@ -74,7 +73,7 @@ CREATE TABLE `collection` (
 
 LOCK TABLES `collection` WRITE;
 /*!40000 ALTER TABLE `collection` DISABLE KEYS */;
-INSERT INTO `collection` VALUES ('91fd39a2-7876-11ec-90ae-74d02be5638f','1231135-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','9677ed4a-43f1-433c-938e-80f0b39cd6df',10,1,'2022-01-18'),('9359e267-7876-11ec-90ae-74d02be5638f','1231135-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','9677ed4a-43f1-433c-938e-80f0b39cd6df',10,1,'2022-01-18'),('93e91239-7876-11ec-90ae-74d02be5638f','1231135-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','9677ed4a-43f1-433c-938e-80f0b39cd6df',10,1,'2022-01-18'),('95a53607-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,1,'2022-01-16'),('ad6d8d08-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,1,'2022-01-16'),('ae1b5a97-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,1,'2022-01-16'),('af1faddb-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,1,'2022-01-16'),('afc163ef-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,1,'2022-01-16'),('b02c864d-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,1,'2022-01-16');
+INSERT INTO `collection` VALUES ('91fd39a2-7876-11ec-90ae-74d02be5638f','1231135-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','9677ed4a-43f1-433c-938e-80f0b39cd6df',10,'2022-01-18'),('9359e267-7876-11ec-90ae-74d02be5638f','1231135-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','9677ed4a-43f1-433c-938e-80f0b39cd6df',10,'2022-01-18'),('93e91239-7876-11ec-90ae-74d02be5638f','1231135-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','9677ed4a-43f1-433c-938e-80f0b39cd6df',10,'2022-01-18'),('95a53607-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,'2022-01-16'),('ad6d8d08-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,'2022-01-16'),('ae1b5a97-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,'2022-01-16'),('af1faddb-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,'2022-01-16'),('afc163ef-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,'2022-01-16'),('b02c864d-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,'2022-01-16');
 /*!40000 ALTER TABLE `collection` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -240,7 +239,7 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `PrincipalLoan`,
  1 AS `Penalty`,
  1 AS `Status`,
- 1 AS `Returned`*/;
+ 1 AS `Amount`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -250,7 +249,7 @@ SET character_set_client = @saved_cs_client;
 --
 -- Dumping routines for database 'tjpdb'
 --
-/*!50003 DROP PROCEDURE IF EXISTS `sp_example` */;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_getCollectionAndPenalty` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
@@ -260,41 +259,17 @@ SET character_set_client = @saved_cs_client;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_example`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getCollectionAndPenalty`(
+	IN loanId varchar(100)
+)
 BEGIN
-DECLARE term INT;
-DECLARE aa decimal(10,0);
-  SET term = 0;
-  SET aa = (select (principal_loan / 30) as example from loan_information
-  where uid = '9677ed4a-43f1-433c-938e-80f0b39cd6df');
-  drop temporary table if exists  new_tbl1;
-  drop temporary table if exists  new_tbl2;
-  create temporary table new_tbl1 ( id int not null auto_increment primary key,
-								  returned decimal(10,0),
-								  interest decimal(10,0),
-                                  collection decimal(10,0),
-                                  date date);
-  create temporary table new_tbl2 (id int not null auto_increment primary key,
-									returned decimal(10,0),
-									interest decimal(10,0));                                  
-  insert into new_tbl1	(collection,date)
-                        select returned,date from collection
-                        where loan_information_uid
-                        = '9677ed4a-43f1-433c-938e-80f0b39cd6df';
-
-	a: LOOP
-			SET term = term +1;
-			insert into new_tbl2(returned, interest)
-			values (aa, 0);
-			IF term=30 THEN
-			 LEAVE a;
-			END IF;
-	 END LOOP a;		
-     
-     select b.returned,b.interest,
-        a.collection, a.date
-        from new_tbl1 as a
-        right join new_tbl2 as b on b.id = a.id; 
+	select 	b.date as Date,		
+		b.amount as Collection,        
+        c.amount as Penalty
+		from loan_information as a
+		left join collection as b on a.uid = b.loan_information_uid
+		left join penalty as c on a.uid = c.loan_information_uid
+        where a.id = loanId;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -413,7 +388,7 @@ BEGIN
 	v_loaninformation.PrincipalLoan,
 	v_loaninformation.Penalty,
 	v_loaninformation.Status,
-    v_loaninformation.Returned
+    v_loaninformation.Amount
 	from v_loaninformation where
 	v_loaninformation.CustomerID like concat(customerId,'%') or
 	v_loaninformation.CustomerName like concat(customerName,'%');    
@@ -634,7 +609,7 @@ DELIMITER ;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `v_loaninformation` AS select `loan`.`id` AS `LoanID`,`customer`.`id` AS `CustomerID`,`customer`.`name` AS `CustomerName`,`loan`.`payment_term` AS `PaymentTerm`,`loan`.`duration` AS `Duration`,`loan`.`effective_date` AS `EffectiveDate`,`loan`.`interest` AS `Interest`,`loan`.`principal_loan` AS `PrincipalLoan`,`loan`.`penalty` AS `Penalty`,`loan`.`status` AS `Status`,sum(`collect`.`returned`) AS `Returned` from ((`loan_information` `loan` left join `collection` `collect` on((`loan`.`uid` = `collect`.`loan_information_uid`))) left join `customer_account` `customer` on((`loan`.`customer_uid` = `customer`.`uid`))) group by `collect`.`id` */;
+/*!50001 VIEW `v_loaninformation` AS select `loan`.`id` AS `LoanID`,`customer`.`id` AS `CustomerID`,`customer`.`name` AS `CustomerName`,`loan`.`payment_term` AS `PaymentTerm`,`loan`.`duration` AS `Duration`,`loan`.`effective_date` AS `EffectiveDate`,`loan`.`interest` AS `Interest`,`loan`.`principal_loan` AS `PrincipalLoan`,`loan`.`penalty` AS `Penalty`,`loan`.`status` AS `Status`,sum(`collect`.`amount`) AS `Amount` from ((`loan_information` `loan` left join `collection` `collect` on((`loan`.`uid` = `collect`.`loan_information_uid`))) left join `customer_account` `customer` on((`loan`.`customer_uid` = `customer`.`uid`))) group by `collect`.`id` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -648,4 +623,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-01 23:56:07
+-- Dump completed on 2022-02-04 23:12:22
