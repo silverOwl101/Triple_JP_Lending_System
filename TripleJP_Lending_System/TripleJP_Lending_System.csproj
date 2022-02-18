@@ -50,6 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormMediator\BaseComponent\MainApplicationFrmBaseComponent.cs" />
+    <Compile Include="FormMediator\Component\MainApplicationFrmComponent.cs" />
+    <Compile Include="FormMediator\ConcreteMediator\MainApplicationFrmConcreteMediator.cs" />
+    <Compile Include="FormMediator\Mediator\ILogInFrmMediator.cs" />
+    <Compile Include="FormMediator\Mediator\IMainApplicationFrmMediator.cs" />
     <Compile Include="Forms\AddCustomerFrm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -12,27 +12,34 @@ namespace TripleJP_Lending_System.Helper.Presenter
     // this is the helper class for presenter LoginFrmPresenter
     internal class LogInFrmHelper
     {
-        private Thread _th;
+        //private Thread _th;
         internal void Confirmation(bool result)
         {
-            if (result == true)
-            {
-                _th = new Thread(MainApplicationFrmLoad);
-                _th.SetApartmentState(ApartmentState.STA);
-                _th.Start();
-                Form logInFrm = Application.OpenForms["LogInFrm"]; // assign LogInFrm to variable logInFrm
-                if (logInFrm != null) // Check if LogInFrm is open
-                {
-                    logInFrm.Close(); // Close LogInFrm                    
-                }
-            }
-            else
+            //if (result)
+            //{
+            //    _th = new Thread(MainApplicationFrmLoad);
+            //    _th.SetApartmentState(ApartmentState.STA);
+            //    _th.Start();
+            //    Form logInFrm = Application.OpenForms["LogInFrm"]; // assign LogInFrm to variable logInFrm
+            //    if (logInFrm != null) // Check if LogInFrm is open
+            //    {
+            //        logInFrm.Close(); // Close LogInFrm                    
+            //    }
+            //}
+            //else
+            //{
+            //    const string MessageContent = "Check your username and password or contact your I.T officer for further information.";
+            //    const string MessageCaption = "Invalid credentials";
+            //    MessageBox.Show(MessageContent, MessageCaption,
+            //        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            if (!result)
             {
                 const string MessageContent = "Check your username and password or contact your I.T officer for further information.";
                 const string MessageCaption = "Invalid credentials";
                 MessageBox.Show(MessageContent, MessageCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
 
         private void MainApplicationFrmLoad() // Used this delegate to load the MainApplicationFrm
