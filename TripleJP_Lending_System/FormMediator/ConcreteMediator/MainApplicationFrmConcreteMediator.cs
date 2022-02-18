@@ -12,8 +12,8 @@ namespace TripleJP_Lending_System.FormMediator.ConcreteMediator
 {
     class MainApplicationFrmConcreteMediator: IMainApplicationFrmMediator
     {
-        MainApplicationFrm mainApplicationFrm;
-        MainApplicationFrmComponent _mainApplicationFrmComponent;
+        private MainApplicationFrm _mainApplicationFrm;
+        private MainApplicationFrmComponent _mainApplicationFrmComponent;
         public MainApplicationFrmConcreteMediator(MainApplicationFrmComponent
                                                     mainApplicationFrmComponent)
         {
@@ -25,8 +25,8 @@ namespace TripleJP_Lending_System.FormMediator.ConcreteMediator
         {
             if (sender)
             {
-                mainApplicationFrm = new MainApplicationFrm();
-                mainApplicationFrm.ShowDialog();
+                _mainApplicationFrm = new MainApplicationFrm();
+                _mainApplicationFrm.ShowDialog();
             }
         }
     }

@@ -12,11 +12,7 @@ namespace TripleJP_Lending_System.FormMediator.Component
     {        
         public void OpenForm(bool result)
         {
-            if (result)
-            {
-                _mainApplicationFrmMediator.Open(true);
-            }
-            
+            _mainApplicationFrmMediator.Open(result);
         }
     }
 }
