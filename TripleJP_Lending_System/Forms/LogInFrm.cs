@@ -18,10 +18,10 @@ namespace TripleJP_Lending_System
 {
     public partial class LogInFrm : Form, ILogIn
     {
-        MainApplicationFrmComponent mainApplicationFrmComponent;
-        MainApplicationFrmConcreteMediator mainApplicationFrmConcreteMediator;
-        LogInFrmPresenter logInFrmPresenter;
-        LogInFrmHelper logInFrmHelper;
+        private MainApplicationFrmComponent _mainApplicationFrmComponent;
+        private MainApplicationFrmConcreteMediator _mainApplicationFrmConcreteMediator;
+        private LogInFrmPresenter _logInFrmPresenter;
+        //LogInFrmHelper logInFrmHelper;
         public LogInFrm()
         {
             InitializeComponent();
@@ -80,32 +80,37 @@ namespace TripleJP_Lending_System
             {
                 UserName = textBox1.Text;
                 PassWord = textBox2.Text;
-                logInFrmPresenter = new LogInFrmPresenter(this);
-                bool result = logInFrmPresenter.LogInConfirmation();
-                switch (result)
+                _logInFrmPresenter = new LogInFrmPresenter(this);
+                bool result = _logInFrmPresenter.LogInConfirmation();
+
+                if(result is true)
                 {
-                    case true:
-                        ProceedLogIn(result);
-                        break;
-                    case false:
-                        ErrorLogIn(result);
-                        break;
+                    ProceedLogIn(result);
+                } 
+                else
+                {
+                    ErrorLogIn();
                 }
             }
         }
         private void ProceedLogIn(bool result)
         {
             Hide();
-            mainApplicationFrmComponent = new MainApplicationFrmComponent();
-            mainApplicationFrmConcreteMediator =
-                new MainApplicationFrmConcreteMediator(mainApplicationFrmComponent);
-            mainApplicationFrmComponent.OpenForm(result);
+            _mainApplicationFrmComponent = new MainApplicationFrmComponent();
+            _mainApplicationFrmConcreteMediator =
+                new MainApplicationFrmConcreteMediator(_mainApplicationFrmComponent);
+            _mainApplicationFrmComponent.OpenForm(result);
             Close();
         }
-        private void ErrorLogIn(bool result)
+        private void ErrorLogIn()
         {
-            logInFrmHelper = new LogInFrmHelper();
-            logInFrmHelper.Confirmation(result);
+            //logInFrmHelper = new LogInFrmHelper();
+            //logInFrmHelper.Confirmation(result);
+
+            const string MessageContent = "Check your username and password or contact your I.T officer for further information.";
+            const string MessageCaption = "Invalid credentials";
+            MessageBox.Show(MessageContent, MessageCaption,
+            MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         #endregion
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
