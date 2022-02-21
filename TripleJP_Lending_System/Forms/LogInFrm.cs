@@ -20,8 +20,7 @@ namespace TripleJP_Lending_System
     {
         private MainApplicationFrmComponent _mainApplicationFrmComponent;
         private MainApplicationFrmConcreteMediator _mainApplicationFrmConcreteMediator;
-        private LogInFrmPresenter _logInFrmPresenter;
-        //LogInFrmHelper logInFrmHelper;
+        private LogInFrmPresenter _logInFrmPresenter;        
         public LogInFrm()
         {
             InitializeComponent();
@@ -30,9 +29,7 @@ namespace TripleJP_Lending_System
         private void IsEnterPressed(KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Return))
-            {
-                //onLoadLoanInformationData
-                //Login() method if Enter key is pressed
+            {                
                 LogInVerification();
             }
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TripleJP_Lending_System.FormMediator.Mediator
 {
-    interface ILogInFrmMediator
+    interface ILoanInformationFrmMediator
     {
         void Open(bool sender);
     }
