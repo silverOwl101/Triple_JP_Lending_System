@@ -13,14 +13,15 @@ using TripleJPMVPLibrary.View;
 using TripleJP_Lending_System.Helper.Presenter;
 using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
+using TripleJP_Lending_System.FormMediator.Mediator;
 
 namespace TripleJP_Lending_System
 {
     public partial class LogInFrm : Form, ILogIn
-    {
-        private MainApplicationFrmComponent _mainApplicationFrmComponent;
-        private MainApplicationFrmConcreteMediator _mainApplicationFrmConcreteMediator;
-        private LogInFrmPresenter _logInFrmPresenter;        
+    {        
+        private LogInFrmPresenter _logInFrmPresenter;
+        private MainApplicationFrmComponent mainApplicationFrmComponent;
+        IFormsMediator conCreteMediator;
         public LogInFrm()
         {
             InitializeComponent();
@@ -92,18 +93,14 @@ namespace TripleJP_Lending_System
         }
         private void ProceedLogIn(bool result)
         {
-            Hide();
-            _mainApplicationFrmComponent = new MainApplicationFrmComponent();
-            _mainApplicationFrmConcreteMediator =
-                new MainApplicationFrmConcreteMediator(_mainApplicationFrmComponent);
-            _mainApplicationFrmComponent.OpenForm(result);
+            Hide();            
+            conCreteMediator = new ClassComponentConcreteMediator();
+            mainApplicationFrmComponent = new MainApplicationFrmComponent(conCreteMediator);
+            conCreteMediator.OpenForms(mainApplicationFrmComponent, result);
             Close();
         }
         private void ErrorLogIn()
-        {
-            //logInFrmHelper = new LogInFrmHelper();
-            //logInFrmHelper.Confirmation(result);
-
+        {            
             const string MessageContent = "Check your username and password or contact your I.T officer for further information.";
             const string MessageCaption = "Invalid credentials";
             MessageBox.Show(MessageContent, MessageCaption,

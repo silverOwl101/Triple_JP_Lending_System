@@ -4,22 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TripleJP_Lending_System.FormMediator.Mediator;
-using TripleJP_Lending_System.Forms;
 
 namespace TripleJP_Lending_System.FormMediator.Component
 {
-    class MainApplicationFrmComponent : IInclude
+    class LogInFrmComponent : IInclude
     {
-        MainApplicationFrm mainApplicationFrm;
-
-        public MainApplicationFrmComponent(IFormsMediator mediator)
+        LogInFrm logInform;
+        public LogInFrmComponent(IFormsMediator mediator)
         {
             mediator.Include(this);
         }
         public void Open(bool sender)
         {
-            mainApplicationFrm = new MainApplicationFrm();
-            mainApplicationFrm.ShowDialog();
+            logInform = new LogInFrm();
+            logInform.ShowDialog();
         }
     }
 }

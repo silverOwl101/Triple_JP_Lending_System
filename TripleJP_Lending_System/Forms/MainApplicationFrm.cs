@@ -10,31 +10,31 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
+using TripleJP_Lending_System.FormMediator.Mediator;
 
 namespace TripleJP_Lending_System.Forms
 {
     public partial class MainApplicationFrm : Form
-    {        
-        private LogInFrmMediatorComponent logInFrmMediatorComponent;
-        private LogInFrmConcreteMediator logInFrmConcreteMediator;
-        private CustomerAccountFrmComponent customerAccountFrmComponent;
-        private CustomerAccountFrmConcreteMediator customerAccountFrmConcreteMediator;
-        private LoanInformationFrmComponent loanInformationFrmComponent;
-        private LoanInformationFrmConcreteMediator loanInformationFrmConcreteMediator;
+    {
+        IFormsMediator conCreteMediator;
+        LogInFrmComponent logInFrmComponent;
+        CustomerAccountFrmComponent customerAccountFrmComponent;
+        LoanInformationFrmComponent loanInformationFrmComponent;
         public MainApplicationFrm()
         {
             InitializeComponent();
         }
-        #region Log out code
+        #region Log-out code
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadLogInFrm();
         }
         private void LoadLogInFrm()
         {
-            logInFrmMediatorComponent = new LogInFrmMediatorComponent();
-            logInFrmConcreteMediator = new LogInFrmConcreteMediator(logInFrmMediatorComponent);
-            logInFrmMediatorComponent.OpenForm(true);
+            Hide();
+            conCreteMediator = new ClassComponentConcreteMediator();
+            logInFrmComponent = new LogInFrmComponent(conCreteMediator);
+            conCreteMediator.OpenForms(logInFrmComponent,true);
             Close();
         }        
         #endregion
@@ -49,17 +49,15 @@ namespace TripleJP_Lending_System.Forms
         #region Methods for opening forms
         private void OpenCustomerAccountFrm()
         {
-            customerAccountFrmComponent = new CustomerAccountFrmComponent();
-            customerAccountFrmConcreteMediator = 
-                            new CustomerAccountFrmConcreteMediator(customerAccountFrmComponent);
-            customerAccountFrmComponent.OpenForm();
+            conCreteMediator = new ClassComponentConcreteMediator();
+            customerAccountFrmComponent = new CustomerAccountFrmComponent(conCreteMediator);
+            conCreteMediator.OpenForms(customerAccountFrmComponent,true);
         }
         private void OpenLoanInformationFrm()
         {
-            loanInformationFrmComponent = new LoanInformationFrmComponent();
-            loanInformationFrmConcreteMediator = 
-                            new LoanInformationFrmConcreteMediator(loanInformationFrmComponent);
-            loanInformationFrmComponent.OpenForm();
+            conCreteMediator = new ClassComponentConcreteMediator();
+            loanInformationFrmComponent = new LoanInformationFrmComponent(conCreteMediator);
+            conCreteMediator.OpenForms(loanInformationFrmComponent, true);
         }
         #endregion
     }
