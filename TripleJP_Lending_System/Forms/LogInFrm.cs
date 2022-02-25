@@ -20,8 +20,8 @@ namespace TripleJP_Lending_System
     public partial class LogInFrm : Form, ILogIn
     {        
         private LogInFrmPresenter _logInFrmPresenter;
-        private MainApplicationFrmComponent mainApplicationFrmComponent;
-        IFormsMediator conCreteMediator;
+        private MainApplicationFrmComponent _mainApplicationFrmComponent;
+        private IFormsMediator _concreteMediator;
         public LogInFrm()
         {
             InitializeComponent();
@@ -93,10 +93,10 @@ namespace TripleJP_Lending_System
         }
         private void ProceedLogIn(bool result)
         {
-            Hide();            
-            conCreteMediator = new ClassComponentConcreteMediator();
-            mainApplicationFrmComponent = new MainApplicationFrmComponent(conCreteMediator);
-            conCreteMediator.OpenForms(mainApplicationFrmComponent, result);
+            Hide();
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _mainApplicationFrmComponent = new MainApplicationFrmComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_mainApplicationFrmComponent, result);
             Close();
         }
         private void ErrorLogIn()

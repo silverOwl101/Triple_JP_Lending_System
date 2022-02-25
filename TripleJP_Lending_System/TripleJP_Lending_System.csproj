@@ -55,7 +55,7 @@
     <Compile Include="FormMediator\Component\LogInFrmComponent.cs" />
     <Compile Include="FormMediator\Component\MainApplicationFrmComponent.cs" />
     <Compile Include="FormMediator\ConcreteMediator\ClassComponentConcreteMediator.cs" />
-    <Compile Include="FormMediator\Mediator\IInclude.cs" />
+    <Compile Include="FormMediator\Mediator\IComponent.cs" />
     <Compile Include="FormMediator\Mediator\IFormsMediator.cs" />
     <Compile Include="Forms\AddCustomerFrm.cs">
       <SubType>Form</SubType>
