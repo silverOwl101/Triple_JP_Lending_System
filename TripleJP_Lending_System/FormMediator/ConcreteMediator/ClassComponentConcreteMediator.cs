@@ -9,21 +9,29 @@ namespace TripleJP_Lending_System.FormMediator.ConcreteMediator
 {
     class ClassComponentConcreteMediator : IFormsMediator
     {
-        List<IInclude> includes = new List<IInclude>();
-        public void Include(IInclude include)
+        private List<IComponent> _components = new List<IComponent>();
+        public void Include(IComponent component)
         {
-            includes.Add(include);
+            _components.Add(component);
         }
 
-        public void OpenForms(object sender,bool condition)
+        public void OpenForms(object sender, bool condition)
         {
-            foreach (var item in includes)
-            {
-                if (sender == item && condition is true)
-                {
-                    item.Open(condition);
-                }
-            }
+            _components.ForEach(component => 
+            { 
+                if (sender == component && condition is true) 
+                { 
+                    component.Open(); 
+                } 
+            });
+
+            //foreach (var item in _components)
+            //{
+            //    if (sender == item && condition is true)
+            //    {
+            //        item.Open(condition);
+            //    }
+            //}
         }
     }
 }

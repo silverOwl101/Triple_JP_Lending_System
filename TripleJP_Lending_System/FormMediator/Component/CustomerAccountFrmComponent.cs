@@ -8,20 +8,17 @@ using TripleJP_Lending_System.Forms;
 
 namespace TripleJP_Lending_System.FormMediator.Component
 {
-    class CustomerAccountFrmComponent : IInclude
+    class CustomerAccountFrmComponent : IComponent
     {
-        CustomerAccountFrm customerAccountFrm;
+        private CustomerAccountFrm _customerAccountFrm;
         public CustomerAccountFrmComponent(IFormsMediator mediator)
         {
             mediator.Include(this);
         }        
-        public void Open(bool sender)
+        public void Open()
         {
-            if (sender)
-            {
-                customerAccountFrm = new CustomerAccountFrm();
-                customerAccountFrm.ShowDialog();
-            }            
+            _customerAccountFrm = new CustomerAccountFrm();
+            _customerAccountFrm.ShowDialog(); 
         }
     }
 }

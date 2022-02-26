@@ -8,7 +8,7 @@ namespace TripleJP_Lending_System.FormMediator.Mediator
 {
     interface IFormsMediator
     {        
-        void Include(IInclude include);
+        void Include(IComponent component);
         void OpenForms(object sender, bool condition);
     }
 }

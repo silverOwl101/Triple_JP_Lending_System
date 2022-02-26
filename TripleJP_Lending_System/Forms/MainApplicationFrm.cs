@@ -16,10 +16,10 @@ namespace TripleJP_Lending_System.Forms
 {
     public partial class MainApplicationFrm : Form
     {
-        IFormsMediator conCreteMediator;
-        LogInFrmComponent logInFrmComponent;
-        CustomerAccountFrmComponent customerAccountFrmComponent;
-        LoanInformationFrmComponent loanInformationFrmComponent;
+        private IFormsMediator _concreteMediator;
+        private LogInFrmComponent _logInFrmComponent;
+        private CustomerAccountFrmComponent _customerAccountFrmComponent;
+        private LoanInformationFrmComponent _loanInformationFrmComponent;
         public MainApplicationFrm()
         {
             InitializeComponent();
@@ -32,9 +32,9 @@ namespace TripleJP_Lending_System.Forms
         private void LoadLogInFrm()
         {
             Hide();
-            conCreteMediator = new ClassComponentConcreteMediator();
-            logInFrmComponent = new LogInFrmComponent(conCreteMediator);
-            conCreteMediator.OpenForms(logInFrmComponent,true);
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _logInFrmComponent = new LogInFrmComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_logInFrmComponent, true);
             Close();
         }        
         #endregion
@@ -49,15 +49,15 @@ namespace TripleJP_Lending_System.Forms
         #region Methods for opening forms
         private void OpenCustomerAccountFrm()
         {
-            conCreteMediator = new ClassComponentConcreteMediator();
-            customerAccountFrmComponent = new CustomerAccountFrmComponent(conCreteMediator);
-            conCreteMediator.OpenForms(customerAccountFrmComponent,true);
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _customerAccountFrmComponent = new CustomerAccountFrmComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_customerAccountFrmComponent, true);
         }
         private void OpenLoanInformationFrm()
         {
-            conCreteMediator = new ClassComponentConcreteMediator();
-            loanInformationFrmComponent = new LoanInformationFrmComponent(conCreteMediator);
-            conCreteMediator.OpenForms(loanInformationFrmComponent, true);
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _loanInformationFrmComponent = new LoanInformationFrmComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_loanInformationFrmComponent, true);
         }
         #endregion
     }
