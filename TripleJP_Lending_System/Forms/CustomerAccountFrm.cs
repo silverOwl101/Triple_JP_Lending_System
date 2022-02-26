@@ -10,12 +10,20 @@ using System.Windows.Forms;
 using TripleJPMVPLibrary.View;
 using TripleJPMVPLibrary.Model;
 using TripleJPMVPLibrary.Presenter;
+using TripleJP_Lending_System.FormMediator.Mediator;
+using TripleJP_Lending_System.FormMediator.Component;
+using TripleJP_Lending_System.FormMediator.ConcreteMediator;
 
 namespace TripleJP_Lending_System.Forms
 {
     public partial class CustomerAccountFrm : Form, ISearch, IAddCustomer
     {
         internal static string[] customerInformation = new string[9];
+
+        private IFormsMediator _concreteMediator;
+        private AddCustomerFrmComponent _addCustomerFrmComponent;
+        private EditCustomerFrmComponent _editCustomerFrmComponent;
+
         public CustomerAccountFrm()
         {
             InitializeComponent();
@@ -79,8 +87,13 @@ namespace TripleJP_Lending_System.Forms
 
         private void OpenAddCustomerFrm()
         {
-            AddCustomerFrm addCustomer = new AddCustomerFrm();
-            addCustomer.ShowDialog();
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _addCustomerFrmComponent = new AddCustomerFrmComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_addCustomerFrmComponent, true);
+            
+            
+            //AddCustomerFrm addCustomer = new AddCustomerFrm();
+            //addCustomer.ShowDialog();
         }
         private void SearchBoxtxt_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -147,8 +160,16 @@ namespace TripleJP_Lending_System.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             LoadInformation();
-            EditCustomerFrm openEditCustomerFrm = new EditCustomerFrm();
-            openEditCustomerFrm.ShowDialog();
+
+
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _editCustomerFrmComponent = new EditCustomerFrmComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_editCustomerFrmComponent, true);
+
+            //EditCustomerFrm openEditCustomerFrm = new EditCustomerFrm();
+            //openEditCustomerFrm.ShowDialog();
+
+
             ClearText();
             DisableEditButton();
             SearchBoxtxt.Text = "";

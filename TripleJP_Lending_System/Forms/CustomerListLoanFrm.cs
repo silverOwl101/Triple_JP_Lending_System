@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TripleJP_Lending_System.FormMediator.Component;
+using TripleJP_Lending_System.FormMediator.ConcreteMediator;
+using TripleJP_Lending_System.FormMediator.Mediator;
 using TripleJPMVPLibrary.Presenter;
 using TripleJPMVPLibrary.View;
 
@@ -15,6 +18,10 @@ namespace TripleJP_Lending_System.Forms
     public partial class CustomerListLoanFrm : Form, ISearch
     {
         internal static string[] customerLoanInformation = new string[2];
+
+        private IFormsMediator _concreteMediator;
+        private AddLoanFrmComponent _addLoanFrmComponent;
+
         public CustomerListLoanFrm()
         {
             InitializeComponent();
@@ -48,8 +55,14 @@ namespace TripleJP_Lending_System.Forms
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             onDoubleClickData();
-            AddLoanFrm addLoan = new AddLoanFrm();
-            addLoan.ShowDialog();
+
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _addLoanFrmComponent = new AddLoanFrmComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_addLoanFrmComponent, true);
+
+
+            //AddLoanFrm addLoan = new AddLoanFrm();
+            //addLoan.ShowDialog();
         }
     }
 }

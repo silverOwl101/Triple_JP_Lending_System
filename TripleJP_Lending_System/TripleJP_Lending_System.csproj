@@ -50,7 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormMediator\Component\AddCustomerFrmComponent.cs" />
+    <Compile Include="FormMediator\Component\AddLoanFrmComponent.cs" />
     <Compile Include="FormMediator\Component\CustomerAccountFrmComponent.cs" />
+    <Compile Include="FormMediator\Component\CustomerListLoanFrmComponent.cs" />
+    <Compile Include="FormMediator\Component\EditCustomerFrmComponent.cs" />
+    <Compile Include="FormMediator\Component\LedgerFormComponent.cs" />
     <Compile Include="FormMediator\Component\LoanInformationFrmComponent.cs" />
     <Compile Include="FormMediator\Component\LogInFrmComponent.cs" />
     <Compile Include="FormMediator\Component\MainApplicationFrmComponent.cs" />
