@@ -10,12 +10,21 @@ using System.Windows.Forms;
 using TripleJPMVPLibrary.View;
 using TripleJPMVPLibrary.Presenter;
 using TripleJPUtilityLibrary.Accounting;
+using TripleJP_Lending_System.FormMediator.Mediator;
+using TripleJP_Lending_System.FormMediator.Component;
+using TripleJP_Lending_System.FormMediator.ConcreteMediator;
 
 namespace TripleJP_Lending_System.Forms
 {
     public partial class LoanInformationFrm : Form,ISearch
     {
         public static string getLoanID;
+
+        private IFormsMediator _concreteMediator;
+        private CustomerListLoanFrmComponent _customerListLoanFrmComponent;
+        private LedgerFormComponent _ledgerFormComponent;
+
+
         public LoanInformationFrm()
         {
             InitializeComponent();
@@ -107,8 +116,13 @@ namespace TripleJP_Lending_System.Forms
         }
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CustomerListLoanFrm customerListLoan = new CustomerListLoanFrm();
-            customerListLoan.ShowDialog();
+
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _customerListLoanFrmComponent = new CustomerListLoanFrmComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_customerListLoanFrmComponent, true);
+
+            //CustomerListLoanFrm customerListLoan = new CustomerListLoanFrm();
+            //customerListLoan.ShowDialog();
         }
         private void maturityInterestDisplay()
         {
@@ -158,8 +172,13 @@ namespace TripleJP_Lending_System.Forms
         private void ledgerButton_Click(object sender, EventArgs e)
         {
             GetLoanID();
-            LedgerForm ledgerForm = new LedgerForm();
-            ledgerForm.ShowDialog();            
+
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _ledgerFormComponent = new LedgerFormComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_ledgerFormComponent, true);
+
+            //LedgerForm ledgerForm = new LedgerForm();
+            //ledgerForm.ShowDialog();            
         }
         private void GetLoanID()
         {
