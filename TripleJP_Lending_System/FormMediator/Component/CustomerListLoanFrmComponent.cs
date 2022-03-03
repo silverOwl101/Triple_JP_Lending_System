@@ -16,7 +16,6 @@ namespace TripleJP_Lending_System.FormMediator.Component
         {
             mediator.Include(this);
         }
-
         public void Open()
         {
             _customerListLoanFrm = new CustomerListLoanFrm();

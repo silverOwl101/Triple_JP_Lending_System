@@ -54,6 +54,7 @@
     <Compile Include="FormMediator\Component\AddLoanFrmComponent.cs" />
     <Compile Include="FormMediator\Component\CustomerAccountFrmComponent.cs" />
     <Compile Include="FormMediator\Component\CustomerListLoanFrmComponent.cs" />
+    <Compile Include="FormMediator\Component\DataMediator.cs" />
     <Compile Include="FormMediator\Component\EditCustomerFrmComponent.cs" />
     <Compile Include="FormMediator\Component\LedgerFormComponent.cs" />
     <Compile Include="FormMediator\Component\LoanInformationFrmComponent.cs" />

@@ -10,10 +10,15 @@ namespace TripleJP_Lending_System.FormMediator.Component
 {
     class LoanInformationFrmComponent : IComponent
     {
+        internal static string _getLoanID;
         private LoanInformationFrm _loanInformationFrm;
         public LoanInformationFrmComponent(IFormsMediator mediator)
         {
             mediator.Include(this);
+        }
+        public LoanInformationFrmComponent(string getLoanID)
+        {
+            _getLoanID = getLoanID;
         }
         public void Open()
         {

@@ -7,21 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TripleJP_Lending_System.FormMediator.Component;
 using TripleJPMVPLibrary.Presenter;
 using TripleJPMVPLibrary.View;
 
 namespace TripleJP_Lending_System.Forms
 {
     public partial class LedgerForm : Form,IGetCollectionAndPenalty
-    {        
+    {
+        private DataMediator getMediatedID;
+        private string mediatedID;
         public LedgerForm()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            getMediatedID = new DataMediator();
+            mediatedID = getMediatedID.GetMediatedID();
         }
         public string LoanID
         {
-            get { return LoanInformationFrm.getLoanID; }
-            set { LoanInformationFrm.getLoanID = value; }
+            get { return mediatedID; }
+            set { mediatedID = value; }
         }
         private void LedgerForm_Load(object sender, EventArgs e)
         {

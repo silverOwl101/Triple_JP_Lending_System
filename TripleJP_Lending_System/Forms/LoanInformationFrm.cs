@@ -18,13 +18,11 @@ namespace TripleJP_Lending_System.Forms
 {
     public partial class LoanInformationFrm : Form,ISearch
     {
-        public static string getLoanID;
-
+        private string getLoanID;
         private IFormsMediator _concreteMediator;
         private CustomerListLoanFrmComponent _customerListLoanFrmComponent;
         private LedgerFormComponent _ledgerFormComponent;
-
-
+        private LoanInformationFrmComponent _loanInformationFrmComponent;
         public LoanInformationFrm()
         {
             InitializeComponent();
@@ -116,13 +114,9 @@ namespace TripleJP_Lending_System.Forms
         }
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             _concreteMediator = new ClassComponentConcreteMediator();
             _customerListLoanFrmComponent = new CustomerListLoanFrmComponent(_concreteMediator);
-            _concreteMediator.OpenForms(_customerListLoanFrmComponent, true);
-
-            //CustomerListLoanFrm customerListLoan = new CustomerListLoanFrm();
-            //customerListLoan.ShowDialog();
+            _concreteMediator.OpenForms(_customerListLoanFrmComponent, true);            
         }
         private void maturityInterestDisplay()
         {
@@ -170,19 +164,12 @@ namespace TripleJP_Lending_System.Forms
             
         }
         private void ledgerButton_Click(object sender, EventArgs e)
-        {
-            GetLoanID();
-
-            _concreteMediator = new ClassComponentConcreteMediator();
-            _ledgerFormComponent = new LedgerFormComponent(_concreteMediator);
-            _concreteMediator.OpenForms(_ledgerFormComponent, true);
-
-            //LedgerForm ledgerForm = new LedgerForm();
-            //ledgerForm.ShowDialog();            
-        }
-        private void GetLoanID()
-        {
+        {            
             getLoanID = label1.Text;
-        }
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _loanInformationFrmComponent = new LoanInformationFrmComponent(getLoanID);
+            _ledgerFormComponent = new LedgerFormComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_ledgerFormComponent, true);            
+        }        
     }
 }

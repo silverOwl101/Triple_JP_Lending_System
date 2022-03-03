@@ -16,13 +16,13 @@ using TripleJP_Lending_System.FormMediator.ConcreteMediator;
 
 namespace TripleJP_Lending_System.Forms
 {
-    public partial class CustomerAccountFrm : Form, ISearch, IAddCustomer
+    public partial class CustomerAccountFrm : Form, ISearch, IAddCustomer, IEditCustomer
     {
         internal static string[] customerInformation = new string[9];
-
         private IFormsMediator _concreteMediator;
         private AddCustomerFrmComponent _addCustomerFrmComponent;
         private EditCustomerFrmComponent _editCustomerFrmComponent;
+        private CustomerAccountFrmComponent _customerAccountFrmComponent;
 
         public CustomerAccountFrm()
         {
@@ -31,7 +31,12 @@ namespace TripleJP_Lending_System.Forms
             DisableEditButton();
         }
 
-        #region User Inputs        
+        #region User Inputs  
+        public string ID 
+        {
+            get { return label1.Text; }
+            set { label1.Text = value; }
+        }
         public string CustomerName
         {
             get { return label2.Text; }
@@ -79,12 +84,10 @@ namespace TripleJP_Lending_System.Forms
             get { return SearchBoxtxt.Text; }
             set { SearchBoxtxt.Text = value; }
         }        
-
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenAddCustomerFrm();
         }
-
         private void OpenAddCustomerFrm()
         {
             _concreteMediator = new ClassComponentConcreteMediator();
@@ -160,16 +163,11 @@ namespace TripleJP_Lending_System.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             LoadInformation();
-
-
             _concreteMediator = new ClassComponentConcreteMediator();
             _editCustomerFrmComponent = new EditCustomerFrmComponent(_concreteMediator);
             _concreteMediator.OpenForms(_editCustomerFrmComponent, true);
-
             //EditCustomerFrm openEditCustomerFrm = new EditCustomerFrm();
             //openEditCustomerFrm.ShowDialog();
-
-
             ClearText();
             DisableEditButton();
             SearchBoxtxt.Text = "";
@@ -177,15 +175,7 @@ namespace TripleJP_Lending_System.Forms
         }
         private void LoadInformation()
         {
-            customerInformation[0] = label1.Text;
-            customerInformation[1] = label2.Text;
-            customerInformation[2] = label3.Text;
-            customerInformation[3] = label4.Text;
-            customerInformation[4] = label5.Text;
-            customerInformation[5] = label6.Text;
-            customerInformation[6] = label7.Text;
-            customerInformation[7] = label8.Text;
-            customerInformation[8] = label9.Text;
+            _customerAccountFrmComponent = new CustomerAccountFrmComponent(this);            
         }
     }
 }

@@ -23,15 +23,7 @@ namespace TripleJP_Lending_System.FormMediator.ConcreteMediator
                 { 
                     component.Open(); 
                 } 
-            });
-
-            //foreach (var item in _components)
-            //{
-            //    if (sender == item && condition is true)
-            //    {
-            //        item.Open(condition);
-            //    }
-            //}
+            });            
         }
     }
 }

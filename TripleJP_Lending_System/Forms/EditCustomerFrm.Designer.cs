@@ -47,7 +47,6 @@ namespace TripleJP_Lending_System.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.Submitbutton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -227,7 +226,7 @@ namespace TripleJP_Lending_System.Forms
             // Submitbutton
             // 
             this.Submitbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Submitbutton.Location = new System.Drawing.Point(630, 365);
+            this.Submitbutton.Location = new System.Drawing.Point(586, 365);
             this.Submitbutton.Name = "Submitbutton";
             this.Submitbutton.Size = new System.Drawing.Size(112, 45);
             this.Submitbutton.TabIndex = 16;
@@ -235,27 +234,17 @@ namespace TripleJP_Lending_System.Forms
             this.Submitbutton.UseVisualStyleBackColor = true;
             this.Submitbutton.Click += new System.EventHandler(this.Submitbutton_Click);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(499, 365);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 45);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // EditCustomerFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Submitbutton);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EditCustomerFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditCustomerFrm";
@@ -285,6 +274,5 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button Submitbutton;
-        private System.Windows.Forms.Button button1;
     }
 }

@@ -11,12 +11,10 @@ namespace TripleJP_Lending_System.FormMediator.Component
     class LedgerFormComponent : IComponent
     {
         private LedgerForm _ledgerForm;
-
         public LedgerFormComponent(IFormsMediator mediator)
         {
             mediator.Include(this);
         }
-
         public void Open()
         {
             _ledgerForm = new LedgerForm();
