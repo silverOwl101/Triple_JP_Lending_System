@@ -18,11 +18,12 @@ namespace TripleJP_Lending_System.Forms
 {
     public partial class CustomerAccountFrm : Form, ISearch, IAddCustomer, IEditCustomer
     {
-        internal static string[] customerInformation = new string[9];
+        //internal static string[] customerInformation = new string[9];
         private IFormsMediator _concreteMediator;
         private AddCustomerFrmComponent _addCustomerFrmComponent;
         private EditCustomerFrmComponent _editCustomerFrmComponent;
-        private CustomerAccountFrmComponent _customerAccountFrmComponent;
+        //private CustomerAccountFrmComponent _customerAccountFrmComponent;
+        private CustomerAccountFrmPassData _customerAccountFrmData;
 
         public CustomerAccountFrm()
         {
@@ -175,7 +176,13 @@ namespace TripleJP_Lending_System.Forms
         }
         private void LoadInformation()
         {
-            _customerAccountFrmComponent = new CustomerAccountFrmComponent(this);            
+            //_customerAccountFrmComponent = new CustomerAccountFrmComponent(this);
+            //
+
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _customerAccountFrmData = new CustomerAccountFrmPassData(_concreteMediator, this);
+            _concreteMediator.PrepareData(_customerAccountFrmData);
+
         }
     }
 }

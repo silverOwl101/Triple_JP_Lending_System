@@ -4,23 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TripleJP_Lending_System.FormMediator.Mediator;
-using TripleJP_Lending_System.Forms;
 
 namespace TripleJP_Lending_System.FormMediator.Component
 {
-    class AddCustomerFrmComponent : IOpenComponent
+    class LedgerFormData: IDataComponent
     {
-        private AddCustomerFrm _addCustomerFrm;
-
-        public AddCustomerFrmComponent(IFormsMediator mediator)
+        public LedgerFormData(IFormsMediator mediator)
         {
             mediator.Include(this);
         }
 
-        public void Open()
+        public string[] GetData()
         {
-            _addCustomerFrm = new AddCustomerFrm();
-            _addCustomerFrm.ShowDialog();
+            return LoanInformationFrmPassData.s_loanID;
         }
     }
 }

@@ -7,7 +7,7 @@ using TripleJP_Lending_System.FormMediator.Mediator;
 
 namespace TripleJP_Lending_System.FormMediator.Component
 {
-    class LogInFrmComponent : IComponent
+    class LogInFrmComponent : IOpenComponent
     {
         private LogInFrm _logInform;
         public LogInFrmComponent(IFormsMediator mediator)

@@ -18,11 +18,12 @@ namespace TripleJP_Lending_System.Forms
 {
     public partial class LoanInformationFrm : Form,ISearch
     {
-        private string getLoanID;
+        private string _getLoanID;
         private IFormsMediator _concreteMediator;
         private CustomerListLoanFrmComponent _customerListLoanFrmComponent;
         private LedgerFormComponent _ledgerFormComponent;
-        private LoanInformationFrmComponent _loanInformationFrmComponent;
+        //private LoanInformationFrmComponent _loanInformationFrmComponent;
+        private LoanInformationFrmPassData _loanInformationFrmPassData;
         public LoanInformationFrm()
         {
             InitializeComponent();
@@ -165,10 +166,14 @@ namespace TripleJP_Lending_System.Forms
         }
         private void ledgerButton_Click(object sender, EventArgs e)
         {            
-            getLoanID = label1.Text;
+            _getLoanID = label1.Text;
+
             _concreteMediator = new ClassComponentConcreteMediator();
-            _loanInformationFrmComponent = new LoanInformationFrmComponent(getLoanID);
+            
+            _loanInformationFrmPassData = new LoanInformationFrmPassData(_concreteMediator, _getLoanID);
             _ledgerFormComponent = new LedgerFormComponent(_concreteMediator);
+            
+            _concreteMediator.PrepareData(_loanInformationFrmPassData);
             _concreteMediator.OpenForms(_ledgerFormComponent, true);            
         }        
     }

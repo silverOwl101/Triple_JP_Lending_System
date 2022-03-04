@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleJP_Lending_System.FormMediator.Component;
+using TripleJP_Lending_System.FormMediator.ConcreteMediator;
+using TripleJP_Lending_System.FormMediator.Mediator;
 using TripleJPMVPLibrary.Presenter;
 using TripleJPMVPLibrary.View;
 
@@ -15,18 +17,25 @@ namespace TripleJP_Lending_System.Forms
 {
     public partial class LedgerForm : Form,IGetCollectionAndPenalty
     {
-        private DataMediator getMediatedID;
-        private string mediatedID;
+        //private DataMediator getMediatedID;
+        private LedgerFormData _ledgerFormData;
+        private IFormsMediator _concreteMediator;
+        private string _loanID;
         public LedgerForm()
         {
             InitializeComponent();
-            getMediatedID = new DataMediator();
-            mediatedID = getMediatedID.GetMediatedID();
+
+            //getMediatedID = new DataMediator();
+
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _ledgerFormData = new LedgerFormData(_concreteMediator);
+
+            _loanID = _concreteMediator.GetData(_ledgerFormData)[0];
         }
         public string LoanID
         {
-            get { return mediatedID; }
-            set { mediatedID = value; }
+            get { return _loanID; }
+            set { _loanID = value; }
         }
         private void LedgerForm_Load(object sender, EventArgs e)
         {

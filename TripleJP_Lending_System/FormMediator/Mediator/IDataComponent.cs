@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace TripleJP_Lending_System.FormMediator.Mediator
 {
-    interface IComponent
+    interface IDataComponent
     {
-        void Open();
+        string[] GetData();
     }
 }
