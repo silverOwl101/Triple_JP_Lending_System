@@ -8,7 +8,7 @@ using TripleJP_Lending_System.Forms;
 
 namespace TripleJP_Lending_System.FormMediator.Component
 {
-    class MainApplicationFrmComponent : IComponent
+    class MainApplicationFrmComponent : IOpenComponent
     {
         private MainApplicationFrm _mainApplicationFrm;
 

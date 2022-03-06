@@ -8,7 +8,7 @@ using TripleJP_Lending_System.Forms;
 
 namespace TripleJP_Lending_System.FormMediator.Component
 {
-    class LedgerFormComponent : IComponent
+    class LedgerFormComponent : IOpenComponent
     {
         private LedgerForm _ledgerForm;
         public LedgerFormComponent(IFormsMediator mediator)

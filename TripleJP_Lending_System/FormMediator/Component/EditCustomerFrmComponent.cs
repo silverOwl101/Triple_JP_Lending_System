@@ -8,10 +8,9 @@ using TripleJP_Lending_System.Forms;
 
 namespace TripleJP_Lending_System.FormMediator.Component
 {
-    class EditCustomerFrmComponent : IComponent
+    class EditCustomerFrmComponent : IOpenComponent
     {
         private EditCustomerFrm _editCustomerFrm;
-        private DataMediator _dataMediator;
 
         public EditCustomerFrmComponent(IFormsMediator mediator)
         {
@@ -25,11 +24,6 @@ namespace TripleJP_Lending_System.FormMediator.Component
         {
             _editCustomerFrm = new EditCustomerFrm();
             _editCustomerFrm.ShowDialog();
-        }
-        internal string[] GetData()
-        {
-            _dataMediator = new DataMediator();
-            return _dataMediator.GetMediatedData();
         }
     }
 }

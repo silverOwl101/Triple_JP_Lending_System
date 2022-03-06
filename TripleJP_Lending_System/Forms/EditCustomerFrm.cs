@@ -11,36 +11,42 @@ using TripleJPMVPLibrary.Presenter;
 using TripleJPMVPLibrary.View;
 using TripleJP_Lending_System.Helper.View;
 using TripleJP_Lending_System.FormMediator.Component;
+using TripleJP_Lending_System.FormMediator.Mediator;
+using TripleJP_Lending_System.FormMediator.ConcreteMediator;
 
 namespace TripleJP_Lending_System.Forms
 {
     public partial class EditCustomerFrm : Form, IEditCustomer
     {
-        private string[] loadData;
-        private EditCustomerFrmComponent _editCustomerFrmComponent;
+        private string[] _loadData;
+        private EditCustomerFrmData _editCustomerFrmData;
+        private IFormsMediator _concreteMediator;
         private FrmInputRequirements _frmInputRequirements = new FrmInputRequirements();        
         public EditCustomerFrm()
         {
             InitializeComponent();
-            _editCustomerFrmComponent = new EditCustomerFrmComponent();
-            loadData = _editCustomerFrmComponent.GetData();
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _editCustomerFrmData = new EditCustomerFrmData(_concreteMediator);
+            _loadData = _concreteMediator.GetData(_editCustomerFrmData);
+            //_editCustomerFrmComponent = new EditCustomerFrmComponent();
+            //_loadData = _editCustomerFrmComponent.GetData();
             LoadCustomerInformation();            
         }
         public string ID // To be pass to the presenter
         {
-            get { return loadData[0]; }
-            set { loadData[0] = value; }
+            get { return _loadData[0]; }
+            set { _loadData[0] = value; }
         }
         private void LoadCustomerInformation()
-        {            
-            CustomerNametxt.Text = loadData[1];
-            CustomerAddresstxt.Text = loadData[2];
-            ContactNumbertxt.Text = loadData[3];
-            BusinessNametxt.Text = loadData[4];
-            BusinessNaturetxt.Text = loadData[5];
-            BusinessAddresstxt.Text = loadData[6];
-            GrossBusinessCapitaltxt.Text = loadData[7];
-            AverageDailyGrossSalestxt.Text = loadData[8];
+        {
+            CustomerNametxt.Text = _loadData[1];
+            CustomerAddresstxt.Text = _loadData[2];
+            ContactNumbertxt.Text = _loadData[3];
+            BusinessNametxt.Text = _loadData[4];
+            BusinessNaturetxt.Text = _loadData[5];
+            BusinessAddresstxt.Text = _loadData[6];
+            GrossBusinessCapitaltxt.Text = _loadData[7];
+            AverageDailyGrossSalestxt.Text = _loadData[8];
         }
         #region User Inputs        
         public string CustomerName

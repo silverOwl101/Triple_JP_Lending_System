@@ -9,10 +9,22 @@ namespace TripleJP_Lending_System.FormMediator.ConcreteMediator
 {
     class ClassComponentConcreteMediator : IFormsMediator
     {
-        private List<IComponent> _components = new List<IComponent>();
-        public void Include(IComponent component)
+        private List<IOpenComponent> _components = new List<IOpenComponent>();
+        private List<IDataComponent> _dataComponents = new List<IDataComponent>();
+        private List<IPassDataComponent> _passDataComponents = new List<IPassDataComponent>();
+        public void Include(IOpenComponent component)
         {
             _components.Add(component);
+        }
+
+        public void Include(IDataComponent dataComponent)
+        {
+            _dataComponents.Add(dataComponent);
+        }
+
+        public void Include(IPassDataComponent passDataComponents)
+        {
+            _passDataComponents.Add(passDataComponents);
         }
 
         public void OpenForms(object sender, bool condition)
@@ -24,6 +36,37 @@ namespace TripleJP_Lending_System.FormMediator.ConcreteMediator
                     component.Open(); 
                 } 
             });            
+        }
+
+        public string[] GetData(object sender)
+        {
+            foreach (var dataComponents in _dataComponents)
+            {
+                if (sender == dataComponents)
+                {
+                    return dataComponents.GetData();
+                }
+            }
+
+            return null;
+            //_dataComponents.ForEach(dataComponent =>
+            //{
+            //    if(sender == dataComponent)
+            //    {
+            //        dataComponent.GetData();
+            //    }
+            //});
+        }
+
+        public void PrepareData(object sender)
+        {
+            _passDataComponents.ForEach(passDataComponent =>
+            {
+                if (sender == passDataComponent)
+                {
+                    passDataComponent.PrepareData();
+                }
+            });
         }
     }
 }

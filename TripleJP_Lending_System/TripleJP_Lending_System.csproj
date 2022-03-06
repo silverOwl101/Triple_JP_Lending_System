@@ -53,16 +53,21 @@
     <Compile Include="FormMediator\Component\AddCustomerFrmComponent.cs" />
     <Compile Include="FormMediator\Component\AddLoanFrmComponent.cs" />
     <Compile Include="FormMediator\Component\CustomerAccountFrmComponent.cs" />
+    <Compile Include="FormMediator\Component\CustomerAccountFrmPassData.cs" />
     <Compile Include="FormMediator\Component\CustomerListLoanFrmComponent.cs" />
-    <Compile Include="FormMediator\Component\DataMediator.cs" />
     <Compile Include="FormMediator\Component\EditCustomerFrmComponent.cs" />
+    <Compile Include="FormMediator\Component\EditCustomerFrmData.cs" />
     <Compile Include="FormMediator\Component\LedgerFormComponent.cs" />
+    <Compile Include="FormMediator\Component\LedgerFormData.cs" />
     <Compile Include="FormMediator\Component\LoanInformationFrmComponent.cs" />
+    <Compile Include="FormMediator\Component\LoanInformationFrmPassData.cs" />
     <Compile Include="FormMediator\Component\LogInFrmComponent.cs" />
     <Compile Include="FormMediator\Component\MainApplicationFrmComponent.cs" />
     <Compile Include="FormMediator\ConcreteMediator\ClassComponentConcreteMediator.cs" />
-    <Compile Include="FormMediator\Mediator\IComponent.cs" />
+    <Compile Include="FormMediator\Mediator\IDataComponent.cs" />
+    <Compile Include="FormMediator\Mediator\IOpenComponent.cs" />
     <Compile Include="FormMediator\Mediator\IFormsMediator.cs" />
+    <Compile Include="FormMediator\Mediator\IPassDataComponent.cs" />
     <Compile Include="Forms\AddCustomerFrm.cs">
       <SubType>Form</SubType>
     </Compile>
