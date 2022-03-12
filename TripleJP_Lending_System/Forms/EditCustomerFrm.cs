@@ -27,10 +27,8 @@ namespace TripleJP_Lending_System.Forms
             InitializeComponent();
             _concreteMediator = new ClassComponentConcreteMediator();
             _editCustomerFrmData = new EditCustomerFrmData(_concreteMediator);
-            _loadData = _concreteMediator.GetData(_editCustomerFrmData);
-            //_editCustomerFrmComponent = new EditCustomerFrmComponent();
-            //_loadData = _editCustomerFrmComponent.GetData();
-            LoadCustomerInformation();            
+            _loadData = _concreteMediator.GetData(_editCustomerFrmData);            
+            LoadCustomerInformation();
         }
         public string ID // To be pass to the presenter
         {
@@ -94,6 +92,7 @@ namespace TripleJP_Lending_System.Forms
         {
             CustomerEditPresenter editPresenter = new CustomerEditPresenter(this);
             editPresenter.PrepareUpdate();
+            Close();
         }
         private void ContactNumbertxt_KeyPress(object sender, KeyPressEventArgs e)
         {

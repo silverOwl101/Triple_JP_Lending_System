@@ -17,9 +17,10 @@ namespace TripleJP_Lending_System.Forms
     {
         private FrmInputRequirements _frmInputRequirements = new FrmInputRequirements();
         public AddCustomerFrm()
-        {
+        {            
             InitializeComponent();
-            ClearTextbox();
+            Submitbutton.Enabled = false;
+            ClearTextbox();            
         }
         private void ClearTextbox()
         {
@@ -66,15 +67,14 @@ namespace TripleJP_Lending_System.Forms
         public decimal GrossBusinessCapital
         {
             get { return Convert.ToDecimal(GrossBusinessCapitaltxt.Text); }
-            set { GrossBusinessCapitaltxt.Text = value.ToString(); }
+            set { GrossBusinessCapitaltxt.Text = value.ToString("G"); }
         }
         public decimal AveDailyGrossSales
         {
             get { return Convert.ToDecimal(AverageDailyGrossSalestxt.Text); }
-            set { AverageDailyGrossSalestxt.Text = value.ToString(); }
+            set { AverageDailyGrossSalestxt.Text = value.ToString("G"); }
         }
         #endregion
-
         private void Submitbutton_Click(object sender, EventArgs e)
         {
             AddCustomerPresenter addcustomer = new AddCustomerPresenter(this);            
@@ -84,20 +84,142 @@ namespace TripleJP_Lending_System.Forms
                 ClearTextbox();
             }
         }
-
         private void ContactNumbertxt_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        {            
             _frmInputRequirements.InputNumbersOnly(e);
-        }
-        
+            ContactNumbertxt.MaxLength = 14;
+            IsAllTextBoxNotEmpty();
+        }        
         private void GrossBusinessCapitaltxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e);
+            GrossBusinessCapitaltxt.MaxLength = 14;
+            SubmitButtonDisable();
         }
-
         private void AverageDailyGrossSalestxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e);
+            AverageDailyGrossSalestxt.MaxLength = 14;
+            SubmitButtonDisable();
+        }        
+        private void GrossBusinessCapitaltxt_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(GrossBusinessCapitaltxt.Text))
+            {
+                GrossBusinessCapitaltxt.Text =
+                        Convert.ToDouble(GrossBusinessCapitaltxt.Text).ToString("N");
+            }
+            IsAllTextBoxNotEmpty();
+        }
+        private void AverageDailyGrossSalestxt_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(AverageDailyGrossSalestxt.Text))
+            {
+                AverageDailyGrossSalestxt.Text =
+                        Convert.ToDouble(AverageDailyGrossSalestxt.Text).ToString("N");
+            }
+            IsAllTextBoxNotEmpty();
+        }        
+        private void CustomerNametxt_Leave(object sender, EventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }
+        private void CustomerAddresstxt_Leave(object sender, EventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }
+        private void ContactNumbertxt_Leave(object sender, EventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }
+        private void BusinessNametxt_Leave(object sender, EventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }
+        private void BusinessNaturetxt_Leave(object sender, EventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }
+        private void BusinessAddresstxt_Leave(object sender, EventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }        
+        private void CustomerNametxt_KeyPress(object sender, KeyPressEventArgs e)
+        {            
+        }
+        private void CustomerAddresstxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }
+        private void BusinessNametxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }
+        private void BusinessNaturetxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }
+        private void BusinessAddresstxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }        
+        private void CustomerNametxt_TextChanged(object sender, EventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }
+        private void CustomerAddresstxt_TextChanged(object sender, EventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }
+        private void ContactNumbertxt_TextChanged(object sender, EventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }
+        private void BusinessNametxt_TextChanged(object sender, EventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }
+        private void BusinessNaturetxt_TextChanged(object sender, EventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }
+        private void BusinessAddresstxt_TextChanged(object sender, EventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }
+        private void GrossBusinessCapitaltxt_Enter(object sender, EventArgs e)
+        {
+            SubmitButtonDisable();
+        }        
+        private void AverageDailyGrossSalestxt_Enter(object sender, EventArgs e)
+        {
+            SubmitButtonDisable();
+        }
+        private void SubmitButtonDisable()
+        {
+            Submitbutton.Enabled = false;
+        }
+        private void IsAllTextBoxNotEmpty()
+        {
+            int count = 0;
+            foreach (Control item in groupBox1.Controls)
+            {
+                if (item is TextBox)
+                {
+                    if (!string.IsNullOrEmpty(item.Text))
+                    {
+                        count++;
+                    }
+                }
+            }
+            if (count == 8)
+            {
+                Submitbutton.Enabled = true;
+            }
+            else
+            {
+                Submitbutton.Enabled = false;
+            }
         }
     }
 }

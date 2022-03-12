@@ -167,12 +167,9 @@ namespace TripleJP_Lending_System.Forms
         private void ledgerButton_Click(object sender, EventArgs e)
         {            
             _getLoanID = label1.Text;
-
-            _concreteMediator = new ClassComponentConcreteMediator();
-            
+            _concreteMediator = new ClassComponentConcreteMediator();            
             _loanInformationFrmPassData = new LoanInformationFrmPassData(_concreteMediator, _getLoanID);
-            _ledgerFormComponent = new LedgerFormComponent(_concreteMediator);
-            
+            _ledgerFormComponent = new LedgerFormComponent(_concreteMediator);            
             _concreteMediator.PrepareData(_loanInformationFrmPassData);
             _concreteMediator.OpenForms(_ledgerFormComponent, true);            
         }        

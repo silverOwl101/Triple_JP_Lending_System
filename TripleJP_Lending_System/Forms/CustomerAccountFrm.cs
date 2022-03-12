@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleJPMVPLibrary.View;
-using TripleJPMVPLibrary.Model;
 using TripleJPMVPLibrary.Presenter;
 using TripleJP_Lending_System.FormMediator.Mediator;
 using TripleJP_Lending_System.FormMediator.Component;
@@ -175,14 +174,10 @@ namespace TripleJP_Lending_System.Forms
             dataGridView1.DataSource = null;
         }
         private void LoadInformation()
-        {
-            //_customerAccountFrmComponent = new CustomerAccountFrmComponent(this);
-            //
-
+        {           
             _concreteMediator = new ClassComponentConcreteMediator();
             _customerAccountFrmData = new CustomerAccountFrmPassData(_concreteMediator, this);
             _concreteMediator.PrepareData(_customerAccountFrmData);
-
         }
     }
 }
