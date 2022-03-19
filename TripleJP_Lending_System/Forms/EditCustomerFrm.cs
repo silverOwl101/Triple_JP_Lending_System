@@ -100,11 +100,11 @@ namespace TripleJP_Lending_System.Forms
         }
         private void GrossBusinessCapitaltxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e);
+            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, GrossBusinessCapitaltxt);
         }
         private void AverageDailyGrossSalestxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e);
+            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, AverageDailyGrossSalestxt);
         }
     }
 }

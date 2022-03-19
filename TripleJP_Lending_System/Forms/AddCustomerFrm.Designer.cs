@@ -126,7 +126,6 @@ namespace TripleJP_Lending_System.Forms
             this.BusinessAddresstxt.Size = new System.Drawing.Size(433, 30);
             this.BusinessAddresstxt.TabIndex = 6;
             this.BusinessAddresstxt.TextChanged += new System.EventHandler(this.BusinessAddresstxt_TextChanged);
-            this.BusinessAddresstxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BusinessAddresstxt_KeyPress);
             this.BusinessAddresstxt.Leave += new System.EventHandler(this.BusinessAddresstxt_Leave);
             // 
             // CustomerNametxt
@@ -137,7 +136,6 @@ namespace TripleJP_Lending_System.Forms
             this.CustomerNametxt.Size = new System.Drawing.Size(433, 30);
             this.CustomerNametxt.TabIndex = 1;
             this.CustomerNametxt.TextChanged += new System.EventHandler(this.CustomerNametxt_TextChanged);
-            this.CustomerNametxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CustomerNametxt_KeyPress);
             this.CustomerNametxt.Leave += new System.EventHandler(this.CustomerNametxt_Leave);
             // 
             // label5
@@ -179,7 +177,6 @@ namespace TripleJP_Lending_System.Forms
             this.CustomerAddresstxt.Size = new System.Drawing.Size(433, 30);
             this.CustomerAddresstxt.TabIndex = 2;
             this.CustomerAddresstxt.TextChanged += new System.EventHandler(this.CustomerAddresstxt_TextChanged);
-            this.CustomerAddresstxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CustomerAddresstxt_KeyPress);
             this.CustomerAddresstxt.Leave += new System.EventHandler(this.CustomerAddresstxt_Leave);
             // 
             // label3
@@ -200,7 +197,6 @@ namespace TripleJP_Lending_System.Forms
             this.BusinessNametxt.Size = new System.Drawing.Size(433, 30);
             this.BusinessNametxt.TabIndex = 4;
             this.BusinessNametxt.TextChanged += new System.EventHandler(this.BusinessNametxt_TextChanged);
-            this.BusinessNametxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BusinessNametxt_KeyPress);
             this.BusinessNametxt.Leave += new System.EventHandler(this.BusinessNametxt_Leave);
             // 
             // label2
@@ -221,7 +217,6 @@ namespace TripleJP_Lending_System.Forms
             this.BusinessNaturetxt.Size = new System.Drawing.Size(433, 30);
             this.BusinessNaturetxt.TabIndex = 5;
             this.BusinessNaturetxt.TextChanged += new System.EventHandler(this.BusinessNaturetxt_TextChanged);
-            this.BusinessNaturetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BusinessNaturetxt_KeyPress);
             this.BusinessNaturetxt.Leave += new System.EventHandler(this.BusinessNaturetxt_Leave);
             // 
             // label1

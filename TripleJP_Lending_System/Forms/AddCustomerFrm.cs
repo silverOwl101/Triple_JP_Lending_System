@@ -92,32 +92,24 @@ namespace TripleJP_Lending_System.Forms
         }        
         private void GrossBusinessCapitaltxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e);
-            GrossBusinessCapitaltxt.MaxLength = 14;
-            SubmitButtonDisable();
+            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, GrossBusinessCapitaltxt);
+            GrossBusinessCapitaltxt.MaxLength = 14;            
+            SubmitButtonDisable();            
         }
         private void AverageDailyGrossSalestxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e);
+            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, AverageDailyGrossSalestxt);
             AverageDailyGrossSalestxt.MaxLength = 14;
             SubmitButtonDisable();
         }        
         private void GrossBusinessCapitaltxt_Leave(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(GrossBusinessCapitaltxt.Text))
-            {
-                GrossBusinessCapitaltxt.Text =
-                        Convert.ToDouble(GrossBusinessCapitaltxt.Text).ToString("N");
-            }
+        {            
+            ConvertToNumberFormat(GrossBusinessCapitaltxt);
             IsAllTextBoxNotEmpty();
         }
         private void AverageDailyGrossSalestxt_Leave(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(AverageDailyGrossSalestxt.Text))
-            {
-                AverageDailyGrossSalestxt.Text =
-                        Convert.ToDouble(AverageDailyGrossSalestxt.Text).ToString("N");
-            }
+            ConvertToNumberFormat(AverageDailyGrossSalestxt);
             IsAllTextBoxNotEmpty();
         }        
         private void CustomerNametxt_Leave(object sender, EventArgs e)
@@ -143,57 +135,38 @@ namespace TripleJP_Lending_System.Forms
         private void BusinessAddresstxt_Leave(object sender, EventArgs e)
         {
             IsAllTextBoxNotEmpty();
-        }        
-        private void CustomerNametxt_KeyPress(object sender, KeyPressEventArgs e)
-        {            
-        }
-        private void CustomerAddresstxt_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            IsAllTextBoxNotEmpty();
-        }
-        private void BusinessNametxt_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            IsAllTextBoxNotEmpty();
-        }
-        private void BusinessNaturetxt_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            IsAllTextBoxNotEmpty();
-        }
-        private void BusinessAddresstxt_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            IsAllTextBoxNotEmpty();
-        }        
+        }               
         private void CustomerNametxt_TextChanged(object sender, EventArgs e)
         {
-            IsAllTextBoxNotEmpty();
+            SubmitButtonDisable();
         }
         private void CustomerAddresstxt_TextChanged(object sender, EventArgs e)
         {
-            IsAllTextBoxNotEmpty();
+            SubmitButtonDisable();
         }
         private void ContactNumbertxt_TextChanged(object sender, EventArgs e)
         {
-            IsAllTextBoxNotEmpty();
+            SubmitButtonDisable();
         }
         private void BusinessNametxt_TextChanged(object sender, EventArgs e)
         {
-            IsAllTextBoxNotEmpty();
+            SubmitButtonDisable();
         }
         private void BusinessNaturetxt_TextChanged(object sender, EventArgs e)
         {
-            IsAllTextBoxNotEmpty();
+            SubmitButtonDisable();
         }
         private void BusinessAddresstxt_TextChanged(object sender, EventArgs e)
         {
-            IsAllTextBoxNotEmpty();
+            SubmitButtonDisable();
         }
         private void GrossBusinessCapitaltxt_Enter(object sender, EventArgs e)
         {
-            SubmitButtonDisable();
-        }        
+            ConvertToGeneralFormat(GrossBusinessCapitaltxt);
+        }
         private void AverageDailyGrossSalestxt_Enter(object sender, EventArgs e)
         {
-            SubmitButtonDisable();
+            ConvertToGeneralFormat(AverageDailyGrossSalestxt);
         }
         private void SubmitButtonDisable()
         {
@@ -221,5 +194,19 @@ namespace TripleJP_Lending_System.Forms
                 Submitbutton.Enabled = false;
             }
         }
+        private void ConvertToNumberFormat(TextBox textBox)
+        {
+            if (!string.IsNullOrEmpty(textBox.Text))
+            {
+                textBox.Text = Convert.ToDouble(textBox.Text).ToString("N");
+            }
+        }
+        private void ConvertToGeneralFormat(TextBox textBox)
+        {
+            if (!string.IsNullOrEmpty(textBox.Text))
+            {
+                textBox.Text = Convert.ToDouble(textBox.Text).ToString("G");
+            }
+        }        
     }
 }
