@@ -9,6 +9,6 @@ namespace TripleJPUtilityLibrary.DataSource
     public static class SqlConnection
     {        
         public const string ConnectionString =
-                                    @"Server=localhost;Database=tjpdb;Uid=root;Pwd=Kuru_hunt1;";
+                                    @"Server=localhost;Database=tjpdb;Uid=root;Pwd=12345;";
     }
 }
