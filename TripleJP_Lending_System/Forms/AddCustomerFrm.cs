@@ -15,23 +15,18 @@ namespace TripleJP_Lending_System.Forms
 {
     public partial class AddCustomerFrm : Form, IAddCustomer
     {
+        #region Fields
+
         private FrmInputRequirements _frmInputRequirements = new FrmInputRequirements();
+        private FrmConvertionRequirements _frmConvertionRequirements = new FrmConvertionRequirements();
+
+        #endregion
+
         public AddCustomerFrm()
         {            
             InitializeComponent();
             Submitbutton.Enabled = false;
             ClearTextbox();            
-        }
-        private void ClearTextbox()
-        {
-            CustomerNametxt.Clear();
-            CustomerAddresstxt.Clear();
-            ContactNumbertxt.Clear();
-            BusinessNametxt.Clear();
-            BusinessNaturetxt.Clear();
-            BusinessAddresstxt.Clear();
-            GrossBusinessCapitaltxt.Clear();
-            AverageDailyGrossSalestxt.Clear();
         }
         #region User Inputs
         public string CustomerName 
@@ -75,6 +70,12 @@ namespace TripleJP_Lending_System.Forms
             set { AverageDailyGrossSalestxt.Text = value.ToString("G"); }
         }
         #endregion
+
+        #region Form Events
+
+        #region Buttons
+
+        #region Submitbutton Events
         private void Submitbutton_Click(object sender, EventArgs e)
         {
             AddCustomerPresenter addcustomer = new AddCustomerPresenter(this);            
@@ -84,89 +85,134 @@ namespace TripleJP_Lending_System.Forms
                 ClearTextbox();
             }
         }
+        #endregion
+
+        #endregion
+
+        #region TextBox
+
+        #region ContactNumberTxt Events
         private void ContactNumbertxt_KeyPress(object sender, KeyPressEventArgs e)
         {            
             _frmInputRequirements.InputNumbersOnly(e);
             ContactNumbertxt.MaxLength = 14;
+        }
+        private void ContactNumbertxt_Leave(object sender, EventArgs e)
+        {
             IsAllTextBoxNotEmpty();
-        }        
+        }
+        private void ContactNumbertxt_TextChanged(object sender, EventArgs e)
+        {
+            SubmitButtonDisable();
+        }
+        #endregion
+
+        #region GrossBusinessCapitalTxt Events
         private void GrossBusinessCapitaltxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, GrossBusinessCapitaltxt);
             GrossBusinessCapitaltxt.MaxLength = 14;            
             SubmitButtonDisable();            
         }
+        private void GrossBusinessCapitaltxt_Leave(object sender, EventArgs e)
+        {
+            _frmConvertionRequirements.ConvertToNumberFormat(GrossBusinessCapitaltxt);
+            IsAllTextBoxNotEmpty();
+        }
+        private void GrossBusinessCapitaltxt_Enter(object sender, EventArgs e)
+        {
+            _frmConvertionRequirements.ConvertToGeneralFormat(GrossBusinessCapitaltxt);
+        }
+        #endregion
+
+        #region AverageDailyGrossSalesTxt Events
         private void AverageDailyGrossSalestxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, AverageDailyGrossSalestxt);
             AverageDailyGrossSalestxt.MaxLength = 14;
             SubmitButtonDisable();
-        }        
-        private void GrossBusinessCapitaltxt_Leave(object sender, EventArgs e)
-        {            
-            ConvertToNumberFormat(GrossBusinessCapitaltxt);
-            IsAllTextBoxNotEmpty();
         }
         private void AverageDailyGrossSalestxt_Leave(object sender, EventArgs e)
         {
-            ConvertToNumberFormat(AverageDailyGrossSalestxt);
+            _frmConvertionRequirements.ConvertToNumberFormat(AverageDailyGrossSalestxt);
             IsAllTextBoxNotEmpty();
-        }        
+        }
+        private void AverageDailyGrossSalestxt_Enter(object sender, EventArgs e)
+        {
+            _frmConvertionRequirements.ConvertToGeneralFormat(AverageDailyGrossSalestxt);
+        }
+        #endregion
+
+        #region CustomerNameTxt Events
         private void CustomerNametxt_Leave(object sender, EventArgs e)
         {
             IsAllTextBoxNotEmpty();
         }
-        private void CustomerAddresstxt_Leave(object sender, EventArgs e)
-        {
-            IsAllTextBoxNotEmpty();
-        }
-        private void ContactNumbertxt_Leave(object sender, EventArgs e)
-        {
-            IsAllTextBoxNotEmpty();
-        }
-        private void BusinessNametxt_Leave(object sender, EventArgs e)
-        {
-            IsAllTextBoxNotEmpty();
-        }
-        private void BusinessNaturetxt_Leave(object sender, EventArgs e)
-        {
-            IsAllTextBoxNotEmpty();
-        }
-        private void BusinessAddresstxt_Leave(object sender, EventArgs e)
-        {
-            IsAllTextBoxNotEmpty();
-        }               
         private void CustomerNametxt_TextChanged(object sender, EventArgs e)
         {
             SubmitButtonDisable();
+        }
+        #endregion
+
+        #region CustomerAddressTxt Events
+        private void CustomerAddresstxt_Leave(object sender, EventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
         }
         private void CustomerAddresstxt_TextChanged(object sender, EventArgs e)
         {
             SubmitButtonDisable();
         }
-        private void ContactNumbertxt_TextChanged(object sender, EventArgs e)
+        #endregion
+
+        #region BusinessNameTxt Events
+        private void BusinessNametxt_Leave(object sender, EventArgs e)
         {
-            SubmitButtonDisable();
+            IsAllTextBoxNotEmpty();
         }
         private void BusinessNametxt_TextChanged(object sender, EventArgs e)
         {
             SubmitButtonDisable();
         }
+        #endregion
+
+        #region BusinessNatureTxt Events
+        private void BusinessNaturetxt_Leave(object sender, EventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }
         private void BusinessNaturetxt_TextChanged(object sender, EventArgs e)
         {
             SubmitButtonDisable();
         }
+        #endregion
+
+        #region BusinessAddressTxt Events
+        private void BusinessAddresstxt_Leave(object sender, EventArgs e)
+        {
+            IsAllTextBoxNotEmpty();
+        }               
         private void BusinessAddresstxt_TextChanged(object sender, EventArgs e)
         {
             SubmitButtonDisable();
         }
-        private void GrossBusinessCapitaltxt_Enter(object sender, EventArgs e)
+        #endregion
+
+        #endregion
+
+        #endregion
+
+        #region Custom Methods
+        private void ClearTextbox()
         {
-            ConvertToGeneralFormat(GrossBusinessCapitaltxt);
-        }
-        private void AverageDailyGrossSalestxt_Enter(object sender, EventArgs e)
-        {
-            ConvertToGeneralFormat(AverageDailyGrossSalestxt);
+            CustomerNametxt.Clear();
+            CustomerAddresstxt.Clear();
+            ContactNumbertxt.Clear();
+            BusinessNametxt.Clear();
+            BusinessNaturetxt.Clear();
+            BusinessAddresstxt.Clear();
+            GrossBusinessCapitaltxt.Clear();
+            AverageDailyGrossSalestxt.Clear();
         }
         private void SubmitButtonDisable()
         {
@@ -194,19 +240,7 @@ namespace TripleJP_Lending_System.Forms
                 Submitbutton.Enabled = false;
             }
         }
-        private void ConvertToNumberFormat(TextBox textBox)
-        {
-            if (!string.IsNullOrEmpty(textBox.Text))
-            {
-                textBox.Text = Convert.ToDouble(textBox.Text).ToString("N");
-            }
-        }
-        private void ConvertToGeneralFormat(TextBox textBox)
-        {
-            if (!string.IsNullOrEmpty(textBox.Text))
-            {
-                textBox.Text = Convert.ToDouble(textBox.Text).ToString("G");
-            }
-        }        
+        #endregion     
+
     }
 }

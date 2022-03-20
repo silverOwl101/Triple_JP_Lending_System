@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleJPMVPLibrary.Presenter;
 using TripleJPMVPLibrary.View;
-using TripleJP_Lending_System.Helper.Presenter;
 using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
 using TripleJP_Lending_System.FormMediator.Mediator;
