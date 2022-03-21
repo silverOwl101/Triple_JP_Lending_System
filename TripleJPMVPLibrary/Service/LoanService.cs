@@ -40,7 +40,7 @@ namespace TripleJPMVPLibrary.Service
                 return ex.ToString();
             }
 
-            return "Success";
+            return "Loan added successfully";
         }
         internal List<GetCollectionAndPenalty> OnCallGetCollectionAndPenalty(string LoanID)
         {

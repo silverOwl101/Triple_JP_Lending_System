@@ -27,15 +27,15 @@ namespace TripleJP_Lending_System.Forms
         #region Log-out code
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoadLogInFrm();
+            Close();
         }
         private void LoadLogInFrm()
-        {
+        {            
             Hide();
             _concreteMediator = new ClassComponentConcreteMediator();
             _logInFrmComponent = new LogInFrmComponent(_concreteMediator);
             _concreteMediator.OpenForms(_logInFrmComponent, true);
-            Close();
+            Close();            
         }        
         #endregion
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,6 +58,10 @@ namespace TripleJP_Lending_System.Forms
             _concreteMediator = new ClassComponentConcreteMediator();
             _loanInformationFrmComponent = new LoanInformationFrmComponent(_concreteMediator);
             _concreteMediator.OpenForms(_loanInformationFrmComponent, true);
+        }
+        private void MainApplicationFrm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoadLogInFrm();
         }
         #endregion
     }

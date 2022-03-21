@@ -49,8 +49,6 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
@@ -69,7 +67,6 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox12.SuspendLayout();
-            this.groupBox13.SuspendLayout();
             this.groupBox19.SuspendLayout();
             this.groupBox20.SuspendLayout();
             this.groupBox21.SuspendLayout();
@@ -133,7 +130,9 @@ namespace TripleJP_Lending_System.Forms
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(250, 27);
             this.textBox1.TabIndex = 0;
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // groupBox8
             // 
@@ -266,7 +265,6 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.groupBox12.Controls.Add(this.button2);
             this.groupBox12.Controls.Add(this.button1);
-            this.groupBox12.Controls.Add(this.groupBox13);
             this.groupBox12.Controls.Add(this.groupBox19);
             this.groupBox12.Controls.Add(this.groupBox20);
             this.groupBox12.Controls.Add(this.groupBox21);
@@ -300,26 +298,6 @@ namespace TripleJP_Lending_System.Forms
             this.button1.Text = "Calculate";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.label11);
-            this.groupBox13.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox13.Location = new System.Drawing.Point(14, 156);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(415, 57);
-            this.groupBox13.TabIndex = 21;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Total Balance";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(60, 23);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 23);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "label11";
             // 
             // groupBox19
             // 
@@ -425,8 +403,6 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox12.ResumeLayout(false);
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
             this.groupBox19.ResumeLayout(false);
             this.groupBox19.PerformLayout();
             this.groupBox20.ResumeLayout(false);
@@ -459,8 +435,6 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox19;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.GroupBox groupBox20;

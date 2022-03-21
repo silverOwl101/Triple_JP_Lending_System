@@ -25,7 +25,7 @@ namespace TripleJPMVPLibrary.Presenter
         {
             _customer.Id = _addLoan.CustomerID;          
             string message = _loanService.OnCallInsertLoan(LoadData(_loan), _customer);
-            MessageBox.Show(message);
+            SuccessfulMessage(message,"Loan Recorded");
         }
         private Loan LoadData(Loan loan)
         {
@@ -36,6 +36,11 @@ namespace TripleJPMVPLibrary.Presenter
             loan.PrincipalLoan = _addLoan.PrincipalLoan;
             loan.Penalty = _addLoan.Penalty;
             return loan;
+        }
+        private void SuccessfulMessage(string text, string messageCaption)
+        {                        
+            MessageBox.Show(text, messageCaption,
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

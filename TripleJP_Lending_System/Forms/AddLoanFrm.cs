@@ -10,16 +10,24 @@ using System.Windows.Forms;
 using TripleJPMVPLibrary.View;
 using TripleJPMVPLibrary.Presenter;
 using TripleJPUtilityLibrary.Accounting;
+using TripleJP_Lending_System.Helper.View;
 
 namespace TripleJP_Lending_System.Forms
 {
     public partial class AddLoanFrm : Form, IAddLoan
-    {        
+    {
+        #region Fields
+        private FrmConvertionRequirements _frmConvertionRequirements
+                                                    = new FrmConvertionRequirements();
+        private FrmInputRequirements _frmInputRequirements = new FrmInputRequirements();
+        #endregion
         public AddLoanFrm()
         {
             InitializeComponent();
             onLoadData();
+            button2.Enabled = false;
         }
+        #region Calculation Displays
         private void maturityInterestDisplay()
         {
             decimal loan = Convert.ToDecimal(textBox1.Text);
@@ -47,25 +55,7 @@ namespace TripleJP_Lending_System.Forms
             int duration = Convert.ToInt32(comboBox2.Text);
             label19.Text = comp.MaturityDate(effectiveDate, duration).ToString("MM-dd-yyyy");
         }
-        private void InputNumbersWithDecimalPlacesOnly(KeyPressEventArgs e)
-        {
-            if (!char.IsNumber(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            if (e.KeyChar == '\b') // enable backspace
-            {
-                e.Handled = false;
-            }
-            if (e.KeyChar == '\u0001') // enable ctrl + a
-            {
-                e.Handled = false;
-            }
-            if (e.KeyChar == '.') // enable dot for decimal places
-            {
-                e.Handled = false;
-            }
-        }
+        #endregion
         #region User input                                
         public string CustomerID
         {
@@ -101,29 +91,60 @@ namespace TripleJP_Lending_System.Forms
         {
             get { return Convert.ToDecimal(comboBox6.Text); }
             set { comboBox6.Text = value.ToString(); }
-        }        
+        }
+        #endregion
+        #region Calculate button events
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                maturityInterestDisplay();
+                maturityValueDisplay();
+                perRemittanceDisplay();
+                maturityDate();
+                button2.Enabled = true;
+            }
+            catch (Exception)
+            {
+                string message = "Fill all the required fields to calculate loan";
+                string messageCaption = "All required fields not fill";
+                ErrorMessage(message, messageCaption);
+            }
+        }
+        #endregion
+        #region Save button events
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddLoanPresenter addLoanPresenter = new AddLoanPresenter(this);
+            addLoanPresenter.OnLoadData();
+            Close();
+        }
+        #endregion
+        #region Principal loan events
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, textBox1);
+        }
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            _frmConvertionRequirements.ConvertToNumberFormat(textBox1);
+        }
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            _frmConvertionRequirements.ConvertToGeneralFormat(textBox1);
+        }
+        #endregion
+        #region Other important methods
+        private void ErrorMessage(string text, string messageCaption)
+        {
+            MessageBox.Show(text, messageCaption,
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         #endregion
         private void onLoadData()
         {
             label2.Text = CustomerListLoanFrm.customerLoanInformation[0];
             label3.Text = CustomerListLoanFrm.customerLoanInformation[1];
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            AddLoanPresenter addLoanPresenter = new AddLoanPresenter(this);
-            addLoanPresenter.OnLoadData();
-        }
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            InputNumbersWithDecimalPlacesOnly(e);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            maturityInterestDisplay();
-            maturityValueDisplay();
-            perRemittanceDisplay();
-            maturityDate();
-        }
+        }                        
     }
 }

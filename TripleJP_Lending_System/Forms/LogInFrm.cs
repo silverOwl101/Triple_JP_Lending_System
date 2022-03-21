@@ -23,7 +23,7 @@ namespace TripleJP_Lending_System
         private IFormsMediator _concreteMediator;
         public LogInFrm()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
         //Press Enter keyboard function
         private void IsEnterPressed(KeyPressEventArgs e)
