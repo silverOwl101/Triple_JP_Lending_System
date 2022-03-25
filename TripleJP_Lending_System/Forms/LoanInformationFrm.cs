@@ -101,7 +101,7 @@ namespace TripleJP_Lending_System.Forms
             label18.Text = "";
             label19.Text = "";
             label20.Text = "";
-            ledgerButton.Enabled = false;
+            ledgerButton.Enabled = false;            
         }
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -117,7 +117,10 @@ namespace TripleJP_Lending_System.Forms
         {
             _concreteMediator = new ClassComponentConcreteMediator();
             _customerListLoanFrmComponent = new CustomerListLoanFrmComponent(_concreteMediator);
-            _concreteMediator.OpenForms(_customerListLoanFrmComponent, true);            
+            _concreteMediator.OpenForms(_customerListLoanFrmComponent, true);
+            dataGridView1.DataSource = null;
+            SearchBoxtxt.Text = "";
+            ClearText();
         }
         private void maturityInterestDisplay()
         {
@@ -168,7 +171,8 @@ namespace TripleJP_Lending_System.Forms
         {            
             _getLoanID = label1.Text;
             _concreteMediator = new ClassComponentConcreteMediator();            
-            _loanInformationFrmPassData = new LoanInformationFrmPassData(_concreteMediator, _getLoanID);
+            _loanInformationFrmPassData = 
+                        new LoanInformationFrmPassData(_concreteMediator, _getLoanID);
             _ledgerFormComponent = new LedgerFormComponent(_concreteMediator);            
             _concreteMediator.PrepareData(_loanInformationFrmPassData);
             _concreteMediator.OpenForms(_ledgerFormComponent, true);            

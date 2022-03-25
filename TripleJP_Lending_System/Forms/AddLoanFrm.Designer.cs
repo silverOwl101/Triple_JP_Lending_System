@@ -98,7 +98,7 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox10.Location = new System.Drawing.Point(435, 241);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(415, 62);
-            this.groupBox10.TabIndex = 20;
+            this.groupBox10.TabIndex = 6;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Penalty";
             // 
@@ -111,7 +111,8 @@ namespace TripleJP_Lending_System.Forms
             this.comboBox6.Location = new System.Drawing.Point(98, 21);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(250, 30);
-            this.comboBox6.TabIndex = 16;
+            this.comboBox6.TabIndex = 6;
+            this.comboBox6.TextChanged += new System.EventHandler(this.comboBox6_TextChanged);
             // 
             // groupBox9
             // 
@@ -120,7 +121,7 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox9.Location = new System.Drawing.Point(14, 241);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(415, 62);
-            this.groupBox9.TabIndex = 19;
+            this.groupBox9.TabIndex = 5;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Principal Loan";
             // 
@@ -129,7 +130,8 @@ namespace TripleJP_Lending_System.Forms
             this.textBox1.Location = new System.Drawing.Point(80, 26);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(250, 27);
-            this.textBox1.TabIndex = 0;
+            this.textBox1.TabIndex = 5;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
@@ -141,7 +143,7 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox8.Location = new System.Drawing.Point(435, 165);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(415, 70);
-            this.groupBox8.TabIndex = 19;
+            this.groupBox8.TabIndex = 4;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Interest";
             // 
@@ -154,7 +156,8 @@ namespace TripleJP_Lending_System.Forms
             this.comboBox4.Location = new System.Drawing.Point(98, 21);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(250, 30);
-            this.comboBox4.TabIndex = 16;
+            this.comboBox4.TabIndex = 4;
+            this.comboBox4.TextChanged += new System.EventHandler(this.comboBox4_TextChanged);
             // 
             // groupBox7
             // 
@@ -163,7 +166,7 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox7.Location = new System.Drawing.Point(14, 165);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(415, 70);
-            this.groupBox7.TabIndex = 19;
+            this.groupBox7.TabIndex = 3;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Effective Date";
             // 
@@ -174,7 +177,8 @@ namespace TripleJP_Lending_System.Forms
             this.dateTimePicker1.Location = new System.Drawing.Point(80, 26);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(250, 25);
-            this.dateTimePicker1.TabIndex = 15;
+            this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // groupBox6
             // 
@@ -183,7 +187,7 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox6.Location = new System.Drawing.Point(435, 93);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(415, 66);
-            this.groupBox6.TabIndex = 19;
+            this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Duration";
             // 
@@ -197,7 +201,8 @@ namespace TripleJP_Lending_System.Forms
             this.comboBox2.Location = new System.Drawing.Point(98, 21);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(250, 30);
-            this.comboBox2.TabIndex = 16;
+            this.comboBox2.TabIndex = 2;
+            this.comboBox2.TextChanged += new System.EventHandler(this.comboBox2_TextChanged);
             // 
             // groupBox5
             // 
@@ -206,7 +211,7 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox5.Location = new System.Drawing.Point(14, 93);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(415, 66);
-            this.groupBox5.TabIndex = 19;
+            this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Payment Term";
             // 
@@ -219,7 +224,8 @@ namespace TripleJP_Lending_System.Forms
             this.comboBox1.Location = new System.Drawing.Point(80, 26);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(250, 30);
-            this.comboBox1.TabIndex = 15;
+            this.comboBox1.TabIndex = 1;
+            this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
             // groupBox4
             // 
@@ -283,7 +289,7 @@ namespace TripleJP_Lending_System.Forms
             this.button2.Location = new System.Drawing.Point(643, 168);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 46);
-            this.button2.TabIndex = 23;
+            this.button2.TabIndex = 8;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -294,7 +300,7 @@ namespace TripleJP_Lending_System.Forms
             this.button1.Location = new System.Drawing.Point(756, 167);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 46);
-            this.button1.TabIndex = 22;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Calculate";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

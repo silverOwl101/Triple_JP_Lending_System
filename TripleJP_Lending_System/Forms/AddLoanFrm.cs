@@ -145,6 +145,34 @@ namespace TripleJP_Lending_System.Forms
         {
             label2.Text = CustomerListLoanFrm.customerLoanInformation[0];
             label3.Text = CustomerListLoanFrm.customerLoanInformation[1];
-        }                        
+        }
+        private void SaveButtonDisable()
+        {
+            button2.Enabled = false;
+        }
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            SaveButtonDisable();
+        }
+        private void comboBox2_TextChanged(object sender, EventArgs e)
+        {
+            SaveButtonDisable();
+        }
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            SaveButtonDisable();
+        }
+        private void comboBox4_TextChanged(object sender, EventArgs e)
+        {
+            SaveButtonDisable();
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            SaveButtonDisable();
+        }
+        private void comboBox6_TextChanged(object sender, EventArgs e)
+        {
+            SaveButtonDisable();
+        }
     }
 }

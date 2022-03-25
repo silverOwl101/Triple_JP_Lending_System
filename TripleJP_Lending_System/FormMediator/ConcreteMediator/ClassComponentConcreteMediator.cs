@@ -48,14 +48,7 @@ namespace TripleJP_Lending_System.FormMediator.ConcreteMediator
                 }
             }
 
-            return null;
-            //_dataComponents.ForEach(dataComponent =>
-            //{
-            //    if(sender == dataComponent)
-            //    {
-            //        dataComponent.GetData();
-            //    }
-            //});
+            return null;            
         }
 
         public void PrepareData(object sender)
