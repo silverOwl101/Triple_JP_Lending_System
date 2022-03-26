@@ -13,6 +13,7 @@ using TripleJPMVPLibrary.View;
 using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
 using TripleJP_Lending_System.FormMediator.Mediator;
+using MySql.Data.MySqlClient;
 
 namespace TripleJP_Lending_System
 {
@@ -49,46 +50,41 @@ namespace TripleJP_Lending_System
 
         #region Load MainApplicationFrm if user is registered        
         public void LogInVerification()
-        {            
-            if (string.IsNullOrEmpty(textBox1.Text) && string.IsNullOrEmpty(textBox2.Text))
-            {
-                const string MessageContent = "Input your username and password";
-                const string MessageCaption = "Enter your credentials";
-                MessageBox.Show(MessageContent, MessageCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
-            if (!string.IsNullOrEmpty(textBox1.Text) && string.IsNullOrEmpty(textBox2.Text))
-            {
-                const string MessageContent = "Enter your password";
-                const string MessageCaption = "Invalid credentials";
-                MessageBox.Show(MessageContent, MessageCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
-            if (string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text))
-            {
-                const string MessageContent = "Enter your username";
-                const string MessageCaption = "Invalid credentials";
-                MessageBox.Show(MessageContent, MessageCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text))
+        {
+            try
             {
                 UserName = textBox1.Text;
                 PassWord = textBox2.Text;
                 _logInFrmPresenter = new LogInFrmPresenter(this);
                 bool result = _logInFrmPresenter.LogInConfirmation();
 
-                if(result is true)
+                if (result is true)
                 {
                     ProceedLogIn(result);
-                } 
+                }
                 else
                 {
-                    ErrorLogIn();
+                    const string MessageContent = "Account does not exist please check username and password and try again.";
+                    const string MessageCaption = "Invalid Account";
+                    MessageBox.Show(MessageContent, MessageCaption,
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            } 
+            catch (ArgumentException)
+            {
+                const string MessageContent = "Invalid username and password.";
+                const string MessageCaption = "Invalid Credentials";
+                MessageBox.Show(MessageContent, MessageCaption,
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            catch (InvalidOperationException ex) when (ex.InnerException is MySqlException)
+            {
+                const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
+                const string MessageCaption = "System Access Denied";
+                MessageBox.Show(MessageContent, MessageCaption,
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
         private void ProceedLogIn(bool result)
         {

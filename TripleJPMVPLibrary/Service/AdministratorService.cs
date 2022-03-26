@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,9 +27,9 @@ namespace TripleJPMVPLibrary.Service
             {
                 return logInRepo.CheckRecord(administrator.UserName,administrator.PassWord);
             }
-            catch (Exception)
+            catch (MySqlException ex)
             {
-                throw;
+                throw new InvalidOperationException(" database access denied ", ex);
             }
         }
     }
