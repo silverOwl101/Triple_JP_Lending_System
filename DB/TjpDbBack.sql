@@ -102,7 +102,7 @@ CREATE TABLE `customer_account` (
 
 LOCK TABLES `customer_account` WRITE;
 /*!40000 ALTER TABLE `customer_account` DISABLE KEYS */;
-INSERT INTO `customer_account` VALUES ('0a2e3418-cd79-4e09-9196-fb15e5efb7be','111920785-2021','john save','adkjahdkq','123989');
+INSERT INTO `customer_account` VALUES ('071bac76-565e-4b99-bf5a-7e9515e15a8f','101934821-2022','Kirito Uzumaki','saldjhqdquh','8347624'),('0a2e3418-cd79-4e09-9196-fb15e5efb7be','111920785-2021','john wick','purok green leaves mibang','123989');
 /*!40000 ALTER TABLE `customer_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,7 +135,7 @@ CREATE TABLE `customer_business_info` (
 
 LOCK TABLES `customer_business_info` WRITE;
 /*!40000 ALTER TABLE `customer_business_info` DISABLE KEYS */;
-INSERT INTO `customer_business_info` VALUES ('b0f48705-28b9-434c-8e63-ec78c13bef8c','111920785-2021','0a2e3418-cd79-4e09-9196-fb15e5efb7be','asdkjh','akjh','asdkjh',123.00,123.00);
+INSERT INTO `customer_business_info` VALUES ('993c7230-bfc5-44f6-b569-5b6538737fe9','101934821-2022','071bac76-565e-4b99-bf5a-7e9515e15a8f','asofihfoqh','aodiqodij','asofihfoqh',24876.00,23476.00),('b0f48705-28b9-434c-8e63-ec78c13bef8c','111920785-2021','0a2e3418-cd79-4e09-9196-fb15e5efb7be','asdkjh','akjh','asdkjh',122.00,123.00);
 /*!40000 ALTER TABLE `customer_business_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -169,7 +169,7 @@ CREATE TABLE `loan_information` (
 
 LOCK TABLES `loan_information` WRITE;
 /*!40000 ALTER TABLE `loan_information` DISABLE KEYS */;
-INSERT INTO `loan_information` VALUES ('51f44357-5cef-11ec-bf7a-74d02be5638f','111920785-2020','0a2e3418-cd79-4e09-9196-fb15e5efb7be','daily',30,'2021-12-14',0.20,1200.00,0.00,'none'),('56448b4d-d27f-4e90-a0b4-11cc8c02e45c','195036786-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',30,'2022-01-20',20.00,100.00,0.00,NULL),('9677ed4a-43f1-433c-938e-80f0b39cd6df','198037871-2021','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',30,'2021-12-19',20.00,1000.00,0.00,NULL);
+INSERT INTO `loan_information` VALUES ('31e4a483-750f-4906-85b8-5f6fc473f3cf','126748266-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',60,'2022-03-21',20.00,1200.00,0.00,NULL),('51f44357-5cef-11ec-bf7a-74d02be5638f','111920785-2020','0a2e3418-cd79-4e09-9196-fb15e5efb7be','daily',30,'2021-12-14',0.20,1200.00,0.00,'none'),('56448b4d-d27f-4e90-a0b4-11cc8c02e45c','195036786-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',30,'2022-01-20',20.00,100.00,0.00,NULL),('60dbbff8-ccc3-40ec-b84d-94b85cab81e3','127659769-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',60,'2022-03-25',20.00,12344.00,0.00,NULL),('90b4a75d-775c-4f3b-8f90-e0e33e4558f6','119829482-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',60,'2022-03-21',20.00,1000.00,0.00,NULL),('9677ed4a-43f1-433c-938e-80f0b39cd6df','198037871-2021','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',30,'2021-12-19',20.00,1000.00,0.00,NULL),('f7cf751a-2468-4afc-a8e1-b9be79caa87c','138968069-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',60,'2022-03-21',20.00,1000.00,0.00,NULL),('fbcc229a-7f5b-4119-9efb-985805dde8b7','141070883-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',60,'2022-03-21',20.00,23.00,0.00,NULL);
 /*!40000 ALTER TABLE `loan_information` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -609,7 +609,7 @@ DELIMITER ;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `v_loaninformation` AS select `loan`.`id` AS `LoanID`,`customer`.`id` AS `CustomerID`,`customer`.`name` AS `CustomerName`,`loan`.`payment_term` AS `PaymentTerm`,`loan`.`duration` AS `Duration`,`loan`.`effective_date` AS `EffectiveDate`,`loan`.`interest` AS `Interest`,`loan`.`principal_loan` AS `PrincipalLoan`,`loan`.`penalty` AS `Penalty`,`loan`.`status` AS `Status`,sum(`collect`.`amount`) AS `Amount` from ((`loan_information` `loan` left join `collection` `collect` on((`loan`.`uid` = `collect`.`loan_information_uid`))) left join `customer_account` `customer` on((`loan`.`customer_uid` = `customer`.`uid`))) group by `collect`.`id` */;
+/*!50001 VIEW `v_loaninformation` AS select `loan`.`id` AS `LoanID`,`customer`.`id` AS `CustomerID`,`customer`.`name` AS `CustomerName`,`loan`.`payment_term` AS `PaymentTerm`,`loan`.`duration` AS `Duration`,`loan`.`effective_date` AS `EffectiveDate`,`loan`.`interest` AS `Interest`,`loan`.`principal_loan` AS `PrincipalLoan`,`loan`.`penalty` AS `Penalty`,`loan`.`status` AS `Status`,sum(`collect`.`amount`) AS `Amount` from ((`loan_information` `loan` left join `collection` `collect` on((`loan`.`uid` = `collect`.`loan_information_uid`))) left join `customer_account` `customer` on((`loan`.`customer_uid` = `customer`.`uid`))) group by `loan`.`id` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -623,4 +623,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-04 23:12:22
+-- Dump completed on 2022-03-27  1:07:43
