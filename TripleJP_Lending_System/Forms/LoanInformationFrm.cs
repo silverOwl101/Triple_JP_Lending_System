@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleJPMVPLibrary.View;
 using TripleJPMVPLibrary.Presenter;
+using TripleJPMVPLibrary.Model;
 using TripleJPUtilityLibrary.Accounting;
 using TripleJP_Lending_System.FormMediator.Mediator;
 using TripleJP_Lending_System.FormMediator.Component;
@@ -22,6 +23,7 @@ namespace TripleJP_Lending_System.Forms
         private IFormsMediator _concreteMediator;
         private CustomerListLoanFrmComponent _customerListLoanFrmComponent;
         private LedgerFormComponent _ledgerFormComponent;
+        private LoanInformationPresenter loanInformationPresenter;
         //private LoanInformationFrmComponent _loanInformationFrmComponent;
         private LoanInformationFrmPassData _loanInformationFrmPassData;
         public LoanInformationFrm()
@@ -35,12 +37,12 @@ namespace TripleJP_Lending_System.Forms
             set { SearchBoxtxt.Text = value; }
         }        
         private void OnSearch()
-        {
-            LoanInformationPresenter loanInformationPresenter
-                = new LoanInformationPresenter(this);
+        {            
+            loanInformationPresenter = new LoanInformationPresenter(this);            
             dataGridView1.DataSource = loanInformationPresenter.GetLoanInformationList();
+            ledgerButton.Enabled = false;
             ColumnHeaderNames();
-            ClearText();
+            ClearText();           
         }
         private void ColumnHeaderNames()
         {
@@ -100,18 +102,11 @@ namespace TripleJP_Lending_System.Forms
             label17.Text = "";
             label18.Text = "";
             label19.Text = "";
-            label20.Text = "";
-            ledgerButton.Enabled = false;            
+            label20.Text = "";            
         }
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DisplayDataInForm();
-            maturityInterestDisplay();
-            maturityValueDisplay();
-            perRemittanceDisplay();
-            maturityDate();
-            totalAmountRemittance();            
-            ledgerButton.Enabled = true;            
+            ToDisplayInForm();
         }
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -176,6 +171,45 @@ namespace TripleJP_Lending_System.Forms
             _ledgerFormComponent = new LedgerFormComponent(_concreteMediator);            
             _concreteMediator.PrepareData(_loanInformationFrmPassData);
             _concreteMediator.OpenForms(_ledgerFormComponent, true);            
-        }        
+        }       
+        private void ToDisplayInForm()
+        {
+            DisplayDataInForm();
+            maturityInterestDisplay();
+            maturityValueDisplay();
+            perRemittanceDisplay();
+            maturityDate();
+            totalAmountRemittance();
+            ledgerButton.Enabled = true;
+        }
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            ToDisplayInForm();
+        }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {            
+            if (checkBox1.Checked)
+            {
+                loanInformationPresenter = new LoanInformationPresenter(this);
+                List<GetCustomerLoanInformation> unPaidList = new List<GetCustomerLoanInformation>();
+                unPaidList = loanInformationPresenter.GetLoanInformationList();
+                List<GetCustomerLoanInformation> result = new List<GetCustomerLoanInformation>();
+                foreach (var item in unPaidList)
+                {
+                    if (item.Status == "none")
+                    {
+                        result.Add(item);
+                    }
+                }               
+                dataGridView1.DataSource = result;
+                ledgerButton.Enabled = false;
+                ClearText();
+            }
+            else
+            {
+                OnSearch();
+            }
+                      
+        }
     }
 }

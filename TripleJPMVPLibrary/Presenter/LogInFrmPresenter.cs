@@ -22,9 +22,8 @@ namespace TripleJPMVPLibrary.Presenter
 
             if (string.IsNullOrEmpty(_logIn.UserName) || string.IsNullOrEmpty(_logIn.PassWord))
             {
-                throw new ArgumentException(" either the username or password is empty ");
+                throw new ArgumentException("Either the username or password is empty");
             }
-
             bool result = administratorService.IsRegistered(_logIn.UserName, _logIn.PassWord);
             return result;
         }

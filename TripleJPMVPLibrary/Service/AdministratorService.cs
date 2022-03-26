@@ -29,7 +29,7 @@ namespace TripleJPMVPLibrary.Service
             }
             catch (MySqlException ex)
             {
-                throw new InvalidOperationException(" database access denied ", ex);
+                throw new InvalidOperationException("Database access denied", ex);
             }
         }
     }

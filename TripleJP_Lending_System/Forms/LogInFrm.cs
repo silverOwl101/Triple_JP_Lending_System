@@ -47,7 +47,6 @@ namespace TripleJP_Lending_System
             set { }
         }        
         #endregion
-
         #region Load MainApplicationFrm if user is registered        
         public void LogInVerification()
         {
@@ -64,7 +63,9 @@ namespace TripleJP_Lending_System
                 }
                 else
                 {
-                    const string MessageContent = "Account does not exist please check username and password and try again.";
+                    const string MessageContent = "Account does not exist please " +
+                                                  "check username and password" +
+                                                  " and try again.";
                     const string MessageCaption = "Invalid Account";
                     MessageBox.Show(MessageContent, MessageCaption,
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -79,7 +80,9 @@ namespace TripleJP_Lending_System
             }
             catch (InvalidOperationException ex) when (ex.InnerException is MySqlException)
             {
-                const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
+                const string MessageContent = "There is a problem to the system" +
+                                              "please contact your I.T officer " +
+                                              "for further information.";
                 const string MessageCaption = "System Access Denied";
                 MessageBox.Show(MessageContent, MessageCaption,
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -93,14 +96,7 @@ namespace TripleJP_Lending_System
             _mainApplicationFrmComponent = new MainApplicationFrmComponent(_concreteMediator);
             _concreteMediator.OpenForms(_mainApplicationFrmComponent, result);
             Close();
-        }
-        private void ErrorLogIn()
-        {            
-            const string MessageContent = "Check your username and password or contact your I.T officer for further information.";
-            const string MessageCaption = "Invalid credentials";
-            MessageBox.Show(MessageContent, MessageCaption,
-            MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+        }        
         #endregion
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
