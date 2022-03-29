@@ -11,25 +11,31 @@ namespace TripleJPMVPLibrary.Service
 {
     public class AdministratorService
     {
-        
-        public bool IsRegistered(string username, string password) // remove underscore kay parameters mani sa method
-        {
-            // local variables mani silang tanan so wala ray underscore
-            LogInRepo logInRepo = new LogInRepo();
 
-            Administrator administrator = new Administrator
+        #region Fields
+
+        private LogInRepo _logInRepo;
+        private Administrator _administrator;
+
+        #endregion
+
+        public bool IsRegistered(string username, string password)
+        {
+            _administrator = new Administrator
             {
                 UserName = username,
                 PassWord = password
             };
 
+            _logInRepo = new LogInRepo();
+
             try
             {
-                return logInRepo.CheckRecord(administrator.UserName,administrator.PassWord);
+                return _logInRepo.CheckRecord(_administrator.UserName,_administrator.PassWord);
             }
             catch (MySqlException ex)
             {
-                throw new InvalidOperationException("Database access denied", ex);
+                throw new InvalidOperationException(" database access denied ", ex);
             }
         }
     }
