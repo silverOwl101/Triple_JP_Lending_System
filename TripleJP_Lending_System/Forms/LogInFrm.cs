@@ -59,7 +59,7 @@ namespace TripleJP_Lending_System
 
         #endregion
 
-        public void LogInVerification()
+        private void LogInVerification()
         {
             try
             {

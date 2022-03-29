@@ -8,9 +8,9 @@ using TripleJPUtilityLibrary.DataSource;
 
 namespace TripleJPMVPLibrary.Repository
 {
-    public class LogInRepo
+    internal class LogInRepo
     {
-        public bool CheckRecord(string username, string password) // camelCase nako kay parameters ni sila then walay underscore
+        internal bool CheckRecord(string username, string password) // camelCase nako kay parameters ni sila then walay underscore
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {               

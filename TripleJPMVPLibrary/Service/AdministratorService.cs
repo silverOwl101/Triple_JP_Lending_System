@@ -9,7 +9,7 @@ using TripleJPMVPLibrary.Repository;
 
 namespace TripleJPMVPLibrary.Service
 {
-    public class AdministratorService
+    internal class AdministratorService
     {
 
         #region Fields
@@ -19,7 +19,7 @@ namespace TripleJPMVPLibrary.Service
 
         #endregion
 
-        public bool IsRegistered(string username, string password)
+        internal bool IsRegistered(string username, string password)
         {
             _administrator = new Administrator
             {

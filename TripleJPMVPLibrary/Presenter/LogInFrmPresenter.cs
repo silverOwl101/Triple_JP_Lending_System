@@ -11,7 +11,9 @@ namespace TripleJPMVPLibrary.Presenter
 {
     public class LogInFrmPresenter
     {
+
         private ILogIn _logIn;
+
         public LogInFrmPresenter(ILogIn logIn)
         {
             _logIn = logIn;
