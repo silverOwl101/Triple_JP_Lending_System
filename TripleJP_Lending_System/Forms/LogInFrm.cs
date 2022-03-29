@@ -33,14 +33,14 @@ namespace TripleJP_Lending_System
         }
 
         #region User Input
-        public string UserName
+        public string Username
         {
-            get { return textBox1.Text; }
+            get { return usernameTxt.Text; }
             set { }
         }
-        public string PassWord
+        public string Password
         {
-            get { return textBox2.Text; }
+            get { return passwordTxt.Text; }
             set { }
         }
         #endregion
@@ -63,8 +63,8 @@ namespace TripleJP_Lending_System
         {
             try
             {
-                UserName = textBox1.Text;
-                PassWord = textBox2.Text;
+                Username = usernameTxt.Text;
+                Password = passwordTxt.Text;
 
                 _logInFrmPresenter = new LogInFrmPresenter(this);
                 bool result = _logInFrmPresenter.LogInConfirmation();
@@ -116,11 +116,12 @@ namespace TripleJP_Lending_System
 
         #region TextBox
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void UsernameTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             IsEnterPressed(e);
         }
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void PasswordTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             IsEnterPressed(e);
         }
@@ -129,7 +130,7 @@ namespace TripleJP_Lending_System
 
         #region Buttons
 
-        private void button1_Click(object sender, EventArgs e)
+        private void LogInButton_Click(object sender, EventArgs e)
         {
             LogInVerification();
         }

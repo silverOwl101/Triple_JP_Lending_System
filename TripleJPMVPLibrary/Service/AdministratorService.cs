@@ -23,15 +23,15 @@ namespace TripleJPMVPLibrary.Service
         {
             _administrator = new Administrator
             {
-                UserName = username,
-                PassWord = password
+                Username = username,
+                Password = password
             };
 
             _logInRepo = new LogInRepo();
 
             try
             {
-                return _logInRepo.CheckRecord(_administrator.UserName,_administrator.PassWord);
+                return _logInRepo.CheckRecord(_administrator.Username,_administrator.Password);
             }
             catch (MySqlException ex)
             {

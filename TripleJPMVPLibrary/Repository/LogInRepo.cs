@@ -17,9 +17,9 @@ namespace TripleJPMVPLibrary.Repository
                 con.Open();
                 // kini kay constant mani siya so PascalCase gamiton instead nga camelCase
                 const string SqlQuery = "Select username,password from administrator " +
-                                        "where username = @UserName and password = @Password";
+                                        "where username = @Username and password = @Password";
                 var sqlCommand = new MySqlCommand(SqlQuery, con);
-                sqlCommand.Parameters.AddWithValue("@UserName", username);
+                sqlCommand.Parameters.AddWithValue("@Username", username);
                 sqlCommand.Parameters.AddWithValue("@Password", password);
                 sqlCommand.ExecuteNonQuery();
                 using (var reader = sqlCommand.ExecuteReader())

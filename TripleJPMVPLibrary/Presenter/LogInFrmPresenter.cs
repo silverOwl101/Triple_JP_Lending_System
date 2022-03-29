@@ -20,11 +20,11 @@ namespace TripleJPMVPLibrary.Presenter
         {
             AdministratorService administratorService = new AdministratorService();
 
-            if (string.IsNullOrEmpty(_logIn.UserName) || string.IsNullOrEmpty(_logIn.PassWord))
+            if (string.IsNullOrEmpty(_logIn.Username) || string.IsNullOrEmpty(_logIn.Password))
             {
                 throw new ArgumentException(" either the username or password is empty ");
             }
-            bool result = administratorService.IsRegistered(_logIn.UserName, _logIn.PassWord);
+            bool result = administratorService.IsRegistered(_logIn.Username, _logIn.Password);
             return result;
         }
     }
