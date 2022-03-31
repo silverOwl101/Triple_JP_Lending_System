@@ -71,10 +71,10 @@ namespace TripleJP_Lending_System
 
                 if (result is true)
                 {
-                    const string MessageContent = "Login Successful.";
-                    const string MessageCaption = "Successful";
+                    //const string MessageContent = "Login Successful.";
+                    //const string MessageCaption = "Successful";
 
-                    if (MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                    //if (MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                         ProceedLogIn(result);
                 }
                 else

@@ -43,13 +43,15 @@ namespace TripleJPMVPLibrary.Presenter
                     _customer.Name = _search.UserSearch;
                 }
                 _getLoanInformation = _loanService.OnCallGetLoanInformation(_customer);
-                if (_getLoanInformation.Count == 0)
-                {
-                    const string MessageContent = "Double check the entry or contact your I.T personnel for futher details";
-                    string MessageCaption = "Record not found";
-                    MessageBox.Show(MessageContent, MessageCaption,
-                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                //if (_getLoanInformation.Count == 0)
+                //{
+                //    const string MessageContent = "Double check the entry" +
+                //                                  " or contact your I.T personnel" +
+                //                                  " for futher details";
+                //    string MessageCaption = "Record not found";
+                //    MessageBox.Show(MessageContent, MessageCaption,
+                //        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
             }
         }
         public List<GetCustomerLoanInformation> GetLoanInformationList()
