@@ -11,20 +11,29 @@ namespace TripleJPMVPLibrary.Presenter
 {
     public class LogInFrmPresenter
     {
+
+        #region Fields
+
         private ILogIn _logIn;
+        private LogInService _logInService;
+
+        #endregion
+
         public LogInFrmPresenter(ILogIn logIn)
         {
             _logIn = logIn;
         }        
+
         public bool LogInConfirmation()
         {
-            AdministratorService administratorService = new AdministratorService();
+            _logInService = new LogInService();
 
-            if (string.IsNullOrEmpty(_logIn.UserName) || string.IsNullOrEmpty(_logIn.PassWord))
+            if (string.IsNullOrEmpty(_logIn.Username) || string.IsNullOrEmpty(_logIn.Password))
             {
-                throw new ArgumentException("Either the username or password is empty");
+                throw new ArgumentException(" either the username or password is empty ");
             }
-            bool result = administratorService.IsRegistered(_logIn.UserName, _logIn.PassWord);
+
+            bool result = _logInService.IsRegistered(_logIn.Username, _logIn.Password);
             return result;
         }
     }

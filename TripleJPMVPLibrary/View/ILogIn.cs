@@ -8,7 +8,7 @@ namespace TripleJPMVPLibrary.View
 {
     public interface ILogIn
     {
-        string UserName { get; set; }
-        string PassWord { get; set; }
+        string Username { get; set; }
+        string Password { get; set; }
     }
 }

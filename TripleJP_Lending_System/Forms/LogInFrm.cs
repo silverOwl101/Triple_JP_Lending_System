@@ -18,71 +18,83 @@ using MySql.Data.MySqlClient;
 namespace TripleJP_Lending_System
 {
     public partial class LogInFrm : Form, ILogIn
-    {        
+    {
+        #region Fields
+
         private LogInFrmPresenter _logInFrmPresenter;
         private MainApplicationFrmComponent _mainApplicationFrmComponent;
         private IFormsMediator _concreteMediator;
+
+        #endregion
+
         public LogInFrm()
         {
             InitializeComponent();            
         }
-        //Press Enter keyboard function
+
+        #region User Input
+        public string Username
+        {
+            get { return usernameTxt.Text; }
+            set { }
+        }
+        public string Password
+        {
+            get { return passwordTxt.Text; }
+            set { }
+        }
+        #endregion
+
+        #region Custom Methods
+
+        #region Events
+
         private void IsEnterPressed(KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Return))
-            {                
+            {
                 LogInVerification();
             }
         }
 
-        #region User Input
-        public string UserName
-        {
-            get { return textBox1.Text; }
-            set { }
-        }
-        public string PassWord
-        {
-            get { return textBox2.Text; }
-            set { }
-        }        
         #endregion
-        #region Load MainApplicationFrm if user is registered        
-        public void LogInVerification()
+
+        private void LogInVerification()
         {
             try
             {
-                UserName = textBox1.Text;
-                PassWord = textBox2.Text;
+                Username = usernameTxt.Text;
+                Password = passwordTxt.Text;
+
                 _logInFrmPresenter = new LogInFrmPresenter(this);
                 bool result = _logInFrmPresenter.LogInConfirmation();
 
                 if (result is true)
                 {
-                    ProceedLogIn(result);
+                    const string MessageContent = "Login Successful.";
+                    const string MessageCaption = "Successful";
+
+                    if (MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                        ProceedLogIn(result);
                 }
                 else
                 {
-                    const string MessageContent = "Account does not exist please " +
-                                                  "check username and password" +
-                                                  " and try again.";
-                    const string MessageCaption = "Invalid Account";
+                    const string MessageContent = "Invalid username and password.";
+                    const string MessageCaption = "Invalid Credentials";
                     MessageBox.Show(MessageContent, MessageCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } 
             catch (ArgumentException)
             {
-                const string MessageContent = "Invalid username and password.";
-                const string MessageCaption = "Invalid Credentials";
+                const string MessageContent = "Please type your username and password.";
+                const string MessageCaption = "Enter Credentials";
                 MessageBox.Show(MessageContent, MessageCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (InvalidOperationException ex) when (ex.InnerException is MySqlException)
             {
-                const string MessageContent = "There is a problem to the system" +
-                                              "please contact your I.T officer " +
-                                              "for further information.";
+                const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
                 const string MessageCaption = "System Access Denied";
                 MessageBox.Show(MessageContent, MessageCaption,
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -96,19 +108,36 @@ namespace TripleJP_Lending_System
             _mainApplicationFrmComponent = new MainApplicationFrmComponent(_concreteMediator);
             _concreteMediator.OpenForms(_mainApplicationFrmComponent, result);
             Close();
-        }        
+        }
+
         #endregion
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+
+        #region Form Events
+
+        #region TextBox
+
+        private void UsernameTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             IsEnterPressed(e);
         }
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void PasswordTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             IsEnterPressed(e);
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        #endregion
+
+        #region Buttons
+
+        private void LogInButton_Click(object sender, EventArgs e)
         {
             LogInVerification();
         }
+
+        #endregion
+
+        #endregion
+
     }
 }

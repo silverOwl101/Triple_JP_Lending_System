@@ -61,7 +61,7 @@
     <Compile Include="Repository\CustomerRepo.cs" />
     <Compile Include="Repository\LoanInformationRepo.cs" />
     <Compile Include="Repository\LogInRepo.cs" />
-    <Compile Include="Service\AdministratorService.cs" />
+    <Compile Include="Service\LogInService.cs" />
     <Compile Include="Service\CustomerService.cs" />
     <Compile Include="Service\LoanService.cs" />
     <Compile Include="View\IAddCustomer.cs" />

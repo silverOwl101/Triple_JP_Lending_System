@@ -8,18 +8,18 @@ using TripleJPUtilityLibrary.DataSource;
 
 namespace TripleJPMVPLibrary.Repository
 {
-    public class LogInRepo
+    internal class LogInRepo
     {
-        public bool CheckRecord(string username, string password) // camelCase nako kay parameters ni sila then walay underscore
+        internal bool CheckRecord(string username, string password) // camelCase nako kay parameters ni sila then walay underscore
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {               
                 con.Open();
                 // kini kay constant mani siya so PascalCase gamiton instead nga camelCase
                 const string SqlQuery = "Select username,password from administrator " +
-                                        "where username = @UserName and password = @Password";
+                                        "where username = @Username and password = @Password";
                 var sqlCommand = new MySqlCommand(SqlQuery, con);
-                sqlCommand.Parameters.AddWithValue("@UserName", username);
+                sqlCommand.Parameters.AddWithValue("@Username", username);
                 sqlCommand.Parameters.AddWithValue("@Password", password);
                 sqlCommand.ExecuteNonQuery();
                 using (var reader = sqlCommand.ExecuteReader())
