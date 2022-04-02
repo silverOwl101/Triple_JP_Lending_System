@@ -201,6 +201,33 @@ LOCK TABLES `penalty` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `user_system_account`
+--
+
+DROP TABLE IF EXISTS `user_system_account`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user_system_account` (
+  `uid` char(36) NOT NULL,
+  `id` varchar(100) DEFAULT NULL,
+  `username` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`uid`),
+  KEY `idx_user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_system_account`
+--
+
+LOCK TABLES `user_system_account` WRITE;
+/*!40000 ALTER TABLE `user_system_account` DISABLE KEYS */;
+INSERT INTO `user_system_account` VALUES ('466414dd-b2b8-11ec-82b2-fc349701f832','123','user','user');
+/*!40000 ALTER TABLE `user_system_account` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Temporary view structure for view `v_customerinformation`
 --
 
@@ -241,10 +268,6 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `Status`,
  1 AS `Amount`*/;
 SET character_set_client = @saved_cs_client;
-
---
--- Dumping events for database 'tjpdb'
---
 
 --
 -- Dumping routines for database 'tjpdb'
@@ -623,4 +646,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-27  1:07:43
+-- Dump completed on 2022-04-03  3:16:10
