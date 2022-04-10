@@ -25,6 +25,11 @@ namespace TripleJP_Lending_System.Forms
         public CustomerListLoanFrm()
         {
             InitializeComponent();
+            DefaultPropertyComponents();
+        }
+        private void DefaultPropertyComponents()
+        {
+            dataGridView1.DataSource = null;            
         }
         public string UserSearch
         {
@@ -35,9 +40,15 @@ namespace TripleJP_Lending_System.Forms
         {
             GetCustomerListPresenter customerList = new GetCustomerListPresenter(this);
             customerList.CallSearch();
-            dataGridView1.DataSource = customerList.GetList();            
+            if (customerList.GetList().Count != 0)
+            {
+                dataGridView1.DataSource = customerList.GetList();
+            }
+            else
+            {
+                dataGridView1.DataSource = null;
+            }            
         }
-
         private void SearchBoxtxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Return))
@@ -45,13 +56,11 @@ namespace TripleJP_Lending_System.Forms
                 onSearch();
             }
         }
-
         private void onDoubleClickData()
         {
             customerLoanInformation[0] = dataGridView1.Rows[0].Cells[0].Value.ToString();
             customerLoanInformation[1] = dataGridView1.Rows[0].Cells[1].Value.ToString();
         }
-
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             onDoubleClickData();

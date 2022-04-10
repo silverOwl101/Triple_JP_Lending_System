@@ -29,9 +29,9 @@ namespace TripleJP_Lending_System.Forms
         public LoanInformationFrm()
         {
             InitializeComponent();
-            LoadDefaultControlProperties();
+            DefaultPropertyComponents();
         }
-        private void LoadDefaultControlProperties()
+        private void DefaultPropertyComponents()
         {
             ClearText();
             DisabledControls();
@@ -149,6 +149,11 @@ namespace TripleJP_Lending_System.Forms
             dataGridView1.DataSource = null;
             SearchBoxtxt.Text = "";
             ClearText();
+            //check if ledgerButton, dataGridView1 and groupBox15 is enabled
+            if (ledgerButton.Enabled && dataGridView1.Enabled && groupBox15.Enabled)
+            {
+                DisabledControls();
+            }            
         }
         private void maturityInterestDisplay()
         {

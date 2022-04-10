@@ -38,13 +38,16 @@ namespace TripleJP_Lending_System.Forms
             set { _loanID = value; }
         }
         private void LedgerForm_Load(object sender, EventArgs e)
-        {
-            LoadCollectionandPenalty();
+        {            
         }
-        private void LoadCollectionandPenalty()
+        internal void LoadCollectionandPenalty()
         {
             LedgerPresenter ledgerPresenter = new LedgerPresenter(this);
             dataGridView1.DataSource = ledgerPresenter.GetCollectionAndPenalty();
+            if (dataGridView1.DataSource != null)
+            {
+                ShowDialog();
+            }            
         }
     }
 }

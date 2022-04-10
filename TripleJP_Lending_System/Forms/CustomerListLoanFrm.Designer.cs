@@ -63,7 +63,7 @@ namespace TripleJP_Lending_System.Forms
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(955, 346);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // label21
@@ -82,7 +82,7 @@ namespace TripleJP_Lending_System.Forms
             this.SearchBoxtxt.Location = new System.Drawing.Point(637, 12);
             this.SearchBoxtxt.Name = "SearchBoxtxt";
             this.SearchBoxtxt.Size = new System.Drawing.Size(330, 27);
-            this.SearchBoxtxt.TabIndex = 17;
+            this.SearchBoxtxt.TabIndex = 0;
             this.SearchBoxtxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchBoxtxt_KeyPress);
             // 
             // CustomerListLoanFrm
