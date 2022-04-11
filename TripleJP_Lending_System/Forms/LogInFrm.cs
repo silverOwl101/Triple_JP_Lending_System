@@ -43,6 +43,7 @@ namespace TripleJP_Lending_System
             get { return passwordTxt.Text; }
             set { }
         }
+
         #endregion
 
         #region Custom Methods
@@ -71,10 +72,6 @@ namespace TripleJP_Lending_System
 
                 if (result is true)
                 {
-                    //const string MessageContent = "Login Successful.";
-                    //const string MessageCaption = "Successful";
-
-                    //if (MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                         ProceedLogIn(result);
                 }
                 else
