@@ -27,7 +27,7 @@ namespace TripleJP_Lending_System.FormMediator.Component
             s_customerInformation[5] = _editCustomer.BusinessNature;
             s_customerInformation[6] = _editCustomer.BusinessAddress;
             s_customerInformation[7] = _editCustomer.GrossBusinessCapital.ToString();
-            s_customerInformation[8] = _editCustomer.AveDailyGrossSales.ToString();
+            s_customerInformation[8] = _editCustomer.AverageDailyGrossSales.ToString();
         }
     }
 }

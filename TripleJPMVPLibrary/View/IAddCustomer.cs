@@ -15,7 +15,7 @@ namespace TripleJPMVPLibrary.View
         string BusinessNature { get; set; }
         string BusinessAddress { get; set; }
         decimal GrossBusinessCapital { get; set; }
-        decimal AveDailyGrossSales { get; set; }
+        decimal AverageDailyGrossSales { get; set; }
 
     }
 }

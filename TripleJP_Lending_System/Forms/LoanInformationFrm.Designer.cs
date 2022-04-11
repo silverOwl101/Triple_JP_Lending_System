@@ -149,14 +149,14 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Penalty";
             // 
-            // label9
+            // averageDailyGrossSalesLabel
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(60, 23);
-            this.label9.Name = "label9";
+            this.label9.Name = "averageDailyGrossSalesLabel";
             this.label9.Size = new System.Drawing.Size(50, 23);
             this.label9.TabIndex = 0;
-            this.label9.Text = "label9";
+            this.label9.Text = "averageDailyGrossSalesLabel";
             // 
             // groupBox9
             // 
@@ -169,14 +169,14 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Principal Loan";
             // 
-            // label8
+            // grossBusinessCapitalLabel
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(60, 23);
-            this.label8.Name = "label8";
+            this.label8.Name = "grossBusinessCapitalLabel";
             this.label8.Size = new System.Drawing.Size(50, 23);
             this.label8.TabIndex = 0;
-            this.label8.Text = "label8";
+            this.label8.Text = "grossBusinessCapitalLabel";
             // 
             // groupBox8
             // 
@@ -189,14 +189,14 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Interest";
             // 
-            // label7
+            // businessAddressLabel
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(60, 23);
-            this.label7.Name = "label7";
+            this.label7.Name = "businessAddressLabel";
             this.label7.Size = new System.Drawing.Size(49, 23);
             this.label7.TabIndex = 0;
-            this.label7.Text = "label7";
+            this.label7.Text = "businessAddressLabel";
             // 
             // groupBox7
             // 
@@ -209,14 +209,14 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Effective Date";
             // 
-            // label6
+            // businessNatureLabel
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(60, 23);
-            this.label6.Name = "label6";
+            this.label6.Name = "businessNatureLabel";
             this.label6.Size = new System.Drawing.Size(50, 23);
             this.label6.TabIndex = 0;
-            this.label6.Text = "label6";
+            this.label6.Text = "businessNatureLabel";
             // 
             // groupBox6
             // 
@@ -229,14 +229,14 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Duration";
             // 
-            // label5
+            // businessNameLabel
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(60, 23);
-            this.label5.Name = "label5";
+            this.label5.Name = "businessNameLabel";
             this.label5.Size = new System.Drawing.Size(50, 23);
             this.label5.TabIndex = 0;
-            this.label5.Text = "label5";
+            this.label5.Text = "businessNameLabel";
             // 
             // groupBox5
             // 
@@ -249,14 +249,14 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Payment Term";
             // 
-            // label4
+            // contactNumberLabel
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(60, 23);
-            this.label4.Name = "label4";
+            this.label4.Name = "contactNumberLabel";
             this.label4.Size = new System.Drawing.Size(50, 23);
             this.label4.TabIndex = 0;
-            this.label4.Text = "label4";
+            this.label4.Text = "contactNumberLabel";
             // 
             // groupBox4
             // 
@@ -269,14 +269,14 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Customer ID";
             // 
-            // label2
+            // customerNameLabel
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(60, 23);
-            this.label2.Name = "label2";
+            this.label2.Name = "customerNameLabel";
             this.label2.Size = new System.Drawing.Size(49, 23);
             this.label2.TabIndex = 0;
-            this.label2.Text = "label2";
+            this.label2.Text = "customerNameLabel";
             // 
             // groupBox3
             // 
@@ -289,14 +289,14 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Customer Name";
             // 
-            // label3
+            // customerAddressLabel
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(60, 23);
-            this.label3.Name = "label3";
+            this.label3.Name = "customerAddressLabel";
             this.label3.Size = new System.Drawing.Size(50, 23);
             this.label3.TabIndex = 0;
-            this.label3.Text = "label3";
+            this.label3.Text = "customerAddressLabel";
             // 
             // groupBox2
             // 
@@ -309,14 +309,14 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Loan ID";
             // 
-            // label1
+            // customerIdLabel
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(60, 23);
-            this.label1.Name = "label1";
+            this.label1.Name = "customerIdLabel";
             this.label1.Size = new System.Drawing.Size(46, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "customerIdLabel";
             // 
             // menuStrip1
             // 

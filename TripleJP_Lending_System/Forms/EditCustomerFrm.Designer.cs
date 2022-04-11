@@ -87,12 +87,12 @@ namespace TripleJP_Lending_System.Forms
             this.AverageDailyGrossSalestxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AverageDailyGrossSalestxt_KeyPress);
             this.AverageDailyGrossSalestxt.Leave += new System.EventHandler(this.AverageDailyGrossSalestxt_Leave);
             // 
-            // label7
+            // businessAddressLabel
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(47, 243);
-            this.label7.Name = "label7";
+            this.label7.Name = "businessAddressLabel";
             this.label7.Size = new System.Drawing.Size(150, 16);
             this.label7.TabIndex = 13;
             this.label7.Text = "Gross Business Capital:";
@@ -108,12 +108,12 @@ namespace TripleJP_Lending_System.Forms
             this.GrossBusinessCapitaltxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GrossBusinessCapitaltxt_KeyPress);
             this.GrossBusinessCapitaltxt.Leave += new System.EventHandler(this.GrossBusinessCapitaltxt_Leave);
             // 
-            // label6
+            // businessNatureLabel
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(81, 208);
-            this.label6.Name = "label6";
+            this.label6.Name = "businessNatureLabel";
             this.label6.Size = new System.Drawing.Size(120, 16);
             this.label6.TabIndex = 11;
             this.label6.Text = "Business Address:";
@@ -138,12 +138,12 @@ namespace TripleJP_Lending_System.Forms
             this.CustomerNametxt.TextChanged += new System.EventHandler(this.CustomerNametxt_TextChanged);
             this.CustomerNametxt.Leave += new System.EventHandler(this.CustomerNametxt_Leave);
             // 
-            // label5
+            // businessNameLabel
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(91, 173);
-            this.label5.Name = "label5";
+            this.label5.Name = "businessNameLabel";
             this.label5.Size = new System.Drawing.Size(109, 16);
             this.label5.TabIndex = 9;
             this.label5.Text = "Business Nature:";
@@ -159,12 +159,12 @@ namespace TripleJP_Lending_System.Forms
             this.ContactNumbertxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContactNumbertxt_KeyPress);
             this.ContactNumbertxt.Leave += new System.EventHandler(this.ContactNumbertxt_Leave);
             // 
-            // label4
+            // contactNumberLabel
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(96, 139);
-            this.label4.Name = "label4";
+            this.label4.Name = "contactNumberLabel";
             this.label4.Size = new System.Drawing.Size(106, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "Business Name:";
@@ -179,12 +179,12 @@ namespace TripleJP_Lending_System.Forms
             this.CustomerAddresstxt.TextChanged += new System.EventHandler(this.CustomerAddresstxt_TextChanged);
             this.CustomerAddresstxt.Leave += new System.EventHandler(this.CustomerAddresstxt_Leave);
             // 
-            // label3
+            // customerAddressLabel
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(86, 104);
-            this.label3.Name = "label3";
+            this.label3.Name = "customerAddressLabel";
             this.label3.Size = new System.Drawing.Size(107, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "Contact Number:";
@@ -199,12 +199,12 @@ namespace TripleJP_Lending_System.Forms
             this.BusinessNametxt.TextChanged += new System.EventHandler(this.BusinessNametxt_TextChanged);
             this.BusinessNametxt.Leave += new System.EventHandler(this.BusinessNametxt_Leave);
             // 
-            // label2
+            // customerNameLabel
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(73, 67);
-            this.label2.Name = "label2";
+            this.label2.Name = "customerNameLabel";
             this.label2.Size = new System.Drawing.Size(122, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Customer Address:";
@@ -219,22 +219,22 @@ namespace TripleJP_Lending_System.Forms
             this.BusinessNaturetxt.TextChanged += new System.EventHandler(this.BusinessNaturetxt_TextChanged);
             this.BusinessNaturetxt.Leave += new System.EventHandler(this.BusinessNaturetxt_Leave);
             // 
-            // label1
+            // customerIdLabel
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(88, 34);
-            this.label1.Name = "label1";
+            this.label1.Name = "customerIdLabel";
             this.label1.Size = new System.Drawing.Size(108, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "Customer Name:";
             // 
-            // label8
+            // grossBusinessCapitalLabel
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(27, 277);
-            this.label8.Name = "label8";
+            this.label8.Name = "grossBusinessCapitalLabel";
             this.label8.Size = new System.Drawing.Size(174, 16);
             this.label8.TabIndex = 15;
             this.label8.Text = "Average Daily Gross Sales:";

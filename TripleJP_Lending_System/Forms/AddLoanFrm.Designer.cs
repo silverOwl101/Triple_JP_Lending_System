@@ -238,14 +238,14 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Customer ID";
             // 
-            // label2
+            // customerNameLabel
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(76, 23);
-            this.label2.Name = "label2";
+            this.label2.Name = "customerNameLabel";
             this.label2.Size = new System.Drawing.Size(49, 23);
             this.label2.TabIndex = 0;
-            this.label2.Text = "label2";
+            this.label2.Text = "customerNameLabel";
             // 
             // groupBox3
             // 
@@ -258,14 +258,14 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Customer Name";
             // 
-            // label3
+            // customerAddressLabel
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(94, 23);
-            this.label3.Name = "label3";
+            this.label3.Name = "customerAddressLabel";
             this.label3.Size = new System.Drawing.Size(50, 23);
             this.label3.TabIndex = 0;
-            this.label3.Text = "label3";
+            this.label3.Text = "customerAddressLabel";
             // 
             // groupBox12
             // 
@@ -283,11 +283,11 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Loan Maturity Information";
             // 
-            // button2
+            // editButton
             // 
             this.button2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(643, 168);
-            this.button2.Name = "button2";
+            this.button2.Name = "editButton";
             this.button2.Size = new System.Drawing.Size(94, 46);
             this.button2.TabIndex = 8;
             this.button2.Text = "Save";

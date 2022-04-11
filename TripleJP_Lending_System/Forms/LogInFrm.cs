@@ -12,7 +12,6 @@ using TripleJPMVPLibrary.Presenter;
 using TripleJPMVPLibrary.View;
 using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
-using TripleJP_Lending_System.FormMediator.Mediator;
 using MySql.Data.MySqlClient;
 
 namespace TripleJP_Lending_System
@@ -23,7 +22,7 @@ namespace TripleJP_Lending_System
 
         private LogInFrmPresenter _logInFrmPresenter;
         private MainApplicationFrmComponent _mainApplicationFrmComponent;
-        private IFormsMediator _concreteMediator;
+        private ClassComponentConcreteMediator _concreteMediator;
 
         #endregion
 
