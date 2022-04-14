@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleJPMVPLibrary.View;
 using TripleJPMVPLibrary.Presenter;
-using TripleJP_Lending_System.FormMediator.Mediator;
 using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
 
@@ -17,12 +16,14 @@ namespace TripleJP_Lending_System.Forms
 {
     public partial class CustomerAccountFrm : Form, ISearch, IAddCustomer, IEditCustomer
     {
-        //internal static string[] customerInformation = new string[9];
-        private IFormsMediator _concreteMediator;
+        #region Fields
+
+        private ClassComponentConcreteMediator _concreteMediator;
         private AddCustomerFrmComponent _addCustomerFrmComponent;
         private EditCustomerFrmComponent _editCustomerFrmComponent;
-        //private CustomerAccountFrmComponent _customerAccountFrmComponent;
         private CustomerAccountFrmPassData _customerAccountFrmData;
+
+        #endregion
 
         public CustomerAccountFrm()
         {
@@ -34,150 +35,174 @@ namespace TripleJP_Lending_System.Forms
         #region User Inputs  
         public string ID 
         {
-            get { return label1.Text; }
-            set { label1.Text = value; }
+            get { return customerIdLabel.Text; }
+            set { customerIdLabel.Text = value; }
         }
         public string CustomerName
         {
-            get { return label2.Text; }
-            set { label2.Text = value; }
+            get { return customerNameLabel.Text; }
+            set { customerNameLabel.Text = value; }
         }
         public string CustomerAddress
         {
-            get { return label3.Text; }
-            set { label3.Text = value; }
+            get { return customerAddressLabel.Text; }
+            set { customerAddressLabel.Text = value; }
         }
         public string ContactNumber
         {
-            get { return label4.Text; }
-            set { label4.Text = value; }
+            get { return contactNumberLabel.Text; }
+            set { contactNumberLabel.Text = value; }
         }
         public string BusinessName
         {
-            get { return label5.Text; }
-            set { label5.Text = value; }
+            get { return businessNameLabel.Text; }
+            set { businessNameLabel.Text = value; }
         }
         public string BusinessNature
         {
-            get { return label6.Text; }
-            set { label6.Text = value; }
+            get { return businessNatureLabel.Text; }
+            set { businessNatureLabel.Text = value; }
         }
         public string BusinessAddress
         {
-            get { return label7.Text; }
-            set { label7.Text = value; }
+            get { return businessAddressLabel.Text; }
+            set { businessAddressLabel.Text = value; }
         }
         public decimal GrossBusinessCapital
         {
-            get { return Convert.ToDecimal(label8.Text); }
-            set { label8.Text = value.ToString(); }
+            get { return Convert.ToDecimal(grossBusinessCapitalLabel.Text); }
+            set { grossBusinessCapitalLabel.Text = value.ToString(); }
         }
-        public decimal AveDailyGrossSales
+        public decimal AverageDailyGrossSales
         {
-            get { return Convert.ToDecimal(label9.Text); }
-            set { label9.Text = value.ToString(); }
+            get { return Convert.ToDecimal(averageDailyGrossSalesLabel.Text); }
+            set { averageDailyGrossSalesLabel.Text = value.ToString(); }
         }
-        #endregion
-
-        public string UserSearch 
+        public string UserSearch
         {
             get { return SearchBoxtxt.Text; }
             set { SearchBoxtxt.Text = value; }
-        }        
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenAddCustomerFrm();
         }
+
+        #endregion
+
+        #region Custom Methods
+
         private void OpenAddCustomerFrm()
         {
             _concreteMediator = new ClassComponentConcreteMediator();
             _addCustomerFrmComponent = new AddCustomerFrmComponent(_concreteMediator);
             _concreteMediator.OpenForms(_addCustomerFrmComponent, true);
-            
-            
-            //AddCustomerFrm addCustomer = new AddCustomerFrm();
-            //addCustomer.ShowDialog();
-        }
-        private void SearchBoxtxt_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Return))
-            {                
-                ToSearch();
-                ClearText();
-                DisableEditButton();
-            }            
         }
         private void ToSearch()
         {
             GetCustomerListPresenter getListCustomerAccountPresenter =
                 new GetCustomerListPresenter(this);
-            getListCustomerAccountPresenter.CallSearch();            
+            getListCustomerAccountPresenter.CallSearch();
             dataGridView1.DataSource = getListCustomerAccountPresenter.GetList();
         }
         private void DisplayTextInForm()
         {
-            label1.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-            label2.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
-            label3.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
-            label4.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
-            label5.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
-            label6.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
-            label7.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value.ToString();
-            label8.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value.ToString();
-            label9.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
-            button2.Enabled = true;
-            //label12.Text = dataGridView1.Rows[0].Cells[9].Value.ToString(); 
+            customerIdLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+            customerNameLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
+            customerAddressLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
+            contactNumberLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
+            businessNameLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
+            businessNatureLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
+            businessAddressLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value.ToString();
+            grossBusinessCapitalLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value.ToString();
+            averageDailyGrossSalesLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
+            editButton.Enabled = true;
         }
         public void ClearText()
         {
-            label1.Text = "";
-            label2.Text = "";
-            label3.Text = "";
-            label4.Text = "";
-            label5.Text = "";
-            label6.Text = "";
-            label7.Text = "";
-            label8.Text = "";
-            label9.Text = "";           
-        }
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            DisplayTextInForm();
+            customerIdLabel.Text = "";
+            customerNameLabel.Text = "";
+            customerAddressLabel.Text = "";
+            contactNumberLabel.Text = "";
+            businessNameLabel.Text = "";
+            businessNatureLabel.Text = "";
+            businessAddressLabel.Text = "";
+            grossBusinessCapitalLabel.Text = "";
+            averageDailyGrossSalesLabel.Text = "";
         }
         private void DisableEditButton()
         {
-            if (label1.Text == "" &&
-                label2.Text == "" &&
-                label3.Text == "" &&
-                label4.Text == "" &&
-                label5.Text == "" &&
-                label6.Text == "" &&
-                label7.Text == "" &&
-                label8.Text == "" &&
-                label9.Text == ""
+            if (customerIdLabel.Text == "" &&
+                customerNameLabel.Text == "" &&
+                customerAddressLabel.Text == "" &&
+                contactNumberLabel.Text == "" &&
+                businessNameLabel.Text == "" &&
+                businessNatureLabel.Text == "" &&
+                businessAddressLabel.Text == "" &&
+                grossBusinessCapitalLabel.Text == "" &&
+                averageDailyGrossSalesLabel.Text == ""
                 )
             {
-                button2.Enabled = false;
-            }            
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            LoadInformation();
-            _concreteMediator = new ClassComponentConcreteMediator();
-            _editCustomerFrmComponent = new EditCustomerFrmComponent(_concreteMediator);
-            _concreteMediator.OpenForms(_editCustomerFrmComponent, true);
-            //EditCustomerFrm openEditCustomerFrm = new EditCustomerFrm();
-            //openEditCustomerFrm.ShowDialog();
-            ClearText();
-            DisableEditButton();
-            SearchBoxtxt.Text = "";
-            dataGridView1.DataSource = null;
+                editButton.Enabled = false;
+            }
         }
         private void LoadInformation()
-        {           
+        {
             _concreteMediator = new ClassComponentConcreteMediator();
             _customerAccountFrmData = new CustomerAccountFrmPassData(_concreteMediator, this);
             _concreteMediator.PrepareData(_customerAccountFrmData);
         }
+
+        #endregion
+
+        #region Form Events
+
+        #region Menu Strip
+
+        private void NewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenAddCustomerFrm();
+        }
+
+        #endregion
+
+        #region TextBox
+
+        private void SearchBoxTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Return))
+            {
+                ToSearch();
+                ClearText();
+                DisableEditButton();
+            }
+        }
+
+        #endregion
+
+        #region DataGridView
+
+        private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DisplayTextInForm();
+        }
+
+        #endregion
+
+        #region Button
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            LoadInformation();
+            ClearText();
+            DisableEditButton();
+            SearchBoxtxt.Text = "";
+            dataGridView1.DataSource = null;
+
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _editCustomerFrmComponent = new EditCustomerFrmComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_editCustomerFrmComponent, true);
+        }
+
+        #endregion
+
+        #endregion
+
     }
 }

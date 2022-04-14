@@ -36,7 +36,7 @@ namespace TripleJPMVPLibrary.Presenter
                 BusinessNature = _editCustomer.BusinessNature,
                 BusinessAddress = _editCustomer.BusinessAddress,
                 GrossBusinessCapital = _editCustomer.GrossBusinessCapital,
-                AverageDailyGrossSales = _editCustomer.AveDailyGrossSales
+                AverageDailyGrossSales = _editCustomer.AverageDailyGrossSales
             };
 
         }

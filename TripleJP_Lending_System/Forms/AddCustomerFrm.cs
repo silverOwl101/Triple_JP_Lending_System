@@ -64,7 +64,7 @@ namespace TripleJP_Lending_System.Forms
             get { return Convert.ToDecimal(GrossBusinessCapitaltxt.Text); }
             set { GrossBusinessCapitaltxt.Text = value.ToString("G"); }
         }
-        public decimal AveDailyGrossSales
+        public decimal AverageDailyGrossSales
         {
             get { return Convert.ToDecimal(AverageDailyGrossSalestxt.Text); }
             set { AverageDailyGrossSalestxt.Text = value.ToString("G"); }
