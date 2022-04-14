@@ -22,6 +22,7 @@ namespace TripleJP_Lending_System.Forms
         private AddCustomerFrmComponent _addCustomerFrmComponent;
         private EditCustomerFrmComponent _editCustomerFrmComponent;
         private CustomerAccountFrmPassData _customerAccountFrmData;
+        private GetCustomerListPresenter _getListCustomerAccountPresenter;
 
         #endregion
 
@@ -96,10 +97,9 @@ namespace TripleJP_Lending_System.Forms
         }
         private void ToSearch()
         {
-            GetCustomerListPresenter getListCustomerAccountPresenter =
-                new GetCustomerListPresenter(this);
-            getListCustomerAccountPresenter.CallSearch();
-            dataGridView1.DataSource = getListCustomerAccountPresenter.GetList();
+            _getListCustomerAccountPresenter = new GetCustomerListPresenter(this);
+            _getListCustomerAccountPresenter.CallSearch();
+            dataGridView1.DataSource = _getListCustomerAccountPresenter.GetList();
         }
         private void DisplayTextInForm()
         {

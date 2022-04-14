@@ -28,9 +28,14 @@ namespace TripleJPMVPLibrary.Presenter
         {
             _logInService = new LogInService();
 
-            if (string.IsNullOrEmpty(_logIn.Username) || string.IsNullOrEmpty(_logIn.Password))
+            if (string.IsNullOrEmpty(_logIn.Username) && !string.IsNullOrEmpty(_logIn.Password))
             {
-                throw new ArgumentException(" Empty Credentials ");
+                throw new ArgumentNullException(_logIn.Username, " Username is Null ");
+            }
+
+            if(string.IsNullOrEmpty(_logIn.Password))
+            {
+                throw new ArgumentNullException(_logIn.Password, " Username is Null ");
             }
 
             bool result = _logInService.IsRegistered(_logIn.Username, _logIn.Password);

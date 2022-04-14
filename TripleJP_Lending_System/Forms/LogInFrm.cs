@@ -80,7 +80,7 @@ namespace TripleJP_Lending_System
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } 
-            catch (ArgumentException)
+            catch (ArgumentNullException)
             {
                 const string MessageContent = "Please type your username and password.";
                 const string MessageCaption = "Enter Credentials";
