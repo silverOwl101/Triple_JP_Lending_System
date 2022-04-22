@@ -17,15 +17,24 @@ using TripleJP_Lending_System.FormMediator.ConcreteMediator;
 
 namespace TripleJP_Lending_System.Forms
 {
+    enum Filter
+    {
+        None,
+        Unpaid,
+        FullyPaid,
+        BadDebt
+    }
     public partial class LoanInformationFrm : Form, ISearch
     {
+        #region Private fields
         private string _getLoanID;
         private IFormsMediator _concreteMediator;
         private CustomerListLoanFrmComponent _customerListLoanFrmComponent;
         private LedgerFormComponent _ledgerFormComponent;
-        private LoanInformationPresenter loanInformationPresenter;        
+        private LoanInformationPresenter loanInformationPresenter;
         private LoanInformationFrmPassData _loanInformationFrmPassData;
-        private string[] filterDataVariables = new string[3];        
+        private string[] filterDataVariables = new string[3];
+        #endregion
         public LoanInformationFrm()
         {
             InitializeComponent();
@@ -227,12 +236,12 @@ namespace TripleJP_Lending_System.Forms
         {
             if (checkBox1.Checked)
             {
-                filterDataVariables[0] = "Unpaid";
+                filterDataVariables[0] = AssignEnumFilter(Filter.Unpaid);
                 FilterData(filterDataVariables);                
             }
             else
             {
-                filterDataVariables[0] = "";
+                filterDataVariables[0] = AssignEnumFilter(Filter.None);
                 FilterData(filterDataVariables);                
             }
             isSearchFilterCheckBoxChecked();
@@ -241,12 +250,12 @@ namespace TripleJP_Lending_System.Forms
         {
             if (checkBox2.Checked)
             {
-                filterDataVariables[1] = "Fully Paid";
+                filterDataVariables[1] = AssignEnumFilter(Filter.FullyPaid);
                 FilterData(filterDataVariables);                
             }
             else
             {
-                filterDataVariables[1] = "";
+                filterDataVariables[1] = AssignEnumFilter(Filter.None);
                 FilterData(filterDataVariables);                
             }
             isSearchFilterCheckBoxChecked();
@@ -255,12 +264,12 @@ namespace TripleJP_Lending_System.Forms
         {
             if (checkBox3.Checked)
             {
-                filterDataVariables[2] = "Bad Debt";
+                filterDataVariables[2] = AssignEnumFilter(Filter.BadDebt);
                 FilterData(filterDataVariables);                
             }
             else
             {
-                filterDataVariables[2] = "";
+                filterDataVariables[2] = AssignEnumFilter(Filter.None);
                 FilterData(filterDataVariables);                
             }
             isSearchFilterCheckBoxChecked();
@@ -309,6 +318,24 @@ namespace TripleJP_Lending_System.Forms
             dataGridView1.DataSource = loanInformationPresenter.GetLoanInformationList();
             ColumnHeaderNames();            
             dataGridView1.Focus();
+        }
+        private string AssignEnumFilter(Filter filter)
+        {            
+            switch (filter)
+            {
+                case Filter.Unpaid:
+                    return "Unpaid";                
+                case Filter.FullyPaid:
+                    return "Fully Paid";
+                case Filter.BadDebt:
+                    return "Bad Debt";
+                case Filter.None:
+                    return string.Empty;
+                default:
+                    throw new ArgumentNullException("You must fill the filter parameter" +
+                                                    "Please contact your I.T officer for " +
+                                                    "further assistance.");
+            }
         }
     }
 }
