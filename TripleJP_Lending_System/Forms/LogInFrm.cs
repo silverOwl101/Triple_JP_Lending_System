@@ -89,10 +89,14 @@ namespace TripleJP_Lending_System
             }
             catch (InvalidOperationException ex) when (ex.InnerException is MySqlException)
             {
-                const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
-                const string MessageCaption = "System Access Denied";
-                MessageBox.Show(MessageContent, MessageCaption,
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ex.InnerException.HResult == -2147467259)
+                {
+                    const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
+                    const string MessageCaption = "System Access Denied";
+                    MessageBox.Show(MessageContent, MessageCaption,
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
 
         }

@@ -6,18 +6,30 @@ using System.Threading.Tasks;
 using TripleJPMVPLibrary.Repository;
 using TripleJPMVPLibrary.Model;
 using TripleJPUtilityLibrary.Generator;
+using MySql.Data.MySqlClient;
 
 namespace TripleJPMVPLibrary.Service
 {
     public class CustomerService
     {
-        private CustomerRepo _customerRepo = new CustomerRepo();        
-        public bool CheckDuplicateName(string name)
+        #region Fields
+
+        private CustomerRepo _customerRepo = new CustomerRepo();
+
+        #endregion
+
+        public bool IsNameDuplicate(string name)
         {
-            if (_customerRepo.IsDuplicateName(name))
-                return true;
-            return false;
+            try
+            {
+                return _customerRepo.IsDuplicateName(name);
+            }
+            catch (MySqlException ex)
+            {
+                throw new InvalidOperationException(" Database Access Denied ", ex);
+            }
         }
+
         public string PrepareData(Customer customer,
                                   CustomerBusinessInformation customerBusinessInformation)
         {
@@ -54,17 +66,16 @@ namespace TripleJPMVPLibrary.Service
                 throw;
             }                        
         }
-        public List<GetCustomerInfo> GetCustomerListData(Customer customer)
+        public List<GetCustomerInfo> GetCustomerList(Customer customer)
         {
             try
             {
                 return _customerRepo.GetList(customer);
             }
-            catch (Exception)
+            catch (MySqlException ex)
             {
-
-                throw;
-            }            
+                throw new InvalidOperationException(" Database Access Denied ", ex);
+            }
         }
         internal string UpdateService(Customer customer,
             CustomerBusinessInformation businessInformation)
