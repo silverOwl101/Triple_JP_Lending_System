@@ -40,9 +40,9 @@ namespace TripleJP_Lending_System.Forms
         {
             GetCustomerListPresenter customerList = new GetCustomerListPresenter(this);
             customerList.CallSearch();
-            if (customerList.GetList().Count != 0)
+            if (customerList.GetCustomerListData().Count != 0)
             {
-                dataGridView1.DataSource = customerList.GetList();
+                dataGridView1.DataSource = customerList.GetCustomerListData();
             }
             else
             {

@@ -40,7 +40,7 @@ namespace TripleJPMVPLibrary.Presenter
                     AverageDailyGrossSales = _addCustomer.AverageDailyGrossSales
                 };
 
-                if (!_customerService.CheckDuplicateName(_customer.Name))
+                if (!_customerService.IsNameDuplicate(_customer.Name))
                 {
                     ToRecordEntry();                    
                 }

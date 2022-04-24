@@ -175,50 +175,51 @@ namespace TripleJPMVPLibrary.Repository
         {
             GetCustomerInfo getCustomerList;
             List<GetCustomerInfo> customerList = new List<GetCustomerInfo>();
-            try
+
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
-                using (MySqlConnection con =
-                    new MySqlConnection(SqlConnection.ConnectionString))
+                const string Query = "sp_getCustomerList";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
                 {
-                    const string Query = "sp_getCustomerList";
-                    MySqlCommand cmd = new MySqlCommand(Query, con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    con.Open();
-                    cmd.Parameters.AddWithValue("@customerId", customer.Id);
-                    cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;
-                    cmd.Parameters.AddWithValue("@customerName", customer.Name);
-                    cmd.Parameters["@customerName"].Direction = ParameterDirection.Input;
-                    cmd.ExecuteNonQuery();
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.Parameters.AddWithValue("@customerId", customer.Id);
+                cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@customerName", customer.Name);
+                cmd.Parameters["@customerName"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
                     {
-                        while (reader.Read())
+                        getCustomerList = new GetCustomerInfo
                         {
-                            getCustomerList = new GetCustomerInfo();
-                            getCustomerList.Id = reader["Id"].ToString();
-                            getCustomerList.Name = reader["Name"].ToString();
-                            getCustomerList.Address = 
-                                reader["Address"].ToString();
-                            getCustomerList.ContactNumber = 
-                                reader["contactnumber"].ToString();
-                            getCustomerList.BusinessName = 
-                                reader["BusinessName"].ToString();
-                            getCustomerList.BusinessNature = 
-                                reader["BusinessNature"].ToString();
-                            getCustomerList.BusinessAddress = 
-                                reader["BusinessAddress"].ToString();
-                            getCustomerList.GrossBusinessCapital = 
-                                Convert.ToDecimal(reader["GrossBusinessCapital"]);
-                            getCustomerList.AverageDailyGrossSales = 
-                                Convert.ToDecimal(reader["AverageDailyGrossSales"]);
-                            customerList.Add(getCustomerList);
-                        }
+                            Id = reader["Id"].ToString(),
+                            Name = reader["Name"].ToString(),
+                            Address =
+                            reader["Address"].ToString(),
+                            ContactNumber =
+                            reader["contactnumber"].ToString(),
+                            BusinessName =
+                            reader["BusinessName"].ToString(),
+                            BusinessNature =
+                            reader["BusinessNature"].ToString(),
+                            BusinessAddress =
+                            reader["BusinessAddress"].ToString(),
+                            GrossBusinessCapital =
+                            Convert.ToDecimal(reader["GrossBusinessCapital"]),
+                            AverageDailyGrossSales =
+                            Convert.ToDecimal(reader["AverageDailyGrossSales"])
+                        };
+
+                        customerList.Add(getCustomerList);
                     }
                 }
             }
-            catch (Exception)
-            {
-                throw;
-            }
+
             return customerList;
         }
         internal GetCustomerInfo GetCustomer(Customer customer)

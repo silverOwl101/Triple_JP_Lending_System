@@ -97,9 +97,26 @@ namespace TripleJP_Lending_System.Forms
         }
         private void ToSearch()
         {
-            _getListCustomerAccountPresenter = new GetCustomerListPresenter(this);
-            _getListCustomerAccountPresenter.CallSearch();
-            dataGridView1.DataSource = _getListCustomerAccountPresenter.GetList();
+            try
+            {
+                _getListCustomerAccountPresenter = new GetCustomerListPresenter(this);
+                _getListCustomerAccountPresenter.CallSearch();
+                dataGridView1.DataSource = _getListCustomerAccountPresenter.GetCustomerListData();
+            } 
+            catch (ArgumentNullException)
+            {
+                const string MessageContent = "Please type the name or ID of the customer.";
+                const string MessageCaption = "Enter Credentials";
+                MessageBox.Show(MessageContent, MessageCaption,
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (ArgumentException)
+            {
+                const string MessageContent = "Record not found, please contact your I.T officer if you think there is a problem to the system.";
+                const string MessageCaption = "Invalid Credentials";
+                MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
         }
         private void DisplayTextInForm()
         {
