@@ -35,11 +35,7 @@ namespace TripleJPMVPLibrary.Presenter
 
             if (String.IsNullOrEmpty(_search.UserSearch))
             {
-                //const string MessageContent = "Enter your credentials";
-                //const string MessageCaption = "Record not found";
-                //MessageBox.Show(MessageContent, MessageCaption,
-                //    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                throw new ArgumentNullException(_search.UserSearch, " UserSearch is Null ");
+                throw new ArgumentNullException(nameof(_search.UserSearch), " UserSearch is Null ");
             }
             else
             {
@@ -58,10 +54,7 @@ namespace TripleJPMVPLibrary.Presenter
 
                 if (_getCustomer.Count == 0)
                 {
-                    //const string MessageContent = "Double check the entry or contact your I.T personnel for futher details";
-                    //string MessageCaption = "Record not found";
-                    //MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    throw new ArgumentException(" Input is Invalid ", _search.UserSearch);
+                    throw new ArgumentException(" Input is Invalid ", nameof(_search.UserSearch));
                 }
             }            
         }

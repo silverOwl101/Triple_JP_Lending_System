@@ -11,6 +11,7 @@ using TripleJPMVPLibrary.View;
 using TripleJPMVPLibrary.Presenter;
 using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
+using MySql.Data.MySqlClient;
 
 namespace TripleJP_Lending_System.Forms
 {
@@ -81,8 +82,8 @@ namespace TripleJP_Lending_System.Forms
         }
         public string UserSearch
         {
-            get { return SearchBoxtxt.Text; }
-            set { SearchBoxtxt.Text = value; }
+            get { return searchBoxtxt.Text; }
+            set { searchBoxtxt.Text = value; }
         }
 
         #endregion
@@ -109,12 +110,24 @@ namespace TripleJP_Lending_System.Forms
                 const string MessageCaption = "Enter Credentials";
                 MessageBox.Show(MessageContent, MessageCaption,
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                dataGridView1.DataSource = null;
             }
             catch (ArgumentException)
             {
                 const string MessageContent = "Record not found, please contact your I.T officer if you think there is a problem to the system.";
                 const string MessageCaption = "Invalid Credentials";
                 MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                dataGridView1.DataSource = null;
+            }
+            catch (InvalidOperationException ex) when (ex.InnerException is MySqlException)
+            {
+                if (ex.InnerException.HResult == -2147467259)
+                {
+                    const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
+                    const string MessageCaption = "System Access Denied";
+                    MessageBox.Show(MessageContent, MessageCaption,
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
         }
@@ -209,7 +222,7 @@ namespace TripleJP_Lending_System.Forms
             LoadInformation();
             ClearText();
             DisableEditButton();
-            SearchBoxtxt.Text = "";
+            searchBoxtxt.Text = "";
             dataGridView1.DataSource = null;
 
             _concreteMediator = new ClassComponentConcreteMediator();

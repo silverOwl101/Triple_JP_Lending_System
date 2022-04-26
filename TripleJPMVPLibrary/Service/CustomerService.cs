@@ -14,15 +14,24 @@ namespace TripleJPMVPLibrary.Service
     {
         #region Fields
 
-        private CustomerRepo _customerRepo = new CustomerRepo();
+        private CustomerRepo _customerRepo;
 
         #endregion
 
         public bool IsNameDuplicate(string name)
         {
+            _customerRepo = new CustomerRepo();
+
             try
             {
-                return _customerRepo.IsDuplicateName(name);
+                if(_customerRepo.IsDuplicateName(name) is true)
+                {
+                    throw new ArgumentException(" Duplicate Name ", name);
+                } 
+                else
+                {
+                    return false;
+                }
             }
             catch (MySqlException ex)
             {
@@ -30,15 +39,17 @@ namespace TripleJPMVPLibrary.Service
             }
         }
 
-        public string PrepareData(Customer customer,
-                                  CustomerBusinessInformation customerBusinessInformation)
+        public string PrepareData(Customer customer, CustomerBusinessInformation customerBusinessInformation)
         {
             IdGeneratorClass idGeneratorClass = new IdGeneratorClass();
             customer.Uid = Guid.NewGuid();
             customer.Id = idGeneratorClass.NewId();
             customerBusinessInformation.Uid = Guid.NewGuid();
             customerBusinessInformation.Id = idGeneratorClass.NewId();
+            _customerRepo = new CustomerRepo();
+
             #region Check id if valid
+
             while (_customerRepo.IsDuplicateUid(customer.Uid))
             {
                 customer.Uid = Guid.NewGuid();
@@ -55,7 +66,9 @@ namespace TripleJPMVPLibrary.Service
             {
                 customerBusinessInformation.Uid = Guid.NewGuid();
             }
+
             #endregion
+
             try
             {
                 _customerRepo.InsertData(customer,customerBusinessInformation);
@@ -68,6 +81,8 @@ namespace TripleJPMVPLibrary.Service
         }
         public List<GetCustomerInfo> GetCustomerList(Customer customer)
         {
+            _customerRepo = new CustomerRepo();
+
             try
             {
                 return _customerRepo.GetList(customer);
@@ -77,10 +92,11 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Database Access Denied ", ex);
             }
         }
-        internal string UpdateService(Customer customer,
-            CustomerBusinessInformation businessInformation)
+        internal string UpdateService(Customer customer,CustomerBusinessInformation businessInformation)
         {
+            _customerRepo = new CustomerRepo();
             string confirmationMessage = "Data updated";
+
             try
             {
                 CustomerRepo customerRepo = new CustomerRepo();
