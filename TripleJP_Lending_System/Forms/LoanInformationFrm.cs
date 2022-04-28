@@ -62,6 +62,8 @@ namespace TripleJP_Lending_System.Forms
         private void OnSearch()
         {
             loanInformationPresenter = new LoanInformationPresenter(this);
+
+            listNullChecker(loanInformationPresenter.GetLoanInformationList());
             if (loanInformationPresenter.GetLoanInformationList().Count == 0)
             {
                 const string MessageContent = "Double check the entry" +
@@ -292,7 +294,15 @@ namespace TripleJP_Lending_System.Forms
                         select list;
             foreach (var item in query)
             {
-                result.Add(item);
+                if (!string.IsNullOrEmpty(item.Status))
+                {
+                    result.Add(item);
+                }
+                else
+                {
+                    throw new ArgumentNullException("Fatal Error, contact your I.T officer" +
+                                                    " immediately");
+                }                
             }
             dataGridView1.DataSource = result;
             dataGridView1.Focus();
@@ -306,7 +316,7 @@ namespace TripleJP_Lending_System.Forms
         }
         private void ViewAllData()
         {
-            dataGridView1.DataSource = loanInformationPresenter.GetLoanInformationList();
+            dataGridView1.DataSource = loanInformationPresenter.GetLoanInformationList();            
             ColumnHeaderNames();
             ClearText();
             dataGridView1.Enabled = true;
@@ -335,6 +345,17 @@ namespace TripleJP_Lending_System.Forms
                     throw new ArgumentNullException("You must fill the filter parameter" +
                                                     "Please contact your I.T officer for " +
                                                     "further assistance.");
+            }
+        }
+        private void listNullChecker(List<GetCustomerLoanInformation> list)
+        {
+            foreach (var item in list)
+            {
+                if (string.IsNullOrEmpty(item.Status))
+                {
+                    throw new ArgumentNullException("Fatal Error, contact your I.T officer" +
+                                                    " immediately");
+                }
             }
         }
     }
