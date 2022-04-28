@@ -482,11 +482,11 @@ namespace TripleJP_Lending_System.Forms
             this.label21.TabIndex = 24;
             this.label21.Text = "Search:";
             // 
-            // SearchBoxtxt
+            // searchBoxtxt
             // 
             this.SearchBoxtxt.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBoxtxt.Location = new System.Drawing.Point(952, 43);
-            this.SearchBoxtxt.Name = "SearchBoxtxt";
+            this.SearchBoxtxt.Name = "searchBoxtxt";
             this.SearchBoxtxt.Size = new System.Drawing.Size(330, 27);
             this.SearchBoxtxt.TabIndex = 1;
             this.SearchBoxtxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchBoxtxt_KeyPress);
