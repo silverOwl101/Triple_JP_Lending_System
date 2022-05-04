@@ -24,14 +24,7 @@ namespace TripleJPMVPLibrary.Service
 
             try
             {
-                if(_customerRepo.IsDuplicateName(name) is true)
-                {
-                    throw new ArgumentException(" Duplicate Name ", name);
-                } 
-                else
-                {
-                    return false;
-                }
+                return _customerRepo.IsDuplicateName(name);
             }
             catch (MySqlException ex)
             {
@@ -39,7 +32,7 @@ namespace TripleJPMVPLibrary.Service
             }
         }
 
-        public string PrepareData(Customer customer, CustomerBusinessInformation customerBusinessInformation)
+        public void AddCustomer(Customer customer, CustomerBusinessInformation customerBusinessInformation)
         {
             IdGeneratorClass idGeneratorClass = new IdGeneratorClass();
             customer.Uid = Guid.NewGuid();
@@ -48,7 +41,7 @@ namespace TripleJPMVPLibrary.Service
             customerBusinessInformation.Id = idGeneratorClass.NewId();
             _customerRepo = new CustomerRepo();
 
-            #region Check id if valid
+            #region Check All Credentials if Valid
 
             while (_customerRepo.IsDuplicateUid(customer.Uid))
             {
@@ -71,13 +64,12 @@ namespace TripleJPMVPLibrary.Service
 
             try
             {
-                _customerRepo.InsertData(customer,customerBusinessInformation);
-                return "Entry recorded successfully";
+                _customerRepo.InsertData(customer, customerBusinessInformation);
             }
-            catch (Exception)
+            catch (MySqlException ex)
             {
-                throw;
-            }                        
+                throw new InvalidOperationException(" Database Access Denied ", ex);
+            }                   
         }
         public List<GetCustomerInfo> GetCustomerList(Customer customer)
         {

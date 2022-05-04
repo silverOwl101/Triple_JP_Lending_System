@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TripleJPMVPLibrary.View;
 using TripleJPMVPLibrary.Presenter;
 using TripleJP_Lending_System.Helper.View;
+using MySql.Data.MySqlClient;
 
 namespace TripleJP_Lending_System.Forms
 {
@@ -19,6 +20,7 @@ namespace TripleJP_Lending_System.Forms
 
         private FrmInputRequirements _frmInputRequirements = new FrmInputRequirements();
         private FrmConvertionRequirements _frmConvertionRequirements = new FrmConvertionRequirements();
+        private AddCustomerPresenter _addCustomerPresenter;
 
         #endregion
 
@@ -28,6 +30,7 @@ namespace TripleJP_Lending_System.Forms
             Submitbutton.Enabled = false;
             ClearTextbox();            
         }
+
         #region User Inputs
         public string CustomerName 
         {
@@ -78,12 +81,39 @@ namespace TripleJP_Lending_System.Forms
         #region Submitbutton Events
         private void Submitbutton_Click(object sender, EventArgs e)
         {
-            AddCustomerPresenter addcustomer = new AddCustomerPresenter(this);            
-            bool rslt = addcustomer.CustomerDataPreparation();
-            if (rslt)
+            _addCustomerPresenter = new AddCustomerPresenter(this);
+
+            try
             {
+                _addCustomerPresenter.AddCustomerData();
+
+                const string MessageContent = "Customer's information successfully added to the system.";
+                const string MessageCaption = "Entry Successfully Added";
+                MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ClearTextbox();
+            } 
+            catch (ArgumentException)
+            {
+                const string MessageContent = "The name of the customer has the same name recorded in the system. Would you like to continue saving the entry?";
+                const string MessageCaption = "Duplicate Credentials";
+                var result = MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                _addCustomerPresenter.RetryAddEntry(result);
+
                 ClearTextbox();
             }
+            catch (InvalidOperationException ex) when (ex.InnerException is MySqlException)
+            {
+                if (ex.InnerException.HResult == -2147467259)
+                {
+                    const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
+                    const string MessageCaption = "System Access Denied";
+                    MessageBox.Show(MessageContent, MessageCaption,
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
         }
         #endregion
 

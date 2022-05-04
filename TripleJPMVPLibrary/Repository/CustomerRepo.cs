@@ -12,54 +12,54 @@ namespace TripleJPMVPLibrary.Repository
 {
     internal class CustomerRepo
     {
-        internal void InsertData(Customer customer,
-                               CustomerBusinessInformation customerBusinessInfo)
+        internal void InsertData(Customer customer, CustomerBusinessInformation customerBusinessInfo)
         {
-            try
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
-                using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+                const string customerInfoQuery = "sp_insertCustomer";
+                con.Open();
+
+                MySqlCommand cmd_1 = new MySqlCommand(customerInfoQuery, con)
                 {
-                    const string customerInfoQuery = "sp_insertCustomer";
-                    MySqlCommand cmd_1 = new MySqlCommand(customerInfoQuery, con);
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
 
-                    con.Open();
-                    cmd_1.CommandType = System.Data.CommandType.StoredProcedure;
-                    #region Customer information parameters
-                    cmd_1.Parameters.AddWithValue("@customerUid", customer.Uid);
-                    cmd_1.Parameters["@customerUid"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@customerId", customer.Id);
-                    cmd_1.Parameters["@customerId"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@customerName", customer.Name);
-                    cmd_1.Parameters["@customerName"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@Address", customer.Address);
-                    cmd_1.Parameters["@Address"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@ContactNumber", customer.ContactNumber);
-                    cmd_1.Parameters["@ContactNumber"].Direction = ParameterDirection.Input;
-                    #endregion
-                    #region Customer business information parameters
-                    cmd_1.Parameters.AddWithValue("@businessUid", customerBusinessInfo.Uid);
-                    cmd_1.Parameters["@businessUid"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@businessId", customerBusinessInfo.Id);
-                    cmd_1.Parameters["@businessId"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@BusinessName", customerBusinessInfo.BusinessName);
-                    cmd_1.Parameters["@BusinessName"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@BusinessNature", customerBusinessInfo.BusinessNature);
-                    cmd_1.Parameters["@BusinessNature"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@BusinessAddress", customerBusinessInfo.BusinessAddress);
-                    cmd_1.Parameters["@BusinessAddress"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@GrossBusinessCapital", customerBusinessInfo.GrossBusinessCapital);
-                    cmd_1.Parameters["@GrossBusinessCapital"].Direction = ParameterDirection.Input;
-                    cmd_1.Parameters.AddWithValue("@AverageDailyGrossSales", customerBusinessInfo.AverageDailyGrossSales);
-                    cmd_1.Parameters["@AverageDailyGrossSales"].Direction = ParameterDirection.Input;
-                    #endregion
-                    cmd_1.ExecuteNonQuery();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+                #region Customer information parameters
 
+                cmd_1.Parameters.AddWithValue("@customerUid", customer.Uid);
+                cmd_1.Parameters["@customerUid"].Direction = ParameterDirection.Input;
+                cmd_1.Parameters.AddWithValue("@customerId", customer.Id);
+                cmd_1.Parameters["@customerId"].Direction = ParameterDirection.Input;
+                cmd_1.Parameters.AddWithValue("@customerName", customer.Name);
+                cmd_1.Parameters["@customerName"].Direction = ParameterDirection.Input;
+                cmd_1.Parameters.AddWithValue("@Address", customer.Address);
+                cmd_1.Parameters["@Address"].Direction = ParameterDirection.Input;
+                cmd_1.Parameters.AddWithValue("@ContactNumber", customer.ContactNumber);
+                cmd_1.Parameters["@ContactNumber"].Direction = ParameterDirection.Input;
+
+                #endregion
+
+                #region Customer business information parameters
+
+                cmd_1.Parameters.AddWithValue("@businessUid", customerBusinessInfo.Uid);
+                cmd_1.Parameters["@businessUid"].Direction = ParameterDirection.Input;
+                cmd_1.Parameters.AddWithValue("@businessId", customerBusinessInfo.Id);
+                cmd_1.Parameters["@businessId"].Direction = ParameterDirection.Input;
+                cmd_1.Parameters.AddWithValue("@BusinessName", customerBusinessInfo.BusinessName);
+                cmd_1.Parameters["@BusinessName"].Direction = ParameterDirection.Input;
+                cmd_1.Parameters.AddWithValue("@BusinessNature", customerBusinessInfo.BusinessNature);
+                cmd_1.Parameters["@BusinessNature"].Direction = ParameterDirection.Input;
+                cmd_1.Parameters.AddWithValue("@BusinessAddress", customerBusinessInfo.BusinessAddress);
+                cmd_1.Parameters["@BusinessAddress"].Direction = ParameterDirection.Input;
+                cmd_1.Parameters.AddWithValue("@GrossBusinessCapital", customerBusinessInfo.GrossBusinessCapital);
+                cmd_1.Parameters["@GrossBusinessCapital"].Direction = ParameterDirection.Input;
+                cmd_1.Parameters.AddWithValue("@AverageDailyGrossSales", customerBusinessInfo.AverageDailyGrossSales);
+                cmd_1.Parameters["@AverageDailyGrossSales"].Direction = ParameterDirection.Input;
+
+                #endregion
+
+                cmd_1.ExecuteNonQuery();
+            }
         }
         internal bool IsDuplicateUid(Guid uid)
         {
