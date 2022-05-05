@@ -19,13 +19,12 @@ namespace TripleJP_Lending_System.Forms
         #region Fields
         private FrmConvertionRequirements _frmConvertionRequirements
                                                     = new FrmConvertionRequirements();
-        private FrmInputRequirements _frmInputRequirements = new FrmInputRequirements();
+        private FrmInputRequirements _frmInputRequirements = new FrmInputRequirements();        
         #endregion
         public AddLoanFrm()
         {
             InitializeComponent();
-            onLoadData();
-            button2.Enabled = false;
+            onLoadData();            
         }
         #region Calculation Displays
         private void maturityInterestDisplay()
@@ -98,11 +97,7 @@ namespace TripleJP_Lending_System.Forms
         {
             try
             {
-                maturityInterestDisplay();
-                maturityValueDisplay();
-                perRemittanceDisplay();
-                maturityDate();
-                button2.Enabled = true;
+                displayCalculatedProperties();
             }
             catch (Exception)
             {
@@ -126,8 +121,8 @@ namespace TripleJP_Lending_System.Forms
             _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, textBox1);
         }
         private void textBox1_Leave(object sender, EventArgs e)
-        {
-            _frmConvertionRequirements.ConvertToNumberFormat(textBox1);
+        {            
+            _frmConvertionRequirements.ConvertToNumberFormat(textBox1);            
         }
         private void textBox1_Enter(object sender, EventArgs e)
         {
@@ -145,6 +140,27 @@ namespace TripleJP_Lending_System.Forms
         {
             label2.Text = CustomerListLoanFrm.customerLoanInformation[0];
             label3.Text = CustomerListLoanFrm.customerLoanInformation[1];
+            defaultProperties();
+        }
+        private void defaultProperties()
+        {
+            button2.Enabled = false;            
+            textMask();
+        }
+        private void textMask()
+        {
+            label17.Text = "XXXX.XX";
+            label18.Text = "XXXX.XX";
+            label19.Text = "XXXX.XX";
+            label20.Text = "XXXX.XX";
+        }
+        private void displayCalculatedProperties()
+        {
+            maturityInterestDisplay();
+            maturityValueDisplay();
+            perRemittanceDisplay();
+            maturityDate();
+            button2.Enabled = true;
         }
         private void SaveButtonDisable()
         {
@@ -169,6 +185,7 @@ namespace TripleJP_Lending_System.Forms
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             SaveButtonDisable();
+            textMask();            
         }
         private void comboBox6_TextChanged(object sender, EventArgs e)
         {
