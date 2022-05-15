@@ -11,15 +11,21 @@ using System.Windows.Forms;
 namespace TripleJPMVPLibrary.Presenter
 {
     public class CustomerEditPresenter
-    {        
+    {
+        #region Fields
+
         private IEditCustomer _editCustomer;
-        private Customer _customer = new Customer();
-        private CustomerBusinessInformation _businessInformation = new CustomerBusinessInformation();
-        private CustomerService _customerService = new CustomerService();
+        private Customer _customer;
+        private CustomerBusinessInformation _businessInformation;
+        private CustomerService _customerService;
+
+        #endregion
+
         public CustomerEditPresenter(IEditCustomer editCustomer)
         {
             _editCustomer = editCustomer;
         }
+
         private void LoadData()
         {
             _customer = new Customer
@@ -40,26 +46,12 @@ namespace TripleJPMVPLibrary.Presenter
             };
 
         }
-        public void PrepareUpdate()
-        {
-            try
-            {
-                LoadData();
-                string confirmationMessage = _customerService.UpdateService(_customer, _businessInformation);
-                ConfirmationMessage(confirmationMessage);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
 
-        private void ConfirmationMessage(string message)
+        public void UpdateCustomerInfo()
         {
-            string MessageContent = message;
-            const string MessageCaption = "Triple JP Lending System";
-            MessageBox.Show(MessageContent, MessageCaption,
-                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            LoadData();
+            _customerService = new CustomerService();
+            _customerService.UpdateCustomerInfo(_customer, _businessInformation);
         }
     }
 }

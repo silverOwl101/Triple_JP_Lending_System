@@ -15,16 +15,17 @@ namespace TripleJPMVPLibrary.Presenter
         #region Fields
 
         private IAddCustomer _addCustomer;
-        private Customer _customer = new Customer();
-        private CustomerBusinessInformation _customerBusinessInformation = new CustomerBusinessInformation();
-        private CustomerService _customerService = new CustomerService();
+        private Customer _customer;
+        private CustomerBusinessInformation _customerBusinessInformation;
+        private CustomerService _customerService;
 
         #endregion
 
         public AddCustomerPresenter(IAddCustomer addCustomer)
         {
             _addCustomer = addCustomer;
-        }        
+        }
+        
         public void AddCustomerData()
         {
             _customer = new Customer
@@ -43,20 +44,24 @@ namespace TripleJPMVPLibrary.Presenter
                 AverageDailyGrossSales = _addCustomer.AverageDailyGrossSales
             };
 
+            _customerService = new CustomerService();
+
             if (_customerService.IsNameDuplicate(_customer.Name) is false)
             {
                 RecordEntry();
             }
             else
             {
-
                 throw new ArgumentException(" Duplicate Name ", nameof(_customer.Name));
             }
         }
+
         private void RecordEntry()
         {
-            _customerService.AddCustomer(_customer, _customerBusinessInformation);
+            _customerService = new CustomerService();
+            _customerService.AddCustomerInfo(_customer, _customerBusinessInformation);
         }
+
         public void RetryAddEntry(DialogResult result)
         {
             if (result == DialogResult.Yes)
