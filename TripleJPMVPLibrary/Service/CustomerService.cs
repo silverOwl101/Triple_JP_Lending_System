@@ -32,7 +32,7 @@ namespace TripleJPMVPLibrary.Service
             }
         }
 
-        public void AddCustomer(Customer customer, CustomerBusinessInformation customerBusinessInformation)
+        public void AddCustomerInfo(Customer customer, CustomerBusinessInformation customerBusinessInformation)
         {
             IdGeneratorClass idGeneratorClass = new IdGeneratorClass();
             customer.Uid = Guid.NewGuid();
@@ -69,7 +69,7 @@ namespace TripleJPMVPLibrary.Service
             catch (MySqlException ex)
             {
                 throw new InvalidOperationException(" Database Access Denied ", ex);
-            }                   
+            }
         }
         public List<GetCustomerInfo> GetCustomerList(Customer customer)
         {
@@ -84,22 +84,18 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Database Access Denied ", ex);
             }
         }
-        internal string UpdateService(Customer customer,CustomerBusinessInformation businessInformation)
+        internal void UpdateCustomerInfo(Customer customer,CustomerBusinessInformation businessInformation)
         {
             _customerRepo = new CustomerRepo();
-            string confirmationMessage = "Data updated";
 
             try
             {
-                CustomerRepo customerRepo = new CustomerRepo();
-                customerRepo.UpdateData(customer, businessInformation);
+                _customerRepo.UpdateData(customer, businessInformation);
             }
-            catch (Exception)
+            catch (MySqlException ex)
             {
-
-                throw;
+                throw new InvalidOperationException(" Database Access Denied ", ex);
             }
-            return confirmationMessage;
         }
     }
 }

@@ -79,8 +79,8 @@ namespace TripleJP_Lending_System
                     MessageBox.Show(MessageContent, MessageCaption,
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            } 
-            catch (ArgumentNullException)
+            }
+            catch (ArgumentNullException ex) when (ex.ParamName is "Username" || ex.ParamName is "Password")
             {
                 const string MessageContent = "Please type your username and password.";
                 const string MessageCaption = "Enter Credentials";
@@ -89,14 +89,10 @@ namespace TripleJP_Lending_System
             }
             catch (InvalidOperationException ex) when (ex.InnerException is MySqlException)
             {
-                if (ex.InnerException.HResult == -2147467259)
-                {
-                    const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
-                    const string MessageCaption = "System Access Denied";
-                    MessageBox.Show(MessageContent, MessageCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
+                const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
+                const string MessageCaption = "System Access Denied";
+                MessageBox.Show(MessageContent, MessageCaption,
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

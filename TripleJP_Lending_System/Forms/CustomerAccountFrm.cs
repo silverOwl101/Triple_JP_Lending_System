@@ -90,6 +90,19 @@ namespace TripleJP_Lending_System.Forms
 
         #region Custom Methods
 
+        private void ColumnHeaderNames()
+        {
+            dataGridView1.Columns[0].HeaderText = "Customer ID";
+            dataGridView1.Columns[1].HeaderText = "Customer Name";
+            dataGridView1.Columns[2].HeaderText = "Customer Address";
+            dataGridView1.Columns[3].HeaderText = "Contact Number";
+            dataGridView1.Columns[4].HeaderText = "Business Name";
+            dataGridView1.Columns[5].HeaderText = "Business Nature";
+            dataGridView1.Columns[6].HeaderText = "Business Address";
+            dataGridView1.Columns[7].HeaderText = "Gross Business Capital";
+            dataGridView1.Columns[8].HeaderText = "Average Daily Gross Sales";
+        }
+
         private void OpenAddCustomerFrm()
         {
             _concreteMediator = new ClassComponentConcreteMediator();
@@ -103,6 +116,7 @@ namespace TripleJP_Lending_System.Forms
                 _getListCustomerAccountPresenter = new GetCustomerListPresenter(this);
                 _getListCustomerAccountPresenter.CallSearch();
                 dataGridView1.DataSource = _getListCustomerAccountPresenter.GetCustomerListData();
+                ColumnHeaderNames();
             } 
             catch (ArgumentNullException)
             {
@@ -121,13 +135,10 @@ namespace TripleJP_Lending_System.Forms
             }
             catch (InvalidOperationException ex) when (ex.InnerException is MySqlException)
             {
-                if (ex.InnerException.HResult == -2147467259)
-                {
-                    const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
-                    const string MessageCaption = "System Access Denied";
-                    MessageBox.Show(MessageContent, MessageCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
+                const string MessageCaption = "System Access Denied";
+                MessageBox.Show(MessageContent, MessageCaption,
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -187,6 +198,10 @@ namespace TripleJP_Lending_System.Forms
 
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ClearText();
+            DisableEditButton();
+            searchBoxtxt.Text = "";
+            dataGridView1.DataSource = null;
             OpenAddCustomerFrm();
         }
 
