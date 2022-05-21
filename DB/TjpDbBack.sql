@@ -169,7 +169,7 @@ CREATE TABLE `loan_information` (
 
 LOCK TABLES `loan_information` WRITE;
 /*!40000 ALTER TABLE `loan_information` DISABLE KEYS */;
-INSERT INTO `loan_information` VALUES ('08156fdd-fe23-4402-8456-d66c0c6f47db','165449826-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',60,'2022-04-28',20.00,30000.00,0.00,'Unpaid'),('31e4a483-750f-4906-85b8-5f6fc473f3cf','126748266-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',60,'2022-03-21',20.00,1200.00,0.00,'Bad Debt'),('51f44357-5cef-11ec-bf7a-74d02be5638f','111920785-2020','0a2e3418-cd79-4e09-9196-fb15e5efb7be','daily',30,'2021-12-14',0.20,1200.00,0.00,'Bad Debt'),('563561ba-3b52-4afd-9883-3a9f40885625','177859217-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',30,'2022-04-28',20.00,1000.00,0.00,'Fully Paid'),('56448b4d-d27f-4e90-a0b4-11cc8c02e45c','195036786-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',30,'2022-01-20',20.00,100.00,0.00,'Unpaid'),('60dbbff8-ccc3-40ec-b84d-94b85cab81e3','127659769-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',60,'2022-03-25',20.00,12344.00,0.00,'Unpaid'),('90b4a75d-775c-4f3b-8f90-e0e33e4558f6','119829482-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',60,'2022-03-21',20.00,1000.00,0.00,'Unpaid'),('9677ed4a-43f1-433c-938e-80f0b39cd6df','198037871-2021','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',30,'2021-12-19',20.00,1000.00,0.00,'Fully Paid'),('dd85ad48-559e-4c27-a183-927bee9717a7','179130232-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',30,'2022-04-28',20.00,1000.00,0.00,'Unpaid'),('f7cf751a-2468-4afc-a8e1-b9be79caa87c','138968069-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',60,'2022-03-21',20.00,1000.00,0.00,'Fully Paid'),('fbcc229a-7f5b-4119-9efb-985805dde8b7','141070883-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',60,'2022-03-21',20.00,23.00,0.00,'Bad Debt');
+INSERT INTO `loan_information` VALUES ('31e4a483-750f-4906-85b8-5f6fc473f3cf','126748266-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',60,'2022-03-21',20.00,1200.00,0.00,'Bad Debt'),('51f44357-5cef-11ec-bf7a-74d02be5638f','111920785-2020','0a2e3418-cd79-4e09-9196-fb15e5efb7be','daily',30,'2021-12-14',0.20,1200.00,0.00,'Bad Debt'),('563561ba-3b52-4afd-9883-3a9f40885625','177859217-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',30,'2022-04-28',20.00,1000.00,0.00,'Fully Paid'),('9677ed4a-43f1-433c-938e-80f0b39cd6df','198037871-2021','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',30,'2021-12-19',20.00,1000.00,0.00,'Fully Paid'),('dd85ad48-559e-4c27-a183-927bee9717a7','179130232-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',30,'2022-04-28',20.00,1000.00,0.00,'Unpaid'),('f7cf751a-2468-4afc-a8e1-b9be79caa87c','138968069-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',60,'2022-03-21',20.00,1000.00,0.00,'Fully Paid'),('fbcc229a-7f5b-4119-9efb-985805dde8b7','141070883-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','Daily',60,'2022-03-21',20.00,23.00,0.00,'Bad Debt');
 /*!40000 ALTER TABLE `loan_information` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -276,6 +276,32 @@ SET character_set_client = @saved_cs_client;
 --
 -- Dumping routines for database 'tjpdb'
 --
+/*!50003 DROP FUNCTION IF EXISTS `sf_isLoanUnpaid` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` FUNCTION `sf_isLoanUnpaid`(customerID varchar(100), loanStatus varchar(50)) RETURNS tinyint(1)
+    DETERMINISTIC
+BEGIN
+DECLARE result tinyint(1);
+
+SELECT IF(Status='Unpaid',1,0) as LoanStatus INTO result 
+FROM v_loaninformation
+WHERE CustomerID = customerID and Status = loanStatus;
+
+RETURN result;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `sp_getCollectionAndPenalty` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -647,4 +673,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-28 21:38:55
+-- Dump completed on 2022-05-21 18:45:20
