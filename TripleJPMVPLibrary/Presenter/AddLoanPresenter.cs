@@ -16,6 +16,7 @@ namespace TripleJPMVPLibrary.Presenter
         private Loan _loan = new Loan();
         private Customer _customer = new Customer();
         private LoanService _loanService = new LoanService();
+        private const string _status = "Unpaid";
         public AddLoanPresenter(IAddLoan addloan)
         {
             _addLoan = addloan;
@@ -23,9 +24,17 @@ namespace TripleJPMVPLibrary.Presenter
 
         public void OnLoadData()
         {
-            _customer.Id = _addLoan.CustomerID;          
-            string message = _loanService.OnCallInsertLoan(LoadData(_loan), _customer);
-            SuccessfulMessage(message,"Loan Recorded");
+            _customer.Id = _addLoan.CustomerID;
+            
+            if (_loanService.OnCallIsLoanStatusUnpaid(_addLoan.CustomerID, _status) is true)
+            {
+                ErrorMessage("Customer has pending loan", "Cannot Add loan");
+            }
+            else
+            {
+                string message = _loanService.OnCallInsertLoan(LoadData(_loan), _customer);
+                SuccessfulMessage(message, "Loan Recorded");
+            }            
         }
         private Loan LoadData(Loan loan)
         {
@@ -41,6 +50,11 @@ namespace TripleJPMVPLibrary.Presenter
         {                        
             MessageBox.Show(text, messageCaption,
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void ErrorMessage(string text, string messageCaption)
+        {
+            MessageBox.Show(text, messageCaption,
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

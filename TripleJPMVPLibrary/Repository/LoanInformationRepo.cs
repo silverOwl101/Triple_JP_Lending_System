@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using TripleJPMVPLibrary.Model;
 using TripleJPUtilityLibrary.DataSource;
 using MySql.Data.MySqlClient;
-
+using System.Windows.Forms;
 
 namespace TripleJPMVPLibrary.Repository
 {
@@ -100,7 +100,7 @@ namespace TripleJPMVPLibrary.Repository
                 throw;
             }
 
-        }
+        }        
         public List<GetCollectionAndPenalty> GetCollectionAndPenalty(string LoanID)
         {
             string _getCollectionAndPenalty = LoanID;
@@ -133,5 +133,36 @@ namespace TripleJPMVPLibrary.Repository
                 }            
             return collectionAndPenaltyList;
         }
+        public bool CheckLoanUnpaid(string loanId, string _status)
+        {
+            bool result = false;
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+                {
+                    const string customerInfoQuery = "sf_isLoanUnpaid";
+                    MySqlCommand cmd = new MySqlCommand(customerInfoQuery, con);
+
+                    con.Open();
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    #region Customer information parameters
+                    cmd.Parameters.Add(new MySqlParameter("@customerID", loanId));
+                    cmd.Parameters["@customerID"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.Add(new MySqlParameter("@loanStatus", _status));
+                    cmd.Parameters["@loanStatus"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.Add(new MySqlParameter("@result", MySqlDbType.Bit));
+                    result = Convert.ToBoolean(cmd.Parameters["@result"].Direction =
+                                                            ParameterDirection.ReturnValue);
+                    #endregion
+                    cmd.ExecuteNonQuery();                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return result;
+        }
+
     }
 }

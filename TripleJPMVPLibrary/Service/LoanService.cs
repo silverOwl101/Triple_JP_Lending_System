@@ -57,5 +57,11 @@ namespace TripleJPMVPLibrary.Service
                 return null;
             }
         }
+        internal bool OnCallIsLoanStatusUnpaid(string LoanID, string Status)
+        {
+            bool result = false;
+            result = _loanRepo.CheckLoanUnpaid(LoanID, Status);
+            return result;
+        }
     }
 }
