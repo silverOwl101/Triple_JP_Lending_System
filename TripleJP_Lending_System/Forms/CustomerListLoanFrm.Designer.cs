@@ -41,6 +41,8 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -76,11 +78,11 @@ namespace TripleJP_Lending_System.Forms
             this.label21.TabIndex = 18;
             this.label21.Text = "Search:";
             // 
-            // searchBoxtxt
+            // SearchBoxtxt
             // 
             this.SearchBoxtxt.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBoxtxt.Location = new System.Drawing.Point(637, 12);
-            this.SearchBoxtxt.Name = "searchBoxtxt";
+            this.SearchBoxtxt.Name = "SearchBoxtxt";
             this.SearchBoxtxt.Size = new System.Drawing.Size(330, 27);
             this.SearchBoxtxt.TabIndex = 0;
             this.SearchBoxtxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchBoxtxt_KeyPress);

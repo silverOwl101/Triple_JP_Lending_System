@@ -43,6 +43,7 @@ namespace TripleJP_Lending_System.Forms
             if (customerList.GetCustomerListData().Count != 0)
             {
                 dataGridView1.DataSource = customerList.GetCustomerListData();
+                ColumnHeaderNames();
             }
             else
             {
@@ -62,16 +63,27 @@ namespace TripleJP_Lending_System.Forms
             customerLoanInformation[1] = dataGridView1.Rows[0].Cells[1].Value.ToString();
         }
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {            
+            if (e.RowIndex != -1) // this line of code will prevent triggering CellDoubleClick
+                                  // event if you double click the column header.
+            {
+                onDoubleClickData();
+                _concreteMediator = new ClassComponentConcreteMediator();
+                _addLoanFrmComponent = new AddLoanFrmComponent(_concreteMediator);
+                _concreteMediator.OpenForms(_addLoanFrmComponent, true);
+            }                        
+        }
+        private void ColumnHeaderNames()
         {
-            onDoubleClickData();
-
-            _concreteMediator = new ClassComponentConcreteMediator();
-            _addLoanFrmComponent = new AddLoanFrmComponent(_concreteMediator);
-            _concreteMediator.OpenForms(_addLoanFrmComponent, true);
-
-
-            //AddLoanFrm addLoan = new AddLoanFrm();
-            //addLoan.ShowDialog();
+            dataGridView1.Columns[0].HeaderText = "Customer ID";
+            dataGridView1.Columns[1].HeaderText = "Name";
+            dataGridView1.Columns[2].HeaderText = "Address";
+            dataGridView1.Columns[3].HeaderText = "Contact number";
+            dataGridView1.Columns[4].HeaderText = "Business name";
+            dataGridView1.Columns[5].HeaderText = "Business nature";
+            dataGridView1.Columns[6].HeaderText = "Business address";
+            dataGridView1.Columns[7].HeaderText = "Gross business capital";
+            dataGridView1.Columns[8].HeaderText = "Average daily gross sales";
         }
     }
 }
