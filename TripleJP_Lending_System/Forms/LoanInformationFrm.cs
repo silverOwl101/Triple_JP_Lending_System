@@ -317,8 +317,7 @@ namespace TripleJP_Lending_System.Forms
         private void ViewAllData()
         {
             dataGridView1.DataSource = loanInformationPresenter.GetLoanInformationList();            
-            ColumnHeaderNames();
-            ClearText();
+            ColumnHeaderNames();            
             dataGridView1.Enabled = true;
             groupBox15.Enabled = true;
             dataGridView1.Focus();

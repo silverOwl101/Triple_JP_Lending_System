@@ -35,7 +35,11 @@ namespace TripleJPMVPLibrary.Presenter
 
             if (String.IsNullOrEmpty(_search.UserSearch))
             {
-                throw new ArgumentNullException(nameof(_search.UserSearch), " UserSearch is Null ");
+                //throw new ArgumentNullException(nameof(_search.UserSearch), " UserSearch is Null ");
+                const string MessageContent = "Enter customer name or ID number to search";
+                const string MessageCaption = "Invalid input";
+                MessageBox.Show(MessageContent, MessageCaption, 
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -54,7 +58,11 @@ namespace TripleJPMVPLibrary.Presenter
 
                 if (_getCustomer.Count == 0)
                 {
-                    throw new ArgumentException(" Input is Invalid ", nameof(_search.UserSearch));
+                    //throw new ArgumentException(" Input is Invalid ", nameof(_search.UserSearch));
+                    const string MessageContent = "No records found";
+                    const string MessageCaption = "TripleJP Lending System";
+                    MessageBox.Show(MessageContent, MessageCaption,
+                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }            
         }
