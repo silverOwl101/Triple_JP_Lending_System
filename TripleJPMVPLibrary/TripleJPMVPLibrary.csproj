@@ -66,6 +66,7 @@
     <Compile Include="Service\LoanService.cs" />
     <Compile Include="View\IAddCustomer.cs" />
     <Compile Include="View\IAddLoan.cs" />
+    <Compile Include="View\ICustomerNameAndID.cs" />
     <Compile Include="View\IDataGridClick.cs" />
     <Compile Include="View\IEditCustomer.cs" />
     <Compile Include="View\IGetCollectionAndPenalty.cs" />

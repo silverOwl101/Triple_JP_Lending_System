@@ -114,8 +114,8 @@ namespace TripleJPMVPLibrary.Repository
                     MySqlCommand cmd = new MySqlCommand(Query, con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@loanId", _getCollectionAndPenalty);
-                    cmd.Parameters["@loanId"].Direction = ParameterDirection.Input;                    
+                    cmd.Parameters.AddWithValue("@customerId", _getCollectionAndPenalty);
+                    cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;                    
                     cmd.ExecuteNonQuery();
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {                        
@@ -133,35 +133,38 @@ namespace TripleJPMVPLibrary.Repository
                 }            
             return collectionAndPenaltyList;
         }
-        public bool CheckLoanUnpaid(string loanId, string _status)
+        public bool isLoanUnpaid(string customerId)
         {
-            bool result = false;
+            bool rslt = false;
             try
             {
                 using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
                 {
-                    const string customerInfoQuery = "sf_isLoanUnpaid";
+                    const string customerInfoQuery = "sp_isLoanUnpaid";
                     MySqlCommand cmd = new MySqlCommand(customerInfoQuery, con);
 
                     con.Open();
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     #region Customer information parameters
-                    cmd.Parameters.Add(new MySqlParameter("@customerID", loanId));
-                    cmd.Parameters["@customerID"].Direction = ParameterDirection.Input;
-                    cmd.Parameters.Add(new MySqlParameter("@loanStatus", _status));
-                    cmd.Parameters["@loanStatus"].Direction = ParameterDirection.Input;
-                    cmd.Parameters.Add(new MySqlParameter("@result", MySqlDbType.Bit));
-                    result = Convert.ToBoolean(cmd.Parameters["@result"].Direction =
-                                                            ParameterDirection.ReturnValue);
+                    cmd.Parameters.AddWithValue("@ID", customerId);
+                    cmd.Parameters["@ID"].Direction = ParameterDirection.Input;                    
+                    cmd.Parameters.Add(new MySqlParameter("@rslt", MySqlDbType.UInt16));
+                    cmd.Parameters["@rslt"].Direction = ParameterDirection.Output;                    
                     #endregion
-                    cmd.ExecuteNonQuery();                    
+                    cmd.ExecuteNonQuery();
+                    
+                    string cmdrslt = cmd.Parameters["@rslt"].Value.ToString();
+                    if (!string.IsNullOrEmpty(cmdrslt)) // Do not remove this code                                                        
+                    {
+                        rslt = true;
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-            return result;
+            return rslt;
         }
 
     }

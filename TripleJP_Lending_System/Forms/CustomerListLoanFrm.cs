@@ -15,11 +15,13 @@ using TripleJPMVPLibrary.View;
 
 namespace TripleJP_Lending_System.Forms
 {
-    public partial class CustomerListLoanFrm : Form, ISearch
+    public partial class CustomerListLoanFrm : Form, ISearch, ICustomerNameAndID
     {
         internal static string[] customerLoanInformation = new string[2];
 
         private IFormsMediator _concreteMediator;
+        private ISearch _isearch;
+        private ICustomerNameAndID _icustomerNameAndID;
         private AddLoanFrmComponent _addLoanFrmComponent;
 
         public CustomerListLoanFrm()
@@ -36,9 +38,21 @@ namespace TripleJP_Lending_System.Forms
             get { return SearchBoxtxt.Text; }
             set { SearchBoxtxt.Text = value; }
         }
+        public string Id
+        {
+            get { return customerLoanInformation[0]; }
+            set { customerLoanInformation[0] = value; }
+        }
+        public string CustomerName
+        {
+            get { return customerLoanInformation[1]; }
+            set { customerLoanInformation[1] = value; }
+        }
+
         private void onSearch()
         {
-            GetCustomerListPresenter customerList = new GetCustomerListPresenter(this);
+            _isearch = this;
+            GetCustomerListPresenter customerList = new GetCustomerListPresenter(_isearch);
             customerList.CallSearch();
             if (customerList.GetCustomerListData().Count != 0)
             {
@@ -59,7 +73,9 @@ namespace TripleJP_Lending_System.Forms
         }
         private void onDoubleClickData()
         {
+            //Customer id
             customerLoanInformation[0] = dataGridView1.Rows[0].Cells[0].Value.ToString();
+            //Customer name
             customerLoanInformation[1] = dataGridView1.Rows[0].Cells[1].Value.ToString();
         }
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -68,9 +84,25 @@ namespace TripleJP_Lending_System.Forms
                                   // event if you double click the column header.
             {
                 onDoubleClickData();
-                _concreteMediator = new ClassComponentConcreteMediator();
-                _addLoanFrmComponent = new AddLoanFrmComponent(_concreteMediator);
-                _concreteMediator.OpenForms(_addLoanFrmComponent, true);
+                _icustomerNameAndID = this;               
+                GetCustomerListPresenter customerList = 
+                                new GetCustomerListPresenter(_icustomerNameAndID);
+                if (customerList.OnLoadData())
+                {
+                    const string MessageContent = "Customer has pending loan";
+                    const string MessageCaption = "Access denied";
+                    MessageBox.Show(MessageContent, MessageCaption,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    _concreteMediator = new ClassComponentConcreteMediator();
+                    _addLoanFrmComponent = new AddLoanFrmComponent(_concreteMediator);
+                    _concreteMediator.OpenForms(_addLoanFrmComponent, true);
+                    dataGridView1.DataSource = null;
+                    SearchBoxtxt.Clear();
+                    SearchBoxtxt.Focus();
+                }                
             }                        
         }
         private void ColumnHeaderNames()

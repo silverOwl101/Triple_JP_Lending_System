@@ -15,18 +15,16 @@ namespace TripleJPMVPLibrary.Presenter
         private IAddLoan _addLoan;
         private Loan _loan = new Loan();
         private Customer _customer = new Customer();
-        private LoanService _loanService = new LoanService();
-        private const string _status = "Unpaid";
+        private LoanService _loanService = new LoanService();        
         public AddLoanPresenter(IAddLoan addloan)
         {
             _addLoan = addloan;
+            _customer.Id = _addLoan.CustomerID;
         }
 
         public void OnLoadData()
-        {
-            _customer.Id = _addLoan.CustomerID;
-            
-            if (_loanService.OnCallIsLoanStatusUnpaid(_addLoan.CustomerID, _status) is true)
+        {                        
+            if (_loanService.OnCallIsLoanStatusUnpaid(_addLoan.CustomerID) is true)
             {
                 ErrorMessage("Customer has pending loan", "Cannot Add loan");
             }

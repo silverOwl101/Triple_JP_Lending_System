@@ -15,18 +15,27 @@ namespace TripleJPMVPLibrary.Presenter
     {
         #region Fields
 
-        private ISearch _search;        
+        private ISearch _search;
+        private ICustomerNameAndID _customerNameandId;
         private CustomerService _customerService;
         private Customer _customer;
         private List<GetCustomerInfo> _getCustomer;
+        private LoanService _loanService = new LoanService();
 
         #endregion
 
         public GetCustomerListPresenter(ISearch search)
         {
-            _search = search;            
+            _search = search;          
         }
-
+        public GetCustomerListPresenter(ICustomerNameAndID customerNameandId)
+        {
+            _customerNameandId = customerNameandId;
+        }
+        public bool OnLoadData()
+        {            
+            return _loanService.OnCallIsLoanStatusUnpaid(_customerNameandId.Id);
+        }
         public void CallSearch()
         {
             _customer = new Customer();

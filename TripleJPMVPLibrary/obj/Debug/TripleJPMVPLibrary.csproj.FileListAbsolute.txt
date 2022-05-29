@@ -39,6 +39,8 @@ D:\Projects\C#\TripleJP_Lending_System\TripleJPMVPLibrary\obj\Debug\TripleJPMVPL
 D:\Projects\C#\TripleJP_Lending_System\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.pdb
 D:\Projects\C#\TripleJP_Lending_System\TripleJPMVPLibrary\bin\Debug\TripleJPUtilityLibrary.dll
 D:\Projects\C#\TripleJP_Lending_System\TripleJPMVPLibrary\bin\Debug\TripleJPUtilityLibrary.pdb
+D:\Projects\C#\Triple_JP_Lending_System\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.csprojAssemblyReference.cache
+D:\Projects\C#\Triple_JP_Lending_System\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.csproj.CoreCompileInputs.cache
 D:\Projects\C#\Triple_JP_Lending_System\TripleJPMVPLibrary\bin\Debug\TripleJPMVPLibrary.dll
 D:\Projects\C#\Triple_JP_Lending_System\TripleJPMVPLibrary\bin\Debug\TripleJPMVPLibrary.pdb
 D:\Projects\C#\Triple_JP_Lending_System\TripleJPMVPLibrary\bin\Debug\MySql.Data.dll
@@ -56,8 +58,6 @@ D:\Projects\C#\Triple_JP_Lending_System\TripleJPMVPLibrary\bin\Debug\K4os.Hash.x
 D:\Projects\C#\Triple_JP_Lending_System\TripleJPMVPLibrary\bin\Debug\System.Numerics.Vectors.dll
 D:\Projects\C#\Triple_JP_Lending_System\TripleJPMVPLibrary\bin\Debug\TripleJPUtilityLibrary.pdb
 D:\Projects\C#\Triple_JP_Lending_System\TripleJPMVPLibrary\bin\Debug\MySql.Data.xml
-D:\Projects\C#\Triple_JP_Lending_System\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.csprojAssemblyReference.cache
-D:\Projects\C#\Triple_JP_Lending_System\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.csproj.CoreCompileInputs.cache
 D:\Projects\C#\Triple_JP_Lending_System\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.csproj.CopyComplete
 D:\Projects\C#\Triple_JP_Lending_System\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.dll
 D:\Projects\C#\Triple_JP_Lending_System\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.pdb
