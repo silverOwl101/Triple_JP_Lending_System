@@ -134,5 +134,9 @@ namespace TripleJP_Lending_System
 
         #endregion
 
+        private void LogInFrm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
