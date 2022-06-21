@@ -98,3 +98,4 @@ D:\Projects\C#\Triple_JP_Lending_System\TripleJP_Lending_System\obj\Debug\Triple
 D:\Projects\C#\Triple_JP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.csproj.CopyComplete
 D:\Projects\C#\Triple_JP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.exe
 D:\Projects\C#\Triple_JP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.pdb
+D:\Projects\C#\Triple_JP_Lending_System\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Forms.PostingFrm.resources

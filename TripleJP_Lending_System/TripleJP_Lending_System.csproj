@@ -63,6 +63,7 @@
     <Compile Include="FormMediator\Component\LoanInformationFrmPassData.cs" />
     <Compile Include="FormMediator\Component\LogInFrmComponent.cs" />
     <Compile Include="FormMediator\Component\MainApplicationFrmComponent.cs" />
+    <Compile Include="FormMediator\Component\PostingFrmComponent.cs" />
     <Compile Include="FormMediator\ConcreteMediator\ClassComponentConcreteMediator.cs" />
     <Compile Include="FormMediator\Mediator\IDataComponent.cs" />
     <Compile Include="FormMediator\Mediator\IOpenComponent.cs" />
@@ -122,6 +123,12 @@
     <Compile Include="Forms\MainApplicationFrm.Designer.cs">
       <DependentUpon>MainApplicationFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PostingFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PostingFrm.Designer.cs">
+      <DependentUpon>PostingFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\View\FrmConvertionRequirements.cs" />
     <Compile Include="Helper\View\FrmInputRequirements.cs" />
     <Compile Include="Program.cs" />
@@ -152,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainApplicationFrm.resx">
       <DependentUpon>MainApplicationFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PostingFrm.resx">
+      <DependentUpon>PostingFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

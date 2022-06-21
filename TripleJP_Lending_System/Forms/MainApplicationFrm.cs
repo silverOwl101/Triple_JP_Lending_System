@@ -16,10 +16,13 @@ namespace TripleJP_Lending_System.Forms
 {
     public partial class MainApplicationFrm : Form
     {
+        #region Private Fields
         private IFormsMediator _concreteMediator;
         private LogInFrmComponent _logInFrmComponent;
         private CustomerAccountFrmComponent _customerAccountFrmComponent;
         private LoanInformationFrmComponent _loanInformationFrmComponent;
+        private PostingFrmComponent _postingFrmComponent;
+        #endregion
         public MainApplicationFrm()
         {
             InitializeComponent();
@@ -36,8 +39,9 @@ namespace TripleJP_Lending_System.Forms
             _logInFrmComponent = new LogInFrmComponent(_concreteMediator);
             _concreteMediator.OpenForms(_logInFrmComponent, true);
             Close();            
-        }        
+        }
         #endregion
+        #region MainFrm Tool strip
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenCustomerAccountFrm();
@@ -46,6 +50,11 @@ namespace TripleJP_Lending_System.Forms
         {
             OpenLoanInformationFrm();
         }
+        private void postingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenPostingFrm();
+        }
+        #endregion
         #region Methods for opening forms
         private void OpenCustomerAccountFrm()
         {
@@ -59,10 +68,16 @@ namespace TripleJP_Lending_System.Forms
             _loanInformationFrmComponent = new LoanInformationFrmComponent(_concreteMediator);
             _concreteMediator.OpenForms(_loanInformationFrmComponent, true);
         }
+        private void OpenPostingFrm()
+        {
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _postingFrmComponent = new PostingFrmComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_postingFrmComponent, true);
+        }
         private void MainApplicationFrm_FormClosed(object sender, FormClosedEventArgs e)
         {
             LoadLogInFrm();
         }
-        #endregion
+        #endregion        
     }
 }

@@ -78,6 +78,7 @@ namespace TripleJP_Lending_System.Forms
             this.postingToolStripMenuItem.Name = "postingToolStripMenuItem";
             this.postingToolStripMenuItem.Size = new System.Drawing.Size(80, 30);
             this.postingToolStripMenuItem.Text = "Posting";
+            this.postingToolStripMenuItem.Click += new System.EventHandler(this.postingToolStripMenuItem_Click);
             // 
             // collectionsToolStripMenuItem
             // 
