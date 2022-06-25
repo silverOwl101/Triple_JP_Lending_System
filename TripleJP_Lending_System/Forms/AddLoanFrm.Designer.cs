@@ -316,14 +316,14 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox19.TabStop = false;
             this.groupBox19.Text = "Per Remittance";
             // 
-            // label17
+            // perRemittanceTxt
             // 
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(60, 23);
-            this.label17.Name = "label17";
+            this.label17.Name = "perRemittanceTxt";
             this.label17.Size = new System.Drawing.Size(53, 23);
             this.label17.TabIndex = 0;
-            this.label17.Text = "label17";
+            this.label17.Text = "perRemittanceTxt";
             // 
             // groupBox20
             // 
@@ -336,14 +336,14 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox20.TabStop = false;
             this.groupBox20.Text = "Maturity Value";
             // 
-            // label18
+            // maturityValueTxt
             // 
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(60, 23);
-            this.label18.Name = "label18";
+            this.label18.Name = "maturityValueTxt";
             this.label18.Size = new System.Drawing.Size(54, 23);
             this.label18.TabIndex = 0;
-            this.label18.Text = "label18";
+            this.label18.Text = "maturityValueTxt";
             // 
             // groupBox21
             // 
@@ -356,14 +356,14 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "Maturity Date";
             // 
-            // label19
+            // maturityDateTxt
             // 
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(60, 23);
-            this.label19.Name = "label19";
+            this.label19.Name = "maturityDateTxt";
             this.label19.Size = new System.Drawing.Size(54, 23);
             this.label19.TabIndex = 0;
-            this.label19.Text = "label19";
+            this.label19.Text = "maturityDateTxt";
             // 
             // groupBox22
             // 
@@ -376,14 +376,14 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox22.TabStop = false;
             this.groupBox22.Text = "Maturity Interest";
             // 
-            // label20
+            // maturityInterestTxt
             // 
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(60, 23);
-            this.label20.Name = "label20";
+            this.label20.Name = "maturityInterestTxt";
             this.label20.Size = new System.Drawing.Size(57, 23);
             this.label20.TabIndex = 0;
-            this.label20.Text = "label20";
+            this.label20.Text = "maturityInterestTxt";
             // 
             // AddLoanFrm
             // 

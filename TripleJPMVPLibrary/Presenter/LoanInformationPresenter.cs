@@ -13,17 +13,28 @@ namespace TripleJPMVPLibrary.Presenter
 {    
     public class LoanInformationPresenter
     {
-        private ISearch _search;        
-        private Customer _customer = new Customer();
-        private LoanService _loanService = new LoanService();
-        private List<GetCustomerLoanInformation> _getLoanInformation = new List<GetCustomerLoanInformation>();
+
+        #region Fields
+
+        private ISearch _search;
+        private Customer _customer;
+        private LoanService _loanService;
+        private List<GetCustomerLoanInformation> _getLoanInformation;
+
+        #endregion
+
         public LoanInformationPresenter(ISearch search)
         {
             _search = search;            
             OnLoadLoanInformationData();
         }
+
         private void OnLoadLoanInformationData()
         {
+            _customer = new Customer();
+            _loanService = new LoanService();
+            _getLoanInformation = new List<GetCustomerLoanInformation>();
+
             if (String.IsNullOrEmpty(_search.UserSearch))
             {
                 const string MessageContent = "Enter your credentials";
@@ -45,6 +56,7 @@ namespace TripleJPMVPLibrary.Presenter
                 _getLoanInformation = _loanService.OnCallGetLoanInformation(_customer);                
             }
         }
+
         public List<GetCustomerLoanInformation> GetLoanInformationList()
         {
             return _getLoanInformation;
