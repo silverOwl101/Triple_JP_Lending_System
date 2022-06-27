@@ -324,32 +324,32 @@ namespace TripleJPMVPLibrary.Repository
         internal string GetGuid(Customer customer)
         {
             string guid = null;
-            try
+
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
-                using (MySqlConnection con =
-                    new MySqlConnection(SqlConnection.ConnectionString))
+                const string Query = "sp_getCustomerGuid";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
                 {
-                    const string Query = "sp_getCustomerGuid";
-                    MySqlCommand cmd = new MySqlCommand(Query, con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    con.Open();
-                    cmd.Parameters.AddWithValue("@customerId", customer.Id);
-                    cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;
-                    cmd.ExecuteNonQuery();
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.Parameters.AddWithValue("@customerId", customer.Id);
+                cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
                     {
-                        while (reader.Read())
-                        {
-                            guid = reader["Uid"].ToString();                            
-                        }
+                        guid = reader["Uid"].ToString();
                     }
                 }
             }
-            catch (Exception)
-            {
-                throw;
-            }
+
             return guid;
+
         }
     }
 }

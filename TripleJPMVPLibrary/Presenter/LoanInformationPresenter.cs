@@ -37,10 +37,14 @@ namespace TripleJPMVPLibrary.Presenter
 
             if (String.IsNullOrEmpty(_search.UserSearch))
             {
-                const string MessageContent = "Enter your credentials";
-                const string MessageCaption = "Record not found";
-                MessageBox.Show(MessageContent, MessageCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                // throw exception here 
+
+                throw new ArgumentNullException(nameof(_search.UserSearch), "UserSearch is Null");
+
+                //const string MessageContent = "Enter your credentials";
+                //const string MessageCaption = "Record not found";
+                //MessageBox.Show(MessageContent, MessageCaption,
+                //    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {

@@ -32,7 +32,7 @@ namespace TripleJP_Lending_System.Forms
         private ClassComponentConcreteMediator _concreteMediator;
         private CustomerListLoanFrmComponent _customerListLoanFrmComponent;
         private LedgerFormComponent _ledgerFormComponent;
-        private LoanInformationPresenter loanInformationPresenter;
+        private LoanInformationPresenter _loanInformationPresenter;
         private LoanInformationFrmPassData _loanInformationFrmPassData;
         private string[] _filterDataVariables = new string[3];
 
@@ -69,34 +69,43 @@ namespace TripleJP_Lending_System.Forms
             dataGridView1.Enabled = false;
             groupBox15.Enabled = false;
         }
+
         private void OnSearch()
         {
-            loanInformationPresenter = new LoanInformationPresenter(this);
-
-            listNullChecker(loanInformationPresenter.GetLoanInformationList());
-            if (loanInformationPresenter.GetLoanInformationList().Count == 0)
+            try
             {
-                const string MessageContent = "Double check the entry" +
-                                              " or contact your I.T personnel" +
-                                              " for futher details";
-                string MessageCaption = "Record not found";
-                MessageBox.Show(MessageContent, MessageCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                if (ledgerButton.Enabled && dataGridView1.Enabled && groupBox15.Enabled)
+                _loanInformationPresenter = new LoanInformationPresenter(this);
+
+                listNullChecker(_loanInformationPresenter.GetLoanInformationList());
+
+                if (_loanInformationPresenter.GetLoanInformationList().Count == 0)
                 {
-                    ClearText();
-                    dataGridView1.DataSource = null;
-                    DisabledControls();
+                    const string MessageContent = "Record not found, please contact your I.T officer if you think there is a problem to the system.";
+                    const string MessageCaption = "Invalid Credentials";
+                    MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    if (ledgerButton.Enabled && dataGridView1.Enabled && groupBox15.Enabled)
+                    {
+                        ClearText();
+                        dataGridView1.DataSource = null;
+                        DisabledControls();
+                    }
+
                 }
                 else
                 {
-                    ;
+                    ViewAllData();
                 }
+
             }
-            else
+            catch (ArgumentNullException ex) when (ex.ParamName is "UserSearch")
             {
-                ViewAllData();
+                const string MessageContent = "Please type the name or ID of the customer.";
+                const string MessageCaption = "Enter Credentials";
+                MessageBox.Show(MessageContent, MessageCaption,
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+
         }
         private void ColumnHeaderNames()
         {
@@ -294,10 +303,10 @@ namespace TripleJP_Lending_System.Forms
         }
         private void FilterData(string[] array)
         {
-            loanInformationPresenter = new LoanInformationPresenter(this);
+            _loanInformationPresenter = new LoanInformationPresenter(this);
             List<GetCustomerLoanInformation> unPaidList =
                                         new List<GetCustomerLoanInformation>();
-            unPaidList = loanInformationPresenter.GetLoanInformationList();
+            unPaidList = _loanInformationPresenter.GetLoanInformationList();
             List<GetCustomerLoanInformation> result = new List<GetCustomerLoanInformation>();
             var query = from list in unPaidList
                         where list.Status == array[0] ||
@@ -328,7 +337,7 @@ namespace TripleJP_Lending_System.Forms
         }
         private void ViewAllData()
         {
-            dataGridView1.DataSource = loanInformationPresenter.GetLoanInformationList();            
+            dataGridView1.DataSource = _loanInformationPresenter.GetLoanInformationList();            
             ColumnHeaderNames();            
             dataGridView1.Enabled = true;
             groupBox15.Enabled = true;
@@ -336,7 +345,7 @@ namespace TripleJP_Lending_System.Forms
         }
         private void CheckBoxNotAllCheckedViewAllData()
         {
-            dataGridView1.DataSource = loanInformationPresenter.GetLoanInformationList();
+            dataGridView1.DataSource = _loanInformationPresenter.GetLoanInformationList();
             ColumnHeaderNames();            
             dataGridView1.Focus();
         }
@@ -358,6 +367,8 @@ namespace TripleJP_Lending_System.Forms
                                                     "further assistance.");
             }
         }
+
+        //wako ka gets lage ani?
         private void listNullChecker(List<GetCustomerLoanInformation> list)
         {
             foreach (var item in list)
