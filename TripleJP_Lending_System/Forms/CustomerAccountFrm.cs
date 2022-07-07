@@ -118,7 +118,7 @@ namespace TripleJP_Lending_System.Forms
                 dataGridView1.DataSource = _getListCustomerAccountPresenter.GetCustomerListData();
                 ColumnHeaderNames();
             } 
-            catch (ArgumentNullException)
+            catch (ArgumentNullException ex) when (ex.ParamName is "UserSearch")
             {
                 const string MessageContent = "Please type the name or ID of the customer.";
                 const string MessageCaption = "Enter Credentials";
@@ -126,7 +126,7 @@ namespace TripleJP_Lending_System.Forms
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 dataGridView1.DataSource = null;
             }
-            catch (ArgumentException)
+            catch (ArgumentException ex) when (ex.ParamName is "UserSearch")
             {
                 const string MessageContent = "Record not found, please contact your I.T officer if you think there is a problem to the system.";
                 const string MessageCaption = "Invalid Credentials";

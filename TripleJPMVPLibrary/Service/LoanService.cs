@@ -7,26 +7,38 @@ using TripleJPMVPLibrary.Repository;
 using TripleJPMVPLibrary.Model;
 using TripleJPUtilityLibrary.Generator;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace TripleJPMVPLibrary.Service
 {
     internal class LoanService
     {
-        private LoanInformationRepo _loanRepo = new LoanInformationRepo();
+        #region Fields
+
+        private LoanInformationRepo _loanRepo;
+
+        #endregion
+
         internal List<GetCustomerLoanInformation> OnCallGetLoanInformation(Customer customer)
         {
+
+            _loanRepo = new LoanInformationRepo();
+
             try
             {
                 return _loanRepo.GetLoanInformation(customer);
             }
-            catch (Exception)
+            catch (MySqlException ex)
             {
-                throw;
+                throw new InvalidOperationException("Data Access Denied", ex);
             }            
         }
+
         internal string OnCallInsertLoan(Loan loan, Customer customer)
         {
             IdGeneratorClass idGeneratorClass = new IdGeneratorClass();
+            _loanRepo = new LoanInformationRepo();
+
             try
             {
                 CustomerRepo customerRepo = new CustomerRepo();
@@ -35,13 +47,17 @@ namespace TripleJPMVPLibrary.Service
                 loan.CustomerUid = customerRepo.GetGuid(customer);
                 _loanRepo.InsertData(loan);
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
+                // throw exception here
+                // do not return the exception
+
                 return ex.ToString();
             }
 
             return "Loan added successfully";
         }
+
         internal List<GetCollectionAndPenalty> OnCallGetCollectionAndPenalty(string LoanID)
         {
             try
