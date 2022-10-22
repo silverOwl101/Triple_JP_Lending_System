@@ -11,7 +11,6 @@ D:\Projects\C#\TripleJP_Lending_System\TripleJPUtilityLibrary\obj\Debug\TripleJP
 D:\Projects\C#\TripleJP_Lending_System\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.pdb
 D:\Projects\C#\Triple_JP_Lending_System\TripleJPUtilityLibrary\bin\Debug\TripleJPUtilityLibrary.dll
 D:\Projects\C#\Triple_JP_Lending_System\TripleJPUtilityLibrary\bin\Debug\TripleJPUtilityLibrary.pdb
-D:\Projects\C#\Triple_JP_Lending_System\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.csprojAssemblyReference.cache
 D:\Projects\C#\Triple_JP_Lending_System\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.csproj.CoreCompileInputs.cache
 D:\Projects\C#\Triple_JP_Lending_System\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.dll
 D:\Projects\C#\Triple_JP_Lending_System\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.pdb
