@@ -15,15 +15,12 @@ namespace TripleJPMVPLibrary.Service
     {
         #region Fields
 
-        private LoanInformationRepo _loanRepo;
+        private LoanInformationRepo _loanRepo = new LoanInformationRepo();
 
         #endregion
 
         internal List<GetCustomerLoanInformation> OnCallGetLoanInformation(Customer customer)
-        {
-
-            _loanRepo = new LoanInformationRepo();
-
+        {           
             try
             {
                 return _loanRepo.GetLoanInformation(customer);
@@ -36,9 +33,7 @@ namespace TripleJPMVPLibrary.Service
 
         internal string OnCallInsertLoan(Loan loan, Customer customer)
         {
-            IdGeneratorClass idGeneratorClass = new IdGeneratorClass();
-            _loanRepo = new LoanInformationRepo();
-
+            IdGeneratorClass idGeneratorClass = new IdGeneratorClass();            
             try
             {
                 CustomerRepo customerRepo = new CustomerRepo();

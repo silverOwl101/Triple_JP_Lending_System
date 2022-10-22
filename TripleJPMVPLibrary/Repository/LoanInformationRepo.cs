@@ -61,7 +61,6 @@ namespace TripleJPMVPLibrary.Repository
             return loanList;
 
         }
-
         public void InsertData(Loan loan)
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
@@ -121,8 +120,8 @@ namespace TripleJPMVPLibrary.Repository
                     MySqlCommand cmd = new MySqlCommand(Query, con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@customerId", _getCollectionAndPenalty);
-                    cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;                    
+                    cmd.Parameters.AddWithValue("@loanId", _getCollectionAndPenalty);
+                    cmd.Parameters["@loanId"].Direction = ParameterDirection.Input;                    
                     cmd.ExecuteNonQuery();
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {                        

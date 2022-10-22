@@ -148,7 +148,6 @@ namespace TripleJP_Lending_System.Forms
             totalAmountRemittanceTxt.Text =
                 dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value.ToString();
         }
-
         private void ClearText()
         {
             loanIdTxt.Text = "";
