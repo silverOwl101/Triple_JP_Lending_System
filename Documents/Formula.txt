@@ -1,0 +1,6 @@
+maturity interest = principal loan * 0.2 variable
+maturity value = principal loan + interest
+total amount remittance = join and possible subquery
+maturity date = effective_date + duration = last day
+per remittance = maturity value / duration
+total balance = maturity value - total amount remittance 
