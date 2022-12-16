@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace TripleJPMVPLibrary.Presenter
 {
     public class AddCustomerPresenter
-    {
+    {   
         #region Fields
 
         private IAddCustomer _addCustomer;

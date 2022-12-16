@@ -49,6 +49,7 @@
     <Compile Include="Model\GetCollectionAndPenalty.cs" />
     <Compile Include="Model\GetCustomerInfo.cs" />
     <Compile Include="Model\GetCustomerLoanInformation.cs" />
+    <Compile Include="Model\GetPostingInfo.cs" />
     <Compile Include="Model\Loan.cs" />
     <Compile Include="Presenter\AddCustomerPresenter.cs" />
     <Compile Include="Presenter\AddLoanPresenter.cs" />
@@ -57,13 +58,16 @@
     <Compile Include="Presenter\LedgerPresenter.cs" />
     <Compile Include="Presenter\LoanInformationPresenter.cs" />
     <Compile Include="Presenter\LogInFrmPresenter.cs" />
+    <Compile Include="Presenter\PostingPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CustomerRepo.cs" />
     <Compile Include="Repository\LoanInformationRepo.cs" />
     <Compile Include="Repository\LogInRepo.cs" />
+    <Compile Include="Repository\PostingRepo.cs" />
     <Compile Include="Service\LogInService.cs" />
     <Compile Include="Service\CustomerService.cs" />
     <Compile Include="Service\LoanService.cs" />
+    <Compile Include="Service\PostingService.cs" />
     <Compile Include="View\IAddCustomer.cs" />
     <Compile Include="View\IAddLoan.cs" />
     <Compile Include="View\ICustomerNameAndID.cs" />
@@ -71,6 +75,7 @@
     <Compile Include="View\IEditCustomer.cs" />
     <Compile Include="View\IGetCollectionAndPenalty.cs" />
     <Compile Include="View\ILogIn.cs" />
+    <Compile Include="View\IPosting.cs" />
     <Compile Include="View\ISearch.cs" />
   </ItemGroup>
   <ItemGroup>

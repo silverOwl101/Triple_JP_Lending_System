@@ -272,7 +272,6 @@ namespace TripleJPMVPLibrary.Repository
             }
             return getCustomer;
         }
-
         internal void UpdateData(Customer customer, CustomerBusinessInformation customerBusinessInfo)
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
@@ -320,7 +319,6 @@ namespace TripleJPMVPLibrary.Repository
                 cmd.ExecuteNonQuery();
             }
         }
-
         internal string GetGuid(Customer customer)
         {
             string guid = null;
