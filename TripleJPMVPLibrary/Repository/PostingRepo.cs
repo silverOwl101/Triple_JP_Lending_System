@@ -27,8 +27,8 @@ namespace TripleJPMVPLibrary.Repository
                 };
 
                 con.Open();
-                cmd.Parameters.AddWithValue("@customerId", customer.Id);
-                cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;                
+                cmd.Parameters.AddWithValue("@customerIdOrName", customer.Id);
+                cmd.Parameters["@customerIdOrName"].Direction = ParameterDirection.Input;                
                 cmd.ExecuteNonQuery();
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -41,7 +41,8 @@ namespace TripleJPMVPLibrary.Repository
                             CustomerName = reader["Name"].ToString(),
                             PostingReturn = Convert.ToInt32(reader["Return"]),
                             Interest = Convert.ToInt32(reader["Interest"]),
-                            TotalAmount = Convert.ToInt32(reader["Total Amount"])
+                            TotalAmount = Convert.ToInt32(reader["Total Amount"]),
+                            Status = reader["Status"].ToString()
                         };
                         customerList.Add(getCustomerList);
                     }

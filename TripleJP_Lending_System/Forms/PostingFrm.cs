@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using TripleJPMVPLibrary.Presenter;
 using System.Windows.Forms;
 using TripleJPMVPLibrary.View;
+using TripleJPMVPLibrary.Model;
 
 namespace TripleJP_Lending_System.Forms
 {
@@ -16,9 +17,10 @@ namespace TripleJP_Lending_System.Forms
     {
 
         private PostingPresenter _postingPresenter;
+        private List<GetPostingInfo> getPostingInfo;
         public PostingFrm()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         public string CustomerId    
@@ -34,9 +36,33 @@ namespace TripleJP_Lending_System.Forms
 
         private void ViewData()
         {
-            _postingPresenter = new PostingPresenter(this);           
-            dataGridView1.DataSource = _postingPresenter.GetPostingList();
-            ColumnHeaderNames();
+            if (string.IsNullOrEmpty(PostingSearchTxt.Text))
+            {
+                dataGridView1.Columns.Clear();
+                const string MessageContent = "Please type the name or ID of the customer.";
+                const string MessageCaption = "Enter Credentials";
+                MessageBox.Show(MessageContent, MessageCaption,
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);                                
+            }
+            else
+            {
+                _postingPresenter = new PostingPresenter(this);
+                getPostingInfo = new List<GetPostingInfo>();
+                getPostingInfo = _postingPresenter.GetPostingList();                
+                if (getPostingInfo.Count == 0)
+                {
+                    dataGridView1.Columns.Clear();
+                    const string MessageContent = "No records found";
+                    const string MessageCaption = "Record Error";
+                    MessageBox.Show(MessageContent, MessageCaption,
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);                    
+                }
+                else
+                {
+                    dataGridView1.DataSource = getPostingInfo;
+                    ColumnHeaderNames();
+                }                
+            }            
         }
 
         private void ColumnHeaderNames()
@@ -47,6 +73,19 @@ namespace TripleJP_Lending_System.Forms
             dataGridView1.Columns[3].HeaderText = "Return";
             dataGridView1.Columns[4].HeaderText = "Interest";
             dataGridView1.Columns[5].HeaderText = "Total Amount";
+        }
+
+        private void PostingFrm_Shown(object sender, EventArgs e)
+        {
+            PostingSearchTxt.Focus();            
+        }
+
+        private void PostingSearchTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Return))
+            {
+                ViewData();
+            }
         }
     }
 }

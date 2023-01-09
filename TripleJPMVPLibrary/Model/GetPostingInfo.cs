@@ -14,5 +14,6 @@ namespace TripleJPMVPLibrary.Model
         public int PostingReturn { get; set; }
         public int Interest { get; set; }
         public int TotalAmount { get; set; }
+        public string Status { get; set; }
     }
 }
