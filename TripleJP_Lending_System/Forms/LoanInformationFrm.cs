@@ -13,6 +13,7 @@ using TripleJPMVPLibrary.Model;
 using TripleJPUtilityLibrary.Accounting;
 using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
+using MySql.Data.MySqlClient;
 
 namespace TripleJP_Lending_System.Forms
 {
@@ -255,6 +256,13 @@ namespace TripleJP_Lending_System.Forms
                 MessageBox.Show(MessageContent, MessageCaption,
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            catch (InvalidOperationException ex) when (ex.InnerException is MySqlException)
+            {
+                const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
+                const string MessageCaption = "System Access Denied";
+                MessageBox.Show(MessageContent, MessageCaption,
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -264,10 +272,12 @@ namespace TripleJP_Lending_System.Forms
             {
                 if (string.IsNullOrEmpty(item.Status))
                 {
-                    throw new ArgumentNullException("Fatal Error, contact your I.T officer immediately");
+                    throw new ArgumentNullException(nameof(list), "list is Null");
                 }
             }
         }
+
+        #region Form Data Display Methods
 
         private void ColumnHeaderNames()
         {
@@ -351,6 +361,10 @@ namespace TripleJP_Lending_System.Forms
 
         }
 
+        #endregion
+
+        #region Form Data Filter Methods
+
         private void FilterData(string[] array)
         {
             _loanInformationPresenter = new LoanInformationPresenter(this);
@@ -369,10 +383,6 @@ namespace TripleJP_Lending_System.Forms
                 if (!string.IsNullOrEmpty(loan.Status))
                 {
                     result.Add(loan);
-                }
-                else
-                {
-                    throw new ArgumentNullException("Fatal Error, contact your I.T officer immediately");
                 }
             }
             dataGridView1.DataSource = result;
@@ -402,9 +412,11 @@ namespace TripleJP_Lending_System.Forms
                 case Filter.None:
                     return string.Empty;
                 default:
-                    throw new ArgumentNullException("You must fill the filter parameter Please contact your I.T officer for further assistance.");
+                    throw new ArgumentNullException(nameof(filter) ,"filter is Null");
             }
         }
+
+        #endregion
 
         #endregion
 

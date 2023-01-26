@@ -15,12 +15,15 @@ namespace TripleJPMVPLibrary.Service
     {
         #region Fields
 
-        private LoanInformationRepo _loanRepo = new LoanInformationRepo();
+        private LoanInformationRepo _loanRepo;
 
         #endregion
 
         internal List<GetCustomerLoanInformation> OnCallGetLoanInformation(Customer customer)
-        {           
+        {
+
+            _loanRepo = new LoanInformationRepo();
+
             try
             {
                 return _loanRepo.GetLoanInformation(customer);
@@ -31,9 +34,33 @@ namespace TripleJPMVPLibrary.Service
             }            
         }
 
+        internal List<GetCollectionAndPenalty> OnCallGetCollectionAndPenalty(string LoanID)
+        {
+
+            _loanRepo = new LoanInformationRepo();
+
+            try
+            {
+                return _loanRepo.GetCollectionAndPenalty(LoanID);
+            }
+            catch (FormatException ex)
+            {
+                throw new InvalidOperationException("String format problem", ex);
+            }
+            catch (MySqlException ex)
+            {
+
+                throw new InvalidOperationException("Data Access Denied", ex);
+
+            }
+        }
+
         internal string OnCallInsertLoan(Loan loan, Customer customer)
         {
-            IdGeneratorClass idGeneratorClass = new IdGeneratorClass();            
+
+            IdGeneratorClass idGeneratorClass = new IdGeneratorClass();
+            _loanRepo = new LoanInformationRepo();
+
             try
             {
                 CustomerRepo customerRepo = new CustomerRepo();
@@ -53,23 +80,11 @@ namespace TripleJPMVPLibrary.Service
             return "Loan added successfully";
         }
 
-        internal List<GetCollectionAndPenalty> OnCallGetCollectionAndPenalty(string LoanID)
-        {
-            try
-            {
-                return _loanRepo.GetCollectionAndPenalty(LoanID);
-            }
-            catch (Exception)
-            {
-                const string MessageContent = "No records of collection yet";
-                const string MessageCaption = "Collection not found";
-                MessageBox.Show(MessageContent, MessageCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return null;
-            }
-        }
         internal bool OnCallIsLoanStatusUnpaid(string LoanID)
         {
+
+            _loanRepo = new LoanInformationRepo();
+
             bool result = false;
             result = _loanRepo.isLoanUnpaid(LoanID);
             return result;
