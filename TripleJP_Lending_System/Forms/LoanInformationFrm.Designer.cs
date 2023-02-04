@@ -29,8 +29,8 @@ namespace TripleJP_Lending_System.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.statusTxt = new System.Windows.Forms.Label();
@@ -70,10 +70,10 @@ namespace TripleJP_Lending_System.Forms
             this.label21 = new System.Windows.Forms.Label();
             this.SearchBoxTxt = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.searchFilterGroupBox = new System.Windows.Forms.GroupBox();
+            this.badDebtCheckBox = new System.Windows.Forms.CheckBox();
+            this.fullyPaidCheckBox = new System.Windows.Forms.CheckBox();
+            this.unPaidCheckBox = new System.Windows.Forms.CheckBox();
             this.ledgerButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -95,7 +95,7 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox21.SuspendLayout();
             this.groupBox22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox15.SuspendLayout();
+            this.searchFilterGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -110,7 +110,7 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 34);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(868, 356);
@@ -121,7 +121,7 @@ namespace TripleJP_Lending_System.Forms
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.statusTxt);
-            this.groupBox11.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox11.Location = new System.Drawing.Point(435, 282);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(415, 57);
@@ -134,14 +134,14 @@ namespace TripleJP_Lending_System.Forms
             this.statusTxt.AutoSize = true;
             this.statusTxt.Location = new System.Drawing.Point(60, 23);
             this.statusTxt.Name = "statusTxt";
-            this.statusTxt.Size = new System.Drawing.Size(74, 25);
+            this.statusTxt.Size = new System.Drawing.Size(65, 17);
             this.statusTxt.TabIndex = 0;
             this.statusTxt.Text = "statusTxt";
             // 
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.penaltyTxt);
-            this.groupBox10.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.Location = new System.Drawing.Point(14, 282);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(415, 57);
@@ -154,14 +154,14 @@ namespace TripleJP_Lending_System.Forms
             this.penaltyTxt.AutoSize = true;
             this.penaltyTxt.Location = new System.Drawing.Point(60, 23);
             this.penaltyTxt.Name = "penaltyTxt";
-            this.penaltyTxt.Size = new System.Drawing.Size(214, 25);
+            this.penaltyTxt.Size = new System.Drawing.Size(199, 17);
             this.penaltyTxt.TabIndex = 0;
             this.penaltyTxt.Text = "averageDailyGrossSalesLabel";
             // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.principalLoanTxt);
-            this.groupBox9.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.Location = new System.Drawing.Point(435, 219);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(415, 57);
@@ -174,14 +174,14 @@ namespace TripleJP_Lending_System.Forms
             this.principalLoanTxt.AutoSize = true;
             this.principalLoanTxt.Location = new System.Drawing.Point(60, 23);
             this.principalLoanTxt.Name = "principalLoanTxt";
-            this.principalLoanTxt.Size = new System.Drawing.Size(194, 25);
+            this.principalLoanTxt.Size = new System.Drawing.Size(178, 17);
             this.principalLoanTxt.TabIndex = 0;
             this.principalLoanTxt.Text = "grossBusinessCapitalLabel";
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.interestTxt);
-            this.groupBox8.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(14, 219);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(415, 57);
@@ -194,14 +194,14 @@ namespace TripleJP_Lending_System.Forms
             this.interestTxt.AutoSize = true;
             this.interestTxt.Location = new System.Drawing.Point(60, 23);
             this.interestTxt.Name = "interestTxt";
-            this.interestTxt.Size = new System.Drawing.Size(163, 25);
+            this.interestTxt.Size = new System.Drawing.Size(151, 17);
             this.interestTxt.TabIndex = 0;
             this.interestTxt.Text = "businessAddressLabel";
             // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.effectiveDateTxt);
-            this.groupBox7.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(435, 156);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(415, 57);
@@ -214,14 +214,14 @@ namespace TripleJP_Lending_System.Forms
             this.effectiveDateTxt.AutoSize = true;
             this.effectiveDateTxt.Location = new System.Drawing.Point(60, 23);
             this.effectiveDateTxt.Name = "effectiveDateTxt";
-            this.effectiveDateTxt.Size = new System.Drawing.Size(155, 25);
+            this.effectiveDateTxt.Size = new System.Drawing.Size(142, 17);
             this.effectiveDateTxt.TabIndex = 0;
             this.effectiveDateTxt.Text = "businessNatureLabel";
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.durationTxt);
-            this.groupBox6.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(14, 156);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(415, 57);
@@ -234,14 +234,14 @@ namespace TripleJP_Lending_System.Forms
             this.durationTxt.AutoSize = true;
             this.durationTxt.Location = new System.Drawing.Point(60, 23);
             this.durationTxt.Name = "durationTxt";
-            this.durationTxt.Size = new System.Drawing.Size(150, 25);
+            this.durationTxt.Size = new System.Drawing.Size(136, 17);
             this.durationTxt.TabIndex = 0;
             this.durationTxt.Text = "businessNameLabel";
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.paymentTermTxt);
-            this.groupBox5.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(435, 93);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(415, 57);
@@ -254,14 +254,14 @@ namespace TripleJP_Lending_System.Forms
             this.paymentTermTxt.AutoSize = true;
             this.paymentTermTxt.Location = new System.Drawing.Point(60, 23);
             this.paymentTermTxt.Name = "paymentTermTxt";
-            this.paymentTermTxt.Size = new System.Drawing.Size(159, 25);
+            this.paymentTermTxt.Size = new System.Drawing.Size(139, 17);
             this.paymentTermTxt.TabIndex = 0;
             this.paymentTermTxt.Text = "contactNumberLabel";
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.customerIdTxt);
-            this.groupBox4.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(435, 30);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(415, 57);
@@ -274,14 +274,14 @@ namespace TripleJP_Lending_System.Forms
             this.customerIdTxt.AutoSize = true;
             this.customerIdTxt.Location = new System.Drawing.Point(60, 23);
             this.customerIdTxt.Name = "customerIdTxt";
-            this.customerIdTxt.Size = new System.Drawing.Size(157, 25);
+            this.customerIdTxt.Size = new System.Drawing.Size(138, 17);
             this.customerIdTxt.TabIndex = 0;
             this.customerIdTxt.Text = "customerNameLabel";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.customerNameTxt);
-            this.groupBox3.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(14, 93);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(415, 57);
@@ -294,14 +294,14 @@ namespace TripleJP_Lending_System.Forms
             this.customerNameTxt.AutoSize = true;
             this.customerNameTxt.Location = new System.Drawing.Point(60, 23);
             this.customerNameTxt.Name = "customerNameTxt";
-            this.customerNameTxt.Size = new System.Drawing.Size(170, 25);
+            this.customerNameTxt.Size = new System.Drawing.Size(153, 17);
             this.customerNameTxt.TabIndex = 0;
             this.customerNameTxt.Text = "customerAddressLabel";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.loanIdTxt);
-            this.groupBox2.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(14, 30);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(415, 57);
@@ -314,28 +314,28 @@ namespace TripleJP_Lending_System.Forms
             this.loanIdTxt.AutoSize = true;
             this.loanIdTxt.Location = new System.Drawing.Point(60, 23);
             this.loanIdTxt.Name = "loanIdTxt";
-            this.loanIdTxt.Size = new System.Drawing.Size(127, 25);
+            this.loanIdTxt.Size = new System.Drawing.Size(112, 17);
             this.loanIdTxt.TabIndex = 0;
             this.loanIdTxt.Text = "customerIdLabel";
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1294, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1294, 25);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.newToolStripMenuItem.Text = "New";
-            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
             // groupBox12
             // 
@@ -345,7 +345,7 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox12.Controls.Add(this.groupBox20);
             this.groupBox12.Controls.Add(this.groupBox21);
             this.groupBox12.Controls.Add(this.groupBox22);
-            this.groupBox12.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox12.Location = new System.Drawing.Point(12, 396);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(868, 243);
@@ -356,7 +356,7 @@ namespace TripleJP_Lending_System.Forms
             // groupBox13
             // 
             this.groupBox13.Controls.Add(this.totalBalanceTxt);
-            this.groupBox13.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox13.Location = new System.Drawing.Point(435, 156);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(415, 57);
@@ -369,14 +369,14 @@ namespace TripleJP_Lending_System.Forms
             this.totalBalanceTxt.AutoSize = true;
             this.totalBalanceTxt.Location = new System.Drawing.Point(60, 23);
             this.totalBalanceTxt.Name = "totalBalanceTxt";
-            this.totalBalanceTxt.Size = new System.Drawing.Size(120, 25);
+            this.totalBalanceTxt.Size = new System.Drawing.Size(105, 17);
             this.totalBalanceTxt.TabIndex = 0;
             this.totalBalanceTxt.Text = "totalBalanceTxt";
             // 
             // groupBox14
             // 
             this.groupBox14.Controls.Add(this.totalAmountRemittanceTxt);
-            this.groupBox14.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox14.Location = new System.Drawing.Point(14, 156);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(415, 57);
@@ -389,14 +389,14 @@ namespace TripleJP_Lending_System.Forms
             this.totalAmountRemittanceTxt.AutoSize = true;
             this.totalAmountRemittanceTxt.Location = new System.Drawing.Point(60, 23);
             this.totalAmountRemittanceTxt.Name = "totalAmountRemittanceTxt";
-            this.totalAmountRemittanceTxt.Size = new System.Drawing.Size(199, 25);
+            this.totalAmountRemittanceTxt.Size = new System.Drawing.Size(173, 17);
             this.totalAmountRemittanceTxt.TabIndex = 0;
             this.totalAmountRemittanceTxt.Text = "totalAmountRemittanceTxt";
             // 
             // groupBox19
             // 
             this.groupBox19.Controls.Add(this.perRemittanceTxt);
-            this.groupBox19.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox19.Location = new System.Drawing.Point(435, 93);
             this.groupBox19.Name = "groupBox19";
             this.groupBox19.Size = new System.Drawing.Size(415, 57);
@@ -409,14 +409,14 @@ namespace TripleJP_Lending_System.Forms
             this.perRemittanceTxt.AutoSize = true;
             this.perRemittanceTxt.Location = new System.Drawing.Point(60, 23);
             this.perRemittanceTxt.Name = "perRemittanceTxt";
-            this.perRemittanceTxt.Size = new System.Drawing.Size(136, 25);
+            this.perRemittanceTxt.Size = new System.Drawing.Size(119, 17);
             this.perRemittanceTxt.TabIndex = 0;
             this.perRemittanceTxt.Text = "perRemittanceTxt";
             // 
             // groupBox20
             // 
             this.groupBox20.Controls.Add(this.maturityValueTxt);
-            this.groupBox20.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox20.Location = new System.Drawing.Point(435, 30);
             this.groupBox20.Name = "groupBox20";
             this.groupBox20.Size = new System.Drawing.Size(415, 57);
@@ -429,14 +429,14 @@ namespace TripleJP_Lending_System.Forms
             this.maturityValueTxt.AutoSize = true;
             this.maturityValueTxt.Location = new System.Drawing.Point(60, 23);
             this.maturityValueTxt.Name = "maturityValueTxt";
-            this.maturityValueTxt.Size = new System.Drawing.Size(129, 25);
+            this.maturityValueTxt.Size = new System.Drawing.Size(113, 17);
             this.maturityValueTxt.TabIndex = 0;
             this.maturityValueTxt.Text = "maturityValueTxt";
             // 
             // groupBox21
             // 
             this.groupBox21.Controls.Add(this.maturityDateTxt);
-            this.groupBox21.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox21.Location = new System.Drawing.Point(14, 93);
             this.groupBox21.Name = "groupBox21";
             this.groupBox21.Size = new System.Drawing.Size(415, 57);
@@ -449,14 +449,14 @@ namespace TripleJP_Lending_System.Forms
             this.maturityDateTxt.AutoSize = true;
             this.maturityDateTxt.Location = new System.Drawing.Point(60, 23);
             this.maturityDateTxt.Name = "maturityDateTxt";
-            this.maturityDateTxt.Size = new System.Drawing.Size(123, 25);
+            this.maturityDateTxt.Size = new System.Drawing.Size(107, 17);
             this.maturityDateTxt.TabIndex = 0;
             this.maturityDateTxt.Text = "maturityDateTxt";
             // 
             // groupBox22
             // 
             this.groupBox22.Controls.Add(this.maturityInterestTxt);
-            this.groupBox22.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox22.Location = new System.Drawing.Point(14, 30);
             this.groupBox22.Name = "groupBox22";
             this.groupBox22.Size = new System.Drawing.Size(415, 57);
@@ -469,26 +469,26 @@ namespace TripleJP_Lending_System.Forms
             this.maturityInterestTxt.AutoSize = true;
             this.maturityInterestTxt.Location = new System.Drawing.Point(60, 23);
             this.maturityInterestTxt.Name = "maturityInterestTxt";
-            this.maturityInterestTxt.Size = new System.Drawing.Size(142, 25);
+            this.maturityInterestTxt.Size = new System.Drawing.Size(124, 17);
             this.maturityInterestTxt.TabIndex = 0;
             this.maturityInterestTxt.Text = "maturityInterestTxt";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(889, 46);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(64, 25);
+            this.label21.Size = new System.Drawing.Size(57, 17);
             this.label21.TabIndex = 24;
             this.label21.Text = "Search:";
             // 
             // SearchBoxTxt
             // 
-            this.SearchBoxTxt.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchBoxTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBoxTxt.Location = new System.Drawing.Point(952, 43);
             this.SearchBoxTxt.Name = "SearchBoxTxt";
-            this.SearchBoxTxt.Size = new System.Drawing.Size(330, 28);
+            this.SearchBoxTxt.Size = new System.Drawing.Size(330, 23);
             this.SearchBoxTxt.TabIndex = 1;
             this.SearchBoxTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchBoxTxt_KeyPress);
             // 
@@ -499,98 +499,98 @@ namespace TripleJP_Lending_System.Forms
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Location = new System.Drawing.Point(905, 76);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 50;
             this.dataGridView1.Size = new System.Drawing.Size(377, 425);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
-            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
-            this.dataGridView1.Enter += new System.EventHandler(this.dataGridView1_Enter);
+            this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellEnter);
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridView1_CellMouseClick);
+            this.dataGridView1.Enter += new System.EventHandler(this.DataGridView1_Enter);
             // 
-            // groupBox15
+            // searchFilterGroupBox
             // 
-            this.groupBox15.Controls.Add(this.checkBox3);
-            this.groupBox15.Controls.Add(this.checkBox2);
-            this.groupBox15.Controls.Add(this.checkBox1);
-            this.groupBox15.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox15.Location = new System.Drawing.Point(905, 506);
-            this.groupBox15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox15.Size = new System.Drawing.Size(377, 64);
-            this.groupBox15.TabIndex = 3;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Search Filter";
+            this.searchFilterGroupBox.Controls.Add(this.badDebtCheckBox);
+            this.searchFilterGroupBox.Controls.Add(this.fullyPaidCheckBox);
+            this.searchFilterGroupBox.Controls.Add(this.unPaidCheckBox);
+            this.searchFilterGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchFilterGroupBox.Location = new System.Drawing.Point(905, 506);
+            this.searchFilterGroupBox.Margin = new System.Windows.Forms.Padding(2);
+            this.searchFilterGroupBox.Name = "searchFilterGroupBox";
+            this.searchFilterGroupBox.Padding = new System.Windows.Forms.Padding(2);
+            this.searchFilterGroupBox.Size = new System.Drawing.Size(377, 64);
+            this.searchFilterGroupBox.TabIndex = 3;
+            this.searchFilterGroupBox.TabStop = false;
+            this.searchFilterGroupBox.Text = "Search Filter";
             // 
-            // checkBox3
+            // badDebtCheckBox
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(251, 25);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(82, 26);
-            this.checkBox3.TabIndex = 5;
-            this.checkBox3.Text = "Bad Debt";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.badDebtCheckBox.AutoSize = true;
+            this.badDebtCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.badDebtCheckBox.Location = new System.Drawing.Point(251, 25);
+            this.badDebtCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.badDebtCheckBox.Name = "badDebtCheckBox";
+            this.badDebtCheckBox.Size = new System.Drawing.Size(77, 19);
+            this.badDebtCheckBox.TabIndex = 5;
+            this.badDebtCheckBox.Text = "Bad Debt";
+            this.badDebtCheckBox.UseVisualStyleBackColor = true;
+            this.badDebtCheckBox.CheckedChanged += new System.EventHandler(this.BadDebtCheckBox_CheckedChanged);
             // 
-            // checkBox2
+            // fullyPaidCheckBox
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(151, 25);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(85, 26);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.Text = "Fully Paid";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.fullyPaidCheckBox.AutoSize = true;
+            this.fullyPaidCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullyPaidCheckBox.Location = new System.Drawing.Point(151, 25);
+            this.fullyPaidCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.fullyPaidCheckBox.Name = "fullyPaidCheckBox";
+            this.fullyPaidCheckBox.Size = new System.Drawing.Size(79, 19);
+            this.fullyPaidCheckBox.TabIndex = 4;
+            this.fullyPaidCheckBox.Text = "Fully Paid";
+            this.fullyPaidCheckBox.UseVisualStyleBackColor = true;
+            this.fullyPaidCheckBox.CheckedChanged += new System.EventHandler(this.FullyPaidCheckBox_CheckedChanged);
             // 
-            // checkBox1
+            // unPaidCheckBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(58, 25);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(72, 26);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Unpaid";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.unPaidCheckBox.AutoSize = true;
+            this.unPaidCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unPaidCheckBox.Location = new System.Drawing.Point(58, 25);
+            this.unPaidCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.unPaidCheckBox.Name = "unPaidCheckBox";
+            this.unPaidCheckBox.Size = new System.Drawing.Size(66, 19);
+            this.unPaidCheckBox.TabIndex = 3;
+            this.unPaidCheckBox.Text = "Unpaid";
+            this.unPaidCheckBox.UseVisualStyleBackColor = true;
+            this.unPaidCheckBox.CheckedChanged += new System.EventHandler(this.UnpaidCheckBox_CheckedChanged);
             // 
             // ledgerButton
             // 
             this.ledgerButton.Enabled = false;
-            this.ledgerButton.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ledgerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ledgerButton.Location = new System.Drawing.Point(905, 575);
             this.ledgerButton.Name = "ledgerButton";
             this.ledgerButton.Size = new System.Drawing.Size(377, 64);
             this.ledgerButton.TabIndex = 6;
             this.ledgerButton.Text = "Show Ledger";
             this.ledgerButton.UseVisualStyleBackColor = true;
-            this.ledgerButton.Click += new System.EventHandler(this.ledgerButton_Click);
+            this.ledgerButton.Click += new System.EventHandler(this.LedgerButton_Click);
             // 
             // LoanInformationFrm
             // 
@@ -598,7 +598,7 @@ namespace TripleJP_Lending_System.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1294, 653);
             this.Controls.Add(this.ledgerButton);
-            this.Controls.Add(this.groupBox15);
+            this.Controls.Add(this.searchFilterGroupBox);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.SearchBoxTxt);
             this.Controls.Add(this.dataGridView1);
@@ -649,8 +649,8 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox22.ResumeLayout(false);
             this.groupBox22.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
+            this.searchFilterGroupBox.ResumeLayout(false);
+            this.searchFilterGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -697,10 +697,10 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox SearchBoxTxt;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox15;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.GroupBox searchFilterGroupBox;
+        private System.Windows.Forms.CheckBox badDebtCheckBox;
+        private System.Windows.Forms.CheckBox fullyPaidCheckBox;
+        private System.Windows.Forms.CheckBox unPaidCheckBox;
         private System.Windows.Forms.Button ledgerButton;
     }
 }
