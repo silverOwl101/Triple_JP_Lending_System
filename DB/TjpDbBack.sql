@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `tjpdb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `tjpdb`;
--- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: tjpdb
 -- ------------------------------------------------------
--- Server version	8.0.25
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -433,10 +433,10 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getPostingList`(
-	IN customerId varchar(100)
+	IN customerIdOrName varchar(100)
 )
 BEGIN
 	select DATE_ADD(loan.effective_date, INTERVAL loan.duration DAY) as 'Due',
@@ -444,10 +444,12 @@ BEGIN
 	customer.name as 'Name',
 	loan.principal_loan as 'Return',
 	loan.principal_loan * loan.interest as 'Interest',
-	(loan.principal_loan * loan.interest) + loan.principal_loan as 'Total Amount'
+	(loan.principal_loan * loan.interest) + loan.principal_loan as 'Total Amount',
+    loan.status as 'Status'
 	from loan_information as loan
 	Left Join customer_account as customer on loan.customer_uid = customer.uid
-	where customer.id = customerId AND loan.status = 'Unpaid';
+	where (customer.id = customerIdOrName OR customer.name like concat(customerIdOrName,'%'))
+    AND loan.status = 'Unpaid';
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -703,4 +705,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-01  1:34:24
+-- Dump completed on 2023-02-10  2:56:48
