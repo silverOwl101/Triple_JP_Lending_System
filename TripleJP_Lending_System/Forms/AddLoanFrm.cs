@@ -11,6 +11,9 @@ using TripleJPMVPLibrary.View;
 using TripleJPMVPLibrary.Presenter;
 using TripleJPUtilityLibrary.Accounting;
 using TripleJP_Lending_System.Helper.View;
+using TripleJP_Lending_System.FormMediator.Mediator;
+using TripleJP_Lending_System.FormMediator.ConcreteMediator;
+using TripleJP_Lending_System.FormMediator.Component;
 
 namespace TripleJP_Lending_System.Forms
 {
@@ -19,7 +22,9 @@ namespace TripleJP_Lending_System.Forms
         #region Fields
         private FrmConvertionRequirements _frmConvertionRequirements
                                                     = new FrmConvertionRequirements();
-        private FrmInputRequirements _frmInputRequirements = new FrmInputRequirements();        
+        private FrmInputRequirements _frmInputRequirements = new FrmInputRequirements();
+        private IFormsMediator _concreteMediator;
+        private AddLoanFrmData _addLoanFrmData;
         #endregion
         public AddLoanFrm()
         {
@@ -137,9 +142,11 @@ namespace TripleJP_Lending_System.Forms
         }
         #endregion
         private void onLoadData()
-        {
-            label2.Text = CustomerListLoanFrm.customerLoanInformation[0];
-            label3.Text = CustomerListLoanFrm.customerLoanInformation[1];
+        {            
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _addLoanFrmData = new AddLoanFrmData(_concreteMediator);
+            label2.Text = _concreteMediator.GetData(_addLoanFrmData)[0];
+            label3.Text = _concreteMediator.GetData(_addLoanFrmData)[1];
             defaultProperties();
         }
         private void defaultProperties()

@@ -10,14 +10,21 @@ using TripleJPMVPLibrary.Presenter;
 using System.Windows.Forms;
 using TripleJPMVPLibrary.View;
 using TripleJPMVPLibrary.Model;
+using TripleJP_Lending_System.FormMediator.Mediator;
+using TripleJP_Lending_System.FormMediator.ConcreteMediator;
+using TripleJP_Lending_System.FormMediator.Component;
+using System.Windows.Forms.VisualStyles;
 
 namespace TripleJP_Lending_System.Forms
 {
-    public partial class PostingFrm : Form, IPosting
+    public partial class PostingFrm : Form, IPosting, ICustomerNameAndID
     {
-
         private PostingPresenter _postingPresenter;
         private List<GetPostingInfo> getPostingInfo;
+        private IFormsMediator _concreteMediator;
+        private CollectionFrmComponent _collectionFrmComponent;
+        private PostingFrmPassData _postingFrmPassData;
+        
         public PostingFrm()
         {
             InitializeComponent();            
@@ -28,6 +35,9 @@ namespace TripleJP_Lending_System.Forms
             get { return PostingSearchTxt.Text; }
             set { PostingSearchTxt.Text = value; }
         }
+
+        public string Id { get; set; }
+        public string CustomerName { get; set; }
 
         private void PostingSubmitButton_Click(object sender, EventArgs e)
         {
@@ -86,6 +96,18 @@ namespace TripleJP_Lending_System.Forms
             {
                 ViewData();
             }
+        }        
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {            
+            CustomerName = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
+            Id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
+
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _postingFrmPassData = new PostingFrmPassData(_concreteMediator, this);
+            _collectionFrmComponent = new CollectionFrmComponent(_concreteMediator);
+            _concreteMediator.PrepareData(_postingFrmPassData);
+            _concreteMediator.OpenForms(_collectionFrmComponent,true);
+
         }
     }
 }

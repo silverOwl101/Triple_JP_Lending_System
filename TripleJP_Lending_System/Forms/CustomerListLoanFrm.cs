@@ -23,6 +23,7 @@ namespace TripleJP_Lending_System.Forms
         private ISearch _isearch;
         private ICustomerNameAndID _icustomerNameAndID;
         private AddLoanFrmComponent _addLoanFrmComponent;
+        private CustomerListLoanFrmPassData _customerListLoanFrmPassData;
 
         public CustomerListLoanFrm()
         {
@@ -74,16 +75,16 @@ namespace TripleJP_Lending_System.Forms
         private void onDoubleClickData()
         {
             //Customer id
-            customerLoanInformation[0] = dataGridView1.Rows[0].Cells[0].Value.ToString();
+            customerLoanInformation[0] = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
             //Customer name
-            customerLoanInformation[1] = dataGridView1.Rows[0].Cells[1].Value.ToString();
+            customerLoanInformation[1] = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
         }
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {            
             if (e.RowIndex != -1) // this line of code will prevent triggering CellDoubleClick
                                   // event if you double click the column header.
             {
-                onDoubleClickData();
+                onDoubleClickData(); // setting the data customer id and customer name
                 _icustomerNameAndID = this;               
                 GetCustomerListPresenter customerList = 
                                 new GetCustomerListPresenter(_icustomerNameAndID);
@@ -97,7 +98,12 @@ namespace TripleJP_Lending_System.Forms
                 else
                 {
                     _concreteMediator = new ClassComponentConcreteMediator();
+                    // adding the onDoubleClickData() in CustomerListLoanFrmPassData component
+                    _customerListLoanFrmPassData = new CustomerListLoanFrmPassData(_concreteMediator,
+                                                              customerLoanInformation[1],
+                                                              customerLoanInformation[0]);
                     _addLoanFrmComponent = new AddLoanFrmComponent(_concreteMediator);
+                    _concreteMediator.PrepareData(_customerListLoanFrmPassData);
                     _concreteMediator.OpenForms(_addLoanFrmComponent, true);
                     dataGridView1.DataSource = null;
                     SearchBoxtxt.Clear();

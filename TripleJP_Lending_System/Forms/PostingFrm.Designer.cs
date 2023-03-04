@@ -119,6 +119,7 @@ namespace TripleJP_Lending_System.Forms
             this.dataGridView1.Size = new System.Drawing.Size(925, 417);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.TabStop = false;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // PostingFrm
             // 

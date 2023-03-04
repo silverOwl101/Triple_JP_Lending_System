@@ -19,3 +19,9 @@ C:\Triple_JP_Lending_System-main\Triple_JP_Lending_System-main\TripleJPUtilityLi
 C:\Triple_JP_Lending_System-main\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.csproj.CoreCompileInputs.cache
 C:\Triple_JP_Lending_System-main\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.dll
 C:\Triple_JP_Lending_System-main\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.pdb
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\TripleJPUtilityLibrary.dll
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\TripleJPUtilityLibrary.pdb
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.csproj.AssemblyReference.cache
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.csproj.CoreCompileInputs.cache
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.dll
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.pdb
