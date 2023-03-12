@@ -31,8 +31,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.amountTextBox = new System.Windows.Forms.TextBox();
+            this.CollectionFrmSubmitButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -65,7 +65,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.amountTextBox);
             this.groupBox1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(10, 268);
             this.groupBox1.Name = "groupBox1";
@@ -74,28 +74,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Enter Amount";
             // 
-            // textBox1
+            // amountTextBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(5, 30);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(321, 27);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.amountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.amountTextBox.Location = new System.Drawing.Point(5, 30);
+            this.amountTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.amountTextBox.Name = "amountTextBox";
+            this.amountTextBox.Size = new System.Drawing.Size(321, 27);
+            this.amountTextBox.TabIndex = 0;
+            this.amountTextBox.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.amountTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.amountTextBox.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
-            // button1
+            // CollectionFrmSubmitButton
             // 
-            this.button1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(255, 356);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 37);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CollectionFrmSubmitButton.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CollectionFrmSubmitButton.Location = new System.Drawing.Point(255, 356);
+            this.CollectionFrmSubmitButton.Margin = new System.Windows.Forms.Padding(2);
+            this.CollectionFrmSubmitButton.Name = "CollectionFrmSubmitButton";
+            this.CollectionFrmSubmitButton.Size = new System.Drawing.Size(86, 37);
+            this.CollectionFrmSubmitButton.TabIndex = 20;
+            this.CollectionFrmSubmitButton.Text = "Submit";
+            this.CollectionFrmSubmitButton.UseVisualStyleBackColor = true;
+            this.CollectionFrmSubmitButton.Click += new System.EventHandler(this.CollectionFrmSubmitButton_Click);
             // 
             // groupBox3
             // 
@@ -146,7 +147,7 @@
             this.ClientSize = new System.Drawing.Size(349, 415);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CollectionFrmSubmitButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -172,8 +173,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox amountTextBox;
+        private System.Windows.Forms.Button CollectionFrmSubmitButton;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox4;

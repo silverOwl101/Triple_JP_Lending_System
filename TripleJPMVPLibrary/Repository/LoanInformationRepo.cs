@@ -33,7 +33,7 @@ namespace TripleJPMVPLibrary.Repository
                 cmd.Parameters.AddWithValue("@customerId", customer.Id);
                 cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;
                 cmd.Parameters.AddWithValue("@customerName", customer.Name);
-                cmd.Parameters["@customerName"].Direction = ParameterDirection.Input;
+                cmd.Parameters["@customerName"].Direction = ParameterDirection.Input;                
                 cmd.ExecuteNonQuery();
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -61,6 +61,50 @@ namespace TripleJPMVPLibrary.Repository
             }
 
             return loanList;
+
+        }
+
+        internal GetCustomerLoanInformation GetLoanInformation(Loan loan)
+        {
+            GetCustomerLoanInformation getLoanInformation = null;            
+
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            {
+                const string Query = "sp_getLoanInformationUsingLoanId";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();                                
+                cmd.Parameters.AddWithValue("@loan_id", loan.Id);
+                cmd.Parameters["@loan_id"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        getLoanInformation = new GetCustomerLoanInformation
+                        {
+                            Id = reader["LoanID"].ToString(),
+                            CustomerID = reader["CustomerID"].ToString(),
+                            Name = reader["CustomerName"].ToString(),
+                            PaymentTerm = reader["PaymentTerm"].ToString(),
+                            Duration = Convert.ToInt32(reader["Duration"].ToString()),
+                            EffectiveDate = Convert.ToDateTime(reader["EffectiveDate"]).ToString("MM-dd-yyyy"),
+                            Interest = Convert.ToDecimal(reader["Interest"].ToString()),
+                            PrincipalLoan = Convert.ToDecimal(reader["PrincipalLoan"].ToString()),
+                            Penalty = Convert.ToDecimal(reader["Penalty"].ToString()),
+                            Status = reader["Status"].ToString(),
+                            Amount = reader["Amount"].ToString()
+                        };                        
+                    }
+                }
+            }
+
+            return getLoanInformation;
 
         }
 
@@ -178,6 +222,37 @@ namespace TripleJPMVPLibrary.Repository
                 MessageBox.Show(ex.ToString());
             }
             return rslt;
+        }
+
+        internal string GetGuid(Loan loan)
+        {
+            string guid = null;
+
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            {
+                const string Query = "sp_getLoanGuid";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.Parameters.AddWithValue("@loanId", loan.Id);
+                cmd.Parameters["@loanId"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        guid = reader["uid"].ToString();
+                    }
+                }
+            }
+
+            return guid;
+
         }
 
     }

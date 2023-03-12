@@ -99,8 +99,8 @@ namespace TripleJP_Lending_System.Forms
         }        
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {            
-            CustomerName = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
-            Id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
+            CustomerName = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString(); // customer name
+            Id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString(); // loan number/loan id
 
             _concreteMediator = new ClassComponentConcreteMediator();
             _postingFrmPassData = new PostingFrmPassData(_concreteMediator, this);
