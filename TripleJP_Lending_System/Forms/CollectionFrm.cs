@@ -16,7 +16,7 @@ using MySql.Data.MySqlClient;
 
 namespace TripleJP_Lending_System.Forms
 {
-    public partial class CollectionFrm : Form , IAddCollection
+    public partial class CollectionFrm : Form , IAddCollection, ICompareCollectionAndLoan
     { 
         private FrmConvertionRequirements _frmConvertionRequirements
                                                     = new FrmConvertionRequirements();
@@ -25,7 +25,7 @@ namespace TripleJP_Lending_System.Forms
         private ClassComponentConcreteMediator _concreteMediator;
         private CollectionFrmPresenter _collectionFrmPresenter;
         private string _loanId;
-        private string _customerName;
+        private string _customerName;       
 
         public CollectionFrm()
         {
@@ -54,6 +54,14 @@ namespace TripleJP_Lending_System.Forms
             get { return Convert.ToDecimal(amountTextBox.Text); }
             set { amountTextBox.Text = value.ToString(); }
         }
+        public decimal CollectionTotalAmount
+        {
+            get; set;
+        }
+        public decimal LoanTotalAmount
+        {
+            get; set;
+        }
         #endregion
 
         private void LoadData()
@@ -63,9 +71,11 @@ namespace TripleJP_Lending_System.Forms
 
             _loanId = _concreteMediator.GetData(_collectionFrmData)[0];// get Loan Id
             _customerName = _concreteMediator.GetData(_collectionFrmData)[1];// get Customer Name
+            LoanTotalAmount = Convert.ToDecimal(_concreteMediator.GetData(_collectionFrmData)[2]);// get total loan
+            CollectionTotalAmount = Convert.ToDecimal(_concreteMediator.GetData(_collectionFrmData)[3]); // get total collection
 
             label1.Text = _loanId;
-            label2.Text = _customerName;            
+            label2.Text = _customerName;             
         }
         
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -85,7 +95,7 @@ namespace TripleJP_Lending_System.Forms
 
         private void CollectionFrmSubmitButton_Click(object sender, EventArgs e)
         {
-            _collectionFrmPresenter = new CollectionFrmPresenter(this);
+            _collectionFrmPresenter = new CollectionFrmPresenter(this,this);
 
             try
             {
@@ -103,6 +113,6 @@ namespace TripleJP_Lending_System.Forms
                 MessageBox.Show(MessageContent, MessageCaption,
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        }        
     }
 }

@@ -17,6 +17,6 @@ namespace TripleJPMVPLibrary.Service
             _postingRepo = new PostingRepo();
             storeList = _postingRepo.GetPostingList(customerId);
             return storeList;
-        }
+        }        
     }
 }

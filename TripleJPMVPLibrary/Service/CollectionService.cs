@@ -54,5 +54,17 @@ namespace TripleJPMVPLibrary.Service
             }
 
         }
+        public void LoanStatusUpdate(Loan loan)
+        {
+            try
+            {
+                _collectionRepo = new CollectionRepo();
+                _collectionRepo.LoanFullyPaidUpdate(loan);
+            }
+            catch (MySqlException ex)
+            {
+                throw new InvalidOperationException(" Task Invalid ", ex);
+            }
+        }
     }
 }

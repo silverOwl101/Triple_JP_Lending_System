@@ -15,7 +15,7 @@ namespace TripleJP_Lending_System.FormMediator.Component
         }
         public string[] GetData()
         {
-            return PostingFrmPassData._customerInformation;
+            return PostingFrmPassData.customerLoanInformation;
         }
     }
 }

@@ -12,14 +12,17 @@ namespace TripleJPMVPLibrary.Presenter
     public class CollectionFrmPresenter
     {
         private IAddCollection _addCollection;
+        private ICompareCollectionAndLoan _compareCollectionAndLoan;
         private CollectionService _collectionService;
+        private PostingService _postingService;
         private Collection _collection;
         private Customer _customer = new Customer();
         private Loan _loan;
 
-        public CollectionFrmPresenter(IAddCollection addCollection)
+        public CollectionFrmPresenter(IAddCollection addCollection, ICompareCollectionAndLoan compareCollectionAndLoan)
         {
             _addCollection = addCollection;
+            _compareCollectionAndLoan = compareCollectionAndLoan;
         }
 
         public void AddCollection() 
@@ -36,9 +39,17 @@ namespace TripleJPMVPLibrary.Presenter
             };
 
             _collectionService = new CollectionService();
-
             _collectionService.AddCollection(_collection,_customer,_loan);
+            decimal totalAmountFinal = _compareCollectionAndLoan.CollectionTotalAmount + _addCollection.Amount;
+            if (_compareCollectionAndLoan.LoanTotalAmount == totalAmountFinal)
+            {
+                isFullyPaid(_loan);
+            }
         }
-
+        private void isFullyPaid(Loan _loan)
+        {
+            _collectionService = new CollectionService();
+            _collectionService.LoanStatusUpdate(_loan);
+        }
     }
 }

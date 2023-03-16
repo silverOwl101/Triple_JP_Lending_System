@@ -113,6 +113,8 @@
     <Compile Include="View\IAddCollection.cs" />
     <Compile Include="View\IAddCustomer.cs" />
     <Compile Include="View\IAddLoan.cs" />
+    <Compile Include="View\ICollectionInformation.cs" />
+    <Compile Include="View\ICompareCollectionAndLoan.cs" />
     <Compile Include="View\ICustomerNameAndID.cs" />
     <Compile Include="View\IDataGridClick.cs" />
     <Compile Include="View\IEditCustomer.cs" />

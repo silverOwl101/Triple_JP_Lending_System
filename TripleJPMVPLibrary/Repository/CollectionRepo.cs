@@ -44,6 +44,23 @@ namespace TripleJPMVPLibrary.Repository
                 cmd.ExecuteNonQuery();
             }
         }
+        internal void LoanFullyPaidUpdate(Loan loan)
+        {
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            {
+                const string Query = "sp_updateLoanStatus";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.Parameters.AddWithValue("@loanId", loan.Id);
+                cmd.Parameters["@loanId"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+            }
+        }
         internal bool IsDuplicateUid(Guid uid)
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))

@@ -34,21 +34,29 @@ namespace TripleJPMVPLibrary.Repository
                 {
                     while (reader.Read())
                     {
-                        getCustomerList = new GetPostingInfo
+                        if (reader.IsDBNull(reader.GetOrdinal("Due")))
                         {
-                            Due = Convert.ToDateTime(reader["Due"].ToString()),
-                            LoanId = reader["Loan No"].ToString(),
-                            CustomerName = reader["Name"].ToString(),
-                            PostingReturn = Convert.ToInt32(reader["Return"]),
-                            Interest = Convert.ToInt32(reader["Interest"]),
-                            TotalAmount = Convert.ToInt32(reader["Total Amount"]),
-                            Status = reader["Status"].ToString()
-                        };
+                            return customerList;
+                        }
+                        else
+                        {
+                            getCustomerList = new GetPostingInfo
+                            {
+                                Due = Convert.ToDateTime(reader["Due"]),
+                                LoanId = reader["Loan No"].ToString(),
+                                CustomerName = reader["Name"].ToString(),
+                                PostingReturn = Convert.ToDecimal(reader["Return"]),
+                                Interest = Convert.ToDecimal(reader["Interest"]),
+                                TotalAmount = Convert.ToDecimal(reader["Total Loan Amount"]),
+                                Status = reader["Status"].ToString(),
+                                Collect = Convert.ToDecimal(reader["Total Amount Collected"])
+                            };
+                        }                        
                         customerList.Add(getCustomerList);
-                    }
+                    }                  
                 }
             }
             return customerList;
-        }
+        }        
     }
 }

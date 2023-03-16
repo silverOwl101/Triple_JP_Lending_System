@@ -13,31 +13,31 @@ using TripleJPMVPLibrary.Model;
 using TripleJP_Lending_System.FormMediator.Mediator;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
 using TripleJP_Lending_System.FormMediator.Component;
-using System.Windows.Forms.VisualStyles;
 
 namespace TripleJP_Lending_System.Forms
 {
-    public partial class PostingFrm : Form, IPosting, ICustomerNameAndID
+    public partial class PostingFrm : Form, IPosting, ICollectionInformation
     {
         private PostingPresenter _postingPresenter;
         private List<GetPostingInfo> getPostingInfo;
         private IFormsMediator _concreteMediator;
         private CollectionFrmComponent _collectionFrmComponent;
-        private PostingFrmPassData _postingFrmPassData;
+        private PostingFrmPassData _postingFrmPassData;        
         
         public PostingFrm()
         {
             InitializeComponent();            
         }
 
-        public string CustomerId    
+        public string CustomerId
         {
             get { return PostingSearchTxt.Text; }
             set { PostingSearchTxt.Text = value; }
         }
-
         public string Id { get; set; }
         public string CustomerName { get; set; }
+        public string LoanTotalAmount { get; set; }
+        public string CollectionTotalAmount { get; set; }
 
         private void PostingSubmitButton_Click(object sender, EventArgs e)
         {
@@ -82,7 +82,8 @@ namespace TripleJP_Lending_System.Forms
             dataGridView1.Columns[2].HeaderText = "Name";
             dataGridView1.Columns[3].HeaderText = "Return";
             dataGridView1.Columns[4].HeaderText = "Interest";
-            dataGridView1.Columns[5].HeaderText = "Total Amount";
+            dataGridView1.Columns[5].HeaderText = "Total Loan Amount";
+            dataGridView1.Columns[7].HeaderText = "Total Amount Collected";
         }
 
         private void PostingFrm_Shown(object sender, EventArgs e)
@@ -101,13 +102,21 @@ namespace TripleJP_Lending_System.Forms
         {            
             CustomerName = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString(); // customer name
             Id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString(); // loan number/loan id
+            CollectionTotalAmount = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value.ToString(); // Total Amount Collected
+            LoanTotalAmount = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString(); // Total Loan Amount
 
             _concreteMediator = new ClassComponentConcreteMediator();
             _postingFrmPassData = new PostingFrmPassData(_concreteMediator, this);
             _collectionFrmComponent = new CollectionFrmComponent(_concreteMediator);
             _concreteMediator.PrepareData(_postingFrmPassData);
             _concreteMediator.OpenForms(_collectionFrmComponent,true);
-
+            ClearDataGridContent();
+        }
+        private void ClearDataGridContent()
+        {
+            PostingSearchTxt.Clear();
+            dataGridView1.DataSource = null;
+            PostingSearchTxt.Focus();
         }
     }
 }
