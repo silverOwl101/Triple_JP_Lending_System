@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TripleJPMVPLibrary.Model;
 using TripleJPUtilityLibrary.DataSource;
 using MySql.Data.MySqlClient;
@@ -177,17 +174,7 @@ namespace TripleJPMVPLibrary.Repository
                 #endregion
 
                 cmd.ExecuteNonQuery();
-            }
-
-            //try
-            //{
-
-            //}
-            //catch (Exception)
-            //{
-            //    throw;
-            //}
-
+            }       
         }        
        
         public bool isLoanUnpaid(string customerId)

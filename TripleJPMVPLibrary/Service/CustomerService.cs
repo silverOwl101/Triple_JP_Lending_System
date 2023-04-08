@@ -7,6 +7,7 @@ using TripleJPMVPLibrary.Repository;
 using TripleJPMVPLibrary.Model;
 using TripleJPUtilityLibrary.Generator;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace TripleJPMVPLibrary.Service
 {
@@ -31,7 +32,6 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Database Access Denied ", ex);
             }
         }
-
         public void AddCustomerInfo(Customer customer, CustomerBusinessInformation customerBusinessInformation)
         {
             IdGeneratorClass idGeneratorClass = new IdGeneratorClass();
@@ -96,6 +96,6 @@ namespace TripleJPMVPLibrary.Service
             {
                 throw new InvalidOperationException(" Database Access Denied ", ex);
             }
-        }
+        }        
     }
 }

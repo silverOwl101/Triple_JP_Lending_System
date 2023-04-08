@@ -14,7 +14,7 @@ namespace TripleJPMVPLibrary.Presenter
         private IAddCollection _addCollection;
         private ICompareCollectionAndLoan _compareCollectionAndLoan;
         private CollectionService _collectionService;
-        private PostingService _postingService;
+        //private PostingService _postingService;
         private Collection _collection;
         private Customer _customer = new Customer();
         private Loan _loan;
