@@ -22,6 +22,7 @@ namespace TripleJP_Lending_System.Forms
         private CustomerAccountFrmComponent _customerAccountFrmComponent;
         private LoanInformationFrmComponent _loanInformationFrmComponent;
         private PostingFrmComponent _postingFrmComponent;
+        private ReportFrmComponent _reportFrmComponent;
         #endregion
         public MainApplicationFrm()
         {
@@ -74,10 +75,21 @@ namespace TripleJP_Lending_System.Forms
             _postingFrmComponent = new PostingFrmComponent(_concreteMediator);
             _concreteMediator.OpenForms(_postingFrmComponent, true);
         }
+        private void OpenReportViewer()
+        {
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _reportFrmComponent = new ReportFrmComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_reportFrmComponent, true);
+        }
         private void MainApplicationFrm_FormClosed(object sender, FormClosedEventArgs e)
         {
             LoadLogInFrm();
         }
-        #endregion        
+        #endregion
+
+        private void collectionReportSummaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenReportViewer();
+        }
     }
 }

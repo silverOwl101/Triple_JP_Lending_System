@@ -137,6 +137,7 @@
     <Compile Include="FormMediator\Component\MainApplicationFrmComponent.cs" />
     <Compile Include="FormMediator\Component\PostingFrmComponent.cs" />
     <Compile Include="FormMediator\Component\PostingFrmPassData.cs" />
+    <Compile Include="FormMediator\Component\ReportFrmComponent.cs" />
     <Compile Include="FormMediator\ConcreteMediator\ClassComponentConcreteMediator.cs" />
     <Compile Include="FormMediator\Mediator\IDataComponent.cs" />
     <Compile Include="FormMediator\Mediator\IOpenComponent.cs" />

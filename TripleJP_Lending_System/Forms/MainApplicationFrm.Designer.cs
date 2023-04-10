@@ -112,6 +112,7 @@ namespace TripleJP_Lending_System.Forms
             this.collectionReportSummaryToolStripMenuItem.Name = "collectionReportSummaryToolStripMenuItem";
             this.collectionReportSummaryToolStripMenuItem.Size = new System.Drawing.Size(291, 30);
             this.collectionReportSummaryToolStripMenuItem.Text = "Collection Report Summary";
+            this.collectionReportSummaryToolStripMenuItem.Click += new System.EventHandler(this.collectionReportSummaryToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 

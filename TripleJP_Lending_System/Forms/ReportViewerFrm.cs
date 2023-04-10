@@ -14,28 +14,27 @@ namespace TripleJP_Lending_System.Forms
 {
     public partial class ReportViewerFrm : Form
     {
-        ReportFrmPresenter report;
+        ReportFrmPresenter reportPresenter;
         public ReportViewerFrm()
         {
             InitializeComponent();
-            rep();
+            InitReportViewer();
         }
-        private void rep()
+        private void InitReportViewer()
         {
             ReportDataSource rds = new ReportDataSource();
-            report = new ReportFrmPresenter();
+            reportPresenter = new ReportFrmPresenter();
+
             rds.Name = "CollectionSummaryRpt";
-            rds.Value = report.OnCallCustomerReportList();
+            rds.Value = reportPresenter.OnCallCustomerReportList();
+            reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+            reportViewer1.ZoomMode = ZoomMode.PageWidth;
 
             const string REPORT_SOURCE 
                                     = @"C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\ReportDefinitions\CollectionSummaryReport.rdlc";
             reportViewer1.LocalReport.ReportPath = REPORT_SOURCE;
             reportViewer1.LocalReport.DataSources.Add(rds);
             reportViewer1.RefreshReport();
-        }
-        private void Report_Load(object sender, EventArgs e)
-        {
-            
-        }
+        }        
     }
 }
