@@ -164,6 +164,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ReportDefinitions\CollectionDetailReport.rdlc" />
     <EmbeddedResource Include="ReportDefinitions\CollectionSummaryReport.rdlc" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

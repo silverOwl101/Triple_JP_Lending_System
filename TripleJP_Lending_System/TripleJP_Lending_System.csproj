@@ -135,6 +135,7 @@
     <Compile Include="FormMediator\Component\LoanInformationFrmPassData.cs" />
     <Compile Include="FormMediator\Component\LogInFrmComponent.cs" />
     <Compile Include="FormMediator\Component\MainApplicationFrmComponent.cs" />
+    <Compile Include="FormMediator\Component\MainApplicationFrmPassData.cs" />
     <Compile Include="FormMediator\Component\PostingFrmComponent.cs" />
     <Compile Include="FormMediator\Component\PostingFrmPassData.cs" />
     <Compile Include="FormMediator\Component\ReportFrmComponent.cs" />
@@ -143,6 +144,7 @@
     <Compile Include="FormMediator\Mediator\IOpenComponent.cs" />
     <Compile Include="FormMediator\Mediator\IFormsMediator.cs" />
     <Compile Include="FormMediator\Mediator\IPassDataComponent.cs" />
+    <Compile Include="FormMediator\Component\ReportFrmData.cs" />
     <Compile Include="Forms\AddCustomerFrm.cs">
       <SubType>Form</SubType>
     </Compile>

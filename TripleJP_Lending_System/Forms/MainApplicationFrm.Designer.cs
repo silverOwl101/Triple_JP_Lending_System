@@ -45,6 +45,7 @@ namespace TripleJP_Lending_System.Forms
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.loanInformationToolStripMenuItem,
@@ -55,41 +56,41 @@ namespace TripleJP_Lending_System.Forms
             this.logoutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1044, 34);
+            this.menuStrip1.Size = new System.Drawing.Size(1392, 42);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(166, 30);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(209, 38);
             this.fileToolStripMenuItem.Text = "Customer Account";
             this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
             // loanInformationToolStripMenuItem
             // 
             this.loanInformationToolStripMenuItem.Name = "loanInformationToolStripMenuItem";
-            this.loanInformationToolStripMenuItem.Size = new System.Drawing.Size(153, 30);
+            this.loanInformationToolStripMenuItem.Size = new System.Drawing.Size(190, 38);
             this.loanInformationToolStripMenuItem.Text = "Loan Information";
             this.loanInformationToolStripMenuItem.Click += new System.EventHandler(this.loanInformationToolStripMenuItem_Click);
             // 
             // postingToolStripMenuItem
             // 
             this.postingToolStripMenuItem.Name = "postingToolStripMenuItem";
-            this.postingToolStripMenuItem.Size = new System.Drawing.Size(80, 30);
+            this.postingToolStripMenuItem.Size = new System.Drawing.Size(99, 38);
             this.postingToolStripMenuItem.Text = "Posting";
             this.postingToolStripMenuItem.Click += new System.EventHandler(this.postingToolStripMenuItem_Click);
             // 
             // collectionsToolStripMenuItem
             // 
             this.collectionsToolStripMenuItem.Name = "collectionsToolStripMenuItem";
-            this.collectionsToolStripMenuItem.Size = new System.Drawing.Size(109, 30);
+            this.collectionsToolStripMenuItem.Size = new System.Drawing.Size(136, 38);
             this.collectionsToolStripMenuItem.Text = "Collections";
             // 
             // pastDueToolStripMenuItem
             // 
             this.pastDueToolStripMenuItem.Name = "pastDueToolStripMenuItem";
-            this.pastDueToolStripMenuItem.Size = new System.Drawing.Size(90, 30);
+            this.pastDueToolStripMenuItem.Size = new System.Drawing.Size(112, 38);
             this.pastDueToolStripMenuItem.Text = "Past Due";
             // 
             // reportToolStripMenuItem
@@ -98,37 +99,39 @@ namespace TripleJP_Lending_System.Forms
             this.collectionReportDetailToolStripMenuItem,
             this.collectionReportSummaryToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(73, 30);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(92, 38);
             this.reportToolStripMenuItem.Text = "Report";
             // 
             // collectionReportDetailToolStripMenuItem
             // 
             this.collectionReportDetailToolStripMenuItem.Name = "collectionReportDetailToolStripMenuItem";
-            this.collectionReportDetailToolStripMenuItem.Size = new System.Drawing.Size(291, 30);
+            this.collectionReportDetailToolStripMenuItem.Size = new System.Drawing.Size(368, 38);
             this.collectionReportDetailToolStripMenuItem.Text = "Collection Report Detail";
+            this.collectionReportDetailToolStripMenuItem.Click += new System.EventHandler(this.collectionReportDetailToolStripMenuItem_Click);
             // 
             // collectionReportSummaryToolStripMenuItem
             // 
             this.collectionReportSummaryToolStripMenuItem.Name = "collectionReportSummaryToolStripMenuItem";
-            this.collectionReportSummaryToolStripMenuItem.Size = new System.Drawing.Size(291, 30);
+            this.collectionReportSummaryToolStripMenuItem.Size = new System.Drawing.Size(368, 38);
             this.collectionReportSummaryToolStripMenuItem.Text = "Collection Report Summary";
             this.collectionReportSummaryToolStripMenuItem.Click += new System.EventHandler(this.collectionReportSummaryToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(83, 30);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(103, 38);
             this.logoutToolStripMenuItem.Text = "Log-out";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // MainApplicationFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 450);
+            this.ClientSize = new System.Drawing.Size(1392, 554);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainApplicationFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Triple JP Lending System";
