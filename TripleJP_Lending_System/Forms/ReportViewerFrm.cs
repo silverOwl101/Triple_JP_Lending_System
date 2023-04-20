@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using TripleJP_Lending_System.FormMediator;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
 using TripleJP_Lending_System.FormMediator.Mediator;
+using TripleJPMVPLibrary.Model;
 using TripleJPMVPLibrary.Presenter;
 
 namespace TripleJP_Lending_System.Forms
@@ -22,8 +23,9 @@ namespace TripleJP_Lending_System.Forms
         ReportFrmData _reportFrmData;
         public ReportViewerFrm()
         {
-            InitializeComponent();            
-            InitReport();
+            InitializeComponent();
+            //InitReport();
+            InitDetailReport();
         }
         private void InitReport()
         {            
@@ -60,20 +62,26 @@ namespace TripleJP_Lending_System.Forms
         }
         private void InitDetailReport()
         {
-            ReportDataSource rds = new ReportDataSource();
+           //GetCollectionReport
+            Loan loan = new Loan();
+            loan.Id = "166840711-2022";
+            ReportDataSource rdsLoanInformationRpt = new ReportDataSource();
+            ReportDataSource rdsCollectionRpt = new ReportDataSource();
             reportPresenter = new ReportFrmPresenter();
 
-            //rds.Name = "CollectionSummaryRpt";
-            //rds.Value = reportPresenter.OnCallCustomerReportList();
+            rdsLoanInformationRpt.Name = "LoanInformatioDataset";
+            rdsLoanInformationRpt.Value = reportPresenter.OnCallGetLoanInformationReport(loan);
+            rdsCollectionRpt.Name = "CollectionDetailDataset";
+            rdsCollectionRpt.Value = reportPresenter.OnCallGetCollectionReport(loan);
+
             reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             reportViewer1.ZoomMode = ZoomMode.PageWidth;
-
             const string REPORT_SOURCE
                         = @"C:\Exxxcube files\Triple_JP_Lending_System-main"+
                           @"\TripleJPMVPLibrary\ReportDefinitions\CollectionDetailReport.rdlc";
-
             reportViewer1.LocalReport.ReportPath = REPORT_SOURCE;
-            //reportViewer1.LocalReport.DataSources.Add(rds);
+            reportViewer1.LocalReport.DataSources.Add(rdsLoanInformationRpt);
+            reportViewer1.LocalReport.DataSources.Add(rdsCollectionRpt);
             reportViewer1.RefreshReport();
         }
     }

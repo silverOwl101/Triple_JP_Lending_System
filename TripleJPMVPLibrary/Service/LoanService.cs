@@ -14,9 +14,7 @@ namespace TripleJPMVPLibrary.Service
     internal class LoanService
     {
         #region Fields
-
         private LoanInformationRepo _loanRepo;
-
         #endregion
 
         internal List<GetCustomerLoanInformation> OnCallGetLoanInformation(Customer customer)
@@ -33,7 +31,6 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException("Data Access Denied", ex);
             }            
         }
-
         internal List<GetCollectionAndPenalty> OnCallGetCollectionAndPenalty(string LoanID)
         {
 
@@ -54,7 +51,6 @@ namespace TripleJPMVPLibrary.Service
 
             }
         }
-
         internal string OnCallInsertLoan(Loan loan, Customer customer)
         {
 
@@ -79,7 +75,6 @@ namespace TripleJPMVPLibrary.Service
 
             return "Loan added successfully";
         }
-
         internal bool OnCallIsLoanStatusUnpaid(string LoanID)
         {
 
@@ -88,6 +83,17 @@ namespace TripleJPMVPLibrary.Service
             bool result = false;
             result = _loanRepo.isLoanUnpaid(LoanID);
             return result;
+        }
+        private decimal OnCallGetReleasedAmountWithInterest(Loan loan)
+        {
+            _loanRepo = new LoanInformationRepo();
+            _loanRepo.GetLoanInformation(loan);
+            return 0;
+        }
+        private decimal OnCallGetReleasedAmount(Loan loan)
+        {
+            _loanRepo = new LoanInformationRepo();            
+            return _loanRepo.GetReleasedAmount(loan);
         }
     }
 }

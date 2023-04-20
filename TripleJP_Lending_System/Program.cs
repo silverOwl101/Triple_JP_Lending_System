@@ -17,8 +17,8 @@ namespace TripleJP_Lending_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new ReportViewerFrm());
-            Application.Run(new LogInFrm());
+            Application.Run(new ReportViewerFrm());
+            //Application.Run(new LogInFrm());
         }
     }
 }

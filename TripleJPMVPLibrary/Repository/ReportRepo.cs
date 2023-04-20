@@ -6,13 +6,14 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using TripleJPMVPLibrary.Model;
 using TripleJPMVPLibrary.ReportDataSets;
 using TripleJPUtilityLibrary.DataSource;
 
 namespace TripleJPMVPLibrary.Repository
 {
     internal class ReportRepo
-    {
+    {        
         internal DataSet GetCustomerListReport()
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
@@ -25,10 +26,84 @@ namespace TripleJPMVPLibrary.Repository
                 con.Open();
                 cmd.ExecuteNonQuery();
                 MySqlDataAdapter adapt = new MySqlDataAdapter(cmd);
-                CollectionSummary data = new CollectionSummary();
+                CrystalReportDataSet data = new CrystalReportDataSet();
                 adapt.Fill(data, "CollectionSummaryReport");
                 return data;
             }            
+        }
+        internal DataSet GetLoanInformationReport(Loan loan)
+        {
+            LoanInformationReport _loanInformation = null;
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            {
+                const string Query = "sp_createLoanInformationReport";                
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.Parameters.AddWithValue("@loan_id", loan.Id);
+                cmd.Parameters["@loan_id"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        _loanInformation = new LoanInformationReport()
+                        {
+                            CustomerID = reader["CustomerID"].ToString(),
+                            NameOfOwner = reader["CustomerName"].ToString(),
+                            PrincipalLoan = Convert.ToDecimal(reader["PrincipalLoan"]),
+                            Interest = Convert.ToDecimal(reader["Interest"]),                            
+                            Terms = reader["PaymentTerm"].ToString(),
+                            TotalLoan = Convert.ToDecimal(reader["TotalLoan"]),
+                            DailyPayment = Convert.ToDecimal(reader["DailyPayment"]),
+                        };                        
+                    }
+                }
+                MySqlDataAdapter adapt = new MySqlDataAdapter(cmd);
+                CrystalReportDataSet data = new CrystalReportDataSet();
+                adapt.Fill(data, "LoanInformationReport");
+                return data;
+            }            
+        }
+        internal DataSet GetCollectionReport(Loan loan)
+        {
+            CollectionReport _collectionReport = null;
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            {
+                const string Query = "sp_getCollectionAndPenalty";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.Parameters.AddWithValue("@loanId", loan.Id);
+                cmd.Parameters["@loanId"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        _collectionReport = new CollectionReport()
+                        {
+                            CollectionID = reader["ID"].ToString(),
+                            CollectionAmount = Convert.ToDecimal(reader["Collection"]),
+                            DateCollected = Convert.ToDateTime(reader["Date"])                        
+                        };                        
+                    }
+                }
+                MySqlDataAdapter adapt = new MySqlDataAdapter(cmd);
+                CrystalReportDataSet data = new CrystalReportDataSet();
+                adapt.Fill(data, "CollectionDetailReport");
+                return data;
+            }
         }
     }
 }

@@ -60,7 +60,6 @@ namespace TripleJPMVPLibrary.Repository
             return loanList;
 
         }
-
         internal GetCustomerLoanInformation GetLoanInformation(Loan loan)
         {
             GetCustomerLoanInformation getLoanInformation = null;            
@@ -104,7 +103,6 @@ namespace TripleJPMVPLibrary.Repository
             return getLoanInformation;
 
         }
-
         public List<GetCollectionAndPenalty> GetCollectionAndPenalty(string LoanID)
         {
 
@@ -139,7 +137,6 @@ namespace TripleJPMVPLibrary.Repository
             return collectionAndPenaltyList;
 
         }
-
         public void InsertData(Loan loan)
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
@@ -175,8 +172,7 @@ namespace TripleJPMVPLibrary.Repository
 
                 cmd.ExecuteNonQuery();
             }       
-        }        
-       
+        }               
         public bool isLoanUnpaid(string customerId)
         {
             bool rslt = false;
@@ -210,7 +206,6 @@ namespace TripleJPMVPLibrary.Repository
             }
             return rslt;
         }
-
         internal string GetGuid(Loan loan)
         {
             string guid = null;
@@ -241,6 +236,32 @@ namespace TripleJPMVPLibrary.Repository
             return guid;
 
         }
+        internal decimal GetReleasedAmount(Loan loan)
+        {
+            decimal releasedAmount = 0;
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            {
+                const string Query = "sp_getReleasedAmount";
 
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.Parameters.AddWithValue("@loan_id", loan.Id);
+                cmd.Parameters["@loan_id"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        releasedAmount = Convert.ToDecimal(reader["Release Amount"]);
+                    }
+                }
+            }
+            return releasedAmount;
+        }
     }
 }

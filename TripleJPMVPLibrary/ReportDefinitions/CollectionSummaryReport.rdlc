@@ -35,8 +35,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>CollectionSummary</rd:DataSetName>
-        <rd:SchemaPath>C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\ReportDataSets\CollectionSummary.xsd</rd:SchemaPath>
+        <rd:DataSetName>CrystalReportDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\ReportDataSets\CrystalReportDataSet.xsd</rd:SchemaPath>
         <rd:TableName>CollectionSummaryReport</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -434,7 +434,7 @@
             <Top>0.13in</Top>
             <Left>0.42333cm</Left>
             <Height>0.49167in</Height>
-            <Width>7.01316in</Width>
+            <Width>7.01317in</Width>
             <Style>
               <Border>
                 <Style>None</Style>

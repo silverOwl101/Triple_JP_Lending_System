@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TripleJPMVPLibrary.Model
 {
-    internal class Loan
+    public class Loan
     {
         public Guid Uid { get; set; }
         public string Id { get; set; }
