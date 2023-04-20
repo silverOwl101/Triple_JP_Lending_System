@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CrystalReportDataSet" targetNamespace="http://tempuri.org/CrystalReportDataSet.xsd" xmlns:mstns="http://tempuri.org/CrystalReportDataSet.xsd" xmlns="http://tempuri.org/CrystalReportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CrystalReportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="CrystalReportDataSet" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CrystalReportDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CollectionSummaryReport" msprop:Generator_RowEvHandlerName="CollectionSummaryReportRowChangeEventHandler" msprop:Generator_RowDeletedName="CollectionSummaryReportRowDeleted" msprop:Generator_RowDeletingName="CollectionSummaryReportRowDeleting" msprop:Generator_RowEvArgName="CollectionSummaryReportRowChangeEvent" msprop:Generator_TablePropName="CollectionSummaryReport" msprop:Generator_RowChangedName="CollectionSummaryReportRowChanged" msprop:Generator_UserTableName="CollectionSummaryReport" msprop:Generator_RowChangingName="CollectionSummaryReportRowChanging" msprop:Generator_RowClassName="CollectionSummaryReportRow" msprop:Generator_TableClassName="CollectionSummaryReportDataTable" msprop:Generator_TableVarName="tableCollectionSummaryReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:string" minOccurs="0" />
+              <xs:element name="Name_of_the_Owner" msprop:Generator_ColumnPropNameInTable="Name_of_the_OwnerColumn" msprop:Generator_ColumnPropNameInRow="Name_of_the_Owner" msprop:Generator_UserColumnName="Name_of_the_Owner" msprop:Generator_ColumnVarNameInTable="columnName_of_the_Owner" type="xs:string" minOccurs="0" />
+              <xs:element name="Released_Amount_with_Interest" msprop:Generator_ColumnPropNameInTable="Released_Amount_with_InterestColumn" msprop:Generator_ColumnPropNameInRow="Released_Amount_with_Interest" msprop:Generator_UserColumnName="Released_Amount_with_Interest" msprop:Generator_ColumnVarNameInTable="columnReleased_Amount_with_Interest" type="xs:string" minOccurs="0" />
+              <xs:element name="Total_Collection" msprop:Generator_ColumnPropNameInTable="Total_CollectionColumn" msprop:Generator_ColumnPropNameInRow="Total_Collection" msprop:Generator_UserColumnName="Total_Collection" msprop:Generator_ColumnVarNameInTable="columnTotal_Collection" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LoanInformationReport" msprop:Generator_RowEvHandlerName="LoanInformationReportRowChangeEventHandler" msprop:Generator_RowDeletedName="LoanInformationReportRowDeleted" msprop:Generator_RowDeletingName="LoanInformationReportRowDeleting" msprop:Generator_RowEvArgName="LoanInformationReportRowChangeEvent" msprop:Generator_TablePropName="LoanInformationReport" msprop:Generator_RowChangedName="LoanInformationReportRowChanged" msprop:Generator_UserTableName="LoanInformationReport" msprop:Generator_RowChangingName="LoanInformationReportRowChanging" msprop:Generator_RowClassName="LoanInformationReportRow" msprop:Generator_TableClassName="LoanInformationReportDataTable" msprop:Generator_TableVarName="tableLoanInformationReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_UserColumnName="CustomerID" msprop:Generator_ColumnVarNameInTable="columnCustomerID" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerName" msprop:Generator_ColumnPropNameInTable="CustomerNameColumn" msprop:Generator_ColumnPropNameInRow="CustomerName" msprop:Generator_UserColumnName="CustomerName" msprop:Generator_ColumnVarNameInTable="columnCustomerName" type="xs:string" minOccurs="0" />
+              <xs:element name="PrincipalLoan" msprop:Generator_ColumnPropNameInTable="PrincipalLoanColumn" msprop:Generator_ColumnPropNameInRow="PrincipalLoan" msprop:Generator_UserColumnName="PrincipalLoan" msprop:Generator_ColumnVarNameInTable="columnPrincipalLoan" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Interest" msprop:Generator_ColumnPropNameInTable="InterestColumn" msprop:Generator_ColumnPropNameInRow="Interest" msprop:Generator_UserColumnName="Interest" msprop:Generator_ColumnVarNameInTable="columnInterest" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PaymentTerm" msprop:Generator_ColumnPropNameInTable="PaymentTermColumn" msprop:Generator_ColumnPropNameInRow="PaymentTerm" msprop:Generator_UserColumnName="PaymentTerm" msprop:Generator_ColumnVarNameInTable="columnPaymentTerm" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalLoan" msprop:Generator_ColumnPropNameInTable="TotalLoanColumn" msprop:Generator_ColumnPropNameInRow="TotalLoan" msprop:Generator_UserColumnName="TotalLoan" msprop:Generator_ColumnVarNameInTable="columnTotalLoan" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DailyPayment" msprop:Generator_ColumnPropNameInTable="DailyPaymentColumn" msprop:Generator_ColumnPropNameInRow="DailyPayment" msprop:Generator_UserColumnName="DailyPayment" msprop:Generator_ColumnVarNameInTable="columnDailyPayment" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CollectionDetailReport" msprop:Generator_RowEvHandlerName="CollectionDetailReportRowChangeEventHandler" msprop:Generator_RowDeletedName="CollectionDetailReportRowDeleted" msprop:Generator_RowDeletingName="CollectionDetailReportRowDeleting" msprop:Generator_RowEvArgName="CollectionDetailReportRowChangeEvent" msprop:Generator_TablePropName="CollectionDetailReport" msprop:Generator_RowChangedName="CollectionDetailReportRowChanged" msprop:Generator_UserTableName="CollectionDetailReport" msprop:Generator_RowChangingName="CollectionDetailReportRowChanging" msprop:Generator_RowClassName="CollectionDetailReportRow" msprop:Generator_TableClassName="CollectionDetailReportDataTable" msprop:Generator_TableVarName="tableCollectionDetailReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:string" minOccurs="0" />
+              <xs:element name="Collection" msprop:Generator_ColumnPropNameInTable="CollectionColumn" msprop:Generator_ColumnPropNameInRow="Collection" msprop:Generator_UserColumnName="Collection" msprop:Generator_ColumnVarNameInTable="columnCollection" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnVarNameInTable="columnDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
