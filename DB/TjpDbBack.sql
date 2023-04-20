@@ -56,7 +56,7 @@ CREATE TABLE `collection` (
   `id` varchar(100) NOT NULL,
   `customer_uid` char(36) NOT NULL,
   `loan_information_uid` char(36) NOT NULL,
-  `amount` decimal(10,0) NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`uid`),
   KEY `colIndex` (`uid`),
@@ -73,7 +73,7 @@ CREATE TABLE `collection` (
 
 LOCK TABLES `collection` WRITE;
 /*!40000 ALTER TABLE `collection` DISABLE KEYS */;
-INSERT INTO `collection` VALUES ('0ea7297e-89f2-4a2f-817f-9a243a1f6bbf','193237174-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',37800,'2023-03-17'),('12fe72d0-a96a-45d5-99f5-066fe81faba4','105173237-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','5a69591c-afa1-4a22-b49c-5d77ca3eaea2',3000,'2023-03-31'),('146c84ec-2764-42f7-b20c-8a8573995cef','129357992-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',3246,'2023-03-17'),('1ef3f245-342f-4e98-9a74-7b342a492e4f','145148376-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',20,'2023-03-13'),('617d6a71-1860-44c0-8e6e-45b971022d42','109303338-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',500,'2023-03-17'),('70115d19-ae18-40ff-97da-d64e9e4a27b3','197296740-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',12,'2023-03-17'),('7d154036-f86b-479f-a8c1-549d6f91a340','116979107-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',12,'2023-03-17'),('91fd39a2-7876-11ec-90ae-74d02be5638f','1231135-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','9677ed4a-43f1-433c-938e-80f0b39cd6df',10,'2022-01-18'),('9359e267-7876-11ec-90ae-74d02be5638f','1231135-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','9677ed4a-43f1-433c-938e-80f0b39cd6df',10,'2022-01-18'),('93e91239-7876-11ec-90ae-74d02be5638f','1231135-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','9677ed4a-43f1-433c-938e-80f0b39cd6df',10,'2022-01-18'),('95a53607-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,'2022-01-16'),('ad6d8d08-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,'2022-01-16'),('ae1b5a97-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,'2022-01-16'),('af1faddb-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,'2022-01-16'),('afc163ef-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,'2022-01-16'),('b02c864d-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23,'2022-01-16'),('c49d2932-eb04-4b36-92d4-25041645e7b8','179661260-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',400,'2023-03-17'),('d7901bef-33fc-485f-acf9-853777e39cc4','145606239-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',10,'2023-03-13');
+INSERT INTO `collection` VALUES ('0ea7297e-89f2-4a2f-817f-9a243a1f6bbf','193237174-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',37800.00,'2023-03-17'),('12fe72d0-a96a-45d5-99f5-066fe81faba4','105173237-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','5a69591c-afa1-4a22-b49c-5d77ca3eaea2',3000.00,'2023-03-31'),('146c84ec-2764-42f7-b20c-8a8573995cef','129357992-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',3246.00,'2023-03-17'),('1ef3f245-342f-4e98-9a74-7b342a492e4f','145148376-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',20.00,'2023-03-13'),('617d6a71-1860-44c0-8e6e-45b971022d42','109303338-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',500.00,'2023-03-17'),('70115d19-ae18-40ff-97da-d64e9e4a27b3','197296740-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',12.00,'2023-03-17'),('7d154036-f86b-479f-a8c1-549d6f91a340','116979107-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',12.00,'2023-03-17'),('91fd39a2-7876-11ec-90ae-74d02be5638f','1231135-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','9677ed4a-43f1-433c-938e-80f0b39cd6df',10.00,'2022-01-18'),('9359e267-7876-11ec-90ae-74d02be5638f','1231135-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','9677ed4a-43f1-433c-938e-80f0b39cd6df',10.00,'2022-01-18'),('93e91239-7876-11ec-90ae-74d02be5638f','1231135-2022','0a2e3418-cd79-4e09-9196-fb15e5efb7be','9677ed4a-43f1-433c-938e-80f0b39cd6df',10.00,'2022-01-18'),('95a53607-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23.00,'2022-01-16'),('ad6d8d08-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23.00,'2022-01-16'),('ae1b5a97-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23.00,'2022-01-16'),('af1faddb-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23.00,'2022-01-16'),('afc163ef-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23.00,'2022-01-16'),('b02c864d-76e3-11ec-9684-74d02be5638f','2021-22314414','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',23.00,'2022-01-16'),('c49d2932-eb04-4b36-92d4-25041645e7b8','179661260-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',400.00,'2023-03-17'),('d7901bef-33fc-485f-acf9-853777e39cc4','145606239-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','bf836c9e-387f-4fe9-9919-0421d5b17ca0',10.00,'2023-03-13');
 /*!40000 ALTER TABLE `collection` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -185,7 +185,7 @@ CREATE TABLE `penalty` (
   `id` varchar(100) DEFAULT NULL,
   `customer_uid` char(36) NOT NULL,
   `loan_information_uid` char(36) NOT NULL,
-  `amount` decimal(10,5) NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -276,6 +276,37 @@ SET character_set_client = @saved_cs_client;
 --
 -- Dumping routines for database 'tjpdb'
 --
+/*!50003 DROP PROCEDURE IF EXISTS `sp_createLoanInformationReport` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_createLoanInformationReport`(
+	IN loan_id varchar(100)
+)
+BEGIN
+	select
+	v_loaninformation.LoanID,
+	v_loaninformation.CustomerID,
+    v_loaninformation.CustomerName,
+    v_loaninformation.PrincipalLoan,
+    v_loaninformation.Interest,
+    v_loaninformation.PrincipalLoan + (v_loaninformation.PrincipalLoan * v_loaninformation.Interest) as 'TotalLoan',
+    (v_loaninformation.PrincipalLoan + (v_loaninformation.PrincipalLoan * v_loaninformation.Interest)) / v_loaninformation.Duration as 'DailyPayment',
+    v_loaninformation.PaymentTerm	
+	from v_loaninformation where
+	v_loaninformation.LoanID like concat(loan_id,'%');
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `sp_getCollectionAndPenalty` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -284,15 +315,20 @@ SET character_set_client = @saved_cs_client;
 /*!50003 SET character_set_results = utf8mb4 */ ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getCollectionAndPenalty`(
 	IN loanId varchar(100)
 )
 BEGIN
-	select 	b.date as Date,		
-		b.amount as Collection,        
-        c.amount as Penalty
+	select
+		b.id as ID,
+        b.amount as Collection,
+		b.date as 'Date',			
+        case
+			when c.amount is null
+            then 0
+            end as Penalty        
 		from loan_information as a
 		left join collection as b on a.uid = b.loan_information_uid
 		left join penalty as c on a.uid = c.loan_information_uid
@@ -513,6 +549,44 @@ BEGIN
 	Left join collection as collection on loan.uid = collection.loan_information_uid
 	where (customer.id = customerIdOrName OR customer.name like concat(customerIdOrName,'%'))
 	AND loan.status = 'Unpaid';
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_getReleasedAmount` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getReleasedAmount`(
+	IN loan_id varchar(100)
+)
+BEGIN
+		DROP TEMPORARY TABLE IF EXISTS temp;
+		CREATE TEMPORARY TABLE temp(
+			select
+			v_loaninformation.LoanID,
+			v_loaninformation.CustomerID,
+			v_loaninformation.CustomerName,
+			v_loaninformation.PaymentTerm,
+			v_loaninformation.Duration,
+			v_loaninformation.EffectiveDate,
+			v_loaninformation.Interest,
+			v_loaninformation.PrincipalLoan,
+			v_loaninformation.Penalty,
+			v_loaninformation.Status,
+			v_loaninformation.Amount
+			from v_loaninformation where
+			v_loaninformation.LoanID like concat(loan_id,'%')        
+		);
+        select (PrincipalLoan * 0.2) + PrincipalLoan as 'Release Amount' from temp;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -843,4 +917,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-09  3:05:29
+-- Dump completed on 2023-04-21  2:29:27
