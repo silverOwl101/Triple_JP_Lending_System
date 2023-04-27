@@ -9,17 +9,20 @@ namespace TripleJP_Lending_System.FormMediator.Component
 {
     class LoanInformationFrmPassData : IPassDataComponent
     {
-        internal static string[] s_loanID = new string[1];
+        internal static string[] s_loanParameters = new string[2];
         private string _id;
-        public LoanInformationFrmPassData(IFormsMediator mediator, string id)
+        private string temp;
+        public LoanInformationFrmPassData(IFormsMediator mediator, string id, string reportViewerStr)
         {
             mediator.Include(this);
             _id = id;
+            temp = reportViewerStr;
         }
 
         public void PrepareData()
         {
-            s_loanID[0] = _id;
+            s_loanParameters[0] = _id;
+            s_loanParameters[1] = temp;
         }
     }
 }

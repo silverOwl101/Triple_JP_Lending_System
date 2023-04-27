@@ -35,6 +35,7 @@ namespace TripleJP_Lending_System.Forms
         private LedgerFormComponent _ledgerFormComponent;
         private LoanInformationPresenter _loanInformationPresenter;
         private LoanInformationFrmPassData _loanInformationFrmPassData;
+        private ReportFrmComponent _reportFrmComponent;
         private string[] _filterDataVariables = new string[3];
 
         #endregion
@@ -96,6 +97,7 @@ namespace TripleJP_Lending_System.Forms
         private void DataGridView1_Enter(object sender, EventArgs e)
         {
             ledgerButton.Enabled = true;
+            generateAccountStatementButton.Enabled = true;
         }
 
         private void DataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -116,10 +118,20 @@ namespace TripleJP_Lending_System.Forms
         {
             _getLoanID = loanIdTxt.Text;
             _concreteMediator = new ClassComponentConcreteMediator();
-            _loanInformationFrmPassData = new LoanInformationFrmPassData(_concreteMediator, _getLoanID);
+            _loanInformationFrmPassData = new LoanInformationFrmPassData(_concreteMediator, _getLoanID,string.Empty);
             _ledgerFormComponent = new LedgerFormComponent(_concreteMediator);
             _concreteMediator.PrepareData(_loanInformationFrmPassData);
             _concreteMediator.OpenForms(_ledgerFormComponent, true);
+        }
+        private void generateAccountStatementButton_Click(object sender, EventArgs e)
+        {
+            const string detailReportParameter = "DetailReport";
+            _getLoanID = loanIdTxt.Text;
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _loanInformationFrmPassData = new LoanInformationFrmPassData(_concreteMediator, _getLoanID, detailReportParameter);
+            _reportFrmComponent = new ReportFrmComponent(_concreteMediator);
+            _concreteMediator.PrepareData(_loanInformationFrmPassData);
+            _concreteMediator.OpenForms(_reportFrmComponent, true);
         }
 
         #endregion
@@ -211,6 +223,7 @@ namespace TripleJP_Lending_System.Forms
             ledgerButton.Enabled = false;
             dataGridView1.Enabled = false;
             searchFilterGroupBox.Enabled = false;
+            generateAccountStatementButton.Enabled = false;
         }
 
         #endregion
@@ -418,7 +431,6 @@ namespace TripleJP_Lending_System.Forms
 
         #endregion
 
-        #endregion
-
+        #endregion        
     }
 }

@@ -5,6 +5,7 @@ using TripleJPMVPLibrary.Model;
 using TripleJPUtilityLibrary.DataSource;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Xml.Schema;
 
 namespace TripleJPMVPLibrary.Repository
 {
@@ -123,19 +124,22 @@ namespace TripleJPMVPLibrary.Repository
                 {
                     while (reader.Read())
                     {
-                        getCollectionAndPenalty = new GetCollectionAndPenalty
+                        if (!reader.IsDBNull(0))
                         {
-                            Date = Convert.ToDateTime(reader["Date"].ToString()),
-                            Collection = reader["Collection"].ToString(),
-                            Penalty = reader["Penalty"].ToString()
-                        };
-                        collectionAndPenaltyList.Add(getCollectionAndPenalty);
+                            getCollectionAndPenalty = new GetCollectionAndPenalty
+                            {
+                                Date = Convert.ToDateTime(reader["Date"]),
+                                Collection = reader["Collection"].ToString(),
+                                Penalty = reader["Penalty"].ToString()
+                            };
+                            collectionAndPenaltyList.Add(getCollectionAndPenalty);
+                        }
+                        else
+                            collectionAndPenaltyList.Clear();
                     }
                 }
             }
-
             return collectionAndPenaltyList;
-
         }
         public void InsertData(Loan loan)
         {

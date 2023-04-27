@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,14 +31,13 @@ namespace TripleJP_Lending_System.Forms
 
         public LedgerForm()
         {
-
             InitializeComponent();
 
             _concreteMediator = new ClassComponentConcreteMediator();
             _ledgerFormData = new LedgerFormData(_concreteMediator);
 
             _loanID = _concreteMediator.GetData(_ledgerFormData)[0]; // get loan ID
-
+            //LoadCollectionandPenalty();
         }
 
         #region User Inputs
@@ -50,37 +50,53 @@ namespace TripleJP_Lending_System.Forms
 
         #endregion
 
+        #region CustomeMethods
+        internal bool IsDataSourceEmpty()
+        {
+            _ledgerPresenter = new LedgerPresenter(this);
+            if (_ledgerPresenter.GetCollectionAndPenalty().Count != 0)
+            {
+                return false;
+            }
+            return true;
+        }
         internal void LoadCollectionandPenalty()
         {
-
-            _ledgerPresenter = new LedgerPresenter(this);
-
             try
             {
-
                 dataGridView1.DataSource = _ledgerPresenter.GetCollectionAndPenalty();
 
-                if (dataGridView1.DataSource != null)
+                if (IsDataSourceEmpty())
                 {
-                    ShowDialog();
+                    NoRecordsErrorMessage();
                 }
-
             }
             catch (InvalidOperationException ex) when (ex.InnerException is FormatException)
             {
-                const string MessageContent = "No records of collection yet";
-                const string MessageCaption = "Collection not found";
-                MessageBox.Show(MessageContent, MessageCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                NoRecordsErrorMessage();
             }
             catch (InvalidOperationException ex) when (ex.InnerException is MySqlException)
             {
-                const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
-                const string MessageCaption = "System Access Denied";
-                MessageBox.Show(MessageContent, MessageCaption,
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionErrorMessage();
             }
-            
         }
+        #endregion
+
+        #region Error Messeges
+        private void NoRecordsErrorMessage()
+        {
+            const string MessageContent = "No records of collection yet";
+            const string MessageCaption = "Collection not found";
+            MessageBox.Show(MessageContent, MessageCaption,
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+        private void ExceptionErrorMessage()
+        {
+            const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
+            const string MessageCaption = "System Access Denied";
+            MessageBox.Show(MessageContent, MessageCaption,
+            MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        #endregion
     }
 }

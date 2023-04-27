@@ -18,7 +18,12 @@ namespace TripleJP_Lending_System.FormMediator.Component
         public void Open()
         {
             _ledgerForm = new LedgerForm();
-            //_ledgerForm.ShowDialog();
+            
+            if (!_ledgerForm.IsDataSourceEmpty())
+            {
+                _ledgerForm.LoadCollectionandPenalty();
+                _ledgerForm.ShowDialog();
+            }
             _ledgerForm.LoadCollectionandPenalty();
         }
     }

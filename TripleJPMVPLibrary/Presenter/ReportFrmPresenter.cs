@@ -27,7 +27,8 @@ namespace TripleJPMVPLibrary.Presenter
         public DataTable OnCallGetCollectionReport(Loan loan)
         {
             reportService = new ReportService();
-            DataTable tb = reportService.OnCallGetCollectionReport(loan).Tables["CollectionDetailReport"];
+            DataTable tb = new DataTable();
+            tb = reportService.OnCallGetCollectionReport(loan).Tables["CollectionDetailReport"];
             return tb;
         }
     }

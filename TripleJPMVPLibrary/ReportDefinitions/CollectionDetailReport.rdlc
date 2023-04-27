@@ -14,19 +14,22 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>CustomerID</rd:DefaultName>
         <Top>0.06944in</Top>
-        <Left>1.5425in</Left>
+        <Left>1.3925in</Left>
         <Height>0.25in</Height>
         <Width>1.58333in</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>1pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
@@ -44,12 +47,14 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>CustomerName</rd:DefaultName>
         <Top>0.34722in</Top>
-        <Left>1.5425in</Left>
+        <Left>1.3925in</Left>
         <Height>0.25in</Height>
         <Width>1.58333in</Width>
         <ZIndex>1</ZIndex>
@@ -57,7 +62,8 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>1pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
@@ -95,7 +101,7 @@
         <Top>0.06944in</Top>
         <Left>0.22306in</Left>
         <Height>0.25in</Height>
-        <Width>1.325in</Width>
+        <Width>1.1132in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -139,7 +145,7 @@
         <Top>0.34722in</Top>
         <Left>0.22306in</Left>
         <Height>0.25in</Height>
-        <Width>1.325in</Width>
+        <Width>1.1132in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -343,6 +349,7 @@
           <Border>
             <Style>None</Style>
           </Border>
+          <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -374,6 +381,7 @@
           <Border>
             <Style>None</Style>
           </Border>
+          <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -407,6 +415,7 @@
           <Border>
             <Style>None</Style>
           </Border>
+          <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -440,6 +449,7 @@
           <Border>
             <Style>None</Style>
           </Border>
+          <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -471,6 +481,7 @@
           <Border>
             <Style>None</Style>
           </Border>
+          <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -504,7 +515,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>OR#</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -538,7 +551,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Date Collected</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -572,7 +587,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Collection Amount</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -678,7 +695,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Collection.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -792,7 +811,7 @@
               <TextRuns>
                 <TextRun>
                   <Value>
-Collection Report Summary</Value>
+Account Statement</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>

@@ -29,8 +29,8 @@ namespace TripleJP_Lending_System.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.statusTxt = new System.Windows.Forms.Label();
@@ -75,6 +75,7 @@ namespace TripleJP_Lending_System.Forms
             this.fullyPaidCheckBox = new System.Windows.Forms.CheckBox();
             this.unPaidCheckBox = new System.Windows.Forms.CheckBox();
             this.ledgerButton = new System.Windows.Forms.Button();
+            this.generateAccountStatementButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
@@ -500,23 +501,23 @@ namespace TripleJP_Lending_System.Forms
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Location = new System.Drawing.Point(966, 75);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -534,9 +535,9 @@ namespace TripleJP_Lending_System.Forms
             this.searchFilterGroupBox.Controls.Add(this.unPaidCheckBox);
             this.searchFilterGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchFilterGroupBox.Location = new System.Drawing.Point(966, 498);
-            this.searchFilterGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchFilterGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchFilterGroupBox.Name = "searchFilterGroupBox";
-            this.searchFilterGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchFilterGroupBox.Padding = new System.Windows.Forms.Padding(2);
             this.searchFilterGroupBox.Size = new System.Drawing.Size(402, 63);
             this.searchFilterGroupBox.TabIndex = 3;
             this.searchFilterGroupBox.TabStop = false;
@@ -547,7 +548,7 @@ namespace TripleJP_Lending_System.Forms
             this.badDebtCheckBox.AutoSize = true;
             this.badDebtCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.badDebtCheckBox.Location = new System.Drawing.Point(268, 25);
-            this.badDebtCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.badDebtCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.badDebtCheckBox.Name = "badDebtCheckBox";
             this.badDebtCheckBox.Size = new System.Drawing.Size(77, 19);
             this.badDebtCheckBox.TabIndex = 5;
@@ -560,7 +561,7 @@ namespace TripleJP_Lending_System.Forms
             this.fullyPaidCheckBox.AutoSize = true;
             this.fullyPaidCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fullyPaidCheckBox.Location = new System.Drawing.Point(161, 25);
-            this.fullyPaidCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fullyPaidCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.fullyPaidCheckBox.Name = "fullyPaidCheckBox";
             this.fullyPaidCheckBox.Size = new System.Drawing.Size(79, 19);
             this.fullyPaidCheckBox.TabIndex = 4;
@@ -573,7 +574,7 @@ namespace TripleJP_Lending_System.Forms
             this.unPaidCheckBox.AutoSize = true;
             this.unPaidCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unPaidCheckBox.Location = new System.Drawing.Point(62, 25);
-            this.unPaidCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.unPaidCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.unPaidCheckBox.Name = "unPaidCheckBox";
             this.unPaidCheckBox.Size = new System.Drawing.Size(66, 19);
             this.unPaidCheckBox.TabIndex = 3;
@@ -587,11 +588,23 @@ namespace TripleJP_Lending_System.Forms
             this.ledgerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ledgerButton.Location = new System.Drawing.Point(966, 566);
             this.ledgerButton.Name = "ledgerButton";
-            this.ledgerButton.Size = new System.Drawing.Size(402, 63);
+            this.ledgerButton.Size = new System.Drawing.Size(194, 63);
             this.ledgerButton.TabIndex = 6;
             this.ledgerButton.Text = "Show Ledger";
             this.ledgerButton.UseVisualStyleBackColor = true;
             this.ledgerButton.Click += new System.EventHandler(this.LedgerButton_Click);
+            // 
+            // generateAccountStatementButton
+            // 
+            this.generateAccountStatementButton.Enabled = false;
+            this.generateAccountStatementButton.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generateAccountStatementButton.Location = new System.Drawing.Point(1166, 566);
+            this.generateAccountStatementButton.Name = "generateAccountStatementButton";
+            this.generateAccountStatementButton.Size = new System.Drawing.Size(201, 63);
+            this.generateAccountStatementButton.TabIndex = 25;
+            this.generateAccountStatementButton.Text = "Generate Account Statement";
+            this.generateAccountStatementButton.UseVisualStyleBackColor = true;
+            this.generateAccountStatementButton.Click += new System.EventHandler(this.generateAccountStatementButton_Click);
             // 
             // LoanInformationFrm
             // 
@@ -599,6 +612,7 @@ namespace TripleJP_Lending_System.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1381, 643);
+            this.Controls.Add(this.generateAccountStatementButton);
             this.Controls.Add(this.ledgerButton);
             this.Controls.Add(this.searchFilterGroupBox);
             this.Controls.Add(this.label21);
@@ -704,5 +718,6 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.CheckBox fullyPaidCheckBox;
         private System.Windows.Forms.CheckBox unPaidCheckBox;
         private System.Windows.Forms.Button ledgerButton;
+        private System.Windows.Forms.Button generateAccountStatementButton;
     }
 }

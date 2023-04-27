@@ -34,6 +34,7 @@ namespace TripleJP_Lending_System.Forms
             get { return PostingSearchTxt.Text; }
             set { PostingSearchTxt.Text = value; }
         }
+
         public string Id { get; set; }
         public string CustomerName { get; set; }
         public string LoanTotalAmount { get; set; }

@@ -67,7 +67,7 @@ namespace TripleJP_Lending_System.Forms
         }
         private void collectionReportDetailToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenDetailReport();
+            //OpenDetailReport();
         }
         #endregion
         #region Methods for opening forms
@@ -91,7 +91,7 @@ namespace TripleJP_Lending_System.Forms
         }
         private void OpenSummaryReport()
         {
-            string summaryReportParameter = "SummaryReport";
+            const string summaryReportParameter = "SummaryReport";
             _concreteMediator = new ClassComponentConcreteMediator();
             _mainApplicationFrmPassData = 
                                 new MainApplicationFrmPassData(_concreteMediator, summaryReportParameter);
@@ -99,16 +99,16 @@ namespace TripleJP_Lending_System.Forms
             _concreteMediator.PrepareData(_mainApplicationFrmPassData);
             _concreteMediator.OpenForms(_reportFrmComponent, true);
         }
-        private void OpenDetailReport()
-        {
-            string detailReportParameter = "DetailReport";
-            _concreteMediator = new ClassComponentConcreteMediator();
-            _mainApplicationFrmPassData =
-                                new MainApplicationFrmPassData(_concreteMediator, detailReportParameter);
-            _reportFrmComponent = new ReportFrmComponent(_concreteMediator);
-            _concreteMediator.PrepareData(_mainApplicationFrmPassData);
-            _concreteMediator.OpenForms(_reportFrmComponent, true);
-        }
+        //private void OpenDetailReport()
+        //{
+        //    string detailReportParameter = "DetailReport";
+        //    _concreteMediator = new ClassComponentConcreteMediator();
+        //    _mainApplicationFrmPassData =
+        //                        new MainApplicationFrmPassData(_concreteMediator, detailReportParameter);
+        //    _reportFrmComponent = new ReportFrmComponent(_concreteMediator);
+        //    _concreteMediator.PrepareData(_mainApplicationFrmPassData);
+        //    _concreteMediator.OpenForms(_reportFrmComponent, true);
+        //}
         #endregion        
     }
 }

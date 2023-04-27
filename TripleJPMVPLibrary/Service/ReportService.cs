@@ -18,7 +18,7 @@ namespace TripleJPMVPLibrary.Service
             try
             {
                 reportRepo = new ReportRepo();
-                return reportRepo.GetCustomerListReport();
+                return reportRepo.GetCollectionSummaryReport();
             }
             catch (MySqlException ex)
             {

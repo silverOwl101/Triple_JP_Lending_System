@@ -46,9 +46,7 @@ namespace TripleJPMVPLibrary.Service
             }
             catch (MySqlException ex)
             {
-
                 throw new InvalidOperationException("Data Access Denied", ex);
-
             }
         }
         internal string OnCallInsertLoan(Loan loan, Customer customer)

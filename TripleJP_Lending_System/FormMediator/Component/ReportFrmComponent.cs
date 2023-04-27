@@ -18,7 +18,11 @@ namespace TripleJP_Lending_System.FormMediator.Component
         public void Open()
         {
             _reportViewerFrm = new ReportViewerFrm();
-            _reportViewerFrm.ShowDialog();
+            if (!_reportViewerFrm.IsRowsEmpty())
+            {                
+                _reportViewerFrm.ShowDialog();
+            }                       
         }
+
     }
 }

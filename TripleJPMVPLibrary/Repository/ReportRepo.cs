@@ -14,7 +14,7 @@ namespace TripleJPMVPLibrary.Repository
 {
     internal class ReportRepo
     {        
-        internal DataSet GetCustomerListReport()
+        internal DataSet GetCollectionSummaryReport()
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
@@ -49,7 +49,7 @@ namespace TripleJPMVPLibrary.Repository
                 cmd.ExecuteNonQuery();
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
-                {
+                {                    
                     while (reader.Read())
                     {
                         _loanInformation = new LoanInformationReport()
@@ -73,6 +73,7 @@ namespace TripleJPMVPLibrary.Repository
         internal DataSet GetCollectionReport(Loan loan)
         {
             CollectionReport _collectionReport = null;
+            CrystalReportDataSet data = new CrystalReportDataSet();
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 const string Query = "sp_getCollectionAndPenalty";
@@ -91,17 +92,23 @@ namespace TripleJPMVPLibrary.Repository
                 {
                     while (reader.Read())
                     {
-                        _collectionReport = new CollectionReport()
+                        if (!reader.IsDBNull(0))
                         {
-                            CollectionID = reader["ID"].ToString(),
-                            CollectionAmount = Convert.ToDecimal(reader["Collection"]),
-                            DateCollected = Convert.ToDateTime(reader["Date"])                        
-                        };                        
+                            _collectionReport = new CollectionReport()
+                            {
+                                CollectionID = reader["ID"].ToString(),
+                                CollectionAmount = Convert.ToDecimal(reader["Collection"]),
+                                DateCollected = Convert.ToDateTime(reader["Date"])
+                            };
+                        }                        
                     }
                 }
-                MySqlDataAdapter adapt = new MySqlDataAdapter(cmd);
-                CrystalReportDataSet data = new CrystalReportDataSet();
-                adapt.Fill(data, "CollectionDetailReport");
+                if (_collectionReport != null)
+                {
+                    MySqlDataAdapter adapt = new MySqlDataAdapter(cmd);
+                    adapt.Fill(data, "CollectionDetailReport");
+                    return data;
+                }                                
                 return data;
             }
         }
