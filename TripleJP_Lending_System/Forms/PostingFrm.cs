@@ -63,8 +63,8 @@ namespace TripleJP_Lending_System.Forms
                 if (getPostingInfo.Count == 0)
                 {
                     dataGridView1.Columns.Clear();
-                    const string MessageContent = "No records found";
-                    const string MessageCaption = "Record Error";
+                    const string MessageContent = "No loan records found";
+                    const string MessageCaption = "Loan Record Error";
                     MessageBox.Show(MessageContent, MessageCaption,
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);                    
                 }
@@ -86,12 +86,10 @@ namespace TripleJP_Lending_System.Forms
             dataGridView1.Columns[5].HeaderText = "Total Loan Amount";
             dataGridView1.Columns[7].HeaderText = "Total Amount Collected";
         }
-
         private void PostingFrm_Shown(object sender, EventArgs e)
         {
             PostingSearchTxt.Focus();            
         }
-
         private void PostingSearchTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Return))
