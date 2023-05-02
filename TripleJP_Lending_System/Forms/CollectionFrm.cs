@@ -16,7 +16,7 @@ using MySql.Data.MySqlClient;
 
 namespace TripleJP_Lending_System.Forms
 {
-    public partial class CollectionFrm : Form , IAddCollection, ICompareCollectionAndLoan
+    public partial class CollectionFrm : Form , IAddCollection, ICompareCollectionAndLoan, IAddPenalty
     { 
         private FrmConvertionRequirements _frmConvertionRequirements
                                                     = new FrmConvertionRequirements();
@@ -62,6 +62,19 @@ namespace TripleJP_Lending_System.Forms
         {
             get; set;
         }
+
+        #endregion
+        #region IAddPenalty Properties
+        public DateTime DateOfPenalty
+        {
+            get { return dateTimePicker2.Value.Date; }
+            set { dateTimePicker2.Text = value.ToString(); }
+        }
+        public decimal PenaltyAmount
+        {
+            get { return Convert.ToDecimal(penaltyAmount.Text); }
+            set { penaltyAmount.Text = value.ToString(); }
+        }
         #endregion
 
         private void LoadData()
@@ -76,43 +89,59 @@ namespace TripleJP_Lending_System.Forms
 
             label1.Text = _loanId;
             label2.Text = _customerName;             
-        }
-        
+        }        
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {            
             _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, amountTextBox);
         }
-
         private void textBox1_Enter(object sender, EventArgs e)
         {
             _frmConvertionRequirements.ConvertToGeneralFormat(amountTextBox);            
         }
-
         private void textBox1_Leave(object sender, EventArgs e)
         {
             _frmConvertionRequirements.ConvertToNumberFormat(amountTextBox);
         }
-
         private void CollectionFrmSubmitButton_Click(object sender, EventArgs e)
         {
-            _collectionFrmPresenter = new CollectionFrmPresenter(this,this);
+            _collectionFrmPresenter = new CollectionFrmPresenter(this,this,this);
 
             try
             {
-                _collectionFrmPresenter.AddCollection();
-
-                const string MessageContent = "Collection successfully added to the system.";
-                const string MessageCaption = "Entry Successfully Added";
-                MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+                if (!string.IsNullOrEmpty(amountTextBox.Text))
+                {
+                    _collectionFrmPresenter.AddCollection();
+                    ConfirmationMessageForRemmitance();
+                }
+                if (!string.IsNullOrEmpty(penaltyAmount.Text))
+                {
+                    _collectionFrmPresenter.AddPenalty();
+                    ConfirmationMessageForPenalty();
+                }                                
             }            
             catch (InvalidOperationException ex) when (ex.InnerException is MySqlException)
             {
-                const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
-                const string MessageCaption = "System Access Denied";
-                MessageBox.Show(MessageContent, MessageCaption,
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ErrorMessage();
             }
-        }        
+        }
+        private void ConfirmationMessageForRemmitance()
+        {
+            const string MessageContent = "Collection successfully added to the system.";
+            const string MessageCaption = "Entry Successfully Added";
+            MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void ConfirmationMessageForPenalty()
+        {
+            const string MessageContent = "Penalty successfully added to the system.";
+            const string MessageCaption = "Penalty Successfully Added";
+            MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void ErrorMessage()
+        {
+            const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
+            const string MessageCaption = "System Access Denied";
+            MessageBox.Show(MessageContent, MessageCaption,
+            MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

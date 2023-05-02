@@ -52,7 +52,41 @@ namespace TripleJPMVPLibrary.Service
             {
                 throw new InvalidOperationException(" Database Access Denied ", ex);
             }
+        }
+        public void AddPenalty(Penalty penalty, Customer customer, Loan loan)
+        {
+            IdGeneratorClass idGeneratorClass = new IdGeneratorClass();
+            _customerRepo = new CustomerRepo();
 
+            penalty.Uid = Guid.NewGuid();
+            penalty.Id = idGeneratorClass.NewId();
+            _collectionRepo = new CollectionRepo();
+            _loanInformationRepo = new LoanInformationRepo();
+
+            _customerLoanInfo = _loanInformationRepo.GetLoanInformation(loan);
+            customer.Id = _customerLoanInfo.CustomerID;
+            string guid = _customerRepo.GetGuid(customer);
+            customer.Uid = Guid.Parse(guid);
+            loan.Id = _customerLoanInfo.Id;
+            loan.Uid = Guid.Parse(_loanInformationRepo.GetGuid(loan));
+
+            while (_collectionRepo.IsDuplicateUid(penalty.Uid))
+            {
+                penalty.Uid = Guid.NewGuid();
+            }
+            while (_collectionRepo.IsDuplicateId(penalty.Id))
+            {
+                penalty.Id = idGeneratorClass.NewId();
+            }
+
+            try
+            {
+                _collectionRepo.InsertPenalty(penalty, customer, loan);
+            }
+            catch (MySqlException ex)
+            {
+                throw new InvalidOperationException(" Database Access Denied ", ex);
+            }
         }
         public void LoanStatusUpdate(Loan loan)
         {

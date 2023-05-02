@@ -44,6 +44,38 @@ namespace TripleJPMVPLibrary.Repository
                 cmd.ExecuteNonQuery();
             }
         }
+        internal void InsertPenalty (Penalty penalty, Customer customer, Loan loan)
+        {
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            {
+                const string storedProcedure = "sp_insertPenalty";
+                con.Open();
+
+                MySqlCommand cmd = new MySqlCommand(storedProcedure, con)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+
+                #region Parameters
+
+                cmd.Parameters.AddWithValue("@penalty_Uid", penalty.Uid);
+                cmd.Parameters["@penalty_Uid"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@penalty_Id", penalty.Id);
+                cmd.Parameters["@penalty_Id"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@customer_Uid", customer.Uid);
+                cmd.Parameters["@customer_Uid"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@loanInformation_Uid", loan.Uid);
+                cmd.Parameters["@loanInformation_Uid"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@penalty_Amount", penalty.Amount);
+                cmd.Parameters["@penalty_Amount"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@penalty_Date", penalty.Date);
+                cmd.Parameters["@penalty_Date"].Direction = ParameterDirection.Input;
+
+                #endregion
+
+                cmd.ExecuteNonQuery();
+            }
+        }
         internal void LoanFullyPaidUpdate(Loan loan)
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
