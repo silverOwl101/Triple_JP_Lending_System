@@ -23,8 +23,9 @@ namespace TripleJP_Lending_System.Forms
         private CustomerAccountFrmComponent _customerAccountFrmComponent;
         private LoanInformationFrmComponent _loanInformationFrmComponent;
         private PostingFrmComponent _postingFrmComponent;
-        private ReportFrmComponent _reportFrmComponent;
+        private ReportFrmDetailComponent _reportFrmDetailomponent;
         private MainApplicationFrmPassData _mainApplicationFrmPassData;
+        private LoanInformationFrmPassData _loanInformationFrmPassData;
         #endregion
         public MainApplicationFrm()
         {
@@ -64,11 +65,7 @@ namespace TripleJP_Lending_System.Forms
         private void collectionReportSummaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenSummaryReport();
-        }
-        private void collectionReportDetailToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //OpenDetailReport();
-        }
+        }        
         #endregion
         #region Methods for opening forms
         private void OpenCustomerAccountFrm()
@@ -93,22 +90,12 @@ namespace TripleJP_Lending_System.Forms
         {
             const string summaryReportParameter = "SummaryReport";
             _concreteMediator = new ClassComponentConcreteMediator();
-            _mainApplicationFrmPassData = 
-                                new MainApplicationFrmPassData(_concreteMediator, summaryReportParameter);
-            _reportFrmComponent = new ReportFrmComponent(_concreteMediator);
-            _concreteMediator.PrepareData(_mainApplicationFrmPassData);
-            _concreteMediator.OpenForms(_reportFrmComponent, true);
-        }
-        //private void OpenDetailReport()
-        //{
-        //    string detailReportParameter = "DetailReport";
-        //    _concreteMediator = new ClassComponentConcreteMediator();
-        //    _mainApplicationFrmPassData =
-        //                        new MainApplicationFrmPassData(_concreteMediator, detailReportParameter);
-        //    _reportFrmComponent = new ReportFrmComponent(_concreteMediator);
-        //    _concreteMediator.PrepareData(_mainApplicationFrmPassData);
-        //    _concreteMediator.OpenForms(_reportFrmComponent, true);
-        //}
+            _loanInformationFrmPassData = 
+                                new LoanInformationFrmPassData(_concreteMediator,"", summaryReportParameter);
+            _reportFrmDetailomponent = new ReportFrmDetailComponent(_concreteMediator);
+            _concreteMediator.PrepareData(_loanInformationFrmPassData);
+            _concreteMediator.OpenForms(_reportFrmDetailomponent, true);
+        }        
         #endregion        
     }
 }

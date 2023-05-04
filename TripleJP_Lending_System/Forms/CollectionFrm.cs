@@ -111,37 +111,49 @@ namespace TripleJP_Lending_System.Forms
                 if (!string.IsNullOrEmpty(amountTextBox.Text))
                 {
                     _collectionFrmPresenter.AddCollection();
-                    ConfirmationMessageForRemmitance();
+
+                    string messageContent = "Remitted successfully";
+                    string messageCaption = "Remittance";
+                    MessageBoxButtons button = MessageBoxButtons.OK;
+                    MessageBoxIcon icon = MessageBoxIcon.Information;
+                    MessageBox(messageContent, messageCaption, button, icon);
+                }
+                else if(string.IsNullOrEmpty(amountTextBox.Text) && string.IsNullOrEmpty(penaltyAmount.Text))
+                {
+                    string messageContent = "Input remittance to proceed";
+                    string messageCaption = "Input remittance";
+                    MessageBoxButtons button = MessageBoxButtons.OK;
+                    MessageBoxIcon icon = MessageBoxIcon.Error;
+                    MessageBox(messageContent, messageCaption, button, icon);
                 }
                 if (!string.IsNullOrEmpty(penaltyAmount.Text))
                 {
                     _collectionFrmPresenter.AddPenalty();
-                    ConfirmationMessageForPenalty();
+
+                    string messageContent = "Penalty added";
+                    string messageCaption = "Penalty";
+                    MessageBoxButtons button = MessageBoxButtons.OK;
+                    MessageBoxIcon icon = MessageBoxIcon.Information;
+                    MessageBox(messageContent, messageCaption, button, icon);
                 }                                
             }            
             catch (InvalidOperationException ex) when (ex.InnerException is MySqlException)
             {
-                ErrorMessage();
+                string messageContent = "There is a problem to the system please contact" +
+                                        "your I.T officer for further information.";
+                string messageCaption = "System Access Denied";
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBoxIcon icon = MessageBoxIcon.Error;
+                MessageBox(messageContent, messageCaption, button, icon);
             }
         }
-        private void ConfirmationMessageForRemmitance()
+        private void MessageBox(string messageContent, string messageCaption,
+                                MessageBoxButtons messageBoxButton, MessageBoxIcon messageBoxIcon)
         {
-            const string MessageContent = "Collection successfully added to the system.";
-            const string MessageCaption = "Entry Successfully Added";
-            MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        private void ConfirmationMessageForPenalty()
-        {
-            const string MessageContent = "Penalty successfully added to the system.";
-            const string MessageCaption = "Penalty Successfully Added";
-            MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        private void ErrorMessage()
-        {
-            const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
-            const string MessageCaption = "System Access Denied";
-            MessageBox.Show(MessageContent, MessageCaption,
-            MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+            string MessageContent = messageContent;
+            string MessageCaption = messageCaption;
+            System.Windows.Forms.MessageBox.Show(MessageContent, MessageCaption,
+                                            messageBoxButton, messageBoxIcon);
+        }                
     }
 }
