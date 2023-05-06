@@ -24,7 +24,7 @@ namespace TripleJP_Lending_System.Forms
         private LoanInformationFrmComponent _loanInformationFrmComponent;
         private PostingFrmComponent _postingFrmComponent;
         private ReportFrmDetailComponent _reportFrmDetailomponent;
-        private MainApplicationFrmPassData _mainApplicationFrmPassData;
+        //private MainApplicationFrmPassData _mainApplicationFrmPassData;
         private LoanInformationFrmPassData _loanInformationFrmPassData;
         #endregion
         public MainApplicationFrm()

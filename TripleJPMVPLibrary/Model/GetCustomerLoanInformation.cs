@@ -15,8 +15,7 @@ namespace TripleJPMVPLibrary.Model
         public int Duration { get; set; }
         public string EffectiveDate { get; set; }
         public decimal Interest { get; set; }
-        public decimal PrincipalLoan { get; set; }
-        public decimal Penalty { get; set; }
+        public decimal PrincipalLoan { get; set; }        
         public string Status { get; set; }
         public string Amount { get; set; }
     }

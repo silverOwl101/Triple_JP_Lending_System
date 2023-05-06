@@ -47,8 +47,7 @@ namespace TripleJPMVPLibrary.Repository
                             Duration = Convert.ToInt32(reader["Duration"].ToString()),
                             EffectiveDate = Convert.ToDateTime(reader["EffectiveDate"]).ToString("MM-dd-yyyy"),
                             Interest = Convert.ToDecimal(reader["Interest"].ToString()),
-                            PrincipalLoan = Convert.ToDecimal(reader["PrincipalLoan"].ToString()),
-                            Penalty = Convert.ToDecimal(reader["Penalty"].ToString()),
+                            PrincipalLoan = Convert.ToDecimal(reader["PrincipalLoan"].ToString()),                            
                             Status = reader["Status"].ToString(),
                             Amount = reader["Amount"].ToString()
                         };
@@ -92,8 +91,7 @@ namespace TripleJPMVPLibrary.Repository
                             Duration = Convert.ToInt32(reader["Duration"].ToString()),
                             EffectiveDate = Convert.ToDateTime(reader["EffectiveDate"]).ToString("MM-dd-yyyy"),
                             Interest = Convert.ToDecimal(reader["Interest"].ToString()),
-                            PrincipalLoan = Convert.ToDecimal(reader["PrincipalLoan"].ToString()),
-                            Penalty = Convert.ToDecimal(reader["Penalty"].ToString()),
+                            PrincipalLoan = Convert.ToDecimal(reader["PrincipalLoan"].ToString()),                            
                             Status = reader["Status"].ToString(),
                             Amount = reader["Amount"].ToString()
                         };                        
@@ -168,9 +166,7 @@ namespace TripleJPMVPLibrary.Repository
                 cmd.Parameters.AddWithValue("@interest", loan.Interest);
                 cmd.Parameters["@interest"].Direction = ParameterDirection.Input;
                 cmd.Parameters.AddWithValue("@principalLoan", loan.PrincipalLoan);
-                cmd.Parameters["@principalLoan"].Direction = ParameterDirection.Input;
-                cmd.Parameters.AddWithValue("@penalty", loan.Penalty);
-                cmd.Parameters["@penalty"].Direction = ParameterDirection.Input;
+                cmd.Parameters["@principalLoan"].Direction = ParameterDirection.Input;                
 
                 #endregion
 

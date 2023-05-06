@@ -50,5 +50,18 @@ namespace TripleJPMVPLibrary.Service
             }
                         
         }
+        internal DataSet OnCallGetPenaltyReport(Loan loan)
+        {
+            try
+            {
+                reportRepo = new ReportRepo();
+                return reportRepo.GetPenaltyReport(loan);
+            }
+            catch (MySqlException ex)
+            {
+                throw new InvalidOperationException(" Task Invalid ", ex);
+            }
+
+        }
     }    
 }

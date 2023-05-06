@@ -39,8 +39,18 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:string" minOccurs="0" />
-              <xs:element name="Collection" msprop:Generator_ColumnPropNameInTable="CollectionColumn" msprop:Generator_ColumnPropNameInRow="Collection" msprop:Generator_UserColumnName="Collection" msprop:Generator_ColumnVarNameInTable="columnCollection" type="xs:decimal" minOccurs="0" />
               <xs:element name="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnVarNameInTable="columnDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Remmit" msprop:Generator_ColumnPropNameInRow="Remmit" msprop:Generator_ColumnPropNameInTable="RemmitColumn" msprop:Generator_ColumnVarNameInTable="columnRemmit" msprop:Generator_UserColumnName="Remmit" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Penalty" msprop:Generator_ColumnPropNameInRow="Penalty" msprop:Generator_ColumnPropNameInTable="PenaltyColumn" msprop:Generator_ColumnVarNameInTable="columnPenalty" msprop:Generator_UserColumnName="Penalty" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PenaltyDetailReport" msprop:Generator_RowEvHandlerName="PenaltyDetailReportRowChangeEventHandler" msprop:Generator_RowDeletedName="PenaltyDetailReportRowDeleted" msprop:Generator_RowDeletingName="PenaltyDetailReportRowDeleting" msprop:Generator_RowEvArgName="PenaltyDetailReportRowChangeEvent" msprop:Generator_TablePropName="PenaltyDetailReport" msprop:Generator_RowChangedName="PenaltyDetailReportRowChanged" msprop:Generator_UserTableName="PenaltyDetailReport" msprop:Generator_RowChangingName="PenaltyDetailReportRowChanging" msprop:Generator_RowClassName="PenaltyDetailReportRow" msprop:Generator_TableClassName="PenaltyDetailReportDataTable" msprop:Generator_TableVarName="tablePenaltyDetailReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:string" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnVarNameInTable="columnDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Penalty" msprop:Generator_ColumnPropNameInRow="Penalty" msprop:Generator_ColumnPropNameInTable="PenaltyColumn" msprop:Generator_ColumnVarNameInTable="columnPenalty" msprop:Generator_UserColumnName="Penalty" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

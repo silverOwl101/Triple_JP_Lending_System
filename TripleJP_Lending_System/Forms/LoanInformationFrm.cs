@@ -278,7 +278,6 @@ namespace TripleJP_Lending_System.Forms
             }
 
         }
-
         private void ListNullChecker(List<GetCustomerLoanInformation> list)
         {
             foreach (var item in list)
@@ -321,10 +320,9 @@ namespace TripleJP_Lending_System.Forms
             durationTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
             effectiveDateTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
             interestTxt.Text = String.Format("{0:P}", dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value);
-            principalLoanTxt.Text = String.Format("{0:N}", dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value);
-            penaltyTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
-            statusTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[9].Value.ToString();
-            totalAmountRemittanceTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value.ToString();
+            principalLoanTxt.Text = String.Format("{0:N}", dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value);            
+            statusTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
+            totalAmountRemittanceTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[9].Value.ToString();
         }
 
         private void MaturityInterestDisplay()

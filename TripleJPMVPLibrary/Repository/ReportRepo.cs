@@ -76,7 +76,7 @@ namespace TripleJPMVPLibrary.Repository
             CrystalReportDataSet data = new CrystalReportDataSet();
             using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
-                const string Query = "sp_getCollectionAndPenalty";
+                const string Query = "sp_getCollection";
 
                 MySqlCommand cmd = new MySqlCommand(Query, con)
                 {
@@ -96,9 +96,9 @@ namespace TripleJPMVPLibrary.Repository
                         {
                             _collectionReport = new CollectionReport()
                             {
-                                CollectionID = reader["ID"].ToString(),
-                                CollectionAmount = Convert.ToDecimal(reader["Collection"]),
-                                DateCollected = Convert.ToDateTime(reader["Date"])
+                                ID = reader["ID"].ToString(),                                
+                                Date = Convert.ToDateTime(reader["Date"]),
+                                Remmit = Convert.ToDecimal(reader["Remmit"])
                             };
                         }                        
                     }
@@ -112,5 +112,48 @@ namespace TripleJPMVPLibrary.Repository
                 return data;
             }
         }
+        internal DataSet GetPenaltyReport(Loan loan)
+        {
+            PenaltyReport _penaltyReport = null;
+            CrystalReportDataSet data = new CrystalReportDataSet();
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            {
+                const string Query = "sp_getPenalty";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.Parameters.AddWithValue("@loanId", loan.Id);
+                cmd.Parameters["@loanId"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (!reader.IsDBNull(0))
+                        {
+                            _penaltyReport = new PenaltyReport()
+                            {
+                                ID = reader["ID"].ToString(),                                
+                                Date = Convert.ToDateTime(reader["Date"]),
+                                Penalty = Convert.ToDecimal(reader["Penalty"])
+                            };
+                        }
+                    }
+                }
+                if (_penaltyReport != null)
+                {
+                    MySqlDataAdapter adapt = new MySqlDataAdapter(cmd);
+                    adapt.Fill(data, "PenaltyDetailReport");
+                    return data;
+                }
+                return data;
+            }
+        }
+
     }
 }

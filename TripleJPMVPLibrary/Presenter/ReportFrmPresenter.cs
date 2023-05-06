@@ -27,9 +27,22 @@ namespace TripleJPMVPLibrary.Presenter
         public DataTable OnCallGetCollectionReport(Loan loan)
         {
             reportService = new ReportService();
-            DataTable tb = new DataTable();
-            tb = reportService.OnCallGetCollectionReport(loan).Tables["CollectionDetailReport"];
-            return tb;
+            DataTable tb1 = new DataTable();
+            DataTable tb2 = new DataTable();
+            tb1 = reportService.OnCallGetCollectionReport(loan).Tables["CollectionDetailReport"];
+            tb2 = reportService.OnCallGetPenaltyReport(loan).Tables["PenaltyDetailReport"];
+
+            foreach (DataRow row in tb2.Rows)
+            {
+                DataRow newRow = tb1.NewRow();
+                newRow["ID"] = row["ID"];
+                newRow["Date"] = row["Date"];
+                newRow["Penalty"] = row["Penalty"];
+
+                tb1.Rows.Add(newRow);
+            }
+
+            return tb1;
         }
     }
 }

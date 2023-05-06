@@ -93,7 +93,7 @@ namespace TripleJP_Lending_System.Forms
 
             if (!IsRowsEmpty())
             {
-                rdsLoanInformationRpt.Name = "LoanInformatioDataset";
+                rdsLoanInformationRpt.Name = "LoanInformationDataset";
                 rdsLoanInformationRpt.Value = reportPresenter.OnCallGetLoanInformationReport(loan);
                 rdsCollectionRpt.Name = "CollectionDetailDataset";
                 rdsCollectionRpt.Value = reportPresenter.OnCallGetCollectionReport(loan);

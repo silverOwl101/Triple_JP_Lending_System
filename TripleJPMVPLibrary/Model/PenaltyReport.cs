@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace TripleJPMVPLibrary.Model
 {
-    internal class CollectionReport
+    internal class PenaltyReport
     {
         public string ID { get; set; }
-        public decimal Remmit { get; set; }
-        public DateTime Date { get; set; }        
+        public DateTime Date { get; set; }
+        public decimal Penalty { get; set; }
+        
     }
 }

@@ -103,6 +103,7 @@
     <Compile Include="Model\Loan.cs" />
     <Compile Include="Model\LoanInformationReport.cs" />
     <Compile Include="Model\Penalty.cs" />
+    <Compile Include="Model\PenaltyReport.cs" />
     <Compile Include="Presenter\AddCustomerPresenter.cs" />
     <Compile Include="Presenter\AddLoanPresenter.cs" />
     <Compile Include="Presenter\CollectionFrmPresenter.cs" />
