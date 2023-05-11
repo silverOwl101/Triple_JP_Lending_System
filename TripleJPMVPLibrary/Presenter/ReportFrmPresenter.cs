@@ -42,6 +42,9 @@ namespace TripleJPMVPLibrary.Presenter
                 tb1.Rows.Add(newRow);
             }
 
+            DataView dataView = tb1.AsDataView();
+            dataView.Sort = "Date ASC";
+            tb1 = dataView.ToTable();
             return tb1;
         }
     }
