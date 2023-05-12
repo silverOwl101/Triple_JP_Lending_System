@@ -48,7 +48,7 @@ namespace TripleJPMVPLibrary.Presenter
             _collectionService = new CollectionService();
             _collectionService.AddPenalty(_penalty, _customer, _loan);
         }
-        public void AddCollection() 
+        public bool AddCollection() 
         {
             InitLoanInstance();
 
@@ -56,15 +56,21 @@ namespace TripleJPMVPLibrary.Presenter
             {
                 Date = _addCollection.Date,
                 Amount = _addCollection.Amount
-            };            
+            };
 
-            _collectionService = new CollectionService();
-            _collectionService.AddCollection(_collection,_customer,_loan);
             decimal totalAmountFinal = _compareCollectionAndLoan.CollectionTotalAmount + _addCollection.Amount;
-            if (_compareCollectionAndLoan.LoanTotalAmount == totalAmountFinal)
+            if (totalAmountFinal < _compareCollectionAndLoan.LoanTotalAmount)
             {
-                isFullyPaid(_loan);
-            }
+                _collectionService = new CollectionService();
+                _collectionService.AddCollection(_collection, _customer, _loan);
+                if (_compareCollectionAndLoan.LoanTotalAmount ==
+                                              totalAmountFinal) //check if amount is fully paid
+                {
+                    isFullyPaid(_loan);
+                }
+                return true;
+            }                                      
+            return false;
         }
         private void isFullyPaid(Loan _loan)
         {

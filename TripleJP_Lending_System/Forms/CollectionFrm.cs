@@ -102,6 +102,25 @@ namespace TripleJP_Lending_System.Forms
         {
             _frmConvertionRequirements.ConvertToNumberFormat(amountTextBox);
         }
+        private void LoadAddCollectionCondition()
+        {
+            if (_collectionFrmPresenter.AddCollection())
+            {
+                string messageContent = "Remitted successfully";
+                string messageCaption = "Remittance";
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBoxIcon icon = MessageBoxIcon.Information;
+                MessageBox(messageContent, messageCaption, button, icon);
+            }
+            else
+            {
+                string messageContent = "Please check if the amount entered is greater than the remaining balance";
+                string messageCaption = "Task Error";
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBoxIcon icon = MessageBoxIcon.Error;
+                MessageBox(messageContent, messageCaption, button, icon);
+            }
+        }
         private void CollectionFrmSubmitButton_Click(object sender, EventArgs e)
         {
             _collectionFrmPresenter = new CollectionFrmPresenter(this,this,this);
@@ -110,13 +129,7 @@ namespace TripleJP_Lending_System.Forms
             {
                 if (!string.IsNullOrEmpty(amountTextBox.Text))
                 {
-                    _collectionFrmPresenter.AddCollection();
-
-                    string messageContent = "Remitted successfully";
-                    string messageCaption = "Remittance";
-                    MessageBoxButtons button = MessageBoxButtons.OK;
-                    MessageBoxIcon icon = MessageBoxIcon.Information;
-                    MessageBox(messageContent, messageCaption, button, icon);
+                    LoadAddCollectionCondition();
                 }
                 else if(string.IsNullOrEmpty(amountTextBox.Text) && string.IsNullOrEmpty(penaltyAmount.Text))
                 {
