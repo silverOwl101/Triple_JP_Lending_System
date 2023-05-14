@@ -47,9 +47,9 @@ namespace TripleJPMVPLibrary.Repository
                                 CustomerName = reader["Name"].ToString(),
                                 PostingReturn = Convert.ToDecimal(reader["Return"]),
                                 Interest = Convert.ToDecimal(reader["Interest"]),
-                                TotalAmount = Convert.ToDecimal(reader["Total Loan Amount"]),
+                                TotalAmount = Convert.ToDecimal(reader["Total Loan CollectedAmount"]),
                                 Status = reader["Status"].ToString(),
-                                Collect = Convert.ToDecimal(reader["Total Amount Collected"])
+                                Collect = Convert.ToDecimal(reader["Total CollectedAmount Collected"])
                             };
                         }                        
                         customerList.Add(getCustomerList);

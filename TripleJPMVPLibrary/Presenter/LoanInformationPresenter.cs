@@ -13,7 +13,6 @@ namespace TripleJPMVPLibrary.Presenter
 {    
     public class LoanInformationPresenter
     {
-
         #region Fields
 
         private ISearch _search;
@@ -22,13 +21,11 @@ namespace TripleJPMVPLibrary.Presenter
         private List<GetCustomerLoanInformation> _getLoanInformation;
 
         #endregion
-
         public LoanInformationPresenter(ISearch search)
         {
             _search = search;            
             OnLoadLoanInformationData();
         }
-
         private void OnLoadLoanInformationData()
         {
             _customer = new Customer();
@@ -37,9 +34,7 @@ namespace TripleJPMVPLibrary.Presenter
 
             if (String.IsNullOrEmpty(_search.UserSearch))
             {
-
                 throw new ArgumentNullException(nameof(_search.UserSearch), "UserSearch is Null");
-
             }
             else
             {
@@ -55,7 +50,6 @@ namespace TripleJPMVPLibrary.Presenter
                 _getLoanInformation = _loanService.OnCallGetLoanInformation(_customer);                
             }
         }
-
         public List<GetCustomerLoanInformation> GetLoanInformationList()
         {
             return _getLoanInformation;

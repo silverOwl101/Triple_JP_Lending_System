@@ -88,7 +88,7 @@
             this.groupBox1.Size = new System.Drawing.Size(441, 94);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Enter Amount";
+            this.groupBox1.Text = "Enter CollectedAmount";
             // 
             // amountTextBox
             // 
@@ -238,7 +238,7 @@
             this.groupBox10.Size = new System.Drawing.Size(441, 94);
             this.groupBox10.TabIndex = 19;
             this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Enter Amount";
+            this.groupBox10.Text = "Enter CollectedAmount";
             // 
             // penaltyAmount
             // 

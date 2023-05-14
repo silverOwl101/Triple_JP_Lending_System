@@ -83,8 +83,8 @@ namespace TripleJP_Lending_System.Forms
             dataGridView1.Columns[2].HeaderText = "Name";
             dataGridView1.Columns[3].HeaderText = "Return";
             dataGridView1.Columns[4].HeaderText = "Interest";
-            dataGridView1.Columns[5].HeaderText = "Total Loan Amount";
-            dataGridView1.Columns[7].HeaderText = "Total Amount Collected";
+            dataGridView1.Columns[5].HeaderText = "Total Loan CollectedAmount";
+            dataGridView1.Columns[7].HeaderText = "Total CollectedAmount Collected";
         }
         private void PostingFrm_Shown(object sender, EventArgs e)
         {
@@ -101,8 +101,8 @@ namespace TripleJP_Lending_System.Forms
         {            
             CustomerName = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString(); // customer name
             Id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString(); // loan number/loan id
-            CollectionTotalAmount = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value.ToString(); // Total Amount Collected
-            LoanTotalAmount = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString(); // Total Loan Amount
+            CollectionTotalAmount = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value.ToString(); // Total CollectedAmount Collected
+            LoanTotalAmount = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString(); // Total Loan CollectedAmount
 
             _concreteMediator = new ClassComponentConcreteMediator();
             _postingFrmPassData = new PostingFrmPassData(_concreteMediator, this);

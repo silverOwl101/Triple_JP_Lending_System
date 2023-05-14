@@ -11,7 +11,6 @@ namespace TripleJPMVPLibrary.Repository
 {
     internal class LoanInformationRepo
     {
-
         internal List<GetCustomerLoanInformation> GetLoanInformation(Customer customer)
         {
 
@@ -40,18 +39,18 @@ namespace TripleJPMVPLibrary.Repository
                     {
                         getLoanInformation = new GetCustomerLoanInformation
                         {
-                            Id = reader["LoanID"].ToString(),
-                            CustomerID = reader["CustomerID"].ToString(),
-                            Name = reader["CustomerName"].ToString(),
-                            PaymentTerm = reader["PaymentTerm"].ToString(),
+                            Id = reader["Loan ID"].ToString(),
+                            CustomerID = reader["Customer ID"].ToString(),
+                            Name = reader["Customer Name"].ToString(),
+                            PaymentTerm = reader["Payment Term"].ToString(),
                             Duration = Convert.ToInt32(reader["Duration"].ToString()),
-                            EffectiveDate = Convert.ToDateTime(reader["EffectiveDate"]).ToString("MM-dd-yyyy"),
+                            EffectiveDate = Convert.ToDateTime(reader["Effective Date"]).ToString("MM-dd-yyyy"),
                             Interest = Convert.ToDecimal(reader["Interest"].ToString()),
-                            PrincipalLoan = Convert.ToDecimal(reader["PrincipalLoan"].ToString()),                            
+                            PrincipalLoan = Convert.ToDecimal(reader["Principal Loan"].ToString()),                            
                             Status = reader["Status"].ToString(),
-                            Amount = reader["Amount"].ToString()
+                            CollectedAmount = reader["Total Remmited Amount"].ToString(),
+                            PenaltyAmount = reader["Total Penalty Amout"].ToString()
                         };
-
                         loanList.Add(getLoanInformation);
                     }
                 }
@@ -93,7 +92,7 @@ namespace TripleJPMVPLibrary.Repository
                             Interest = Convert.ToDecimal(reader["Interest"].ToString()),
                             PrincipalLoan = Convert.ToDecimal(reader["PrincipalLoan"].ToString()),                            
                             Status = reader["Status"].ToString(),
-                            Amount = reader["Amount"].ToString()
+                            CollectedAmount = reader["CollectedAmount"].ToString()
                         };                        
                     }
                 }
@@ -257,7 +256,7 @@ namespace TripleJPMVPLibrary.Repository
                 {
                     while (reader.Read())
                     {
-                        releasedAmount = Convert.ToDecimal(reader["Release Amount"]);
+                        releasedAmount = Convert.ToDecimal(reader["Release CollectedAmount"]);
                     }
                 }
             }
