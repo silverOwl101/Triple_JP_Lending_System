@@ -454,27 +454,53 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = '' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getLoanInformation`(
 	IN customerId varchar(100),
     IN customerName varchar(100)    
 )
 BEGIN
-	select
-	v_loaninformation.LoanID,
-	v_loaninformation.CustomerID,
-	v_loaninformation.CustomerName,
-	v_loaninformation.PaymentTerm,
-	v_loaninformation.Duration,
-	v_loaninformation.EffectiveDate,
-	v_loaninformation.Interest,
-	v_loaninformation.PrincipalLoan,	
-	v_loaninformation.Status,
-    v_loaninformation.Amount
-	from v_loaninformation where
-	v_loaninformation.CustomerID like concat(customerId,'%') or
-	v_loaninformation.CustomerName like concat(customerName,'%');    
+	select a.loanId as 'Loan ID',
+	a.customerID as 'Customer ID',
+	a.customerName as 'Customer Name',
+	a.term as 'Payment Term',
+	a.duration as 'Duration',
+	a.effectiveDate as 'Effective Date',
+	a.Interest as 'Interest',
+	a.PrincipalLoan as 'Principal Loan',
+	a.Status as 'Status',
+	a.collectedAmount as 'Total Remmited Amount',
+	b.penaltyAmount as 'Total Penalty Amout'
+	from (
+				select c.loan_information_uid,
+				customer.id as customerID,            
+				l.id as loanId,
+				customer.name as customerName,
+				l.payment_term as term,
+				l.duration as duration,
+				l.effective_date as effectiveDate,
+				l.interest as Interest,
+				l.principal_loan as PrincipalLoan,
+				l.status as Status,
+				l.principal_loan,sum(c.collection_amount) as collectedAmount
+				from loan_information as l
+				join customer_account as customer on l.customer_uid = customer.uid
+				left join collection as c on l.uid = c.loan_information_uid
+				group by l.id
+			) as a
+			left join
+			(
+				select p.loan_information_uid,l.id as loanId,customer.name,
+				l.principal_loan, sum(p.penalty_amount) as penaltyAmount
+				from loan_information as l
+				left join customer_account as customer on l.customer_uid = customer.uid
+				left join penalty as p on l.uid = p.loan_information_uid
+				group by l.id
+			) as b
+			on a.loan_information_uid = b.loan_information_uid where
+			a.customerID like concat(customerId,'%') or
+			a.customerName like concat(customerName,'%');    
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -971,4 +997,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-13  1:27:47
+-- Dump completed on 2023-05-15  3:31:34
