@@ -133,8 +133,8 @@ namespace TripleJP_Lending_System.Forms
                 }
                 else if(string.IsNullOrEmpty(amountTextBox.Text) && string.IsNullOrEmpty(penaltyAmount.Text))
                 {
-                    string messageContent = "Input remittance to proceed";
-                    string messageCaption = "Input remittance";
+                    string messageContent = "Input remittance or penalty amount to proceed";
+                    string messageCaption = "Input remittance/penalty";
                     MessageBoxButtons button = MessageBoxButtons.OK;
                     MessageBoxIcon icon = MessageBoxIcon.Error;
                     MessageBox(messageContent, messageCaption, button, icon);

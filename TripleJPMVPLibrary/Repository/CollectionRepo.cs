@@ -66,8 +66,8 @@ namespace TripleJPMVPLibrary.Repository
                 cmd.Parameters["@customer_Uid"].Direction = ParameterDirection.Input;
                 cmd.Parameters.AddWithValue("@loanInformation_Uid", loan.Uid);
                 cmd.Parameters["@loanInformation_Uid"].Direction = ParameterDirection.Input;
-                cmd.Parameters.AddWithValue("@penalty_Amount", penalty.Amount);
-                cmd.Parameters["@penalty_Amount"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@penalty_Amnt", penalty.Amount);
+                cmd.Parameters["@penalty_Amnt"].Direction = ParameterDirection.Input;
                 cmd.Parameters.AddWithValue("@penalty_Date", penalty.Date);
                 cmd.Parameters["@penalty_Date"].Direction = ParameterDirection.Input;
 

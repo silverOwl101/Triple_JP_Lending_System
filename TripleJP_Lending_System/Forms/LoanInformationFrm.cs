@@ -323,6 +323,7 @@ namespace TripleJP_Lending_System.Forms
             principalLoanTxt.Text = String.Format("{0:N}", dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value);            
             statusTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
             totalAmountRemittanceTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[9].Value.ToString();
+            penaltyTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value.ToString();
         }
 
         private void MaturityInterestDisplay()

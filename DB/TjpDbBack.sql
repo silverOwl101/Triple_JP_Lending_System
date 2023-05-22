@@ -201,7 +201,7 @@ CREATE TABLE `penalty` (
 
 LOCK TABLES `penalty` WRITE;
 /*!40000 ALTER TABLE `penalty` DISABLE KEYS */;
-INSERT INTO `penalty` VALUES ('114c0f32-a093-4ed0-a64a-7faf00371512','186033541-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-04'),('3f9b80f0-0c9c-45a2-bfac-3fc6ef1cee9d','123419433-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-02'),('7965cf42-7031-4815-b8c9-9e9525daa0a3','142196989-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-04'),('ee3530aa-4024-4ad2-a557-0745041567d8','141716144-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-04');
+INSERT INTO `penalty` VALUES ('114c0f32-a093-4ed0-a64a-7faf00371512','186033541-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-04'),('3f9b80f0-0c9c-45a2-bfac-3fc6ef1cee9d','123419433-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-02'),('7965cf42-7031-4815-b8c9-9e9525daa0a3','142196989-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-04'),('bce46757-923f-4585-82d6-08106df346a8','185762316-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-23'),('ee3530aa-4024-4ad2-a557-0745041567d8','141716144-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-04');
 /*!40000 ALTER TABLE `penalty` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -848,12 +848,12 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertPenalty`(
     IN penalty_Id varchar(100),
     IN customer_Uid char(36),
     IN loanInformation_Uid varchar(100),
-    IN penalty_Amount int,
+    IN penalty_Amnt int,
 	IN penalty_Date date
 )
 BEGIN
-	insert into penalty(uid,id,customer_uid,loan_information_uid,amount,`date`)
-    values(penalty_Uid,penalty_Id,customer_Uid,loanInformation_Uid,penalty_Amount,penalty_Date);
+	insert into penalty(uid,id,customer_uid,loan_information_uid,penalty_amount,`date`)
+    values(penalty_Uid,penalty_Id,customer_Uid,loanInformation_Uid,penalty_Amnt,penalty_Date);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -997,4 +997,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-15  3:31:34
+-- Dump completed on 2023-05-23  2:58:46

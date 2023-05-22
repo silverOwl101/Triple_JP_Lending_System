@@ -92,7 +92,7 @@ namespace TripleJPMVPLibrary.Repository
                             Interest = Convert.ToDecimal(reader["Interest"].ToString()),
                             PrincipalLoan = Convert.ToDecimal(reader["PrincipalLoan"].ToString()),                            
                             Status = reader["Status"].ToString(),
-                            CollectedAmount = reader["CollectedAmount"].ToString()
+                            CollectedAmount = reader["Amount"].ToString()
                         };                        
                     }
                 }

@@ -83,8 +83,8 @@ namespace TripleJP_Lending_System.Forms
             dataGridView1.Columns[2].HeaderText = "Name";
             dataGridView1.Columns[3].HeaderText = "Return";
             dataGridView1.Columns[4].HeaderText = "Interest";
-            dataGridView1.Columns[5].HeaderText = "Total Loan CollectedAmount";
-            dataGridView1.Columns[7].HeaderText = "Total CollectedAmount Collected";
+            dataGridView1.Columns[5].HeaderText = "Total Loan Amount";
+            dataGridView1.Columns[7].HeaderText = "Total Amount Collected";
         }
         private void PostingFrm_Shown(object sender, EventArgs e)
         {
