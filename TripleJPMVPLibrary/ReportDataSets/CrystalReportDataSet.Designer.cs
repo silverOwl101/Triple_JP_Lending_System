@@ -494,7 +494,7 @@ namespace TripleJPMVPLibrary.ReportDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CollectionSummaryReportRow AddCollectionSummaryReportRow(string ID, string Name_of_the_Owner, string Released_Amount_with_Interest, string Total_Collection) {
+            public CollectionSummaryReportRow AddCollectionSummaryReportRow(string ID, string Name_of_the_Owner, double Released_Amount_with_Interest, double Total_Collection) {
                 CollectionSummaryReportRow rowCollectionSummaryReportRow = ((CollectionSummaryReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -536,9 +536,9 @@ namespace TripleJPMVPLibrary.ReportDataSets {
                 base.Columns.Add(this.columnID);
                 this.columnName_of_the_Owner = new global::System.Data.DataColumn("Name_of_the_Owner", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName_of_the_Owner);
-                this.columnReleased_Amount_with_Interest = new global::System.Data.DataColumn("Released_Amount_with_Interest", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnReleased_Amount_with_Interest = new global::System.Data.DataColumn("Released_Amount_with_Interest", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReleased_Amount_with_Interest);
-                this.columnTotal_Collection = new global::System.Data.DataColumn("Total_Collection", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTotal_Collection = new global::System.Data.DataColumn("Total_Collection", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal_Collection);
             }
             
@@ -1610,10 +1610,10 @@ namespace TripleJPMVPLibrary.ReportDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Released_Amount_with_Interest {
+            public double Released_Amount_with_Interest {
                 get {
                     try {
-                        return ((string)(this[this.tableCollectionSummaryReport.Released_Amount_with_InterestColumn]));
+                        return ((double)(this[this.tableCollectionSummaryReport.Released_Amount_with_InterestColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Released_Amount_with_Interest\' in table \'CollectionSummaryR" +
@@ -1627,10 +1627,10 @@ namespace TripleJPMVPLibrary.ReportDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Total_Collection {
+            public double Total_Collection {
                 get {
                     try {
-                        return ((string)(this[this.tableCollectionSummaryReport.Total_CollectionColumn]));
+                        return ((double)(this[this.tableCollectionSummaryReport.Total_CollectionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Total_Collection\' in table \'CollectionSummaryReport\' is DBN" +

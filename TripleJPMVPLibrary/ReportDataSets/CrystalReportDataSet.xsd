@@ -17,8 +17,8 @@
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:string" minOccurs="0" />
               <xs:element name="Name_of_the_Owner" msprop:Generator_ColumnPropNameInTable="Name_of_the_OwnerColumn" msprop:Generator_ColumnPropNameInRow="Name_of_the_Owner" msprop:Generator_UserColumnName="Name_of_the_Owner" msprop:Generator_ColumnVarNameInTable="columnName_of_the_Owner" type="xs:string" minOccurs="0" />
-              <xs:element name="Released_Amount_with_Interest" msprop:Generator_ColumnPropNameInTable="Released_Amount_with_InterestColumn" msprop:Generator_ColumnPropNameInRow="Released_Amount_with_Interest" msprop:Generator_UserColumnName="Released_Amount_with_Interest" msprop:Generator_ColumnVarNameInTable="columnReleased_Amount_with_Interest" type="xs:string" minOccurs="0" />
-              <xs:element name="Total_Collection" msprop:Generator_ColumnPropNameInTable="Total_CollectionColumn" msprop:Generator_ColumnPropNameInRow="Total_Collection" msprop:Generator_UserColumnName="Total_Collection" msprop:Generator_ColumnVarNameInTable="columnTotal_Collection" type="xs:string" minOccurs="0" />
+              <xs:element name="Released_Amount_with_Interest" msprop:Generator_ColumnPropNameInTable="Released_Amount_with_InterestColumn" msprop:Generator_ColumnPropNameInRow="Released_Amount_with_Interest" msprop:Generator_UserColumnName="Released_Amount_with_Interest" msprop:Generator_ColumnVarNameInTable="columnReleased_Amount_with_Interest" type="xs:double" minOccurs="0" />
+              <xs:element name="Total_Collection" msprop:Generator_ColumnPropNameInTable="Total_CollectionColumn" msprop:Generator_ColumnPropNameInRow="Total_Collection" msprop:Generator_UserColumnName="Total_Collection" msprop:Generator_ColumnVarNameInTable="columnTotal_Collection" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -40,8 +40,8 @@
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:string" minOccurs="0" />
               <xs:element name="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnVarNameInTable="columnDate" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Remmit" msprop:Generator_ColumnPropNameInRow="Remmit" msprop:Generator_ColumnPropNameInTable="RemmitColumn" msprop:Generator_ColumnVarNameInTable="columnRemmit" msprop:Generator_UserColumnName="Remmit" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Penalty" msprop:Generator_ColumnPropNameInRow="Penalty" msprop:Generator_ColumnPropNameInTable="PenaltyColumn" msprop:Generator_ColumnVarNameInTable="columnPenalty" msprop:Generator_UserColumnName="Penalty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Remmit" msprop:Generator_UserColumnName="Remmit" msprop:Generator_ColumnPropNameInTable="RemmitColumn" msprop:Generator_ColumnPropNameInRow="Remmit" msprop:Generator_ColumnVarNameInTable="columnRemmit" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Penalty" msprop:Generator_UserColumnName="Penalty" msprop:Generator_ColumnPropNameInTable="PenaltyColumn" msprop:Generator_ColumnPropNameInRow="Penalty" msprop:Generator_ColumnVarNameInTable="columnPenalty" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -50,7 +50,7 @@
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:string" minOccurs="0" />
               <xs:element name="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnVarNameInTable="columnDate" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Penalty" msprop:Generator_ColumnPropNameInRow="Penalty" msprop:Generator_ColumnPropNameInTable="PenaltyColumn" msprop:Generator_ColumnVarNameInTable="columnPenalty" msprop:Generator_UserColumnName="Penalty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Penalty" msprop:Generator_UserColumnName="Penalty" msprop:Generator_ColumnPropNameInTable="PenaltyColumn" msprop:Generator_ColumnPropNameInRow="Penalty" msprop:Generator_ColumnVarNameInTable="columnPenalty" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

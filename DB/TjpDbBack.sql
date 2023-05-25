@@ -201,7 +201,7 @@ CREATE TABLE `penalty` (
 
 LOCK TABLES `penalty` WRITE;
 /*!40000 ALTER TABLE `penalty` DISABLE KEYS */;
-INSERT INTO `penalty` VALUES ('114c0f32-a093-4ed0-a64a-7faf00371512','186033541-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-04'),('3f9b80f0-0c9c-45a2-bfac-3fc6ef1cee9d','123419433-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-02'),('7965cf42-7031-4815-b8c9-9e9525daa0a3','142196989-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-04'),('bce46757-923f-4585-82d6-08106df346a8','185762316-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-23'),('ee3530aa-4024-4ad2-a557-0745041567d8','141716144-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-04');
+INSERT INTO `penalty` VALUES ('114c0f32-a093-4ed0-a64a-7faf00371512','186033541-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-04'),('3243aa0e-9d53-4761-8c40-96f2a917dbec','117072962-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-25'),('3f9b80f0-0c9c-45a2-bfac-3fc6ef1cee9d','123419433-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-02'),('7965cf42-7031-4815-b8c9-9e9525daa0a3','142196989-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-04'),('bce46757-923f-4585-82d6-08106df346a8','185762316-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-23'),('ee3530aa-4024-4ad2-a557-0745041567d8','141716144-2023','0a2e3418-cd79-4e09-9196-fb15e5efb7be','51f44357-5cef-11ec-bf7a-74d02be5638f',100.00,'2023-05-04');
 /*!40000 ALTER TABLE `penalty` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -678,15 +678,16 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = '' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getTotalCollectionPerLoanSummary`(
 
 )
-BEGIN	
+BEGIN
+	set sql_mode = '';
 	select loan.id as 'ID',c.name as 'Name_of_the_Owner',
     loan.principal_loan + (loan.principal_loan * 0.2)  as 'Released_Amount_with_Interest',
-    Sum(cl.amount) as 'Total_Collection' from collection as cl
+    Sum(cl.collection_amount) as 'Total_Collection' from collection as cl
 	left join customer_account as c on cl.customer_uid = c.uid
     left join loan_information as loan on cl.loan_information_uid = loan.uid
     group by loan.id;
@@ -997,4 +998,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-23  2:58:46
+-- Dump completed on 2023-05-26  0:38:14
