@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +11,11 @@ namespace TripleJPMVPLibrary.Repository
 {
     internal class LogInRepo
     {
+        string ConnectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"]
+                                  .ConnectionString;
         internal bool CheckRecord(string username, string password)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {               
                 con.Open();
                 const string SqlQuery = "Select username, password from user_system_account where username = @Username and password = @Password";

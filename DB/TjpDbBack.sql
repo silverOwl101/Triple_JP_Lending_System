@@ -454,13 +454,15 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = '' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getLoanInformation`(
 	IN customerId varchar(100),
     IN customerName varchar(100)    
 )
-BEGIN
+BEGIN   	
+    SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+    
 	select a.loanId as 'Loan ID',
 	a.customerID as 'Customer ID',
 	a.customerName as 'Customer Name',
@@ -470,8 +472,14 @@ BEGIN
 	a.Interest as 'Interest',
 	a.PrincipalLoan as 'Principal Loan',
 	a.Status as 'Status',
-	a.collectedAmount as 'Total Remmited Amount',
-	b.penaltyAmount as 'Total Penalty Amout'
+    case
+    when a.collectedAmount is null then 0
+    else a.collectedAmount
+	end as 'Total Remmited Amount',
+    case
+    when b.penaltyAmount is null then 0
+    else b.penaltyAmount
+	end as 'Total Penalty Amout'
 	from (
 				select c.loan_information_uid,
 				customer.id as customerID,            
@@ -500,7 +508,7 @@ BEGIN
 			) as b
 			on a.loan_information_uid = b.loan_information_uid where
 			a.customerID like concat(customerId,'%') or
-			a.customerName like concat(customerName,'%');    
+			a.customerName like concat(customerName,'%');            
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -678,19 +686,52 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getTotalCollectionPerLoanSummary`(
 
 )
 BEGIN
-	set sql_mode = '';
-	select loan.id as 'ID',c.name as 'Name_of_the_Owner',
-    loan.principal_loan + (loan.principal_loan * 0.2)  as 'Released_Amount_with_Interest',
-    Sum(cl.collection_amount) as 'Total_Collection' from collection as cl
-	left join customer_account as c on cl.customer_uid = c.uid
-    left join loan_information as loan on cl.loan_information_uid = loan.uid
-    group by loan.id;
+	SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+
+	select a.loanId as 'ID',
+	a.customerName as 'Name_of_the_Owner',
+	a.principal_loan + (a.principal_loan * 0.2) as 'Released_Amount_with_Interest',
+	case
+	when a.collectedAmount is null or a.collectedAmount = '' then 0
+	else a.collectedAmount
+	end as 'Total_Collection',
+	case
+	when b.penaltyAmount is null or b.penaltyAmount = '' then 0
+	else b.penaltyAmount
+	end as 'Total_Penalty_Amount'
+	from (
+				select c.loan_information_uid,
+				customer.id as customerID,            
+				l.id as loanId,
+				customer.name as customerName,
+				l.payment_term as term,
+				l.duration as duration,
+				l.effective_date as effectiveDate,
+				l.interest as Interest,
+				l.principal_loan as PrincipalLoan,
+				l.status as Status,
+				l.principal_loan,sum(c.collection_amount) as collectedAmount
+				from loan_information as l
+				join customer_account as customer on l.customer_uid = customer.uid
+				left join collection as c on l.uid = c.loan_information_uid
+				group by l.id
+			) as a
+			left join
+			(
+				select p.loan_information_uid,l.id as loanId,customer.name,
+				l.principal_loan, sum(p.penalty_amount) as penaltyAmount
+				from loan_information as l
+				left join customer_account as customer on l.customer_uid = customer.uid
+				left join penalty as p on l.uid = p.loan_information_uid
+				group by l.id
+			) as b
+	on a.loan_information_uid = b.loan_information_uid;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -998,4 +1039,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-26  0:38:14
+-- Dump completed on 2023-05-28  3:04:44

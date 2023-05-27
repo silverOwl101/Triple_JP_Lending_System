@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,11 @@ namespace TripleJPMVPLibrary.Repository
 {
     internal class CollectionRepo
     {
+        string ConnectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"]
+                                  .ConnectionString;
         internal void InsertCollection(Collection collection, Customer customer, Loan loan)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
                 const string storedProcedure = "sp_insertCollection";
                 con.Open();
@@ -46,7 +49,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal void InsertPenalty (Penalty penalty, Customer customer, Loan loan)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
                 const string storedProcedure = "sp_insertPenalty";
                 con.Open();
@@ -78,7 +81,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal void LoanFullyPaidUpdate(Loan loan)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
                 const string Query = "sp_updateLoanStatus";
 
@@ -95,7 +98,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal bool IsDuplicateUid(Guid uid)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
                 con.Open();
                 const string SqlQuery = "select Uid from collection where Uid = @uId";
@@ -117,7 +120,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal bool IsDuplicateId(string id)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
                 con.Open();
                 const string SqlQuery = "select Id from collection where Id = @Id";

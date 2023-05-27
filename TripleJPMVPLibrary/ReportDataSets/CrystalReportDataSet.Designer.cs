@@ -392,6 +392,8 @@ namespace TripleJPMVPLibrary.ReportDataSets {
             
             private global::System.Data.DataColumn columnTotal_Collection;
             
+            private global::System.Data.DataColumn columnTotal_Penalty_Amount;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public CollectionSummaryReportDataTable() {
@@ -459,6 +461,14 @@ namespace TripleJPMVPLibrary.ReportDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Total_Penalty_AmountColumn {
+                get {
+                    return this.columnTotal_Penalty_Amount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -494,13 +504,14 @@ namespace TripleJPMVPLibrary.ReportDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CollectionSummaryReportRow AddCollectionSummaryReportRow(string ID, string Name_of_the_Owner, double Released_Amount_with_Interest, double Total_Collection) {
+            public CollectionSummaryReportRow AddCollectionSummaryReportRow(string ID, string Name_of_the_Owner, double Released_Amount_with_Interest, double Total_Collection, double Total_Penalty_Amount) {
                 CollectionSummaryReportRow rowCollectionSummaryReportRow = ((CollectionSummaryReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         Name_of_the_Owner,
                         Released_Amount_with_Interest,
-                        Total_Collection};
+                        Total_Collection,
+                        Total_Penalty_Amount};
                 rowCollectionSummaryReportRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCollectionSummaryReportRow);
                 return rowCollectionSummaryReportRow;
@@ -527,6 +538,7 @@ namespace TripleJPMVPLibrary.ReportDataSets {
                 this.columnName_of_the_Owner = base.Columns["Name_of_the_Owner"];
                 this.columnReleased_Amount_with_Interest = base.Columns["Released_Amount_with_Interest"];
                 this.columnTotal_Collection = base.Columns["Total_Collection"];
+                this.columnTotal_Penalty_Amount = base.Columns["Total_Penalty_Amount"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -540,6 +552,8 @@ namespace TripleJPMVPLibrary.ReportDataSets {
                 base.Columns.Add(this.columnReleased_Amount_with_Interest);
                 this.columnTotal_Collection = new global::System.Data.DataColumn("Total_Collection", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal_Collection);
+                this.columnTotal_Penalty_Amount = new global::System.Data.DataColumn("Total_Penalty_Amount", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal_Penalty_Amount);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1644,6 +1658,23 @@ namespace TripleJPMVPLibrary.ReportDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public double Total_Penalty_Amount {
+                get {
+                    try {
+                        return ((double)(this[this.tableCollectionSummaryReport.Total_Penalty_AmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Total_Penalty_Amount\' in table \'CollectionSummaryReport\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryReport.Total_Penalty_AmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsIDNull() {
                 return this.IsNull(this.tableCollectionSummaryReport.IDColumn);
             }
@@ -1688,6 +1719,18 @@ namespace TripleJPMVPLibrary.ReportDataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTotal_CollectionNull() {
                 this[this.tableCollectionSummaryReport.Total_CollectionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotal_Penalty_AmountNull() {
+                return this.IsNull(this.tableCollectionSummaryReport.Total_Penalty_AmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotal_Penalty_AmountNull() {
+                this[this.tableCollectionSummaryReport.Total_Penalty_AmountColumn] = global::System.Convert.DBNull;
             }
         }
         

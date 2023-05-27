@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,14 @@ namespace TripleJPMVPLibrary.Repository
 {
     class PostingRepo
     {
+        string ConnectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"]
+                                  .ConnectionString;
         internal List<GetPostingInfo> GetPostingList(Customer customer)
         {
             GetPostingInfo getCustomerList;
             List<GetPostingInfo> customerList = new List<GetPostingInfo>();
 
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
                 const string Query = "sp_getPostingList";
 

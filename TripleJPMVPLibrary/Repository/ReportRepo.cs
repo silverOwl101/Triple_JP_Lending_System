@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
@@ -13,10 +14,13 @@ using TripleJPUtilityLibrary.DataSource;
 namespace TripleJPMVPLibrary.Repository
 {
     internal class ReportRepo
-    {        
+    {
+        string ConnectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"]
+                                  .ConnectionString;
         internal DataSet GetCollectionSummaryReport()
-        {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+        {            
+            
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
                 const string Query = "sp_getTotalCollectionPerLoanSummary";
                 MySqlCommand cmd = new MySqlCommand(Query, con)
@@ -32,9 +36,9 @@ namespace TripleJPMVPLibrary.Repository
             }            
         }
         internal DataSet GetLoanInformationReport(Loan loan)
-        {
+        {            
             LoanInformationReport _loanInformation = null;
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
                 const string Query = "sp_createLoanInformationReport";                
 
@@ -71,10 +75,10 @@ namespace TripleJPMVPLibrary.Repository
             }            
         }
         internal DataSet GetCollectionReport(Loan loan)
-        {
+        {            
             CollectionReport _collectionReport = null;
             CrystalReportDataSet data = new CrystalReportDataSet();
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
                 const string Query = "sp_getCollection";
 
@@ -113,10 +117,10 @@ namespace TripleJPMVPLibrary.Repository
             }
         }
         internal DataSet GetPenaltyReport(Loan loan)
-        {
+        {            
             PenaltyReport _penaltyReport = null;
             CrystalReportDataSet data = new CrystalReportDataSet();
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
                 const string Query = "sp_getPenalty";
 
@@ -154,6 +158,5 @@ namespace TripleJPMVPLibrary.Repository
                 return data;
             }
         }
-
     }
 }
