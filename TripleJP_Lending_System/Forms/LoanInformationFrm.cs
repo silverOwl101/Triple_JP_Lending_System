@@ -355,22 +355,20 @@ namespace TripleJP_Lending_System.Forms
         }
         private void TotalAmountRemittanceDisplay()
         {
-            decimal result;
-
+            if (string.IsNullOrEmpty(maturityValueTxt.Text))
+            {
+                maturityValueTxt.Text = "0";
+            }
             if (string.IsNullOrEmpty(totalAmountRemittanceTxt.Text))
             {
                 totalAmountRemittanceTxt.Text = "0";
             }
-            if (string.IsNullOrEmpty(totalBalanceTxt.Text))
-            {
-                totalBalanceTxt.Text = "0";
-            }
-            else
-            {
-                result = Convert.ToDecimal(maturityValueTxt.Text) - Convert.ToDecimal(totalAmountRemittanceTxt.Text);
-                totalBalanceTxt.Text = String.Format("{0:N}", result);
-            }
-
+            
+            decimal remaining_balance;
+            decimal result;
+            remaining_balance = Convert.ToDecimal(maturityValueTxt.Text) - Convert.ToDecimal(totalAmountRemittanceTxt.Text);
+            result = Convert.ToDecimal(penaltyTxt.Text) + Convert.ToDecimal(remaining_balance);
+            totalBalanceTxt.Text = String.Format("{0:N}", result);
         }
 
         #endregion
