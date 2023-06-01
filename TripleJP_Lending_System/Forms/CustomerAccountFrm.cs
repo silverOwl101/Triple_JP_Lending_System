@@ -92,15 +92,15 @@ namespace TripleJP_Lending_System.Forms
 
         private void ColumnHeaderNames()
         {
-            dataGridView1.Columns[0].HeaderText = "Customer ID";
-            dataGridView1.Columns[1].HeaderText = "Customer Name";
-            dataGridView1.Columns[2].HeaderText = "Customer Address";
-            dataGridView1.Columns[3].HeaderText = "Contact Number";
-            dataGridView1.Columns[4].HeaderText = "Business Name";
-            dataGridView1.Columns[5].HeaderText = "Business Nature";
-            dataGridView1.Columns[6].HeaderText = "Business Address";
-            dataGridView1.Columns[7].HeaderText = "Gross Business Capital";
-            dataGridView1.Columns[8].HeaderText = "Average Daily Gross Sales";
+            customerDataGridView.Columns[0].HeaderText = "Customer ID";
+            customerDataGridView.Columns[1].HeaderText = "Customer Name";
+            customerDataGridView.Columns[2].HeaderText = "Customer Address";
+            customerDataGridView.Columns[3].HeaderText = "Contact Number";
+            customerDataGridView.Columns[4].HeaderText = "Business Name";
+            customerDataGridView.Columns[5].HeaderText = "Business Nature";
+            customerDataGridView.Columns[6].HeaderText = "Business Address";
+            customerDataGridView.Columns[7].HeaderText = "Gross Business Capital";
+            customerDataGridView.Columns[8].HeaderText = "Average Daily Gross Sales";
         }
 
         private void OpenAddCustomerFrm()
@@ -115,7 +115,7 @@ namespace TripleJP_Lending_System.Forms
             {
                 _getListCustomerAccountPresenter = new GetCustomerListPresenter(this);
                 _getListCustomerAccountPresenter.CallSearch();
-                dataGridView1.DataSource = _getListCustomerAccountPresenter.GetCustomerListData();
+                customerDataGridView.DataSource = _getListCustomerAccountPresenter.GetCustomerListData();
                 ColumnHeaderNames();
             } 
             catch (ArgumentNullException ex) when (ex.ParamName is "UserSearch")
@@ -124,14 +124,14 @@ namespace TripleJP_Lending_System.Forms
                 const string MessageCaption = "Enter Credentials";
                 MessageBox.Show(MessageContent, MessageCaption,
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                dataGridView1.DataSource = null;
+                customerDataGridView.DataSource = null;
             }
             catch (ArgumentException ex) when (ex.ParamName is "UserSearch")
             {
                 const string MessageContent = "Record not found, please contact your I.T officer if you think there is a problem to the system.";
                 const string MessageCaption = "Invalid Credentials";
                 MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                dataGridView1.DataSource = null;
+                customerDataGridView.DataSource = null;
             }
             catch (InvalidOperationException ex) when (ex.InnerException is MySqlException)
             {
@@ -144,15 +144,15 @@ namespace TripleJP_Lending_System.Forms
         }
         private void DisplayTextInForm()
         {
-            customerIdLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-            customerNameLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
-            customerAddressLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
-            contactNumberLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
-            businessNameLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
-            businessNatureLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
-            businessAddressLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value.ToString();
-            grossBusinessCapitalLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value.ToString();
-            averageDailyGrossSalesLabel.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
+            customerIdLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[0].Value.ToString();
+            customerNameLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[1].Value.ToString();
+            customerAddressLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[2].Value.ToString();
+            contactNumberLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[3].Value.ToString();
+            businessNameLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[4].Value.ToString();
+            businessNatureLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[5].Value.ToString();
+            businessAddressLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[6].Value.ToString();
+            grossBusinessCapitalLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[7].Value.ToString();
+            averageDailyGrossSalesLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[8].Value.ToString();
             editButton.Enabled = true;
         }
         public void ClearText()
@@ -201,7 +201,7 @@ namespace TripleJP_Lending_System.Forms
             ClearText();
             DisableEditButton();
             searchBoxtxt.Text = "";
-            dataGridView1.DataSource = null;
+            customerDataGridView.DataSource = null;
             OpenAddCustomerFrm();
         }
 
@@ -238,7 +238,7 @@ namespace TripleJP_Lending_System.Forms
             ClearText();
             DisableEditButton();
             searchBoxtxt.Text = "";
-            dataGridView1.DataSource = null;
+            customerDataGridView.DataSource = null;
 
             _concreteMediator = new ClassComponentConcreteMediator();
             _editCustomerFrmComponent = new EditCustomerFrmComponent(_concreteMediator);

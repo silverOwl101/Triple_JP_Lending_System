@@ -27,7 +27,7 @@ namespace TripleJP_Lending_System.Forms
         public AddCustomerFrm()
         {            
             InitializeComponent();
-            SubmitButton.Enabled = false;
+            submitButton.Enabled = false;
             ClearTextbox();            
         }
 
@@ -35,43 +35,43 @@ namespace TripleJP_Lending_System.Forms
 
         public string CustomerName 
         {
-            get { return CustomerNameTxt.Text; }
-            set { CustomerNameTxt.Text = value; }
+            get { return customerNameTxt.Text; }
+            set { customerNameTxt.Text = value; }
         }
         public string CustomerAddress
         {
-            get { return CustomerAddressTxt.Text; }
-            set { CustomerAddressTxt.Text = value; }
+            get { return customerAddressTxt.Text; }
+            set { customerAddressTxt.Text = value; }
         }
         public string ContactNumber
         {
-            get { return ContactNumberTxt.Text; }
-            set { ContactNumberTxt.Text = value; }
+            get { return contactNumberTxt.Text; }
+            set { contactNumberTxt.Text = value; }
         }
         public string BusinessName
         {
-            get { return BusinessAddressTxt.Text; }
-            set { BusinessAddressTxt.Text = value; }
+            get { return businessAddressTxt.Text; }
+            set { businessAddressTxt.Text = value; }
         }
         public string BusinessNature
         {
-            get { return BusinessNatureTxt.Text; }
-            set { BusinessNatureTxt.Text = value; }
+            get { return businessNatureTxt.Text; }
+            set { businessNatureTxt.Text = value; }
         }
         public string BusinessAddress
         {
-            get { return BusinessAddressTxt.Text; }
-            set { BusinessAddressTxt.Text = value; }
+            get { return businessAddressTxt.Text; }
+            set { businessAddressTxt.Text = value; }
         }
         public decimal GrossBusinessCapital
         {
-            get { return Convert.ToDecimal(GrossBusinessCapitalTxt.Text); }
-            set { GrossBusinessCapitalTxt.Text = value.ToString("G"); }
+            get { return Convert.ToDecimal(grossBusinessCapitalTxt.Text); }
+            set { grossBusinessCapitalTxt.Text = value.ToString("G"); }
         }
         public decimal AverageDailyGrossSales
         {
-            get { return Convert.ToDecimal(AverageDailyGrossSalesTxt.Text); }
-            set { AverageDailyGrossSalesTxt.Text = value.ToString("G"); }
+            get { return Convert.ToDecimal(averageDailyGrossSalesTxt.Text); }
+            set { averageDailyGrossSalesTxt.Text = value.ToString("G"); }
         }
 
         #endregion
@@ -128,7 +128,7 @@ namespace TripleJP_Lending_System.Forms
         {
             _frmInputRequirements = new FrmInputRequirements();
             _frmInputRequirements.InputNumbersOnly(e);
-            ContactNumberTxt.MaxLength = 14;
+            contactNumberTxt.MaxLength = 14;
         }
         private void ContactNumbertxt_Leave(object sender, EventArgs e)
         {
@@ -146,20 +146,20 @@ namespace TripleJP_Lending_System.Forms
         private void GrossBusinessCapitaltxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             _frmInputRequirements = new FrmInputRequirements();
-            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, GrossBusinessCapitalTxt);
-            GrossBusinessCapitalTxt.MaxLength = 14;            
+            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, grossBusinessCapitalTxt);
+            grossBusinessCapitalTxt.MaxLength = 14;            
             SubmitButtonDisable();            
         }
         private void GrossBusinessCapitaltxt_Leave(object sender, EventArgs e)
         {
             _frmConvertionRequirements = new FrmConvertionRequirements();
-            _frmConvertionRequirements.ConvertToNumberFormat(GrossBusinessCapitalTxt);
+            _frmConvertionRequirements.ConvertToNumberFormat(grossBusinessCapitalTxt);
             IsAllTextBoxNotEmpty();
         }
         private void GrossBusinessCapitaltxt_Enter(object sender, EventArgs e)
         {
             _frmConvertionRequirements = new FrmConvertionRequirements();
-            _frmConvertionRequirements.ConvertToGeneralFormat(GrossBusinessCapitalTxt);
+            _frmConvertionRequirements.ConvertToGeneralFormat(grossBusinessCapitalTxt);
         }
 
         #endregion
@@ -169,20 +169,20 @@ namespace TripleJP_Lending_System.Forms
         private void AverageDailyGrossSalestxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             _frmInputRequirements = new FrmInputRequirements();
-            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, AverageDailyGrossSalesTxt);
-            AverageDailyGrossSalesTxt.MaxLength = 14;
+            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, averageDailyGrossSalesTxt);
+            averageDailyGrossSalesTxt.MaxLength = 14;
             SubmitButtonDisable();
         }
         private void AverageDailyGrossSalestxt_Leave(object sender, EventArgs e)
         {
             _frmConvertionRequirements = new FrmConvertionRequirements();
-            _frmConvertionRequirements.ConvertToNumberFormat(AverageDailyGrossSalesTxt);
+            _frmConvertionRequirements.ConvertToNumberFormat(averageDailyGrossSalesTxt);
             IsAllTextBoxNotEmpty();
         }
         private void AverageDailyGrossSalestxt_Enter(object sender, EventArgs e)
         {
             _frmConvertionRequirements = new FrmConvertionRequirements();
-            _frmConvertionRequirements.ConvertToGeneralFormat(AverageDailyGrossSalesTxt);
+            _frmConvertionRequirements.ConvertToGeneralFormat(averageDailyGrossSalesTxt);
         }
 
         #endregion
@@ -260,25 +260,25 @@ namespace TripleJP_Lending_System.Forms
 
         private void ClearTextbox()
         {
-            CustomerNameTxt.Clear();
-            CustomerAddressTxt.Clear();
-            ContactNumberTxt.Clear();
-            BusinessNameTxt.Clear();
-            BusinessNatureTxt.Clear();
-            BusinessAddressTxt.Clear();
-            GrossBusinessCapitalTxt.Clear();
-            AverageDailyGrossSalesTxt.Clear();
+            customerNameTxt.Clear();
+            customerAddressTxt.Clear();
+            contactNumberTxt.Clear();
+            businessNameTxt.Clear();
+            businessNatureTxt.Clear();
+            businessAddressTxt.Clear();
+            grossBusinessCapitalTxt.Clear();
+            averageDailyGrossSalesTxt.Clear();
         }
 
         private void SubmitButtonDisable()
         {
-            SubmitButton.Enabled = false;
+            submitButton.Enabled = false;
         }
 
         private void IsAllTextBoxNotEmpty()
         {
             int count = 0;
-            foreach (Control item in groupBox1.Controls)
+            foreach (Control item in personalInformationGroupBox.Controls)
             {
                 if (item is TextBox)
                 {
@@ -290,11 +290,11 @@ namespace TripleJP_Lending_System.Forms
             }
             if (count == 8)
             {
-                SubmitButton.Enabled = true;
+                submitButton.Enabled = true;
             }
             else
             {
-                SubmitButton.Enabled = false;
+                submitButton.Enabled = false;
             }
         }
 

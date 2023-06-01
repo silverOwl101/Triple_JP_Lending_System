@@ -10,14 +10,14 @@ namespace TripleJP_Lending_System.FormMediator.Component
 {    
     internal class CollectionFrmComponent : IOpenComponent
     {
-        private CollectionFrm _collectionFrm;
+        private RemitAndPenaltyFrm _collectionFrm;
         public CollectionFrmComponent(IFormsMediator mediator)
         {
             mediator.Include(this);
         }
         public void Open()
         {
-            _collectionFrm = new CollectionFrm();
+            _collectionFrm = new RemitAndPenaltyFrm();
             _collectionFrm.ShowDialog();
         }
     }

@@ -20,46 +20,22 @@ namespace TripleJP_Lending_System.Forms
     public partial class AddLoanFrm : Form, IAddLoan
     {
         #region Fields
+
         private FrmConvertionRequirements _frmConvertionRequirements = new FrmConvertionRequirements();
-        private FrmInputRequirements _frmInputRequirements = new FrmInputRequirements();
+        private FrmInputRequirements frmInputRequirements = new FrmInputRequirements();
         private IFormsMediator _concreteMediator;
         private AddLoanFrmData _addLoanFrmData;
+
         #endregion
+
         public AddLoanFrm()
         {
             InitializeComponent();
-            onLoadData();            
+            OnLoadData();            
         }
-        #region Calculation Displays
-        private void maturityInterestDisplay()
-        {
-            decimal loan = Convert.ToDecimal(principalLoanTextBox.Text);
-            Computation comp = new Computation();
-            maturityInterestLabel.Text = String.Format("{0:N}", comp.MaturityInterest(loan));
-        }
-        private void maturityValueDisplay()
-        {
-            decimal loan = Convert.ToDecimal(principalLoanTextBox.Text);
-            Computation comp = new Computation();
-            decimal interest = Convert.ToDecimal(maturityInterestLabel.Text);
-            maturityValueLabel.Text = String.Format("{0:N}", comp.MaturityValue(interest, loan));
-        }
-        private void perRemittanceDisplay()
-        {
-            Computation comp = new Computation();
-            decimal _value = Convert.ToDecimal(maturityValueLabel.Text);
-            int duration = Convert.ToInt32(durationComboBox.Text);
-            perRemittanceLabel.Text = comp.PerRemittance(_value, duration).ToString();
-        }
-        private void maturityDate()
-        {
-            Computation comp = new Computation();
-            DateTime effectiveDate = EffectiveDateTimePicker.Value;
-            int duration = Convert.ToInt32(durationComboBox.Text);
-            maturityDateLabel.Text = comp.MaturityDate(effectiveDate, duration).ToString("MM-dd-yyyy");
-        }
-        #endregion
-        #region User input                                
+
+        #region User Inputs
+        
         public string CustomerID
         {
             get { return customerIdLabel.Text; }
@@ -77,8 +53,8 @@ namespace TripleJP_Lending_System.Forms
         }
         public DateTime EffectiveDate
         {
-            get { return EffectiveDateTimePicker.Value.Date; }
-            set { EffectiveDateTimePicker.Text = value.ToString(); }
+            get { return effectiveDateTimePicker.Value.Date; }
+            set { effectiveDateTimePicker.Text = value.ToString(); }
         }
         public decimal Interest
         {
@@ -95,13 +71,58 @@ namespace TripleJP_Lending_System.Forms
             get { return Convert.ToDecimal(penaltyComboBox.Text); }
             set { penaltyComboBox.Text = value.ToString(); }
         }
+
         #endregion
-        #region Calculate button events
-        private void button1_Click(object sender, EventArgs e)
+
+        #region Form Events
+
+        #region TextBoxes
+
+        #region PrincipalLoanTxt Events
+
+        private void PrincipalLoanTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, principalLoanTextBox);
+        }
+        private void PrincipalLoanTxt_Leave(object sender, EventArgs e)
+        {
+            _frmConvertionRequirements.ConvertToNumberFormat(principalLoanTextBox);
+        }
+        private void PrincipalLoanTxt_Enter(object sender, EventArgs e)
+        {
+            _frmConvertionRequirements.ConvertToGeneralFormat(principalLoanTextBox);
+        }
+        private void PrincipalLoanTextBox_TextChanged(object sender, EventArgs e)
+        {
+            SaveButtonDisable();
+            TextMask();
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Buttons
+
+        #region Save Button Events
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            AddLoanPresenter addLoanPresenter = new AddLoanPresenter(this);
+            addLoanPresenter.OnLoadData();
+            Close();
+        }
+
+        #endregion
+
+
+        #region Calculate Button Events
+
+        private void CalculateButton_Click(object sender, EventArgs e)
         {
             try
             {
-                displayCalculatedProperties();
+                DisplayCalculatedProperties();
             }
             catch (Exception)
             {
@@ -110,92 +131,118 @@ namespace TripleJP_Lending_System.Forms
                 ErrorMessage(message, messageCaption);
             }
         }
+
         #endregion
-        #region Save button events
-        private void button2_Click(object sender, EventArgs e)
+
+        #endregion
+
+        #region ComboBox
+
+        private void DurationComboBox_TextChanged(object sender, EventArgs e)
         {
-            AddLoanPresenter addLoanPresenter = new AddLoanPresenter(this);
-            addLoanPresenter.OnLoadData();
-            Close();
+            SaveButtonDisable();
+        }
+
+        private void InterestComboBox_TextChanged(object sender, EventArgs e)
+        {
+            SaveButtonDisable();
+        }
+
+        private void PenaltyComboBox_TextChanged(object sender, EventArgs e)
+        {
+            SaveButtonDisable();
+        }
+
+        private void PaymentTermComboBox_TextChanged(object sender, EventArgs e)
+        {
+            SaveButtonDisable();
+        }
+
+        #endregion
+
+        #region DateTimePicker
+
+        private void EffectiveDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            SaveButtonDisable();
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Custom Methods
+
+        #region Calculation Displays
+        private void MaturityInterestDisplay()
+        {
+            decimal loan = Convert.ToDecimal(principalLoanTextBox.Text);
+            Computation comp = new Computation();
+            maturityInterestLabel.Text = String.Format("{0:N}", comp.MaturityInterest(loan));
+        }
+        private void MaturityValueDisplay()
+        {
+            decimal loan = Convert.ToDecimal(principalLoanTextBox.Text);
+            Computation comp = new Computation();
+            decimal interest = Convert.ToDecimal(maturityInterestLabel.Text);
+            maturityValueLabel.Text = String.Format("{0:N}", comp.MaturityValue(interest, loan));
+        }
+        private void PerRemittanceDisplay()
+        {
+            Computation comp = new Computation();
+            decimal _value = Convert.ToDecimal(maturityValueLabel.Text);
+            int duration = Convert.ToInt32(durationComboBox.Text);
+            perRemittanceLabel.Text = comp.PerRemittance(_value, duration).ToString();
+        }
+        private void MaturityDate()
+        {
+            Computation comp = new Computation();
+            DateTime effectiveDate = effectiveDateTimePicker.Value;
+            int duration = Convert.ToInt32(durationComboBox.Text);
+            maturityDateLabel.Text = comp.MaturityDate(effectiveDate, duration).ToString("MM-dd-yyyy");
         }
         #endregion
-        #region Principal loan events
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, principalLoanTextBox);
-        }
-        private void textBox1_Leave(object sender, EventArgs e)
-        {            
-            _frmConvertionRequirements.ConvertToNumberFormat(principalLoanTextBox);            
-        }
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            _frmConvertionRequirements.ConvertToGeneralFormat(principalLoanTextBox);
-        }
-        #endregion
-        #region Other important methods
+
         private void ErrorMessage(string text, string messageCaption)
         {
             MessageBox.Show(text, messageCaption,
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        #endregion
-        private void onLoadData()
-        {            
+
+        private void OnLoadData()
+        {
             _concreteMediator = new ClassComponentConcreteMediator();
             _addLoanFrmData = new AddLoanFrmData(_concreteMediator);
             customerIdLabel.Text = _concreteMediator.GetData(_addLoanFrmData)[0];
             customerAddressLabel.Text = _concreteMediator.GetData(_addLoanFrmData)[1];
-            defaultProperties();
+            DefaultProperties();
         }
-        private void defaultProperties()
+        private void DefaultProperties()
         {
-            saveButton.Enabled = false;            
-            textMask();
+            saveButton.Enabled = false;
+            TextMask();
         }
-        private void textMask()
+        private void TextMask()
         {
             perRemittanceLabel.Text = "XXXX.XX";
             maturityValueLabel.Text = "XXXX.XX";
             maturityDateLabel.Text = "XXXX.XX";
             maturityInterestLabel.Text = "XXXX.XX";
         }
-        private void displayCalculatedProperties()
+        private void DisplayCalculatedProperties()
         {
-            maturityInterestDisplay();
-            maturityValueDisplay();
-            perRemittanceDisplay();
-            maturityDate();
+            MaturityInterestDisplay();
+            MaturityValueDisplay();
+            PerRemittanceDisplay();
+            MaturityDate();
             saveButton.Enabled = true;
         }
         private void SaveButtonDisable()
         {
             saveButton.Enabled = false;
         }
-        private void comboBox1_TextChanged(object sender, EventArgs e)
-        {
-            SaveButtonDisable();
-        }
-        private void comboBox2_TextChanged(object sender, EventArgs e)
-        {
-            SaveButtonDisable();
-        }
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            SaveButtonDisable();
-        }
-        private void comboBox4_TextChanged(object sender, EventArgs e)
-        {
-            SaveButtonDisable();
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            SaveButtonDisable();
-            textMask();            
-        }
-        private void comboBox6_TextChanged(object sender, EventArgs e)
-        {
-            SaveButtonDisable();
-        }
+
+        #endregion
+
     }
 }

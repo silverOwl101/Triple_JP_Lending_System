@@ -29,78 +29,78 @@ namespace TripleJP_Lending_System.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.loanInformationGroupBox = new System.Windows.Forms.GroupBox();
+            this.customerPenaltyGroupBox = new System.Windows.Forms.GroupBox();
             this.penaltyComboBox = new System.Windows.Forms.ComboBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.customerPrincipalLoanGroupBox = new System.Windows.Forms.GroupBox();
             this.principalLoanTextBox = new System.Windows.Forms.TextBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.customerInterestGroupBox = new System.Windows.Forms.GroupBox();
             this.interestComboBox = new System.Windows.Forms.ComboBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.EffectiveDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.customerEffectiveDateGroupBox = new System.Windows.Forms.GroupBox();
+            this.effectiveDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.customerDurationGroupBox = new System.Windows.Forms.GroupBox();
             this.durationComboBox = new System.Windows.Forms.ComboBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.customerPaymentTermGroupBox = new System.Windows.Forms.GroupBox();
             this.paymentTermComboBox = new System.Windows.Forms.ComboBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.customerIdGroupBox = new System.Windows.Forms.GroupBox();
             this.customerIdLabel = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.customerNameGroupBox = new System.Windows.Forms.GroupBox();
             this.customerAddressLabel = new System.Windows.Forms.Label();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.loanMaturityInformationGroupBox = new System.Windows.Forms.GroupBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.calculateButton = new System.Windows.Forms.Button();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.perRemittanceGroupBox = new System.Windows.Forms.GroupBox();
             this.perRemittanceLabel = new System.Windows.Forms.Label();
-            this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.maturityValueGroupBox = new System.Windows.Forms.GroupBox();
             this.maturityValueLabel = new System.Windows.Forms.Label();
-            this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.maturityDateGroupBox = new System.Windows.Forms.GroupBox();
             this.maturityDateLabel = new System.Windows.Forms.Label();
-            this.groupBox22 = new System.Windows.Forms.GroupBox();
+            this.maturityInterestGroupBox = new System.Windows.Forms.GroupBox();
             this.maturityInterestLabel = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            this.groupBox19.SuspendLayout();
-            this.groupBox20.SuspendLayout();
-            this.groupBox21.SuspendLayout();
-            this.groupBox22.SuspendLayout();
+            this.loanInformationGroupBox.SuspendLayout();
+            this.customerPenaltyGroupBox.SuspendLayout();
+            this.customerPrincipalLoanGroupBox.SuspendLayout();
+            this.customerInterestGroupBox.SuspendLayout();
+            this.customerEffectiveDateGroupBox.SuspendLayout();
+            this.customerDurationGroupBox.SuspendLayout();
+            this.customerPaymentTermGroupBox.SuspendLayout();
+            this.customerIdGroupBox.SuspendLayout();
+            this.customerNameGroupBox.SuspendLayout();
+            this.loanMaturityInformationGroupBox.SuspendLayout();
+            this.perRemittanceGroupBox.SuspendLayout();
+            this.maturityValueGroupBox.SuspendLayout();
+            this.maturityDateGroupBox.SuspendLayout();
+            this.maturityInterestGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // loanInformationGroupBox
             // 
-            this.groupBox1.Controls.Add(this.groupBox10);
-            this.groupBox1.Controls.Add(this.groupBox9);
-            this.groupBox1.Controls.Add(this.groupBox8);
-            this.groupBox1.Controls.Add(this.groupBox7);
-            this.groupBox1.Controls.Add(this.groupBox6);
-            this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(868, 323);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Loan Information";
+            this.loanInformationGroupBox.Controls.Add(this.customerPenaltyGroupBox);
+            this.loanInformationGroupBox.Controls.Add(this.customerPrincipalLoanGroupBox);
+            this.loanInformationGroupBox.Controls.Add(this.customerInterestGroupBox);
+            this.loanInformationGroupBox.Controls.Add(this.customerEffectiveDateGroupBox);
+            this.loanInformationGroupBox.Controls.Add(this.customerDurationGroupBox);
+            this.loanInformationGroupBox.Controls.Add(this.customerPaymentTermGroupBox);
+            this.loanInformationGroupBox.Controls.Add(this.customerIdGroupBox);
+            this.loanInformationGroupBox.Controls.Add(this.customerNameGroupBox);
+            this.loanInformationGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loanInformationGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.loanInformationGroupBox.Name = "loanInformationGroupBox";
+            this.loanInformationGroupBox.Size = new System.Drawing.Size(868, 323);
+            this.loanInformationGroupBox.TabIndex = 14;
+            this.loanInformationGroupBox.TabStop = false;
+            this.loanInformationGroupBox.Text = "Loan Information";
             // 
-            // groupBox10
+            // customerPenaltyGroupBox
             // 
-            this.groupBox10.Controls.Add(this.penaltyComboBox);
-            this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox10.Location = new System.Drawing.Point(435, 241);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(415, 62);
-            this.groupBox10.TabIndex = 6;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Penalty";
+            this.customerPenaltyGroupBox.Controls.Add(this.penaltyComboBox);
+            this.customerPenaltyGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerPenaltyGroupBox.Location = new System.Drawing.Point(435, 241);
+            this.customerPenaltyGroupBox.Name = "customerPenaltyGroupBox";
+            this.customerPenaltyGroupBox.Size = new System.Drawing.Size(415, 62);
+            this.customerPenaltyGroupBox.TabIndex = 6;
+            this.customerPenaltyGroupBox.TabStop = false;
+            this.customerPenaltyGroupBox.Text = "Penalty";
             // 
             // penaltyComboBox
             // 
@@ -112,18 +112,18 @@ namespace TripleJP_Lending_System.Forms
             this.penaltyComboBox.Name = "penaltyComboBox";
             this.penaltyComboBox.Size = new System.Drawing.Size(250, 23);
             this.penaltyComboBox.TabIndex = 6;
-            this.penaltyComboBox.TextChanged += new System.EventHandler(this.comboBox6_TextChanged);
+            this.penaltyComboBox.TextChanged += new System.EventHandler(this.PenaltyComboBox_TextChanged);
             // 
-            // groupBox9
+            // customerPrincipalLoanGroupBox
             // 
-            this.groupBox9.Controls.Add(this.principalLoanTextBox);
-            this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox9.Location = new System.Drawing.Point(14, 241);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(415, 62);
-            this.groupBox9.TabIndex = 5;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Principal Loan";
+            this.customerPrincipalLoanGroupBox.Controls.Add(this.principalLoanTextBox);
+            this.customerPrincipalLoanGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerPrincipalLoanGroupBox.Location = new System.Drawing.Point(14, 241);
+            this.customerPrincipalLoanGroupBox.Name = "customerPrincipalLoanGroupBox";
+            this.customerPrincipalLoanGroupBox.Size = new System.Drawing.Size(415, 62);
+            this.customerPrincipalLoanGroupBox.TabIndex = 5;
+            this.customerPrincipalLoanGroupBox.TabStop = false;
+            this.customerPrincipalLoanGroupBox.Text = "Principal Loan";
             // 
             // principalLoanTextBox
             // 
@@ -131,21 +131,21 @@ namespace TripleJP_Lending_System.Forms
             this.principalLoanTextBox.Name = "principalLoanTextBox";
             this.principalLoanTextBox.Size = new System.Drawing.Size(250, 22);
             this.principalLoanTextBox.TabIndex = 5;
-            this.principalLoanTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.principalLoanTextBox.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.principalLoanTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            this.principalLoanTextBox.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.principalLoanTextBox.TextChanged += new System.EventHandler(this.PrincipalLoanTextBox_TextChanged);
+            this.principalLoanTextBox.Enter += new System.EventHandler(this.PrincipalLoanTxt_Enter);
+            this.principalLoanTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrincipalLoanTxt_KeyPress);
+            this.principalLoanTextBox.Leave += new System.EventHandler(this.PrincipalLoanTxt_Leave);
             // 
-            // groupBox8
+            // customerInterestGroupBox
             // 
-            this.groupBox8.Controls.Add(this.interestComboBox);
-            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(435, 165);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(415, 70);
-            this.groupBox8.TabIndex = 4;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Interest";
+            this.customerInterestGroupBox.Controls.Add(this.interestComboBox);
+            this.customerInterestGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerInterestGroupBox.Location = new System.Drawing.Point(435, 165);
+            this.customerInterestGroupBox.Name = "customerInterestGroupBox";
+            this.customerInterestGroupBox.Size = new System.Drawing.Size(415, 70);
+            this.customerInterestGroupBox.TabIndex = 4;
+            this.customerInterestGroupBox.TabStop = false;
+            this.customerInterestGroupBox.Text = "Interest";
             // 
             // interestComboBox
             // 
@@ -157,39 +157,39 @@ namespace TripleJP_Lending_System.Forms
             this.interestComboBox.Name = "interestComboBox";
             this.interestComboBox.Size = new System.Drawing.Size(250, 23);
             this.interestComboBox.TabIndex = 4;
-            this.interestComboBox.TextChanged += new System.EventHandler(this.comboBox4_TextChanged);
+            this.interestComboBox.TextChanged += new System.EventHandler(this.InterestComboBox_TextChanged);
             // 
-            // groupBox7
+            // customerEffectiveDateGroupBox
             // 
-            this.groupBox7.Controls.Add(this.EffectiveDateTimePicker);
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(14, 165);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(415, 70);
-            this.groupBox7.TabIndex = 3;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Effective Date";
+            this.customerEffectiveDateGroupBox.Controls.Add(this.effectiveDateTimePicker);
+            this.customerEffectiveDateGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerEffectiveDateGroupBox.Location = new System.Drawing.Point(14, 165);
+            this.customerEffectiveDateGroupBox.Name = "customerEffectiveDateGroupBox";
+            this.customerEffectiveDateGroupBox.Size = new System.Drawing.Size(415, 70);
+            this.customerEffectiveDateGroupBox.TabIndex = 3;
+            this.customerEffectiveDateGroupBox.TabStop = false;
+            this.customerEffectiveDateGroupBox.Text = "Effective Date";
             // 
-            // EffectiveDateTimePicker
+            // effectiveDateTimePicker
             // 
-            this.EffectiveDateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EffectiveDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EffectiveDateTimePicker.Location = new System.Drawing.Point(80, 26);
-            this.EffectiveDateTimePicker.Name = "EffectiveDateTimePicker";
-            this.EffectiveDateTimePicker.Size = new System.Drawing.Size(250, 21);
-            this.EffectiveDateTimePicker.TabIndex = 3;
-            this.EffectiveDateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.effectiveDateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.effectiveDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.effectiveDateTimePicker.Location = new System.Drawing.Point(80, 26);
+            this.effectiveDateTimePicker.Name = "effectiveDateTimePicker";
+            this.effectiveDateTimePicker.Size = new System.Drawing.Size(250, 21);
+            this.effectiveDateTimePicker.TabIndex = 3;
+            this.effectiveDateTimePicker.ValueChanged += new System.EventHandler(this.EffectiveDateTimePicker_ValueChanged);
             // 
-            // groupBox6
+            // customerDurationGroupBox
             // 
-            this.groupBox6.Controls.Add(this.durationComboBox);
-            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(435, 93);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(415, 66);
-            this.groupBox6.TabIndex = 2;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Duration";
+            this.customerDurationGroupBox.Controls.Add(this.durationComboBox);
+            this.customerDurationGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerDurationGroupBox.Location = new System.Drawing.Point(435, 93);
+            this.customerDurationGroupBox.Name = "customerDurationGroupBox";
+            this.customerDurationGroupBox.Size = new System.Drawing.Size(415, 66);
+            this.customerDurationGroupBox.TabIndex = 2;
+            this.customerDurationGroupBox.TabStop = false;
+            this.customerDurationGroupBox.Text = "Duration";
             // 
             // durationComboBox
             // 
@@ -202,18 +202,18 @@ namespace TripleJP_Lending_System.Forms
             this.durationComboBox.Name = "durationComboBox";
             this.durationComboBox.Size = new System.Drawing.Size(250, 23);
             this.durationComboBox.TabIndex = 2;
-            this.durationComboBox.TextChanged += new System.EventHandler(this.comboBox2_TextChanged);
+            this.durationComboBox.TextChanged += new System.EventHandler(this.DurationComboBox_TextChanged);
             // 
-            // groupBox5
+            // customerPaymentTermGroupBox
             // 
-            this.groupBox5.Controls.Add(this.paymentTermComboBox);
-            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(14, 93);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(415, 66);
-            this.groupBox5.TabIndex = 1;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Payment Term";
+            this.customerPaymentTermGroupBox.Controls.Add(this.paymentTermComboBox);
+            this.customerPaymentTermGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerPaymentTermGroupBox.Location = new System.Drawing.Point(14, 93);
+            this.customerPaymentTermGroupBox.Name = "customerPaymentTermGroupBox";
+            this.customerPaymentTermGroupBox.Size = new System.Drawing.Size(415, 66);
+            this.customerPaymentTermGroupBox.TabIndex = 1;
+            this.customerPaymentTermGroupBox.TabStop = false;
+            this.customerPaymentTermGroupBox.Text = "Payment Term";
             // 
             // paymentTermComboBox
             // 
@@ -225,18 +225,18 @@ namespace TripleJP_Lending_System.Forms
             this.paymentTermComboBox.Name = "paymentTermComboBox";
             this.paymentTermComboBox.Size = new System.Drawing.Size(250, 23);
             this.paymentTermComboBox.TabIndex = 1;
-            this.paymentTermComboBox.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
+            this.paymentTermComboBox.TextChanged += new System.EventHandler(this.PaymentTermComboBox_TextChanged);
             // 
-            // groupBox4
+            // customerIdGroupBox
             // 
-            this.groupBox4.Controls.Add(this.customerIdLabel);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(14, 30);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(415, 57);
-            this.groupBox4.TabIndex = 19;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Customer ID";
+            this.customerIdGroupBox.Controls.Add(this.customerIdLabel);
+            this.customerIdGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerIdGroupBox.Location = new System.Drawing.Point(14, 30);
+            this.customerIdGroupBox.Name = "customerIdGroupBox";
+            this.customerIdGroupBox.Size = new System.Drawing.Size(415, 57);
+            this.customerIdGroupBox.TabIndex = 19;
+            this.customerIdGroupBox.TabStop = false;
+            this.customerIdGroupBox.Text = "Customer ID";
             // 
             // customerIdLabel
             // 
@@ -247,16 +247,16 @@ namespace TripleJP_Lending_System.Forms
             this.customerIdLabel.TabIndex = 0;
             this.customerIdLabel.Text = "customerNameLabel";
             // 
-            // groupBox3
+            // customerNameGroupBox
             // 
-            this.groupBox3.Controls.Add(this.customerAddressLabel);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(435, 30);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(415, 57);
-            this.groupBox3.TabIndex = 18;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Customer Name";
+            this.customerNameGroupBox.Controls.Add(this.customerAddressLabel);
+            this.customerNameGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerNameGroupBox.Location = new System.Drawing.Point(435, 30);
+            this.customerNameGroupBox.Name = "customerNameGroupBox";
+            this.customerNameGroupBox.Size = new System.Drawing.Size(415, 57);
+            this.customerNameGroupBox.TabIndex = 18;
+            this.customerNameGroupBox.TabStop = false;
+            this.customerNameGroupBox.Text = "Customer Name";
             // 
             // customerAddressLabel
             // 
@@ -267,21 +267,21 @@ namespace TripleJP_Lending_System.Forms
             this.customerAddressLabel.TabIndex = 0;
             this.customerAddressLabel.Text = "customerAddressLabel";
             // 
-            // groupBox12
+            // loanMaturityInformationGroupBox
             // 
-            this.groupBox12.Controls.Add(this.saveButton);
-            this.groupBox12.Controls.Add(this.calculateButton);
-            this.groupBox12.Controls.Add(this.groupBox19);
-            this.groupBox12.Controls.Add(this.groupBox20);
-            this.groupBox12.Controls.Add(this.groupBox21);
-            this.groupBox12.Controls.Add(this.groupBox22);
-            this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox12.Location = new System.Drawing.Point(12, 341);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(868, 229);
-            this.groupBox12.TabIndex = 22;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Loan Maturity Information";
+            this.loanMaturityInformationGroupBox.Controls.Add(this.saveButton);
+            this.loanMaturityInformationGroupBox.Controls.Add(this.calculateButton);
+            this.loanMaturityInformationGroupBox.Controls.Add(this.perRemittanceGroupBox);
+            this.loanMaturityInformationGroupBox.Controls.Add(this.maturityValueGroupBox);
+            this.loanMaturityInformationGroupBox.Controls.Add(this.maturityDateGroupBox);
+            this.loanMaturityInformationGroupBox.Controls.Add(this.maturityInterestGroupBox);
+            this.loanMaturityInformationGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loanMaturityInformationGroupBox.Location = new System.Drawing.Point(12, 341);
+            this.loanMaturityInformationGroupBox.Name = "loanMaturityInformationGroupBox";
+            this.loanMaturityInformationGroupBox.Size = new System.Drawing.Size(868, 229);
+            this.loanMaturityInformationGroupBox.TabIndex = 22;
+            this.loanMaturityInformationGroupBox.TabStop = false;
+            this.loanMaturityInformationGroupBox.Text = "Loan Maturity Information";
             // 
             // saveButton
             // 
@@ -292,7 +292,7 @@ namespace TripleJP_Lending_System.Forms
             this.saveButton.TabIndex = 8;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.button2_Click);
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // calculateButton
             // 
@@ -303,18 +303,18 @@ namespace TripleJP_Lending_System.Forms
             this.calculateButton.TabIndex = 7;
             this.calculateButton.Text = "Calculate";
             this.calculateButton.UseVisualStyleBackColor = true;
-            this.calculateButton.Click += new System.EventHandler(this.button1_Click);
+            this.calculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
-            // groupBox19
+            // perRemittanceGroupBox
             // 
-            this.groupBox19.Controls.Add(this.perRemittanceLabel);
-            this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox19.Location = new System.Drawing.Point(435, 93);
-            this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(415, 57);
-            this.groupBox19.TabIndex = 19;
-            this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "Per Remittance";
+            this.perRemittanceGroupBox.Controls.Add(this.perRemittanceLabel);
+            this.perRemittanceGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.perRemittanceGroupBox.Location = new System.Drawing.Point(435, 93);
+            this.perRemittanceGroupBox.Name = "perRemittanceGroupBox";
+            this.perRemittanceGroupBox.Size = new System.Drawing.Size(415, 57);
+            this.perRemittanceGroupBox.TabIndex = 19;
+            this.perRemittanceGroupBox.TabStop = false;
+            this.perRemittanceGroupBox.Text = "Per Remittance";
             // 
             // perRemittanceLabel
             // 
@@ -325,16 +325,16 @@ namespace TripleJP_Lending_System.Forms
             this.perRemittanceLabel.TabIndex = 0;
             this.perRemittanceLabel.Text = "perRemittanceTxt";
             // 
-            // groupBox20
+            // maturityValueGroupBox
             // 
-            this.groupBox20.Controls.Add(this.maturityValueLabel);
-            this.groupBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox20.Location = new System.Drawing.Point(435, 30);
-            this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(415, 57);
-            this.groupBox20.TabIndex = 19;
-            this.groupBox20.TabStop = false;
-            this.groupBox20.Text = "Maturity Value";
+            this.maturityValueGroupBox.Controls.Add(this.maturityValueLabel);
+            this.maturityValueGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maturityValueGroupBox.Location = new System.Drawing.Point(435, 30);
+            this.maturityValueGroupBox.Name = "maturityValueGroupBox";
+            this.maturityValueGroupBox.Size = new System.Drawing.Size(415, 57);
+            this.maturityValueGroupBox.TabIndex = 19;
+            this.maturityValueGroupBox.TabStop = false;
+            this.maturityValueGroupBox.Text = "Maturity Value";
             // 
             // maturityValueLabel
             // 
@@ -345,16 +345,16 @@ namespace TripleJP_Lending_System.Forms
             this.maturityValueLabel.TabIndex = 0;
             this.maturityValueLabel.Text = "maturityValueTxt";
             // 
-            // groupBox21
+            // maturityDateGroupBox
             // 
-            this.groupBox21.Controls.Add(this.maturityDateLabel);
-            this.groupBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox21.Location = new System.Drawing.Point(14, 93);
-            this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(415, 57);
-            this.groupBox21.TabIndex = 18;
-            this.groupBox21.TabStop = false;
-            this.groupBox21.Text = "Maturity Date";
+            this.maturityDateGroupBox.Controls.Add(this.maturityDateLabel);
+            this.maturityDateGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maturityDateGroupBox.Location = new System.Drawing.Point(14, 93);
+            this.maturityDateGroupBox.Name = "maturityDateGroupBox";
+            this.maturityDateGroupBox.Size = new System.Drawing.Size(415, 57);
+            this.maturityDateGroupBox.TabIndex = 18;
+            this.maturityDateGroupBox.TabStop = false;
+            this.maturityDateGroupBox.Text = "Maturity Date";
             // 
             // maturityDateLabel
             // 
@@ -365,16 +365,16 @@ namespace TripleJP_Lending_System.Forms
             this.maturityDateLabel.TabIndex = 0;
             this.maturityDateLabel.Text = "maturityDateTxt";
             // 
-            // groupBox22
+            // maturityInterestGroupBox
             // 
-            this.groupBox22.Controls.Add(this.maturityInterestLabel);
-            this.groupBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox22.Location = new System.Drawing.Point(14, 30);
-            this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(415, 57);
-            this.groupBox22.TabIndex = 17;
-            this.groupBox22.TabStop = false;
-            this.groupBox22.Text = "Maturity Interest";
+            this.maturityInterestGroupBox.Controls.Add(this.maturityInterestLabel);
+            this.maturityInterestGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maturityInterestGroupBox.Location = new System.Drawing.Point(14, 30);
+            this.maturityInterestGroupBox.Name = "maturityInterestGroupBox";
+            this.maturityInterestGroupBox.Size = new System.Drawing.Size(415, 57);
+            this.maturityInterestGroupBox.TabIndex = 17;
+            this.maturityInterestGroupBox.TabStop = false;
+            this.maturityInterestGroupBox.Text = "Maturity Interest";
             // 
             // maturityInterestLabel
             // 
@@ -390,64 +390,64 @@ namespace TripleJP_Lending_System.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(903, 588);
-            this.Controls.Add(this.groupBox12);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.loanMaturityInformationGroupBox);
+            this.Controls.Add(this.loanInformationGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AddLoanFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddLoanFrm";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox19.ResumeLayout(false);
-            this.groupBox19.PerformLayout();
-            this.groupBox20.ResumeLayout(false);
-            this.groupBox20.PerformLayout();
-            this.groupBox21.ResumeLayout(false);
-            this.groupBox21.PerformLayout();
-            this.groupBox22.ResumeLayout(false);
-            this.groupBox22.PerformLayout();
+            this.loanInformationGroupBox.ResumeLayout(false);
+            this.customerPenaltyGroupBox.ResumeLayout(false);
+            this.customerPrincipalLoanGroupBox.ResumeLayout(false);
+            this.customerPrincipalLoanGroupBox.PerformLayout();
+            this.customerInterestGroupBox.ResumeLayout(false);
+            this.customerEffectiveDateGroupBox.ResumeLayout(false);
+            this.customerDurationGroupBox.ResumeLayout(false);
+            this.customerPaymentTermGroupBox.ResumeLayout(false);
+            this.customerIdGroupBox.ResumeLayout(false);
+            this.customerIdGroupBox.PerformLayout();
+            this.customerNameGroupBox.ResumeLayout(false);
+            this.customerNameGroupBox.PerformLayout();
+            this.loanMaturityInformationGroupBox.ResumeLayout(false);
+            this.perRemittanceGroupBox.ResumeLayout(false);
+            this.perRemittanceGroupBox.PerformLayout();
+            this.maturityValueGroupBox.ResumeLayout(false);
+            this.maturityValueGroupBox.PerformLayout();
+            this.maturityDateGroupBox.ResumeLayout(false);
+            this.maturityDateGroupBox.PerformLayout();
+            this.maturityInterestGroupBox.ResumeLayout(false);
+            this.maturityInterestGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.GroupBox loanInformationGroupBox;
+        private System.Windows.Forms.GroupBox customerPenaltyGroupBox;
         private System.Windows.Forms.ComboBox penaltyComboBox;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox customerPrincipalLoanGroupBox;
+        private System.Windows.Forms.GroupBox customerInterestGroupBox;
         private System.Windows.Forms.ComboBox interestComboBox;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.DateTimePicker EffectiveDateTimePicker;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox customerEffectiveDateGroupBox;
+        private System.Windows.Forms.DateTimePicker effectiveDateTimePicker;
+        private System.Windows.Forms.GroupBox customerDurationGroupBox;
         private System.Windows.Forms.ComboBox durationComboBox;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox customerPaymentTermGroupBox;
         private System.Windows.Forms.ComboBox paymentTermComboBox;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox customerIdGroupBox;
         private System.Windows.Forms.Label customerIdLabel;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox customerNameGroupBox;
         private System.Windows.Forms.Label customerAddressLabel;
-        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.GroupBox loanMaturityInformationGroupBox;
         private System.Windows.Forms.Button calculateButton;
-        private System.Windows.Forms.GroupBox groupBox19;
+        private System.Windows.Forms.GroupBox perRemittanceGroupBox;
         private System.Windows.Forms.Label perRemittanceLabel;
-        private System.Windows.Forms.GroupBox groupBox20;
+        private System.Windows.Forms.GroupBox maturityValueGroupBox;
         private System.Windows.Forms.Label maturityValueLabel;
-        private System.Windows.Forms.GroupBox groupBox21;
+        private System.Windows.Forms.GroupBox maturityDateGroupBox;
         private System.Windows.Forms.Label maturityDateLabel;
-        private System.Windows.Forms.GroupBox groupBox22;
+        private System.Windows.Forms.GroupBox maturityInterestGroupBox;
         private System.Windows.Forms.Label maturityInterestLabel;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.TextBox principalLoanTextBox;
