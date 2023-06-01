@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,9 +76,7 @@ namespace TripleJP_Lending_System.Forms
             reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             reportViewer1.ZoomMode = ZoomMode.PageWidth;
 
-            const string REPORT_SOURCE 
-                        = @"C:\Exxxcube files\Triple_JP_Lending_System-main\"+
-                          @"TripleJPMVPLibrary\ReportDefinitions\CollectionSummaryReport.rdlc";
+            string REPORT_SOURCE = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "TripleJPMVPLibrary", "ReportDefinitions", "CollectionSummaryReport.rdlc");
 
             reportViewer1.LocalReport.ReportPath = REPORT_SOURCE;
             reportViewer1.LocalReport.DataSources.Add(rds);
@@ -100,9 +99,8 @@ namespace TripleJP_Lending_System.Forms
 
                 reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
                 reportViewer1.ZoomMode = ZoomMode.PageWidth;
-                const string REPORT_SOURCE
-                            = @"C:\Exxxcube files\Triple_JP_Lending_System-main" +
-                              @"\TripleJPMVPLibrary\ReportDefinitions\CollectionDetailReport.rdlc";
+                string REPORT_SOURCE = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "TripleJPMVPLibrary", "ReportDefinitions", "CollectionDetailReport.rdlc");
+
                 reportViewer1.LocalReport.ReportPath = REPORT_SOURCE;
                 reportViewer1.LocalReport.DataSources.Add(rdsLoanInformationRpt);
                 reportViewer1.LocalReport.DataSources.Add(rdsCollectionRpt);
