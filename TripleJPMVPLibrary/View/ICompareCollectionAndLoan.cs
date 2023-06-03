@@ -9,6 +9,6 @@ namespace TripleJPMVPLibrary.View
     public interface ICompareCollectionAndLoan
     {
         decimal CollectionTotalAmount { get; set; }
-        decimal LoanTotalAmount { get; set; }
+        //decimal LoanTotalAmount { get; set; }
     }
 }

@@ -137,6 +137,8 @@ C:\Triple_JP_Lending_System-main\Triple_JP_Lending_System-main\TripleJP_Lending_
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\bin\Debug\x86\SqlServerSpatial160.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\bin\Debug\x64\SqlServerSpatial160.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.exe.config
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.exe.manifest
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.application
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.exe
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.pdb
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\bin\Debug\BouncyCastle.Cryptography.dll
@@ -239,7 +241,7 @@ C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debu
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.csproj.SuggestedBindingRedirects.cache
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Forms.AddCustomerFrm.resources
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Forms.AddLoanFrm.resources
-C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Forms.CollectionFrm.resources
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Forms.RemitAndPenaltyFrm.resources
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Forms.CustomerAccountFrm.resources
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Forms.CustomerListLoanFrm.resources
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Forms.EditCustomerFrm.resources
@@ -252,10 +254,8 @@ C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debu
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.Properties.Resources.resources
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.csproj.GenerateResource.cache
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.csproj.CoreCompileInputs.cache
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.exe.manifest
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.application
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.csproj.CopyComplete
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.exe
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.pdb
-C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.exe.manifest
-C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\bin\Debug\TripleJP_Lending_System.application
-C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.exe.manifest
-C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.application

@@ -294,6 +294,7 @@ namespace TripleJP_Lending_System.Forms
             dataGridView1.Columns[2].HeaderText = "Customer Name";
             dataGridView1.Columns[3].HeaderText = "Payment Term";
             dataGridView1.Columns[5].HeaderText = "Effective Date";
+            dataGridView1.Columns[6].HeaderText = "Interest Rate";
             dataGridView1.Columns[7].HeaderText = "Principal Loan";
         }
 
@@ -309,24 +310,27 @@ namespace TripleJP_Lending_System.Forms
 
         private void DisplayDataInForm()
         {
+            decimal rate;
             loanIdTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
             customerIdTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
             customerNameTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
             paymentTermTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
             durationTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
             effectiveDateTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
-            interestTxt.Text = String.Format("{0:P}", dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value);
+            rate = Convert.ToDecimal(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value)/100;
+            interestTxt.Text = String.Format("{0:0%}", rate);
             principalLoanTxt.Text = String.Format("{0:N}", dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value);            
             statusTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
-            totalAmountRemittanceTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[9].Value.ToString();
-            penaltyTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value.ToString();
+            totalAmountRemittanceTxt.Text = String.Format("{0:N}", dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[9].Value);
+            penaltyTxt.Text = String.Format("{0:N}", dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value);
         }
 
         private void MaturityInterestDisplay()
         {
             decimal loan = Convert.ToDecimal(principalLoanTxt.Text);
             Computation comp = new Computation();
-            maturityInterestTxt.Text = String.Format("{0:N}", comp.MaturityInterest(loan));
+            decimal interestRate = Convert.ToDecimal(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value);
+            maturityInterestTxt.Text = String.Format("{0:N}", comp.MaturityInterest(loan, interestRate));
         }
         private void MaturityValueDisplay()
         {
@@ -362,8 +366,8 @@ namespace TripleJP_Lending_System.Forms
             
             decimal remaining_balance;
             decimal result;
-            remaining_balance = Convert.ToDecimal(maturityValueTxt.Text) - Convert.ToDecimal(totalAmountRemittanceTxt.Text);
-            result = Convert.ToDecimal(penaltyTxt.Text) + Convert.ToDecimal(remaining_balance);
+            remaining_balance = Convert.ToDecimal(totalAmountRemittanceTxt.Text) - Convert.ToDecimal(maturityValueTxt.Text);
+            result = Convert.ToDecimal(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value) + Convert.ToDecimal(remaining_balance);
             totalBalanceTxt.Text = String.Format("{0:N}", result);
         }
 

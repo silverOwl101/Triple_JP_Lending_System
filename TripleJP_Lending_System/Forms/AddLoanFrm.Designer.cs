@@ -83,10 +83,12 @@ namespace TripleJP_Lending_System.Forms
             this.loanInformationGroupBox.Controls.Add(this.customerPaymentTermGroupBox);
             this.loanInformationGroupBox.Controls.Add(this.customerIdGroupBox);
             this.loanInformationGroupBox.Controls.Add(this.customerNameGroupBox);
-            this.loanInformationGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loanInformationGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.loanInformationGroupBox.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loanInformationGroupBox.Location = new System.Drawing.Point(16, 15);
+            this.loanInformationGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.loanInformationGroupBox.Name = "loanInformationGroupBox";
-            this.loanInformationGroupBox.Size = new System.Drawing.Size(868, 323);
+            this.loanInformationGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.loanInformationGroupBox.Size = new System.Drawing.Size(1157, 398);
             this.loanInformationGroupBox.TabIndex = 14;
             this.loanInformationGroupBox.TabStop = false;
             this.loanInformationGroupBox.Text = "Loan Information";
@@ -94,42 +96,48 @@ namespace TripleJP_Lending_System.Forms
             // customerPenaltyGroupBox
             // 
             this.customerPenaltyGroupBox.Controls.Add(this.penaltyComboBox);
-            this.customerPenaltyGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerPenaltyGroupBox.Location = new System.Drawing.Point(435, 241);
+            this.customerPenaltyGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerPenaltyGroupBox.Location = new System.Drawing.Point(580, 297);
+            this.customerPenaltyGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.customerPenaltyGroupBox.Name = "customerPenaltyGroupBox";
-            this.customerPenaltyGroupBox.Size = new System.Drawing.Size(415, 62);
+            this.customerPenaltyGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.customerPenaltyGroupBox.Size = new System.Drawing.Size(553, 76);
             this.customerPenaltyGroupBox.TabIndex = 6;
             this.customerPenaltyGroupBox.TabStop = false;
             this.customerPenaltyGroupBox.Text = "Penalty";
             // 
             // penaltyComboBox
             // 
-            this.penaltyComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.penaltyComboBox.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.penaltyComboBox.FormattingEnabled = true;
             this.penaltyComboBox.Items.AddRange(new object[] {
             "0"});
-            this.penaltyComboBox.Location = new System.Drawing.Point(98, 21);
+            this.penaltyComboBox.Location = new System.Drawing.Point(131, 26);
+            this.penaltyComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.penaltyComboBox.Name = "penaltyComboBox";
-            this.penaltyComboBox.Size = new System.Drawing.Size(250, 23);
+            this.penaltyComboBox.Size = new System.Drawing.Size(332, 34);
             this.penaltyComboBox.TabIndex = 6;
             this.penaltyComboBox.TextChanged += new System.EventHandler(this.PenaltyComboBox_TextChanged);
             // 
             // customerPrincipalLoanGroupBox
             // 
             this.customerPrincipalLoanGroupBox.Controls.Add(this.principalLoanTextBox);
-            this.customerPrincipalLoanGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerPrincipalLoanGroupBox.Location = new System.Drawing.Point(14, 241);
+            this.customerPrincipalLoanGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerPrincipalLoanGroupBox.Location = new System.Drawing.Point(19, 297);
+            this.customerPrincipalLoanGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.customerPrincipalLoanGroupBox.Name = "customerPrincipalLoanGroupBox";
-            this.customerPrincipalLoanGroupBox.Size = new System.Drawing.Size(415, 62);
+            this.customerPrincipalLoanGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.customerPrincipalLoanGroupBox.Size = new System.Drawing.Size(553, 76);
             this.customerPrincipalLoanGroupBox.TabIndex = 5;
             this.customerPrincipalLoanGroupBox.TabStop = false;
             this.customerPrincipalLoanGroupBox.Text = "Principal Loan";
             // 
             // principalLoanTextBox
             // 
-            this.principalLoanTextBox.Location = new System.Drawing.Point(80, 26);
+            this.principalLoanTextBox.Location = new System.Drawing.Point(107, 32);
+            this.principalLoanTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.principalLoanTextBox.Name = "principalLoanTextBox";
-            this.principalLoanTextBox.Size = new System.Drawing.Size(250, 22);
+            this.principalLoanTextBox.Size = new System.Drawing.Size(332, 33);
             this.principalLoanTextBox.TabIndex = 5;
             this.principalLoanTextBox.TextChanged += new System.EventHandler(this.PrincipalLoanTextBox_TextChanged);
             this.principalLoanTextBox.Enter += new System.EventHandler(this.PrincipalLoanTxt_Enter);
@@ -139,33 +147,39 @@ namespace TripleJP_Lending_System.Forms
             // customerInterestGroupBox
             // 
             this.customerInterestGroupBox.Controls.Add(this.interestComboBox);
-            this.customerInterestGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerInterestGroupBox.Location = new System.Drawing.Point(435, 165);
+            this.customerInterestGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerInterestGroupBox.Location = new System.Drawing.Point(580, 203);
+            this.customerInterestGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.customerInterestGroupBox.Name = "customerInterestGroupBox";
-            this.customerInterestGroupBox.Size = new System.Drawing.Size(415, 70);
+            this.customerInterestGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.customerInterestGroupBox.Size = new System.Drawing.Size(553, 86);
             this.customerInterestGroupBox.TabIndex = 4;
             this.customerInterestGroupBox.TabStop = false;
             this.customerInterestGroupBox.Text = "Interest";
             // 
             // interestComboBox
             // 
-            this.interestComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.interestComboBox.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.interestComboBox.FormattingEnabled = true;
             this.interestComboBox.Items.AddRange(new object[] {
-            "20"});
-            this.interestComboBox.Location = new System.Drawing.Point(98, 21);
+            "20",
+            "30"});
+            this.interestComboBox.Location = new System.Drawing.Point(131, 31);
+            this.interestComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.interestComboBox.Name = "interestComboBox";
-            this.interestComboBox.Size = new System.Drawing.Size(250, 23);
+            this.interestComboBox.Size = new System.Drawing.Size(332, 34);
             this.interestComboBox.TabIndex = 4;
             this.interestComboBox.TextChanged += new System.EventHandler(this.InterestComboBox_TextChanged);
             // 
             // customerEffectiveDateGroupBox
             // 
             this.customerEffectiveDateGroupBox.Controls.Add(this.effectiveDateTimePicker);
-            this.customerEffectiveDateGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerEffectiveDateGroupBox.Location = new System.Drawing.Point(14, 165);
+            this.customerEffectiveDateGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerEffectiveDateGroupBox.Location = new System.Drawing.Point(19, 203);
+            this.customerEffectiveDateGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.customerEffectiveDateGroupBox.Name = "customerEffectiveDateGroupBox";
-            this.customerEffectiveDateGroupBox.Size = new System.Drawing.Size(415, 70);
+            this.customerEffectiveDateGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.customerEffectiveDateGroupBox.Size = new System.Drawing.Size(553, 86);
             this.customerEffectiveDateGroupBox.TabIndex = 3;
             this.customerEffectiveDateGroupBox.TabStop = false;
             this.customerEffectiveDateGroupBox.Text = "Effective Date";
@@ -173,67 +187,76 @@ namespace TripleJP_Lending_System.Forms
             // effectiveDateTimePicker
             // 
             this.effectiveDateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.effectiveDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.effectiveDateTimePicker.Location = new System.Drawing.Point(80, 26);
+            this.effectiveDateTimePicker.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.effectiveDateTimePicker.Location = new System.Drawing.Point(107, 32);
+            this.effectiveDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.effectiveDateTimePicker.Name = "effectiveDateTimePicker";
-            this.effectiveDateTimePicker.Size = new System.Drawing.Size(250, 21);
+            this.effectiveDateTimePicker.Size = new System.Drawing.Size(332, 30);
             this.effectiveDateTimePicker.TabIndex = 3;
             this.effectiveDateTimePicker.ValueChanged += new System.EventHandler(this.EffectiveDateTimePicker_ValueChanged);
             // 
             // customerDurationGroupBox
             // 
             this.customerDurationGroupBox.Controls.Add(this.durationComboBox);
-            this.customerDurationGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerDurationGroupBox.Location = new System.Drawing.Point(435, 93);
+            this.customerDurationGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerDurationGroupBox.Location = new System.Drawing.Point(580, 114);
+            this.customerDurationGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.customerDurationGroupBox.Name = "customerDurationGroupBox";
-            this.customerDurationGroupBox.Size = new System.Drawing.Size(415, 66);
+            this.customerDurationGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.customerDurationGroupBox.Size = new System.Drawing.Size(553, 81);
             this.customerDurationGroupBox.TabIndex = 2;
             this.customerDurationGroupBox.TabStop = false;
             this.customerDurationGroupBox.Text = "Duration";
             // 
             // durationComboBox
             // 
-            this.durationComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.durationComboBox.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.durationComboBox.FormattingEnabled = true;
             this.durationComboBox.Items.AddRange(new object[] {
             "30",
             "60"});
-            this.durationComboBox.Location = new System.Drawing.Point(98, 21);
+            this.durationComboBox.Location = new System.Drawing.Point(131, 26);
+            this.durationComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.durationComboBox.Name = "durationComboBox";
-            this.durationComboBox.Size = new System.Drawing.Size(250, 23);
+            this.durationComboBox.Size = new System.Drawing.Size(332, 34);
             this.durationComboBox.TabIndex = 2;
             this.durationComboBox.TextChanged += new System.EventHandler(this.DurationComboBox_TextChanged);
             // 
             // customerPaymentTermGroupBox
             // 
             this.customerPaymentTermGroupBox.Controls.Add(this.paymentTermComboBox);
-            this.customerPaymentTermGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerPaymentTermGroupBox.Location = new System.Drawing.Point(14, 93);
+            this.customerPaymentTermGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerPaymentTermGroupBox.Location = new System.Drawing.Point(19, 114);
+            this.customerPaymentTermGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.customerPaymentTermGroupBox.Name = "customerPaymentTermGroupBox";
-            this.customerPaymentTermGroupBox.Size = new System.Drawing.Size(415, 66);
+            this.customerPaymentTermGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.customerPaymentTermGroupBox.Size = new System.Drawing.Size(553, 81);
             this.customerPaymentTermGroupBox.TabIndex = 1;
             this.customerPaymentTermGroupBox.TabStop = false;
             this.customerPaymentTermGroupBox.Text = "Payment Term";
             // 
             // paymentTermComboBox
             // 
-            this.paymentTermComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentTermComboBox.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.paymentTermComboBox.FormattingEnabled = true;
             this.paymentTermComboBox.Items.AddRange(new object[] {
             "Daily"});
-            this.paymentTermComboBox.Location = new System.Drawing.Point(80, 26);
+            this.paymentTermComboBox.Location = new System.Drawing.Point(107, 32);
+            this.paymentTermComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.paymentTermComboBox.Name = "paymentTermComboBox";
-            this.paymentTermComboBox.Size = new System.Drawing.Size(250, 23);
+            this.paymentTermComboBox.Size = new System.Drawing.Size(332, 34);
             this.paymentTermComboBox.TabIndex = 1;
             this.paymentTermComboBox.TextChanged += new System.EventHandler(this.PaymentTermComboBox_TextChanged);
             // 
             // customerIdGroupBox
             // 
             this.customerIdGroupBox.Controls.Add(this.customerIdLabel);
-            this.customerIdGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerIdGroupBox.Location = new System.Drawing.Point(14, 30);
+            this.customerIdGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerIdGroupBox.Location = new System.Drawing.Point(19, 37);
+            this.customerIdGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.customerIdGroupBox.Name = "customerIdGroupBox";
-            this.customerIdGroupBox.Size = new System.Drawing.Size(415, 57);
+            this.customerIdGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.customerIdGroupBox.Size = new System.Drawing.Size(553, 70);
             this.customerIdGroupBox.TabIndex = 19;
             this.customerIdGroupBox.TabStop = false;
             this.customerIdGroupBox.Text = "Customer ID";
@@ -241,19 +264,22 @@ namespace TripleJP_Lending_System.Forms
             // customerIdLabel
             // 
             this.customerIdLabel.AutoSize = true;
-            this.customerIdLabel.Location = new System.Drawing.Point(76, 23);
+            this.customerIdLabel.Location = new System.Drawing.Point(101, 28);
+            this.customerIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.customerIdLabel.Name = "customerIdLabel";
-            this.customerIdLabel.Size = new System.Drawing.Size(133, 16);
+            this.customerIdLabel.Size = new System.Drawing.Size(191, 30);
             this.customerIdLabel.TabIndex = 0;
             this.customerIdLabel.Text = "customerNameLabel";
             // 
             // customerNameGroupBox
             // 
             this.customerNameGroupBox.Controls.Add(this.customerAddressLabel);
-            this.customerNameGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerNameGroupBox.Location = new System.Drawing.Point(435, 30);
+            this.customerNameGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerNameGroupBox.Location = new System.Drawing.Point(580, 37);
+            this.customerNameGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.customerNameGroupBox.Name = "customerNameGroupBox";
-            this.customerNameGroupBox.Size = new System.Drawing.Size(415, 57);
+            this.customerNameGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.customerNameGroupBox.Size = new System.Drawing.Size(553, 70);
             this.customerNameGroupBox.TabIndex = 18;
             this.customerNameGroupBox.TabStop = false;
             this.customerNameGroupBox.Text = "Customer Name";
@@ -261,9 +287,10 @@ namespace TripleJP_Lending_System.Forms
             // customerAddressLabel
             // 
             this.customerAddressLabel.AutoSize = true;
-            this.customerAddressLabel.Location = new System.Drawing.Point(94, 23);
+            this.customerAddressLabel.Location = new System.Drawing.Point(125, 28);
+            this.customerAddressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.customerAddressLabel.Name = "customerAddressLabel";
-            this.customerAddressLabel.Size = new System.Drawing.Size(147, 16);
+            this.customerAddressLabel.Size = new System.Drawing.Size(207, 30);
             this.customerAddressLabel.TabIndex = 0;
             this.customerAddressLabel.Text = "customerAddressLabel";
             // 
@@ -275,31 +302,35 @@ namespace TripleJP_Lending_System.Forms
             this.loanMaturityInformationGroupBox.Controls.Add(this.maturityValueGroupBox);
             this.loanMaturityInformationGroupBox.Controls.Add(this.maturityDateGroupBox);
             this.loanMaturityInformationGroupBox.Controls.Add(this.maturityInterestGroupBox);
-            this.loanMaturityInformationGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loanMaturityInformationGroupBox.Location = new System.Drawing.Point(12, 341);
+            this.loanMaturityInformationGroupBox.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loanMaturityInformationGroupBox.Location = new System.Drawing.Point(16, 420);
+            this.loanMaturityInformationGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.loanMaturityInformationGroupBox.Name = "loanMaturityInformationGroupBox";
-            this.loanMaturityInformationGroupBox.Size = new System.Drawing.Size(868, 229);
+            this.loanMaturityInformationGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.loanMaturityInformationGroupBox.Size = new System.Drawing.Size(1157, 282);
             this.loanMaturityInformationGroupBox.TabIndex = 22;
             this.loanMaturityInformationGroupBox.TabStop = false;
             this.loanMaturityInformationGroupBox.Text = "Loan Maturity Information";
             // 
             // saveButton
             // 
-            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.Location = new System.Drawing.Point(643, 168);
+            this.saveButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.Location = new System.Drawing.Point(857, 207);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(94, 46);
+            this.saveButton.Size = new System.Drawing.Size(125, 57);
             this.saveButton.TabIndex = 8;
-            this.saveButton.Text = "Save";
+            this.saveButton.Text = "Submit";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // calculateButton
             // 
-            this.calculateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculateButton.Location = new System.Drawing.Point(756, 167);
+            this.calculateButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calculateButton.Location = new System.Drawing.Point(1008, 206);
+            this.calculateButton.Margin = new System.Windows.Forms.Padding(4);
             this.calculateButton.Name = "calculateButton";
-            this.calculateButton.Size = new System.Drawing.Size(94, 46);
+            this.calculateButton.Size = new System.Drawing.Size(125, 57);
             this.calculateButton.TabIndex = 7;
             this.calculateButton.Text = "Calculate";
             this.calculateButton.UseVisualStyleBackColor = true;
@@ -308,10 +339,12 @@ namespace TripleJP_Lending_System.Forms
             // perRemittanceGroupBox
             // 
             this.perRemittanceGroupBox.Controls.Add(this.perRemittanceLabel);
-            this.perRemittanceGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.perRemittanceGroupBox.Location = new System.Drawing.Point(435, 93);
+            this.perRemittanceGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.perRemittanceGroupBox.Location = new System.Drawing.Point(580, 114);
+            this.perRemittanceGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.perRemittanceGroupBox.Name = "perRemittanceGroupBox";
-            this.perRemittanceGroupBox.Size = new System.Drawing.Size(415, 57);
+            this.perRemittanceGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.perRemittanceGroupBox.Size = new System.Drawing.Size(553, 70);
             this.perRemittanceGroupBox.TabIndex = 19;
             this.perRemittanceGroupBox.TabStop = false;
             this.perRemittanceGroupBox.Text = "Per Remittance";
@@ -319,19 +352,22 @@ namespace TripleJP_Lending_System.Forms
             // perRemittanceLabel
             // 
             this.perRemittanceLabel.AutoSize = true;
-            this.perRemittanceLabel.Location = new System.Drawing.Point(60, 23);
+            this.perRemittanceLabel.Location = new System.Drawing.Point(80, 28);
+            this.perRemittanceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.perRemittanceLabel.Name = "perRemittanceLabel";
-            this.perRemittanceLabel.Size = new System.Drawing.Size(113, 16);
+            this.perRemittanceLabel.Size = new System.Drawing.Size(162, 30);
             this.perRemittanceLabel.TabIndex = 0;
             this.perRemittanceLabel.Text = "perRemittanceTxt";
             // 
             // maturityValueGroupBox
             // 
             this.maturityValueGroupBox.Controls.Add(this.maturityValueLabel);
-            this.maturityValueGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maturityValueGroupBox.Location = new System.Drawing.Point(435, 30);
+            this.maturityValueGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maturityValueGroupBox.Location = new System.Drawing.Point(580, 37);
+            this.maturityValueGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.maturityValueGroupBox.Name = "maturityValueGroupBox";
-            this.maturityValueGroupBox.Size = new System.Drawing.Size(415, 57);
+            this.maturityValueGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.maturityValueGroupBox.Size = new System.Drawing.Size(553, 70);
             this.maturityValueGroupBox.TabIndex = 19;
             this.maturityValueGroupBox.TabStop = false;
             this.maturityValueGroupBox.Text = "Maturity Value";
@@ -339,19 +375,22 @@ namespace TripleJP_Lending_System.Forms
             // maturityValueLabel
             // 
             this.maturityValueLabel.AutoSize = true;
-            this.maturityValueLabel.Location = new System.Drawing.Point(60, 23);
+            this.maturityValueLabel.Location = new System.Drawing.Point(80, 28);
+            this.maturityValueLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.maturityValueLabel.Name = "maturityValueLabel";
-            this.maturityValueLabel.Size = new System.Drawing.Size(106, 16);
+            this.maturityValueLabel.Size = new System.Drawing.Size(156, 30);
             this.maturityValueLabel.TabIndex = 0;
             this.maturityValueLabel.Text = "maturityValueTxt";
             // 
             // maturityDateGroupBox
             // 
             this.maturityDateGroupBox.Controls.Add(this.maturityDateLabel);
-            this.maturityDateGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maturityDateGroupBox.Location = new System.Drawing.Point(14, 93);
+            this.maturityDateGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maturityDateGroupBox.Location = new System.Drawing.Point(19, 114);
+            this.maturityDateGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.maturityDateGroupBox.Name = "maturityDateGroupBox";
-            this.maturityDateGroupBox.Size = new System.Drawing.Size(415, 57);
+            this.maturityDateGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.maturityDateGroupBox.Size = new System.Drawing.Size(553, 70);
             this.maturityDateGroupBox.TabIndex = 18;
             this.maturityDateGroupBox.TabStop = false;
             this.maturityDateGroupBox.Text = "Maturity Date";
@@ -359,19 +398,22 @@ namespace TripleJP_Lending_System.Forms
             // maturityDateLabel
             // 
             this.maturityDateLabel.AutoSize = true;
-            this.maturityDateLabel.Location = new System.Drawing.Point(60, 23);
+            this.maturityDateLabel.Location = new System.Drawing.Point(80, 28);
+            this.maturityDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.maturityDateLabel.Name = "maturityDateLabel";
-            this.maturityDateLabel.Size = new System.Drawing.Size(100, 16);
+            this.maturityDateLabel.Size = new System.Drawing.Size(148, 30);
             this.maturityDateLabel.TabIndex = 0;
             this.maturityDateLabel.Text = "maturityDateTxt";
             // 
             // maturityInterestGroupBox
             // 
             this.maturityInterestGroupBox.Controls.Add(this.maturityInterestLabel);
-            this.maturityInterestGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maturityInterestGroupBox.Location = new System.Drawing.Point(14, 30);
+            this.maturityInterestGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maturityInterestGroupBox.Location = new System.Drawing.Point(19, 37);
+            this.maturityInterestGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.maturityInterestGroupBox.Name = "maturityInterestGroupBox";
-            this.maturityInterestGroupBox.Size = new System.Drawing.Size(415, 57);
+            this.maturityInterestGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.maturityInterestGroupBox.Size = new System.Drawing.Size(553, 70);
             this.maturityInterestGroupBox.TabIndex = 17;
             this.maturityInterestGroupBox.TabStop = false;
             this.maturityInterestGroupBox.Text = "Maturity Interest";
@@ -379,20 +421,22 @@ namespace TripleJP_Lending_System.Forms
             // maturityInterestLabel
             // 
             this.maturityInterestLabel.AutoSize = true;
-            this.maturityInterestLabel.Location = new System.Drawing.Point(60, 23);
+            this.maturityInterestLabel.Location = new System.Drawing.Point(80, 28);
+            this.maturityInterestLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.maturityInterestLabel.Name = "maturityInterestLabel";
-            this.maturityInterestLabel.Size = new System.Drawing.Size(114, 16);
+            this.maturityInterestLabel.Size = new System.Drawing.Size(172, 30);
             this.maturityInterestLabel.TabIndex = 0;
             this.maturityInterestLabel.Text = "maturityInterestTxt";
             // 
             // AddLoanFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 588);
+            this.ClientSize = new System.Drawing.Size(1204, 724);
             this.Controls.Add(this.loanMaturityInformationGroupBox);
             this.Controls.Add(this.loanInformationGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddLoanFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddLoanFrm";

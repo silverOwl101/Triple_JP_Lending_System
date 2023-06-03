@@ -178,7 +178,8 @@ namespace TripleJP_Lending_System.Forms
         {
             decimal loan = Convert.ToDecimal(principalLoanTextBox.Text);
             Computation comp = new Computation();
-            maturityInterestLabel.Text = String.Format("{0:N}", comp.MaturityInterest(loan));
+            decimal interestRate = Convert.ToDecimal(interestComboBox.Text);
+            maturityInterestLabel.Text = String.Format("{0:N}", comp.MaturityInterest(loan, interestRate));
         }
         private void MaturityValueDisplay()
         {
@@ -208,7 +209,6 @@ namespace TripleJP_Lending_System.Forms
             MessageBox.Show(text, messageCaption,
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
         private void OnLoadData()
         {
             _concreteMediator = new ClassComponentConcreteMediator();

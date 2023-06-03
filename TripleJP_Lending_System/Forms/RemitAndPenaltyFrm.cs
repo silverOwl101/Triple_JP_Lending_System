@@ -27,6 +27,7 @@ namespace TripleJP_Lending_System.Forms
         private CollectionFrmPresenter _collectionFrmPresenter;
         private string _loanId;
         private string _customerName;
+        private decimal _loanTotalAmount;
 
         #endregion
 
@@ -59,15 +60,7 @@ namespace TripleJP_Lending_System.Forms
         {
             get { return Convert.ToDecimal(remitAmountTextBox.Text); }
             set { remitAmountTextBox.Text = value.ToString(); }
-        }
-        public decimal CollectionTotalAmount
-        {
-            get; set;
-        }
-        public decimal LoanTotalAmount
-        {
-            get; set;
-        }
+        }      
 
         #endregion
 
@@ -82,6 +75,12 @@ namespace TripleJP_Lending_System.Forms
         {
             get { return Convert.ToDecimal(penaltyAmountTextBox.Text); }
             set { penaltyAmountTextBox.Text = value.ToString(); }
+        }
+
+        public decimal CollectionTotalAmount
+        {
+            get;
+            set;
         }
 
         #endregion
@@ -171,12 +170,11 @@ namespace TripleJP_Lending_System.Forms
             _collectionFrmData = new CollectionFrmData(_concreteMediator);
 
             _loanId = _concreteMediator.GetData(_collectionFrmData)[0];// get Loan Id
-            _customerName = _concreteMediator.GetData(_collectionFrmData)[1];// get Customer Name
-            LoanTotalAmount = Convert.ToDecimal(_concreteMediator.GetData(_collectionFrmData)[2]);// get total loan
-            CollectionTotalAmount = Convert.ToDecimal(_concreteMediator.GetData(_collectionFrmData)[3]); // get total collection
-
+            _customerName = _concreteMediator.GetData(_collectionFrmData)[1];// get Customer Name                       
+            _loanTotalAmount = Convert.ToDecimal(_concreteMediator.GetData(_collectionFrmData)[2]);// get Loan Total Amount
             loanIdlabel.Text = _loanId;
             customerNameLabel.Text = _customerName;
+            CollectionTotalAmount = _loanTotalAmount;
         }
 
         private void LoadAddCollectionCondition()

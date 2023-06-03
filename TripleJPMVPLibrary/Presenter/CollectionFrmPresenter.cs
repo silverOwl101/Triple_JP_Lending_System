@@ -13,20 +13,19 @@ namespace TripleJPMVPLibrary.Presenter
     {
         private IAddCollection _addCollection;
         private IAddPenalty _addPenalty;
-        private ICompareCollectionAndLoan _compareCollectionAndLoan;
+        private ICompareCollectionAndLoan _compareCollection;
         private CollectionService _collectionService;        
         private Collection _collection;
         private Penalty _penalty;
         private Customer _customer = new Customer();
         private Loan _loan;
 
-        public CollectionFrmPresenter(  IAddCollection addCollection, 
-                                        ICompareCollectionAndLoan compareCollectionAndLoan,
+        public CollectionFrmPresenter(  IAddCollection addCollection, ICompareCollectionAndLoan collection,
                                         IAddPenalty addPenalty)
         {
             _addCollection = addCollection;
             _addPenalty = addPenalty;
-            _compareCollectionAndLoan = compareCollectionAndLoan;
+            _compareCollection = collection;
         }
         
         private void InitLoanInstance()
@@ -51,19 +50,21 @@ namespace TripleJPMVPLibrary.Presenter
         public bool AddCollection() 
         {
             InitLoanInstance();
+            _collectionService = new CollectionService();            
 
             _collection = new Collection
             {
                 Date = _addCollection.Date,
                 Amount = _addCollection.Amount
             };
-
-            decimal totalAmountFinal = _compareCollectionAndLoan.CollectionTotalAmount + _addCollection.Amount;
-            if (totalAmountFinal < _compareCollectionAndLoan.LoanTotalAmount)
+            
+            decimal collectedAmount = _collectionService.GetCollection(_loan);
+            decimal totalAmountFinal = collectedAmount + _addCollection.Amount;
+            if (totalAmountFinal <= _compareCollection.CollectionTotalAmount)
             {
-                _collectionService = new CollectionService();
+                
                 _collectionService.AddCollection(_collection, _customer, _loan);
-                if (_compareCollectionAndLoan.LoanTotalAmount ==
+                if (_compareCollection.CollectionTotalAmount ==
                                               totalAmountFinal) //check if amount is fully paid
                 {
                     isFullyPaid(_loan);

@@ -10,12 +10,10 @@ using TripleJPUtilityLibrary.DataSource;
 namespace TripleJPMVPLibrary.Repository
 {
     internal class LogInRepo
-    {
-        string ConnectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"]
-                                  .ConnectionString;
+    {        
         internal bool CheckRecord(string username, string password)
         {
-            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {               
                 con.Open();
                 const string SqlQuery = "Select username, password from user_system_account where username = @Username and password = @Password";

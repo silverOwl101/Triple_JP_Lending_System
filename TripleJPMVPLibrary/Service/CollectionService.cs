@@ -100,5 +100,15 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Task Invalid ", ex);
             }
         }
+        public decimal GetCollection(Loan loan)
+        {
+            _loanInformationRepo = new LoanInformationRepo();
+            _collectionRepo = new CollectionRepo();
+            _customerLoanInfo = _loanInformationRepo.GetLoanInformation(loan);
+            loan.Id = _customerLoanInfo.Id;
+            loan.Uid = Guid.Parse(_loanInformationRepo.GetGuid(loan));
+
+            return _collectionRepo.GetTotalCollection(loan);
+        }
     }
 }

@@ -12,15 +12,13 @@ using TripleJPUtilityLibrary.DataSource;
 namespace TripleJPMVPLibrary.Repository
 {
     class PostingRepo
-    {
-        string ConnectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"]
-                                  .ConnectionString;
+    {        
         internal List<GetPostingInfo> GetPostingList(Customer customer)
         {
             GetPostingInfo getCustomerList;
             List<GetPostingInfo> customerList = new List<GetPostingInfo>();
 
-            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 const string Query = "sp_getPostingList";
 

@@ -11,16 +11,14 @@ using System.Configuration;
 namespace TripleJPMVPLibrary.Repository
 {
     internal class LoanInformationRepo
-    {
-        string ConnectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"]
-                                  .ConnectionString;
+    {        
         internal List<GetCustomerLoanInformation> GetLoanInformation(Customer customer)
         {
 
             GetCustomerLoanInformation getLoanInformation = null;
             List<GetCustomerLoanInformation> loanList = new List<GetCustomerLoanInformation>();
 
-            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 const string Query = "sp_getLoanInformation";
 
@@ -48,7 +46,7 @@ namespace TripleJPMVPLibrary.Repository
                             PaymentTerm = reader["Payment Term"].ToString(),
                             Duration = Convert.ToInt32(reader["Duration"].ToString()),
                             EffectiveDate = Convert.ToDateTime(reader["Effective Date"]).ToString("MM-dd-yyyy"),
-                            Interest = Convert.ToDecimal(reader["Interest"].ToString()),
+                            Interest = Convert.ToDecimal(reader["Interest Rate"].ToString()),
                             PrincipalLoan = Convert.ToDecimal(reader["Principal Loan"].ToString()),                            
                             Status = reader["Status"].ToString(),
                             CollectedAmount = reader["Total Remmited Amount"].ToString(),
@@ -66,7 +64,7 @@ namespace TripleJPMVPLibrary.Repository
         {
             GetCustomerLoanInformation getLoanInformation = null;            
 
-            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 const string Query = "sp_getLoanInformationUsingLoanId";
 
@@ -92,7 +90,7 @@ namespace TripleJPMVPLibrary.Repository
                             PaymentTerm = reader["PaymentTerm"].ToString(),
                             Duration = Convert.ToInt32(reader["Duration"].ToString()),
                             EffectiveDate = Convert.ToDateTime(reader["EffectiveDate"]).ToString("MM-dd-yyyy"),
-                            Interest = Convert.ToDecimal(reader["Interest"].ToString()),
+                            Interest = Convert.ToDecimal(reader["Interest Rate"].ToString()),
                             PrincipalLoan = Convert.ToDecimal(reader["PrincipalLoan"].ToString()),                            
                             Status = reader["Status"].ToString(),
                             CollectedAmount = reader["Amount"].ToString()
@@ -111,7 +109,7 @@ namespace TripleJPMVPLibrary.Repository
             GetCollectionAndPenalty getCollectionAndPenalty;
             List<GetCollectionAndPenalty> collectionAndPenaltyList = new List<GetCollectionAndPenalty>();
 
-            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 const string Query = "sp_getCollectionAndPenalty";
                 MySqlCommand cmd = new MySqlCommand(Query, con);
@@ -143,7 +141,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         public void InsertData(Loan loan)
         {
-            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 const string customerInfoQuery = "sp_insertLoan";
                 MySqlCommand cmd = new MySqlCommand(customerInfoQuery, con);
@@ -180,7 +178,7 @@ namespace TripleJPMVPLibrary.Repository
             bool rslt = false;
             try
             {
-                using (MySqlConnection con = new MySqlConnection(ConnectionString))
+                using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
                 {
                     const string customerInfoQuery = "sp_isLoanUnpaid";
                     MySqlCommand cmd = new MySqlCommand(customerInfoQuery, con);
@@ -212,7 +210,7 @@ namespace TripleJPMVPLibrary.Repository
         {
             string guid = null;
 
-            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 const string Query = "sp_getLoanGuid";
 
@@ -241,7 +239,7 @@ namespace TripleJPMVPLibrary.Repository
         internal decimal GetReleasedAmount(Loan loan)
         {
             decimal releasedAmount = 0;
-            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 const string Query = "sp_getReleasedAmount";
 

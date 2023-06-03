@@ -12,12 +12,10 @@ using TripleJPUtilityLibrary.DataSource;
 namespace TripleJPMVPLibrary.Repository
 {
     internal class CollectionRepo
-    {
-        string ConnectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"]
-                                  .ConnectionString;
+    {        
         internal void InsertCollection(Collection collection, Customer customer, Loan loan)
         {
-            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 const string storedProcedure = "sp_insertCollection";
                 con.Open();
@@ -49,7 +47,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal void InsertPenalty (Penalty penalty, Customer customer, Loan loan)
         {
-            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 const string storedProcedure = "sp_insertPenalty";
                 con.Open();
@@ -81,7 +79,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal void LoanFullyPaidUpdate(Loan loan)
         {
-            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 const string Query = "sp_updateLoanStatus";
 
@@ -98,7 +96,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal bool IsDuplicateUid(Guid uid)
         {
-            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 con.Open();
                 const string SqlQuery = "select Uid from collection where Uid = @uId";
@@ -120,7 +118,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal bool IsDuplicateId(string id)
         {
-            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
             {
                 con.Open();
                 const string SqlQuery = "select Id from collection where Id = @Id";
@@ -139,6 +137,33 @@ namespace TripleJPMVPLibrary.Repository
                     }
                 }
             }
+        }
+        internal decimal GetTotalCollection(Loan loan)
+        {
+            decimal total = 0;
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            {
+                const string Query = "sp_getTotalCollection";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.Parameters.AddWithValue("@loanUID", loan.Uid);
+                cmd.Parameters["@loanUID"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        total = Convert.ToDecimal(reader["Total Collection"].ToString());
+                    }
+                }
+            }
+            return total;
         }
     }
 }
