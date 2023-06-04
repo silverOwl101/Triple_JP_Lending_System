@@ -80,7 +80,7 @@ namespace TripleJP_Lending_System.Forms
             SearchBoxTxt.Text = "";
             ClearText();
             //check if ledgerButton, dataGridView1 and searchFilterGroupBox is enabled
-            if (ledgerButton.Enabled && dataGridView1.Enabled && searchFilterGroupBox.Enabled)
+            if (dataGridView1.Enabled && searchFilterGroupBox.Enabled)
             {
                 DisabledControls();
             }
@@ -92,7 +92,7 @@ namespace TripleJP_Lending_System.Forms
 
         private void DataGridView1_Enter(object sender, EventArgs e)
         {
-            ledgerButton.Enabled = true;
+            //ledgerButton.Enabled = true;
             generateAccountStatementButton.Enabled = true;
         }
 
@@ -212,11 +212,12 @@ namespace TripleJP_Lending_System.Forms
             perRemittanceTxt.Text = "";
             totalAmountRemittanceTxt.Text = "";
             totalBalanceTxt.Text = "";
+            totalLoanPenaltyAdded.Text = "";
         }
 
         private void DisabledControls()
         {
-            ledgerButton.Enabled = false;
+            //ledgerButton.Enabled = false;
             dataGridView1.Enabled = false;
             searchFilterGroupBox.Enabled = false;
             generateAccountStatementButton.Enabled = false;
@@ -238,7 +239,7 @@ namespace TripleJP_Lending_System.Forms
                     const string MessageCaption = "Invalid Credentials";
                     MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                    if (ledgerButton.Enabled && dataGridView1.Enabled && searchFilterGroupBox.Enabled)
+                    if (dataGridView1.Enabled && searchFilterGroupBox.Enabled)
                     {
                         ClearText();
                         dataGridView1.DataSource = null;
@@ -365,9 +366,13 @@ namespace TripleJP_Lending_System.Forms
             }
             
             decimal remaining_balance;
-            decimal result;
+            decimal result;            
+
+            totalLoanPenaltyAdded.Text = 
+                Convert.ToString(Convert.ToDecimal(penaltyTxt.Text) + 
+                Convert.ToDecimal(maturityValueTxt.Text));
             remaining_balance = Convert.ToDecimal(totalAmountRemittanceTxt.Text) - Convert.ToDecimal(maturityValueTxt.Text);
-            result = Convert.ToDecimal(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value) + Convert.ToDecimal(remaining_balance);
+            result = Convert.ToDecimal(totalLoanPenaltyAdded.Text) - Convert.ToDecimal(totalAmountRemittanceTxt.Text);
             totalBalanceTxt.Text = String.Format("{0:N}", result);
         }
 

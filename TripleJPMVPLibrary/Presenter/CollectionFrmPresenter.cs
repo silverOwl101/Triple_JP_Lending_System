@@ -59,13 +59,15 @@ namespace TripleJPMVPLibrary.Presenter
             };
             
             decimal collectedAmount = _collectionService.GetCollection(_loan);
+            decimal totalPenaltyAmount = _collectionService.GetPenalty(_loan);
+
             decimal totalAmountFinal = collectedAmount + _addCollection.Amount;
-            if (totalAmountFinal <= _compareCollection.CollectionTotalAmount)
+            decimal totalLoanFinal = _compareCollection.CollectionTotalAmount + totalPenaltyAmount;
+            if (totalAmountFinal <= totalLoanFinal)
             {
                 
                 _collectionService.AddCollection(_collection, _customer, _loan);
-                if (_compareCollection.CollectionTotalAmount ==
-                                              totalAmountFinal) //check if amount is fully paid
+                if (totalLoanFinal == totalAmountFinal) //check if amount is fully paid
                 {
                     isFullyPaid(_loan);
                 }

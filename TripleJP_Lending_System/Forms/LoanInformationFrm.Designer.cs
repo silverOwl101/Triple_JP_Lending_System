@@ -74,8 +74,9 @@ namespace TripleJP_Lending_System.Forms
             this.badDebtCheckBox = new System.Windows.Forms.CheckBox();
             this.fullyPaidCheckBox = new System.Windows.Forms.CheckBox();
             this.unPaidCheckBox = new System.Windows.Forms.CheckBox();
-            this.ledgerButton = new System.Windows.Forms.Button();
             this.generateAccountStatementButton = new System.Windows.Forms.Button();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.totalLoanPenaltyAdded = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
@@ -97,6 +98,7 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.searchFilterGroupBox.SuspendLayout();
+            this.groupBox15.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -113,9 +115,9 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 42);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1158, 438);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
@@ -126,9 +128,9 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox11.Controls.Add(this.statusTxt);
             this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox11.Location = new System.Drawing.Point(580, 348);
-            this.groupBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox11.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox11.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox11.Size = new System.Drawing.Size(552, 70);
             this.groupBox11.TabIndex = 20;
             this.groupBox11.TabStop = false;
@@ -149,9 +151,9 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox10.Controls.Add(this.penaltyTxt);
             this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.Location = new System.Drawing.Point(19, 348);
-            this.groupBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox10.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox10.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox10.Size = new System.Drawing.Size(552, 70);
             this.groupBox10.TabIndex = 20;
             this.groupBox10.TabStop = false;
@@ -172,9 +174,9 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox9.Controls.Add(this.principalLoanTxt);
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.Location = new System.Drawing.Point(580, 270);
-            this.groupBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox9.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox9.Size = new System.Drawing.Size(552, 70);
             this.groupBox9.TabIndex = 19;
             this.groupBox9.TabStop = false;
@@ -195,9 +197,9 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox8.Controls.Add(this.interestTxt);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(19, 270);
-            this.groupBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox8.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox8.Size = new System.Drawing.Size(552, 70);
             this.groupBox8.TabIndex = 19;
             this.groupBox8.TabStop = false;
@@ -218,9 +220,9 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox7.Controls.Add(this.effectiveDateTxt);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(580, 192);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox7.Size = new System.Drawing.Size(552, 70);
             this.groupBox7.TabIndex = 19;
             this.groupBox7.TabStop = false;
@@ -241,9 +243,9 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox6.Controls.Add(this.durationTxt);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(19, 192);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox6.Size = new System.Drawing.Size(552, 70);
             this.groupBox6.TabIndex = 19;
             this.groupBox6.TabStop = false;
@@ -264,9 +266,9 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox5.Controls.Add(this.paymentTermTxt);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(580, 114);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox5.Size = new System.Drawing.Size(552, 70);
             this.groupBox5.TabIndex = 19;
             this.groupBox5.TabStop = false;
@@ -287,9 +289,9 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox4.Controls.Add(this.customerIdTxt);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(580, 38);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(552, 70);
             this.groupBox4.TabIndex = 19;
             this.groupBox4.TabStop = false;
@@ -310,9 +312,9 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox3.Controls.Add(this.customerNameTxt);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(19, 114);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(552, 70);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
@@ -333,9 +335,9 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox2.Controls.Add(this.loanIdTxt);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(19, 38);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(552, 70);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
@@ -359,7 +361,6 @@ namespace TripleJP_Lending_System.Forms
             this.newToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1729, 28);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
@@ -373,6 +374,7 @@ namespace TripleJP_Lending_System.Forms
             // 
             // groupBox12
             // 
+            this.groupBox12.Controls.Add(this.groupBox15);
             this.groupBox12.Controls.Add(this.groupBox13);
             this.groupBox12.Controls.Add(this.groupBox14);
             this.groupBox12.Controls.Add(this.groupBox19);
@@ -381,10 +383,10 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox12.Controls.Add(this.groupBox22);
             this.groupBox12.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox12.Location = new System.Drawing.Point(16, 488);
-            this.groupBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox12.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox12.Size = new System.Drawing.Size(1158, 299);
+            this.groupBox12.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox12.Size = new System.Drawing.Size(1158, 358);
             this.groupBox12.TabIndex = 21;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Loan Maturity Information";
@@ -393,10 +395,10 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.groupBox13.Controls.Add(this.totalBalanceTxt);
             this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox13.Location = new System.Drawing.Point(580, 192);
-            this.groupBox13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox13.Location = new System.Drawing.Point(580, 274);
+            this.groupBox13.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox13.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox13.Size = new System.Drawing.Size(552, 70);
             this.groupBox13.TabIndex = 21;
             this.groupBox13.TabStop = false;
@@ -416,10 +418,10 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.groupBox14.Controls.Add(this.totalAmountRemittanceTxt);
             this.groupBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox14.Location = new System.Drawing.Point(19, 192);
-            this.groupBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox14.Location = new System.Drawing.Point(580, 192);
+            this.groupBox14.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox14.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox14.Size = new System.Drawing.Size(552, 70);
             this.groupBox14.TabIndex = 20;
             this.groupBox14.TabStop = false;
@@ -439,10 +441,10 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.groupBox19.Controls.Add(this.perRemittanceTxt);
             this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox19.Location = new System.Drawing.Point(580, 114);
-            this.groupBox19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox19.Location = new System.Drawing.Point(19, 192);
+            this.groupBox19.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox19.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox19.Size = new System.Drawing.Size(552, 70);
             this.groupBox19.TabIndex = 19;
             this.groupBox19.TabStop = false;
@@ -463,9 +465,9 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox20.Controls.Add(this.maturityValueTxt);
             this.groupBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox20.Location = new System.Drawing.Point(580, 38);
-            this.groupBox20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox20.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox20.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox20.Size = new System.Drawing.Size(552, 70);
             this.groupBox20.TabIndex = 19;
             this.groupBox20.TabStop = false;
@@ -486,9 +488,9 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox21.Controls.Add(this.maturityDateTxt);
             this.groupBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox21.Location = new System.Drawing.Point(19, 114);
-            this.groupBox21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox21.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox21.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox21.Size = new System.Drawing.Size(552, 70);
             this.groupBox21.TabIndex = 18;
             this.groupBox21.TabStop = false;
@@ -509,9 +511,9 @@ namespace TripleJP_Lending_System.Forms
             this.groupBox22.Controls.Add(this.maturityInterestTxt);
             this.groupBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox22.Location = new System.Drawing.Point(19, 38);
-            this.groupBox22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox22.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox22.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox22.Size = new System.Drawing.Size(552, 70);
             this.groupBox22.TabIndex = 17;
             this.groupBox22.TabStop = false;
@@ -542,7 +544,7 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.SearchBoxTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBoxTxt.Location = new System.Drawing.Point(1269, 52);
-            this.SearchBoxTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchBoxTxt.Margin = new System.Windows.Forms.Padding(4);
             this.SearchBoxTxt.Name = "SearchBoxTxt";
             this.SearchBoxTxt.Size = new System.Drawing.Size(439, 27);
             this.SearchBoxTxt.TabIndex = 1;
@@ -573,7 +575,7 @@ namespace TripleJP_Lending_System.Forms
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(1208, 94);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 50;
@@ -637,40 +639,49 @@ namespace TripleJP_Lending_System.Forms
             this.unPaidCheckBox.UseVisualStyleBackColor = true;
             this.unPaidCheckBox.CheckedChanged += new System.EventHandler(this.UnpaidCheckBox_CheckedChanged);
             // 
-            // ledgerButton
-            // 
-            this.ledgerButton.Enabled = false;
-            this.ledgerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ledgerButton.Location = new System.Drawing.Point(1208, 708);
-            this.ledgerButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ledgerButton.Name = "ledgerButton";
-            this.ledgerButton.Size = new System.Drawing.Size(242, 79);
-            this.ledgerButton.TabIndex = 6;
-            this.ledgerButton.Text = "Show Ledger";
-            this.ledgerButton.UseVisualStyleBackColor = true;
-            this.ledgerButton.Click += new System.EventHandler(this.LedgerButton_Click);
-            // 
             // generateAccountStatementButton
             // 
             this.generateAccountStatementButton.Enabled = false;
             this.generateAccountStatementButton.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generateAccountStatementButton.Location = new System.Drawing.Point(1458, 708);
-            this.generateAccountStatementButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.generateAccountStatementButton.Location = new System.Drawing.Point(1208, 708);
+            this.generateAccountStatementButton.Margin = new System.Windows.Forms.Padding(4);
             this.generateAccountStatementButton.Name = "generateAccountStatementButton";
-            this.generateAccountStatementButton.Size = new System.Drawing.Size(251, 79);
+            this.generateAccountStatementButton.Size = new System.Drawing.Size(501, 79);
             this.generateAccountStatementButton.TabIndex = 25;
             this.generateAccountStatementButton.Text = "Generate Account Statement";
             this.generateAccountStatementButton.UseVisualStyleBackColor = true;
             this.generateAccountStatementButton.Click += new System.EventHandler(this.generateAccountStatementButton_Click);
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.totalLoanPenaltyAdded);
+            this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox15.Location = new System.Drawing.Point(579, 114);
+            this.groupBox15.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox15.Size = new System.Drawing.Size(552, 70);
+            this.groupBox15.TabIndex = 19;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Total Loan Amount (Penalty Added)";
+            // 
+            // totalLoanPenaltyAdded
+            // 
+            this.totalLoanPenaltyAdded.AutoSize = true;
+            this.totalLoanPenaltyAdded.Location = new System.Drawing.Point(80, 28);
+            this.totalLoanPenaltyAdded.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totalLoanPenaltyAdded.Name = "totalLoanPenaltyAdded";
+            this.totalLoanPenaltyAdded.Size = new System.Drawing.Size(180, 20);
+            this.totalLoanPenaltyAdded.TabIndex = 0;
+            this.totalLoanPenaltyAdded.Text = "totalLoanPenaltyAdded";
             // 
             // LoanInformationFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1729, 804);
+            this.ClientSize = new System.Drawing.Size(1729, 859);
             this.Controls.Add(this.generateAccountStatementButton);
-            this.Controls.Add(this.ledgerButton);
             this.Controls.Add(this.searchFilterGroupBox);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.SearchBoxTxt);
@@ -680,7 +691,7 @@ namespace TripleJP_Lending_System.Forms
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoanInformationFrm";
@@ -725,6 +736,8 @@ namespace TripleJP_Lending_System.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.searchFilterGroupBox.ResumeLayout(false);
             this.searchFilterGroupBox.PerformLayout();
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -775,7 +788,8 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.CheckBox badDebtCheckBox;
         private System.Windows.Forms.CheckBox fullyPaidCheckBox;
         private System.Windows.Forms.CheckBox unPaidCheckBox;
-        private System.Windows.Forms.Button ledgerButton;
         private System.Windows.Forms.Button generateAccountStatementButton;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.Label totalLoanPenaltyAdded;
     }
 }

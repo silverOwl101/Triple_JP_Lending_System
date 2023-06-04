@@ -165,6 +165,33 @@ namespace TripleJPMVPLibrary.Repository
             }
             return total;
         }
+        internal decimal GetTotalPenalty(Loan loan)
+        {
+            decimal total = 0;
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            {
+                const string Query = "sp_getPenaltyTotal";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.Parameters.AddWithValue("@loanUID", loan.Uid);
+                cmd.Parameters["@loanUID"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        total = Convert.ToDecimal(reader["Total Penalty"].ToString());
+                    }
+                }
+            }
+            return total;
+        }
     }
 }
     

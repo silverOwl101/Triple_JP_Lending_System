@@ -110,5 +110,15 @@ namespace TripleJPMVPLibrary.Service
 
             return _collectionRepo.GetTotalCollection(loan);
         }
+        public decimal GetPenalty(Loan loan)
+        {
+            _loanInformationRepo = new LoanInformationRepo();
+            _collectionRepo = new CollectionRepo();
+            _customerLoanInfo = _loanInformationRepo.GetLoanInformation(loan);
+            loan.Id = _customerLoanInfo.Id;
+            loan.Uid = Guid.Parse(_loanInformationRepo.GetGuid(loan));
+
+            return _collectionRepo.GetTotalPenalty(loan);
+        }
     }
 }
