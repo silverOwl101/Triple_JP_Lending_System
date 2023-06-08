@@ -8,7 +8,7 @@ namespace TripleJPMVPLibrary.View
 {
     public interface ICompareCollectionAndLoan
     {
-        decimal CollectionTotalAmount { get; set; }
+        decimal loanAmount { get; set; }
         //decimal LoanTotalAmount { get; set; }
     }
 }

@@ -28,6 +28,8 @@ namespace TripleJP_Lending_System.Forms
         private string _loanId;
         private string _customerName;
         private decimal _loanTotalAmount;
+        private decimal _totalRemmitance;
+        private decimal remainingCredit;
 
         #endregion
 
@@ -77,7 +79,7 @@ namespace TripleJP_Lending_System.Forms
             set { penaltyAmountTextBox.Text = value.ToString(); }
         }
 
-        public decimal CollectionTotalAmount
+        public decimal loanAmount
         {
             get;
             set;
@@ -163,7 +165,6 @@ namespace TripleJP_Lending_System.Forms
         #endregion
 
         #region Custom Methods
-
         private void LoadData()
         {
             _concreteMediator = new ClassComponentConcreteMediator();
@@ -172,11 +173,21 @@ namespace TripleJP_Lending_System.Forms
             _loanId = _concreteMediator.GetData(_collectionFrmData)[0];// get Loan Id
             _customerName = _concreteMediator.GetData(_collectionFrmData)[1];// get Customer Name                       
             _loanTotalAmount = Convert.ToDecimal(_concreteMediator.GetData(_collectionFrmData)[2]);// get Loan Total Amount
+            _totalRemmitance = Convert.ToDecimal(_concreteMediator.GetData(_collectionFrmData)[3]);// get Collection Total Amount
+
             loanIdlabel.Text = _loanId;
             customerNameLabel.Text = _customerName;
-            CollectionTotalAmount = _loanTotalAmount;
+            loanAmount = _loanTotalAmount;
+            loanBalancetxt.Text = String.Format("{0:N}", loanAmount);
+            _collectionFrmPresenter = new CollectionFrmPresenter(this);
+            penaltytxt.Text = String.Format("{0:N}", _collectionFrmPresenter.GetPenalty());
+            decimal totalAmountDue = Convert.ToDecimal(loanBalancetxt.Text) +
+                                     Convert.ToDecimal(penaltytxt.Text);
+            remainingCredit = totalAmountDue - _totalRemmitance;
+            remainingCredittxt.Text = String.Format("{0:N}", remainingCredit);
+            remittancetxt.Text = String.Format("{0:N}", _totalRemmitance);
+            totalAmountDuetxt.Text = String.Format("{0:N}", totalAmountDue);
         }
-
         private void LoadAddCollectionCondition()
         {
             if (_collectionFrmPresenter.AddCollection())
@@ -196,7 +207,6 @@ namespace TripleJP_Lending_System.Forms
                 MessageBox(messageContent, messageCaption, button, icon);
             }
         }
-
         private void MessageBox(string messageContent, string messageCaption,
                                 MessageBoxButtons messageBoxButton, MessageBoxIcon messageBoxIcon)
         {
@@ -205,8 +215,33 @@ namespace TripleJP_Lending_System.Forms
             System.Windows.Forms.MessageBox.Show(MessageContent, MessageCaption,
                                             messageBoxButton, messageBoxIcon);
         }
-
         #endregion
 
+        private void remitAmountTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(remitAmountTextBox.Text))
+            {                                
+                decimal calculateCredit = remainingCredit - Convert.ToDecimal(remitAmountTextBox.Text);
+                remainingCredittxt.Text = String.Format("{0:N}", calculateCredit);
+            }
+            else
+            {
+                remainingCredittxt.Text = String.Format("{0:N}", remainingCredit);
+            }            
+        }
+
+        private void penaltyAmountTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(penaltyAmountTextBox.Text))
+            {
+                decimal getPenalty = _collectionFrmPresenter.GetPenalty();
+                decimal calculatePenalty = getPenalty + Convert.ToDecimal(penaltyAmountTextBox.Text);
+                penaltytxt.Text = String.Format("{0:N}", calculatePenalty);
+            }
+            else
+            {
+                penaltytxt.Text = String.Format("{0:N}", _collectionFrmPresenter.GetPenalty());
+            }
+        }
     }
 }

@@ -186,7 +186,10 @@ namespace TripleJPMVPLibrary.Repository
                 {
                     while (reader.Read())
                     {
-                        total = Convert.ToDecimal(reader["Total Penalty"].ToString());
+                        if (!reader.IsDBNull(0))
+                        {
+                            total = Convert.ToDecimal(reader["Total Penalty"].ToString());
+                        }                        
                     }
                 }
             }

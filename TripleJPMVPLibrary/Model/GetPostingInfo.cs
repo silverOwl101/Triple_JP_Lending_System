@@ -15,7 +15,6 @@ namespace TripleJPMVPLibrary.Model
         public decimal Interest { get; set; }
         public decimal TotalAmount { get; set; }
         public string Status { get; set; }
-        public decimal Collect { get; set; }
-        public decimal Penalty { get; set; }
+        public decimal Collect { get; set; }        
     }
 }
