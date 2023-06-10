@@ -41,91 +41,43 @@ namespace TripleJP_Lending_System.Forms
         #region User Inputs        
         public string CustomerName
         {
-            get { return CustomerNameTxt.Text; }
-            set { CustomerNameTxt.Text = value; }
+            get { return customerNameTextBox.Text; }
+            set { customerNameTextBox.Text = value; }
         }
         public string CustomerAddress
         {
-            get { return CustomerAddressTxt.Text; }
-            set { CustomerAddressTxt.Text = value; }
+            get { return customerAddressTextBox.Text; }
+            set { customerAddressTextBox.Text = value; }
         }
         public string ContactNumber
         {
-            get { return ContactNumberTxt.Text; }
-            set { ContactNumberTxt.Text = value; }
+            get { return contactNumberTextBox.Text; }
+            set { contactNumberTextBox.Text = value; }
         }
         public string BusinessName
         {
-            get { return BusinessAddressTxt.Text; }
-            set { BusinessAddressTxt.Text = value; }
+            get { return businessAddressTextBox.Text; }
+            set { businessAddressTextBox.Text = value; }
         }
         public string BusinessNature
         {
-            get { return BusinessNatureTxt.Text; }
-            set { BusinessNatureTxt.Text = value; }
+            get { return businessNatureTextBox.Text; }
+            set { businessNatureTextBox.Text = value; }
         }
         public string BusinessAddress
         {
-            get { return BusinessAddressTxt.Text; }
-            set { BusinessAddressTxt.Text = value; }
+            get { return businessAddressTextBox.Text; }
+            set { businessAddressTextBox.Text = value; }
         }
         public decimal GrossBusinessCapital
         {
-            get { return Convert.ToDecimal(GrossBusinessCapitalTxt.Text); }
-            set { GrossBusinessCapitalTxt.Text = value.ToString(); }
+            get { return Convert.ToDecimal(grossBusinessCapitalTextBox.Text); }
+            set { grossBusinessCapitalTextBox.Text = value.ToString(); }
         }
         public decimal AverageDailyGrossSales
         {
-            get { return Convert.ToDecimal(AverageDailyGrossSalesTxt.Text); }
-            set { AverageDailyGrossSalesTxt.Text = value.ToString(); }
-        }
-
-        #endregion
-
-        #region Custom Methods
-
-        public string ID // To be pass to the presenter
-        {
-            get { return _loadData[0]; }
-            set { _loadData[0] = value; }
-        }
-
-        private void LoadCustomerInformation()
-        {
-            CustomerNameTxt.Text = _loadData[1];
-            CustomerAddressTxt.Text = _loadData[2];
-            ContactNumberTxt.Text = _loadData[3];
-            BusinessNameTxt.Text = _loadData[4];
-            BusinessNatureTxt.Text = _loadData[5];
-            BusinessAddressTxt.Text = _loadData[6];
-            GrossBusinessCapitalTxt.Text = _loadData[7];
-            AverageDailyGrossSalesTxt.Text = _loadData[8];
-        }
-        private void SubmitButtonDisable()
-        {
-            SubmitButton.Enabled = false;
-        }
-        private void IsAllTextBoxNotEmpty()
-        {
-            int count = 0;
-            foreach (Control item in groupBox1.Controls)
-            {
-                if (item is TextBox)
-                {
-                    if (!string.IsNullOrEmpty(item.Text))
-                    {
-                        count++;
-                    }
-                }
-            }
-            if (count == 8)
-            {
-                SubmitButton.Enabled = true;
-            }
-            else
-            {
-                SubmitButton.Enabled = false;
-            }
+            get { return Convert.ToDecimal(averageDailyGrossSalesTextBox.Text); }
+            set { averageDailyGrossSalesTextBox.Text = value.ToString(); }
         }
 
         #endregion
@@ -172,7 +124,7 @@ namespace TripleJP_Lending_System.Forms
         {
             _frmInputRequirements = new FrmInputRequirements();
             _frmInputRequirements.InputNumbersOnly(e);
-            ContactNumberTxt.MaxLength = 14;
+            contactNumberTextBox.MaxLength = 14;
         }
         private void ContactNumbertxt_Leave(object sender, EventArgs e)
         {
@@ -190,20 +142,20 @@ namespace TripleJP_Lending_System.Forms
         private void GrossBusinessCapitaltxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             _frmInputRequirements = new FrmInputRequirements();
-            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, GrossBusinessCapitalTxt);
-            GrossBusinessCapitalTxt.MaxLength = 14;
+            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, grossBusinessCapitalTextBox);
+            grossBusinessCapitalTextBox.MaxLength = 14;
             SubmitButtonDisable();
         }
         private void GrossBusinessCapitaltxt_Leave(object sender, EventArgs e)
         {
             _frmConvertionRequirements = new FrmConvertionRequirements();
-            _frmConvertionRequirements.ConvertToNumberFormat(GrossBusinessCapitalTxt);
+            _frmConvertionRequirements.ConvertToNumberFormat(grossBusinessCapitalTextBox);
             IsAllTextBoxNotEmpty();
         }
         private void GrossBusinessCapitaltxt_Enter(object sender, EventArgs e)
         {
             _frmConvertionRequirements = new FrmConvertionRequirements();
-            _frmConvertionRequirements.ConvertToGeneralFormat(GrossBusinessCapitalTxt);
+            _frmConvertionRequirements.ConvertToGeneralFormat(grossBusinessCapitalTextBox);
         }
 
         #endregion
@@ -213,20 +165,20 @@ namespace TripleJP_Lending_System.Forms
         private void AverageDailyGrossSalestxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             _frmInputRequirements = new FrmInputRequirements();
-            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, AverageDailyGrossSalesTxt);
-            AverageDailyGrossSalesTxt.MaxLength = 14;
+            _frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, averageDailyGrossSalesTextBox);
+            averageDailyGrossSalesTextBox.MaxLength = 14;
             SubmitButtonDisable();
         }
         private void AverageDailyGrossSalestxt_Leave(object sender, EventArgs e)
         {
             _frmConvertionRequirements = new FrmConvertionRequirements();
-            _frmConvertionRequirements.ConvertToNumberFormat(AverageDailyGrossSalesTxt);
+            _frmConvertionRequirements.ConvertToNumberFormat(averageDailyGrossSalesTextBox);
             IsAllTextBoxNotEmpty();
         }
         private void AverageDailyGrossSalestxt_Enter(object sender, EventArgs e)
         {
             _frmConvertionRequirements = new FrmConvertionRequirements();
-            _frmConvertionRequirements.ConvertToGeneralFormat(AverageDailyGrossSalesTxt);
+            _frmConvertionRequirements.ConvertToGeneralFormat(averageDailyGrossSalesTextBox);
         }
 
         #endregion
@@ -302,6 +254,54 @@ namespace TripleJP_Lending_System.Forms
         #endregion
 
         #endregion
+
+        #endregion
+
+        #region Custom Methods
+
+        public string ID // To be pass to the presenter
+        {
+            get { return _loadData[0]; }
+            set { _loadData[0] = value; }
+        }
+
+        private void LoadCustomerInformation()
+        {
+            customerNameTextBox.Text = _loadData[1];
+            customerAddressTextBox.Text = _loadData[2];
+            contactNumberTextBox.Text = _loadData[3];
+            businessNameTextBox.Text = _loadData[4];
+            businessNatureTextBox.Text = _loadData[5];
+            businessAddressTextBox.Text = _loadData[6];
+            grossBusinessCapitalTextBox.Text = _loadData[7];
+            averageDailyGrossSalesTextBox.Text = _loadData[8];
+        }
+        private void SubmitButtonDisable()
+        {
+            submitButton.Enabled = false;
+        }
+        private void IsAllTextBoxNotEmpty()
+        {
+            int count = 0;
+            foreach (Control item in personalInfoGroupBox.Controls)
+            {
+                if (item is TextBox)
+                {
+                    if (!string.IsNullOrEmpty(item.Text))
+                    {
+                        count++;
+                    }
+                }
+            }
+            if (count == 8)
+            {
+                submitButton.Enabled = true;
+            }
+            else
+            {
+                submitButton.Enabled = false;
+            }
+        }
 
         #endregion
 

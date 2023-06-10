@@ -17,6 +17,9 @@ namespace TripleJP_Lending_System.Forms
 {
     public partial class CustomerListLoanFrm : Form, ISearch, ICustomerNameAndID
     {
+
+        #region Fields
+
         internal static string[] customerLoanInformation = new string[2];
 
         private IFormsMediator _concreteMediator;
@@ -25,19 +28,20 @@ namespace TripleJP_Lending_System.Forms
         private AddLoanFrmComponent _addLoanFrmComponent;
         private CustomerListLoanFrmPassData _customerListLoanFrmPassData;
 
+        #endregion
+
         public CustomerListLoanFrm()
         {
             InitializeComponent();
             DefaultPropertyComponents();
         }
-        private void DefaultPropertyComponents()
-        {
-            dataGridView1.DataSource = null;            
-        }
+
+        #region User Inputs
+
         public string UserSearch
         {
-            get { return SearchBoxtxt.Text; }
-            set { SearchBoxtxt.Text = value; }
+            get { return searchTextBox.Text; }
+            set { searchTextBox.Text = value; }
         }
         public string Id
         {
@@ -50,43 +54,32 @@ namespace TripleJP_Lending_System.Forms
             set { customerLoanInformation[1] = value; }
         }
 
-        private void onSearch()
-        {
-            _isearch = this;
-            GetCustomerListPresenter customerList = new GetCustomerListPresenter(_isearch);
-            customerList.CallSearch();
-            if (customerList.GetCustomerListData().Count != 0)
-            {
-                dataGridView1.DataSource = customerList.GetCustomerListData();
-                ColumnHeaderNames();
-            }
-            else
-            {
-                dataGridView1.DataSource = null;
-            }            
-        }
-        private void SearchBoxtxt_KeyPress(object sender, KeyPressEventArgs e)
+        #endregion
+
+        #region Form Events
+
+        #region TextBox
+
+        private void SearchTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Return))
             {
-                onSearch();
+                OnSearch();
             }
         }
-        private void onDoubleClickData()
+
+        #endregion
+
+        #region DataGrid
+
+        private void CustomerListDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Customer id
-            customerLoanInformation[0] = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-            //Customer name
-            customerLoanInformation[1] = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
-        }
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {            
             if (e.RowIndex != -1) // this line of code will prevent triggering CellDoubleClick
                                   // event if you double click the column header.
             {
-                onDoubleClickData(); // setting the data customer id and customer name
-                _icustomerNameAndID = this;               
-                GetCustomerListPresenter customerList = 
+                OnDoubleClickData(); // setting the data customer id and customer name
+                _icustomerNameAndID = this;
+                GetCustomerListPresenter customerList =
                                 new GetCustomerListPresenter(_icustomerNameAndID);
                 if (customerList.OnLoadData())
                 {
@@ -98,30 +91,69 @@ namespace TripleJP_Lending_System.Forms
                 else
                 {
                     _concreteMediator = new ClassComponentConcreteMediator();
-                    // adding the onDoubleClickData() in CustomerListLoanFrmPassData component
+                    // adding the OnDoubleClickData() in CustomerListLoanFrmPassData component
                     _customerListLoanFrmPassData = new CustomerListLoanFrmPassData(_concreteMediator,
                                                               customerLoanInformation[1],
                                                               customerLoanInformation[0]);
                     _addLoanFrmComponent = new AddLoanFrmComponent(_concreteMediator);
                     _concreteMediator.PrepareData(_customerListLoanFrmPassData);
                     _concreteMediator.OpenForms(_addLoanFrmComponent, true);
-                    dataGridView1.DataSource = null;
-                    SearchBoxtxt.Clear();
-                    SearchBoxtxt.Focus();
-                }                
-            }                        
+                    customerListDataGridView.DataSource = null;
+                    searchTextBox.Clear();
+                    searchTextBox.Focus();
+                }
+            }
         }
+
+        #endregion
+
+        #endregion
+
+        #region Custom Methods
+
+        private void DefaultPropertyComponents()
+        {
+            customerListDataGridView.DataSource = null;
+        }
+
+        private void OnSearch()
+        {
+            _isearch = this;
+            GetCustomerListPresenter customerList = new GetCustomerListPresenter(_isearch);
+            customerList.CallSearch();
+            if (customerList.GetCustomerListData().Count != 0)
+            {
+                customerListDataGridView.DataSource = customerList.GetCustomerListData();
+                ColumnHeaderNames();
+            }
+            else
+            {
+                customerListDataGridView.DataSource = null;
+            }
+        }
+
+        private void OnDoubleClickData()
+        {
+            //Customer id
+            customerLoanInformation[0] = customerListDataGridView.Rows[customerListDataGridView.CurrentRow.Index].Cells[0].Value.ToString();
+            //Customer name
+            customerLoanInformation[1] = customerListDataGridView.Rows[customerListDataGridView.CurrentRow.Index].Cells[1].Value.ToString();
+        }
+
         private void ColumnHeaderNames()
         {
-            dataGridView1.Columns[0].HeaderText = "Customer ID";
-            dataGridView1.Columns[1].HeaderText = "Name";
-            dataGridView1.Columns[2].HeaderText = "Address";
-            dataGridView1.Columns[3].HeaderText = "Contact number";
-            dataGridView1.Columns[4].HeaderText = "Business name";
-            dataGridView1.Columns[5].HeaderText = "Business nature";
-            dataGridView1.Columns[6].HeaderText = "Business address";
-            dataGridView1.Columns[7].HeaderText = "Gross business capital";
-            dataGridView1.Columns[8].HeaderText = "Average daily gross sales";
+            customerListDataGridView.Columns[0].HeaderText = "Customer ID";
+            customerListDataGridView.Columns[1].HeaderText = "Name";
+            customerListDataGridView.Columns[2].HeaderText = "Address";
+            customerListDataGridView.Columns[3].HeaderText = "Contact number";
+            customerListDataGridView.Columns[4].HeaderText = "Business name";
+            customerListDataGridView.Columns[5].HeaderText = "Business nature";
+            customerListDataGridView.Columns[6].HeaderText = "Business address";
+            customerListDataGridView.Columns[7].HeaderText = "Gross business capital";
+            customerListDataGridView.Columns[8].HeaderText = "Average daily gross sales";
         }
+
+        #endregion
+
     }
 }
