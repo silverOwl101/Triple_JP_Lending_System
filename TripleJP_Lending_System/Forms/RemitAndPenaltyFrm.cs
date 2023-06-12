@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
@@ -16,8 +9,9 @@ using MySql.Data.MySqlClient;
 
 namespace TripleJP_Lending_System.Forms
 {
-    public partial class RemitAndPenaltyFrm : Form , IAddCollection, ICompareCollectionAndLoan, IAddPenalty
+    public partial class RemitAndPenaltyFrm : Form, IAddCollection, ICompareCollectionAndLoan, IAddPenalty
     {
+
         #region Fields
 
         private FrmConvertionRequirements _frmConvertionRequirements = new FrmConvertionRequirements();
@@ -160,11 +154,47 @@ namespace TripleJP_Lending_System.Forms
 
         #endregion
 
+        #region RemitAmountTextBox Events
+
+        private void RemitAmountTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(remitAmountTextBox.Text))
+            {
+                decimal calculateCredit = remainingCredit - Convert.ToDecimal(remitAmountTextBox.Text);
+                remainingCreditLabel.Text = String.Format("{0:N}", calculateCredit);
+            }
+            else
+            {
+                remainingCreditLabel.Text = String.Format("{0:N}", remainingCredit);
+            }
+        }
+
+        #endregion
+
+        #region PenaltyAmountTextBox
+
+        private void PenaltyAmountTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(penaltyAmountTextBox.Text))
+            {
+                decimal getPenalty = _collectionFrmPresenter.GetPenalty();
+                decimal calculatePenalty = getPenalty + Convert.ToDecimal(penaltyAmountTextBox.Text);
+                penaltyLabel.Text = String.Format("{0:N}", calculatePenalty);
+            }
+            else
+            {
+                penaltyLabel.Text = String.Format("{0:N}", _collectionFrmPresenter.GetPenalty());
+            }
+        }
+
+        #endregion
+
         #endregion
 
         #endregion
 
         #region Custom Methods
+
         private void LoadData()
         {
             _concreteMediator = new ClassComponentConcreteMediator();
@@ -178,16 +208,17 @@ namespace TripleJP_Lending_System.Forms
             loanIdlabel.Text = _loanId;
             customerNameLabel.Text = _customerName;
             loanAmount = _loanTotalAmount;
-            loanBalancetxt.Text = String.Format("{0:N}", loanAmount);
+            loanBalanceLabel.Text = String.Format("{0:N}", loanAmount);
             _collectionFrmPresenter = new CollectionFrmPresenter(this);
-            penaltytxt.Text = String.Format("{0:N}", _collectionFrmPresenter.GetPenalty());
-            decimal totalAmountDue = Convert.ToDecimal(loanBalancetxt.Text) +
-                                     Convert.ToDecimal(penaltytxt.Text);
+            penaltyLabel.Text = String.Format("{0:N}", _collectionFrmPresenter.GetPenalty());
+            decimal totalAmountDue = Convert.ToDecimal(loanBalanceLabel.Text) +
+                                     Convert.ToDecimal(penaltyLabel.Text);
             remainingCredit = totalAmountDue - _totalRemmitance;
-            remainingCredittxt.Text = String.Format("{0:N}", remainingCredit);
-            remittancetxt.Text = String.Format("{0:N}", _totalRemmitance);
-            totalAmountDuetxt.Text = String.Format("{0:N}", totalAmountDue);
+            remainingCreditLabel.Text = String.Format("{0:N}", remainingCredit);
+            remittanceLabel.Text = String.Format("{0:N}", _totalRemmitance);
+            totalAmountDueLabel.Text = String.Format("{0:N}", totalAmountDue);
         }
+
         private void LoadAddCollectionCondition()
         {
             if (_collectionFrmPresenter.AddCollection())
@@ -207,6 +238,7 @@ namespace TripleJP_Lending_System.Forms
                 MessageBox(messageContent, messageCaption, button, icon);
             }
         }
+
         private void MessageBox(string messageContent, string messageCaption,
                                 MessageBoxButtons messageBoxButton, MessageBoxIcon messageBoxIcon)
         {
@@ -215,33 +247,8 @@ namespace TripleJP_Lending_System.Forms
             System.Windows.Forms.MessageBox.Show(MessageContent, MessageCaption,
                                             messageBoxButton, messageBoxIcon);
         }
+
         #endregion
 
-        private void remitAmountTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (!String.IsNullOrEmpty(remitAmountTextBox.Text))
-            {                                
-                decimal calculateCredit = remainingCredit - Convert.ToDecimal(remitAmountTextBox.Text);
-                remainingCredittxt.Text = String.Format("{0:N}", calculateCredit);
-            }
-            else
-            {
-                remainingCredittxt.Text = String.Format("{0:N}", remainingCredit);
-            }            
-        }
-
-        private void penaltyAmountTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (!String.IsNullOrEmpty(penaltyAmountTextBox.Text))
-            {
-                decimal getPenalty = _collectionFrmPresenter.GetPenalty();
-                decimal calculatePenalty = getPenalty + Convert.ToDecimal(penaltyAmountTextBox.Text);
-                penaltytxt.Text = String.Format("{0:N}", calculatePenalty);
-            }
-            else
-            {
-                penaltytxt.Text = String.Format("{0:N}", _collectionFrmPresenter.GetPenalty());
-            }
-        }
     }
 }

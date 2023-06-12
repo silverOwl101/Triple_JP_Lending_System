@@ -46,8 +46,8 @@ namespace TripleJP_Lending_System.Forms
 
         public string UserSearch
         {
-            get { return SearchBoxTxt.Text; }
-            set { SearchBoxTxt.Text = value; }
+            get { return searchTextBox.Text; }
+            set { searchTextBox.Text = value; }
         }
 
         #endregion
@@ -76,11 +76,11 @@ namespace TripleJP_Lending_System.Forms
             _concreteMediator = new ClassComponentConcreteMediator();
             _customerListLoanFrmComponent = new CustomerListLoanFrmComponent(_concreteMediator);
             _concreteMediator.OpenForms(_customerListLoanFrmComponent, true);
-            dataGridView1.DataSource = null;
-            SearchBoxTxt.Text = "";
+            loanDataGridView.DataSource = null;
+            searchTextBox.Text = "";
             ClearText();
             //check if ledgerButton, dataGridView1 and searchFilterGroupBox is enabled
-            if (dataGridView1.Enabled && searchFilterGroupBox.Enabled)
+            if (loanDataGridView.Enabled && searchFilterGroupBox.Enabled)
             {
                 DisabledControls();
             }
@@ -112,7 +112,7 @@ namespace TripleJP_Lending_System.Forms
 
         private void LedgerButton_Click(object sender, EventArgs e)
         {
-            _getLoanID = loanIdTxt.Text;
+            _getLoanID = loanIdLabel.Text;
             _concreteMediator = new ClassComponentConcreteMediator();
             _loanInformationFrmPassData = new LoanInformationFrmPassData(_concreteMediator, _getLoanID,string.Empty);
             _ledgerFormComponent = new LedgerFormComponent(_concreteMediator);
@@ -122,7 +122,7 @@ namespace TripleJP_Lending_System.Forms
         private void generateAccountStatementButton_Click(object sender, EventArgs e)
         {
             const string detailReportParameter = "DetailReport";
-            _getLoanID = loanIdTxt.Text;
+            _getLoanID = loanIdLabel.Text;
             _concreteMediator = new ClassComponentConcreteMediator();
             _loanInformationFrmPassData = new LoanInformationFrmPassData(_concreteMediator, _getLoanID, detailReportParameter);
             _reportFrmComponent = new ReportFrmComponent(_concreteMediator);
@@ -196,29 +196,29 @@ namespace TripleJP_Lending_System.Forms
 
         private void ClearText()
         {
-            loanIdTxt.Text = "";
-            customerIdTxt.Text = "";
-            customerNameTxt.Text = "";
-            paymentTermTxt.Text = "";
-            durationTxt.Text = "";
-            effectiveDateTxt.Text = "";
-            interestTxt.Text = "";
-            principalLoanTxt.Text = "";
-            penaltyTxt.Text = "";
-            statusTxt.Text = "";
-            maturityInterestTxt.Text = "";
-            maturityValueTxt.Text = "";
-            maturityDateTxt.Text = "";
-            perRemittanceTxt.Text = "";
-            totalAmountRemittanceTxt.Text = "";
-            totalBalanceTxt.Text = "";
-            totalLoanPenaltyAdded.Text = "";
+            loanIdLabel.Text = "";
+            customerIdLabel.Text = "";
+            customerNameLabel.Text = "";
+            paymentTermLabel.Text = "";
+            durationLabel.Text = "";
+            effectiveDateLabel.Text = "";
+            interestLabel.Text = "";
+            principalLoanLabel.Text = "";
+            penaltyLabel.Text = "";
+            statusLabel.Text = "";
+            maturityInterestLabel.Text = "";
+            maturityValueLabel.Text = "";
+            maturityDateLabel.Text = "";
+            perRemittanceLabel.Text = "";
+            totalAmountRemittanceLabel.Text = "";
+            totalBalanceLabel.Text = "";
+            totalLoanPenaltyLabel.Text = "";
         }
 
         private void DisabledControls()
         {
             //ledgerButton.Enabled = false;
-            dataGridView1.Enabled = false;
+            loanDataGridView.Enabled = false;
             searchFilterGroupBox.Enabled = false;
             generateAccountStatementButton.Enabled = false;
         }
@@ -239,10 +239,10 @@ namespace TripleJP_Lending_System.Forms
                     const string MessageCaption = "Invalid Credentials";
                     MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                    if (dataGridView1.Enabled && searchFilterGroupBox.Enabled)
+                    if (loanDataGridView.Enabled && searchFilterGroupBox.Enabled)
                     {
                         ClearText();
-                        dataGridView1.DataSource = null;
+                        loanDataGridView.DataSource = null;
                         DisabledControls();
                     }
 
@@ -251,11 +251,11 @@ namespace TripleJP_Lending_System.Forms
                 {
                     // view all data
 
-                    dataGridView1.DataSource = _loanInformationPresenter.GetLoanInformationList();
+                    loanDataGridView.DataSource = _loanInformationPresenter.GetLoanInformationList();
                     ColumnHeaderNames();
-                    dataGridView1.Enabled = true;
+                    loanDataGridView.Enabled = true;
                     searchFilterGroupBox.Enabled = true;
-                    dataGridView1.Focus();
+                    loanDataGridView.Focus();
                 }
 
             }
@@ -290,13 +290,13 @@ namespace TripleJP_Lending_System.Forms
 
         private void ColumnHeaderNames()
         {
-            dataGridView1.Columns[0].HeaderText = "Loan ID";
-            dataGridView1.Columns[1].HeaderText = "Customer ID";
-            dataGridView1.Columns[2].HeaderText = "Customer Name";
-            dataGridView1.Columns[3].HeaderText = "Payment Term";
-            dataGridView1.Columns[5].HeaderText = "Effective Date";
-            dataGridView1.Columns[6].HeaderText = "Interest Rate";
-            dataGridView1.Columns[7].HeaderText = "Principal Loan";
+            loanDataGridView.Columns[0].HeaderText = "Loan ID";
+            loanDataGridView.Columns[1].HeaderText = "Customer ID";
+            loanDataGridView.Columns[2].HeaderText = "Customer Name";
+            loanDataGridView.Columns[3].HeaderText = "Payment Term";
+            loanDataGridView.Columns[5].HeaderText = "Effective Date";
+            loanDataGridView.Columns[6].HeaderText = "Interest Rate";
+            loanDataGridView.Columns[7].HeaderText = "Principal Loan";
         }
 
         private void ToDisplayInForm()
@@ -312,68 +312,68 @@ namespace TripleJP_Lending_System.Forms
         private void DisplayDataInForm()
         {
             decimal rate;
-            loanIdTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-            customerIdTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
-            customerNameTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
-            paymentTermTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
-            durationTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
-            effectiveDateTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
-            rate = Convert.ToDecimal(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value)/100;
-            interestTxt.Text = String.Format("{0:0%}", rate);
-            principalLoanTxt.Text = String.Format("{0:N}", dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value);            
-            statusTxt.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
-            totalAmountRemittanceTxt.Text = String.Format("{0:N}", dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[9].Value);
-            penaltyTxt.Text = String.Format("{0:N}", dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value);
+            loanIdLabel.Text = loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[0].Value.ToString();
+            customerIdLabel.Text = loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[1].Value.ToString();
+            customerNameLabel.Text = loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[2].Value.ToString();
+            paymentTermLabel.Text = loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[3].Value.ToString();
+            durationLabel.Text = loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[4].Value.ToString();
+            effectiveDateLabel.Text = loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[5].Value.ToString();
+            rate = Convert.ToDecimal(loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[6].Value)/100;
+            interestLabel.Text = String.Format("{0:0%}", rate);
+            principalLoanLabel.Text = String.Format("{0:N}", loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[7].Value);            
+            statusLabel.Text = loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[8].Value.ToString();
+            totalAmountRemittanceLabel.Text = String.Format("{0:N}", loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[9].Value);
+            penaltyLabel.Text = String.Format("{0:N}", loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[10].Value);
         }
 
         private void MaturityInterestDisplay()
         {
-            decimal loan = Convert.ToDecimal(principalLoanTxt.Text);
+            decimal loan = Convert.ToDecimal(principalLoanLabel.Text);
             Computation comp = new Computation();
-            decimal interestRate = Convert.ToDecimal(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value);
-            maturityInterestTxt.Text = String.Format("{0:N}", comp.MaturityInterest(loan, interestRate));
+            decimal interestRate = Convert.ToDecimal(loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[6].Value);
+            maturityInterestLabel.Text = String.Format("{0:N}", comp.MaturityInterest(loan, interestRate));
         }
         private void MaturityValueDisplay()
         {
-            decimal loan = Convert.ToDecimal(principalLoanTxt.Text);
+            decimal loan = Convert.ToDecimal(principalLoanLabel.Text);
             Computation comp = new Computation();
-            decimal interest = Convert.ToDecimal(maturityInterestTxt.Text);
-            maturityValueTxt.Text = String.Format("{0:N}", comp.MaturityValue(interest, loan));
+            decimal interest = Convert.ToDecimal(maturityInterestLabel.Text);
+            maturityValueLabel.Text = String.Format("{0:N}", comp.MaturityValue(interest, loan));
         }
         private void PerRemittanceDisplay()
         {
             Computation comp = new Computation();
-            decimal _value = Convert.ToDecimal(maturityValueTxt.Text);
-            int duration = Convert.ToInt32(durationTxt.Text);
-            perRemittanceTxt.Text = comp.PerRemittance(_value, duration).ToString();
+            decimal _value = Convert.ToDecimal(maturityValueLabel.Text);
+            int duration = Convert.ToInt32(durationLabel.Text);
+            perRemittanceLabel.Text = comp.PerRemittance(_value, duration).ToString();
         }
         private void MaturityDateDisplay()
         {
             Computation comp = new Computation();
-            DateTime effectiveDate = DateTime.ParseExact(effectiveDateTxt.Text, "MM-dd-yyyy", null);
-            int duration = Convert.ToInt32(durationTxt.Text);
-            maturityDateTxt.Text = comp.MaturityDate(effectiveDate, duration).ToString("MM-dd-yyyy");
+            DateTime effectiveDate = DateTime.ParseExact(effectiveDateLabel.Text, "MM-dd-yyyy", null);
+            int duration = Convert.ToInt32(durationLabel.Text);
+            maturityDateLabel.Text = comp.MaturityDate(effectiveDate, duration).ToString("MM-dd-yyyy");
         }
         private void TotalAmountRemittanceDisplay()
         {
-            if (string.IsNullOrEmpty(maturityValueTxt.Text))
+            if (string.IsNullOrEmpty(maturityValueLabel.Text))
             {
-                maturityValueTxt.Text = "0";
+                maturityValueLabel.Text = "0";
             }
-            if (string.IsNullOrEmpty(totalAmountRemittanceTxt.Text))
+            if (string.IsNullOrEmpty(totalAmountRemittanceLabel.Text))
             {
-                totalAmountRemittanceTxt.Text = "0";
+                totalAmountRemittanceLabel.Text = "0";
             }
             
             decimal remaining_balance;
             decimal result;            
 
-            totalLoanPenaltyAdded.Text = 
-                Convert.ToString(Convert.ToDecimal(penaltyTxt.Text) + 
-                Convert.ToDecimal(maturityValueTxt.Text));
-            remaining_balance = Convert.ToDecimal(totalAmountRemittanceTxt.Text) - Convert.ToDecimal(maturityValueTxt.Text);
-            result = Convert.ToDecimal(totalLoanPenaltyAdded.Text) - Convert.ToDecimal(totalAmountRemittanceTxt.Text);
-            totalBalanceTxt.Text = String.Format("{0:N}", result);
+            totalLoanPenaltyLabel.Text = 
+                Convert.ToString(Convert.ToDecimal(penaltyLabel.Text) + 
+                Convert.ToDecimal(maturityValueLabel.Text));
+            remaining_balance = Convert.ToDecimal(totalAmountRemittanceLabel.Text) - Convert.ToDecimal(maturityValueLabel.Text);
+            result = Convert.ToDecimal(totalLoanPenaltyLabel.Text) - Convert.ToDecimal(totalAmountRemittanceLabel.Text);
+            totalBalanceLabel.Text = String.Format("{0:N}", result);
         }
 
         #endregion
@@ -400,17 +400,17 @@ namespace TripleJP_Lending_System.Forms
                     result.Add(loan);
                 }
             }
-            dataGridView1.DataSource = result;
-            dataGridView1.Focus();
+            loanDataGridView.DataSource = result;
+            loanDataGridView.Focus();
         }
 
         private void IsSearchFilterCheckBoxChecked()
         {
             if (!unPaidCheckBox.Checked && !fullyPaidCheckBox.Checked && !badDebtCheckBox.Checked)
             {
-                dataGridView1.DataSource = _loanInformationPresenter.GetLoanInformationList();
+                loanDataGridView.DataSource = _loanInformationPresenter.GetLoanInformationList();
                 ColumnHeaderNames();
-                dataGridView1.Focus();
+                loanDataGridView.Focus();
             }
         }
 

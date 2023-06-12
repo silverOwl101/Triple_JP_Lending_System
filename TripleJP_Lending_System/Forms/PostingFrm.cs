@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TripleJPMVPLibrary.Presenter;
 using System.Windows.Forms;
 using TripleJPMVPLibrary.View;
@@ -18,21 +12,28 @@ namespace TripleJP_Lending_System.Forms
 {
     public partial class PostingFrm : Form, IPosting, ICollectionInformation
     {
+
+        #region Fields
+
         private PostingPresenter _postingPresenter;
         private List<GetPostingInfo> getPostingInfo;
         private IFormsMediator _concreteMediator;
         private CollectionFrmComponent _collectionFrmComponent;
-        private PostingFrmPassData _postingFrmPassData;        
-        
+        private PostingFrmPassData _postingFrmPassData;
+
+        #endregion
+
         public PostingFrm()
         {
             InitializeComponent();            
         }
 
+        #region User Inputs
+
         public string CustomerId
         {
-            get { return PostingSearchTxt.Text; }
-            set { PostingSearchTxt.Text = value; }
+            get { return searchTextBox.Text; }
+            set { searchTextBox.Text = value; }
         }
 
         public string Id { get; set; }
@@ -40,16 +41,68 @@ namespace TripleJP_Lending_System.Forms
         public string LoanTotalAmount { get; set; }
         public string CollectionTotalAmount { get; set; }
 
+        #endregion
+
+        #region Form Events
+
+        #region Posting Form
+
+        private void PostingFrm_Shown(object sender, EventArgs e)
+        {
+            searchTextBox.Focus();
+        }
+
+        #endregion
+
+        #region TextBox
+
+        private void PostingSearchTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Return))
+            {
+                ViewData();
+            }
+        }
+
+        #endregion
+
+        #region DataGrid
+
+        private void LoanDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CustomerName = loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[2].Value.ToString(); // customer name
+            Id = loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[1].Value.ToString(); // loan number/loan id
+            CollectionTotalAmount = loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[7].Value.ToString(); // Total CollectedAmount Collected
+            LoanTotalAmount = loanDataGridView.Rows[loanDataGridView.CurrentRow.Index].Cells[5].Value.ToString(); // Total Loan CollectedAmount
+
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _postingFrmPassData = new PostingFrmPassData(_concreteMediator, this);
+            _collectionFrmComponent = new CollectionFrmComponent(_concreteMediator);
+            _concreteMediator.PrepareData(_postingFrmPassData);
+            _concreteMediator.OpenForms(_collectionFrmComponent, true);
+            ClearDataGridContent();
+        }
+
+        #endregion
+
+        #region Button
+
         private void PostingSubmitButton_Click(object sender, EventArgs e)
         {
             ViewData();
         }
 
+        #endregion
+
+        #endregion
+
+        #region Custom Methods
+
         private void ViewData()
         {
-            if (string.IsNullOrEmpty(PostingSearchTxt.Text))
+            if (string.IsNullOrEmpty(searchTextBox.Text))
             {
-                dataGridView1.Columns.Clear();
+                loanDataGridView.Columns.Clear();
                 const string MessageContent = "Please type the name or ID of the customer.";
                 const string MessageCaption = "Enter Credentials";
                 MessageBox.Show(MessageContent, MessageCaption,
@@ -62,7 +115,7 @@ namespace TripleJP_Lending_System.Forms
                 getPostingInfo = _postingPresenter.GetPostingList();                
                 if (getPostingInfo.Count == 0)
                 {
-                    dataGridView1.Columns.Clear();
+                    loanDataGridView.Columns.Clear();
                     const string MessageContent = "No loan records found";
                     const string MessageCaption = "Loan Record Error";
                     MessageBox.Show(MessageContent, MessageCaption,
@@ -70,7 +123,7 @@ namespace TripleJP_Lending_System.Forms
                 }
                 else
                 {
-                    dataGridView1.DataSource = getPostingInfo;
+                    loanDataGridView.DataSource = getPostingInfo;
                     ColumnHeaderNames();
                 }                
             }            
@@ -78,44 +131,23 @@ namespace TripleJP_Lending_System.Forms
 
         private void ColumnHeaderNames()
         {
-            dataGridView1.Columns[0].HeaderText = "Due";
-            dataGridView1.Columns[1].HeaderText = "Loan No";
-            dataGridView1.Columns[2].HeaderText = "Name";
-            dataGridView1.Columns[3].HeaderText = "Return";
-            dataGridView1.Columns[4].HeaderText = "Interest";
-            dataGridView1.Columns[5].HeaderText = "Total Loan Amount";
-            dataGridView1.Columns[7].HeaderText = "Total Amount Collected";
+            loanDataGridView.Columns[0].HeaderText = "Due";
+            loanDataGridView.Columns[1].HeaderText = "Loan No";
+            loanDataGridView.Columns[2].HeaderText = "Name";
+            loanDataGridView.Columns[3].HeaderText = "Return";
+            loanDataGridView.Columns[4].HeaderText = "Interest";
+            loanDataGridView.Columns[5].HeaderText = "Total Loan Amount";
+            loanDataGridView.Columns[7].HeaderText = "Total Amount Collected";
         }
-        private void PostingFrm_Shown(object sender, EventArgs e)
-        {
-            PostingSearchTxt.Focus();            
-        }
-        private void PostingSearchTxt_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Return))
-            {
-                ViewData();
-            }
-        }        
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {            
-            CustomerName = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString(); // customer name
-            Id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString(); // loan number/loan id
-            CollectionTotalAmount = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value.ToString(); // Total CollectedAmount Collected
-            LoanTotalAmount = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString(); // Total Loan CollectedAmount
-
-            _concreteMediator = new ClassComponentConcreteMediator();
-            _postingFrmPassData = new PostingFrmPassData(_concreteMediator, this);
-            _collectionFrmComponent = new CollectionFrmComponent(_concreteMediator);
-            _concreteMediator.PrepareData(_postingFrmPassData);
-            _concreteMediator.OpenForms(_collectionFrmComponent,true);
-            ClearDataGridContent();
-        }
+      
         private void ClearDataGridContent()
         {
-            PostingSearchTxt.Clear();
-            dataGridView1.DataSource = null;
-            PostingSearchTxt.Focus();
+            searchTextBox.Clear();
+            loanDataGridView.DataSource = null;
+            searchTextBox.Focus();
         }
+
+        #endregion
+
     }
 }

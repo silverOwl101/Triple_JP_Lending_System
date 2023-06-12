@@ -1,14 +1,7 @@
 ﻿using Microsoft.Reporting.WinForms;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleJP_Lending_System.FormMediator;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
@@ -20,15 +13,22 @@ namespace TripleJP_Lending_System.Forms
 {
     public partial class ReportViewerFrm : Form
     {
+
+        #region Fields
+
         private ReportFrmPresenter reportPresenter;
         private IFormsMediator _concreteMediator;
         private ReportFrmData _reportFrmData;
         private Loan loan;
+
+        #endregion
+
         public ReportViewerFrm()
         {
             InitializeComponent();            
             LoadReport();
         }
+
         private void LoadReport()
         {
             try
@@ -50,6 +50,7 @@ namespace TripleJP_Lending_System.Forms
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void InitReport()
         {            
             _concreteMediator = new ClassComponentConcreteMediator();
@@ -66,6 +67,7 @@ namespace TripleJP_Lending_System.Forms
                 InitDetailReport(loanId);
             }
         }
+
         private void InitSummaryReport()
         {
             ReportDataSource rds = new ReportDataSource();
@@ -73,15 +75,16 @@ namespace TripleJP_Lending_System.Forms
 
             rds.Name = "CollectionSummaryRpt";
             rds.Value = reportPresenter.OnCallCustomerReportList();
-            reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
-            reportViewer1.ZoomMode = ZoomMode.PageWidth;
+            reportViewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+            reportViewer.ZoomMode = ZoomMode.PageWidth;
 
             string REPORT_SOURCE = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "TripleJPMVPLibrary", "ReportDefinitions", "CollectionSummaryReport.rdlc");
 
-            reportViewer1.LocalReport.ReportPath = REPORT_SOURCE;
-            reportViewer1.LocalReport.DataSources.Add(rds);
-            reportViewer1.RefreshReport();
+            reportViewer.LocalReport.ReportPath = REPORT_SOURCE;
+            reportViewer.LocalReport.DataSources.Add(rds);
+            reportViewer.RefreshReport();
         }
+
         private void InitDetailReport(string loanId)
         {           
             loan = new Loan();
@@ -97,18 +100,19 @@ namespace TripleJP_Lending_System.Forms
                 rdsCollectionRpt.Name = "CollectionDetailDataset";
                 rdsCollectionRpt.Value = reportPresenter.OnCallGetCollectionReport(loan);
 
-                reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
-                reportViewer1.ZoomMode = ZoomMode.PageWidth;
+                reportViewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+                reportViewer.ZoomMode = ZoomMode.PageWidth;
                 string REPORT_SOURCE = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "TripleJPMVPLibrary", "ReportDefinitions", "CollectionDetailReport.rdlc");
 
-                reportViewer1.LocalReport.ReportPath = REPORT_SOURCE;
-                reportViewer1.LocalReport.DataSources.Add(rdsLoanInformationRpt);
-                reportViewer1.LocalReport.DataSources.Add(rdsCollectionRpt);
-                reportViewer1.RefreshReport();
+                reportViewer.LocalReport.ReportPath = REPORT_SOURCE;
+                reportViewer.LocalReport.DataSources.Add(rdsLoanInformationRpt);
+                reportViewer.LocalReport.DataSources.Add(rdsCollectionRpt);
+                reportViewer.RefreshReport();
             }
             else
                 NoRecordsErrorMessage();
         }
+
         internal bool IsRowsEmpty()
         {
             reportPresenter = new ReportFrmPresenter();
@@ -118,6 +122,7 @@ namespace TripleJP_Lending_System.Forms
             }
             return true;
         }
+
         private void NoRecordsErrorMessage()
         {
             const string MessageContent = "No records of collection yet";
@@ -125,5 +130,6 @@ namespace TripleJP_Lending_System.Forms
             MessageBox.Show(MessageContent, MessageCaption,
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
+
     }
 }

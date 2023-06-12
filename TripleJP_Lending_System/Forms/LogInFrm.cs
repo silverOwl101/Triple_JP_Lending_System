@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleJPMVPLibrary.Presenter;
 using TripleJPMVPLibrary.View;
@@ -34,12 +26,12 @@ namespace TripleJP_Lending_System
         #region User Input
         public string Username
         {
-            get { return usernameTxt.Text; }
+            get { return userNameTextBox.Text; }
             set { }
         }
         public string Password
         {
-            get { return passwordTxt.Text; }
+            get { return passWordTextBox.Text; }
             set { }
         }
         #endregion
@@ -62,8 +54,8 @@ namespace TripleJP_Lending_System
         {
             try
             {
-                Username = usernameTxt.Text;
-                Password = passwordTxt.Text;
+                Username = userNameTextBox.Text;
+                Password = passWordTextBox.Text;
 
                 _logInFrmPresenter = new LogInFrmPresenter(this);
                 bool result = _logInFrmPresenter.LogInConfirmation();
@@ -133,10 +125,5 @@ namespace TripleJP_Lending_System
         #endregion
 
         #endregion
-
-        private void LogInFrm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

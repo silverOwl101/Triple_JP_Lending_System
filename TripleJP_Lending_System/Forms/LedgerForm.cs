@@ -1,13 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
@@ -51,6 +43,26 @@ namespace TripleJP_Lending_System.Forms
         #endregion
 
         #region CustomeMethods
+
+        #region Error Messeges
+
+        private void NoRecordsErrorMessage()
+        {
+            const string MessageContent = "No records of collection yet";
+            const string MessageCaption = "Collection not found";
+            MessageBox.Show(MessageContent, MessageCaption,
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+        private void ExceptionErrorMessage()
+        {
+            const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
+            const string MessageCaption = "System Access Denied";
+            MessageBox.Show(MessageContent, MessageCaption,
+            MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        #endregion
+
         internal bool IsDataSourceEmpty()
         {
             _ledgerPresenter = new LedgerPresenter(this);
@@ -64,7 +76,7 @@ namespace TripleJP_Lending_System.Forms
         {
             try
             {
-                dataGridView1.DataSource = _ledgerPresenter.GetCollectionAndPenalty();
+                ledgerDataGridView.DataSource = _ledgerPresenter.GetCollectionAndPenalty();
 
                 if (IsDataSourceEmpty())
                 {
@@ -80,23 +92,8 @@ namespace TripleJP_Lending_System.Forms
                 ExceptionErrorMessage();
             }
         }
+
         #endregion
 
-        #region Error Messeges
-        private void NoRecordsErrorMessage()
-        {
-            const string MessageContent = "No records of collection yet";
-            const string MessageCaption = "Collection not found";
-            MessageBox.Show(MessageContent, MessageCaption,
-                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        }
-        private void ExceptionErrorMessage()
-        {
-            const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
-            const string MessageCaption = "System Access Denied";
-            MessageBox.Show(MessageContent, MessageCaption,
-            MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-        #endregion
     }
 }
