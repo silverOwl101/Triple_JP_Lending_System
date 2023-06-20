@@ -5,6 +5,7 @@ using TripleJPMVPLibrary.View;
 using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace TripleJP_Lending_System
 {
@@ -83,6 +84,13 @@ namespace TripleJP_Lending_System
             {
                 const string MessageContent = "There is a problem to the system please contact your I.T officer for further information.";
                 const string MessageCaption = "System Access Denied";
+                MessageBox.Show(MessageContent, MessageCaption,
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (TypeInitializationException ex) when (ex.InnerException is FileNotFoundException)
+            {
+                const string MessageContent = "Configuration file is missing, please create a config file first.";
+                const string MessageCaption = "Configuration lost";
                 MessageBox.Show(MessageContent, MessageCaption,
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

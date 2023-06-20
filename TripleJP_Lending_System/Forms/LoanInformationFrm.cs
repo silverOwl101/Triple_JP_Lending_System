@@ -10,6 +10,7 @@ using TripleJPUtilityLibrary.Accounting;
 using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace TripleJP_Lending_System.Forms
 {
@@ -273,8 +274,16 @@ namespace TripleJP_Lending_System.Forms
                 MessageBox.Show(MessageContent, MessageCaption,
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            catch (TypeInitializationException ex) when (ex.InnerException is FileNotFoundException)
+            {
+                const string MessageContent = "Configuration file is missing, please create a config file first.";
+                const string MessageCaption = "Configuration lost";
+                MessageBox.Show(MessageContent, MessageCaption,
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
+
         private void ListNullChecker(List<GetCustomerLoanInformation> list)
         {
             foreach (var item in list)

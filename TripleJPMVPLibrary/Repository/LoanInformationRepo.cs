@@ -18,7 +18,7 @@ namespace TripleJPMVPLibrary.Repository
             GetCustomerLoanInformation getLoanInformation = null;
             List<GetCustomerLoanInformation> loanList = new List<GetCustomerLoanInformation>();
 
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string Query = "sp_getLoanInformation";
 
@@ -64,7 +64,7 @@ namespace TripleJPMVPLibrary.Repository
         {
             GetCustomerLoanInformation getLoanInformation = null;            
 
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string Query = "sp_getLoanInformationUsingLoanId";
 
@@ -109,7 +109,7 @@ namespace TripleJPMVPLibrary.Repository
             GetCollectionAndPenalty getCollectionAndPenalty;
             List<GetCollectionAndPenalty> collectionAndPenaltyList = new List<GetCollectionAndPenalty>();
 
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string Query = "sp_getCollectionAndPenalty";
                 MySqlCommand cmd = new MySqlCommand(Query, con);
@@ -141,7 +141,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         public void InsertData(Loan loan)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string customerInfoQuery = "sp_insertLoan";
                 MySqlCommand cmd = new MySqlCommand(customerInfoQuery, con);
@@ -178,7 +178,7 @@ namespace TripleJPMVPLibrary.Repository
             bool rslt = false;
             try
             {
-                using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+                using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
                 {
                     const string customerInfoQuery = "sp_isLoanUnpaid";
                     MySqlCommand cmd = new MySqlCommand(customerInfoQuery, con);
@@ -210,7 +210,7 @@ namespace TripleJPMVPLibrary.Repository
         {
             string guid = null;
 
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string Query = "sp_getLoanGuid";
 
@@ -239,7 +239,7 @@ namespace TripleJPMVPLibrary.Repository
         internal decimal GetReleasedAmount(Loan loan)
         {
             decimal releasedAmount = 0;
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string Query = "sp_getReleasedAmount";
 

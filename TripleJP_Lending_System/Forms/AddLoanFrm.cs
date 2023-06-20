@@ -163,7 +163,7 @@ namespace TripleJP_Lending_System.Forms
         #endregion
 
         #endregion
-
+        
         #region Custom Methods
 
         #region Calculation Displays

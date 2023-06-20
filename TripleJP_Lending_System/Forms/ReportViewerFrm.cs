@@ -49,6 +49,13 @@ namespace TripleJP_Lending_System.Forms
                 MessageBox.Show(MessageContent, MessageCaption,
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            catch (TypeInitializationException ex) when (ex.InnerException is FileNotFoundException)
+            {
+                const string MessageContent = "Configuration file is missing, please create a config file first.";
+                const string MessageCaption = "Configuration lost";
+                MessageBox.Show(MessageContent, MessageCaption,
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void InitReport()

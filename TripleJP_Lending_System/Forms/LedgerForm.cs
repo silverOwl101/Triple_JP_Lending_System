@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.IO;
 using System.Windows.Forms;
 using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
@@ -90,6 +91,13 @@ namespace TripleJP_Lending_System.Forms
             catch (InvalidOperationException ex) when (ex.InnerException is MySqlException)
             {
                 ExceptionErrorMessage();
+            }
+            catch (TypeInitializationException ex) when (ex.InnerException is FileNotFoundException)
+            {
+                const string MessageContent = "Configuration file is missing, please create a config file first.";
+                const string MessageCaption = "Configuration lost";
+                MessageBox.Show(MessageContent, MessageCaption,
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

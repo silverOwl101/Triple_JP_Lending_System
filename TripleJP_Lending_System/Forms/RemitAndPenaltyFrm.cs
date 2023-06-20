@@ -6,6 +6,7 @@ using TripleJP_Lending_System.Helper.View;
 using TripleJPMVPLibrary.View;
 using TripleJPMVPLibrary.Presenter;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace TripleJP_Lending_System.Forms
 {
@@ -126,6 +127,12 @@ namespace TripleJP_Lending_System.Forms
                 MessageBoxButtons button = MessageBoxButtons.OK;
                 MessageBoxIcon icon = MessageBoxIcon.Error;
                 MessageBox(messageContent, messageCaption, button, icon);
+            }
+            catch (TypeInitializationException ex) when (ex.InnerException is FileNotFoundException)
+            {
+                const string MessageContent = "Configuration file is missing, please create a config file first.";
+                const string MessageCaption = "Configuration lost";
+                MessageBox(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

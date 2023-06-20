@@ -111,6 +111,7 @@ namespace TripleJP_Lending_System.Forms
 
         private void OnSearch()
         {
+            // catch exception
             _isearch = this;
             GetCustomerListPresenter customerList = new GetCustomerListPresenter(_isearch);
             customerList.CallSearch();

@@ -13,7 +13,7 @@ namespace TripleJPMVPLibrary.Repository
     {        
         internal bool CheckRecord(string username, string password)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {               
                 con.Open();
                 const string SqlQuery = "Select username, password from user_system_account where username = @Username and password = @Password";

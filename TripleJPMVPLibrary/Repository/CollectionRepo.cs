@@ -15,7 +15,7 @@ namespace TripleJPMVPLibrary.Repository
     {        
         internal void InsertCollection(Collection collection, Customer customer, Loan loan)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string storedProcedure = "sp_insertCollection";
                 con.Open();
@@ -47,7 +47,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal void InsertPenalty (Penalty penalty, Customer customer, Loan loan)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string storedProcedure = "sp_insertPenalty";
                 con.Open();
@@ -79,7 +79,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal void LoanFullyPaidUpdate(Loan loan)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string Query = "sp_updateLoanStatus";
 
@@ -96,7 +96,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal bool IsDuplicateUid(Guid uid)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 con.Open();
                 const string SqlQuery = "select Uid from collection where Uid = @uId";
@@ -118,7 +118,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal bool IsDuplicateId(string id)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 con.Open();
                 const string SqlQuery = "select Id from collection where Id = @Id";
@@ -141,7 +141,7 @@ namespace TripleJPMVPLibrary.Repository
         internal decimal GetTotalCollection(Loan loan)
         {
             decimal total = 0;
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string Query = "sp_getTotalCollection";
 
@@ -168,7 +168,7 @@ namespace TripleJPMVPLibrary.Repository
         internal decimal GetTotalPenalty(Loan loan)
         {
             decimal total = 0;
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string Query = "sp_getPenaltyTotal";
 

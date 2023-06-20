@@ -15,7 +15,7 @@ namespace TripleJPMVPLibrary.Repository
     {        
         internal void InsertData(Customer customer, CustomerBusinessInformation customerBusinessInformation)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string storedProcedure = "sp_insertCustomer";
                 con.Open();
@@ -68,7 +68,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal bool IsDuplicateUid(Guid uid)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 con.Open();
                 const string SqlQuery = "select Uid from customer_account where Uid = @uId";
@@ -90,7 +90,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal bool IsDuplicateId(string id)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 con.Open();
                 const string SqlQuery = "select Id from customer_account where Id = @Id";
@@ -112,7 +112,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal bool IsDuplicateName(string name)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 con.Open();
                 const string SqlQuery = "select Name from customer_account where Name = @Name";
@@ -134,7 +134,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal bool IsDuplicateBusinessId(string id)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 con.Open();
                 const string SqlQuery = "select Id from customer_business_info where Id = @Id";
@@ -156,7 +156,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal bool IsDuplicateBusinessGuid(Guid uid)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 con.Open();
                 const string SqlQuery = "select Uid from customer_business_info where Uid = @Uid";
@@ -181,7 +181,7 @@ namespace TripleJPMVPLibrary.Repository
             GetCustomerInfo getCustomerList;
             List<GetCustomerInfo> customerList = new List<GetCustomerInfo>();
 
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string Query = "sp_getCustomerList";
 
@@ -233,7 +233,7 @@ namespace TripleJPMVPLibrary.Repository
             try
             {
                 using (MySqlConnection con = 
-                    new MySqlConnection(SqlConnection.ConnectionString))
+                    new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
                 {
                     const string Query = "sp_getCustomer";
                     MySqlCommand cmd = new MySqlCommand(Query, con);
@@ -275,7 +275,7 @@ namespace TripleJPMVPLibrary.Repository
         }
         internal void UpdateData(Customer customer, CustomerBusinessInformation customerBusinessInfo)
         {
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string storedProcedure = "sp_updateCustomer";
                 con.Open();
@@ -324,7 +324,7 @@ namespace TripleJPMVPLibrary.Repository
         {
             string guid = null;
 
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string Query = "sp_getCustomerGuid";
 

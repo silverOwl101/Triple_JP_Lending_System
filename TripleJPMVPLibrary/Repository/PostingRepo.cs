@@ -18,7 +18,7 @@ namespace TripleJPMVPLibrary.Repository
             GetPostingInfo getCustomerList;
             List<GetPostingInfo> customerList = new List<GetPostingInfo>();
 
-            using (MySqlConnection con = new MySqlConnection(SqlConnection.ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
                 const string Query = "sp_getPostingList";
 
