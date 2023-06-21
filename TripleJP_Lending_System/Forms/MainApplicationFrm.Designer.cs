@@ -33,8 +33,6 @@ namespace TripleJP_Lending_System.Forms
             this.customerAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loanInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.postingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.collectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pastDueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.collectionReportSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,75 +41,61 @@ namespace TripleJP_Lending_System.Forms
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.customerAccountToolStripMenuItem,
             this.loanInformationToolStripMenuItem,
             this.postingToolStripMenuItem,
-            this.collectionsToolStripMenuItem,
-            this.pastDueToolStripMenuItem,
             this.reportToolStripMenuItem,
             this.logoutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1044, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(1044, 34);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // customerAccountToolStripMenuItem
             // 
             this.customerAccountToolStripMenuItem.Name = "customerAccountToolStripMenuItem";
-            this.customerAccountToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.customerAccountToolStripMenuItem.Size = new System.Drawing.Size(166, 30);
             this.customerAccountToolStripMenuItem.Text = "Customer Account";
             this.customerAccountToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
             // loanInformationToolStripMenuItem
             // 
             this.loanInformationToolStripMenuItem.Name = "loanInformationToolStripMenuItem";
-            this.loanInformationToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.loanInformationToolStripMenuItem.Size = new System.Drawing.Size(153, 30);
             this.loanInformationToolStripMenuItem.Text = "Loan Information";
             this.loanInformationToolStripMenuItem.Click += new System.EventHandler(this.loanInformationToolStripMenuItem_Click);
             // 
             // postingToolStripMenuItem
             // 
             this.postingToolStripMenuItem.Name = "postingToolStripMenuItem";
-            this.postingToolStripMenuItem.Size = new System.Drawing.Size(70, 22);
+            this.postingToolStripMenuItem.Size = new System.Drawing.Size(80, 30);
             this.postingToolStripMenuItem.Text = "Posting";
             this.postingToolStripMenuItem.Click += new System.EventHandler(this.postingToolStripMenuItem_Click);
-            // 
-            // collectionsToolStripMenuItem
-            // 
-            this.collectionsToolStripMenuItem.Name = "collectionsToolStripMenuItem";
-            this.collectionsToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
-            this.collectionsToolStripMenuItem.Text = "Collections";
-            // 
-            // pastDueToolStripMenuItem
-            // 
-            this.pastDueToolStripMenuItem.Name = "pastDueToolStripMenuItem";
-            this.pastDueToolStripMenuItem.Size = new System.Drawing.Size(81, 22);
-            this.pastDueToolStripMenuItem.Text = "Past Due";
             // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.collectionReportSummaryToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(65, 22);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(73, 30);
             this.reportToolStripMenuItem.Text = "Report";
             // 
             // collectionReportSummaryToolStripMenuItem
             // 
             this.collectionReportSummaryToolStripMenuItem.Name = "collectionReportSummaryToolStripMenuItem";
-            this.collectionReportSummaryToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
+            this.collectionReportSummaryToolStripMenuItem.Size = new System.Drawing.Size(291, 30);
             this.collectionReportSummaryToolStripMenuItem.Text = "Collection Report Summary";
             this.collectionReportSummaryToolStripMenuItem.Click += new System.EventHandler(this.collectionReportSummaryToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(71, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(83, 30);
             this.logoutToolStripMenuItem.Text = "Log-out";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.LogoutToolStripMenuItem_Click);
             // 
@@ -141,8 +125,6 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.ToolStripMenuItem customerAccountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loanInformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem postingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem collectionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pastDueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem collectionReportSummaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;

@@ -39,17 +39,17 @@ namespace TripleJP_Lending_System
             // userNameTextBox
             // 
             this.userNameTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.userNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameTextBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userNameTextBox.Location = new System.Drawing.Point(48, 50);
             this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(308, 29);
+            this.userNameTextBox.Size = new System.Drawing.Size(308, 28);
             this.userNameTextBox.TabIndex = 0;
             this.userNameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.userNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsernameTxt_KeyPress);
             // 
             // usernameGroupBox
             // 
-            this.usernameGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameGroupBox.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameGroupBox.Location = new System.Drawing.Point(39, 32);
             this.usernameGroupBox.Name = "usernameGroupBox";
             this.usernameGroupBox.Size = new System.Drawing.Size(328, 66);
@@ -70,7 +70,7 @@ namespace TripleJP_Lending_System
             // 
             // passwordGroupBox
             // 
-            this.passwordGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordGroupBox.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordGroupBox.Location = new System.Drawing.Point(39, 102);
             this.passwordGroupBox.Name = "passwordGroupBox";
             this.passwordGroupBox.Size = new System.Drawing.Size(328, 65);
@@ -80,7 +80,7 @@ namespace TripleJP_Lending_System
             // 
             // logInButton
             // 
-            this.logInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logInButton.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logInButton.Location = new System.Drawing.Point(264, 183);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(103, 44);

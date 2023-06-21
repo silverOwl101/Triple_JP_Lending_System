@@ -110,3 +110,5 @@ C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\obj\Debug\Tri
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.csproj.CopyComplete
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.pdb
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\Newtonsoft.Json.xml

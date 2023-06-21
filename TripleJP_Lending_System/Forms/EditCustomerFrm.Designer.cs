@@ -68,20 +68,20 @@ namespace TripleJP_Lending_System.Forms
             this.personalInfoGroupBox.Controls.Add(this.businessNatureTextBox);
             this.personalInfoGroupBox.Controls.Add(this.customerNameLabel);
             this.personalInfoGroupBox.Controls.Add(this.businessAverageGrossLabel);
-            this.personalInfoGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personalInfoGroupBox.Location = new System.Drawing.Point(55, 30);
+            this.personalInfoGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personalInfoGroupBox.Location = new System.Drawing.Point(41, 30);
             this.personalInfoGroupBox.Name = "personalInfoGroupBox";
-            this.personalInfoGroupBox.Size = new System.Drawing.Size(687, 329);
+            this.personalInfoGroupBox.Size = new System.Drawing.Size(660, 329);
             this.personalInfoGroupBox.TabIndex = 12;
             this.personalInfoGroupBox.TabStop = false;
             this.personalInfoGroupBox.Text = "Personal Information ";
             // 
             // averageDailyGrossSalesTextBox
             // 
-            this.averageDailyGrossSalesTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.averageDailyGrossSalesTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.averageDailyGrossSalesTextBox.Location = new System.Drawing.Point(210, 270);
             this.averageDailyGrossSalesTextBox.Name = "averageDailyGrossSalesTextBox";
-            this.averageDailyGrossSalesTextBox.Size = new System.Drawing.Size(433, 24);
+            this.averageDailyGrossSalesTextBox.Size = new System.Drawing.Size(433, 29);
             this.averageDailyGrossSalesTextBox.TabIndex = 8;
             this.averageDailyGrossSalesTextBox.Enter += new System.EventHandler(this.AverageDailyGrossSalestxt_Enter);
             this.averageDailyGrossSalesTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AverageDailyGrossSalestxt_KeyPress);
@@ -90,19 +90,19 @@ namespace TripleJP_Lending_System.Forms
             // businessCapitalLabel
             // 
             this.businessCapitalLabel.AutoSize = true;
-            this.businessCapitalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.businessCapitalLabel.Location = new System.Drawing.Point(47, 243);
+            this.businessCapitalLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.businessCapitalLabel.Location = new System.Drawing.Point(32, 240);
             this.businessCapitalLabel.Name = "businessCapitalLabel";
-            this.businessCapitalLabel.Size = new System.Drawing.Size(149, 16);
+            this.businessCapitalLabel.Size = new System.Drawing.Size(171, 25);
             this.businessCapitalLabel.TabIndex = 13;
             this.businessCapitalLabel.Text = "Gross Business Capital:";
             // 
             // grossBusinessCapitalTextBox
             // 
-            this.grossBusinessCapitalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grossBusinessCapitalTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grossBusinessCapitalTextBox.Location = new System.Drawing.Point(210, 237);
             this.grossBusinessCapitalTextBox.Name = "grossBusinessCapitalTextBox";
-            this.grossBusinessCapitalTextBox.Size = new System.Drawing.Size(433, 24);
+            this.grossBusinessCapitalTextBox.Size = new System.Drawing.Size(433, 29);
             this.grossBusinessCapitalTextBox.TabIndex = 7;
             this.grossBusinessCapitalTextBox.Enter += new System.EventHandler(this.GrossBusinessCapitaltxt_Enter);
             this.grossBusinessCapitalTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GrossBusinessCapitaltxt_KeyPress);
@@ -111,29 +111,29 @@ namespace TripleJP_Lending_System.Forms
             // businessAddressLabel
             // 
             this.businessAddressLabel.AutoSize = true;
-            this.businessAddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.businessAddressLabel.Location = new System.Drawing.Point(81, 208);
+            this.businessAddressLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.businessAddressLabel.Location = new System.Drawing.Point(66, 206);
             this.businessAddressLabel.Name = "businessAddressLabel";
-            this.businessAddressLabel.Size = new System.Drawing.Size(119, 16);
+            this.businessAddressLabel.Size = new System.Drawing.Size(134, 25);
             this.businessAddressLabel.TabIndex = 11;
             this.businessAddressLabel.Text = "Business Address:";
             // 
             // businessAddressTextBox
             // 
-            this.businessAddressTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.businessAddressTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.businessAddressTextBox.Location = new System.Drawing.Point(210, 202);
             this.businessAddressTextBox.Name = "businessAddressTextBox";
-            this.businessAddressTextBox.Size = new System.Drawing.Size(433, 24);
+            this.businessAddressTextBox.Size = new System.Drawing.Size(433, 29);
             this.businessAddressTextBox.TabIndex = 6;
             this.businessAddressTextBox.TextChanged += new System.EventHandler(this.BusinessAddresstxt_TextChanged);
             this.businessAddressTextBox.Leave += new System.EventHandler(this.BusinessAddresstxt_Leave);
             // 
             // customerNameTextBox
             // 
-            this.customerNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerNameTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerNameTextBox.Location = new System.Drawing.Point(210, 27);
             this.customerNameTextBox.Name = "customerNameTextBox";
-            this.customerNameTextBox.Size = new System.Drawing.Size(433, 24);
+            this.customerNameTextBox.Size = new System.Drawing.Size(433, 29);
             this.customerNameTextBox.TabIndex = 1;
             this.customerNameTextBox.TextChanged += new System.EventHandler(this.CustomerNametxt_TextChanged);
             this.customerNameTextBox.Leave += new System.EventHandler(this.CustomerNametxt_Leave);
@@ -141,19 +141,19 @@ namespace TripleJP_Lending_System.Forms
             // businessNatureLabel
             // 
             this.businessNatureLabel.AutoSize = true;
-            this.businessNatureLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.businessNatureLabel.Location = new System.Drawing.Point(91, 173);
+            this.businessNatureLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.businessNatureLabel.Location = new System.Drawing.Point(76, 171);
             this.businessNatureLabel.Name = "businessNatureLabel";
-            this.businessNatureLabel.Size = new System.Drawing.Size(108, 16);
+            this.businessNatureLabel.Size = new System.Drawing.Size(126, 25);
             this.businessNatureLabel.TabIndex = 9;
             this.businessNatureLabel.Text = "Business Nature:";
             // 
             // contactNumberTextBox
             // 
-            this.contactNumberTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactNumberTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactNumberTextBox.Location = new System.Drawing.Point(210, 97);
             this.contactNumberTextBox.Name = "contactNumberTextBox";
-            this.contactNumberTextBox.Size = new System.Drawing.Size(433, 24);
+            this.contactNumberTextBox.Size = new System.Drawing.Size(433, 29);
             this.contactNumberTextBox.TabIndex = 3;
             this.contactNumberTextBox.TextChanged += new System.EventHandler(this.ContactNumbertxt_TextChanged);
             this.contactNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContactNumbertxt_KeyPress);
@@ -162,19 +162,19 @@ namespace TripleJP_Lending_System.Forms
             // businessNameLabel
             // 
             this.businessNameLabel.AutoSize = true;
-            this.businessNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.businessNameLabel.Location = new System.Drawing.Point(96, 139);
+            this.businessNameLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.businessNameLabel.Location = new System.Drawing.Point(81, 136);
             this.businessNameLabel.Name = "businessNameLabel";
-            this.businessNameLabel.Size = new System.Drawing.Size(105, 16);
+            this.businessNameLabel.Size = new System.Drawing.Size(121, 25);
             this.businessNameLabel.TabIndex = 8;
             this.businessNameLabel.Text = "Business Name:";
             // 
             // customerAddressTextBox
             // 
-            this.customerAddressTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerAddressTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerAddressTextBox.Location = new System.Drawing.Point(210, 62);
             this.customerAddressTextBox.Name = "customerAddressTextBox";
-            this.customerAddressTextBox.Size = new System.Drawing.Size(433, 24);
+            this.customerAddressTextBox.Size = new System.Drawing.Size(433, 29);
             this.customerAddressTextBox.TabIndex = 2;
             this.customerAddressTextBox.TextChanged += new System.EventHandler(this.CustomerAddresstxt_TextChanged);
             this.customerAddressTextBox.Leave += new System.EventHandler(this.CustomerAddresstxt_Leave);
@@ -182,19 +182,19 @@ namespace TripleJP_Lending_System.Forms
             // customerNumberLabel
             // 
             this.customerNumberLabel.AutoSize = true;
-            this.customerNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerNumberLabel.Location = new System.Drawing.Point(86, 104);
+            this.customerNumberLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerNumberLabel.Location = new System.Drawing.Point(71, 102);
             this.customerNumberLabel.Name = "customerNumberLabel";
-            this.customerNumberLabel.Size = new System.Drawing.Size(106, 16);
+            this.customerNumberLabel.Size = new System.Drawing.Size(132, 25);
             this.customerNumberLabel.TabIndex = 7;
             this.customerNumberLabel.Text = "Contact Number:";
             // 
             // businessNameTextBox
             // 
-            this.businessNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.businessNameTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.businessNameTextBox.Location = new System.Drawing.Point(210, 132);
             this.businessNameTextBox.Name = "businessNameTextBox";
-            this.businessNameTextBox.Size = new System.Drawing.Size(433, 24);
+            this.businessNameTextBox.Size = new System.Drawing.Size(433, 29);
             this.businessNameTextBox.TabIndex = 4;
             this.businessNameTextBox.TextChanged += new System.EventHandler(this.BusinessNametxt_TextChanged);
             this.businessNameTextBox.Leave += new System.EventHandler(this.BusinessNametxt_Leave);
@@ -202,19 +202,19 @@ namespace TripleJP_Lending_System.Forms
             // customerAddressLabel
             // 
             this.customerAddressLabel.AutoSize = true;
-            this.customerAddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerAddressLabel.Location = new System.Drawing.Point(73, 67);
+            this.customerAddressLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerAddressLabel.Location = new System.Drawing.Point(58, 64);
             this.customerAddressLabel.Name = "customerAddressLabel";
-            this.customerAddressLabel.Size = new System.Drawing.Size(121, 16);
+            this.customerAddressLabel.Size = new System.Drawing.Size(143, 25);
             this.customerAddressLabel.TabIndex = 6;
             this.customerAddressLabel.Text = "Customer Address:";
             // 
             // businessNatureTextBox
             // 
-            this.businessNatureTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.businessNatureTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.businessNatureTextBox.Location = new System.Drawing.Point(210, 167);
             this.businessNatureTextBox.Name = "businessNatureTextBox";
-            this.businessNatureTextBox.Size = new System.Drawing.Size(433, 24);
+            this.businessNatureTextBox.Size = new System.Drawing.Size(433, 29);
             this.businessNatureTextBox.TabIndex = 5;
             this.businessNatureTextBox.TextChanged += new System.EventHandler(this.BusinessNaturetxt_TextChanged);
             this.businessNatureTextBox.Leave += new System.EventHandler(this.BusinessNaturetxt_Leave);
@@ -222,27 +222,27 @@ namespace TripleJP_Lending_System.Forms
             // customerNameLabel
             // 
             this.customerNameLabel.AutoSize = true;
-            this.customerNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerNameLabel.Location = new System.Drawing.Point(88, 34);
+            this.customerNameLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerNameLabel.Location = new System.Drawing.Point(72, 32);
             this.customerNameLabel.Name = "customerNameLabel";
-            this.customerNameLabel.Size = new System.Drawing.Size(107, 16);
+            this.customerNameLabel.Size = new System.Drawing.Size(130, 25);
             this.customerNameLabel.TabIndex = 5;
             this.customerNameLabel.Text = "Customer Name:";
             // 
             // businessAverageGrossLabel
             // 
             this.businessAverageGrossLabel.AutoSize = true;
-            this.businessAverageGrossLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.businessAverageGrossLabel.Location = new System.Drawing.Point(27, 277);
+            this.businessAverageGrossLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.businessAverageGrossLabel.Location = new System.Drawing.Point(12, 275);
             this.businessAverageGrossLabel.Name = "businessAverageGrossLabel";
-            this.businessAverageGrossLabel.Size = new System.Drawing.Size(173, 16);
+            this.businessAverageGrossLabel.Size = new System.Drawing.Size(193, 25);
             this.businessAverageGrossLabel.TabIndex = 15;
             this.businessAverageGrossLabel.Text = "Average Daily Gross Sales:";
             // 
             // submitButton
             // 
-            this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitButton.Location = new System.Drawing.Point(586, 365);
+            this.submitButton.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitButton.Location = new System.Drawing.Point(589, 365);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(112, 45);
             this.submitButton.TabIndex = 16;
@@ -255,7 +255,7 @@ namespace TripleJP_Lending_System.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(751, 450);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.personalInfoGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

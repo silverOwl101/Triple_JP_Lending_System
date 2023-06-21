@@ -55,3 +55,5 @@ C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\obj\Debug
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.csproj.CopyComplete
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.pdb
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\Newtonsoft.Json.xml

@@ -113,7 +113,7 @@ namespace TripleJP_Lending_System.Forms
             this.loanInformationGroupBox.Controls.Add(this.customerIdGroupBox);
             this.loanInformationGroupBox.Controls.Add(this.customerNameGroupBox);
             this.loanInformationGroupBox.Controls.Add(this.loanIdGroupBox);
-            this.loanInformationGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loanInformationGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loanInformationGroupBox.Location = new System.Drawing.Point(13, 34);
             this.loanInformationGroupBox.Name = "loanInformationGroupBox";
             this.loanInformationGroupBox.Size = new System.Drawing.Size(926, 350);
@@ -124,7 +124,7 @@ namespace TripleJP_Lending_System.Forms
             // statusGroupBox
             // 
             this.statusGroupBox.Controls.Add(this.statusLabel);
-            this.statusGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusGroupBox.Location = new System.Drawing.Point(464, 278);
             this.statusGroupBox.Name = "statusGroupBox";
             this.statusGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -137,14 +137,14 @@ namespace TripleJP_Lending_System.Forms
             this.statusLabel.AutoSize = true;
             this.statusLabel.Location = new System.Drawing.Point(64, 22);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(65, 17);
+            this.statusLabel.Size = new System.Drawing.Size(74, 25);
             this.statusLabel.TabIndex = 0;
             this.statusLabel.Text = "statusTxt";
             // 
             // totalPenaltyGroupBox
             // 
             this.totalPenaltyGroupBox.Controls.Add(this.penaltyLabel);
-            this.totalPenaltyGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPenaltyGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalPenaltyGroupBox.Location = new System.Drawing.Point(15, 278);
             this.totalPenaltyGroupBox.Name = "totalPenaltyGroupBox";
             this.totalPenaltyGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -157,14 +157,14 @@ namespace TripleJP_Lending_System.Forms
             this.penaltyLabel.AutoSize = true;
             this.penaltyLabel.Location = new System.Drawing.Point(64, 22);
             this.penaltyLabel.Name = "penaltyLabel";
-            this.penaltyLabel.Size = new System.Drawing.Size(54, 17);
+            this.penaltyLabel.Size = new System.Drawing.Size(64, 25);
             this.penaltyLabel.TabIndex = 0;
             this.penaltyLabel.Text = "penalty";
             // 
             // principalLoanGroupBox
             // 
             this.principalLoanGroupBox.Controls.Add(this.principalLoanLabel);
-            this.principalLoanGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.principalLoanGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.principalLoanGroupBox.Location = new System.Drawing.Point(464, 216);
             this.principalLoanGroupBox.Name = "principalLoanGroupBox";
             this.principalLoanGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -177,14 +177,14 @@ namespace TripleJP_Lending_System.Forms
             this.principalLoanLabel.AutoSize = true;
             this.principalLoanLabel.Location = new System.Drawing.Point(64, 22);
             this.principalLoanLabel.Name = "principalLoanLabel";
-            this.principalLoanLabel.Size = new System.Drawing.Size(178, 17);
+            this.principalLoanLabel.Size = new System.Drawing.Size(194, 25);
             this.principalLoanLabel.TabIndex = 0;
             this.principalLoanLabel.Text = "grossBusinessCapitalLabel";
             // 
             // interestGroupBox
             // 
             this.interestGroupBox.Controls.Add(this.interestLabel);
-            this.interestGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.interestGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.interestGroupBox.Location = new System.Drawing.Point(15, 216);
             this.interestGroupBox.Name = "interestGroupBox";
             this.interestGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -197,14 +197,14 @@ namespace TripleJP_Lending_System.Forms
             this.interestLabel.AutoSize = true;
             this.interestLabel.Location = new System.Drawing.Point(64, 22);
             this.interestLabel.Name = "interestLabel";
-            this.interestLabel.Size = new System.Drawing.Size(74, 17);
+            this.interestLabel.Size = new System.Drawing.Size(84, 25);
             this.interestLabel.TabIndex = 0;
             this.interestLabel.Text = "interestTxt";
             // 
             // effectiveDateGroupBox
             // 
             this.effectiveDateGroupBox.Controls.Add(this.effectiveDateLabel);
-            this.effectiveDateGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.effectiveDateGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.effectiveDateGroupBox.Location = new System.Drawing.Point(464, 154);
             this.effectiveDateGroupBox.Name = "effectiveDateGroupBox";
             this.effectiveDateGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -217,14 +217,14 @@ namespace TripleJP_Lending_System.Forms
             this.effectiveDateLabel.AutoSize = true;
             this.effectiveDateLabel.Location = new System.Drawing.Point(64, 22);
             this.effectiveDateLabel.Name = "effectiveDateLabel";
-            this.effectiveDateLabel.Size = new System.Drawing.Size(142, 17);
+            this.effectiveDateLabel.Size = new System.Drawing.Size(155, 25);
             this.effectiveDateLabel.TabIndex = 0;
             this.effectiveDateLabel.Text = "businessNatureLabel";
             // 
             // durationGroupBox
             // 
             this.durationGroupBox.Controls.Add(this.durationLabel);
-            this.durationGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.durationGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.durationGroupBox.Location = new System.Drawing.Point(15, 154);
             this.durationGroupBox.Name = "durationGroupBox";
             this.durationGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -237,14 +237,14 @@ namespace TripleJP_Lending_System.Forms
             this.durationLabel.AutoSize = true;
             this.durationLabel.Location = new System.Drawing.Point(64, 22);
             this.durationLabel.Name = "durationLabel";
-            this.durationLabel.Size = new System.Drawing.Size(136, 17);
+            this.durationLabel.Size = new System.Drawing.Size(150, 25);
             this.durationLabel.TabIndex = 0;
             this.durationLabel.Text = "businessNameLabel";
             // 
             // paymentTermGroupBox
             // 
             this.paymentTermGroupBox.Controls.Add(this.paymentTermLabel);
-            this.paymentTermGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentTermGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.paymentTermGroupBox.Location = new System.Drawing.Point(464, 91);
             this.paymentTermGroupBox.Name = "paymentTermGroupBox";
             this.paymentTermGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -257,14 +257,14 @@ namespace TripleJP_Lending_System.Forms
             this.paymentTermLabel.AutoSize = true;
             this.paymentTermLabel.Location = new System.Drawing.Point(64, 22);
             this.paymentTermLabel.Name = "paymentTermLabel";
-            this.paymentTermLabel.Size = new System.Drawing.Size(139, 17);
+            this.paymentTermLabel.Size = new System.Drawing.Size(159, 25);
             this.paymentTermLabel.TabIndex = 0;
             this.paymentTermLabel.Text = "contactNumberLabel";
             // 
             // customerIdGroupBox
             // 
             this.customerIdGroupBox.Controls.Add(this.customerIdLabel);
-            this.customerIdGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerIdGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerIdGroupBox.Location = new System.Drawing.Point(464, 30);
             this.customerIdGroupBox.Name = "customerIdGroupBox";
             this.customerIdGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -277,14 +277,14 @@ namespace TripleJP_Lending_System.Forms
             this.customerIdLabel.AutoSize = true;
             this.customerIdLabel.Location = new System.Drawing.Point(64, 22);
             this.customerIdLabel.Name = "customerIdLabel";
-            this.customerIdLabel.Size = new System.Drawing.Size(138, 17);
+            this.customerIdLabel.Size = new System.Drawing.Size(157, 25);
             this.customerIdLabel.TabIndex = 0;
             this.customerIdLabel.Text = "customerNameLabel";
             // 
             // customerNameGroupBox
             // 
             this.customerNameGroupBox.Controls.Add(this.customerNameLabel);
-            this.customerNameGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerNameGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerNameGroupBox.Location = new System.Drawing.Point(15, 91);
             this.customerNameGroupBox.Name = "customerNameGroupBox";
             this.customerNameGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -297,14 +297,14 @@ namespace TripleJP_Lending_System.Forms
             this.customerNameLabel.AutoSize = true;
             this.customerNameLabel.Location = new System.Drawing.Point(64, 22);
             this.customerNameLabel.Name = "customerNameLabel";
-            this.customerNameLabel.Size = new System.Drawing.Size(153, 17);
+            this.customerNameLabel.Size = new System.Drawing.Size(170, 25);
             this.customerNameLabel.TabIndex = 0;
             this.customerNameLabel.Text = "customerAddressLabel";
             // 
             // loanIdGroupBox
             // 
             this.loanIdGroupBox.Controls.Add(this.loanIdLabel);
-            this.loanIdGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loanIdGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loanIdGroupBox.Location = new System.Drawing.Point(15, 30);
             this.loanIdGroupBox.Name = "loanIdGroupBox";
             this.loanIdGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -317,27 +317,27 @@ namespace TripleJP_Lending_System.Forms
             this.loanIdLabel.AutoSize = true;
             this.loanIdLabel.Location = new System.Drawing.Point(64, 22);
             this.loanIdLabel.Name = "loanIdLabel";
-            this.loanIdLabel.Size = new System.Drawing.Size(112, 17);
+            this.loanIdLabel.Size = new System.Drawing.Size(127, 25);
             this.loanIdLabel.TabIndex = 0;
             this.loanIdLabel.Text = "customerIdLabel";
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1383, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1385, 33);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
@@ -350,7 +350,7 @@ namespace TripleJP_Lending_System.Forms
             this.loanMaturityInformationGroupBox.Controls.Add(this.maturityValueGroupBox);
             this.loanMaturityInformationGroupBox.Controls.Add(this.maturityDateGroupBox);
             this.loanMaturityInformationGroupBox.Controls.Add(this.maturityInterestGroupBox);
-            this.loanMaturityInformationGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loanMaturityInformationGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loanMaturityInformationGroupBox.Location = new System.Drawing.Point(13, 390);
             this.loanMaturityInformationGroupBox.Name = "loanMaturityInformationGroupBox";
             this.loanMaturityInformationGroupBox.Size = new System.Drawing.Size(926, 286);
@@ -361,7 +361,7 @@ namespace TripleJP_Lending_System.Forms
             // totalLoanAmountGroupBox
             // 
             this.totalLoanAmountGroupBox.Controls.Add(this.totalLoanPenaltyLabel);
-            this.totalLoanAmountGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalLoanAmountGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalLoanAmountGroupBox.Location = new System.Drawing.Point(463, 91);
             this.totalLoanAmountGroupBox.Name = "totalLoanAmountGroupBox";
             this.totalLoanAmountGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -374,14 +374,14 @@ namespace TripleJP_Lending_System.Forms
             this.totalLoanPenaltyLabel.AutoSize = true;
             this.totalLoanPenaltyLabel.Location = new System.Drawing.Point(64, 22);
             this.totalLoanPenaltyLabel.Name = "totalLoanPenaltyLabel";
-            this.totalLoanPenaltyLabel.Size = new System.Drawing.Size(155, 17);
+            this.totalLoanPenaltyLabel.Size = new System.Drawing.Size(172, 25);
             this.totalLoanPenaltyLabel.TabIndex = 0;
             this.totalLoanPenaltyLabel.Text = "totalLoanPenaltyAdded";
             // 
             // totalBalanceGroupBox
             // 
             this.totalBalanceGroupBox.Controls.Add(this.totalBalanceLabel);
-            this.totalBalanceGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalBalanceGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalBalanceGroupBox.Location = new System.Drawing.Point(464, 219);
             this.totalBalanceGroupBox.Name = "totalBalanceGroupBox";
             this.totalBalanceGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -394,14 +394,14 @@ namespace TripleJP_Lending_System.Forms
             this.totalBalanceLabel.AutoSize = true;
             this.totalBalanceLabel.Location = new System.Drawing.Point(64, 22);
             this.totalBalanceLabel.Name = "totalBalanceLabel";
-            this.totalBalanceLabel.Size = new System.Drawing.Size(105, 17);
+            this.totalBalanceLabel.Size = new System.Drawing.Size(120, 25);
             this.totalBalanceLabel.TabIndex = 0;
             this.totalBalanceLabel.Text = "totalBalanceTxt";
             // 
             // totalCollectedAmountGroupBox
             // 
             this.totalCollectedAmountGroupBox.Controls.Add(this.totalAmountRemittanceLabel);
-            this.totalCollectedAmountGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalCollectedAmountGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalCollectedAmountGroupBox.Location = new System.Drawing.Point(464, 154);
             this.totalCollectedAmountGroupBox.Name = "totalCollectedAmountGroupBox";
             this.totalCollectedAmountGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -414,14 +414,14 @@ namespace TripleJP_Lending_System.Forms
             this.totalAmountRemittanceLabel.AutoSize = true;
             this.totalAmountRemittanceLabel.Location = new System.Drawing.Point(64, 22);
             this.totalAmountRemittanceLabel.Name = "totalAmountRemittanceLabel";
-            this.totalAmountRemittanceLabel.Size = new System.Drawing.Size(173, 17);
+            this.totalAmountRemittanceLabel.Size = new System.Drawing.Size(199, 25);
             this.totalAmountRemittanceLabel.TabIndex = 0;
             this.totalAmountRemittanceLabel.Text = "totalAmountRemittanceTxt";
             // 
             // perRemittanceGroupBox
             // 
             this.perRemittanceGroupBox.Controls.Add(this.perRemittanceLabel);
-            this.perRemittanceGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.perRemittanceGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.perRemittanceGroupBox.Location = new System.Drawing.Point(15, 154);
             this.perRemittanceGroupBox.Name = "perRemittanceGroupBox";
             this.perRemittanceGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -434,14 +434,14 @@ namespace TripleJP_Lending_System.Forms
             this.perRemittanceLabel.AutoSize = true;
             this.perRemittanceLabel.Location = new System.Drawing.Point(64, 22);
             this.perRemittanceLabel.Name = "perRemittanceLabel";
-            this.perRemittanceLabel.Size = new System.Drawing.Size(119, 17);
+            this.perRemittanceLabel.Size = new System.Drawing.Size(136, 25);
             this.perRemittanceLabel.TabIndex = 0;
             this.perRemittanceLabel.Text = "perRemittanceTxt";
             // 
             // maturityValueGroupBox
             // 
             this.maturityValueGroupBox.Controls.Add(this.maturityValueLabel);
-            this.maturityValueGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maturityValueGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maturityValueGroupBox.Location = new System.Drawing.Point(464, 30);
             this.maturityValueGroupBox.Name = "maturityValueGroupBox";
             this.maturityValueGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -454,14 +454,14 @@ namespace TripleJP_Lending_System.Forms
             this.maturityValueLabel.AutoSize = true;
             this.maturityValueLabel.Location = new System.Drawing.Point(64, 22);
             this.maturityValueLabel.Name = "maturityValueLabel";
-            this.maturityValueLabel.Size = new System.Drawing.Size(113, 17);
+            this.maturityValueLabel.Size = new System.Drawing.Size(129, 25);
             this.maturityValueLabel.TabIndex = 0;
             this.maturityValueLabel.Text = "maturityValueTxt";
             // 
             // maturityDateGroupBox
             // 
             this.maturityDateGroupBox.Controls.Add(this.maturityDateLabel);
-            this.maturityDateGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maturityDateGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maturityDateGroupBox.Location = new System.Drawing.Point(15, 91);
             this.maturityDateGroupBox.Name = "maturityDateGroupBox";
             this.maturityDateGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -474,14 +474,14 @@ namespace TripleJP_Lending_System.Forms
             this.maturityDateLabel.AutoSize = true;
             this.maturityDateLabel.Location = new System.Drawing.Point(64, 22);
             this.maturityDateLabel.Name = "maturityDateLabel";
-            this.maturityDateLabel.Size = new System.Drawing.Size(107, 17);
+            this.maturityDateLabel.Size = new System.Drawing.Size(123, 25);
             this.maturityDateLabel.TabIndex = 0;
             this.maturityDateLabel.Text = "maturityDateTxt";
             // 
             // maturityInterestGroupBox
             // 
             this.maturityInterestGroupBox.Controls.Add(this.maturityInterestLabel);
-            this.maturityInterestGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maturityInterestGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maturityInterestGroupBox.Location = new System.Drawing.Point(15, 30);
             this.maturityInterestGroupBox.Name = "maturityInterestGroupBox";
             this.maturityInterestGroupBox.Size = new System.Drawing.Size(442, 56);
@@ -494,26 +494,26 @@ namespace TripleJP_Lending_System.Forms
             this.maturityInterestLabel.AutoSize = true;
             this.maturityInterestLabel.Location = new System.Drawing.Point(64, 22);
             this.maturityInterestLabel.Name = "maturityInterestLabel";
-            this.maturityInterestLabel.Size = new System.Drawing.Size(124, 17);
+            this.maturityInterestLabel.Size = new System.Drawing.Size(142, 25);
             this.maturityInterestLabel.TabIndex = 0;
             this.maturityInterestLabel.Text = "maturityInterestTxt";
             // 
             // searchLabel
             // 
             this.searchLabel.AutoSize = true;
-            this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(948, 46);
+            this.searchLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchLabel.Location = new System.Drawing.Point(951, 45);
             this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(57, 17);
+            this.searchLabel.Size = new System.Drawing.Size(64, 25);
             this.searchLabel.TabIndex = 24;
             this.searchLabel.Text = "Search:";
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTextBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchTextBox.Location = new System.Drawing.Point(1015, 42);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(352, 23);
+            this.searchTextBox.Size = new System.Drawing.Size(352, 28);
             this.searchTextBox.TabIndex = 1;
             this.searchTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchBoxTxt_KeyPress);
             // 
@@ -556,7 +556,7 @@ namespace TripleJP_Lending_System.Forms
             this.searchFilterGroupBox.Controls.Add(this.badDebtCheckBox);
             this.searchFilterGroupBox.Controls.Add(this.fullyPaidCheckBox);
             this.searchFilterGroupBox.Controls.Add(this.unPaidCheckBox);
-            this.searchFilterGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchFilterGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchFilterGroupBox.Location = new System.Drawing.Point(966, 498);
             this.searchFilterGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchFilterGroupBox.Name = "searchFilterGroupBox";
@@ -569,11 +569,11 @@ namespace TripleJP_Lending_System.Forms
             // badDebtCheckBox
             // 
             this.badDebtCheckBox.AutoSize = true;
-            this.badDebtCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.badDebtCheckBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.badDebtCheckBox.Location = new System.Drawing.Point(268, 25);
             this.badDebtCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.badDebtCheckBox.Name = "badDebtCheckBox";
-            this.badDebtCheckBox.Size = new System.Drawing.Size(77, 19);
+            this.badDebtCheckBox.Size = new System.Drawing.Size(95, 29);
             this.badDebtCheckBox.TabIndex = 5;
             this.badDebtCheckBox.Text = "Bad Debt";
             this.badDebtCheckBox.UseVisualStyleBackColor = true;
@@ -582,11 +582,11 @@ namespace TripleJP_Lending_System.Forms
             // fullyPaidCheckBox
             // 
             this.fullyPaidCheckBox.AutoSize = true;
-            this.fullyPaidCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullyPaidCheckBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fullyPaidCheckBox.Location = new System.Drawing.Point(161, 25);
             this.fullyPaidCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.fullyPaidCheckBox.Name = "fullyPaidCheckBox";
-            this.fullyPaidCheckBox.Size = new System.Drawing.Size(79, 19);
+            this.fullyPaidCheckBox.Size = new System.Drawing.Size(94, 29);
             this.fullyPaidCheckBox.TabIndex = 4;
             this.fullyPaidCheckBox.Text = "Fully Paid";
             this.fullyPaidCheckBox.UseVisualStyleBackColor = true;
@@ -595,11 +595,11 @@ namespace TripleJP_Lending_System.Forms
             // unPaidCheckBox
             // 
             this.unPaidCheckBox.AutoSize = true;
-            this.unPaidCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unPaidCheckBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unPaidCheckBox.Location = new System.Drawing.Point(62, 25);
             this.unPaidCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.unPaidCheckBox.Name = "unPaidCheckBox";
-            this.unPaidCheckBox.Size = new System.Drawing.Size(66, 19);
+            this.unPaidCheckBox.Size = new System.Drawing.Size(79, 29);
             this.unPaidCheckBox.TabIndex = 3;
             this.unPaidCheckBox.Text = "Unpaid";
             this.unPaidCheckBox.UseVisualStyleBackColor = true;
@@ -608,7 +608,7 @@ namespace TripleJP_Lending_System.Forms
             // generateAccountStatementButton
             // 
             this.generateAccountStatementButton.Enabled = false;
-            this.generateAccountStatementButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generateAccountStatementButton.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generateAccountStatementButton.Location = new System.Drawing.Point(966, 566);
             this.generateAccountStatementButton.Name = "generateAccountStatementButton";
             this.generateAccountStatementButton.Size = new System.Drawing.Size(401, 63);
@@ -622,7 +622,7 @@ namespace TripleJP_Lending_System.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1383, 687);
+            this.ClientSize = new System.Drawing.Size(1385, 676);
             this.Controls.Add(this.generateAccountStatementButton);
             this.Controls.Add(this.searchFilterGroupBox);
             this.Controls.Add(this.searchLabel);

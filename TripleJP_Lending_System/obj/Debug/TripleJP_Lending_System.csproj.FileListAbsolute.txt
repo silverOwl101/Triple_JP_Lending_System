@@ -259,3 +259,5 @@ C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debu
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.csproj.CopyComplete
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.exe
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\obj\Debug\TripleJP_Lending_System.pdb
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\bin\Debug\Newtonsoft.Json.dll
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJP_Lending_System\bin\Debug\Newtonsoft.Json.xml
