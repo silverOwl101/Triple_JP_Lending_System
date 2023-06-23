@@ -374,15 +374,17 @@ namespace TripleJP_Lending_System.Forms
                 totalAmountRemittanceLabel.Text = "0";
             }
             
-            decimal remaining_balance;
-            decimal result;            
+            decimal remaining_balance = 0;
+            decimal totalBalanceResult = 0;
+            decimal totalLoanPenaltyResult = 0;
 
-            totalLoanPenaltyLabel.Text = 
-                Convert.ToString(Convert.ToDecimal(penaltyLabel.Text) + 
-                Convert.ToDecimal(maturityValueLabel.Text));
+            totalLoanPenaltyResult = Convert.ToDecimal(penaltyLabel.Text) +
+                                     Convert.ToDecimal(maturityValueLabel.Text);
+            totalLoanPenaltyLabel.Text = String.Format("{0:N}", totalLoanPenaltyResult);
+
             remaining_balance = Convert.ToDecimal(totalAmountRemittanceLabel.Text) - Convert.ToDecimal(maturityValueLabel.Text);
-            result = Convert.ToDecimal(totalLoanPenaltyLabel.Text) - Convert.ToDecimal(totalAmountRemittanceLabel.Text);
-            totalBalanceLabel.Text = String.Format("{0:N}", result);
+            totalBalanceResult = Convert.ToDecimal(totalLoanPenaltyLabel.Text) - Convert.ToDecimal(totalAmountRemittanceLabel.Text);
+            totalBalanceLabel.Text = String.Format("{0:N}", totalBalanceResult);
         }
 
         #endregion

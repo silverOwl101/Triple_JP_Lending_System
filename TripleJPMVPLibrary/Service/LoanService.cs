@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ using TripleJPUtilityLibrary.Generator;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+
 namespace TripleJPMVPLibrary.Service
 {
     internal class LoanService
@@ -17,19 +19,33 @@ namespace TripleJPMVPLibrary.Service
         private LoanInformationRepo _loanRepo;
         #endregion
 
-        internal List<GetCustomerLoanInformation> OnCallGetLoanInformation(Customer customer)
+        internal DataSet OnCallGetLoanInformationUsingCustomerID(Customer customer)
         {
 
             _loanRepo = new LoanInformationRepo();
 
             try
             {
-                return _loanRepo.GetLoanInformation(customer);
+                return _loanRepo.GetLoanInformationUsingCustomerID(customer);
             }
             catch (MySqlException ex)
             {
                 throw new InvalidOperationException("Data Access Denied", ex);
             }            
+        }
+        internal DataSet OnCallGetLoanInformationUsingCustomerName(Customer customer)
+        {
+
+            _loanRepo = new LoanInformationRepo();
+
+            try
+            {
+                return _loanRepo.GetLoanInformationUsingCustomerName(customer);
+            }
+            catch (MySqlException ex)
+            {
+                throw new InvalidOperationException("Data Access Denied", ex);
+            }
         }
         internal List<GetCollectionAndPenalty> OnCallGetCollectionAndPenalty(string LoanID)
         {

@@ -35,7 +35,7 @@ namespace TripleJPMVPLibrary.Presenter
         {            
             _collectionService = new CollectionService();
             InitLoanInstance();
-            decimal totalPenaltyAmount = _collectionService.GetPenalty(_loan);
+            decimal totalPenaltyAmount = _collectionService.OnCallGetTotalPenalty(_loan);
             return totalPenaltyAmount;
         }
         private void InitLoanInstance()
@@ -68,8 +68,8 @@ namespace TripleJPMVPLibrary.Presenter
                 Amount = _addCollection.Amount
             };
             
-            decimal collectedAmount = _collectionService.GetCollection(_loan);
-            decimal totalPenaltyAmount = _collectionService.GetPenalty(_loan);
+            decimal collectedAmount = _collectionService.OnCallGetTotalCollection(_loan);
+            decimal totalPenaltyAmount = _collectionService.OnCallGetTotalPenalty(_loan);
 
             decimal totalAmountFinal = collectedAmount + _addCollection.Amount;
             decimal totalLoanFinal = _compareCollection.loanAmount + totalPenaltyAmount;

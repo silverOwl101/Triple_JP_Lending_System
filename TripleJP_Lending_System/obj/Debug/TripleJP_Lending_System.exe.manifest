@@ -937,19 +937,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fQlbhwgvb6kTWxzDv1b1KNV8938NqgXNI7kvkNQMjiw=</dsig:DigestValue>
+        <dsig:DigestValue>lO17EbWquufJKyPLabBRaPEbCCcr67zfLu7PYF6OE6w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TripleJPMVPLibrary.dll" size="167424">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TripleJPMVPLibrary.dll" size="183808">
       <assemblyIdentity name="TripleJPMVPLibrary" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>c35ZaJa5/NMZJ+13VMm3b+9U0EPwThJfGoid2uWjZrU=</dsig:DigestValue>
+        <dsig:DigestValue>K7k9/yaMNN4J1a8sifLcRi7MbUhN7BO3sMkkh+OOZbI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

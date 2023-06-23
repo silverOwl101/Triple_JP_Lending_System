@@ -91,6 +91,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSets\LoanInformationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoanInformationDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Model\Administrator.cs" />
     <Compile Include="Model\Collection.cs" />
     <Compile Include="Model\CollectionReport.cs" />
@@ -157,6 +162,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="DataSets\LoanInformationDataSet.xsc">
+      <DependentUpon>LoanInformationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LoanInformationDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LoanInformationDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\LoanInformationDataSet.xss">
+      <DependentUpon>LoanInformationDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="ReportDataSets\CrystalReportDataSet.xsc">
       <DependentUpon>CrystalReportDataSet.xsd</DependentUpon>

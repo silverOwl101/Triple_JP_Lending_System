@@ -100,7 +100,7 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Task Invalid ", ex);
             }
         }
-        public decimal GetCollection(Loan loan)
+        public decimal OnCallGetTotalCollection(Loan loan)
         {
             _loanInformationRepo = new LoanInformationRepo();
             _collectionRepo = new CollectionRepo();
@@ -109,8 +109,8 @@ namespace TripleJPMVPLibrary.Service
             loan.Uid = Guid.Parse(_loanInformationRepo.GetGuid(loan));
 
             return _collectionRepo.GetTotalCollection(loan);
-        }
-        public decimal GetPenalty(Loan loan)
+        }        
+        public decimal OnCallGetTotalPenalty(Loan loan)
         {
             _loanInformationRepo = new LoanInformationRepo();
             _collectionRepo = new CollectionRepo();
@@ -118,6 +118,20 @@ namespace TripleJPMVPLibrary.Service
             loan.Id = _customerLoanInfo.Id;
             loan.Uid = Guid.Parse(_loanInformationRepo.GetGuid(loan));
 
+            return _collectionRepo.GetTotalPenalty(loan);
+        }
+        public decimal OnCallGetTotalCollectionForLoanInformationForm(Loan loan)
+        {
+            _loanInformationRepo = new LoanInformationRepo();
+            _collectionRepo = new CollectionRepo();
+            loan.Uid = Guid.Parse(_loanInformationRepo.GetGuid(loan));
+            return _collectionRepo.GetTotalCollection(loan);
+        }
+        public decimal OnCallGetTotalPenaltyForLoanInformationForm(Loan loan)
+        {
+            _loanInformationRepo = new LoanInformationRepo();
+            _collectionRepo = new CollectionRepo();            
+            loan.Uid = Guid.Parse(_loanInformationRepo.GetGuid(loan));
             return _collectionRepo.GetTotalPenalty(loan);
         }
     }

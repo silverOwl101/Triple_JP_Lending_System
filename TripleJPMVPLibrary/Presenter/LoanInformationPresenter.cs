@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using TripleJPMVPLibrary.View;
 using TripleJPMVPLibrary.Model;
 using TripleJPMVPLibrary.Service;
+using System.Data;
 
 namespace TripleJPMVPLibrary.Presenter
 {    
@@ -18,7 +19,11 @@ namespace TripleJPMVPLibrary.Presenter
         private ISearch _search;
         private Customer _customer;
         private LoanService _loanService;
+        private CollectionService _collectionService;
+        private Loan loan;
         private List<GetCustomerLoanInformation> _getLoanInformation;
+        private GetCustomerLoanInformation getCustomerLoanInformation;
+        private DataTable tbl1 = new DataTable();
 
         #endregion
         public LoanInformationPresenter(ISearch search)
@@ -30,8 +35,9 @@ namespace TripleJPMVPLibrary.Presenter
         {
             _customer = new Customer();
             _loanService = new LoanService();
+            _collectionService = new CollectionService();
             _getLoanInformation = new List<GetCustomerLoanInformation>();
-
+            
             if (String.IsNullOrEmpty(_search.UserSearch))
             {
                 throw new ArgumentNullException(nameof(_search.UserSearch), "UserSearch is Null");
@@ -42,12 +48,43 @@ namespace TripleJPMVPLibrary.Presenter
                 if (rgx.IsMatch(_search.UserSearch))
                 {
                     _customer.Id = _search.UserSearch;
+                    tbl1 = _loanService.OnCallGetLoanInformationUsingCustomerID(_customer).
+                           Tables["CustomerLoanInformation"];
+                    Init_DataTableToListConvertion(tbl1);
                 }
                 else
                 {
                     _customer.Name = _search.UserSearch;
-                }
-                _getLoanInformation = _loanService.OnCallGetLoanInformation(_customer);                
+                    tbl1 = _loanService.OnCallGetLoanInformationUsingCustomerName(_customer).
+                           Tables["CustomerLoanInformation"];
+                    Init_DataTableToListConvertion(tbl1);
+                }                
+            }
+        }
+        private void Init_DataTableToListConvertion(DataTable tbl)
+        {            
+            foreach (DataRow row in tbl1.Rows)
+            {
+                loan = new Loan();
+                loan.Id = row["Loan ID"].ToString();
+
+                getCustomerLoanInformation = new GetCustomerLoanInformation
+                {
+                    Id = loan.Id,
+                    CustomerID = row["Customer ID"].ToString(),
+                    Name = row["Customer Name"].ToString(),
+                    PaymentTerm = row["Payment Term"].ToString(),
+                    Duration = Convert.ToInt32(row["Duration"]),
+                    EffectiveDate = Convert.ToDateTime(row["Effective Date"]).ToString("MM-dd-yyyy"),
+                    Interest = Convert.ToDecimal(row["Interest Rate"]),
+                    PrincipalLoan = Convert.ToInt32(row["Principal Loan"]),
+                    Status = row["Status"].ToString(),
+                    CollectedAmount = _collectionService.
+                                      OnCallGetTotalCollectionForLoanInformationForm(loan),
+                    PenaltyAmount = _collectionService.
+                                    OnCallGetTotalPenaltyForLoanInformationForm(loan)
+                };
+                _getLoanInformation.Add(getCustomerLoanInformation);
             }
         }
         public List<GetCustomerLoanInformation> GetLoanInformationList()

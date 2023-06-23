@@ -7,20 +7,22 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Xml.Schema;
 using System.Configuration;
+using TripleJPMVPLibrary.DataSets;
 
 namespace TripleJPMVPLibrary.Repository
 {
     internal class LoanInformationRepo
     {        
-        internal List<GetCustomerLoanInformation> GetLoanInformation(Customer customer)
+        internal DataSet GetLoanInformationUsingCustomerID(Customer customer)
         {
 
-            GetCustomerLoanInformation getLoanInformation = null;
+            GetCustomerLoanInformation getLoanInformation = null;            
             List<GetCustomerLoanInformation> loanList = new List<GetCustomerLoanInformation>();
+            LoanInformationDataSet dataSet = new LoanInformationDataSet();
 
             using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
-                const string Query = "sp_getLoanInformation";
+                const string Query = "sp_getLoanInformationUsingCustomerId";
 
                 MySqlCommand cmd = new MySqlCommand(Query, con)
                 {
@@ -29,9 +31,7 @@ namespace TripleJPMVPLibrary.Repository
 
                 con.Open();
                 cmd.Parameters.AddWithValue("@customerId", customer.Id);
-                cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;
-                cmd.Parameters.AddWithValue("@customerName", customer.Name);
-                cmd.Parameters["@customerName"].Direction = ParameterDirection.Input;                
+                cmd.Parameters["@customerId"].Direction = ParameterDirection.Input;                
                 cmd.ExecuteNonQuery();
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -48,17 +48,67 @@ namespace TripleJPMVPLibrary.Repository
                             EffectiveDate = Convert.ToDateTime(reader["Effective Date"]).ToString("MM-dd-yyyy"),
                             Interest = Convert.ToDecimal(reader["Interest Rate"].ToString()),
                             PrincipalLoan = Convert.ToDecimal(reader["Principal Loan"].ToString()),                            
-                            Status = reader["Status"].ToString(),
-                            CollectedAmount = reader["Total Remmited Amount"].ToString(),
-                            PenaltyAmount = reader["Total Penalty Amout"].ToString()
+                            Status = reader["Status"].ToString()                            
+                        };
+                        //loanList.Add(getLoanInformation);                       
+                    }
+                }
+                if (getLoanInformation != null)
+                {
+                    MySqlDataAdapter adapt = new MySqlDataAdapter(cmd);
+                    adapt.Fill(dataSet, "CustomerLoanInformation");
+                    return dataSet;
+                }
+            }
+            return dataSet;
+        }
+        internal DataSet GetLoanInformationUsingCustomerName(Customer customer)
+        {
+            GetCustomerLoanInformation getLoanInformation = null;
+            List<GetCustomerLoanInformation> loanList = new List<GetCustomerLoanInformation>();
+            LoanInformationDataSet dataSet = new LoanInformationDataSet();
+
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
+            {
+                const string Query = "sp_getLoanInformationUsingCustomerName";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();               
+                cmd.Parameters.AddWithValue("@customerName", customer.Name);
+                cmd.Parameters["@customerName"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        getLoanInformation = new GetCustomerLoanInformation
+                        {
+                            Id = reader["Loan ID"].ToString(),
+                            CustomerID = reader["Customer ID"].ToString(),
+                            Name = reader["Customer Name"].ToString(),
+                            PaymentTerm = reader["Payment Term"].ToString(),
+                            Duration = Convert.ToInt32(reader["Duration"].ToString()),
+                            EffectiveDate = Convert.ToDateTime(reader["Effective Date"]).ToString("MM-dd-yyyy"),
+                            Interest = Convert.ToDecimal(reader["Interest Rate"].ToString()),
+                            PrincipalLoan = Convert.ToDecimal(reader["Principal Loan"].ToString()),
+                            Status = reader["Status"].ToString()                            
                         };
                         loanList.Add(getLoanInformation);
                     }
                 }
+                if (getLoanInformation != null)
+                {
+                    MySqlDataAdapter adapt = new MySqlDataAdapter(cmd);
+                    adapt.Fill(dataSet, "CustomerLoanInformation");
+                    return dataSet;
+                }
             }
-
-            return loanList;
-
+            return dataSet;
         }
         internal GetCustomerLoanInformation GetLoanInformation(Loan loan)
         {
@@ -90,10 +140,10 @@ namespace TripleJPMVPLibrary.Repository
                             PaymentTerm = reader["PaymentTerm"].ToString(),
                             Duration = Convert.ToInt32(reader["Duration"].ToString()),
                             EffectiveDate = Convert.ToDateTime(reader["EffectiveDate"]).ToString("MM-dd-yyyy"),
-                            Interest = Convert.ToDecimal(reader["Interest Rate"].ToString()),
-                            PrincipalLoan = Convert.ToDecimal(reader["PrincipalLoan"].ToString()),                            
+                            Interest = Convert.ToDecimal(reader["InterestRate"].ToString()),
+                            PrincipalLoan = Convert.ToDecimal(reader["PrincipalLoan"].ToString()),
                             Status = reader["Status"].ToString(),
-                            CollectedAmount = reader["Amount"].ToString()
+                            CollectedAmount = Convert.ToDecimal(reader["Amount"].ToString())
                         };                        
                     }
                 }
