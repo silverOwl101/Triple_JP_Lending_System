@@ -13,12 +13,12 @@ namespace TripleJPUtilityLibrary.DataSource
     public static class SqlConnection
     {
         
-        private static string CONFIG_PATH = Path.Combine(Environment.CurrentDirectory,
-                                            "..", "..", "..", "TripleJPUtilityLibrary",
-                                            "ConfigFolder",
-                                            "config.json");
+        //private static string CONFIG_PATH = Path.Combine(Environment.CurrentDirectory,
+        //                                    "..", "..", "..", "TripleJPUtilityLibrary",
+        //                                    "ConfigFolder",
+        //                                    "config.json");
 
-        private static string rawAppConfig = File.ReadAllText(CONFIG_PATH);
+        private static string rawAppConfig = File.ReadAllText(ApplicationConstants.CONFIG_PATH);
 
         private static AppConfig appConfig = JsonConvert.DeserializeObject<AppConfig>(rawAppConfig);
 

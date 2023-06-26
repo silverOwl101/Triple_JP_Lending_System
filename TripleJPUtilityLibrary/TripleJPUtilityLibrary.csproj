@@ -94,6 +94,7 @@
   <ItemGroup>
     <Compile Include="Accounting\Computation.cs" />
     <Compile Include="ConfigFolder\AppConfig.cs" />
+    <Compile Include="ConfigFolder\ApplicationConstants.cs" />
     <Compile Include="Generator\IdGeneratorClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataSource\SqlConnection.cs" />
