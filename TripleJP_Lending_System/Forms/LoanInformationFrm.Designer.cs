@@ -113,7 +113,7 @@ namespace TripleJP_Lending_System.Forms
             this.loanInformationGroupBox.Controls.Add(this.customerIdGroupBox);
             this.loanInformationGroupBox.Controls.Add(this.customerNameGroupBox);
             this.loanInformationGroupBox.Controls.Add(this.loanIdGroupBox);
-            this.loanInformationGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loanInformationGroupBox.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loanInformationGroupBox.Location = new System.Drawing.Point(13, 34);
             this.loanInformationGroupBox.Name = "loanInformationGroupBox";
             this.loanInformationGroupBox.Size = new System.Drawing.Size(926, 350);
@@ -350,7 +350,7 @@ namespace TripleJP_Lending_System.Forms
             this.loanMaturityInformationGroupBox.Controls.Add(this.maturityValueGroupBox);
             this.loanMaturityInformationGroupBox.Controls.Add(this.maturityDateGroupBox);
             this.loanMaturityInformationGroupBox.Controls.Add(this.maturityInterestGroupBox);
-            this.loanMaturityInformationGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loanMaturityInformationGroupBox.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loanMaturityInformationGroupBox.Location = new System.Drawing.Point(13, 390);
             this.loanMaturityInformationGroupBox.Name = "loanMaturityInformationGroupBox";
             this.loanMaturityInformationGroupBox.Size = new System.Drawing.Size(926, 286);
@@ -549,6 +549,7 @@ namespace TripleJP_Lending_System.Forms
             this.loanDataGridView.TabIndex = 2;
             this.loanDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellEnter);
             this.loanDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridView1_CellMouseClick);
+            this.loanDataGridView.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.loanDataGridView_RowPrePaint);
             this.loanDataGridView.Enter += new System.EventHandler(this.DataGridView1_Enter);
             // 
             // searchFilterGroupBox
@@ -556,7 +557,7 @@ namespace TripleJP_Lending_System.Forms
             this.searchFilterGroupBox.Controls.Add(this.badDebtCheckBox);
             this.searchFilterGroupBox.Controls.Add(this.fullyPaidCheckBox);
             this.searchFilterGroupBox.Controls.Add(this.unPaidCheckBox);
-            this.searchFilterGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchFilterGroupBox.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchFilterGroupBox.Location = new System.Drawing.Point(966, 498);
             this.searchFilterGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchFilterGroupBox.Name = "searchFilterGroupBox";

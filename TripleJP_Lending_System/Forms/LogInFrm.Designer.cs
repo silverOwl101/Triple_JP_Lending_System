@@ -39,10 +39,10 @@ namespace TripleJP_Lending_System
             // userNameTextBox
             // 
             this.userNameTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.userNameTextBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameTextBox.Location = new System.Drawing.Point(48, 50);
+            this.userNameTextBox.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameTextBox.Location = new System.Drawing.Point(48, 56);
             this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(308, 28);
+            this.userNameTextBox.Size = new System.Drawing.Size(308, 31);
             this.userNameTextBox.TabIndex = 0;
             this.userNameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.userNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsernameTxt_KeyPress);
@@ -59,11 +59,11 @@ namespace TripleJP_Lending_System
             // 
             // passWordTextBox
             // 
-            this.passWordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passWordTextBox.Location = new System.Drawing.Point(48, 120);
+            this.passWordTextBox.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passWordTextBox.Location = new System.Drawing.Point(48, 126);
             this.passWordTextBox.Name = "passWordTextBox";
             this.passWordTextBox.PasswordChar = '*';
-            this.passWordTextBox.Size = new System.Drawing.Size(308, 29);
+            this.passWordTextBox.Size = new System.Drawing.Size(308, 31);
             this.passWordTextBox.TabIndex = 1;
             this.passWordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.passWordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordTxt_KeyPress);

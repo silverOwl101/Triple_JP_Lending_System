@@ -11,6 +11,7 @@ using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
 using MySql.Data.MySqlClient;
 using System.IO;
+using System.Drawing;
 
 namespace TripleJP_Lending_System.Forms
 {
@@ -40,9 +41,9 @@ namespace TripleJP_Lending_System.Forms
         public LoanInformationFrm()
         {
             InitializeComponent();
-            DefaultPropertyComponents();
+            DefaultPropertyComponents();            
         }
-
+        
         #region User Inputs
 
         public string UserSearch
@@ -96,15 +97,33 @@ namespace TripleJP_Lending_System.Forms
             //ledgerButton.Enabled = true;
             generateAccountStatementButton.Enabled = true;
         }
-
         private void DataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             ToDisplayInForm();
         }
-
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ToDisplayInForm();
+        }
+        private void loanDataGridView_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            foreach (DataGridViewRow row in loanDataGridView.Rows)
+            {
+                string cellvalue = row.Cells[8].Value.ToString();
+
+                if (cellvalue == "Unpaid")
+                {
+                    loanDataGridView.Rows[row.Index].DefaultCellStyle.BackColor = Color.Gray;
+                }
+                if (cellvalue == "Fully Paid")
+                {
+                    loanDataGridView.Rows[row.Index].DefaultCellStyle.BackColor = Color.White;
+                }
+                if (cellvalue == "Bad Debt")
+                {
+                    loanDataGridView.Rows[row.Index].DefaultCellStyle.BackColor = Color.Red;
+                }
+            }
         }
 
         #endregion
