@@ -42,7 +42,7 @@ namespace TripleJP_Lending_System
                     // config.json default contents
                     var formatConfig = new
                     {
-                        DATABASE_CONNECTION_STRING = "Server=localhost;Database=tjpdb;Uid=root;Pwd=12345;"
+                        DATABASE_CONNECTION_STRING = "Server=localhost;Database=tjpdb;Uid=root;Pwd=@dmin_1223;"
                     };
 
                     // format json
@@ -64,9 +64,7 @@ namespace TripleJP_Lending_System
 
                 }
 
-            }
-
-            //Application.Run(new ReportViewerFrm());
+            }            
             Application.Run(new LogInFrm());
         }
     }

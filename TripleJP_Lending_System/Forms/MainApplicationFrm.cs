@@ -111,9 +111,8 @@ namespace TripleJP_Lending_System.Forms
             _reportFrmDetailomponent = new ReportFrmDetailComponent(_concreteMediator);
             _concreteMediator.PrepareData(_loanInformationFrmPassData);
             _concreteMediator.OpenForms(_reportFrmDetailomponent, true);
-        }   
-        
-        #endregion        
+        }
 
+        #endregion
     }
 }

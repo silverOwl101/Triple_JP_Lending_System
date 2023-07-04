@@ -1,3 +1,3 @@
 {
-  "DATABASE_CONNECTION_STRING": "Server=localhost;Database=tjpdb;Uid=root;Pwd=12345;"
+  "DATABASE_CONNECTION_STRING": "Server=localhost;Database=tjpdb;Uid=root;Pwd=@dmin_1223;"
 }

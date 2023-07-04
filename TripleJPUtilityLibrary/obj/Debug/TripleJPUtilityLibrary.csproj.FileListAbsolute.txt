@@ -29,6 +29,7 @@ C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\K4os.Compression.LZ4.Streams.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\K4os.Hash.xxHash.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\MySql.Data.dll
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\Newtonsoft.Json.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\System.Buffers.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\System.IO.Pipelines.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\System.Memory.dll
@@ -44,6 +45,7 @@ C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\K4os.Compression.LZ4.Streams.xml
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\K4os.Hash.xxHash.xml
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\MySql.Data.xml
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\Newtonsoft.Json.xml
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\System.Buffers.xml
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\System.IO.Pipelines.xml
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\System.Memory.xml
@@ -55,5 +57,3 @@ C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\obj\Debug
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.csproj.CopyComplete
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\obj\Debug\TripleJPUtilityLibrary.pdb
-C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\Newtonsoft.Json.dll
-C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPUtilityLibrary\bin\Debug\Newtonsoft.Json.xml

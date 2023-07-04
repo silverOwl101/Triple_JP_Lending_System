@@ -63,7 +63,7 @@ namespace TripleJPMVPLibrary.Repository
 
                 #endregion
 
-                cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
             }
         }
         internal bool IsDuplicateUid(Guid uid)

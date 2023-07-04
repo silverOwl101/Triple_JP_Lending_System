@@ -481,7 +481,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Total_Penalty_Amount.Value + (Fields!Released_Amount_with_Interest.Value - Fields!Total_Collection.Value)</Value>
+                                  <Value>=IIF(Fields!Total_Penalty_Amount.Value + (Fields!Released_Amount_with_Interest.Value - Fields!Total_Collection.Value) = 0,"Paid",Fields!Total_Penalty_Amount.Value + (Fields!Released_Amount_with_Interest.Value - Fields!Total_Collection.Value))</Value>
                                   <Style>
                                     <Format>#,0.00;(#,0.00)</Format>
                                   </Style>
@@ -506,6 +506,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -535,7 +536,7 @@
             <DataSetName>CollectionSummaryRpt</DataSetName>
             <Top>0.13in</Top>
             <Height>0.475in</Height>
-            <Width>7.31524in</Width>
+            <Width>7.31523in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -560,7 +561,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Triple JP General Merchandice </Value>
+                      <Value>Triple JP General Merchandise </Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>

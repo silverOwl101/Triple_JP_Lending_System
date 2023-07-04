@@ -36,6 +36,11 @@ namespace TripleJP_Lending_System.Forms
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.collectionReportSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asdasdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +53,7 @@ namespace TripleJP_Lending_System.Forms
             this.loanInformationToolStripMenuItem,
             this.postingToolStripMenuItem,
             this.reportToolStripMenuItem,
+            this.asdasdToolStripMenuItem,
             this.logoutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -99,6 +105,43 @@ namespace TripleJP_Lending_System.Forms
             this.logoutToolStripMenuItem.Text = "Log-out";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.LogoutToolStripMenuItem_Click);
             // 
+            // asdasdToolStripMenuItem
+            // 
+            this.asdasdToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem,
+            this.salaryToolStripMenuItem});
+            this.asdasdToolStripMenuItem.Name = "asdasdToolStripMenuItem";
+            this.asdasdToolStripMenuItem.Size = new System.Drawing.Size(129, 30);
+            this.asdasdToolStripMenuItem.Text = "Other Options";
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem1});
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.addToolStripMenuItem.Text = "Savings";
+            // 
+            // salaryToolStripMenuItem
+            // 
+            this.salaryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem2});
+            this.salaryToolStripMenuItem.Name = "salaryToolStripMenuItem";
+            this.salaryToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.salaryToolStripMenuItem.Text = "Salary";
+            // 
+            // addToolStripMenuItem1
+            // 
+            this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(180, 30);
+            this.addToolStripMenuItem1.Text = "Add";
+            // 
+            // addToolStripMenuItem2
+            // 
+            this.addToolStripMenuItem2.Name = "addToolStripMenuItem2";
+            this.addToolStripMenuItem2.Size = new System.Drawing.Size(180, 30);
+            this.addToolStripMenuItem2.Text = "Add";
+            // 
             // MainApplicationFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,5 +171,10 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem collectionReportSummaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asdasdToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem salaryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem2;
     }
 }

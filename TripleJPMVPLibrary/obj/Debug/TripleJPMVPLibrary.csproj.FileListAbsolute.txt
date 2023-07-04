@@ -87,6 +87,7 @@ C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\Sys
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\TripleJPUtilityLibrary.dll
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\Newtonsoft.Json.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\ZstdNet.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\BouncyCastle.Crypto.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\TripleJPUtilityLibrary.pdb
@@ -105,10 +106,9 @@ C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\Sys
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\System.Numerics.Vectors.xml
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\Newtonsoft.Json.xml
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.csproj.AssemblyReference.cache
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.csproj.CoreCompileInputs.cache
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.csproj.CopyComplete
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.dll
 C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\obj\Debug\TripleJPMVPLibrary.pdb
-C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\Newtonsoft.Json.dll
-C:\Exxxcube files\Triple_JP_Lending_System-main\TripleJPMVPLibrary\bin\Debug\Newtonsoft.Json.xml
