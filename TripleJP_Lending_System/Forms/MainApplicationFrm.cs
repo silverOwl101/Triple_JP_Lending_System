@@ -16,9 +16,10 @@ namespace TripleJP_Lending_System.Forms
         private CustomerAccountFrmComponent _customerAccountFrmComponent;
         private LoanInformationFrmComponent _loanInformationFrmComponent;
         private PostingFrmComponent _postingFrmComponent;
-        private ReportFrmDetailComponent _reportFrmDetailomponent;
-        //private MainApplicationFrmPassData _mainApplicationFrmPassData;
+        private ReportFrmDetailComponent _reportFrmDetailomponent;        
         private LoanInformationFrmPassData _loanInformationFrmPassData;
+        private AddSavingsFrmComponent _addSavingsFrmComponent;
+        private AddSalaryFrmComponent _addSalaryFrmComponent;
 
         #endregion
 
@@ -50,32 +51,34 @@ namespace TripleJP_Lending_System.Forms
         #endregion
 
         #region MainFrm Tool strip
-
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenCustomerAccountFrm();
         }
-
         private void loanInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenLoanInformationFrm();
         }
-
         private void postingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenPostingFrm();
         }
-
         private void MainApplicationFrm_FormClosed(object sender, FormClosedEventArgs e)
         {
             LoadLogInFrm();
         }
-
         private void collectionReportSummaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenSummaryReport();
         }
-
+        private void addSavingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenAddSavingsFrm();
+        }
+        private void addSalaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenAddSalaryFrm();
+        }
         #endregion
 
         #endregion
@@ -112,7 +115,20 @@ namespace TripleJP_Lending_System.Forms
             _concreteMediator.PrepareData(_loanInformationFrmPassData);
             _concreteMediator.OpenForms(_reportFrmDetailomponent, true);
         }
-
+        private void OpenAddSavingsFrm()
+        {
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _addSavingsFrmComponent = new AddSavingsFrmComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_addSavingsFrmComponent, true);
+        }
+        private void OpenAddSalaryFrm()
+        {
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _addSalaryFrmComponent = new AddSalaryFrmComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_addSalaryFrmComponent, true);
+        }
         #endregion
+
+        
     }
 }
