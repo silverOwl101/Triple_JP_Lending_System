@@ -195,6 +195,55 @@ namespace TripleJPMVPLibrary.Repository
             }
             return total;
         }
+        internal decimal GetDailyTotalCollectionByDate(DateTime date)
+        {
+            decimal total = 0;
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
+            {
+                const string Query = "sp_getDailyTotalCollection";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.Parameters.AddWithValue("@dailyTotalCollection", date);
+                cmd.Parameters["@dailyTotalCollection"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        total = Convert.ToDecimal(reader["Daily Total Collection"].ToString());
+                    }
+                }
+            }
+            return total;
+        }
+        internal bool CheckDateValidity(DateTime date)
+        {
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
+            {
+                const string Query = "sp_getCollectionDate";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.Parameters.AddWithValue("@collectionDate", date);
+                cmd.Parameters["@collectionDate"].Direction = ParameterDirection.Input;
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                if (count <= 0)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
     }
 }
     

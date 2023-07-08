@@ -1,16 +1,29 @@
-﻿using System;
+﻿using Mysqlx.Resultset;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using TripleJPMVPLibrary.Model;
+using TripleJPMVPLibrary.ReportDataSets;
 using TripleJPMVPLibrary.Service;
+using TripleJPMVPLibrary.View;
 
 namespace TripleJPMVPLibrary.Presenter
 {
     public class ReportFrmPresenter
     {
+        IDateFromDateTo _addDate;
+        public ReportFrmPresenter()
+        {
+            
+        }
+        public ReportFrmPresenter(IDateFromDateTo addDate)
+        {
+            _addDate = addDate;
+        }
         ReportService reportService;
         public DataTable OnCallCustomerReportList()
         {
@@ -46,6 +59,27 @@ namespace TripleJPMVPLibrary.Presenter
             dataView.Sort = "Date ASC";
             tb1 = dataView.ToTable();
             return tb1;
+        }
+        public DataTable OnCallGetDailyCollection()
+        {            
+            reportService = new ReportService();
+            CrystalReportDataSet dataset = new CrystalReportDataSet();
+
+            DataTable tb1 = reportService.OnCallGetDailyCollection(_addDate.DateFrom,_addDate.DateTo).Tables["DailyCollectionReport"];
+           
+            return tb1;
+        }
+        public DataTable OnCallGetSalary(DateTime date)
+        {
+            reportService = new ReportService();
+            DataTable tb = reportService.OnCallGetSalary(date).Tables["SalaryReport"];
+            return tb;
+        }
+        public DataTable OnCallGetSavings(DateTime date)
+        {
+            reportService = new ReportService();
+            DataTable tb = reportService.OnCallGetSavings(date).Tables["SavingsReport"];
+            return tb;
         }
     }
 }

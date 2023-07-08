@@ -100,6 +100,16 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Task Invalid ", ex);
             }
         }
+        public bool OnCallCheckDateValidity(DateTime date)
+        {
+            _collectionRepo = new CollectionRepo();
+            return _collectionRepo.CheckDateValidity(date);
+        }
+        public decimal OnCallGetDailyTotalCollectionByDate(DateTime date)
+        {
+            _collectionRepo = new CollectionRepo();
+            return _collectionRepo.GetDailyTotalCollectionByDate(date);
+        }
         public decimal OnCallGetTotalCollection(Loan loan)
         {
             _loanInformationRepo = new LoanInformationRepo();

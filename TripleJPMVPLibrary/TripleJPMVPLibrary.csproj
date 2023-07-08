@@ -97,6 +97,7 @@
       <DependentUpon>LoanInformationDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Model\Administrator.cs" />
+    <Compile Include="Model\AllCollectionReport.cs" />
     <Compile Include="Model\Collection.cs" />
     <Compile Include="Model\CollectionReport.cs" />
     <Compile Include="Model\Customer.cs" />
@@ -109,8 +110,12 @@
     <Compile Include="Model\LoanInformationReport.cs" />
     <Compile Include="Model\Penalty.cs" />
     <Compile Include="Model\PenaltyReport.cs" />
+    <Compile Include="Model\Salary.cs" />
+    <Compile Include="Model\Savings.cs" />
     <Compile Include="Presenter\AddCustomerPresenter.cs" />
     <Compile Include="Presenter\AddLoanPresenter.cs" />
+    <Compile Include="Presenter\AddSalaryPresenter.cs" />
+    <Compile Include="Presenter\AddSavingsPresenter.cs" />
     <Compile Include="Presenter\CollectionFrmPresenter.cs" />
     <Compile Include="Presenter\CustomerEditPresenter.cs" />
     <Compile Include="Presenter\GetCustomerListPresenter.cs" />
@@ -134,12 +139,17 @@
     <Compile Include="Repository\LogInRepo.cs" />
     <Compile Include="Repository\PostingRepo.cs" />
     <Compile Include="Repository\ReportRepo.cs" />
+    <Compile Include="Repository\SalaryRepo.cs" />
+    <Compile Include="Repository\SavingsRepo.cs" />
     <Compile Include="Service\CollectionService.cs" />
     <Compile Include="Service\LogInService.cs" />
     <Compile Include="Service\CustomerService.cs" />
     <Compile Include="Service\LoanService.cs" />
     <Compile Include="Service\PostingService.cs" />
     <Compile Include="Service\ReportService.cs" />
+    <Compile Include="Service\SalaryServices.cs" />
+    <Compile Include="Service\SavingsServices.cs" />
+    <Compile Include="View\IAddAmountAndDate.cs" />
     <Compile Include="View\IAddCollection.cs" />
     <Compile Include="View\IAddCustomer.cs" />
     <Compile Include="View\IAddLoan.cs" />
@@ -148,6 +158,7 @@
     <Compile Include="View\ICompareCollectionAndLoan.cs" />
     <Compile Include="View\ICustomerNameAndID.cs" />
     <Compile Include="View\IDataGridClick.cs" />
+    <Compile Include="View\IDateFromDateTo.cs" />
     <Compile Include="View\IEditCustomer.cs" />
     <Compile Include="View\IGetCollectionAndPenalty.cs" />
     <Compile Include="View\ILogIn.cs" />
@@ -189,6 +200,7 @@
   <ItemGroup>
     <EmbeddedResource Include="ReportDefinitions\CollectionDetailReport.rdlc" />
     <EmbeddedResource Include="ReportDefinitions\CollectionSummaryReport.rdlc" />
+    <EmbeddedResource Include="ReportDefinitions\DailyCollectionReport.rdlc" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

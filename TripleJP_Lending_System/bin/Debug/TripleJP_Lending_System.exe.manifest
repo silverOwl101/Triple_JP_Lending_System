@@ -930,26 +930,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TripleJP_Lending_System.exe" size="120288">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TripleJP_Lending_System.exe" size="127968">
       <assemblyIdentity name="TripleJP_Lending_System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EfgTcMR9qrWwWRfwsYa0rCbZWWi7cS9HDhfEHUI5IBs=</dsig:DigestValue>
+        <dsig:DigestValue>QHnBQ1YmvmDwtT/VqQbOf3vAWnzcgv27uGVzgU40oSY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TripleJPMVPLibrary.dll" size="184320">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TripleJPMVPLibrary.dll" size="257536">
       <assemblyIdentity name="TripleJPMVPLibrary" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xQ5tHx7KiFs0QsrtLIym/3NnTPyQzUWz/T0wkBqy0SM=</dsig:DigestValue>
+        <dsig:DigestValue>4S3vj4x6/q8FKy6OWquOjuqvsmXdnqvqmh7BDmn8qL4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

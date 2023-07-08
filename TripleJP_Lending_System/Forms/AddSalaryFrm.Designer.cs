@@ -30,9 +30,9 @@
         {
             this.remitGroupBox = new System.Windows.Forms.GroupBox();
             this.remitAmountGroupBox = new System.Windows.Forms.GroupBox();
-            this.remitAmountTextBox = new System.Windows.Forms.TextBox();
+            this.salaryAmountTextBox = new System.Windows.Forms.TextBox();
             this.remitDateGroupBox = new System.Windows.Forms.GroupBox();
-            this.remitDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.remitSalaryDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.loanGroupBox = new System.Windows.Forms.GroupBox();
             this.totalRemittanceGroupBox = new System.Windows.Forms.GroupBox();
             this.salaryCalculationLabel = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@
             // 
             // remitAmountGroupBox
             // 
-            this.remitAmountGroupBox.Controls.Add(this.remitAmountTextBox);
+            this.remitAmountGroupBox.Controls.Add(this.salaryAmountTextBox);
             this.remitAmountGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remitAmountGroupBox.Location = new System.Drawing.Point(10, 115);
             this.remitAmountGroupBox.Name = "remitAmountGroupBox";
@@ -74,18 +74,22 @@
             this.remitAmountGroupBox.TabStop = false;
             this.remitAmountGroupBox.Text = "Enter Amount";
             // 
-            // remitAmountTextBox
+            // salaryAmountTextBox
             // 
-            this.remitAmountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.remitAmountTextBox.Location = new System.Drawing.Point(5, 30);
-            this.remitAmountTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.remitAmountTextBox.Name = "remitAmountTextBox";
-            this.remitAmountTextBox.Size = new System.Drawing.Size(321, 28);
-            this.remitAmountTextBox.TabIndex = 0;
+            this.salaryAmountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.salaryAmountTextBox.Location = new System.Drawing.Point(5, 30);
+            this.salaryAmountTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.salaryAmountTextBox.Name = "salaryAmountTextBox";
+            this.salaryAmountTextBox.Size = new System.Drawing.Size(321, 28);
+            this.salaryAmountTextBox.TabIndex = 0;
+            this.salaryAmountTextBox.TextChanged += new System.EventHandler(this.salaryAmountTextBox_TextChanged);
+            this.salaryAmountTextBox.Enter += new System.EventHandler(this.salaryAmountTextBox_Enter);
+            this.salaryAmountTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.salaryAmountTextBox_KeyPress);
+            this.salaryAmountTextBox.Leave += new System.EventHandler(this.salaryAmountTextBox_Leave);
             // 
             // remitDateGroupBox
             // 
-            this.remitDateGroupBox.Controls.Add(this.remitDateTimePicker);
+            this.remitDateGroupBox.Controls.Add(this.remitSalaryDateTimePicker);
             this.remitDateGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remitDateGroupBox.Location = new System.Drawing.Point(10, 28);
             this.remitDateGroupBox.Name = "remitDateGroupBox";
@@ -94,14 +98,15 @@
             this.remitDateGroupBox.TabStop = false;
             this.remitDateGroupBox.Text = "Date";
             // 
-            // remitDateTimePicker
+            // remitSalaryDateTimePicker
             // 
-            this.remitDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.remitDateTimePicker.Location = new System.Drawing.Point(5, 30);
-            this.remitDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
-            this.remitDateTimePicker.Name = "remitDateTimePicker";
-            this.remitDateTimePicker.Size = new System.Drawing.Size(321, 28);
-            this.remitDateTimePicker.TabIndex = 0;
+            this.remitSalaryDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.remitSalaryDateTimePicker.Location = new System.Drawing.Point(5, 30);
+            this.remitSalaryDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.remitSalaryDateTimePicker.Name = "remitSalaryDateTimePicker";
+            this.remitSalaryDateTimePicker.Size = new System.Drawing.Size(321, 28);
+            this.remitSalaryDateTimePicker.TabIndex = 0;
+            this.remitSalaryDateTimePicker.ValueChanged += new System.EventHandler(this.remitSalaryDateTimePicker_ValueChanged);
             // 
             // loanGroupBox
             // 
@@ -174,6 +179,7 @@
             this.remitButton.TabIndex = 20;
             this.remitButton.Text = "Remit";
             this.remitButton.UseVisualStyleBackColor = true;
+            this.remitButton.Click += new System.EventHandler(this.remitButton_Click);
             // 
             // balanceGroupBox
             // 
@@ -226,9 +232,9 @@
 
         private System.Windows.Forms.GroupBox remitGroupBox;
         private System.Windows.Forms.GroupBox remitAmountGroupBox;
-        private System.Windows.Forms.TextBox remitAmountTextBox;
+        private System.Windows.Forms.TextBox salaryAmountTextBox;
         private System.Windows.Forms.GroupBox remitDateGroupBox;
-        private System.Windows.Forms.DateTimePicker remitDateTimePicker;
+        private System.Windows.Forms.DateTimePicker remitSalaryDateTimePicker;
         private System.Windows.Forms.GroupBox loanGroupBox;
         private System.Windows.Forms.GroupBox totalRemittanceGroupBox;
         private System.Windows.Forms.Label salaryCalculationLabel;

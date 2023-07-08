@@ -85,7 +85,7 @@ namespace TripleJP_Lending_System.Forms
             reportViewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             reportViewer.ZoomMode = ZoomMode.PageWidth;
 
-            string REPORT_SOURCE = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "TripleJPMVPLibrary", "ReportDefinitions", "CollectionSummaryReport.rdlc");
+            string REPORT_SOURCE = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "TripleJPMVPLibrary", "ReportDefinitions", "CollectionSummaryReport.rdlc"); // DailyCollectionReport, CollectionSummaryReport
 
             reportViewer.LocalReport.ReportPath = REPORT_SOURCE;
             reportViewer.LocalReport.DataSources.Add(rds);

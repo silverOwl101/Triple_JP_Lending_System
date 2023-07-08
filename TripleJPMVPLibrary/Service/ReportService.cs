@@ -63,5 +63,44 @@ namespace TripleJPMVPLibrary.Service
             }
 
         }
+        internal DataSet OnCallGetDailyCollection(DateTime dateFrom, DateTime dateTo)
+        {
+            try
+            {
+                reportRepo = new ReportRepo();
+                return reportRepo.GetDailyCollection(dateFrom,dateTo);
+            }
+            catch (MySqlException ex)
+            {
+                throw new InvalidOperationException(" Task Invalid ", ex);
+            }
+
+        }
+        internal DataSet OnCallGetSalary(DateTime date)
+        {
+            try
+            {
+                reportRepo = new ReportRepo();
+                return reportRepo.GetSalary(date);
+            }
+            catch (MySqlException ex)
+            {
+                throw new InvalidOperationException(" Task Invalid ", ex);
+            }
+
+        }
+        internal DataSet OnCallGetSavings(DateTime date)
+        {
+            try
+            {
+                reportRepo = new ReportRepo();
+                return reportRepo.GetSavings(date);
+            }
+            catch (MySqlException ex)
+            {
+                throw new InvalidOperationException(" Task Invalid ", ex);
+            }
+
+        }
     }    
 }

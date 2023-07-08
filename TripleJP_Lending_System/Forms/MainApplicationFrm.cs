@@ -20,6 +20,7 @@ namespace TripleJP_Lending_System.Forms
         private LoanInformationFrmPassData _loanInformationFrmPassData;
         private AddSavingsFrmComponent _addSavingsFrmComponent;
         private AddSalaryFrmComponent _addSalaryFrmComponent;
+        private DailyCollectionReportViewerFrmComponent _dailyCollectionReportViewerFrmComponent;
 
         #endregion
 
@@ -79,6 +80,10 @@ namespace TripleJP_Lending_System.Forms
         {
             OpenAddSalaryFrm();
         }
+        private void dailyCollectionReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenDailyCollectionReportFrm();
+        }
         #endregion
 
         #endregion
@@ -86,7 +91,6 @@ namespace TripleJP_Lending_System.Forms
         #endregion
 
         #region Custom Methods
-
         private void OpenCustomerAccountFrm()
         {
             _concreteMediator = new ClassComponentConcreteMediator();
@@ -127,8 +131,16 @@ namespace TripleJP_Lending_System.Forms
             _addSalaryFrmComponent = new AddSalaryFrmComponent(_concreteMediator);
             _concreteMediator.OpenForms(_addSalaryFrmComponent, true);
         }
+        private void OpenDailyCollectionReportFrm()
+        {
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _dailyCollectionReportViewerFrmComponent = 
+                                new DailyCollectionReportViewerFrmComponent(_concreteMediator);
+            _concreteMediator.OpenForms(_dailyCollectionReportViewerFrmComponent, true);
+        }
+
         #endregion
 
-        
+
     }
 }

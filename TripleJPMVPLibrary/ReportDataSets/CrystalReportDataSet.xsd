@@ -19,7 +19,7 @@
               <xs:element name="Name_of_the_Owner" msprop:Generator_ColumnPropNameInTable="Name_of_the_OwnerColumn" msprop:Generator_ColumnPropNameInRow="Name_of_the_Owner" msprop:Generator_UserColumnName="Name_of_the_Owner" msprop:Generator_ColumnVarNameInTable="columnName_of_the_Owner" type="xs:string" minOccurs="0" />
               <xs:element name="Released_Amount_with_Interest" msprop:Generator_ColumnPropNameInTable="Released_Amount_with_InterestColumn" msprop:Generator_ColumnPropNameInRow="Released_Amount_with_Interest" msprop:Generator_UserColumnName="Released_Amount_with_Interest" msprop:Generator_ColumnVarNameInTable="columnReleased_Amount_with_Interest" type="xs:double" minOccurs="0" />
               <xs:element name="Total_Collection" msprop:Generator_ColumnPropNameInTable="Total_CollectionColumn" msprop:Generator_ColumnPropNameInRow="Total_Collection" msprop:Generator_UserColumnName="Total_Collection" msprop:Generator_ColumnVarNameInTable="columnTotal_Collection" type="xs:double" minOccurs="0" />
-              <xs:element name="Total_Penalty_Amount" msprop:Generator_ColumnPropNameInRow="Total_Penalty_Amount" msprop:Generator_ColumnPropNameInTable="Total_Penalty_AmountColumn" msprop:Generator_ColumnVarNameInTable="columnTotal_Penalty_Amount" msprop:Generator_UserColumnName="Total_Penalty_Amount" type="xs:double" minOccurs="0" />
+              <xs:element name="Total_Penalty_Amount" msprop:Generator_ColumnPropNameInTable="Total_Penalty_AmountColumn" msprop:Generator_ColumnPropNameInRow="Total_Penalty_Amount" msprop:Generator_UserColumnName="Total_Penalty_Amount" msprop:Generator_ColumnVarNameInTable="columnTotal_Penalty_Amount" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -52,6 +52,44 @@
               <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:string" minOccurs="0" />
               <xs:element name="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnVarNameInTable="columnDate" type="xs:dateTime" minOccurs="0" />
               <xs:element name="Penalty" msprop:Generator_ColumnPropNameInTable="PenaltyColumn" msprop:Generator_ColumnPropNameInRow="Penalty" msprop:Generator_UserColumnName="Penalty" msprop:Generator_ColumnVarNameInTable="columnPenalty" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DailyCollectionReport" msprop:Generator_RowEvHandlerName="DailyCollectionReportRowChangeEventHandler" msprop:Generator_RowDeletedName="DailyCollectionReportRowDeleted" msprop:Generator_RowDeletingName="DailyCollectionReportRowDeleting" msprop:Generator_RowEvArgName="DailyCollectionReportRowChangeEvent" msprop:Generator_TablePropName="DailyCollectionReport" msprop:Generator_RowChangedName="DailyCollectionReportRowChanged" msprop:Generator_UserTableName="DailyCollectionReport" msprop:Generator_RowChangingName="DailyCollectionReportRowChanging" msprop:Generator_RowClassName="DailyCollectionReportRow" msprop:Generator_TableClassName="DailyCollectionReportDataTable" msprop:Generator_TableVarName="tableDailyCollectionReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_UserColumnName="date" msprop:Generator_ColumnVarNameInTable="columndate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CollectionAmount" msprop:Generator_ColumnPropNameInTable="CollectionAmountColumn" msprop:Generator_ColumnPropNameInRow="CollectionAmount" msprop:Generator_UserColumnName="CollectionAmount" msprop:Generator_ColumnVarNameInTable="columnCollectionAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SalaryAmount" msprop:Generator_ColumnPropNameInTable="SalaryAmountColumn" msprop:Generator_ColumnPropNameInRow="SalaryAmount" msprop:Generator_UserColumnName="SalaryAmount" msprop:Generator_ColumnVarNameInTable="columnSalaryAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SavingsAmount" msprop:Generator_ColumnPropNameInTable="SavingsAmountColumn" msprop:Generator_ColumnPropNameInRow="SavingsAmount" msprop:Generator_UserColumnName="SavingsAmount" msprop:Generator_ColumnVarNameInTable="columnSavingsAmount" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SalaryReport" msprop:Generator_RowEvHandlerName="SalaryReportRowChangeEventHandler" msprop:Generator_RowDeletedName="SalaryReportRowDeleted" msprop:Generator_RowDeletingName="SalaryReportRowDeleting" msprop:Generator_RowEvArgName="SalaryReportRowChangeEvent" msprop:Generator_TablePropName="SalaryReport" msprop:Generator_RowChangedName="SalaryReportRowChanged" msprop:Generator_UserTableName="SalaryReport" msprop:Generator_RowChangingName="SalaryReportRowChanging" msprop:Generator_RowClassName="SalaryReportRow" msprop:Generator_TableClassName="SalaryReportDataTable" msprop:Generator_TableVarName="tableSalaryReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="collection_date" msprop:Generator_ColumnPropNameInTable="collection_dateColumn" msprop:Generator_ColumnPropNameInRow="collection_date" msprop:Generator_UserColumnName="collection_date" msprop:Generator_ColumnVarNameInTable="columncollection_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="salary_amount" msprop:Generator_ColumnPropNameInTable="salary_amountColumn" msprop:Generator_ColumnPropNameInRow="salary_amount" msprop:Generator_UserColumnName="salary_amount" msprop:Generator_ColumnVarNameInTable="columnsalary_amount" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SavingsReport" msprop:Generator_RowEvHandlerName="SavingsReportRowChangeEventHandler" msprop:Generator_RowDeletedName="SavingsReportRowDeleted" msprop:Generator_RowDeletingName="SavingsReportRowDeleting" msprop:Generator_RowEvArgName="SavingsReportRowChangeEvent" msprop:Generator_TablePropName="SavingsReport" msprop:Generator_RowChangedName="SavingsReportRowChanged" msprop:Generator_UserTableName="SavingsReport" msprop:Generator_RowChangingName="SavingsReportRowChanging" msprop:Generator_RowClassName="SavingsReportRow" msprop:Generator_TableClassName="SavingsReportDataTable" msprop:Generator_TableVarName="tableSavingsReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="collection_date" msprop:Generator_ColumnPropNameInTable="collection_dateColumn" msprop:Generator_ColumnPropNameInRow="collection_date" msprop:Generator_UserColumnName="collection_date" msprop:Generator_ColumnVarNameInTable="columncollection_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="savings_amount" msprop:Generator_ColumnPropNameInTable="savings_amountColumn" msprop:Generator_ColumnPropNameInRow="savings_amount" msprop:Generator_UserColumnName="savings_amount" msprop:Generator_ColumnVarNameInTable="columnsavings_amount" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DailyColletionReportFinal" msprop:Generator_RowEvHandlerName="DailyColletionReportFinalRowChangeEventHandler" msprop:Generator_RowDeletedName="DailyColletionReportFinalRowDeleted" msprop:Generator_RowDeletingName="DailyColletionReportFinalRowDeleting" msprop:Generator_RowEvArgName="DailyColletionReportFinalRowChangeEvent" msprop:Generator_TablePropName="DailyColletionReportFinal" msprop:Generator_RowChangedName="DailyColletionReportFinalRowChanged" msprop:Generator_UserTableName="DailyColletionReportFinal" msprop:Generator_RowChangingName="DailyColletionReportFinalRowChanging" msprop:Generator_RowClassName="DailyColletionReportFinalRow" msprop:Generator_TableClassName="DailyColletionReportFinalDataTable" msprop:Generator_TableVarName="tableDailyColletionReportFinal">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_UserColumnName="date" msprop:Generator_ColumnVarNameInTable="columndate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="collection_amount" msprop:Generator_ColumnPropNameInTable="collection_amountColumn" msprop:Generator_ColumnPropNameInRow="collection_amount" msprop:Generator_UserColumnName="collection_amount" msprop:Generator_ColumnVarNameInTable="columncollection_amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="savings_collection_date" msprop:Generator_ColumnPropNameInTable="savings_collection_dateColumn" msprop:Generator_ColumnPropNameInRow="savings_collection_date" msprop:Generator_UserColumnName="savings_collection_date" msprop:Generator_ColumnVarNameInTable="columnsavings_collection_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="savings_amount" msprop:Generator_ColumnPropNameInTable="savings_amountColumn" msprop:Generator_ColumnPropNameInRow="savings_amount" msprop:Generator_UserColumnName="savings_amount" msprop:Generator_ColumnVarNameInTable="columnsavings_amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="salary_collection_date" msprop:Generator_ColumnPropNameInTable="salary_collection_dateColumn" msprop:Generator_ColumnPropNameInRow="salary_collection_date" msprop:Generator_UserColumnName="salary_collection_date" msprop:Generator_ColumnVarNameInTable="columnsalary_collection_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="salary_amount" msprop:Generator_ColumnPropNameInTable="salary_amountColumn" msprop:Generator_ColumnPropNameInRow="salary_amount" msprop:Generator_UserColumnName="salary_amount" msprop:Generator_ColumnVarNameInTable="columnsalary_amount" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

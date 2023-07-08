@@ -156,5 +156,128 @@ namespace TripleJPMVPLibrary.Repository
                 return data;
             }
         }
+        internal DataSet GetDailyCollection(DateTime dateFrom, DateTime dateTo)
+        {
+            AllCollectionReport _allCollected = null;
+            CrystalReportDataSet data = new CrystalReportDataSet();
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
+            {
+                const string Query = "sp_getDailyCollection";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.Parameters.AddWithValue("@collectionDate_from", dateFrom);
+                cmd.Parameters["@collectionDate_from"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@collectionDate_to", dateTo);
+                cmd.Parameters["@collectionDate_to"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (!reader.IsDBNull(0))
+                        {
+                            _allCollected = new AllCollectionReport()
+                            {                                
+                                Date = Convert.ToDateTime(reader["date"]),
+                                Collection_Amount = Convert.ToDecimal(reader["CollectionAmount"]),
+                                Salary_Amount = Convert.ToDecimal(reader["SalaryAmount"]),
+                                Savings_Amount = Convert.ToDecimal(reader["SavingsAmount"])
+                            };
+                        }
+                    }
+                }
+                if (_allCollected != null)
+                {
+                    MySqlDataAdapter adapt = new MySqlDataAdapter(cmd);
+                    adapt.Fill(data, "DailyCollectionReport");
+                    return data;
+                }
+                return data;
+            }
+        }
+        internal DataSet GetSalary(DateTime date)
+        {
+            Salary salary = null;
+            CrystalReportDataSet data = new CrystalReportDataSet();
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
+            {
+                const string Query = "sp_getSalary";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (!reader.IsDBNull(0))
+                        {
+                            salary = new Salary()
+                            {
+                                CollectionDate = Convert.ToDateTime(reader["collection_date"]),
+                                SalaryAmount = Convert.ToDecimal(reader["salary_amount"])
+                            };
+                        }
+                    }
+                }
+                if (salary != null)
+                {
+                    MySqlDataAdapter adapt = new MySqlDataAdapter(cmd);
+                    adapt.Fill(data, "SalaryReport");
+                    return data;
+                }
+                return data;
+            }
+        }
+        internal DataSet GetSavings(DateTime date)
+        {
+            Savings savings = null;
+            CrystalReportDataSet data = new CrystalReportDataSet();
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
+            {
+                const string Query = "sp_getSavings";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (!reader.IsDBNull(0))
+                        {
+                            savings = new Savings()
+                            {
+                                CollectionDate = Convert.ToDateTime(reader["collection_date"]),
+                                SavingsAmount = Convert.ToDecimal(reader["savings_amount"])
+                            };
+                        }
+                    }
+                }
+                if (savings != null)
+                {
+                    MySqlDataAdapter adapt = new MySqlDataAdapter(cmd);
+                    adapt.Fill(data, "SavingsReport");
+                    return data;
+                }
+                return data;
+            }
+        }
     }
 }

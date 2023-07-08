@@ -45,7 +45,7 @@ namespace TripleJP_Lending_System
                         DATABASE_CONNECTION_STRING = "Server=localhost;Database=tjpdb;Uid=root;Pwd=@dmin_1223;"
                     };
 
-                    // format json
+                    // savingsFormat json
                     string jsonFormat = JsonConvert.SerializeObject(formatConfig, Formatting.Indented);
 
                     // create the config file

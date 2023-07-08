@@ -35,6 +35,7 @@ namespace TripleJP_Lending_System.Forms
             this.postingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.collectionReportSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dailyCollectionReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asdasdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addSavingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,7 +87,8 @@ namespace TripleJP_Lending_System.Forms
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.collectionReportSummaryToolStripMenuItem});
+            this.collectionReportSummaryToolStripMenuItem,
+            this.dailyCollectionReportToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(73, 30);
             this.reportToolStripMenuItem.Text = "Report";
@@ -97,6 +99,13 @@ namespace TripleJP_Lending_System.Forms
             this.collectionReportSummaryToolStripMenuItem.Size = new System.Drawing.Size(291, 30);
             this.collectionReportSummaryToolStripMenuItem.Text = "Collection Report Summary";
             this.collectionReportSummaryToolStripMenuItem.Click += new System.EventHandler(this.collectionReportSummaryToolStripMenuItem_Click);
+            // 
+            // dailyCollectionReportToolStripMenuItem
+            // 
+            this.dailyCollectionReportToolStripMenuItem.Name = "dailyCollectionReportToolStripMenuItem";
+            this.dailyCollectionReportToolStripMenuItem.Size = new System.Drawing.Size(291, 30);
+            this.dailyCollectionReportToolStripMenuItem.Text = "Daily Collection Report";
+            this.dailyCollectionReportToolStripMenuItem.Click += new System.EventHandler(this.dailyCollectionReportToolStripMenuItem_Click);
             // 
             // asdasdToolStripMenuItem
             // 
@@ -112,13 +121,13 @@ namespace TripleJP_Lending_System.Forms
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addSavingsToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(143, 30);
             this.addToolStripMenuItem.Text = "Savings";
             // 
             // addSavingsToolStripMenuItem
             // 
             this.addSavingsToolStripMenuItem.Name = "addSavingsToolStripMenuItem";
-            this.addSavingsToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.addSavingsToolStripMenuItem.Size = new System.Drawing.Size(114, 30);
             this.addSavingsToolStripMenuItem.Text = "Add";
             this.addSavingsToolStripMenuItem.Click += new System.EventHandler(this.addSavingsToolStripMenuItem_Click);
             // 
@@ -127,13 +136,13 @@ namespace TripleJP_Lending_System.Forms
             this.salaryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addSalaryToolStripMenuItem});
             this.salaryToolStripMenuItem.Name = "salaryToolStripMenuItem";
-            this.salaryToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.salaryToolStripMenuItem.Size = new System.Drawing.Size(143, 30);
             this.salaryToolStripMenuItem.Text = "Salary";
             // 
             // addSalaryToolStripMenuItem
             // 
             this.addSalaryToolStripMenuItem.Name = "addSalaryToolStripMenuItem";
-            this.addSalaryToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.addSalaryToolStripMenuItem.Size = new System.Drawing.Size(114, 30);
             this.addSalaryToolStripMenuItem.Text = "Add";
             this.addSalaryToolStripMenuItem.Click += new System.EventHandler(this.addSalaryToolStripMenuItem_Click);
             // 
@@ -178,5 +187,6 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.ToolStripMenuItem addSavingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addSalaryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dailyCollectionReportToolStripMenuItem;
     }
 }

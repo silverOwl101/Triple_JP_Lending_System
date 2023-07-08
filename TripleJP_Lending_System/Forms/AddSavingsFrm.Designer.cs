@@ -30,9 +30,9 @@
         {
             this.remitGroupBox = new System.Windows.Forms.GroupBox();
             this.remitAmountGroupBox = new System.Windows.Forms.GroupBox();
-            this.remitAmountTextBox = new System.Windows.Forms.TextBox();
+            this.remitSavingsAmountTextBox = new System.Windows.Forms.TextBox();
             this.remitDateGroupBox = new System.Windows.Forms.GroupBox();
-            this.remitDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.remitSavingsDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.loanGroupBox = new System.Windows.Forms.GroupBox();
             this.totalRemittanceGroupBox = new System.Windows.Forms.GroupBox();
             this.salaryCalculationLabel = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@
             // 
             // remitAmountGroupBox
             // 
-            this.remitAmountGroupBox.Controls.Add(this.remitAmountTextBox);
+            this.remitAmountGroupBox.Controls.Add(this.remitSavingsAmountTextBox);
             this.remitAmountGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remitAmountGroupBox.Location = new System.Drawing.Point(10, 115);
             this.remitAmountGroupBox.Name = "remitAmountGroupBox";
@@ -74,18 +74,22 @@
             this.remitAmountGroupBox.TabStop = false;
             this.remitAmountGroupBox.Text = "Enter Amount";
             // 
-            // remitAmountTextBox
+            // remitSavingsAmountTextBox
             // 
-            this.remitAmountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.remitAmountTextBox.Location = new System.Drawing.Point(5, 30);
-            this.remitAmountTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.remitAmountTextBox.Name = "remitAmountTextBox";
-            this.remitAmountTextBox.Size = new System.Drawing.Size(321, 28);
-            this.remitAmountTextBox.TabIndex = 0;
+            this.remitSavingsAmountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.remitSavingsAmountTextBox.Location = new System.Drawing.Point(5, 30);
+            this.remitSavingsAmountTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.remitSavingsAmountTextBox.Name = "remitSavingsAmountTextBox";
+            this.remitSavingsAmountTextBox.Size = new System.Drawing.Size(321, 28);
+            this.remitSavingsAmountTextBox.TabIndex = 0;
+            this.remitSavingsAmountTextBox.TextChanged += new System.EventHandler(this.remitSavingsAmountTextBox_TextChanged);
+            this.remitSavingsAmountTextBox.Enter += new System.EventHandler(this.remitSavingsAmountTextBox_Enter);
+            this.remitSavingsAmountTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.remitSavingsAmountTextBox_KeyPress);
+            this.remitSavingsAmountTextBox.Leave += new System.EventHandler(this.remitSavingsAmountTextBox_Leave);
             // 
             // remitDateGroupBox
             // 
-            this.remitDateGroupBox.Controls.Add(this.remitDateTimePicker);
+            this.remitDateGroupBox.Controls.Add(this.remitSavingsDateTimePicker);
             this.remitDateGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remitDateGroupBox.Location = new System.Drawing.Point(10, 28);
             this.remitDateGroupBox.Name = "remitDateGroupBox";
@@ -94,14 +98,15 @@
             this.remitDateGroupBox.TabStop = false;
             this.remitDateGroupBox.Text = "Date";
             // 
-            // remitDateTimePicker
+            // remitSavingsDateTimePicker
             // 
-            this.remitDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.remitDateTimePicker.Location = new System.Drawing.Point(5, 30);
-            this.remitDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
-            this.remitDateTimePicker.Name = "remitDateTimePicker";
-            this.remitDateTimePicker.Size = new System.Drawing.Size(321, 28);
-            this.remitDateTimePicker.TabIndex = 0;
+            this.remitSavingsDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.remitSavingsDateTimePicker.Location = new System.Drawing.Point(5, 30);
+            this.remitSavingsDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.remitSavingsDateTimePicker.Name = "remitSavingsDateTimePicker";
+            this.remitSavingsDateTimePicker.Size = new System.Drawing.Size(321, 28);
+            this.remitSavingsDateTimePicker.TabIndex = 0;
+            this.remitSavingsDateTimePicker.ValueChanged += new System.EventHandler(this.remitSavingsDateTimePicker_ValueChanged);
             // 
             // loanGroupBox
             // 
@@ -174,6 +179,7 @@
             this.remitButton.TabIndex = 20;
             this.remitButton.Text = "Remit";
             this.remitButton.UseVisualStyleBackColor = true;
+            this.remitButton.Click += new System.EventHandler(this.remitButton_Click);
             // 
             // balanceGroupBox
             // 
@@ -226,9 +232,9 @@
 
         private System.Windows.Forms.GroupBox remitGroupBox;
         private System.Windows.Forms.GroupBox remitAmountGroupBox;
-        private System.Windows.Forms.TextBox remitAmountTextBox;
+        private System.Windows.Forms.TextBox remitSavingsAmountTextBox;
         private System.Windows.Forms.GroupBox remitDateGroupBox;
-        private System.Windows.Forms.DateTimePicker remitDateTimePicker;
+        private System.Windows.Forms.DateTimePicker remitSavingsDateTimePicker;
         private System.Windows.Forms.GroupBox loanGroupBox;
         private System.Windows.Forms.GroupBox totalRemittanceGroupBox;
         private System.Windows.Forms.Label salaryCalculationLabel;
