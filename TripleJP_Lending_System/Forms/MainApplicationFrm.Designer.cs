@@ -36,6 +36,7 @@ namespace TripleJP_Lending_System.Forms
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.collectionReportSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dailyCollectionReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.savingAndSalarySummaryReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asdasdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addSavingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,7 +89,8 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.collectionReportSummaryToolStripMenuItem,
-            this.dailyCollectionReportToolStripMenuItem});
+            this.dailyCollectionReportToolStripMenuItem,
+            this.savingAndSalarySummaryReportToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(73, 30);
             this.reportToolStripMenuItem.Text = "Report";
@@ -96,16 +98,23 @@ namespace TripleJP_Lending_System.Forms
             // collectionReportSummaryToolStripMenuItem
             // 
             this.collectionReportSummaryToolStripMenuItem.Name = "collectionReportSummaryToolStripMenuItem";
-            this.collectionReportSummaryToolStripMenuItem.Size = new System.Drawing.Size(291, 30);
-            this.collectionReportSummaryToolStripMenuItem.Text = "Collection Report Summary";
+            this.collectionReportSummaryToolStripMenuItem.Size = new System.Drawing.Size(358, 30);
+            this.collectionReportSummaryToolStripMenuItem.Text = "Collection Summary Report ";
             this.collectionReportSummaryToolStripMenuItem.Click += new System.EventHandler(this.collectionReportSummaryToolStripMenuItem_Click);
             // 
             // dailyCollectionReportToolStripMenuItem
             // 
             this.dailyCollectionReportToolStripMenuItem.Name = "dailyCollectionReportToolStripMenuItem";
-            this.dailyCollectionReportToolStripMenuItem.Size = new System.Drawing.Size(291, 30);
+            this.dailyCollectionReportToolStripMenuItem.Size = new System.Drawing.Size(358, 30);
             this.dailyCollectionReportToolStripMenuItem.Text = "Daily Collection Report";
             this.dailyCollectionReportToolStripMenuItem.Click += new System.EventHandler(this.dailyCollectionReportToolStripMenuItem_Click);
+            // 
+            // savingAndSalarySummaryReportToolStripMenuItem
+            // 
+            this.savingAndSalarySummaryReportToolStripMenuItem.Name = "savingAndSalarySummaryReportToolStripMenuItem";
+            this.savingAndSalarySummaryReportToolStripMenuItem.Size = new System.Drawing.Size(358, 30);
+            this.savingAndSalarySummaryReportToolStripMenuItem.Text = "Savings and Salary Summary Report";
+            this.savingAndSalarySummaryReportToolStripMenuItem.Click += new System.EventHandler(this.savingAndSalarySummaryReportToolStripMenuItem_Click);
             // 
             // asdasdToolStripMenuItem
             // 
@@ -188,5 +197,6 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.ToolStripMenuItem salaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addSalaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dailyCollectionReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem savingAndSalarySummaryReportToolStripMenuItem;
     }
 }

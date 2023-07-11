@@ -30,12 +30,12 @@
         {
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
-            this.loanIdGroupBox = new System.Windows.Forms.GroupBox();
+            this.fromGroupBox = new System.Windows.Forms.GroupBox();
             this.generateButton = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.toGroupBox = new System.Windows.Forms.GroupBox();
             this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
-            this.loanIdGroupBox.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.fromGroupBox.SuspendLayout();
+            this.toGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // reportViewer
@@ -59,16 +59,16 @@
             this.dateTimePickerFrom.Size = new System.Drawing.Size(332, 27);
             this.dateTimePickerFrom.TabIndex = 2;
             // 
-            // loanIdGroupBox
+            // fromGroupBox
             // 
-            this.loanIdGroupBox.Controls.Add(this.dateTimePickerFrom);
-            this.loanIdGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loanIdGroupBox.Location = new System.Drawing.Point(12, 32);
-            this.loanIdGroupBox.Name = "loanIdGroupBox";
-            this.loanIdGroupBox.Size = new System.Drawing.Size(344, 63);
-            this.loanIdGroupBox.TabIndex = 1;
-            this.loanIdGroupBox.TabStop = false;
-            this.loanIdGroupBox.Text = "From";
+            this.fromGroupBox.Controls.Add(this.dateTimePickerFrom);
+            this.fromGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fromGroupBox.Location = new System.Drawing.Point(12, 32);
+            this.fromGroupBox.Name = "fromGroupBox";
+            this.fromGroupBox.Size = new System.Drawing.Size(344, 63);
+            this.fromGroupBox.TabIndex = 1;
+            this.fromGroupBox.TabStop = false;
+            this.fromGroupBox.Text = "From";
             // 
             // generateButton
             // 
@@ -82,16 +82,16 @@
             this.generateButton.UseVisualStyleBackColor = true;
             this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
             // 
-            // groupBox1
+            // toGroupBox
             // 
-            this.groupBox1.Controls.Add(this.dateTimePickerTo);
-            this.groupBox1.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(362, 32);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(344, 63);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "To";
+            this.toGroupBox.Controls.Add(this.dateTimePickerTo);
+            this.toGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toGroupBox.Location = new System.Drawing.Point(362, 32);
+            this.toGroupBox.Name = "toGroupBox";
+            this.toGroupBox.Size = new System.Drawing.Size(344, 63);
+            this.toGroupBox.TabIndex = 2;
+            this.toGroupBox.TabStop = false;
+            this.toGroupBox.Text = "To";
             // 
             // dateTimePickerTo
             // 
@@ -106,15 +106,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1002, 544);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.toGroupBox);
             this.Controls.Add(this.generateButton);
-            this.Controls.Add(this.loanIdGroupBox);
+            this.Controls.Add(this.fromGroupBox);
             this.Controls.Add(this.reportViewer);
             this.Name = "DailyCollectionReportViewerFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Daily Collection Generate";
-            this.loanIdGroupBox.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.fromGroupBox.ResumeLayout(false);
+            this.toGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -123,9 +123,9 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
         private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
-        private System.Windows.Forms.GroupBox loanIdGroupBox;
+        private System.Windows.Forms.GroupBox fromGroupBox;
         private System.Windows.Forms.Button generateButton;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox toGroupBox;
         private System.Windows.Forms.DateTimePicker dateTimePickerTo;
     }
 }

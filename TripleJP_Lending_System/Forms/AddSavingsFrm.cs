@@ -30,7 +30,6 @@ namespace TripleJP_Lending_System.Forms
             InitializeComponent();
             DefaultProperties();
         }
-
         public decimal Amount
         {
             get { return Convert.ToDecimal(remitSavingsAmountTextBox.Text); }
@@ -77,13 +76,20 @@ namespace TripleJP_Lending_System.Forms
                 totalSavingsRemitted = 0;
             }
             #endregion
-
+            
             totalRemainingCollection = totalDailyCollection - (totalSalaryRemitted + totalSavingsRemitted);
             totalCollectionLabel.Text = totalRemainingCollection.ToString("N");
             salaryCalculationLabel.Text = totalSalaryRemitted.ToString("N");
             savingsCalculationLabel.Text = totalSavingsRemitted.ToString("N");
+            if (savingsCalculationLabel.Text == "0.00")
+            {
+                remitSavingsAmountTextBox.Enabled = true;
+            }
+            else
+            {
+                remitSavingsAmountTextBox.Enabled = false;
+            }
         }
-
         private void remitButton_Click(object sender, EventArgs e)
         {
             _savingsPresenter = new AddSavingsPresenter(this);
@@ -113,27 +119,22 @@ namespace TripleJP_Lending_System.Forms
             System.Windows.Forms.MessageBox.Show(MessageContent, MessageCaption,
                                             messageBoxButton, messageBoxIcon);
         }
-
         private void remitSavingsAmountTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             frmInputRequirements.InputNumbersWithDecimalPlacesOnly(e, remitSavingsAmountTextBox);
         }
-
         private void remitSavingsAmountTextBox_Leave(object sender, EventArgs e)
         {
             _frmConvertionRequirements.ConvertToNumberFormat(remitSavingsAmountTextBox);
         }
-
         private void remitSavingsAmountTextBox_Enter(object sender, EventArgs e)
         {
             _frmConvertionRequirements.ConvertToGeneralFormat(remitSavingsAmountTextBox);
         }
-
         private void remitSavingsDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             DefaultProperties();
         }
-
         private void remitSavingsAmountTextBox_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(remitSavingsAmountTextBox.Text))

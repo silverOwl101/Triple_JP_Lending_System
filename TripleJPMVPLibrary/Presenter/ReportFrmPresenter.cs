@@ -63,10 +63,19 @@ namespace TripleJPMVPLibrary.Presenter
         public DataTable OnCallGetDailyCollection()
         {            
             reportService = new ReportService();
-            CrystalReportDataSet dataset = new CrystalReportDataSet();
+            //CrystalReportDataSet dataset = new CrystalReportDataSet();
 
             DataTable tb1 = reportService.OnCallGetDailyCollection(_addDate.DateFrom,_addDate.DateTo).Tables["DailyCollectionReport"];
            
+            return tb1;
+        }
+        public DataTable OnCallGetSavingsSalaryExpensesSummary()
+        {
+            reportService = new ReportService();            
+
+            DataTable tb1 = reportService.OnCallGetSavingsSalaryExpensesSummary
+                            (_addDate.DateFrom, _addDate.DateTo).
+                            Tables["SavingsSalaryExpensesSummaryReport"];
             return tb1;
         }
         public DataTable OnCallGetSalary(DateTime date)

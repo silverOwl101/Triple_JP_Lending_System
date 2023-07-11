@@ -102,6 +102,7 @@
     <Compile Include="Model\CollectionReport.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\CustomerBusinessInformation.cs" />
+    <Compile Include="Model\Date.cs" />
     <Compile Include="Model\GetCollectionAndPenalty.cs" />
     <Compile Include="Model\GetCustomerInfo.cs" />
     <Compile Include="Model\GetCustomerLoanInformation.cs" />
@@ -162,6 +163,7 @@
     <Compile Include="View\IEditCustomer.cs" />
     <Compile Include="View\IGetCollectionAndPenalty.cs" />
     <Compile Include="View\ILogIn.cs" />
+    <Compile Include="View\IMonthFromMonthTo.cs" />
     <Compile Include="View\IPosting.cs" />
     <Compile Include="View\ISearch.cs" />
   </ItemGroup>
@@ -199,6 +201,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ReportDefinitions\CollectionDetailReport.rdlc" />
+    <EmbeddedResource Include="ReportDefinitions\CollectionSavingsSalaryExpensesSummaryReport.rdlc" />
     <EmbeddedResource Include="ReportDefinitions\CollectionSummaryReport.rdlc" />
     <EmbeddedResource Include="ReportDefinitions\DailyCollectionReport.rdlc" />
   </ItemGroup>

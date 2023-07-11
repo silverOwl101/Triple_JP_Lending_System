@@ -40,6 +40,8 @@ namespace TripleJPMVPLibrary.ReportDataSets {
         
         private DailyColletionReportFinalDataTable tableDailyColletionReportFinal;
         
+        private SavingsSalaryExpensesSummaryReportDataTable tableSavingsSalaryExpensesSummaryReport;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -91,6 +93,9 @@ namespace TripleJPMVPLibrary.ReportDataSets {
                 }
                 if ((ds.Tables["DailyColletionReportFinal"] != null)) {
                     base.Tables.Add(new DailyColletionReportFinalDataTable(ds.Tables["DailyColletionReportFinal"]));
+                }
+                if ((ds.Tables["SavingsSalaryExpensesSummaryReport"] != null)) {
+                    base.Tables.Add(new SavingsSalaryExpensesSummaryReportDataTable(ds.Tables["SavingsSalaryExpensesSummaryReport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -192,6 +197,16 @@ namespace TripleJPMVPLibrary.ReportDataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SavingsSalaryExpensesSummaryReportDataTable SavingsSalaryExpensesSummaryReport {
+            get {
+                return this.tableSavingsSalaryExpensesSummaryReport;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -281,6 +296,9 @@ namespace TripleJPMVPLibrary.ReportDataSets {
                 if ((ds.Tables["DailyColletionReportFinal"] != null)) {
                     base.Tables.Add(new DailyColletionReportFinalDataTable(ds.Tables["DailyColletionReportFinal"]));
                 }
+                if ((ds.Tables["SavingsSalaryExpensesSummaryReport"] != null)) {
+                    base.Tables.Add(new SavingsSalaryExpensesSummaryReportDataTable(ds.Tables["SavingsSalaryExpensesSummaryReport"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -362,6 +380,12 @@ namespace TripleJPMVPLibrary.ReportDataSets {
                     this.tableDailyColletionReportFinal.InitVars();
                 }
             }
+            this.tableSavingsSalaryExpensesSummaryReport = ((SavingsSalaryExpensesSummaryReportDataTable)(base.Tables["SavingsSalaryExpensesSummaryReport"]));
+            if ((initTable == true)) {
+                if ((this.tableSavingsSalaryExpensesSummaryReport != null)) {
+                    this.tableSavingsSalaryExpensesSummaryReport.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -388,6 +412,8 @@ namespace TripleJPMVPLibrary.ReportDataSets {
             base.Tables.Add(this.tableSavingsReport);
             this.tableDailyColletionReportFinal = new DailyColletionReportFinalDataTable();
             base.Tables.Add(this.tableDailyColletionReportFinal);
+            this.tableSavingsSalaryExpensesSummaryReport = new SavingsSalaryExpensesSummaryReportDataTable();
+            base.Tables.Add(this.tableSavingsSalaryExpensesSummaryReport);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -435,6 +461,12 @@ namespace TripleJPMVPLibrary.ReportDataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeDailyColletionReportFinal() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeSavingsSalaryExpensesSummaryReport() {
             return false;
         }
         
@@ -516,6 +548,9 @@ namespace TripleJPMVPLibrary.ReportDataSets {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void DailyColletionReportFinalRowChangeEventHandler(object sender, DailyColletionReportFinalRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void SavingsSalaryExpensesSummaryReportRowChangeEventHandler(object sender, SavingsSalaryExpensesSummaryReportRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2844,6 +2879,337 @@ namespace TripleJPMVPLibrary.ReportDataSets {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SavingsSalaryExpensesSummaryReportDataTable : global::System.Data.TypedTableBase<SavingsSalaryExpensesSummaryReportRow> {
+            
+            private global::System.Data.DataColumn columnyear;
+            
+            private global::System.Data.DataColumn columnmonth;
+            
+            private global::System.Data.DataColumn columnday;
+            
+            private global::System.Data.DataColumn columntotalCollection;
+            
+            private global::System.Data.DataColumn columntotalSavings;
+            
+            private global::System.Data.DataColumn columntotalSalary;
+            
+            private global::System.Data.DataColumn columnmonthName;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SavingsSalaryExpensesSummaryReportDataTable() {
+                this.TableName = "SavingsSalaryExpensesSummaryReport";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal SavingsSalaryExpensesSummaryReportDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected SavingsSalaryExpensesSummaryReportDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn yearColumn {
+                get {
+                    return this.columnyear;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn monthColumn {
+                get {
+                    return this.columnmonth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn dayColumn {
+                get {
+                    return this.columnday;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn totalCollectionColumn {
+                get {
+                    return this.columntotalCollection;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn totalSavingsColumn {
+                get {
+                    return this.columntotalSavings;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn totalSalaryColumn {
+                get {
+                    return this.columntotalSalary;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn monthNameColumn {
+                get {
+                    return this.columnmonthName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SavingsSalaryExpensesSummaryReportRow this[int index] {
+                get {
+                    return ((SavingsSalaryExpensesSummaryReportRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event SavingsSalaryExpensesSummaryReportRowChangeEventHandler SavingsSalaryExpensesSummaryReportRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event SavingsSalaryExpensesSummaryReportRowChangeEventHandler SavingsSalaryExpensesSummaryReportRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event SavingsSalaryExpensesSummaryReportRowChangeEventHandler SavingsSalaryExpensesSummaryReportRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event SavingsSalaryExpensesSummaryReportRowChangeEventHandler SavingsSalaryExpensesSummaryReportRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddSavingsSalaryExpensesSummaryReportRow(SavingsSalaryExpensesSummaryReportRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SavingsSalaryExpensesSummaryReportRow AddSavingsSalaryExpensesSummaryReportRow(int year, string month, int day, decimal totalCollection, decimal totalSavings, decimal totalSalary, string monthName) {
+                SavingsSalaryExpensesSummaryReportRow rowSavingsSalaryExpensesSummaryReportRow = ((SavingsSalaryExpensesSummaryReportRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        year,
+                        month,
+                        day,
+                        totalCollection,
+                        totalSavings,
+                        totalSalary,
+                        monthName};
+                rowSavingsSalaryExpensesSummaryReportRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSavingsSalaryExpensesSummaryReportRow);
+                return rowSavingsSalaryExpensesSummaryReportRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SavingsSalaryExpensesSummaryReportDataTable cln = ((SavingsSalaryExpensesSummaryReportDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SavingsSalaryExpensesSummaryReportDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnyear = base.Columns["year"];
+                this.columnmonth = base.Columns["month"];
+                this.columnday = base.Columns["day"];
+                this.columntotalCollection = base.Columns["totalCollection"];
+                this.columntotalSavings = base.Columns["totalSavings"];
+                this.columntotalSalary = base.Columns["totalSalary"];
+                this.columnmonthName = base.Columns["monthName"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnyear = new global::System.Data.DataColumn("year", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnyear);
+                this.columnmonth = new global::System.Data.DataColumn("month", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmonth);
+                this.columnday = new global::System.Data.DataColumn("day", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnday);
+                this.columntotalCollection = new global::System.Data.DataColumn("totalCollection", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotalCollection);
+                this.columntotalSavings = new global::System.Data.DataColumn("totalSavings", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotalSavings);
+                this.columntotalSalary = new global::System.Data.DataColumn("totalSalary", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotalSalary);
+                this.columnmonthName = new global::System.Data.DataColumn("monthName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmonthName);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SavingsSalaryExpensesSummaryReportRow NewSavingsSalaryExpensesSummaryReportRow() {
+                return ((SavingsSalaryExpensesSummaryReportRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SavingsSalaryExpensesSummaryReportRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SavingsSalaryExpensesSummaryReportRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SavingsSalaryExpensesSummaryReportRowChanged != null)) {
+                    this.SavingsSalaryExpensesSummaryReportRowChanged(this, new SavingsSalaryExpensesSummaryReportRowChangeEvent(((SavingsSalaryExpensesSummaryReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SavingsSalaryExpensesSummaryReportRowChanging != null)) {
+                    this.SavingsSalaryExpensesSummaryReportRowChanging(this, new SavingsSalaryExpensesSummaryReportRowChangeEvent(((SavingsSalaryExpensesSummaryReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SavingsSalaryExpensesSummaryReportRowDeleted != null)) {
+                    this.SavingsSalaryExpensesSummaryReportRowDeleted(this, new SavingsSalaryExpensesSummaryReportRowChangeEvent(((SavingsSalaryExpensesSummaryReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SavingsSalaryExpensesSummaryReportRowDeleting != null)) {
+                    this.SavingsSalaryExpensesSummaryReportRowDeleting(this, new SavingsSalaryExpensesSummaryReportRowChangeEvent(((SavingsSalaryExpensesSummaryReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveSavingsSalaryExpensesSummaryReportRow(SavingsSalaryExpensesSummaryReportRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                CrystalReportDataSet ds = new CrystalReportDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SavingsSalaryExpensesSummaryReportDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class CollectionSummaryReportRow : global::System.Data.DataRow {
@@ -3898,6 +4264,224 @@ namespace TripleJPMVPLibrary.ReportDataSets {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SavingsSalaryExpensesSummaryReportRow : global::System.Data.DataRow {
+            
+            private SavingsSalaryExpensesSummaryReportDataTable tableSavingsSalaryExpensesSummaryReport;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal SavingsSalaryExpensesSummaryReportRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSavingsSalaryExpensesSummaryReport = ((SavingsSalaryExpensesSummaryReportDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int year {
+                get {
+                    try {
+                        return ((int)(this[this.tableSavingsSalaryExpensesSummaryReport.yearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'year\' in table \'SavingsSalaryExpensesSummaryReport\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableSavingsSalaryExpensesSummaryReport.yearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string month {
+                get {
+                    try {
+                        return ((string)(this[this.tableSavingsSalaryExpensesSummaryReport.monthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'month\' in table \'SavingsSalaryExpensesSummaryReport\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSavingsSalaryExpensesSummaryReport.monthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int day {
+                get {
+                    try {
+                        return ((int)(this[this.tableSavingsSalaryExpensesSummaryReport.dayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'day\' in table \'SavingsSalaryExpensesSummaryReport\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableSavingsSalaryExpensesSummaryReport.dayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal totalCollection {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSavingsSalaryExpensesSummaryReport.totalCollectionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'totalCollection\' in table \'SavingsSalaryExpensesSummaryRepo" +
+                                "rt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSavingsSalaryExpensesSummaryReport.totalCollectionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal totalSavings {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSavingsSalaryExpensesSummaryReport.totalSavingsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'totalSavings\' in table \'SavingsSalaryExpensesSummaryReport\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSavingsSalaryExpensesSummaryReport.totalSavingsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal totalSalary {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSavingsSalaryExpensesSummaryReport.totalSalaryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'totalSalary\' in table \'SavingsSalaryExpensesSummaryReport\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSavingsSalaryExpensesSummaryReport.totalSalaryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string monthName {
+                get {
+                    try {
+                        return ((string)(this[this.tableSavingsSalaryExpensesSummaryReport.monthNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'monthName\' in table \'SavingsSalaryExpensesSummaryReport\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSavingsSalaryExpensesSummaryReport.monthNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsyearNull() {
+                return this.IsNull(this.tableSavingsSalaryExpensesSummaryReport.yearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetyearNull() {
+                this[this.tableSavingsSalaryExpensesSummaryReport.yearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsmonthNull() {
+                return this.IsNull(this.tableSavingsSalaryExpensesSummaryReport.monthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetmonthNull() {
+                this[this.tableSavingsSalaryExpensesSummaryReport.monthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsdayNull() {
+                return this.IsNull(this.tableSavingsSalaryExpensesSummaryReport.dayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetdayNull() {
+                this[this.tableSavingsSalaryExpensesSummaryReport.dayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IstotalCollectionNull() {
+                return this.IsNull(this.tableSavingsSalaryExpensesSummaryReport.totalCollectionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SettotalCollectionNull() {
+                this[this.tableSavingsSalaryExpensesSummaryReport.totalCollectionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IstotalSavingsNull() {
+                return this.IsNull(this.tableSavingsSalaryExpensesSummaryReport.totalSavingsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SettotalSavingsNull() {
+                this[this.tableSavingsSalaryExpensesSummaryReport.totalSavingsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IstotalSalaryNull() {
+                return this.IsNull(this.tableSavingsSalaryExpensesSummaryReport.totalSalaryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SettotalSalaryNull() {
+                this[this.tableSavingsSalaryExpensesSummaryReport.totalSalaryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsmonthNameNull() {
+                return this.IsNull(this.tableSavingsSalaryExpensesSummaryReport.monthNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetmonthNameNull() {
+                this[this.tableSavingsSalaryExpensesSummaryReport.monthNameColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -4155,6 +4739,40 @@ namespace TripleJPMVPLibrary.ReportDataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DailyColletionReportFinalRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class SavingsSalaryExpensesSummaryReportRowChangeEvent : global::System.EventArgs {
+            
+            private SavingsSalaryExpensesSummaryReportRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SavingsSalaryExpensesSummaryReportRowChangeEvent(SavingsSalaryExpensesSummaryReportRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SavingsSalaryExpensesSummaryReportRow Row {
                 get {
                     return this.eventRow;
                 }

@@ -102,5 +102,17 @@ namespace TripleJPMVPLibrary.Service
             }
 
         }
+        internal DataSet OnCallGetSavingsSalaryExpensesSummary(DateTime dateFrom, DateTime dateTo)
+        {            
+            try
+            {
+                reportRepo = new ReportRepo();
+                return reportRepo.GetSavingsSalaryExpensesSummary(dateFrom, dateTo);
+            }
+            catch (MySqlException ex)
+            {
+                throw new InvalidOperationException(" Task Invalid ", ex);
+            }
+        }
     }    
 }

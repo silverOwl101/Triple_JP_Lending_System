@@ -57,7 +57,6 @@ namespace TripleJP_Lending_System.Forms
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void InitReport()
         {            
             _concreteMediator = new ClassComponentConcreteMediator();
@@ -74,7 +73,6 @@ namespace TripleJP_Lending_System.Forms
                 InitDetailReport(loanId);
             }
         }
-
         private void InitSummaryReport()
         {
             ReportDataSource rds = new ReportDataSource();
@@ -91,7 +89,6 @@ namespace TripleJP_Lending_System.Forms
             reportViewer.LocalReport.DataSources.Add(rds);
             reportViewer.RefreshReport();
         }
-
         private void InitDetailReport(string loanId)
         {           
             loan = new Loan();
@@ -119,7 +116,6 @@ namespace TripleJP_Lending_System.Forms
             else
                 NoRecordsErrorMessage();
         }
-
         internal bool IsRowsEmpty()
         {
             reportPresenter = new ReportFrmPresenter();
@@ -129,7 +125,6 @@ namespace TripleJP_Lending_System.Forms
             }
             return true;
         }
-
         private void NoRecordsErrorMessage()
         {
             const string MessageContent = "No records of collection yet";

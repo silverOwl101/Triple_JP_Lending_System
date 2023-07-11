@@ -93,6 +93,19 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="SavingsSalaryExpensesSummaryReport" msprop:Generator_RowEvHandlerName="SavingsSalaryExpensesSummaryReportRowChangeEventHandler" msprop:Generator_RowDeletedName="SavingsSalaryExpensesSummaryReportRowDeleted" msprop:Generator_RowDeletingName="SavingsSalaryExpensesSummaryReportRowDeleting" msprop:Generator_RowEvArgName="SavingsSalaryExpensesSummaryReportRowChangeEvent" msprop:Generator_TablePropName="SavingsSalaryExpensesSummaryReport" msprop:Generator_RowChangedName="SavingsSalaryExpensesSummaryReportRowChanged" msprop:Generator_UserTableName="SavingsSalaryExpensesSummaryReport" msprop:Generator_RowChangingName="SavingsSalaryExpensesSummaryReportRowChanging" msprop:Generator_RowClassName="SavingsSalaryExpensesSummaryReportRow" msprop:Generator_TableClassName="SavingsSalaryExpensesSummaryReportDataTable" msprop:Generator_TableVarName="tableSavingsSalaryExpensesSummaryReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="year" msprop:Generator_ColumnPropNameInTable="yearColumn" msprop:Generator_ColumnPropNameInRow="year" msprop:Generator_UserColumnName="year" msprop:Generator_ColumnVarNameInTable="columnyear" type="xs:int" minOccurs="0" />
+              <xs:element name="month" msprop:Generator_ColumnPropNameInTable="monthColumn" msprop:Generator_ColumnPropNameInRow="month" msprop:Generator_UserColumnName="month" msprop:Generator_ColumnVarNameInTable="columnmonth" type="xs:string" minOccurs="0" />
+              <xs:element name="day" msprop:Generator_ColumnPropNameInTable="dayColumn" msprop:Generator_ColumnPropNameInRow="day" msprop:Generator_UserColumnName="day" msprop:Generator_ColumnVarNameInTable="columnday" type="xs:int" minOccurs="0" />
+              <xs:element name="totalCollection" msprop:Generator_ColumnPropNameInTable="totalCollectionColumn" msprop:Generator_ColumnPropNameInRow="totalCollection" msprop:Generator_UserColumnName="totalCollection" msprop:Generator_ColumnVarNameInTable="columntotalCollection" type="xs:decimal" minOccurs="0" />
+              <xs:element name="totalSavings" msprop:Generator_ColumnPropNameInTable="totalSavingsColumn" msprop:Generator_ColumnPropNameInRow="totalSavings" msprop:Generator_UserColumnName="totalSavings" msprop:Generator_ColumnVarNameInTable="columntotalSavings" type="xs:decimal" minOccurs="0" />
+              <xs:element name="totalSalary" msprop:Generator_ColumnPropNameInTable="totalSalaryColumn" msprop:Generator_ColumnPropNameInRow="totalSalary" msprop:Generator_UserColumnName="totalSalary" msprop:Generator_ColumnVarNameInTable="columntotalSalary" type="xs:decimal" minOccurs="0" />
+              <xs:element name="monthName" msprop:Generator_ColumnPropNameInRow="monthName" msprop:Generator_ColumnPropNameInTable="monthNameColumn" msprop:Generator_ColumnVarNameInTable="columnmonthName" msprop:Generator_UserColumnName="monthName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

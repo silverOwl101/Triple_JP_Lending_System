@@ -11,13 +11,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TripleJPMVPLibrary.View;
 using TripleJPMVPLibrary.Presenter;
+using TripleJP_Lending_System.FormMediator.Component;
+using TripleJP_Lending_System.FormMediator.ConcreteMediator;
+using TripleJP_Lending_System.FormMediator.Mediator;
+using System.Globalization;
 
 namespace TripleJP_Lending_System.Forms
 {
     public partial class DailyCollectionReportViewerFrm : Form, IDateFromDateTo
     {
         ReportFrmPresenter reportPresenter;
-
+        DailyCollectionReportViewerData _dailyCollectionReportViewerData;
+        IFormsMediator _concreteMediator;
+        private string temp;
         public DateTime DateFrom 
         {
             get { return dateTimePickerFrom.Value.Date; }
@@ -28,17 +34,22 @@ namespace TripleJP_Lending_System.Forms
             get { return dateTimePickerTo.Value.Date; }
             set { dateTimePickerTo.Text = value.ToString(); }
         }
-
+        
         public DailyCollectionReportViewerFrm()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            LoadReportVersion();
         }
-        private void InitSampleReport()
+        private void LoadReportVersion()
         {
-            
-            ReportDataSource collectionDs = new ReportDataSource();
-            ReportDataSource salaryDs = new ReportDataSource();
-            ReportDataSource savingsDs = new ReportDataSource();
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _dailyCollectionReportViewerData = new DailyCollectionReportViewerData(_concreteMediator);
+
+            temp = _dailyCollectionReportViewerData.GetData()[0];            
+        }        
+        private void InitDailyDetailedSavingsSalaryCollectionReport()
+        {            
+            ReportDataSource collectionDs = new ReportDataSource();            
 
             reportPresenter = new ReportFrmPresenter(this);
 
@@ -48,19 +59,46 @@ namespace TripleJP_Lending_System.Forms
             reportViewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             reportViewer.ZoomMode = ZoomMode.PageWidth;
 
-            string REPORT_SOURCE = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "TripleJPMVPLibrary", "ReportDefinitions", "DailyCollectionReport.rdlc");
-
+            string REPORT_SOURCE = Path.Combine(Environment.CurrentDirectory, "..", "..", "..",
+                                                "TripleJPMVPLibrary",
+                                                "ReportDefinitions",
+                                                "DailyCollectionReport.rdlc");
             reportViewer.LocalReport.ReportPath = REPORT_SOURCE;
-
             reportViewer.LocalReport.DataSources.Clear();
             reportViewer.LocalReport.DataSources.Add(collectionDs);            
-
             reportViewer.RefreshReport();
         }
+        private void InitSummarySavingsSalaryCollectionReport()
+        {
+            ReportDataSource summaryCollectionDs = new ReportDataSource();
 
+            reportPresenter = new ReportFrmPresenter(this);
+
+            summaryCollectionDs.Name = "SavingsSalaryCollectionSummary";
+            summaryCollectionDs.Value = reportPresenter.OnCallGetSavingsSalaryExpensesSummary();
+
+            reportViewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+            reportViewer.ZoomMode = ZoomMode.PageWidth;
+
+            string REPORT_SOURCE = Path.Combine(Environment.CurrentDirectory, "..", "..", "..",
+                                                "TripleJPMVPLibrary",
+                                                "ReportDefinitions",
+                                                "CollectionSavingsSalaryExpensesSummaryReport.rdlc");
+            reportViewer.LocalReport.ReportPath = REPORT_SOURCE;
+            reportViewer.LocalReport.DataSources.Clear();
+            reportViewer.LocalReport.DataSources.Add(summaryCollectionDs);
+            reportViewer.RefreshReport();
+        }
         private void generateButton_Click(object sender, EventArgs e)
         {            
-            InitSampleReport();
+            if (temp == "DetailCollectionReport") 
+            {
+                InitDailyDetailedSavingsSalaryCollectionReport();
+            }
+            if (temp == "SavingsAndSalaryReport")
+            {
+                InitSummarySavingsSalaryCollectionReport();
+            }
         }
     }
 }

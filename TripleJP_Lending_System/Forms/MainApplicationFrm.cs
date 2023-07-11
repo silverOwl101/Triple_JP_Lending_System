@@ -16,11 +16,12 @@ namespace TripleJP_Lending_System.Forms
         private CustomerAccountFrmComponent _customerAccountFrmComponent;
         private LoanInformationFrmComponent _loanInformationFrmComponent;
         private PostingFrmComponent _postingFrmComponent;
-        private ReportFrmDetailComponent _reportFrmDetailomponent;        
+        private ReportFrmDetailComponent _reportFrmDetailComponent;        
         private LoanInformationFrmPassData _loanInformationFrmPassData;
         private AddSavingsFrmComponent _addSavingsFrmComponent;
         private AddSalaryFrmComponent _addSalaryFrmComponent;
         private DailyCollectionReportViewerFrmComponent _dailyCollectionReportViewerFrmComponent;
+        private MainApplicationFrmPassData _mainApplicationFrmPassData;
 
         #endregion
 
@@ -70,7 +71,7 @@ namespace TripleJP_Lending_System.Forms
         }
         private void collectionReportSummaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenSummaryReport();
+            OpenSummaryReportFrm();
         }
         private void addSavingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -83,6 +84,10 @@ namespace TripleJP_Lending_System.Forms
         private void dailyCollectionReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenDailyCollectionReportFrm();
+        }
+        private void savingAndSalarySummaryReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenSavingAndSalaryReportFrm();
         }
         #endregion
 
@@ -109,15 +114,15 @@ namespace TripleJP_Lending_System.Forms
             _postingFrmComponent = new PostingFrmComponent(_concreteMediator);
             _concreteMediator.OpenForms(_postingFrmComponent, true);
         }
-        private void OpenSummaryReport()
+        private void OpenSummaryReportFrm()
         {
             const string summaryReportParameter = "SummaryReport";
             _concreteMediator = new ClassComponentConcreteMediator();
             _loanInformationFrmPassData = 
                                 new LoanInformationFrmPassData(_concreteMediator,"", summaryReportParameter);
-            _reportFrmDetailomponent = new ReportFrmDetailComponent(_concreteMediator);
+            _reportFrmDetailComponent = new ReportFrmDetailComponent(_concreteMediator);
             _concreteMediator.PrepareData(_loanInformationFrmPassData);
-            _concreteMediator.OpenForms(_reportFrmDetailomponent, true);
+            _concreteMediator.OpenForms(_reportFrmDetailComponent, true);
         }
         private void OpenAddSavingsFrm()
         {
@@ -133,14 +138,28 @@ namespace TripleJP_Lending_System.Forms
         }
         private void OpenDailyCollectionReportFrm()
         {
+            const string DETAIL_REPORT = "DetailCollectionReport";
             _concreteMediator = new ClassComponentConcreteMediator();
+            _mainApplicationFrmPassData =
+                                new MainApplicationFrmPassData(_concreteMediator,
+                                                               DETAIL_REPORT);            
             _dailyCollectionReportViewerFrmComponent = 
                                 new DailyCollectionReportViewerFrmComponent(_concreteMediator);
+            _concreteMediator.PrepareData(_mainApplicationFrmPassData);
             _concreteMediator.OpenForms(_dailyCollectionReportViewerFrmComponent, true);
         }
-
-        #endregion
-
-
+        private void OpenSavingAndSalaryReportFrm()
+        {
+            const string SAVINGS_AND_SALARY_REPORT = "SavingsAndSalaryReport";
+            _concreteMediator = new ClassComponentConcreteMediator();
+            _mainApplicationFrmPassData =
+                                new MainApplicationFrmPassData(_concreteMediator,
+                                                               SAVINGS_AND_SALARY_REPORT);
+            _dailyCollectionReportViewerFrmComponent =
+                                new DailyCollectionReportViewerFrmComponent(_concreteMediator);
+            _concreteMediator.PrepareData(_mainApplicationFrmPassData);
+            _concreteMediator.OpenForms(_dailyCollectionReportViewerFrmComponent, true);
+        }
+        #endregion        
     }
 }

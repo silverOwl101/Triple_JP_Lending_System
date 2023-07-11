@@ -14,7 +14,8 @@ using TripleJPUtilityLibrary.DataSource;
 namespace TripleJPMVPLibrary.Repository
 {
     internal class ReportRepo
-    {        
+    {
+        
         internal DataSet GetCollectionSummaryReport()
         {            
             
@@ -196,6 +197,67 @@ namespace TripleJPMVPLibrary.Repository
                 {
                     MySqlDataAdapter adapt = new MySqlDataAdapter(cmd);
                     adapt.Fill(data, "DailyCollectionReport");
+                    return data;
+                }
+                return data;
+            }
+        }
+        internal DataSet GetSavingsSalaryExpensesSummary(DateTime dateFrom, DateTime dateTo)
+        {
+            Date date = null;
+            Salary salary = null;
+            Savings savings = null;
+            Collection collection = null;
+
+            CrystalReportDataSet data = new CrystalReportDataSet();
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
+            {
+                const string Query = "sp_GetSavingsSalaryExpensesSummary";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.Parameters.AddWithValue("@dateMonthFrom", dateFrom);
+                cmd.Parameters["@dateMonthFrom"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@dateMonthTo", dateTo);
+                cmd.Parameters["@dateMonthTo"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (!reader.IsDBNull(0))
+                        {
+                            date = new Date()
+                            {
+                                Year = Convert.ToInt32(reader["year"]),
+                                Month = Convert.ToInt32(reader["month"]),
+                                Day = Convert.ToInt32(reader["day"]),
+                                MonthName = reader["monthName"].ToString()
+                            };
+                            collection = new Collection()
+                            {
+                                Amount = Convert.ToDecimal(reader["TotalCollection"])
+                            };
+                            salary = new Salary()
+                            {
+                                SalaryAmount = Convert.ToDecimal(reader["TotalSalary"])
+                            };
+                            savings = new Savings()
+                            {
+                                SavingsAmount = Convert.ToDecimal(reader["TotalSavings"])
+                            };
+                        }
+                    }
+                }
+                if (date != null)
+                {
+                    MySqlDataAdapter adapt = new MySqlDataAdapter(cmd);
+                    adapt.Fill(data, "SavingsSalaryExpensesSummaryReport");
                     return data;
                 }
                 return data;
