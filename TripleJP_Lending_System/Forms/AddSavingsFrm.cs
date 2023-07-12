@@ -101,6 +101,8 @@ namespace TripleJP_Lending_System.Forms
                 MessageBoxButtons button = MessageBoxButtons.OK;
                 MessageBoxIcon icon = MessageBoxIcon.Information;
                 MessageBox(messageContent, messageCaption, button, icon);
+                remitSavingsAmountTextBox.Text = "";
+                DefaultProperties();
             }
             else
             {
@@ -109,6 +111,7 @@ namespace TripleJP_Lending_System.Forms
                 MessageBoxButtons button = MessageBoxButtons.OK;
                 MessageBoxIcon icon = MessageBoxIcon.Error;
                 MessageBox(messageContent, messageCaption, button, icon);
+                DefaultProperties();
             }
         }
         private void MessageBox(string messageContent, string messageCaption,

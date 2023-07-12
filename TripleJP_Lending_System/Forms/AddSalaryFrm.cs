@@ -80,7 +80,7 @@ namespace TripleJP_Lending_System.Forms
             totalCollectionLabel.Text = totalRemainingCollection.ToString("N");
             salaryCalculationLabel.Text = totalSalaryRemitted.ToString("N");
             savingsCalculationLabel.Text = totalSavingsRemitted.ToString("N");
-            if (savingsCalculationLabel.Text == "0.00")
+            if (salaryCalculationLabel.Text == "0.00")
             {
                 salaryAmountTextBox.Enabled = true;
             }
@@ -100,6 +100,8 @@ namespace TripleJP_Lending_System.Forms
                 MessageBoxButtons button = MessageBoxButtons.OK;
                 MessageBoxIcon icon = MessageBoxIcon.Information;
                 MessageBox(messageContent, messageCaption, button, icon);
+                salaryAmountTextBox.Text = "";
+                DefaultProperties();
             }
             else
             {
@@ -108,6 +110,7 @@ namespace TripleJP_Lending_System.Forms
                 MessageBoxButtons button = MessageBoxButtons.OK;
                 MessageBoxIcon icon = MessageBoxIcon.Error;
                 MessageBox(messageContent, messageCaption, button, icon);
+                DefaultProperties();
             }
         }
         private void MessageBox(string messageContent, string messageCaption,
