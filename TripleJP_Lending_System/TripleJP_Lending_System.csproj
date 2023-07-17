@@ -27,7 +27,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -175,6 +175,7 @@
     <Compile Include="FormMediator\Component\PostingFrmPassData.cs" />
     <Compile Include="FormMediator\Component\ReportFrmComponent.cs" />
     <Compile Include="FormMediator\Component\ReportFrmDetailComponent.cs" />
+    <Compile Include="FormMediator\Component\ReportViewerSummaryFrmComponent.cs" />
     <Compile Include="FormMediator\ConcreteMediator\ClassComponentConcreteMediator.cs" />
     <Compile Include="FormMediator\Mediator\IDataComponent.cs" />
     <Compile Include="FormMediator\Mediator\IOpenComponent.cs" />
@@ -271,6 +272,12 @@
     <Compile Include="Forms\ReportViewerFrm.Designer.cs">
       <DependentUpon>ReportViewerFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReportViewerSummaryFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportViewerSummaryFrm.Designer.cs">
+      <DependentUpon>ReportViewerSummaryFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\View\FrmConvertionRequirements.cs" />
     <Compile Include="Helper\View\FrmInputRequirements.cs" />
     <Compile Include="Program.cs" />
@@ -319,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReportViewerFrm.resx">
       <DependentUpon>ReportViewerFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportViewerSummaryFrm.resx">
+      <DependentUpon>ReportViewerSummaryFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

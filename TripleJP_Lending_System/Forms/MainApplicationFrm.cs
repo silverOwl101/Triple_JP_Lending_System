@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Management;
 using System.Windows.Forms;
 using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
@@ -16,12 +17,13 @@ namespace TripleJP_Lending_System.Forms
         private CustomerAccountFrmComponent _customerAccountFrmComponent;
         private LoanInformationFrmComponent _loanInformationFrmComponent;
         private PostingFrmComponent _postingFrmComponent;
-        private ReportFrmDetailComponent _reportFrmDetailComponent;        
-        private LoanInformationFrmPassData _loanInformationFrmPassData;
+        //private ReportFrmDetailComponent _reportFrmDetailComponent;        
+        //private LoanInformationFrmPassData _loanInformationFrmPassData;
         private AddSavingsFrmComponent _addSavingsFrmComponent;
         private AddSalaryFrmComponent _addSalaryFrmComponent;
         private DailyCollectionReportViewerFrmComponent _dailyCollectionReportViewerFrmComponent;
         private MainApplicationFrmPassData _mainApplicationFrmPassData;
+        private ReportViewerSummaryFrmComponent _reportViewerSummaryFrmComponent;
 
         #endregion
 
@@ -115,14 +117,10 @@ namespace TripleJP_Lending_System.Forms
             _concreteMediator.OpenForms(_postingFrmComponent, true);
         }
         private void OpenSummaryReportFrm()
-        {
-            const string summaryReportParameter = "SummaryReport";
+        {            
             _concreteMediator = new ClassComponentConcreteMediator();
-            _loanInformationFrmPassData = 
-                                new LoanInformationFrmPassData(_concreteMediator,"", summaryReportParameter);
-            _reportFrmDetailComponent = new ReportFrmDetailComponent(_concreteMediator);
-            _concreteMediator.PrepareData(_loanInformationFrmPassData);
-            _concreteMediator.OpenForms(_reportFrmDetailComponent, true);
+            _reportViewerSummaryFrmComponent = new ReportViewerSummaryFrmComponent(_concreteMediator);            
+            _concreteMediator.OpenForms(_reportViewerSummaryFrmComponent, true);
         }
         private void OpenAddSavingsFrm()
         {

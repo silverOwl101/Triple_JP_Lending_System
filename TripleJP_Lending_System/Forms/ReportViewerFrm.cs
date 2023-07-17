@@ -13,7 +13,6 @@ namespace TripleJP_Lending_System.Forms
 {
     public partial class ReportViewerFrm : Form
     {
-
         #region Fields
 
         private ReportFrmPresenter reportPresenter;
@@ -25,10 +24,9 @@ namespace TripleJP_Lending_System.Forms
 
         public ReportViewerFrm()
         {
-            InitializeComponent();            
+            InitializeComponent();
             LoadReport();
         }
-
         private void LoadReport()
         {
             try
@@ -63,34 +61,14 @@ namespace TripleJP_Lending_System.Forms
             _reportFrmData = new ReportFrmData(_concreteMediator);
             string temp = _reportFrmData.GetData()[1];
             string loanId = _reportFrmData.GetData()[0];
-
-            if (temp.Equals("SummaryReport"))
-            {
-                InitSummaryReport();
-            }
+            
             if (temp.Equals("DetailReport"))
             {
                 InitDetailReport(loanId);
             }
-        }
-        private void InitSummaryReport()
-        {
-            ReportDataSource rds = new ReportDataSource();
-            reportPresenter = new ReportFrmPresenter();
-
-            rds.Name = "CollectionSummaryRpt";
-            rds.Value = reportPresenter.OnCallCustomerReportList();
-            reportViewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
-            reportViewer.ZoomMode = ZoomMode.PageWidth;
-
-            string REPORT_SOURCE = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "TripleJPMVPLibrary", "ReportDefinitions", "CollectionSummaryReport.rdlc"); // DailyCollectionReport, CollectionSummaryReport
-
-            reportViewer.LocalReport.ReportPath = REPORT_SOURCE;
-            reportViewer.LocalReport.DataSources.Add(rds);
-            reportViewer.RefreshReport();
-        }
+        }        
         private void InitDetailReport(string loanId)
-        {           
+        {            
             loan = new Loan();
             loan.Id = loanId;
             ReportDataSource rdsLoanInformationRpt = new ReportDataSource();
@@ -132,6 +110,5 @@ namespace TripleJP_Lending_System.Forms
             MessageBox.Show(MessageContent, MessageCaption,
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
-
     }
 }

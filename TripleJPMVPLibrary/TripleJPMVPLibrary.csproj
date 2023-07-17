@@ -202,6 +202,7 @@
   <ItemGroup>
     <EmbeddedResource Include="ReportDefinitions\CollectionDetailReport.rdlc" />
     <EmbeddedResource Include="ReportDefinitions\CollectionSavingsSalaryExpensesSummaryReport.rdlc" />
+    <EmbeddedResource Include="ReportDefinitions\CollectionSummaryReport_Paid.rdlc" />
     <EmbeddedResource Include="ReportDefinitions\CollectionSummaryReport.rdlc" />
     <EmbeddedResource Include="ReportDefinitions\DailyCollectionReport.rdlc" />
   </ItemGroup>

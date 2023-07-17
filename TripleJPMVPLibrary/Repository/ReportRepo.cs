@@ -14,14 +14,13 @@ using TripleJPUtilityLibrary.DataSource;
 namespace TripleJPMVPLibrary.Repository
 {
     internal class ReportRepo
-    {
-        
-        internal DataSet GetCollectionSummaryReport()
+    {        
+        internal DataSet GetCollectionSummaryReportUnpaid()
         {            
             
             using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
-                const string Query = "sp_getTotalCollectionPerLoanSummary";
+                const string Query = "sp_getTotalCollectionPerLoanSummaryUnPaid";
                 MySqlCommand cmd = new MySqlCommand(Query, con)
                 {
                     CommandType = CommandType.StoredProcedure
@@ -33,6 +32,24 @@ namespace TripleJPMVPLibrary.Repository
                 adapt.Fill(data, "CollectionSummaryReport");
                 return data;
             }            
+        }
+        internal DataSet GetCollectionSummaryReportPaid()
+        {
+
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
+            {
+                const string Query = "sp_getTotalCollectionPerLoanSummaryPaid";
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                con.Open();
+                cmd.ExecuteNonQuery();
+                MySqlDataAdapter adapt = new MySqlDataAdapter(cmd);
+                CrystalReportDataSet data = new CrystalReportDataSet();
+                adapt.Fill(data, "CollectionSummaryReport_Paid");
+                return data;
+            }
         }
         internal DataSet GetLoanInformationReport(Loan loan)
         {            
@@ -339,6 +356,35 @@ namespace TripleJPMVPLibrary.Repository
                     return data;
                 }
                 return data;
+            }
+        }
+        internal decimal GetOverAllCollection()
+        {
+            decimal overAllCollectionAmount = 0;
+            CrystalReportDataSet data = new CrystalReportDataSet();
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
+            {
+                const string Query = "sp_getOverAllCollection";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (!reader.IsDBNull(0))
+                        {
+                            overAllCollectionAmount = Convert.ToDecimal(reader["OverAllCollection"]);
+                        }
+                    }
+                }                
+                return overAllCollectionAmount;
             }
         }
     }

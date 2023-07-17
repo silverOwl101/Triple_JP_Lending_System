@@ -42,7 +42,7 @@ namespace TripleJPMVPLibrary.Service
         public decimal OnCallGetTotalSavings(DateTime date)
         {
             _savingsRepo = new SavingsRepo();
-            return _savingsRepo.GetTotalSavings(date);
+            return _savingsRepo.GetTotalSavingsInDate(date);
         }
     }
 }

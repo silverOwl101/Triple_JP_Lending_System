@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TripleJPMVPLibrary.Model;
+using TripleJPMVPLibrary.ReportDataSets;
 using TripleJPMVPLibrary.Repository;
 
 namespace TripleJPMVPLibrary.Service
@@ -13,18 +14,33 @@ namespace TripleJPMVPLibrary.Service
     internal class ReportService
     {
         private ReportRepo reportRepo;
+        private SalaryRepo salaryRepo;
+        private SavingsRepo savingsRepo;
+        
         internal DataSet OnCallGetCustomerListReport()
         {
             try
             {
                 reportRepo = new ReportRepo();
-                return reportRepo.GetCollectionSummaryReport();
+                return reportRepo.GetCollectionSummaryReportUnpaid();
             }
             catch (MySqlException ex)
             {
                 throw new InvalidOperationException(" Task Invalid ", ex);
             }
         }
+        internal DataSet OnCallGetCollectionSummaryReportPaid()
+        {
+            try
+            {
+                reportRepo = new ReportRepo();
+                return reportRepo.GetCollectionSummaryReportPaid();
+            }
+            catch (MySqlException ex)
+            {
+                throw new InvalidOperationException(" Task Invalid ", ex);
+            }
+        }        
         internal DataSet OnCallGetLoanInformationReport(Loan loan)
         {
             try
@@ -114,5 +130,33 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Task Invalid ", ex);
             }
         }
+        internal DataTable OnCallGetTotalSavingsGetTotalSalaryAndGetOverAllCollection()
+        {
+            CrystalReportDataSet data = new CrystalReportDataSet();
+            salaryRepo = new SalaryRepo();
+            savingsRepo = new SavingsRepo();
+            reportRepo = new ReportRepo();
+            DataTable tb1 = new DataTable();
+
+            tb1 = data.Tables["SalarySavingsAndOverAllCollectionTotalAmount"];
+            try
+            {                
+                decimal totalSalary = salaryRepo.GetTotalSalary();
+                decimal totalSavings = savingsRepo.GetTotalSavings();
+                decimal overAllCollection = reportRepo.GetOverAllCollection();
+
+                DataRow dataRow = tb1.NewRow();
+                dataRow["salary_total"] = totalSalary;
+                dataRow["savings_total"] = totalSavings;
+                dataRow["OverAllCollection"] = overAllCollection;
+                tb1.Rows.Add(dataRow);
+
+                return tb1;
+            }
+            catch (MySqlException ex)
+            {
+                throw new InvalidOperationException(" Task Invalid ", ex);
+            }
+        }        
     }    
 }

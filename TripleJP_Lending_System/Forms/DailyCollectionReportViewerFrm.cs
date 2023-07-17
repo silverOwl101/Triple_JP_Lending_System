@@ -33,8 +33,7 @@ namespace TripleJP_Lending_System.Forms
         {
             get { return dateTimePickerTo.Value.Date; }
             set { dateTimePickerTo.Text = value.ToString(); }
-        }
-        
+        }        
         public DailyCollectionReportViewerFrm()
         {
             InitializeComponent();

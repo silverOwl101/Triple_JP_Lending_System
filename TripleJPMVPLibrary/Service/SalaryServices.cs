@@ -48,7 +48,7 @@ namespace TripleJPMVPLibrary.Service
         public decimal OnCallGetTotalSalary(DateTime date)
         {
             _salaryRepo = new SalaryRepo();
-            return _salaryRepo.GetTotalSalary(date);
+            return _salaryRepo.GetTotalSalaryInDate(date);
         }
     }
 }

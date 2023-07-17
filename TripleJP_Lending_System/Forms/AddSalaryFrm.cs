@@ -80,7 +80,7 @@ namespace TripleJP_Lending_System.Forms
             totalCollectionLabel.Text = totalRemainingCollection.ToString("N");
             salaryCalculationLabel.Text = totalSalaryRemitted.ToString("N");
             savingsCalculationLabel.Text = totalSavingsRemitted.ToString("N");
-            if (salaryCalculationLabel.Text == "0.00")
+            if (salaryCalculationLabel.Text == "0.00" && totalCollectionLabel.Text != "0.00")
             {
                 salaryAmountTextBox.Enabled = true;
             }

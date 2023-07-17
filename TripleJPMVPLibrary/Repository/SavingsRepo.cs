@@ -86,12 +86,12 @@ namespace TripleJPMVPLibrary.Repository
                 }
             }
         }
-        internal decimal GetTotalSavings(DateTime date)
+        internal decimal GetTotalSavingsInDate(DateTime date)
         {
             decimal total = 0;
             using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
-                const string Query = "sp_TotalSavings";
+                const string Query = "sp_GetTotalSavingsWithDate";
 
                 MySqlCommand cmd = new MySqlCommand(Query, con)
                 {
@@ -108,6 +108,31 @@ namespace TripleJPMVPLibrary.Repository
                     while (reader.Read())
                     {
                         total = Convert.ToDecimal(reader["Total Savings Remitted"].ToString());
+                    }
+                }
+            }
+            return total;
+        }
+        internal decimal GetTotalSavings()
+        {
+            decimal total = 0;
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
+            {
+                const string Query = "sp_getTotalSavings";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();                
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        total = Convert.ToDecimal(reader["TotalSavingsAmount"].ToString());
                     }
                 }
             }

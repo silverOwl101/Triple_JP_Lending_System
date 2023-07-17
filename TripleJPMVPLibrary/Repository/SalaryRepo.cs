@@ -86,12 +86,12 @@ namespace TripleJPMVPLibrary.Repository
                 }
             }
         }        
-        internal decimal GetTotalSalary(DateTime date)
+        internal decimal GetTotalSalaryInDate(DateTime date)
         {
             decimal total = 0;
             using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
-                const string Query = "sp_TotalSalary";
+                const string Query = "sp_GetTotalSalaryWithDate";
 
                 MySqlCommand cmd = new MySqlCommand(Query, con)
                 {
@@ -108,6 +108,31 @@ namespace TripleJPMVPLibrary.Repository
                     while (reader.Read())
                     {
                         total = Convert.ToDecimal(reader["Total Salary Remitted"].ToString());
+                    }
+                }
+            }
+            return total;
+        }
+        internal decimal GetTotalSalary()
+        {
+            decimal total = 0;
+            using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
+            {
+                const string Query = "sp_getTotalSalary";
+
+                MySqlCommand cmd = new MySqlCommand(Query, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                con.Open();                 
+                cmd.ExecuteNonQuery();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        total = Convert.ToDecimal(reader["TotalSalaryAmount"].ToString());
                     }
                 }
             }

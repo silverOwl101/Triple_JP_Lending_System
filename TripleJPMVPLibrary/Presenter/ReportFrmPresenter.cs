@@ -31,6 +31,12 @@ namespace TripleJPMVPLibrary.Presenter
             DataTable tb = reportService.OnCallGetCustomerListReport().Tables["CollectionSummaryReport"];
             return tb;
         }
+        public DataTable OnCallGetCollectionSummaryReportPaid()
+        {
+            reportService = new ReportService();
+            DataTable tb = reportService.OnCallGetCollectionSummaryReportPaid().Tables["CollectionSummaryReport_Paid"];
+            return tb;
+        }        
         public DataTable OnCallGetLoanInformationReport(Loan loan)
         {
             reportService = new ReportService();
@@ -90,5 +96,11 @@ namespace TripleJPMVPLibrary.Presenter
             DataTable tb = reportService.OnCallGetSavings(date).Tables["SavingsReport"];
             return tb;
         }
+        public DataTable OnCallGetTotalSavingsGetTotalSalaryAndGetOverAllCollection()
+        {
+            reportService = new ReportService();
+            DataTable tb = reportService.OnCallGetTotalSavingsGetTotalSalaryAndGetOverAllCollection();
+            return tb;
+        }                
     }
 }
