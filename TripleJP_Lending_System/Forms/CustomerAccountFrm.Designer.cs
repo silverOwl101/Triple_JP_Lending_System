@@ -29,7 +29,7 @@ namespace TripleJP_Lending_System.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerInfoGroupBox = new System.Windows.Forms.GroupBox();
@@ -142,12 +142,13 @@ namespace TripleJP_Lending_System.Forms
             // 
             // customerAddressLabel
             // 
-            this.customerAddressLabel.AutoSize = true;
             this.customerAddressLabel.Location = new System.Drawing.Point(60, 25);
             this.customerAddressLabel.Name = "customerAddressLabel";
             this.customerAddressLabel.Size = new System.Drawing.Size(170, 25);
             this.customerAddressLabel.TabIndex = 2;
             this.customerAddressLabel.Text = "customerAddressLabel";
+            this.customerAddressLabel.MouseLeave += new System.EventHandler(this.customerAddressLabel_MouseLeave);
+            this.customerAddressLabel.MouseHover += new System.EventHandler(this.customerAddressLabel_MouseHover);
             // 
             // customerNameGroupBox
             // 
@@ -225,14 +226,14 @@ namespace TripleJP_Lending_System.Forms
             this.customerDataGridView.AllowUserToDeleteRows = false;
             this.customerDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.customerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.customerDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.customerDataGridView.DefaultCellStyle = dataGridViewCellStyle7;
             this.customerDataGridView.Location = new System.Drawing.Point(913, 82);
             this.customerDataGridView.Name = "customerDataGridView";
             this.customerDataGridView.ReadOnly = true;
@@ -392,6 +393,8 @@ namespace TripleJP_Lending_System.Forms
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CustomerAccountFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Account";
@@ -401,7 +404,6 @@ namespace TripleJP_Lending_System.Forms
             this.customerNumberGroupBox.ResumeLayout(false);
             this.customerNumberGroupBox.PerformLayout();
             this.customerAddressGroupBox.ResumeLayout(false);
-            this.customerAddressGroupBox.PerformLayout();
             this.customerNameGroupBox.ResumeLayout(false);
             this.customerNameGroupBox.PerformLayout();
             this.customerIdGroupBox.ResumeLayout(false);

@@ -110,7 +110,7 @@ namespace TripleJP_Lending_System.Forms
                 }
                 if (!string.IsNullOrEmpty(penaltyAmountTextBox.Text))
                 {
-                    _collectionFrmPresenter.AddPenalty();
+                    _collectionFrmPresenter.OnLoadInsertPenalty();
 
                     string messageContent = "Penalty added";
                     string messageCaption = "Penalty";
@@ -184,13 +184,13 @@ namespace TripleJP_Lending_System.Forms
         {
             if (!String.IsNullOrEmpty(penaltyAmountTextBox.Text))
             {
-                decimal getPenalty = _collectionFrmPresenter.GetPenalty();
+                decimal getPenalty = _collectionFrmPresenter.OnLoadGetTotalPenalty();
                 decimal calculatePenalty = getPenalty + Convert.ToDecimal(penaltyAmountTextBox.Text);
                 penaltyLabel.Text = String.Format("{0:N}", calculatePenalty);
             }
             else
             {
-                penaltyLabel.Text = String.Format("{0:N}", _collectionFrmPresenter.GetPenalty());
+                penaltyLabel.Text = String.Format("{0:N}", _collectionFrmPresenter.OnLoadGetTotalPenalty());
             }
         }
 
@@ -217,7 +217,7 @@ namespace TripleJP_Lending_System.Forms
             loanAmount = _loanTotalAmount;
             loanBalanceLabel.Text = String.Format("{0:N}", loanAmount);
             _collectionFrmPresenter = new CollectionFrmPresenter(this);
-            penaltyLabel.Text = String.Format("{0:N}", _collectionFrmPresenter.GetPenalty());
+            penaltyLabel.Text = String.Format("{0:N}", _collectionFrmPresenter.OnLoadGetTotalPenalty());
             decimal totalAmountDue = Convert.ToDecimal(loanBalanceLabel.Text) +
                                      Convert.ToDecimal(penaltyLabel.Text);
             remainingCredit = totalAmountDue - _totalRemmitance;
@@ -228,7 +228,7 @@ namespace TripleJP_Lending_System.Forms
 
         private void LoadAddCollectionCondition()
         {
-            if (_collectionFrmPresenter.AddCollection())
+            if (_collectionFrmPresenter.OnLoadInsertCollection())
             {
                 string messageContent = "Remitted successfully";
                 string messageCaption = "Remittance";

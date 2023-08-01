@@ -53,7 +53,7 @@ namespace TripleJP_Lending_System.Forms
             reportPresenter = new ReportFrmPresenter(this);
 
             collectionDs.Name = "FinalDailyCollectionReport";
-            collectionDs.Value = reportPresenter.OnCallGetDailyCollection();           
+            collectionDs.Value = reportPresenter.OnLoadGetDailyCollection();           
 
             reportViewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             reportViewer.ZoomMode = ZoomMode.PageWidth;
@@ -74,7 +74,7 @@ namespace TripleJP_Lending_System.Forms
             reportPresenter = new ReportFrmPresenter(this);
 
             summaryCollectionDs.Name = "SavingsSalaryCollectionSummary";
-            summaryCollectionDs.Value = reportPresenter.OnCallGetSavingsSalaryExpensesSummary();
+            summaryCollectionDs.Value = reportPresenter.OnLoadGetSavingsSalaryExpensesSummary();
 
             reportViewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             reportViewer.ZoomMode = ZoomMode.PageWidth;

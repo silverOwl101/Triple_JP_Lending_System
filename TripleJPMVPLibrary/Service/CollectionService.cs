@@ -18,7 +18,7 @@ namespace TripleJPMVPLibrary.Service
         private GetCustomerLoanInformation _customerLoanInfo = new GetCustomerLoanInformation();        
         private CustomerRepo _customerRepo;
 
-        public void AddCollection(Collection collection, Customer customer, Loan loan) 
+        public void OnSetInsertCollection(Collection collection, Customer customer, Loan loan) 
         {         
             IdGeneratorClass idGeneratorClass = new IdGeneratorClass();            
             _customerRepo = new CustomerRepo();
@@ -53,7 +53,7 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Database Access Denied ", ex);
             }
         }
-        public void AddPenalty(Penalty penalty, Customer customer, Loan loan)
+        public void OnSetInsertPenalty(Penalty penalty, Customer customer, Loan loan)
         {
             IdGeneratorClass idGeneratorClass = new IdGeneratorClass();
             _customerRepo = new CustomerRepo();
@@ -88,7 +88,7 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Database Access Denied ", ex);
             }
         }
-        public void LoanStatusUpdate(Loan loan)
+        public void OnSetLoanStatusUpdate(Loan loan)
         {
             try
             {
@@ -100,17 +100,17 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Task Invalid ", ex);
             }
         }
-        public bool OnCallCheckDateValidity(DateTime date)
+        public bool OnSetCheckDateValidity(DateTime date)
         {
             _collectionRepo = new CollectionRepo();
             return _collectionRepo.CheckDateValidity(date);
         }
-        public decimal OnCallGetDailyTotalCollectionByDate(DateTime date)
+        public decimal OnSetGetDailyTotalCollectionByDate(DateTime date)
         {
             _collectionRepo = new CollectionRepo();
             return _collectionRepo.GetDailyTotalCollectionByDate(date);
         }
-        public decimal OnCallGetTotalCollection(Loan loan)
+        public decimal OnSetGetTotalCollection(Loan loan)
         {
             _loanInformationRepo = new LoanInformationRepo();
             _collectionRepo = new CollectionRepo();
@@ -120,7 +120,7 @@ namespace TripleJPMVPLibrary.Service
 
             return _collectionRepo.GetTotalCollection(loan);
         }        
-        public decimal OnCallGetTotalPenalty(Loan loan)
+        public decimal OnSetGetTotalPenalty(Loan loan)
         {
             _loanInformationRepo = new LoanInformationRepo();
             _collectionRepo = new CollectionRepo();
@@ -130,14 +130,14 @@ namespace TripleJPMVPLibrary.Service
 
             return _collectionRepo.GetTotalPenalty(loan);
         }
-        public decimal OnCallGetTotalCollectionForLoanInformationForm(Loan loan)
+        public decimal OnSetGetTotalCollectionForLoanInformationForm(Loan loan)
         {
             _loanInformationRepo = new LoanInformationRepo();
             _collectionRepo = new CollectionRepo();
             loan.Uid = Guid.Parse(_loanInformationRepo.GetGuid(loan));
             return _collectionRepo.GetTotalCollection(loan);
         }
-        public decimal OnCallGetTotalPenaltyForLoanInformationForm(Loan loan)
+        public decimal OnSetGetTotalPenaltyForLoanInformationForm(Loan loan)
         {
             _loanInformationRepo = new LoanInformationRepo();
             _collectionRepo = new CollectionRepo();            

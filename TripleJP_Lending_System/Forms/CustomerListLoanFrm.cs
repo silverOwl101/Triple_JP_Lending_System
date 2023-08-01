@@ -74,7 +74,7 @@ namespace TripleJP_Lending_System.Forms
                 _icustomerNameAndID = this;
                 GetCustomerListPresenter customerList =
                                 new GetCustomerListPresenter(_icustomerNameAndID);
-                if (customerList.OnLoadData())
+                if (customerList.OnLoadIsLoanStatusUnpaid())
                 {
                     const string MessageContent = "Customer has pending loan";
                     const string MessageCaption = "Access denied";
@@ -114,10 +114,10 @@ namespace TripleJP_Lending_System.Forms
             // catch exception
             _isearch = this;
             GetCustomerListPresenter customerList = new GetCustomerListPresenter(_isearch);
-            customerList.CallSearch();
-            if (customerList.GetCustomerListData().Count != 0)
+            customerList.OnLoadGetCustomerList();
+            if (customerList.OnLoadGetCustomerListData().Count != 0)
             {
-                customerListDataGridView.DataSource = customerList.GetCustomerListData();
+                customerListDataGridView.DataSource = customerList.OnLoadGetCustomerListData();
                 ColumnHeaderNames();
             }
             else

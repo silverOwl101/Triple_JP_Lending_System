@@ -19,7 +19,7 @@ namespace TripleJPMVPLibrary.Service
 
         #endregion
 
-        public bool IsNameDuplicate(string name)
+        public bool OnSetIsDuplicateName(string name)
         {
             _customerRepo = new CustomerRepo();
 
@@ -32,7 +32,7 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Database Access Denied ", ex);
             }
         }
-        public void AddCustomerInfo(Customer customer, CustomerBusinessInformation customerBusinessInformation)
+        public void OnSetInsertData(Customer customer, CustomerBusinessInformation customerBusinessInformation)
         {
             IdGeneratorClass idGeneratorClass = new IdGeneratorClass();
             customer.Uid = Guid.NewGuid();
@@ -71,7 +71,7 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Database Access Denied ", ex);
             }
         }
-        public List<GetCustomerInfo> GetCustomerList(Customer customer)
+        public List<GetCustomerInfo> OnSetGetCustomerList(Customer customer)
         {
             _customerRepo = new CustomerRepo();
 
@@ -84,7 +84,7 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Database Access Denied ", ex);
             }
         }
-        internal void UpdateCustomerInfo(Customer customer,CustomerBusinessInformation businessInformation)
+        internal void OnSetUpdateCustomerData(Customer customer,CustomerBusinessInformation businessInformation)
         {
             _customerRepo = new CustomerRepo();
 

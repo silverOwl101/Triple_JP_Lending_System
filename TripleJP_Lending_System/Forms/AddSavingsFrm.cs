@@ -46,30 +46,30 @@ namespace TripleJP_Lending_System.Forms
             _savingsPresenter = new AddSavingsPresenter();
 
             #region Calculation Display
-            if (_savingsPresenter.DailyTotalCollection(remitSavingsDateTimePicker.Value.Date) != 0)
+            if (_savingsPresenter.OnLoadGetDailyTotalCollectionByDate(remitSavingsDateTimePicker.Value.Date) != 0)
             {
                 totalDailyCollection =
-                        _savingsPresenter.DailyTotalCollection(remitSavingsDateTimePicker.Value.Date);
+                        _savingsPresenter.OnLoadGetDailyTotalCollectionByDate(remitSavingsDateTimePicker.Value.Date);
             }
             else
             {
                 totalDailyCollection = 0;
             }
 
-            if (_savingsPresenter.TotalSalaryRemitted(remitSavingsDateTimePicker.Value.Date) != 0)
+            if (_savingsPresenter.OnLoadGetTotalSalary(remitSavingsDateTimePicker.Value.Date) != 0)
             {
                 totalSalaryRemitted =
-                        _savingsPresenter.TotalSalaryRemitted(remitSavingsDateTimePicker.Value.Date);
+                        _savingsPresenter.OnLoadGetTotalSalary(remitSavingsDateTimePicker.Value.Date);
             }
             else
             {
                 totalSalaryRemitted = 0;
             }
 
-            if (_savingsPresenter.TotalSavingsRemitted(remitSavingsDateTimePicker.Value.Date) != 0)
+            if (_savingsPresenter.OnLoadGetTotalSavings(remitSavingsDateTimePicker.Value.Date) != 0)
             {
                 totalSavingsRemitted =
-                        _savingsPresenter.TotalSavingsRemitted(remitSavingsDateTimePicker.Value.Date);
+                        _savingsPresenter.OnLoadGetTotalSavings(remitSavingsDateTimePicker.Value.Date);
             }
             else
             {
@@ -95,7 +95,7 @@ namespace TripleJP_Lending_System.Forms
         {
             _savingsPresenter = new AddSavingsPresenter(this);
 
-            if (_savingsPresenter.Remit())
+            if (_savingsPresenter.OnLoadRemit())
             {
                 string messageContent = "Savings Remitted successfully";
                 string messageCaption = "Savings Remittance";
@@ -108,7 +108,7 @@ namespace TripleJP_Lending_System.Forms
             else
             {
                 string messageContent = "Please check the date and amout to proceed";
-                string messageCaption = "Savings Remit Error";
+                string messageCaption = "Savings OnLoadRemit Error";
                 MessageBoxButtons button = MessageBoxButtons.OK;
                 MessageBoxIcon icon = MessageBoxIcon.Error;
                 MessageBox(messageContent, messageCaption, button, icon);

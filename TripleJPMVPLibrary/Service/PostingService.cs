@@ -12,7 +12,7 @@ namespace TripleJPMVPLibrary.Service
     {
         private PostingRepo _postingRepo;
         private List<GetPostingInfo> storeList = new List<GetPostingInfo>();
-        public List<GetPostingInfo> GetPostingList(Customer customerId)
+        public List<GetPostingInfo> OnSetGetPostingList(Customer customerId)
         {
             _postingRepo = new PostingRepo();
             storeList = _postingRepo.GetPostingList(customerId);

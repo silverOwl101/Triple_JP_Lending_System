@@ -22,15 +22,15 @@ namespace TripleJPMVPLibrary.Presenter
             _customer.Id = _addLoan.CustomerID;
         }
 
-        public void OnLoadData()
+        public void OnLoadInsertLoan()
         {                        
-            if (_loanService.OnCallIsLoanStatusUnpaid(_addLoan.CustomerID) is true)
+            if (_loanService.OnSetIsLoanStatusUnpaid(_addLoan.CustomerID) is true)
             {
                 ErrorMessage("Customer has pending loan", "Cannot Add loan");
             }
             else
             {
-                string message = _loanService.OnCallInsertLoan(LoadData(_loan), _customer);
+                string message = _loanService.OnSetInsertLoan(LoadData(_loan), _customer);
                 SuccessfulMessage(message, "Loan Recorded");
             }            
         }

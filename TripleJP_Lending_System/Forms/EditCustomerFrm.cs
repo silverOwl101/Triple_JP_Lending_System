@@ -88,7 +88,7 @@ namespace TripleJP_Lending_System.Forms
 
             try
             {
-                _editPresenter.UpdateCustomerInfo();
+                _editPresenter.OnLoadUpdateCustomerData();
 
                 const string MessageContent = "Customer's information successfully updated to the system.";
                 const string MessageCaption = "Entry Successfully Updated";

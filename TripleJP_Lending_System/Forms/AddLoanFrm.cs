@@ -102,7 +102,7 @@ namespace TripleJP_Lending_System.Forms
         private void SaveButton_Click(object sender, EventArgs e)
         {
             AddLoanPresenter addLoanPresenter = new AddLoanPresenter(this);
-            addLoanPresenter.OnLoadData();
+            addLoanPresenter.OnLoadInsertLoan();
             Close();
         }
 

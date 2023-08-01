@@ -59,7 +59,7 @@ namespace TripleJP_Lending_System
                 Password = passWordTextBox.Text;
 
                 _logInFrmPresenter = new LogInFrmPresenter(this);
-                bool result = _logInFrmPresenter.LogInConfirmation();
+                bool result = _logInFrmPresenter.OnLoadLogInConfirmation();
 
                 if (result is true)
                 {

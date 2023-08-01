@@ -11,27 +11,22 @@ namespace TripleJPMVPLibrary.Presenter
 {
     public class LedgerPresenter
     {
-
         #region Fields
 
         IGetCollectionAndPenalty _getCollectionAndPenalty;
         private LoanService _loanService;
 
         #endregion
-
         public LedgerPresenter(IGetCollectionAndPenalty getCollectionAndPenalty)
         {
             _getCollectionAndPenalty = getCollectionAndPenalty;
-        }
-
-
-        
-        public List<GetCollectionAndPenalty> GetCollectionAndPenalty()
+        }        
+        public List<GetCollectionAndPenalty> OnLoadGetCollectionAndPenalty()
         {
 
             _loanService = new LoanService();
 
-            return _loanService.OnCallGetCollectionAndPenalty(_getCollectionAndPenalty.LoanID);
+            return _loanService.OnSetGetCollectionAndPenalty(_getCollectionAndPenalty.LoanID);
 
         }
     }

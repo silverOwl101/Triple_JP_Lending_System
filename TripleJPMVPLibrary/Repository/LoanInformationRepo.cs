@@ -189,7 +189,7 @@ namespace TripleJPMVPLibrary.Repository
             }
             return collectionAndPenaltyList;
         }
-        public void InsertData(Loan loan)
+        public void InsertLoanData(Loan loan)
         {
             using (MySqlConnection con = new MySqlConnection(SqlConnection.DATABASE_CONNECTION_STRING))
             {
@@ -223,7 +223,7 @@ namespace TripleJPMVPLibrary.Repository
                 cmd.ExecuteNonQuery();
             }       
         }               
-        public bool isLoanUnpaid(string customerId)
+        public bool CheckLoanUnpaid(string customerId)
         {
             bool rslt = false;
             try

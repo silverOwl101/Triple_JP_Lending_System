@@ -251,9 +251,9 @@ namespace TripleJP_Lending_System.Forms
             {
                 _loanInformationPresenter = new LoanInformationPresenter(this);
 
-                ListNullChecker(_loanInformationPresenter.GetLoanInformationList());
+                ListNullChecker(_loanInformationPresenter.OnLoadLoanInformation());
 
-                if (_loanInformationPresenter.GetLoanInformationList().Count == 0)
+                if (_loanInformationPresenter.OnLoadLoanInformation().Count == 0)
                 {
                     const string MessageContent = "Record not found, please contact your I.T officer if you think there is a problem to the system.";
                     const string MessageCaption = "Invalid Credentials";
@@ -271,7 +271,7 @@ namespace TripleJP_Lending_System.Forms
                 {
                     // view all data
 
-                    loanDataGridView.DataSource = _loanInformationPresenter.GetLoanInformationList();
+                    loanDataGridView.DataSource = _loanInformationPresenter.OnLoadLoanInformation();
                     ColumnHeaderNames();
                     loanDataGridView.Enabled = true;
                     searchFilterGroupBox.Enabled = true;
@@ -414,7 +414,7 @@ namespace TripleJP_Lending_System.Forms
         {
             _loanInformationPresenter = new LoanInformationPresenter(this);
             List<GetCustomerLoanInformation> loanInformationList = new List<GetCustomerLoanInformation>();
-            loanInformationList = _loanInformationPresenter.GetLoanInformationList();
+            loanInformationList = _loanInformationPresenter.OnLoadLoanInformation();
             List<GetCustomerLoanInformation> result = new List<GetCustomerLoanInformation>();
 
             var filteredInformationList = from list in loanInformationList
@@ -438,7 +438,7 @@ namespace TripleJP_Lending_System.Forms
         {
             if (!unPaidCheckBox.Checked && !fullyPaidCheckBox.Checked && !badDebtCheckBox.Checked)
             {
-                loanDataGridView.DataSource = _loanInformationPresenter.GetLoanInformationList();
+                loanDataGridView.DataSource = _loanInformationPresenter.OnLoadLoanInformation();
                 ColumnHeaderNames();
                 loanDataGridView.Focus();
             }

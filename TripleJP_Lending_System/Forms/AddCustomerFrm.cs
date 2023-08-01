@@ -82,7 +82,7 @@ namespace TripleJP_Lending_System.Forms
 
             try
             {
-                _addCustomerPresenter.AddCustomerData();
+                _addCustomerPresenter.OnLoadInsertData();
 
                 const string MessageContent = "Customer's information successfully added to the system.";
                 const string MessageCaption = "Entry Successfully Added";
@@ -96,7 +96,7 @@ namespace TripleJP_Lending_System.Forms
                 const string MessageCaption = "Duplicate Credentials";
                 var result = MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                _addCustomerPresenter.RetryAddEntry(result);
+                _addCustomerPresenter.OnLoadRetryAddEntry(result);
 
                 ClearTextbox();
             }

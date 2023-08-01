@@ -32,11 +32,11 @@ namespace TripleJPMVPLibrary.Presenter
         {
             _customerNameandId = customerNameandId;
         }
-        public bool OnLoadData()
+        public bool OnLoadIsLoanStatusUnpaid()
         {            
-            return _loanService.OnCallIsLoanStatusUnpaid(_customerNameandId.Id);
+            return _loanService.OnSetIsLoanStatusUnpaid(_customerNameandId.Id);
         }
-        public void CallSearch()
+        public void OnLoadGetCustomerList()
         {
             _customer = new Customer();
             _customerService = new CustomerService();
@@ -59,7 +59,7 @@ namespace TripleJPMVPLibrary.Presenter
                     _customer.Name = _search.UserSearch;
                 }
 
-                _getCustomer = _customerService.GetCustomerList(_customer);
+                _getCustomer = _customerService.OnSetGetCustomerList(_customer);
 
                 if (_getCustomer.Count == 0)
                 {
@@ -67,8 +67,7 @@ namespace TripleJPMVPLibrary.Presenter
                 }
             }            
         }
-
-        public List<GetCustomerInfo> GetCustomerListData()
+        public List<GetCustomerInfo> OnLoadGetCustomerListData()
         {
             return _getCustomer;
         }      

@@ -25,31 +25,31 @@ namespace TripleJPMVPLibrary.Presenter
             _addDate = addDate;
         }
         ReportService reportService;
-        public DataTable OnCallCustomerReportList()
+        public DataTable OnLoadCustomerReportList()
         {
             reportService = new ReportService();
-            DataTable tb = reportService.OnCallGetCustomerListReport().Tables["CollectionSummaryReport"];
+            DataTable tb = reportService.OnSetGetCustomerListReport().Tables["CollectionSummaryReport"];
             return tb;
         }
-        public DataTable OnCallGetCollectionSummaryReportPaid()
+        public DataTable OnLoadGetCollectionSummaryReportPaid()
         {
             reportService = new ReportService();
-            DataTable tb = reportService.OnCallGetCollectionSummaryReportPaid().Tables["CollectionSummaryReport_Paid"];
+            DataTable tb = reportService.OnSetGetCollectionSummaryReportPaid().Tables["CollectionSummaryReport_Paid"];
             return tb;
         }        
-        public DataTable OnCallGetLoanInformationReport(Loan loan)
+        public DataTable OnLoadGetLoanInformationReport(Loan loan)
         {
             reportService = new ReportService();
-            DataTable tb = reportService.OnCallGetLoanInformationReport(loan).Tables["LoanInformationReport"];
+            DataTable tb = reportService.OnSetGetLoanInformationReport(loan).Tables["LoanInformationReport"];
             return tb;
         }
-        public DataTable OnCallGetCollectionReport(Loan loan)
+        public DataTable OnLoadGetCollectionReport(Loan loan)
         {
             reportService = new ReportService();
             DataTable tb1 = new DataTable();
             DataTable tb2 = new DataTable();
-            tb1 = reportService.OnCallGetCollectionReport(loan).Tables["CollectionDetailReport"];
-            tb2 = reportService.OnCallGetPenaltyReport(loan).Tables["PenaltyDetailReport"];
+            tb1 = reportService.OnSetGetCollectionReport(loan).Tables["CollectionDetailReport"];
+            tb2 = reportService.OnSetGetPenaltyReport(loan).Tables["PenaltyDetailReport"];
 
             foreach (DataRow row in tb2.Rows)
             {
@@ -66,40 +66,40 @@ namespace TripleJPMVPLibrary.Presenter
             tb1 = dataView.ToTable();
             return tb1;
         }
-        public DataTable OnCallGetDailyCollection()
+        public DataTable OnLoadGetDailyCollection()
         {            
             reportService = new ReportService();
             //CrystalReportDataSet dataset = new CrystalReportDataSet();
 
-            DataTable tb1 = reportService.OnCallGetDailyCollection(_addDate.DateFrom,_addDate.DateTo).Tables["DailyCollectionReport"];
+            DataTable tb1 = reportService.OnSetGetDailyCollection(_addDate.DateFrom,_addDate.DateTo).Tables["DailyCollectionReport"];
            
             return tb1;
         }
-        public DataTable OnCallGetSavingsSalaryExpensesSummary()
+        public DataTable OnLoadGetSavingsSalaryExpensesSummary()
         {
             reportService = new ReportService();            
 
-            DataTable tb1 = reportService.OnCallGetSavingsSalaryExpensesSummary
+            DataTable tb1 = reportService.OnSetGetSavingsSalaryExpensesSummary
                             (_addDate.DateFrom, _addDate.DateTo).
                             Tables["SavingsSalaryExpensesSummaryReport"];
             return tb1;
         }
-        public DataTable OnCallGetSalary(DateTime date)
+        public DataTable OnLoadGetSalary(DateTime date)
         {
             reportService = new ReportService();
-            DataTable tb = reportService.OnCallGetSalary(date).Tables["SalaryReport"];
+            DataTable tb = reportService.OnSetGetSalary(date).Tables["SalaryReport"];
             return tb;
         }
-        public DataTable OnCallGetSavings(DateTime date)
+        public DataTable OnLoadGetSavings(DateTime date)
         {
             reportService = new ReportService();
-            DataTable tb = reportService.OnCallGetSavings(date).Tables["SavingsReport"];
+            DataTable tb = reportService.OnSetGetSavings(date).Tables["SavingsReport"];
             return tb;
         }
-        public DataTable OnCallGetTotalSavingsGetTotalSalaryAndGetOverAllCollection()
+        public DataTable OnLoadGetTotalSavingsGetTotalSalaryAndGetOverAllCollection()
         {
             reportService = new ReportService();
-            DataTable tb = reportService.OnCallGetTotalSavingsGetTotalSalaryAndGetOverAllCollection();
+            DataTable tb = reportService.OnSetGetTotalSavingsGetTotalSalaryAndGetOverAllCollection();
             return tb;
         }                
     }

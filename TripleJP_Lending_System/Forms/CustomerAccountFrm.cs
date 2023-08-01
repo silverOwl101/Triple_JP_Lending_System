@@ -6,6 +6,7 @@ using TripleJP_Lending_System.FormMediator.Component;
 using TripleJP_Lending_System.FormMediator.ConcreteMediator;
 using MySql.Data.MySqlClient;
 using System.IO;
+using System.Drawing;
 
 namespace TripleJP_Lending_System.Forms
 {
@@ -18,6 +19,8 @@ namespace TripleJP_Lending_System.Forms
         private EditCustomerFrmComponent _editCustomerFrmComponent;
         private CustomerAccountFrmPassData _customerAccountFrmData;
         private GetCustomerListPresenter _getListCustomerAccountPresenter;
+        private Label hoverLabel;
+        private string customerAddressHoverLabel;
 
         #endregion
 
@@ -96,7 +99,6 @@ namespace TripleJP_Lending_System.Forms
             customerDataGridView.Columns[7].HeaderText = "Gross Business Capital";
             customerDataGridView.Columns[8].HeaderText = "Average Daily Gross Sales";
         }
-
         private void OpenAddCustomerFrm()
         {
             _concreteMediator = new ClassComponentConcreteMediator();
@@ -108,8 +110,8 @@ namespace TripleJP_Lending_System.Forms
             try
             {
                 _getListCustomerAccountPresenter = new GetCustomerListPresenter(this);
-                _getListCustomerAccountPresenter.CallSearch();
-                customerDataGridView.DataSource = _getListCustomerAccountPresenter.GetCustomerListData();
+                _getListCustomerAccountPresenter.OnLoadGetCustomerList();
+                customerDataGridView.DataSource = _getListCustomerAccountPresenter.OnLoadGetCustomerListData();
                 ColumnHeaderNames();
             } 
             catch (ArgumentNullException ex) when (ex.ParamName is "UserSearch")
@@ -144,10 +146,10 @@ namespace TripleJP_Lending_System.Forms
 
         }
         private void DisplayTextInForm()
-        {
+        {            
             customerIdLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[0].Value.ToString();
             customerNameLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[1].Value.ToString();
-            customerAddressLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[2].Value.ToString();
+            customerAddressLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[2].Value.ToString();            
             contactNumberLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[3].Value.ToString();
             businessNameLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[4].Value.ToString();
             businessNatureLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[5].Value.ToString();
@@ -155,6 +157,13 @@ namespace TripleJP_Lending_System.Forms
             grossBusinessCapitalLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[7].Value.ToString();
             averageDailyGrossSalesLabel.Text = customerDataGridView.Rows[customerDataGridView.CurrentRow.Index].Cells[8].Value.ToString();
             editButton.Enabled = true;
+            customerAddressHoverLabel = customerAddressLabel.Text;
+            if (IsTextOverlapping(customerAddressLabel, customerAddressLabel.Text))
+            {
+                customerAddressLabel.Text =
+                    customerAddressLabel.Text.Substring(0, Math.Min(customerAddressLabel.Text.Length, 10)) +
+                                              " ...";
+            }
         }
         public void ClearText()
         {
@@ -189,6 +198,26 @@ namespace TripleJP_Lending_System.Forms
             _concreteMediator = new ClassComponentConcreteMediator();
             _customerAccountFrmData = new CustomerAccountFrmPassData(_concreteMediator, this);
             _concreteMediator.PrepareData(_customerAccountFrmData);
+        }
+        private void HoverText(Point mousePosition)
+        {                        
+            hoverLabel = new Label
+            {
+                AutoSize = true,
+                Size = new Size(200, 50),                
+                Text = customerAddressHoverLabel,
+                Font = new Font("Poppins", 11, FontStyle.Regular),
+                BackColor = Color.Transparent
+            };
+
+            hoverLabel.Location = new Point(mousePosition.X, mousePosition.Y + 185);
+            this.Controls.Add(hoverLabel);
+            hoverLabel.BringToFront();
+        }
+        private bool IsTextOverlapping(Label label, string text)
+        {
+            Size textSize = TextRenderer.MeasureText(text, label.Font);
+            return textSize.Width > label.Width || textSize.Height > label.Height;
         }
 
         #endregion
@@ -226,7 +255,7 @@ namespace TripleJP_Lending_System.Forms
 
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DisplayTextInForm();
+            DisplayTextInForm();            
         }
 
         #endregion
@@ -248,7 +277,23 @@ namespace TripleJP_Lending_System.Forms
 
         #endregion
 
+        #region Labels
+        private void customerAddressLabel_MouseHover(object sender, EventArgs e)
+        {
+            Point mousePosition = customerAddressLabel.PointToClient(Cursor.Position);
+
+            if (!string.IsNullOrEmpty(customerAddressLabel.Text))
+            {
+                HoverText(mousePosition);
+            }
+        }
+        private void customerAddressLabel_MouseLeave(object sender, EventArgs e)
+        {
+            this.Controls.Remove(hoverLabel);
+        }
         #endregion
 
+        #endregion
+        
     }
 }

@@ -29,9 +29,9 @@ namespace TripleJPMVPLibrary.Presenter
         public LoanInformationPresenter(ISearch search)
         {
             _search = search;            
-            OnLoadLoanInformationData();
+            LoanInformationData();
         }
-        private void OnLoadLoanInformationData()
+        private void LoanInformationData()
         {
             _customer = new Customer();
             _loanService = new LoanService();
@@ -48,14 +48,14 @@ namespace TripleJPMVPLibrary.Presenter
                 if (rgx.IsMatch(_search.UserSearch))
                 {
                     _customer.Id = _search.UserSearch;
-                    tbl1 = _loanService.OnCallGetLoanInformationUsingCustomerID(_customer).
+                    tbl1 = _loanService.OnSetGetLoanInformationUsingCustomerID(_customer).
                            Tables["CustomerLoanInformation"];
                     Init_DataTableToListConvertion(tbl1);
                 }
                 else
                 {
                     _customer.Name = _search.UserSearch;
-                    tbl1 = _loanService.OnCallGetLoanInformationUsingCustomerName(_customer).
+                    tbl1 = _loanService.OnSetGetLoanInformationUsingCustomerName(_customer).
                            Tables["CustomerLoanInformation"];
                     Init_DataTableToListConvertion(tbl1);
                 }                
@@ -80,14 +80,14 @@ namespace TripleJPMVPLibrary.Presenter
                     PrincipalLoan = Convert.ToInt32(row["Principal Loan"]),
                     Status = row["Status"].ToString(),
                     CollectedAmount = _collectionService.
-                                      OnCallGetTotalCollectionForLoanInformationForm(loan),
+                                      OnSetGetTotalCollectionForLoanInformationForm(loan),
                     PenaltyAmount = _collectionService.
-                                    OnCallGetTotalPenaltyForLoanInformationForm(loan)
+                                    OnSetGetTotalPenaltyForLoanInformationForm(loan)
                 };
                 _getLoanInformation.Add(getCustomerLoanInformation);
             }
         }
-        public List<GetCustomerLoanInformation> GetLoanInformationList()
+        public List<GetCustomerLoanInformation> OnLoadLoanInformation()
         {
             return _getLoanInformation;
         }        

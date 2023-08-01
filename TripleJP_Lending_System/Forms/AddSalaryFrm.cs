@@ -45,30 +45,30 @@ namespace TripleJP_Lending_System.Forms
             _salaryPresenter = new AddSalaryPresenter();
 
             #region Calculation Display
-            if (_salaryPresenter.DailyTotalCollection(remitSalaryDateTimePicker.Value.Date) != 0)
+            if (_salaryPresenter.OnLoadGetDailyTotalCollectionByDate(remitSalaryDateTimePicker.Value.Date) != 0)
             {
                 totalDailyCollection =
-                        _salaryPresenter.DailyTotalCollection(remitSalaryDateTimePicker.Value.Date);
+                        _salaryPresenter.OnLoadGetDailyTotalCollectionByDate(remitSalaryDateTimePicker.Value.Date);
             }
             else
             {
                 totalDailyCollection = 0;
             }
 
-            if (_salaryPresenter.TotalSalaryRemitted(remitSalaryDateTimePicker.Value.Date) != 0)
+            if (_salaryPresenter.OnLoadGetTotalSalary(remitSalaryDateTimePicker.Value.Date) != 0)
             {
                 totalSalaryRemitted =
-                        _salaryPresenter.TotalSalaryRemitted(remitSalaryDateTimePicker.Value.Date);
+                        _salaryPresenter.OnLoadGetTotalSalary(remitSalaryDateTimePicker.Value.Date);
             }
             else
             {
                 totalSalaryRemitted = 0;
             }
 
-            if (_salaryPresenter.TotalSavingsRemitted(remitSalaryDateTimePicker.Value.Date) != 0)
+            if (_salaryPresenter.OnLoadGetTotalSavings(remitSalaryDateTimePicker.Value.Date) != 0)
             {
                 totalSavingsRemitted =
-                        _salaryPresenter.TotalSavingsRemitted(remitSalaryDateTimePicker.Value.Date);
+                        _salaryPresenter.OnLoadGetTotalSavings(remitSalaryDateTimePicker.Value.Date);
             }
             else
             {
@@ -93,7 +93,7 @@ namespace TripleJP_Lending_System.Forms
         {
             _salaryPresenter = new AddSalaryPresenter(this);
             
-            if (_salaryPresenter.Remit())
+            if (_salaryPresenter.OnLoadRemit())
             {
                 string messageContent = "Salary Remitted successfully";
                 string messageCaption = "Salary Remittance";
@@ -106,7 +106,7 @@ namespace TripleJP_Lending_System.Forms
             else
             {
                 string messageContent = "Please check the date and amout to proceed";
-                string messageCaption = "Salary Remit Error";
+                string messageCaption = "Salary OnLoadRemit Error";
                 MessageBoxButtons button = MessageBoxButtons.OK;
                 MessageBoxIcon icon = MessageBoxIcon.Error;
                 MessageBox(messageContent, messageCaption, button, icon);

@@ -19,12 +19,11 @@ namespace TripleJPMVPLibrary.Presenter
         {
             _posting = posting;
         }
-
-        public List<GetPostingInfo> GetPostingList()
+        public List<GetPostingInfo> OnLoadGetPostingList()
         {            
             customer.Id = _posting.CustomerId;
             postingService = new PostingService();
-            return postingService.GetPostingList(customer);
+            return postingService.OnSetGetPostingList(customer);
         }
     }
 }

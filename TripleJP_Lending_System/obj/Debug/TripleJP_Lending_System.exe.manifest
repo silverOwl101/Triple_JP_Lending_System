@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="TripleJP_Lending_System.exe" version="1.0.0.8" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="TripleJP_Lending_System.exe" version="1.0.0.9" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="TripleJP_Lending_System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -930,14 +930,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TripleJP_Lending_System.exe" size="132576">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TripleJP_Lending_System.exe" size="134112">
       <assemblyIdentity name="TripleJP_Lending_System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>c1WJN+3ArYEbc+O4711HZXvaJ27srwQsdiTlPOWxjAU=</dsig:DigestValue>
+        <dsig:DigestValue>GjgaActXsCSzt5ZSQQUTS9knez/yUIl2sB5/7I8bxFs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -949,7 +949,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wtIEJh3Axu3p7SSBleTq1shkP2jfU2u3Hte3zjFy/Sc=</dsig:DigestValue>
+        <dsig:DigestValue>bSOeYirjH8MlCfFL0V4qyhkYSpYWxhIjCfPWSwbsrD0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -177,7 +177,7 @@
             this.remitButton.Name = "remitButton";
             this.remitButton.Size = new System.Drawing.Size(98, 46);
             this.remitButton.TabIndex = 20;
-            this.remitButton.Text = "Remit";
+            this.remitButton.Text = "OnLoadRemit";
             this.remitButton.UseVisualStyleBackColor = true;
             this.remitButton.Click += new System.EventHandler(this.remitButton_Click);
             // 

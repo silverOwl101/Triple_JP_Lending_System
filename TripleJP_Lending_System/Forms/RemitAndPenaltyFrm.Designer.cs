@@ -124,7 +124,7 @@
             this.remitButton.Name = "remitButton";
             this.remitButton.Size = new System.Drawing.Size(98, 46);
             this.remitButton.TabIndex = 20;
-            this.remitButton.Text = "Remit";
+            this.remitButton.Text = "OnLoadRemit";
             this.remitButton.UseVisualStyleBackColor = true;
             this.remitButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
@@ -325,7 +325,7 @@
             this.remitGroupBox.Size = new System.Drawing.Size(356, 364);
             this.remitGroupBox.TabIndex = 22;
             this.remitGroupBox.TabStop = false;
-            this.remitGroupBox.Text = "Remit";
+            this.remitGroupBox.Text = "OnLoadRemit";
             // 
             // penaltyGroupBox
             // 
@@ -393,7 +393,7 @@
             this.MinimizeBox = false;
             this.Name = "RemitAndPenaltyFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Remit And Penalty";
+            this.Text = "OnLoadRemit And Penalty";
             this.remitDateGroupBox.ResumeLayout(false);
             this.remitAmountGroupBox.ResumeLayout(false);
             this.remitAmountGroupBox.PerformLayout();

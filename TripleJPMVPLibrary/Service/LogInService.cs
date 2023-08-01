@@ -11,12 +11,9 @@ namespace TripleJPMVPLibrary.Service
 {
     internal class LogInService
     {
-
         #region Fields
-
         private LogInRepo _logInRepo;
         private Administrator _administrator;
-
         #endregion
 
         internal bool IsRegistered(string username, string password)

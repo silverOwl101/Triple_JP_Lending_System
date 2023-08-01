@@ -78,9 +78,9 @@ namespace TripleJP_Lending_System.Forms
             if (!IsRowsEmpty())
             {
                 rdsLoanInformationRpt.Name = "LoanInformationDataset";
-                rdsLoanInformationRpt.Value = reportPresenter.OnCallGetLoanInformationReport(loan);
+                rdsLoanInformationRpt.Value = reportPresenter.OnLoadGetLoanInformationReport(loan);
                 rdsCollectionRpt.Name = "CollectionDetailDataset";
-                rdsCollectionRpt.Value = reportPresenter.OnCallGetCollectionReport(loan);
+                rdsCollectionRpt.Value = reportPresenter.OnLoadGetCollectionReport(loan);
 
                 reportViewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
                 reportViewer.ZoomMode = ZoomMode.PageWidth;
@@ -97,7 +97,7 @@ namespace TripleJP_Lending_System.Forms
         internal bool IsRowsEmpty()
         {
             reportPresenter = new ReportFrmPresenter();
-            if (reportPresenter.OnCallGetCollectionReport(loan).Rows.Count != 0)
+            if (reportPresenter.OnLoadGetCollectionReport(loan).Rows.Count != 0)
             {
                 return false;
             }

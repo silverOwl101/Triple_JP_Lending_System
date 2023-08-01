@@ -25,7 +25,6 @@ namespace TripleJPMVPLibrary.Presenter
         {
             _editCustomer = editCustomer;
         }
-
         private void LoadData()
         {
             _customer = new Customer
@@ -46,12 +45,11 @@ namespace TripleJPMVPLibrary.Presenter
             };
 
         }
-
-        public void UpdateCustomerInfo()
+        public void OnLoadUpdateCustomerData()
         {
             LoadData();
             _customerService = new CustomerService();
-            _customerService.UpdateCustomerInfo(_customer, _businessInformation);
+            _customerService.OnSetUpdateCustomerData(_customer, _businessInformation);
         }
     }
 }

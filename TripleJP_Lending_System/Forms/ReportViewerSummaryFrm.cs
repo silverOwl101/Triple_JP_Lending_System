@@ -28,12 +28,12 @@ namespace TripleJP_Lending_System.Forms
             reportPresenter = new ReportFrmPresenter();
 
             rdsCollectionSummary.Name = "CollectionSummaryRpt";
-            rdsCollectionSummary.Value = reportPresenter.OnCallCustomerReportList();
+            rdsCollectionSummary.Value = reportPresenter.OnLoadCustomerReportList();
             rdsTotalSavingsAndSalary.Name = "TotalSavingsAndSalaryRpt";
-            rdsTotalSavingsAndSalary.Value = reportPresenter.OnCallGetTotalSavingsGetTotalSalaryAndGetOverAllCollection();
+            rdsTotalSavingsAndSalary.Value = reportPresenter.OnLoadGetTotalSavingsGetTotalSalaryAndGetOverAllCollection();
             rdsOverAllCollection.Name = "OverAllCollectionRpt";
             rdsOverAllCollection.Value =
-            reportPresenter.OnCallGetTotalSavingsGetTotalSalaryAndGetOverAllCollection();
+            reportPresenter.OnLoadGetTotalSavingsGetTotalSalaryAndGetOverAllCollection();
 
             reportViewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             reportViewer.ZoomMode = ZoomMode.PageWidth;
@@ -55,12 +55,12 @@ namespace TripleJP_Lending_System.Forms
             reportPresenter = new ReportFrmPresenter();
 
             rdsCollectionSummary.Name = "CollectionSummaryRpt";
-            rdsCollectionSummary.Value = reportPresenter.OnCallGetCollectionSummaryReportPaid();
+            rdsCollectionSummary.Value = reportPresenter.OnLoadGetCollectionSummaryReportPaid();
             rdsTotalSavingsAndSalary.Name = "TotalSavingsAndSalaryRpt";
-            rdsTotalSavingsAndSalary.Value = reportPresenter.OnCallGetTotalSavingsGetTotalSalaryAndGetOverAllCollection();
+            rdsTotalSavingsAndSalary.Value = reportPresenter.OnLoadGetTotalSavingsGetTotalSalaryAndGetOverAllCollection();
             rdsOverAllCollection.Name = "OverAllCollectionRpt";
             rdsOverAllCollection.Value =
-            reportPresenter.OnCallGetTotalSavingsGetTotalSalaryAndGetOverAllCollection();
+            reportPresenter.OnLoadGetTotalSavingsGetTotalSalaryAndGetOverAllCollection();
 
             reportViewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             reportViewer.ZoomMode = ZoomMode.PageWidth;

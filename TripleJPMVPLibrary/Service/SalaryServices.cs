@@ -14,7 +14,7 @@ namespace TripleJPMVPLibrary.Service
     {
         SalaryRepo _salaryRepo;
         CollectionRepo _collectionRepo;
-        public void OnCallAddSalary(Salary salary)
+        public void OnSetAddSalary(Salary salary)
         {
             IdGeneratorClass idGeneratorClass = new IdGeneratorClass();
             _salaryRepo = new SalaryRepo();
@@ -40,12 +40,12 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Database Access Denied ", ex);
             }
         }
-        public bool OnCallCheckDateValidity(DateTime date)
+        public bool OnSetCheckDateValidity(DateTime date)
         {
             _collectionRepo = new CollectionRepo();
             return _collectionRepo.CheckDateValidity(date);
         }
-        public decimal OnCallGetTotalSalary(DateTime date)
+        public decimal OnSetGetTotalSalary(DateTime date)
         {
             _salaryRepo = new SalaryRepo();
             return _salaryRepo.GetTotalSalaryInDate(date);

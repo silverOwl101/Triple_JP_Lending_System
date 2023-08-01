@@ -67,7 +67,7 @@ namespace TripleJP_Lending_System.Forms
         internal bool IsDataSourceEmpty()
         {
             _ledgerPresenter = new LedgerPresenter(this);
-            if (_ledgerPresenter.GetCollectionAndPenalty().Count != 0)
+            if (_ledgerPresenter.OnLoadGetCollectionAndPenalty().Count != 0)
             {
                 return false;
             }
@@ -77,7 +77,7 @@ namespace TripleJP_Lending_System.Forms
         {
             try
             {
-                ledgerDataGridView.DataSource = _ledgerPresenter.GetCollectionAndPenalty();
+                ledgerDataGridView.DataSource = _ledgerPresenter.OnLoadGetCollectionAndPenalty();
 
                 if (IsDataSourceEmpty())
                 {

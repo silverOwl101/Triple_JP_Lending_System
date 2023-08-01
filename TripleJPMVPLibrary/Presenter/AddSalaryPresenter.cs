@@ -26,7 +26,7 @@ namespace TripleJPMVPLibrary.Presenter
         {
             _amountAndDate = addAmountAndDate;
         }        
-        public bool Remit()
+        public bool OnLoadRemit()
         {            
             salary = new Salary();
             salary.SalaryAmount = _amountAndDate.Amount;
@@ -36,7 +36,7 @@ namespace TripleJPMVPLibrary.Presenter
             if (IsDateValid(salary.CollectionDate))
             {
                 _salaryServices = new SalaryServices();
-                _salaryServices.OnCallAddSalary(salary);
+                _salaryServices.OnSetAddSalary(salary);
                 return true;
             }
             else
@@ -47,22 +47,22 @@ namespace TripleJPMVPLibrary.Presenter
         private bool IsDateValid(DateTime date)
         {
             _salaryServices = new SalaryServices();
-            return _salaryServices.OnCallCheckDateValidity(date);
+            return _salaryServices.OnSetCheckDateValidity(date);
         }
-        public decimal DailyTotalCollection(DateTime date)
+        public decimal OnLoadGetDailyTotalCollectionByDate(DateTime date)
         {
             _collectionService = new CollectionService();
-            return _collectionService.OnCallGetDailyTotalCollectionByDate(date);
+            return _collectionService.OnSetGetDailyTotalCollectionByDate(date);
         }
-        public decimal TotalSalaryRemitted(DateTime date)
+        public decimal OnLoadGetTotalSalary(DateTime date)
         {
             _salaryServices = new SalaryServices();
-            return _salaryServices.OnCallGetTotalSalary(date);
+            return _salaryServices.OnSetGetTotalSalary(date);
         }
-        public decimal TotalSavingsRemitted(DateTime date)
+        public decimal OnLoadGetTotalSavings(DateTime date)
         {
             _savingsServices = new SavingsServices();
-            return _savingsServices.OnCallGetTotalSavings(date);
+            return _savingsServices.OnSetGetTotalSavings(date);
         }
     }
 }

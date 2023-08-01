@@ -112,7 +112,7 @@ namespace TripleJP_Lending_System.Forms
             {
                 _postingPresenter = new PostingPresenter(this);
                 getPostingInfo = new List<GetPostingInfo>();
-                getPostingInfo = _postingPresenter.GetPostingList();                
+                getPostingInfo = _postingPresenter.OnLoadGetPostingList();                
                 if (getPostingInfo.Count == 0)
                 {
                     loanDataGridView.Columns.Clear();

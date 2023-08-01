@@ -13,7 +13,7 @@ namespace TripleJPMVPLibrary.Service
     internal class SavingsServices
     {
         SavingsRepo _savingsRepo;
-        public void OnCallAddSavings(Savings savings)
+        public void OnSetAddSavings(Savings savings)
         {
             IdGeneratorClass idGeneratorClass = new IdGeneratorClass();
             SavingsRepo _savingsRepo = new SavingsRepo();
@@ -39,7 +39,7 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Database Access Denied ", ex);
             }
         }
-        public decimal OnCallGetTotalSavings(DateTime date)
+        public decimal OnSetGetTotalSavings(DateTime date)
         {
             _savingsRepo = new SavingsRepo();
             return _savingsRepo.GetTotalSavingsInDate(date);

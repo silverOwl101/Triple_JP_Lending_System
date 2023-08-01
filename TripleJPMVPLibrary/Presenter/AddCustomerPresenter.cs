@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,9 +24,8 @@ namespace TripleJPMVPLibrary.Presenter
         public AddCustomerPresenter(IAddCustomer addCustomer)
         {
             _addCustomer = addCustomer;
-        }
-        
-        public void AddCustomerData()
+        }        
+        public void OnLoadInsertData()
         {
             _customer = new Customer
             {
@@ -46,7 +45,7 @@ namespace TripleJPMVPLibrary.Presenter
 
             _customerService = new CustomerService();
 
-            if (_customerService.IsNameDuplicate(_customer.Name) is false)
+            if (_customerService.OnSetIsDuplicateName(_customer.Name) is false)
             {
                 RecordEntry();
             }
@@ -55,14 +54,12 @@ namespace TripleJPMVPLibrary.Presenter
                 throw new ArgumentException(" Duplicate Name ", nameof(_customer.Name));
             }
         }
-
         private void RecordEntry()
         {
             _customerService = new CustomerService();
-            _customerService.AddCustomerInfo(_customer, _customerBusinessInformation);
+            _customerService.OnSetInsertData(_customer, _customerBusinessInformation);
         }
-
-        public void RetryAddEntry(DialogResult result)
+        public void OnLoadRetryAddEntry(DialogResult result)
         {
             if (result == DialogResult.Yes)
             {

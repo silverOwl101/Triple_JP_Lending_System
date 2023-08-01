@@ -15,9 +15,8 @@ namespace TripleJPMVPLibrary.Service
     {
         private ReportRepo reportRepo;
         private SalaryRepo salaryRepo;
-        private SavingsRepo savingsRepo;
-        
-        internal DataSet OnCallGetCustomerListReport()
+        private SavingsRepo savingsRepo;        
+        internal DataSet OnSetGetCustomerListReport()
         {
             try
             {
@@ -29,7 +28,7 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Task Invalid ", ex);
             }
         }
-        internal DataSet OnCallGetCollectionSummaryReportPaid()
+        internal DataSet OnSetGetCollectionSummaryReportPaid()
         {
             try
             {
@@ -41,7 +40,7 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Task Invalid ", ex);
             }
         }        
-        internal DataSet OnCallGetLoanInformationReport(Loan loan)
+        internal DataSet OnSetGetLoanInformationReport(Loan loan)
         {
             try
             {
@@ -53,7 +52,7 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Task Invalid ", ex);
             }
         }
-        internal DataSet OnCallGetCollectionReport(Loan loan)
+        internal DataSet OnSetGetCollectionReport(Loan loan)
         {
             try
             {
@@ -66,7 +65,7 @@ namespace TripleJPMVPLibrary.Service
             }
                         
         }
-        internal DataSet OnCallGetPenaltyReport(Loan loan)
+        internal DataSet OnSetGetPenaltyReport(Loan loan)
         {
             try
             {
@@ -79,7 +78,7 @@ namespace TripleJPMVPLibrary.Service
             }
 
         }
-        internal DataSet OnCallGetDailyCollection(DateTime dateFrom, DateTime dateTo)
+        internal DataSet OnSetGetDailyCollection(DateTime dateFrom, DateTime dateTo)
         {
             try
             {
@@ -92,7 +91,7 @@ namespace TripleJPMVPLibrary.Service
             }
 
         }
-        internal DataSet OnCallGetSalary(DateTime date)
+        internal DataSet OnSetGetSalary(DateTime date)
         {
             try
             {
@@ -105,7 +104,7 @@ namespace TripleJPMVPLibrary.Service
             }
 
         }
-        internal DataSet OnCallGetSavings(DateTime date)
+        internal DataSet OnSetGetSavings(DateTime date)
         {
             try
             {
@@ -118,7 +117,7 @@ namespace TripleJPMVPLibrary.Service
             }
 
         }
-        internal DataSet OnCallGetSavingsSalaryExpensesSummary(DateTime dateFrom, DateTime dateTo)
+        internal DataSet OnSetGetSavingsSalaryExpensesSummary(DateTime dateFrom, DateTime dateTo)
         {            
             try
             {
@@ -130,7 +129,7 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException(" Task Invalid ", ex);
             }
         }
-        internal DataTable OnCallGetTotalSavingsGetTotalSalaryAndGetOverAllCollection()
+        internal DataTable OnSetGetTotalSavingsGetTotalSalaryAndGetOverAllCollection()
         {
             CrystalReportDataSet data = new CrystalReportDataSet();
             salaryRepo = new SalaryRepo();

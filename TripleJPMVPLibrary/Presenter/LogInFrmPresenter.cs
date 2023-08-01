@@ -23,8 +23,7 @@ namespace TripleJPMVPLibrary.Presenter
         {
             _logIn = logIn;
         }        
-
-        public bool LogInConfirmation()
+        public bool OnLoadLogInConfirmation()
         {
             _logInService = new LogInService();
 

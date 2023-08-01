@@ -19,7 +19,7 @@ namespace TripleJPMVPLibrary.Service
         private LoanInformationRepo _loanRepo;
         #endregion
 
-        internal DataSet OnCallGetLoanInformationUsingCustomerID(Customer customer)
+        internal DataSet OnSetGetLoanInformationUsingCustomerID(Customer customer)
         {
 
             _loanRepo = new LoanInformationRepo();
@@ -33,7 +33,7 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException("Data Access Denied", ex);
             }            
         }
-        internal DataSet OnCallGetLoanInformationUsingCustomerName(Customer customer)
+        internal DataSet OnSetGetLoanInformationUsingCustomerName(Customer customer)
         {
 
             _loanRepo = new LoanInformationRepo();
@@ -47,7 +47,7 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException("Data Access Denied", ex);
             }
         }
-        internal List<GetCollectionAndPenalty> OnCallGetCollectionAndPenalty(string LoanID)
+        internal List<GetCollectionAndPenalty> OnSetGetCollectionAndPenalty(string LoanID)
         {
 
             _loanRepo = new LoanInformationRepo();
@@ -65,7 +65,7 @@ namespace TripleJPMVPLibrary.Service
                 throw new InvalidOperationException("Data Access Denied", ex);
             }
         }
-        internal string OnCallInsertLoan(Loan loan, Customer customer)
+        internal string OnSetInsertLoan(Loan loan, Customer customer)
         {
 
             IdGeneratorClass idGeneratorClass = new IdGeneratorClass();
@@ -77,7 +77,7 @@ namespace TripleJPMVPLibrary.Service
                 loan.Uid = Guid.NewGuid(); // load Guid
                 loan.Id = idGeneratorClass.NewId(); // load new Id
                 loan.CustomerUid = customerRepo.GetGuid(customer);
-                _loanRepo.InsertData(loan);
+                _loanRepo.InsertLoanData(loan);
             }
             catch (MySqlException ex)
             {
@@ -89,25 +89,14 @@ namespace TripleJPMVPLibrary.Service
 
             return "Loan added successfully";
         }
-        internal bool OnCallIsLoanStatusUnpaid(string LoanID)
+        internal bool OnSetIsLoanStatusUnpaid(string LoanID)
         {
 
             _loanRepo = new LoanInformationRepo();
 
             bool result = false;
-            result = _loanRepo.isLoanUnpaid(LoanID);
+            result = _loanRepo.CheckLoanUnpaid(LoanID);
             return result;
-        }
-        private decimal OnCallGetReleasedAmountWithInterest(Loan loan)
-        {
-            _loanRepo = new LoanInformationRepo();
-            _loanRepo.GetLoanInformation(loan);
-            return 0;
-        }
-        private decimal OnCallGetReleasedAmount(Loan loan)
-        {
-            _loanRepo = new LoanInformationRepo();            
-            return _loanRepo.GetReleasedAmount(loan);
-        }
+        }        
     }
 }
