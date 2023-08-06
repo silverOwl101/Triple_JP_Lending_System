@@ -930,14 +930,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TripleJP_Lending_System.exe" size="134112">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TripleJP_Lending_System.exe" size="310752">
       <assemblyIdentity name="TripleJP_Lending_System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GjgaActXsCSzt5ZSQQUTS9knez/yUIl2sB5/7I8bxFs=</dsig:DigestValue>
+        <dsig:DigestValue>e2ZVQDoCwW6b7Yp2LGnIegxkeoUFeihKtOwnyyfXt7s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -977,6 +977,15 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="Icons\loan_money_pay_house_home_icon_231041.ico" size="67646">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>8KYn+U4F9KNYyZOgOzuIDCgMX3mKkUW1lRLzz10I/Vs=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="TripleJP_Lending_System.exe.config" size="2034">
     <hash>
       <dsig:Transforms>

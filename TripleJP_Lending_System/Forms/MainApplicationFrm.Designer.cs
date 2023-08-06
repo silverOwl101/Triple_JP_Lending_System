@@ -29,6 +29,7 @@ namespace TripleJP_Lending_System.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainApplicationFrm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.customerAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loanInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,11 +44,14 @@ namespace TripleJP_Lending_System.Forms
             this.salaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addSalaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.AliceBlue;
             this.menuStrip1.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -162,13 +166,27 @@ namespace TripleJP_Lending_System.Forms
             this.logoutToolStripMenuItem.Text = "Log-out";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.LogoutToolStripMenuItem_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(384, 68);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(648, 370);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainApplicationFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1044, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainApplicationFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -177,6 +195,7 @@ namespace TripleJP_Lending_System.Forms
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainApplicationFrm_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +217,6 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.ToolStripMenuItem addSalaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dailyCollectionReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem savingAndSalarySummaryReportToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

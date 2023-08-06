@@ -29,6 +29,7 @@ namespace TripleJP_Lending_System
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInFrm));
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.usernameGroupBox = new System.Windows.Forms.GroupBox();
             this.passWordTextBox = new System.Windows.Forms.TextBox();
@@ -93,6 +94,7 @@ namespace TripleJP_Lending_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(408, 255);
             this.Controls.Add(this.userNameTextBox);
             this.Controls.Add(this.logInButton);
@@ -100,6 +102,7 @@ namespace TripleJP_Lending_System
             this.Controls.Add(this.passwordGroupBox);
             this.Controls.Add(this.usernameGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LogInFrm";
