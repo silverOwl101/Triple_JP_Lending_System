@@ -15,6 +15,7 @@ namespace TripleJP_Lending_System.Forms
         private FrmInputRequirements _frmInputRequirements;
         private FrmConvertionRequirements _frmConvertionRequirements;
         private AddCustomerPresenter _addCustomerPresenter;
+        
 
         #endregion
 
@@ -270,36 +271,44 @@ namespace TripleJP_Lending_System.Forms
             grossBusinessCapitalTxt.Clear();
             averageDailyGrossSalesTxt.Clear();
         }
-
         private void SubmitButtonDisable()
         {
             submitButton.Enabled = false;
         }
-
-        private void IsAllTextBoxNotEmpty()
+        private int IsAllTextBoxNotEmptyInnerForEach(Control item, int count)
         {
-            int count = 0;
-            foreach (Control item in personalInformationGroupBox.Controls)
+            foreach (Control text in item.Controls)
             {
-                if (item is TextBox)
+                if (text is TextBox)
                 {
-                    if (!string.IsNullOrEmpty(item.Text))
+                    if (!string.IsNullOrEmpty(text.Text))
                     {
                         count++;
                     }
                 }
             }
+            return count;
+        }
+        private void IsAllTextBoxNotEmpty()
+        {
+            int count = 0;
+            foreach (Control item in personalInformationGroupBox.Controls)
+            {
+                if (item is GroupBox)
+                {
+                    count = IsAllTextBoxNotEmptyInnerForEach(item,count);
+                }
+            }            
             if (count == 8)
             {
-                submitButton.Enabled = true;
+                submitButton.Enabled = true;                
             }
             else
             {
                 submitButton.Enabled = false;
-            }
+            }            
         }
 
-        #endregion     
-
+        #endregion
     }
 }

@@ -18,7 +18,7 @@ namespace TripleJP_Lending_System
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+            Application.EnableVisualStyles();            
             Application.SetCompatibleTextRenderingDefault(false);
 
 
