@@ -31,7 +31,7 @@ namespace TripleJP_Lending_System.Forms
             DisableEditButton();
         }
 
-        #region User Inputs  
+        #region Edit Information  
         public string ID 
         {
             get { return customerIdLabel.Text; }
@@ -44,8 +44,8 @@ namespace TripleJP_Lending_System.Forms
         }
         public string CustomerAddress
         {
-            get { return customerAddressLabel.Text; }
-            set { customerAddressLabel.Text = value; }
+            get { return customerAddressHoverLabel; }
+            set { customerAddressHoverLabel = value; }
         }
         public string ContactNumber
         {
@@ -82,7 +82,6 @@ namespace TripleJP_Lending_System.Forms
             get { return searchBoxtxt.Text; }
             set { searchBoxtxt.Text = value; }
         }
-
         #endregion
 
         #region Custom Methods

@@ -7,14 +7,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="TripleJP_Lending_System.exe.manifest" size="59820">
+    <dependentAssembly dependencyType="install" codebase="TripleJP_Lending_System.exe.manifest" size="60415">
       <assemblyIdentity name="TripleJP_Lending_System.exe" version="1.0.0.9" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>u1j36Sf6iqeREKOSeUPYPqhHHn711yeD+p1f/mnocoI=</dsig:DigestValue>
+        <dsig:DigestValue>lChkSpUbeDbOZ7n0KV47F1Zgs340jeLlIBqQgkpZpac=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

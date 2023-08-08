@@ -30,6 +30,7 @@ namespace TripleJP_Lending_System.Forms
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PostingFrm));
             this.searchFilterGroupBox = new System.Windows.Forms.GroupBox();
             this.searchButtton = new System.Windows.Forms.Button();
             this.nameOrIdGroupBox = new System.Windows.Forms.GroupBox();
@@ -47,11 +48,9 @@ namespace TripleJP_Lending_System.Forms
             this.searchFilterGroupBox.Controls.Add(this.searchButtton);
             this.searchFilterGroupBox.Controls.Add(this.nameOrIdGroupBox);
             this.searchFilterGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchFilterGroupBox.Location = new System.Drawing.Point(16, 15);
-            this.searchFilterGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchFilterGroupBox.Location = new System.Drawing.Point(12, 12);
             this.searchFilterGroupBox.Name = "searchFilterGroupBox";
-            this.searchFilterGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.searchFilterGroupBox.Size = new System.Drawing.Size(1091, 142);
+            this.searchFilterGroupBox.Size = new System.Drawing.Size(818, 115);
             this.searchFilterGroupBox.TabIndex = 0;
             this.searchFilterGroupBox.TabStop = false;
             this.searchFilterGroupBox.Text = "Search Filter";
@@ -59,10 +58,9 @@ namespace TripleJP_Lending_System.Forms
             // searchButtton
             // 
             this.searchButtton.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchButtton.Location = new System.Drawing.Point(969, 71);
-            this.searchButtton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchButtton.Location = new System.Drawing.Point(727, 58);
             this.searchButtton.Name = "searchButtton";
-            this.searchButtton.Size = new System.Drawing.Size(113, 36);
+            this.searchButtton.Size = new System.Drawing.Size(85, 29);
             this.searchButtton.TabIndex = 2;
             this.searchButtton.Tag = "";
             this.searchButtton.Text = "Search";
@@ -73,11 +71,9 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.nameOrIdGroupBox.Controls.Add(this.searchTextBox);
             this.nameOrIdGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameOrIdGroupBox.Location = new System.Drawing.Point(8, 46);
-            this.nameOrIdGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameOrIdGroupBox.Location = new System.Drawing.Point(6, 37);
             this.nameOrIdGroupBox.Name = "nameOrIdGroupBox";
-            this.nameOrIdGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.nameOrIdGroupBox.Size = new System.Drawing.Size(953, 76);
+            this.nameOrIdGroupBox.Size = new System.Drawing.Size(715, 62);
             this.nameOrIdGroupBox.TabIndex = 2;
             this.nameOrIdGroupBox.TabStop = false;
             this.nameOrIdGroupBox.Text = "Name or Customer ID #";
@@ -86,10 +82,9 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.searchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchTextBox.Location = new System.Drawing.Point(8, 28);
-            this.searchTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchTextBox.Location = new System.Drawing.Point(6, 23);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(936, 33);
+            this.searchTextBox.Size = new System.Drawing.Size(703, 28);
             this.searchTextBox.TabIndex = 1;
             this.searchTextBox.Tag = "";
             this.searchTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PostingSearchTxt_KeyPress);
@@ -103,6 +98,7 @@ namespace TripleJP_Lending_System.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.loanDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.loanDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.loanDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.loanDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
@@ -112,25 +108,25 @@ namespace TripleJP_Lending_System.Forms
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.loanDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
-            this.loanDataGridView.Location = new System.Drawing.Point(16, 164);
-            this.loanDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loanDataGridView.Location = new System.Drawing.Point(12, 133);
             this.loanDataGridView.Name = "loanDataGridView";
             this.loanDataGridView.ReadOnly = true;
             this.loanDataGridView.RowHeadersWidth = 51;
-            this.loanDataGridView.Size = new System.Drawing.Size(1091, 417);
+            this.loanDataGridView.Size = new System.Drawing.Size(818, 339);
             this.loanDataGridView.TabIndex = 3;
             this.loanDataGridView.TabStop = false;
             this.loanDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LoanDataGridView_CellDoubleClick);
             // 
             // PostingFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 596);
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(842, 484);
             this.Controls.Add(this.loanDataGridView);
             this.Controls.Add(this.searchFilterGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PostingFrm";

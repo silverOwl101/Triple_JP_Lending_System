@@ -31,6 +31,7 @@ namespace TripleJP_Lending_System.Forms
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanInformationFrm));
             this.loanInformationGroupBox = new System.Windows.Forms.GroupBox();
             this.statusGroupBox = new System.Windows.Forms.GroupBox();
             this.statusLabel = new System.Windows.Forms.Label();
@@ -323,6 +324,7 @@ namespace TripleJP_Lending_System.Forms
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.AliceBlue;
             this.menuStrip1.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -623,6 +625,7 @@ namespace TripleJP_Lending_System.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1385, 676);
             this.Controls.Add(this.generateAccountStatementButton);
             this.Controls.Add(this.searchFilterGroupBox);
@@ -633,6 +636,7 @@ namespace TripleJP_Lending_System.Forms
             this.Controls.Add(this.loanInformationGroupBox);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

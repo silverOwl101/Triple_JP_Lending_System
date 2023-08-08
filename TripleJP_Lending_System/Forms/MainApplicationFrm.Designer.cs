@@ -38,7 +38,7 @@ namespace TripleJP_Lending_System.Forms
             this.collectionReportSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dailyCollectionReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.savingAndSalarySummaryReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asdasdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.otherOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addSavingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +59,7 @@ namespace TripleJP_Lending_System.Forms
             this.loanInformationToolStripMenuItem,
             this.postingToolStripMenuItem,
             this.reportToolStripMenuItem,
-            this.asdasdToolStripMenuItem,
+            this.otherOptionsToolStripMenuItem,
             this.logoutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -91,6 +91,7 @@ namespace TripleJP_Lending_System.Forms
             // 
             // reportToolStripMenuItem
             // 
+            this.reportToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.collectionReportSummaryToolStripMenuItem,
             this.dailyCollectionReportToolStripMenuItem,
@@ -101,6 +102,7 @@ namespace TripleJP_Lending_System.Forms
             // 
             // collectionReportSummaryToolStripMenuItem
             // 
+            this.collectionReportSummaryToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.collectionReportSummaryToolStripMenuItem.Name = "collectionReportSummaryToolStripMenuItem";
             this.collectionReportSummaryToolStripMenuItem.Size = new System.Drawing.Size(358, 30);
             this.collectionReportSummaryToolStripMenuItem.Text = "Collection Summary Report ";
@@ -108,6 +110,7 @@ namespace TripleJP_Lending_System.Forms
             // 
             // dailyCollectionReportToolStripMenuItem
             // 
+            this.dailyCollectionReportToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.dailyCollectionReportToolStripMenuItem.Name = "dailyCollectionReportToolStripMenuItem";
             this.dailyCollectionReportToolStripMenuItem.Size = new System.Drawing.Size(358, 30);
             this.dailyCollectionReportToolStripMenuItem.Text = "Daily Collection Report";
@@ -115,47 +118,50 @@ namespace TripleJP_Lending_System.Forms
             // 
             // savingAndSalarySummaryReportToolStripMenuItem
             // 
+            this.savingAndSalarySummaryReportToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.savingAndSalarySummaryReportToolStripMenuItem.Name = "savingAndSalarySummaryReportToolStripMenuItem";
             this.savingAndSalarySummaryReportToolStripMenuItem.Size = new System.Drawing.Size(358, 30);
             this.savingAndSalarySummaryReportToolStripMenuItem.Text = "Savings and Salary Summary Report";
             this.savingAndSalarySummaryReportToolStripMenuItem.Click += new System.EventHandler(this.savingAndSalarySummaryReportToolStripMenuItem_Click);
             // 
-            // asdasdToolStripMenuItem
+            // otherOptionsToolStripMenuItem
             // 
-            this.asdasdToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.otherOptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem,
             this.salaryToolStripMenuItem});
-            this.asdasdToolStripMenuItem.Name = "asdasdToolStripMenuItem";
-            this.asdasdToolStripMenuItem.Size = new System.Drawing.Size(129, 30);
-            this.asdasdToolStripMenuItem.Text = "Other Options";
+            this.otherOptionsToolStripMenuItem.Name = "otherOptionsToolStripMenuItem";
+            this.otherOptionsToolStripMenuItem.Size = new System.Drawing.Size(129, 30);
+            this.otherOptionsToolStripMenuItem.Text = "Other Options";
             // 
             // addToolStripMenuItem
             // 
+            this.addToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addSavingsToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(143, 30);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.addToolStripMenuItem.Text = "Savings";
             // 
             // addSavingsToolStripMenuItem
             // 
             this.addSavingsToolStripMenuItem.Name = "addSavingsToolStripMenuItem";
-            this.addSavingsToolStripMenuItem.Size = new System.Drawing.Size(114, 30);
+            this.addSavingsToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.addSavingsToolStripMenuItem.Text = "Add";
             this.addSavingsToolStripMenuItem.Click += new System.EventHandler(this.addSavingsToolStripMenuItem_Click);
             // 
             // salaryToolStripMenuItem
             // 
+            this.salaryToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.salaryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addSalaryToolStripMenuItem});
             this.salaryToolStripMenuItem.Name = "salaryToolStripMenuItem";
-            this.salaryToolStripMenuItem.Size = new System.Drawing.Size(143, 30);
+            this.salaryToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.salaryToolStripMenuItem.Text = "Salary";
             // 
             // addSalaryToolStripMenuItem
             // 
             this.addSalaryToolStripMenuItem.Name = "addSalaryToolStripMenuItem";
-            this.addSalaryToolStripMenuItem.Size = new System.Drawing.Size(114, 30);
+            this.addSalaryToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.addSalaryToolStripMenuItem.Text = "Add";
             this.addSalaryToolStripMenuItem.Click += new System.EventHandler(this.addSalaryToolStripMenuItem_Click);
             // 
@@ -210,7 +216,7 @@ namespace TripleJP_Lending_System.Forms
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem collectionReportSummaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem asdasdToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem otherOptionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addSavingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salaryToolStripMenuItem;

@@ -31,6 +31,7 @@ namespace TripleJP_Lending_System.Forms
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerListLoanFrm));
             this.customerListDataGridView = new System.Windows.Forms.DataGridView();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
@@ -61,12 +62,11 @@ namespace TripleJP_Lending_System.Forms
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.customerListDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.customerListDataGridView.Location = new System.Drawing.Point(16, 66);
-            this.customerListDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.customerListDataGridView.Location = new System.Drawing.Point(12, 54);
             this.customerListDataGridView.Name = "customerListDataGridView";
             this.customerListDataGridView.ReadOnly = true;
             this.customerListDataGridView.RowHeadersWidth = 51;
-            this.customerListDataGridView.Size = new System.Drawing.Size(1273, 426);
+            this.customerListDataGridView.Size = new System.Drawing.Size(955, 346);
             this.customerListDataGridView.TabIndex = 1;
             this.customerListDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CustomerListDataGridView_CellDoubleClick);
             // 
@@ -74,33 +74,32 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(765, 18);
-            this.searchLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.searchLabel.Location = new System.Drawing.Point(574, 15);
             this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(76, 30);
+            this.searchLabel.Size = new System.Drawing.Size(64, 25);
             this.searchLabel.TabIndex = 18;
             this.searchLabel.Text = "Search:";
             // 
             // searchTextBox
             // 
             this.searchTextBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTextBox.Location = new System.Drawing.Point(849, 15);
-            this.searchTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchTextBox.Location = new System.Drawing.Point(637, 12);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(439, 33);
+            this.searchTextBox.Size = new System.Drawing.Size(330, 28);
             this.searchTextBox.TabIndex = 0;
             this.searchTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchTextBox_KeyPress);
             // 
             // CustomerListLoanFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1305, 507);
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(979, 412);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.customerListDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CustomerListLoanFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customers";

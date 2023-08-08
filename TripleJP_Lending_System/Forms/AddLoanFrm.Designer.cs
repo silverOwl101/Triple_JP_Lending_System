@@ -29,6 +29,7 @@ namespace TripleJP_Lending_System.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddLoanFrm));
             this.loanInformationGroupBox = new System.Windows.Forms.GroupBox();
             this.customerPenaltyGroupBox = new System.Windows.Forms.GroupBox();
             this.penaltyComboBox = new System.Windows.Forms.ComboBox();
@@ -83,7 +84,7 @@ namespace TripleJP_Lending_System.Forms
             this.loanInformationGroupBox.Controls.Add(this.customerPaymentTermGroupBox);
             this.loanInformationGroupBox.Controls.Add(this.customerIdGroupBox);
             this.loanInformationGroupBox.Controls.Add(this.customerNameGroupBox);
-            this.loanInformationGroupBox.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loanInformationGroupBox.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loanInformationGroupBox.Location = new System.Drawing.Point(12, 12);
             this.loanInformationGroupBox.Name = "loanInformationGroupBox";
             this.loanInformationGroupBox.Size = new System.Drawing.Size(868, 323);
@@ -276,7 +277,7 @@ namespace TripleJP_Lending_System.Forms
             this.loanMaturityInformationGroupBox.Controls.Add(this.maturityValueGroupBox);
             this.loanMaturityInformationGroupBox.Controls.Add(this.maturityDateGroupBox);
             this.loanMaturityInformationGroupBox.Controls.Add(this.maturityInterestGroupBox);
-            this.loanMaturityInformationGroupBox.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loanMaturityInformationGroupBox.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loanMaturityInformationGroupBox.Location = new System.Drawing.Point(12, 341);
             this.loanMaturityInformationGroupBox.Name = "loanMaturityInformationGroupBox";
             this.loanMaturityInformationGroupBox.Size = new System.Drawing.Size(868, 229);
@@ -390,13 +391,17 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(903, 588);
             this.Controls.Add(this.loanMaturityInformationGroupBox);
             this.Controls.Add(this.loanInformationGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddLoanFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddLoanFrm";
+            this.Text = "Add Loan";
             this.loanInformationGroupBox.ResumeLayout(false);
             this.customerPenaltyGroupBox.ResumeLayout(false);
             this.customerPrincipalLoanGroupBox.ResumeLayout(false);

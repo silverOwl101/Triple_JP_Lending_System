@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RemitAndPenaltyFrm));
             this.remitDateGroupBox = new System.Windows.Forms.GroupBox();
             this.remitDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.remitAmountGroupBox = new System.Windows.Forms.GroupBox();
@@ -87,7 +88,7 @@
             // 
             this.remitDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.remitDateTimePicker.Location = new System.Drawing.Point(5, 30);
-            this.remitDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.remitDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.remitDateTimePicker.Name = "remitDateTimePicker";
             this.remitDateTimePicker.Size = new System.Drawing.Size(321, 28);
             this.remitDateTimePicker.TabIndex = 0;
@@ -107,7 +108,7 @@
             // 
             this.remitAmountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.remitAmountTextBox.Location = new System.Drawing.Point(5, 30);
-            this.remitAmountTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.remitAmountTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.remitAmountTextBox.Name = "remitAmountTextBox";
             this.remitAmountTextBox.Size = new System.Drawing.Size(321, 28);
             this.remitAmountTextBox.TabIndex = 0;
@@ -120,11 +121,11 @@
             // 
             this.remitButton.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remitButton.Location = new System.Drawing.Point(596, 199);
-            this.remitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.remitButton.Margin = new System.Windows.Forms.Padding(2);
             this.remitButton.Name = "remitButton";
             this.remitButton.Size = new System.Drawing.Size(98, 46);
             this.remitButton.TabIndex = 20;
-            this.remitButton.Text = "OnLoadRemit";
+            this.remitButton.Text = "Remit";
             this.remitButton.UseVisualStyleBackColor = true;
             this.remitButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
@@ -191,7 +192,7 @@
             this.loanGroupBox.Controls.Add(this.remitButton);
             this.loanGroupBox.Controls.Add(this.loanPanaltyGroupBox);
             this.loanGroupBox.Controls.Add(this.balanceGroupBox);
-            this.loanGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loanGroupBox.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loanGroupBox.ForeColor = System.Drawing.Color.Black;
             this.loanGroupBox.Location = new System.Drawing.Point(15, 396);
             this.loanGroupBox.Name = "loanGroupBox";
@@ -325,7 +326,7 @@
             this.remitGroupBox.Size = new System.Drawing.Size(356, 364);
             this.remitGroupBox.TabIndex = 22;
             this.remitGroupBox.TabStop = false;
-            this.remitGroupBox.Text = "OnLoadRemit";
+            this.remitGroupBox.Text = "Remit";
             // 
             // penaltyGroupBox
             // 
@@ -355,7 +356,7 @@
             // 
             this.penaltyDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.penaltyDateTimePicker.Location = new System.Drawing.Point(5, 30);
-            this.penaltyDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.penaltyDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.penaltyDateTimePicker.Name = "penaltyDateTimePicker";
             this.penaltyDateTimePicker.Size = new System.Drawing.Size(321, 28);
             this.penaltyDateTimePicker.TabIndex = 0;
@@ -375,7 +376,7 @@
             // 
             this.penaltyAmountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.penaltyAmountTextBox.Location = new System.Drawing.Point(5, 30);
-            this.penaltyAmountTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.penaltyAmountTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.penaltyAmountTextBox.Name = "penaltyAmountTextBox";
             this.penaltyAmountTextBox.Size = new System.Drawing.Size(321, 28);
             this.penaltyAmountTextBox.TabIndex = 0;
@@ -385,15 +386,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(767, 684);
             this.Controls.Add(this.collectionGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RemitAndPenaltyFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "OnLoadRemit And Penalty";
+            this.Text = "Remit And Penalty";
             this.remitDateGroupBox.ResumeLayout(false);
             this.remitAmountGroupBox.ResumeLayout(false);
             this.remitAmountGroupBox.PerformLayout();

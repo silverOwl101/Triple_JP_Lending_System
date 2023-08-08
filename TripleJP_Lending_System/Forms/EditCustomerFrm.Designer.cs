@@ -29,57 +29,40 @@ namespace TripleJP_Lending_System.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.personalInfoGroupBox = new System.Windows.Forms.GroupBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditCustomerFrm));
             this.averageDailyGrossSalesTextBox = new System.Windows.Forms.TextBox();
-            this.businessCapitalLabel = new System.Windows.Forms.Label();
             this.grossBusinessCapitalTextBox = new System.Windows.Forms.TextBox();
-            this.businessAddressLabel = new System.Windows.Forms.Label();
             this.businessAddressTextBox = new System.Windows.Forms.TextBox();
             this.customerNameTextBox = new System.Windows.Forms.TextBox();
-            this.businessNatureLabel = new System.Windows.Forms.Label();
             this.contactNumberTextBox = new System.Windows.Forms.TextBox();
-            this.businessNameLabel = new System.Windows.Forms.Label();
             this.customerAddressTextBox = new System.Windows.Forms.TextBox();
-            this.customerNumberLabel = new System.Windows.Forms.Label();
             this.businessNameTextBox = new System.Windows.Forms.TextBox();
-            this.customerAddressLabel = new System.Windows.Forms.Label();
             this.businessNatureTextBox = new System.Windows.Forms.TextBox();
-            this.customerNameLabel = new System.Windows.Forms.Label();
-            this.businessAverageGrossLabel = new System.Windows.Forms.Label();
             this.submitButton = new System.Windows.Forms.Button();
-            this.personalInfoGroupBox.SuspendLayout();
+            this.personalInformationGroupBox = new System.Windows.Forms.GroupBox();
+            this.grossBusinessCapitalGroupBox = new System.Windows.Forms.GroupBox();
+            this.businessAddressGroupBox = new System.Windows.Forms.GroupBox();
+            this.aveDailyGrossSalesGroupBox = new System.Windows.Forms.GroupBox();
+            this.businessNatureGroupBox = new System.Windows.Forms.GroupBox();
+            this.businessNameGroupBox = new System.Windows.Forms.GroupBox();
+            this.contactNumberGroupBox = new System.Windows.Forms.GroupBox();
+            this.customerAddressGroupBox = new System.Windows.Forms.GroupBox();
+            this.customerNameGroupBox = new System.Windows.Forms.GroupBox();
+            this.personalInformationGroupBox.SuspendLayout();
+            this.grossBusinessCapitalGroupBox.SuspendLayout();
+            this.businessAddressGroupBox.SuspendLayout();
+            this.aveDailyGrossSalesGroupBox.SuspendLayout();
+            this.businessNatureGroupBox.SuspendLayout();
+            this.businessNameGroupBox.SuspendLayout();
+            this.contactNumberGroupBox.SuspendLayout();
+            this.customerAddressGroupBox.SuspendLayout();
+            this.customerNameGroupBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // personalInfoGroupBox
-            // 
-            this.personalInfoGroupBox.Controls.Add(this.averageDailyGrossSalesTextBox);
-            this.personalInfoGroupBox.Controls.Add(this.businessCapitalLabel);
-            this.personalInfoGroupBox.Controls.Add(this.grossBusinessCapitalTextBox);
-            this.personalInfoGroupBox.Controls.Add(this.businessAddressLabel);
-            this.personalInfoGroupBox.Controls.Add(this.businessAddressTextBox);
-            this.personalInfoGroupBox.Controls.Add(this.customerNameTextBox);
-            this.personalInfoGroupBox.Controls.Add(this.businessNatureLabel);
-            this.personalInfoGroupBox.Controls.Add(this.contactNumberTextBox);
-            this.personalInfoGroupBox.Controls.Add(this.businessNameLabel);
-            this.personalInfoGroupBox.Controls.Add(this.customerAddressTextBox);
-            this.personalInfoGroupBox.Controls.Add(this.customerNumberLabel);
-            this.personalInfoGroupBox.Controls.Add(this.businessNameTextBox);
-            this.personalInfoGroupBox.Controls.Add(this.customerAddressLabel);
-            this.personalInfoGroupBox.Controls.Add(this.businessNatureTextBox);
-            this.personalInfoGroupBox.Controls.Add(this.customerNameLabel);
-            this.personalInfoGroupBox.Controls.Add(this.businessAverageGrossLabel);
-            this.personalInfoGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personalInfoGroupBox.Location = new System.Drawing.Point(41, 30);
-            this.personalInfoGroupBox.Name = "personalInfoGroupBox";
-            this.personalInfoGroupBox.Size = new System.Drawing.Size(660, 329);
-            this.personalInfoGroupBox.TabIndex = 12;
-            this.personalInfoGroupBox.TabStop = false;
-            this.personalInfoGroupBox.Text = "Personal Information ";
             // 
             // averageDailyGrossSalesTextBox
             // 
             this.averageDailyGrossSalesTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.averageDailyGrossSalesTextBox.Location = new System.Drawing.Point(210, 270);
+            this.averageDailyGrossSalesTextBox.Location = new System.Drawing.Point(6, 27);
             this.averageDailyGrossSalesTextBox.Name = "averageDailyGrossSalesTextBox";
             this.averageDailyGrossSalesTextBox.Size = new System.Drawing.Size(433, 29);
             this.averageDailyGrossSalesTextBox.TabIndex = 8;
@@ -87,20 +70,10 @@ namespace TripleJP_Lending_System.Forms
             this.averageDailyGrossSalesTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AverageDailyGrossSalestxt_KeyPress);
             this.averageDailyGrossSalesTextBox.Leave += new System.EventHandler(this.AverageDailyGrossSalestxt_Leave);
             // 
-            // businessCapitalLabel
-            // 
-            this.businessCapitalLabel.AutoSize = true;
-            this.businessCapitalLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.businessCapitalLabel.Location = new System.Drawing.Point(32, 240);
-            this.businessCapitalLabel.Name = "businessCapitalLabel";
-            this.businessCapitalLabel.Size = new System.Drawing.Size(171, 25);
-            this.businessCapitalLabel.TabIndex = 13;
-            this.businessCapitalLabel.Text = "Gross Business Capital:";
-            // 
             // grossBusinessCapitalTextBox
             // 
             this.grossBusinessCapitalTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grossBusinessCapitalTextBox.Location = new System.Drawing.Point(210, 237);
+            this.grossBusinessCapitalTextBox.Location = new System.Drawing.Point(6, 27);
             this.grossBusinessCapitalTextBox.Name = "grossBusinessCapitalTextBox";
             this.grossBusinessCapitalTextBox.Size = new System.Drawing.Size(433, 29);
             this.grossBusinessCapitalTextBox.TabIndex = 7;
@@ -108,20 +81,10 @@ namespace TripleJP_Lending_System.Forms
             this.grossBusinessCapitalTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GrossBusinessCapitaltxt_KeyPress);
             this.grossBusinessCapitalTextBox.Leave += new System.EventHandler(this.GrossBusinessCapitaltxt_Leave);
             // 
-            // businessAddressLabel
-            // 
-            this.businessAddressLabel.AutoSize = true;
-            this.businessAddressLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.businessAddressLabel.Location = new System.Drawing.Point(66, 206);
-            this.businessAddressLabel.Name = "businessAddressLabel";
-            this.businessAddressLabel.Size = new System.Drawing.Size(134, 25);
-            this.businessAddressLabel.TabIndex = 11;
-            this.businessAddressLabel.Text = "Business Address:";
-            // 
             // businessAddressTextBox
             // 
             this.businessAddressTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.businessAddressTextBox.Location = new System.Drawing.Point(210, 202);
+            this.businessAddressTextBox.Location = new System.Drawing.Point(6, 25);
             this.businessAddressTextBox.Name = "businessAddressTextBox";
             this.businessAddressTextBox.Size = new System.Drawing.Size(433, 29);
             this.businessAddressTextBox.TabIndex = 6;
@@ -131,27 +94,17 @@ namespace TripleJP_Lending_System.Forms
             // customerNameTextBox
             // 
             this.customerNameTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerNameTextBox.Location = new System.Drawing.Point(210, 27);
+            this.customerNameTextBox.Location = new System.Drawing.Point(6, 22);
             this.customerNameTextBox.Name = "customerNameTextBox";
             this.customerNameTextBox.Size = new System.Drawing.Size(433, 29);
             this.customerNameTextBox.TabIndex = 1;
             this.customerNameTextBox.TextChanged += new System.EventHandler(this.CustomerNametxt_TextChanged);
             this.customerNameTextBox.Leave += new System.EventHandler(this.CustomerNametxt_Leave);
             // 
-            // businessNatureLabel
-            // 
-            this.businessNatureLabel.AutoSize = true;
-            this.businessNatureLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.businessNatureLabel.Location = new System.Drawing.Point(76, 171);
-            this.businessNatureLabel.Name = "businessNatureLabel";
-            this.businessNatureLabel.Size = new System.Drawing.Size(126, 25);
-            this.businessNatureLabel.TabIndex = 9;
-            this.businessNatureLabel.Text = "Business Nature:";
-            // 
             // contactNumberTextBox
             // 
             this.contactNumberTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactNumberTextBox.Location = new System.Drawing.Point(210, 97);
+            this.contactNumberTextBox.Location = new System.Drawing.Point(6, 27);
             this.contactNumberTextBox.Name = "contactNumberTextBox";
             this.contactNumberTextBox.Size = new System.Drawing.Size(433, 29);
             this.contactNumberTextBox.TabIndex = 3;
@@ -159,90 +112,40 @@ namespace TripleJP_Lending_System.Forms
             this.contactNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContactNumbertxt_KeyPress);
             this.contactNumberTextBox.Leave += new System.EventHandler(this.ContactNumbertxt_Leave);
             // 
-            // businessNameLabel
-            // 
-            this.businessNameLabel.AutoSize = true;
-            this.businessNameLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.businessNameLabel.Location = new System.Drawing.Point(81, 136);
-            this.businessNameLabel.Name = "businessNameLabel";
-            this.businessNameLabel.Size = new System.Drawing.Size(121, 25);
-            this.businessNameLabel.TabIndex = 8;
-            this.businessNameLabel.Text = "Business Name:";
-            // 
             // customerAddressTextBox
             // 
             this.customerAddressTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerAddressTextBox.Location = new System.Drawing.Point(210, 62);
+            this.customerAddressTextBox.Location = new System.Drawing.Point(6, 27);
             this.customerAddressTextBox.Name = "customerAddressTextBox";
             this.customerAddressTextBox.Size = new System.Drawing.Size(433, 29);
             this.customerAddressTextBox.TabIndex = 2;
             this.customerAddressTextBox.TextChanged += new System.EventHandler(this.CustomerAddresstxt_TextChanged);
             this.customerAddressTextBox.Leave += new System.EventHandler(this.CustomerAddresstxt_Leave);
             // 
-            // customerNumberLabel
-            // 
-            this.customerNumberLabel.AutoSize = true;
-            this.customerNumberLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerNumberLabel.Location = new System.Drawing.Point(71, 102);
-            this.customerNumberLabel.Name = "customerNumberLabel";
-            this.customerNumberLabel.Size = new System.Drawing.Size(132, 25);
-            this.customerNumberLabel.TabIndex = 7;
-            this.customerNumberLabel.Text = "Contact Number:";
-            // 
             // businessNameTextBox
             // 
             this.businessNameTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.businessNameTextBox.Location = new System.Drawing.Point(210, 132);
+            this.businessNameTextBox.Location = new System.Drawing.Point(6, 27);
             this.businessNameTextBox.Name = "businessNameTextBox";
             this.businessNameTextBox.Size = new System.Drawing.Size(433, 29);
             this.businessNameTextBox.TabIndex = 4;
             this.businessNameTextBox.TextChanged += new System.EventHandler(this.BusinessNametxt_TextChanged);
             this.businessNameTextBox.Leave += new System.EventHandler(this.BusinessNametxt_Leave);
             // 
-            // customerAddressLabel
-            // 
-            this.customerAddressLabel.AutoSize = true;
-            this.customerAddressLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerAddressLabel.Location = new System.Drawing.Point(58, 64);
-            this.customerAddressLabel.Name = "customerAddressLabel";
-            this.customerAddressLabel.Size = new System.Drawing.Size(143, 25);
-            this.customerAddressLabel.TabIndex = 6;
-            this.customerAddressLabel.Text = "Customer Address:";
-            // 
             // businessNatureTextBox
             // 
             this.businessNatureTextBox.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.businessNatureTextBox.Location = new System.Drawing.Point(210, 167);
+            this.businessNatureTextBox.Location = new System.Drawing.Point(6, 27);
             this.businessNatureTextBox.Name = "businessNatureTextBox";
             this.businessNatureTextBox.Size = new System.Drawing.Size(433, 29);
             this.businessNatureTextBox.TabIndex = 5;
             this.businessNatureTextBox.TextChanged += new System.EventHandler(this.BusinessNaturetxt_TextChanged);
             this.businessNatureTextBox.Leave += new System.EventHandler(this.BusinessNaturetxt_Leave);
             // 
-            // customerNameLabel
-            // 
-            this.customerNameLabel.AutoSize = true;
-            this.customerNameLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerNameLabel.Location = new System.Drawing.Point(72, 32);
-            this.customerNameLabel.Name = "customerNameLabel";
-            this.customerNameLabel.Size = new System.Drawing.Size(130, 25);
-            this.customerNameLabel.TabIndex = 5;
-            this.customerNameLabel.Text = "Customer Name:";
-            // 
-            // businessAverageGrossLabel
-            // 
-            this.businessAverageGrossLabel.AutoSize = true;
-            this.businessAverageGrossLabel.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.businessAverageGrossLabel.Location = new System.Drawing.Point(12, 275);
-            this.businessAverageGrossLabel.Name = "businessAverageGrossLabel";
-            this.businessAverageGrossLabel.Size = new System.Drawing.Size(193, 25);
-            this.businessAverageGrossLabel.TabIndex = 15;
-            this.businessAverageGrossLabel.Text = "Average Daily Gross Sales:";
-            // 
             // submitButton
             // 
             this.submitButton.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitButton.Location = new System.Drawing.Point(589, 365);
+            this.submitButton.Location = new System.Drawing.Point(359, 573);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(112, 45);
             this.submitButton.TabIndex = 16;
@@ -250,45 +153,166 @@ namespace TripleJP_Lending_System.Forms
             this.submitButton.UseVisualStyleBackColor = true;
             this.submitButton.Click += new System.EventHandler(this.Submitbutton_Click);
             // 
+            // personalInformationGroupBox
+            // 
+            this.personalInformationGroupBox.Controls.Add(this.grossBusinessCapitalGroupBox);
+            this.personalInformationGroupBox.Controls.Add(this.businessAddressGroupBox);
+            this.personalInformationGroupBox.Controls.Add(this.aveDailyGrossSalesGroupBox);
+            this.personalInformationGroupBox.Controls.Add(this.businessNatureGroupBox);
+            this.personalInformationGroupBox.Controls.Add(this.businessNameGroupBox);
+            this.personalInformationGroupBox.Controls.Add(this.contactNumberGroupBox);
+            this.personalInformationGroupBox.Controls.Add(this.customerAddressGroupBox);
+            this.personalInformationGroupBox.Controls.Add(this.customerNameGroupBox);
+            this.personalInformationGroupBox.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personalInformationGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.personalInformationGroupBox.Name = "personalInformationGroupBox";
+            this.personalInformationGroupBox.Size = new System.Drawing.Size(459, 555);
+            this.personalInformationGroupBox.TabIndex = 17;
+            this.personalInformationGroupBox.TabStop = false;
+            this.personalInformationGroupBox.Text = "Personal Information ";
+            // 
+            // grossBusinessCapitalGroupBox
+            // 
+            this.grossBusinessCapitalGroupBox.Controls.Add(this.grossBusinessCapitalTextBox);
+            this.grossBusinessCapitalGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grossBusinessCapitalGroupBox.Location = new System.Drawing.Point(6, 411);
+            this.grossBusinessCapitalGroupBox.Name = "grossBusinessCapitalGroupBox";
+            this.grossBusinessCapitalGroupBox.Size = new System.Drawing.Size(447, 64);
+            this.grossBusinessCapitalGroupBox.TabIndex = 7;
+            this.grossBusinessCapitalGroupBox.TabStop = false;
+            this.grossBusinessCapitalGroupBox.Text = "Gross Business Capital";
+            // 
+            // businessAddressGroupBox
+            // 
+            this.businessAddressGroupBox.Controls.Add(this.businessAddressTextBox);
+            this.businessAddressGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.businessAddressGroupBox.Location = new System.Drawing.Point(6, 347);
+            this.businessAddressGroupBox.Name = "businessAddressGroupBox";
+            this.businessAddressGroupBox.Size = new System.Drawing.Size(447, 64);
+            this.businessAddressGroupBox.TabIndex = 6;
+            this.businessAddressGroupBox.TabStop = false;
+            this.businessAddressGroupBox.Text = "Business Address";
+            // 
+            // aveDailyGrossSalesGroupBox
+            // 
+            this.aveDailyGrossSalesGroupBox.Controls.Add(this.averageDailyGrossSalesTextBox);
+            this.aveDailyGrossSalesGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aveDailyGrossSalesGroupBox.Location = new System.Drawing.Point(6, 475);
+            this.aveDailyGrossSalesGroupBox.Name = "aveDailyGrossSalesGroupBox";
+            this.aveDailyGrossSalesGroupBox.Size = new System.Drawing.Size(447, 64);
+            this.aveDailyGrossSalesGroupBox.TabIndex = 8;
+            this.aveDailyGrossSalesGroupBox.TabStop = false;
+            this.aveDailyGrossSalesGroupBox.Text = "Average Daily Gross Sales";
+            // 
+            // businessNatureGroupBox
+            // 
+            this.businessNatureGroupBox.Controls.Add(this.businessNatureTextBox);
+            this.businessNatureGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.businessNatureGroupBox.Location = new System.Drawing.Point(6, 283);
+            this.businessNatureGroupBox.Name = "businessNatureGroupBox";
+            this.businessNatureGroupBox.Size = new System.Drawing.Size(447, 64);
+            this.businessNatureGroupBox.TabIndex = 5;
+            this.businessNatureGroupBox.TabStop = false;
+            this.businessNatureGroupBox.Text = "Business Nature";
+            // 
+            // businessNameGroupBox
+            // 
+            this.businessNameGroupBox.Controls.Add(this.businessNameTextBox);
+            this.businessNameGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.businessNameGroupBox.Location = new System.Drawing.Point(6, 219);
+            this.businessNameGroupBox.Name = "businessNameGroupBox";
+            this.businessNameGroupBox.Size = new System.Drawing.Size(447, 64);
+            this.businessNameGroupBox.TabIndex = 4;
+            this.businessNameGroupBox.TabStop = false;
+            this.businessNameGroupBox.Text = "Business Name";
+            // 
+            // contactNumberGroupBox
+            // 
+            this.contactNumberGroupBox.Controls.Add(this.contactNumberTextBox);
+            this.contactNumberGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactNumberGroupBox.Location = new System.Drawing.Point(6, 155);
+            this.contactNumberGroupBox.Name = "contactNumberGroupBox";
+            this.contactNumberGroupBox.Size = new System.Drawing.Size(447, 64);
+            this.contactNumberGroupBox.TabIndex = 3;
+            this.contactNumberGroupBox.TabStop = false;
+            this.contactNumberGroupBox.Text = "Contact Number";
+            // 
+            // customerAddressGroupBox
+            // 
+            this.customerAddressGroupBox.Controls.Add(this.customerAddressTextBox);
+            this.customerAddressGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerAddressGroupBox.Location = new System.Drawing.Point(6, 91);
+            this.customerAddressGroupBox.Name = "customerAddressGroupBox";
+            this.customerAddressGroupBox.Size = new System.Drawing.Size(447, 64);
+            this.customerAddressGroupBox.TabIndex = 2;
+            this.customerAddressGroupBox.TabStop = false;
+            this.customerAddressGroupBox.Text = "Customer Address";
+            // 
+            // customerNameGroupBox
+            // 
+            this.customerNameGroupBox.Controls.Add(this.customerNameTextBox);
+            this.customerNameGroupBox.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerNameGroupBox.Location = new System.Drawing.Point(6, 27);
+            this.customerNameGroupBox.Name = "customerNameGroupBox";
+            this.customerNameGroupBox.Size = new System.Drawing.Size(447, 64);
+            this.customerNameGroupBox.TabIndex = 1;
+            this.customerNameGroupBox.TabStop = false;
+            this.customerNameGroupBox.Text = "Customer Name";
+            // 
             // EditCustomerFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(751, 450);
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(485, 634);
+            this.Controls.Add(this.personalInformationGroupBox);
             this.Controls.Add(this.submitButton);
-            this.Controls.Add(this.personalInfoGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditCustomerFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Customer Information";
-            this.personalInfoGroupBox.ResumeLayout(false);
-            this.personalInfoGroupBox.PerformLayout();
+            this.personalInformationGroupBox.ResumeLayout(false);
+            this.grossBusinessCapitalGroupBox.ResumeLayout(false);
+            this.grossBusinessCapitalGroupBox.PerformLayout();
+            this.businessAddressGroupBox.ResumeLayout(false);
+            this.businessAddressGroupBox.PerformLayout();
+            this.aveDailyGrossSalesGroupBox.ResumeLayout(false);
+            this.aveDailyGrossSalesGroupBox.PerformLayout();
+            this.businessNatureGroupBox.ResumeLayout(false);
+            this.businessNatureGroupBox.PerformLayout();
+            this.businessNameGroupBox.ResumeLayout(false);
+            this.businessNameGroupBox.PerformLayout();
+            this.contactNumberGroupBox.ResumeLayout(false);
+            this.contactNumberGroupBox.PerformLayout();
+            this.customerAddressGroupBox.ResumeLayout(false);
+            this.customerAddressGroupBox.PerformLayout();
+            this.customerNameGroupBox.ResumeLayout(false);
+            this.customerNameGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox personalInfoGroupBox;
         private System.Windows.Forms.TextBox averageDailyGrossSalesTextBox;
-        private System.Windows.Forms.Label businessCapitalLabel;
         private System.Windows.Forms.TextBox grossBusinessCapitalTextBox;
-        private System.Windows.Forms.Label businessAddressLabel;
         private System.Windows.Forms.TextBox businessAddressTextBox;
         private System.Windows.Forms.TextBox customerNameTextBox;
-        private System.Windows.Forms.Label businessNatureLabel;
         private System.Windows.Forms.TextBox contactNumberTextBox;
-        private System.Windows.Forms.Label businessNameLabel;
         private System.Windows.Forms.TextBox customerAddressTextBox;
-        private System.Windows.Forms.Label customerNumberLabel;
         private System.Windows.Forms.TextBox businessNameTextBox;
-        private System.Windows.Forms.Label customerAddressLabel;
         private System.Windows.Forms.TextBox businessNatureTextBox;
-        private System.Windows.Forms.Label customerNameLabel;
-        private System.Windows.Forms.Label businessAverageGrossLabel;
         private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.GroupBox personalInformationGroupBox;
+        private System.Windows.Forms.GroupBox grossBusinessCapitalGroupBox;
+        private System.Windows.Forms.GroupBox businessAddressGroupBox;
+        private System.Windows.Forms.GroupBox aveDailyGrossSalesGroupBox;
+        private System.Windows.Forms.GroupBox businessNatureGroupBox;
+        private System.Windows.Forms.GroupBox businessNameGroupBox;
+        private System.Windows.Forms.GroupBox contactNumberGroupBox;
+        private System.Windows.Forms.GroupBox customerAddressGroupBox;
+        private System.Windows.Forms.GroupBox customerNameGroupBox;
     }
 }
