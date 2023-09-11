@@ -86,5 +86,10 @@ namespace TripleJP_Lending_System.Forms
                 InitUnpaidAndBadDebtReport();
             }
         }
+
+        private void ReportViewerSummaryFrm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

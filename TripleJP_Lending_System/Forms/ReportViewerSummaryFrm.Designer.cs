@@ -101,6 +101,7 @@
             this.Name = "ReportViewerSummaryFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportViewerSummaryFrm";
+            this.Load += new System.EventHandler(this.ReportViewerSummaryFrm_Load);
             this.statusGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 

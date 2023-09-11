@@ -7,6 +7,9 @@ using System.Windows.Forms;
 using TripleJP_Lending_System.Forms;
 using TripleJPUtilityLibrary.ConfigFolder;
 using Newtonsoft.Json;
+using System.Threading;
+using System.Diagnostics;
+
 
 namespace TripleJP_Lending_System
 {
@@ -17,18 +20,70 @@ namespace TripleJP_Lending_System
         /// </summary>
         [STAThread]
         static void Main()
+        {            
+            const string mutexName = "TripleJP_Application_Mutex";
+            bool createdNew;
+            Mutex mutex = new Mutex(true, mutexName, out createdNew);
+
+            if (createdNew)
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                CreateDatabaseConnection();
+                Application.Run(new LogInFrm());
+                mutex.ReleaseMutex();
+            }
+            else
+            {
+                MessageBox.Show("The application is already running..", "TripleJP Lending System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                BringRunningInstanceToFront(mutexName);
+            }
+        }
+        private static void BringRunningInstanceToFront(string mutexName)
         {
-            Application.EnableVisualStyles();            
-            Application.SetCompatibleTextRenderingDefault(false);
+            // Find the running process by the mutex name
+            Process currentProcess = Process.GetCurrentProcess();
+            Process[] processes = Process.GetProcessesByName(currentProcess.ProcessName);
+            foreach (Process process in processes)
+            {
+                if (process.Id != currentProcess.Id)
+                {
+                    IntPtr hWnd = process.MainWindowHandle;
+                    if (hWnd != IntPtr.Zero)
+                    {
+                        // Bring the window to the foreground
+                        NativeMethods.ShowWindow(hWnd, NativeMethods.SW_RESTORE);
+                        //NativeMethods.SetForegroundWindow(hWnd);
+                        break;
+                    }
+                }
+            }
+        }
+        public static class NativeMethods
+        {
+            public const int SW_RESTORE = 9;
 
+            [System.Runtime.InteropServices.DllImport("user32.dll")]
+            public static extern bool SetForegroundWindow(IntPtr hWnd);
 
-            if(!File.Exists(ApplicationConstants.APP_DATA_SYSTEM_FOLDER))
+            [System.Runtime.InteropServices.DllImport("user32.dll")]
+            public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+
+            [System.Runtime.InteropServices.DllImport("user32.dll")]
+            public static extern bool IsIconic(IntPtr hWnd);
+
+            [System.Runtime.InteropServices.DllImport("user32.dll")]
+            public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        }
+        private static void CreateDatabaseConnection()
+        {
+            if (!File.Exists(ApplicationConstants.APP_DATA_SYSTEM_FOLDER))
             {
 
                 try
                 {
                     Directory.CreateDirectory(ApplicationConstants.APP_DATA_SYSTEM_FOLDER);
-                } 
+                }
                 catch (Exception ex)
                 {
                     string MessageContent = ex.Source;
@@ -36,7 +91,7 @@ namespace TripleJP_Lending_System
                     MessageBox.Show(MessageContent, MessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                if(!File.Exists(ApplicationConstants.CONFIG_PATH))
+                if (!File.Exists(ApplicationConstants.CONFIG_PATH))
                 {
 
                     // config.json default contents
@@ -64,8 +119,7 @@ namespace TripleJP_Lending_System
 
                 }
 
-            }            
-            Application.Run(new LogInFrm());
+            }
         }
     }
 }

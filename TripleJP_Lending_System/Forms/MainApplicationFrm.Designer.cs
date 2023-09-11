@@ -64,7 +64,7 @@ namespace TripleJP_Lending_System.Forms
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1044, 34);
+            this.menuStrip1.Size = new System.Drawing.Size(1395, 34);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -139,13 +139,13 @@ namespace TripleJP_Lending_System.Forms
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addSavingsToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(143, 30);
             this.addToolStripMenuItem.Text = "Savings";
             // 
             // addSavingsToolStripMenuItem
             // 
             this.addSavingsToolStripMenuItem.Name = "addSavingsToolStripMenuItem";
-            this.addSavingsToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.addSavingsToolStripMenuItem.Size = new System.Drawing.Size(114, 30);
             this.addSavingsToolStripMenuItem.Text = "Add";
             this.addSavingsToolStripMenuItem.Click += new System.EventHandler(this.addSavingsToolStripMenuItem_Click);
             // 
@@ -155,13 +155,13 @@ namespace TripleJP_Lending_System.Forms
             this.salaryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addSalaryToolStripMenuItem});
             this.salaryToolStripMenuItem.Name = "salaryToolStripMenuItem";
-            this.salaryToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.salaryToolStripMenuItem.Size = new System.Drawing.Size(143, 30);
             this.salaryToolStripMenuItem.Text = "Salary";
             // 
             // addSalaryToolStripMenuItem
             // 
             this.addSalaryToolStripMenuItem.Name = "addSalaryToolStripMenuItem";
-            this.addSalaryToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.addSalaryToolStripMenuItem.Size = new System.Drawing.Size(114, 30);
             this.addSalaryToolStripMenuItem.Text = "Add";
             this.addSalaryToolStripMenuItem.Click += new System.EventHandler(this.addSalaryToolStripMenuItem_Click);
             // 
@@ -176,7 +176,7 @@ namespace TripleJP_Lending_System.Forms
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(384, 68);
+            this.pictureBox1.Location = new System.Drawing.Point(735, 355);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(648, 370);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -188,7 +188,7 @@ namespace TripleJP_Lending_System.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1044, 450);
+            this.ClientSize = new System.Drawing.Size(1395, 737);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -197,7 +197,6 @@ namespace TripleJP_Lending_System.Forms
             this.Name = "MainApplicationFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Triple JP Lending System";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainApplicationFrm_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
